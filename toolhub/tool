@@ -1,0 +1,392 @@
+#!/usr/bin/env python3
+"""
+Simple command launcher with a JSON registry.
+
+Examples:
+  tool init
+  tool add cmd1 --cwd ~/project1 --desc "Start project1 dev server" -- npm run dev
+  tool add cmd2 -- "cd ~/project2 && python myscript.py arg1"
+  tool list
+  tool run cmd1
+  tool run cmd2 -- --flag value
+  tool remove cmd2
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import shlex
+import shutil
+import subprocess
+import sys
+import textwrap
+from pathlib import Path
+from typing import Any, Dict
+
+
+def default_registry_path() -> Path:
+    env = os.environ.get("TOOL_REGISTRY")
+    if env:
+        return Path(env).expanduser().resolve()
+    return Path("~/.tool-registry.json").expanduser()
+
+
+def load_registry(path: Path) -> Dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    except json.JSONDecodeError as e:
+        raise SystemExit(f"Error: registry file is not valid JSON: {path}\n{e}")
+
+    if not isinstance(data, dict):
+        raise SystemExit(f"Error: registry root must be an object: {path}")
+    return data
+
+
+def save_registry(path: Path, data: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+
+def normalize_entry(name: str, raw: Any) -> Dict[str, Any]:
+    if isinstance(raw, str):
+        return {"command": raw}
+    if not isinstance(raw, dict):
+        raise SystemExit(f"Error: command '{name}' must be a string or object")
+    if "command" not in raw or not isinstance(raw["command"], str) or not raw["command"].strip():
+        raise SystemExit(f"Error: command '{name}' must define non-empty string field 'command'")
+    entry = {"command": raw["command"]}
+    if "cwd" in raw:
+        if not isinstance(raw["cwd"], str):
+            raise SystemExit(f"Error: command '{name}' field 'cwd' must be a string")
+        entry["cwd"] = raw["cwd"]
+    if "description" in raw:
+        if not isinstance(raw["description"], str):
+            raise SystemExit(f"Error: command '{name}' field 'description' must be a string")
+        entry["description"] = raw["description"]
+    if "env" in raw:
+        if not isinstance(raw["env"], dict) or not all(isinstance(k, str) and isinstance(v, str) for k, v in raw["env"].items()):
+            raise SystemExit(f"Error: command '{name}' field 'env' must be an object of string:string")
+        entry["env"] = raw["env"]
+    if "shortcut" in raw:
+        shortcut_raw = raw["shortcut"]
+        if not isinstance(shortcut_raw, (str, int)):
+            raise SystemExit(f"Error: command '{name}' field 'shortcut' must be a string or number")
+        shortcut = str(shortcut_raw).strip()
+        if not shortcut:
+            raise SystemExit(f"Error: command '{name}' field 'shortcut' cannot be empty")
+        entry["shortcut"] = shortcut
+    return entry
+
+
+def parse_registry(data: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    normalized: Dict[str, Dict[str, Any]] = {}
+    shortcut_to_name: Dict[str, str] = {}
+
+    for name, raw in data.items():
+        if not isinstance(name, str) or not name.strip():
+            raise SystemExit("Error: registry keys must be non-empty command names")
+        entry = normalize_entry(name, raw)
+
+        shortcut = entry.get("shortcut")
+        if shortcut:
+            if shortcut in shortcut_to_name:
+                other = shortcut_to_name[shortcut]
+                raise SystemExit(
+                    f"Error: duplicate shortcut '{shortcut}' for commands '{other}' and '{name}'"
+                )
+            shortcut_to_name[shortcut] = name
+
+        normalized[name] = entry
+
+    return normalized
+
+
+def cmd_init(args: argparse.Namespace) -> int:
+    path: Path = args.registry
+    if path.exists() and not args.force:
+        print(f"Registry already exists: {path}")
+        print("Use --force to overwrite.")
+        return 1
+    save_registry(path, {})
+    print(f"Initialized registry: {path}")
+    return 0
+
+
+def cmd_list(args: argparse.Namespace) -> int:
+    path: Path = args.registry
+    commands = parse_registry(load_registry(path))
+    if not commands:
+        print(f"No commands in registry: {path}")
+        print("Add one with: tool add <name> -- <command>")
+        return 0
+
+    names = sorted(commands.keys())
+    labels = {
+        name: f"{name} ({commands[name]['shortcut']})" if commands[name].get("shortcut") else name
+        for name in names
+    }
+
+    label_width = max(len(label) for label in labels.values())
+    term_width = shutil.get_terminal_size(fallback=(100, 20)).columns
+    separator = "-" * max(24, term_width)
+
+    for idx, name in enumerate(names):
+        label = labels[name]
+        desc = commands[name].get("description", "").strip() or "-"
+
+        prefix = f"{label.ljust(label_width)}  "
+        available_desc_width = term_width - len(prefix)
+
+        if available_desc_width >= 20:
+            wrapped = textwrap.wrap(
+                desc,
+                width=available_desc_width,
+                break_long_words=False,
+                break_on_hyphens=False,
+            ) or ["-"]
+            print(prefix + wrapped[0])
+            for line in wrapped[1:]:
+                print(" " * len(prefix) + line)
+        else:
+            print(label)
+            wrapped = textwrap.wrap(
+                desc,
+                width=max(20, term_width - 2),
+                break_long_words=False,
+                break_on_hyphens=False,
+            ) or ["-"]
+            for line in wrapped:
+                print(f"  {line}")
+
+        if idx != len(names) - 1:
+            print(separator)
+
+    return 0
+
+
+def cmd_add(args: argparse.Namespace) -> int:
+    path: Path = args.registry
+    data = load_registry(path)
+    existing_commands = parse_registry(data)
+    name = args.name.strip()
+    if not name:
+        raise SystemExit("Error: name cannot be empty")
+
+    if args.cmd and args.command:
+        raise SystemExit("Error: use either --cmd or trailing command, not both")
+
+    if args.cmd:
+        command = args.cmd.strip()
+    else:
+        command_parts = args.command
+        if command_parts and command_parts[0] == "--":
+            command_parts = command_parts[1:]
+        if not command_parts:
+            raise SystemExit("Error: missing command. Example: tool add cmd1 -- npm run dev")
+        command = " ".join(command_parts).strip()
+
+    if not command:
+        raise SystemExit("Error: command cannot be empty")
+
+    if name in data and not args.force:
+        raise SystemExit(f"Error: command '{name}' already exists. Use --force to overwrite.")
+
+    entry: Dict[str, Any] = {"command": command}
+    if args.cwd:
+        entry["cwd"] = args.cwd
+    if args.desc:
+        entry["description"] = args.desc
+    if args.shortcut is not None:
+        shortcut = str(args.shortcut).strip()
+        if not shortcut:
+            raise SystemExit("Error: --shortcut cannot be empty")
+
+        for existing_name, existing_entry in existing_commands.items():
+            if existing_name != name and existing_entry.get("shortcut") == shortcut:
+                raise SystemExit(
+                    f"Error: shortcut '{shortcut}' is already used by command '{existing_name}'"
+                )
+
+        entry["shortcut"] = shortcut
+    if args.env:
+        env_map: Dict[str, str] = {}
+        for kv in args.env:
+            if "=" not in kv:
+                raise SystemExit(f"Error: invalid env format '{kv}', expected KEY=VALUE")
+            k, v = kv.split("=", 1)
+            if not k:
+                raise SystemExit(f"Error: invalid env key in '{kv}'")
+            env_map[k] = v
+        entry["env"] = env_map
+
+    data[name] = entry
+    save_registry(path, data)
+    print(f"Added '{name}' to {path}")
+    return 0
+
+
+def cmd_remove(args: argparse.Namespace) -> int:
+    path: Path = args.registry
+    data = load_registry(path)
+    if args.name not in data:
+        raise SystemExit(f"Error: command '{args.name}' not found")
+    del data[args.name]
+    save_registry(path, data)
+    print(f"Removed '{args.name}' from {path}")
+    return 0
+
+
+_PLACEHOLDER_RE = re.compile(r"\$([1-9])(?!\d)|\$\{([1-9]\d*)\}")
+
+
+def build_run_command(base_command: str, extra_args: list[str]) -> str:
+    args = extra_args
+    if args and args[0] == "--":
+        args = args[1:]
+
+    placeholder_indexes = [
+        int(m.group(1) or m.group(2))
+        for m in _PLACEHOLDER_RE.finditer(base_command)
+        if int(m.group(1) or m.group(2)) > 0
+    ]
+
+    if not placeholder_indexes:
+        if not args:
+            return base_command
+        appended = " ".join(shlex.quote(a) for a in args)
+        return f"{base_command} {appended}".strip()
+
+    max_index = max(placeholder_indexes)
+    if len(args) < max_index:
+        raise SystemExit(
+            f"Error: command expects at least {max_index} arg(s) for placeholders, got {len(args)}"
+        )
+
+    def replace_placeholder(match: re.Match[str]) -> str:
+        idx = int(match.group(1) or match.group(2))
+        if idx <= 0:
+            return match.group(0)
+        return shlex.quote(args[idx - 1])
+
+    substituted = _PLACEHOLDER_RE.sub(replace_placeholder, base_command)
+
+    if len(args) > max_index:
+        appended = " ".join(shlex.quote(a) for a in args[max_index:])
+        substituted = f"{substituted} {appended}".strip()
+
+    return substituted
+
+
+def resolve_command_name(commands: Dict[str, Dict[str, Any]], name_or_shortcut: str) -> str:
+    if name_or_shortcut in commands:
+        return name_or_shortcut
+
+    matched_names = [
+        name for name, entry in commands.items() if entry.get("shortcut") == name_or_shortcut
+    ]
+    if len(matched_names) == 1:
+        return matched_names[0]
+
+    raise SystemExit(f"Error: command '{name_or_shortcut}' not found")
+
+
+def cmd_run(args: argparse.Namespace) -> int:
+    path: Path = args.registry
+    commands = parse_registry(load_registry(path))
+    resolved_name = resolve_command_name(commands, args.name)
+
+    entry = commands[resolved_name]
+    base_command = entry["command"]
+    full_command = build_run_command(base_command, args.args)
+
+    cwd = entry.get("cwd")
+    if cwd:
+        run_cwd = str(Path(cwd).expanduser())
+    else:
+        run_cwd = None
+
+    env = os.environ.copy()
+    env.update(entry.get("env", {}))
+
+    if args.dry_run:
+        print(f"[{resolved_name}] {full_command}")
+        if run_cwd:
+            print(f"cwd={run_cwd}")
+        return 0
+
+    shell_exe = env.get("SHELL", "/bin/sh")
+    shell_name = Path(shell_exe).name
+
+    quoted_full_command = shlex.quote(full_command)
+    shell_command = full_command
+    if shell_name == "zsh":
+        shell_command = f"source ~/.zshrc >/dev/null 2>&1 || true; eval {quoted_full_command}"
+    elif shell_name == "bash":
+        shell_command = f"shopt -s expand_aliases; source ~/.bashrc >/dev/null 2>&1 || true; eval {quoted_full_command}"
+
+    print(f"> {full_command}", flush=True)
+    try:
+        completed = subprocess.run([shell_exe, "-lc", shell_command], cwd=run_cwd, env=env)
+    except FileNotFoundError as e:
+        raise SystemExit(f"Error: {e}")
+    return completed.returncode
+
+
+def make_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="tool", description="Simple command launcher")
+    parser.add_argument(
+        "--registry",
+        type=lambda p: Path(p).expanduser(),
+        default=default_registry_path(),
+        help="Path to registry JSON file (default: ~/.tool-registry.json or $TOOL_REGISTRY)",
+    )
+
+    subparsers = parser.add_subparsers(dest="subcommand", required=True)
+
+    p_init = subparsers.add_parser("init", help="Initialize an empty registry")
+    p_init.add_argument("--force", action="store_true", help="Overwrite existing registry")
+    p_init.set_defaults(func=cmd_init)
+
+    p_list = subparsers.add_parser("list", help="List commands")
+    p_list.set_defaults(func=cmd_list)
+
+    p_add = subparsers.add_parser("add", help="Add or update a command")
+    p_add.add_argument("name", help="Command name")
+    p_add.add_argument("--cwd", help="Working directory for this command")
+    p_add.add_argument("--desc", help="Description")
+    p_add.add_argument("--shortcut", help="Shortcut for quick run (e.g. 1, a)")
+    p_add.add_argument("--env", action="append", help="Environment variable KEY=VALUE (repeatable)")
+    p_add.add_argument("--cmd", help="Command string (quote it)")
+    p_add.add_argument("--force", action="store_true", help="Overwrite existing command")
+    p_add.add_argument("command", nargs="*", help="Command to execute (use -- before command)")
+    p_add.set_defaults(func=cmd_add)
+
+    p_remove = subparsers.add_parser("remove", help="Remove a command")
+    p_remove.add_argument("name", help="Command name")
+    p_remove.set_defaults(func=cmd_remove)
+
+    p_run = subparsers.add_parser("run", help="Run a command")
+    p_run.add_argument("name", help="Command name")
+    p_run.add_argument("--dry-run", action="store_true", help="Print command without executing")
+    p_run.add_argument("args", nargs="*", help="Extra args appended to command (use -- before args)")
+    p_run.set_defaults(func=cmd_run)
+
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = make_parser()
+    args = parser.parse_args(argv)
+    return args.func(args)
+
+
+if __name__ == "__main__":
+    sys.exit(main())

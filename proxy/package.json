@@ -1,0 +1,18 @@
+{
+  "name": "codexrouter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lightweight relay proxies between PI and Codex/Anthropic backends",
+  "type": "module",
+  "scripts": {
+    "start": "node codex.js",
+    "dev": "node --watch codex.js",
+    "start:claude": "node claude.js",
+    "dev:claude": "node --watch claude.js",
+    "start:forward": "node forward-proxy-server.js",
+    "dev:forward": "node --watch forward-proxy-server.js"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  }
+}

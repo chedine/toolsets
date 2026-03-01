@@ -1,0 +1,44 @@
+{
+  "load-nse": {
+    "command": "vmkt && python -m feed.nse_update",
+    "cwd": "/Users/chedine/d/m/Tradoor",
+    "description": "Loads eod bhavcopy into the database",
+    "shortcut": "1"
+  },
+  "etl-nse": {
+    "command": "vmkt && python -m etl.etl reload --parquet etl/full.parquet",
+    "cwd": "/Users/chedine/d/m/Tradoor",
+    "description": "Pre process NSE EOD data into parquet file",
+    "shortcut": "2"
+  },
+  "screen": {
+    "command": "vmkt && python breakout_screener.py --config config/breakout.yaml",
+    "cwd": "/Users/chedine/d/tmp/bt3_bo_eod",
+    "description": "Classify stocks as different stages",
+    "shortcut": "3"
+  },
+  "gen-img": {
+    "command": "vmkt && python generate_stage_charts.py --config config/breakout.yaml",
+    "cwd": "/Users/chedine/d/tmp/bt3_bo_eod",
+    "description": "Generate screenshot of screened stocks in stage folder",
+    "shortcut": "4"
+  },
+  "load-nse-intra": {
+    "command": "vmkt && intra-history fetch-all-equities --from $1 --to $2 --out-dir data/equities --symbols-file data/pull-list.txt --no-resume",
+    "cwd": "/Users/chedine/d/m/Tradoor/intra-history/",
+    "description": "Fetch 5 min candles for symbols in data/pull-list.txt. Run load-nse-intra 2023-01-01 2025-12-31"
+  },
+  "kite-login": {
+    "command": "vmkt && intra-history list-instruments --user-id VMY945 -p 'Whit3board3' --totp-key '2ZKWKWTGDCBUFY2UYFQFQ6HV2ZLGTL7X'",
+    "cwd": "/Users/chedine/d/m/Tradoor/intra-history/",
+    "description": "Fetch login token and cache , warms up for further kite hits"
+  },
+  "skill-list": {
+    "command": "npx skills ls -g",
+    "description": "List globally installed skills"
+  },
+  "skill-add": {
+    "command": "npx skills add $1 -g --all",
+    "description": "Install a skill globally for all supported agents: tool run skill-add /path/to/skill"
+  }
+}

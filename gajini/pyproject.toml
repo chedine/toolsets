@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mem"
+version = "0.1.0"
+description = "A minimal CLI note-taking system with a TUI browser"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "pyyaml>=6.0",
+    "python-frontmatter>=1.0",
+    "textual>=0.40",
+    "rich>=13.0",
+    "fastapi>=0.100",
+    "uvicorn>=0.20",
+    "python-multipart>=0.0.6",
+]
+
+[project.scripts]
+mem = "mem.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mem*"]

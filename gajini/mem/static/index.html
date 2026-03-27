@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mem</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/theme/material-darker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/css/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/yaml/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/mode/overlay.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/gfm/gfm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-size: 14px;
+  --line-height: 1.65;
+  --sidebar-width: 300px;
+  --fg: #e6edf3; --bg: #0d1117; --bg-surface: #161b22; --bg-hover: #1c2129;
+  --bg-selected: #1f6feb22; --border: #30363d; --border-light: #21262d;
+  --text: var(--fg); --text-muted: #7d8590; --text-dim: #484f58;
+  --accent: #58a6ff; --accent2: #3fb950;
+  --tag-bg: #21262d; --tag-text: #8b949e; --danger: #f85149;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body {
+  height:100%; background:var(--bg); color:var(--text);
+  font-family:var(--font-mono); font-size:var(--font-size);
+  line-height:var(--line-height); overflow:hidden;
+}
+.app { display:flex; flex-direction:column; height:100vh; overflow:hidden; }
+.main { display:flex; flex:1; min-height:0; overflow:hidden; }
+.hidden { display:none !important; }
+
+/* ── Sidebar + drag handle ───────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-width); min-width:180px; background:var(--bg-surface);
+  border-right:1px solid var(--border); display:flex;
+  flex-direction:column; transition: margin-left 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+.sidebar.collapsed { margin-left: calc(var(--sidebar-width) * -1); opacity:0; pointer-events:none; }
+.sidebar-header {
+  padding:10px 16px; font-weight:600; color:var(--text-muted);
+  font-size:12px; text-transform:uppercase; letter-spacing:0.5px;
+  border-bottom:1px solid var(--border-light);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.sidebar-header .count { color:var(--text-dim); font-weight:400; }
+.note-list {
+  flex:1; overflow-y:auto; scrollbar-width:thin;
+  scrollbar-color:var(--border) transparent;
+}
+.note-item {
+  padding:8px 16px; border-bottom:1px solid var(--border-light);
+  cursor:pointer; transition:background 0.1s;
+}
+.note-item:hover { background:var(--bg-hover); }
+.note-item.active { background:var(--bg-selected); border-left:2px solid var(--accent); }
+.note-item .title {
+  font-size:13px; font-weight:500; color:var(--text);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tag {
+  display:inline-block; padding:1px 6px; border-radius:3px;
+  font-size:10px; font-weight:500; border:1px solid transparent;
+}
+.tag[data-hue] { background:hsl(var(--tag-h),25%,18%); color:hsl(var(--tag-h),60%,70%); border-color:hsl(var(--tag-h),30%,28%); }
+.resize-handle {
+  width:4px; cursor:col-resize; background:transparent; flex-shrink:0;
+  transition:background 0.15s;
+}
+.resize-handle:hover, .resize-handle.dragging { background:var(--accent); }
+
+/* ── Content pane ────────────────────────────────────────── */
+.content { flex:1; display:flex; flex-direction:column; min-height:0; overflow:hidden; }
+
+.content-toolbar {
+  display:flex; align-items:center;
+  padding:6px 16px; background:var(--bg-surface);
+  border-bottom:1px solid var(--border); flex-shrink:0; min-height:36px;
+  font-size:12px; color:var(--text-muted); gap:8px;
+}
+.content-toolbar .tb-tags { display:flex; gap:4px; flex-shrink:0; }
+.content-toolbar .tb-name { flex:1; text-align:center; color:var(--text-dim); }
+.content-toolbar .tb-date { flex-shrink:0; }
+
+.viewer {
+  flex:1; min-height:0; overflow-y:auto; padding:24px 32px;
+  scrollbar-width:thin; scrollbar-color:var(--border) transparent;
+}
+.editor-wrap { flex:1; min-height:0; position:relative; }
+.editor-wrap .CodeMirror {
+  height:auto !important;
+  position:absolute; top:0; left:0; right:0; bottom:0;
+  font-family:var(--font-mono);
+  font-size:var(--font-size); line-height:var(--line-height);
+  background:var(--bg); padding:24px 32px;
+}
+.editor-wrap .CodeMirror-lines { padding:0; }
+.cm-inline-img {
+  display:block; max-width:60%; border-radius:6px;
+  border:1px solid var(--border); margin:4px 0;
+}
+.cm-inline-img-err {
+  display:block; color:var(--text-dim); font-size:11px;
+  font-style:italic; margin:4px 0;
+}
+
+.vim-cmdline {
+  position:absolute; bottom:0; left:0; right:0;
+  background:var(--bg-surface); border-top:1px solid var(--border);
+  padding:4px 16px; display:none; z-index:10;
+}
+.vim-cmdline.active { display:flex; align-items:center; }
+.vim-cmdline span { color:var(--accent); margin-right:4px; font-weight:600; }
+.vim-cmdline input {
+  flex:1; background:none; border:none; color:var(--text);
+  font-family:var(--font-mono); font-size:var(--font-size); outline:none;
+}
+
+/* ── Markdown rendered ───────────────────────────────────── */
+.md-body { color:var(--text); word-wrap:break-word; }
+.md-body h1,.md-body h2,.md-body h3,.md-body h4 { color:var(--text); margin:1.2em 0 0.5em; font-weight:600; line-height:1.3; }
+.md-body h1 { font-size:1.8em; border-bottom:1px solid var(--border); padding-bottom:0.3em; }
+.md-body h2 { font-size:1.4em; border-bottom:1px solid var(--border-light); padding-bottom:0.2em; }
+.md-body h3 { font-size:1.15em; }
+.md-body p { margin:0.8em 0; }
+.md-body a { color:var(--accent); text-decoration:none; }
+.md-body a:hover { text-decoration:underline; }
+.md-body strong { font-weight:600; }
+.md-body em { font-style:italic; color:var(--text-muted); }
+.md-body ul,.md-body ol { margin:0.5em 0; padding-left:1.8em; }
+.md-body li { margin:0.25em 0; }
+.md-body blockquote { border-left:3px solid var(--accent); padding:0.5em 1em; margin:0.8em 0; color:var(--text-muted); background:var(--bg-surface); border-radius:0 4px 4px 0; }
+.md-body code { background:var(--bg-surface); padding:2px 6px; border-radius:4px; font-size:0.9em; font-family:var(--font-mono); }
+.md-body pre { background:var(--bg-surface); border:1px solid var(--border-light); border-radius:6px; padding:12px 16px; overflow-x:auto; margin:0.8em 0; }
+.md-body pre code { background:none; padding:0; font-size:13px; line-height:1.5; }
+.md-body img { max-width:100%; border-radius:8px; border:1px solid var(--border); margin:0.8em 0; display:block; }
+.md-body table { border-collapse:collapse; width:100%; margin:0.8em 0; }
+.md-body th,.md-body td { border:1px solid var(--border); padding:6px 12px; text-align:left; }
+.md-body th { background:var(--bg-surface); font-weight:600; }
+.md-body hr { border:none; border-top:1px solid var(--border); margin:1.5em 0; }
+
+/* ── Bottom bar (search + shortcuts) ─────────────────────── */
+.bottom-bar {
+  display:flex; align-items:center; gap:10px;
+  padding:8px 16px; background:var(--bg-surface);
+  border-top:1px solid var(--border); flex-shrink:0; font-size:11px;
+}
+.bottom-bar .search-wrap {
+  display:flex; align-items:center; gap:6px; flex:1;
+}
+.bottom-bar .search-wrap .icon { color:var(--text-dim); }
+.bottom-bar input#search {
+  flex:1; background:var(--bg); border:1px solid var(--border);
+  border-radius:4px; padding:3px 10px; color:var(--text);
+  font-family:var(--font-mono); font-size:12px; outline:none;
+}
+.bottom-bar input#search:focus { border-color:var(--accent); }
+.bottom-bar input#search::placeholder { color:var(--text-dim); }
+.bottom-bar .shortcuts { display:flex; gap:10px; flex-shrink:0; color:var(--text-dim); }
+.bottom-bar kbd {
+  display:inline-block; background:var(--bg); border:1px solid var(--border);
+  border-radius:3px; padding:0 4px; font-size:10px;
+  font-family:var(--font-mono); color:var(--text-muted); margin-right:2px;
+}
+.bottom-bar .btn-icon {
+  background:none; border:none; color:var(--text-dim); cursor:pointer;
+  font-size:13px; padding:2px 4px;
+}
+.bottom-bar .btn-icon:hover { color:var(--text); }
+
+/* ── Settings modal ──────────────────────────────────────── */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:100; align-items:center; justify-content:center; }
+.modal-overlay.open { display:flex; }
+.modal { background:var(--bg-surface); border:1px solid var(--border); border-radius:8px; padding:24px; width:400px; max-width:90vw; }
+.modal h3 { margin-bottom:16px; font-size:16px; }
+.modal label { display:block; font-size:12px; color:var(--text-muted); margin:12px 0 4px; }
+.modal select, .modal input[type="range"], .modal input[type="text"] {
+  width:100%; background:var(--bg); border:1px solid var(--border);
+  border-radius:4px; color:var(--text); padding:4px 8px;
+  font-family:var(--font-mono); font-size:13px;
+}
+.modal .font-row { display:flex; gap:8px; }
+.modal .font-row select { flex:1; }
+.modal .font-row input[type="text"] { flex:1; }
+.modal .modal-footer { margin-top:20px; text-align:right; }
+.modal .btn { background:var(--bg); border:1px solid var(--border); border-radius:6px; color:var(--text-muted); padding:4px 12px; cursor:pointer; font-family:var(--font-mono); font-size:12px; }
+.modal .btn:hover { color:var(--text); border-color:var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="main">
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span>📝 Notes</span>
+        <span class="count" id="note-count">0</span>
+      </div>
+      <div class="note-list" id="note-list"></div>
+    </div>
+    <div class="resize-handle" id="resize-handle"></div>
+
+    <div class="content">
+      <div class="content-toolbar" id="toolbar"></div>
+      <div class="viewer" id="viewer"></div>
+      <div class="editor-wrap hidden" id="editor-wrap">
+        <div class="vim-cmdline" id="vim-cmd">
+          <span>:</span>
+          <input type="text" id="vim-cmd-input" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="search-wrap">
+      <span class="icon">🔍</span>
+      <input type="text" id="search" placeholder="Search… (text or #tag)" autocomplete="off" spellcheck="false">
+    </div>
+    <span id="status-msg">Loading…</span>
+    <div class="shortcuts" id="shortcuts"></div>
+    <button class="btn-icon" onclick="toggleSidebar()" title="Sidebar">☰</button>
+    <button class="btn-icon" onclick="openSettings()" title="Settings">⚙</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="settings-modal">
+  <div class="modal">
+    <h3>⚙ Settings</h3>
+    <label>Font Family (pick or type)</label>
+    <div class="font-row">
+      <select id="set-font-preset">
+        <option value="">— preset —</option>
+        <option value="'JetBrains Mono', monospace">JetBrains Mono</option>
+        <option value="'Fira Code', monospace">Fira Code</option>
+        <option value="'Cascadia Code', monospace">Cascadia Code</option>
+        <option value="'Source Code Pro', monospace">Source Code Pro</option>
+        <option value="'IBM Plex Mono', monospace">IBM Plex Mono</option>
+        <option value="monospace">System Monospace</option>
+      </select>
+      <input type="text" id="set-font-custom" placeholder="or type a font name…">
+    </div>
+    <label>Font Size: <span id="set-size-val">14</span>px</label>
+    <input type="range" id="set-size" min="11" max="22" step="1" value="14">
+    <label>Line Height: <span id="set-lh-val">1.65</span></label>
+    <input type="range" id="set-lh" min="1.2" max="2.2" step="0.05" value="1.65">
+    <label>Colors</label>
+    <div class="font-row">
+      <label style="margin:0;flex:1">Text <input type="color" id="set-fg" value="#e6edf3" style="width:100%;height:28px;padding:0;border:1px solid var(--border);background:var(--bg);cursor:pointer"></label>
+      <label style="margin:0;flex:1">Background <input type="color" id="set-bg" value="#0d1117" style="width:100%;height:28px;padding:0;border:1px solid var(--border);background:var(--bg);cursor:pointer"></label>
+    </div>
+    <div class="modal-footer"><button class="btn" onclick="closeSettings()">Done</button></div>
+  </div>
+</div>
+
+<script>
+let notes=[], currentNote=null, editing=false, cmEditor=null, currentIndex=-1, searchTimeout=null;
+const $=s=>document.querySelector(s);
+const esc=s=>{const d=document.createElement('div');d.textContent=s;return d.innerHTML};
+function tagHue(t){let h=0;for(let i=0;i<t.length;i++)h=(h*31+t.charCodeAt(i))%360;return h}
+function tagSpan(t){const h=tagHue(t);return`<span class="tag" data-hue style="--tag-h:${h}">#${esc(t)}</span>`}
+
+// ── Shortcut bar ───────────────────────────────────────────
+const VIEW_KEYS=[['E','Edit'],['N','New'],['D','Del'],['/','Search'],['B','Sidebar'],['↑↓','Nav']];
+const EDIT_KEYS=[['⌘S','Save'],['Esc',':wq :q']];
+function updateShortcutBar(){
+  $('#shortcuts').innerHTML=(editing?EDIT_KEYS:VIEW_KEYS).map(([k,l])=>`<span><kbd>${k}</kbd> ${l}</span>`).join('');
+}
+
+// ── API ────────────────────────────────────────────────────
+const api={
+  async listNotes(q='',tag=''){const p=new URLSearchParams();if(q)p.set('q',q);if(tag)p.set('tag',tag);return(await fetch('/api/notes?'+p)).json()},
+  async getNote(fn){return(await fetch('/api/notes/'+encodeURIComponent(fn))).json()},
+  async updateNote(fn,raw){return(await fetch('/api/notes/'+encodeURIComponent(fn),{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({raw})})).json()},
+  async createNote(content,tags=[],title=''){return(await fetch('/api/notes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content,tags,title})})).json()},
+  async deleteNote(fn){await fetch('/api/notes/'+encodeURIComponent(fn),{method:'DELETE'})},
+  async uploadImage(file){const f=new FormData();f.append('file',file);return(await fetch('/api/upload',{method:'POST',body:f})).json()},
+};
+
+// ── Markdown ───────────────────────────────────────────────
+marked.use({breaks:true,gfm:true,renderer:{
+  image(token){
+    let href=token.href||'',text=token.text||'',title=token.title||'';
+    if(href.startsWith('.assets/'))href='/assets/'+href.slice(8);
+    const t=title?` title="${esc(title)}"`:'';
+    return`<img src="${href}" alt="${esc(text)}"${t} loading="lazy">`;
+  },
+}});
+function renderMd(c){try{return marked.parse(c||'')}catch(e){return`<pre>${esc(c||'')}</pre>`}}
+
+// ── Search ─────────────────────────────────────────────────
+function doSearch(){
+  const raw=$('#search').value.trim();
+  let q='',tag='';
+  if(raw.startsWith('#'))tag=raw.slice(1).split(',').map(t=>t.trim()).filter(Boolean).join(',');
+  else q=raw;
+  api.listNotes(q,tag).then(data=>{
+    notes=data; renderNoteList();
+    setStatus(`${notes.length} note${notes.length!==1?'s':''}`);
+    if(notes.length){
+      const idx=notes.findIndex(n=>n.filename===currentNote?.filename);
+      if(idx===-1)selectNote(0); else{currentIndex=idx;renderNoteList();}
+    }
+  });
+}
+$('#search').addEventListener('input',()=>{clearTimeout(searchTimeout);searchTimeout=setTimeout(doSearch,200)});
+$('#search').addEventListener('keydown',e=>{if(e.key==='Enter'){doSearch();e.preventDefault()}if(e.key==='Escape')e.target.blur()});
+
+// ── Note list ──────────────────────────────────────────────
+function renderNoteList(){
+  const list=$('#note-list'); list.innerHTML='';
+  $('#note-count').textContent=notes.length;
+  notes.forEach((note,idx)=>{
+    const el=document.createElement('div');
+    el.className='note-item'+(currentIndex===idx?' active':'');
+    el.innerHTML=`<div class="title">${esc(note.title||note.preview||'(empty)')}</div>`;
+    el.addEventListener('click',()=>selectNote(idx));
+    list.appendChild(el);
+  });
+  const a=list.querySelector('.active');if(a)a.scrollIntoView({block:'nearest'});
+}
+
+// ── Select & view ──────────────────────────────────────────
+async function selectNote(idx){
+  if(editing||idx<0||idx>=notes.length)return;
+  currentIndex=idx;
+  try{currentNote=await api.getNote(notes[idx].filename)}
+  catch(e){currentNote={...notes[idx],content:notes[idx].preview||'',raw:''};}
+  showViewer(); renderNoteList();
+}
+function showViewer(){
+  if(!currentNote)return;
+  editing=false; updateShortcutBar();
+  $('#viewer').classList.remove('hidden');
+  $('#editor-wrap').classList.add('hidden');
+  destroyEditor();
+  $('#viewer').innerHTML=`<div class="md-body">${renderMd(currentNote.content)}</div>`;
+  $('#viewer').querySelectorAll('pre code').forEach(el=>hljs.highlightElement(el));
+  $('#viewer').scrollTop=0;
+  // Toolbar: tags | name | date
+  const date=new Date(currentNote.created);
+  const ds=date.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  const tags=(currentNote.tags||[]).map(t=>tagSpan(t)).join(' ');
+  $('#toolbar').innerHTML=`<div class="tb-tags">${tags}</div><div class="tb-name">${esc(currentNote.filename)}</div><div class="tb-date">${ds}</div>`;
+  setStatus(`📄 ${currentNote.filename}`);
+}
+
+// ── Editor ─────────────────────────────────────────────────
+function destroyEditor(){clearTimeout(imgTimer);imgWidgets.forEach(w=>w.clear());imgWidgets=[];if(cmEditor){cmEditor.toTextArea();cmEditor=null}}
+let imgWidgets = [];
+let imgTimer = null;
+
+function enterEdit(){
+  if(!currentNote||editing)return;
+  editing=true; updateShortcutBar();
+  $('#viewer').classList.add('hidden');
+  const wrap=$('#editor-wrap'); wrap.classList.remove('hidden');
+  const vimCmd=$('#vim-cmd');
+  wrap.innerHTML='<textarea id="cm-textarea"></textarea>';
+  wrap.appendChild(vimCmd);
+  $('#cm-textarea').value=currentNote.raw||'';
+  requestAnimationFrame(()=>{
+    cmEditor=CodeMirror.fromTextArea($('#cm-textarea'),{
+      mode:'gfm',theme:'material-darker',lineNumbers:false,
+      lineWrapping:true,autofocus:true,indentWithTabs:false,tabSize:2,
+    });
+    applyFontToEditor();
+    cmEditor.on('paste',handleImagePaste);
+    cmEditor.on('change',scheduleInlineImages);
+    renderInlineImages();
+    $('#toolbar').innerHTML=`<div class="tb-tags"></div><div class="tb-name">✏️ ${esc(currentNote.filename)}</div><div class="tb-date"></div>`;
+    setStatus(`✏️ Editing: ${currentNote.filename}`);
+  });
+}
+
+function scheduleInlineImages(){
+  clearTimeout(imgTimer);
+  imgTimer=setTimeout(renderInlineImages,400);
+}
+
+function renderInlineImages(){
+  if(!cmEditor)return;
+  // Clear old widgets
+  imgWidgets.forEach(w=>w.clear());
+  imgWidgets=[];
+  const lineCount=cmEditor.lineCount();
+  const imgRe=/!\[.*?\]\((.+?)\)/g;
+  for(let i=0;i<lineCount;i++){
+    const text=cmEditor.getLine(i);
+    let m;
+    while((m=imgRe.exec(text))!==null){
+      let src=m[1];
+      if(src.startsWith('.assets/'))src='/assets/'+src.slice(8);
+      const img=document.createElement('img');
+      img.src=src;
+      img.className='cm-inline-img';
+      img.onerror=function(){
+        this.replaceWith(Object.assign(document.createElement('span'),{
+          className:'cm-inline-img-err',textContent:'⚠ image not found: '+m[1]
+        }));
+      };
+      const w=cmEditor.addLineWidget(i,img,{coverGutter:false,noHScroll:true,above:false});
+      imgWidgets.push(w);
+    }
+  }
+}
+async function saveNote(){
+  if(!cmEditor||!currentNote)return;
+  const raw=cmEditor.getValue();
+  try{
+    if(currentNote.filename==='__new__'){
+      const parts=raw.split(/^---\s*$/m);
+      const body=parts.length>=3?parts.slice(2).join('---').trim():raw.trim();
+      if(!body){setStatus('Empty — discarded');cancelEdit();return}
+      const tagMatch=raw.match(/tags:\s*\n((?:\s*-\s*.+\n)*)/);
+      let tags=tagMatch?(tagMatch[1].match(/-\s*(.+)/g)||[]).map(t=>t.replace(/^-\s*/,'').trim()):[];
+      const titleMatch=raw.match(/title:\s*['"]*(.+?)['"]*\s*\n/);
+      const title=titleMatch?titleMatch[1]:'';
+      currentNote=await api.createNote(body,tags.length?tags:['inbox'],title);
+    } else {
+      currentNote=await api.updateNote(currentNote.filename,raw);
+    }
+    destroyEditor();showViewer();doSearch();
+    setStatus(`✓ Saved: ${currentNote.filename}`);
+  }catch(e){setStatus(`Error: ${e.message}`)}
+}
+function cancelEdit(){
+  if(!editing)return;
+  const wasNew=currentNote?.filename==='__new__';
+  destroyEditor(); editing=false;
+  if(wasNew){
+    currentNote=null;currentIndex=-1;
+    $('#editor-wrap').classList.add('hidden');
+    $('#viewer').classList.remove('hidden');
+    $('#viewer').innerHTML='';$('#toolbar').innerHTML='';
+    if(notes.length)selectNote(0);
+  } else showViewer();
+  updateShortcutBar();
+  setStatus(wasNew?'Discarded':'Cancelled');
+}
+function newNote(){
+  if(editing)return;
+  const now=new Date().toISOString();
+  currentNote={filename:'__new__',content:'',tags:['inbox'],
+    raw:`---\ntitle: ''\ntags:\n- inbox\ncreated: '${now}'\nmodified: '${now}'\n---\n\n`,
+    created:now,modified:now};
+  enterEdit();
+  requestAnimationFrame(()=>{if(cmEditor)cmEditor.setCursor(cmEditor.lastLine(),0)});
+}
+async function deleteCurrentNote(){
+  if(!currentNote||editing)return;
+  if(!confirm(`Delete ${currentNote.filename}?`))return;
+  try{await api.deleteNote(currentNote.filename);currentNote=null;currentIndex=-1;$('#viewer').innerHTML='';$('#toolbar').innerHTML='';doSearch();setStatus('Deleted')}
+  catch(e){setStatus(`Error: ${e.message}`)}
+}
+
+// ── Image paste ────────────────────────────────────────────
+async function handleImagePaste(cm,e){
+  const items=e.clipboardData?.items;if(!items)return;
+  for(const item of items){if(item.type.startsWith('image/')){
+    e.preventDefault();const file=item.getAsFile();setStatus('📎 Uploading…');
+    try{const r=await api.uploadImage(file);const sz=file.size>1024?`${(file.size/1024).toFixed(0)}KB`:`${file.size}B`;
+      cm.replaceSelection(`\n![📎 ${r.filename} (${sz})](${r.path})\n`);setStatus(`📎 ${r.filename}`)}
+    catch(e){setStatus(`Upload failed: ${e.message}`)} return;
+  }}
+}
+
+// ── Sidebar ────────────────────────────────────────────────
+function toggleSidebar(){$('#sidebar').classList.toggle('collapsed')}
+
+// ── Sidebar resize ─────────────────────────────────────────
+(function(){
+  const handle=$('#resize-handle'), sidebar=$('#sidebar');
+  let dragging=false, startX, startW;
+  handle.addEventListener('mousedown',e=>{
+    dragging=true; startX=e.clientX; startW=sidebar.offsetWidth;
+    handle.classList.add('dragging');
+    document.body.style.cursor='col-resize'; document.body.style.userSelect='none';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove',e=>{
+    if(!dragging)return;
+    const w=Math.max(180, Math.min(600, startW+(e.clientX-startX)));
+    sidebar.style.width=w+'px';
+    document.documentElement.style.setProperty('--sidebar-width',w+'px');
+  });
+  document.addEventListener('mouseup',()=>{
+    if(!dragging)return; dragging=false;
+    handle.classList.remove('dragging');
+    document.body.style.cursor=''; document.body.style.userSelect='';
+    const s=JSON.parse(localStorage.getItem('mem-settings')||'{}');
+    s.sidebarWidth=sidebar.offsetWidth;
+    localStorage.setItem('mem-settings',JSON.stringify(s));
+  });
+})();
+
+// ── Vim command line ───────────────────────────────────────
+function openVimCmd(){$('#vim-cmd').classList.add('active');$('#vim-cmd-input').value='';$('#vim-cmd-input').focus()}
+function closeVimCmd(){$('#vim-cmd').classList.remove('active');$('#vim-cmd-input').value='';if(cmEditor)cmEditor.focus()}
+function execVimCmd(raw){
+  const cmd=raw.trim();closeVimCmd();
+  switch(cmd){case'w':saveNote();break;case'wq':saveNote();break;case'q':case'q!':cancelEdit();break;default:setStatus(`Unknown: :${cmd}`)}
+}
+$('#vim-cmd-input').addEventListener('keydown',e=>{
+  if(e.key==='Enter'){e.preventDefault();execVimCmd(e.target.value)}
+  if(e.key==='Escape'){e.preventDefault();closeVimCmd()}
+});
+
+// ── Keys ───────────────────────────────────────────────────
+document.addEventListener('keydown',e=>{
+  const t=e.target;
+  if(t===$('#vim-cmd-input'))return;
+  if(e.key==='Escape'){
+    if(editing){e.preventDefault();openVimCmd();return}
+    if(t===$('#search')){t.blur();return}
+    return;
+  }
+  if(editing){if((e.metaKey||e.ctrlKey)&&e.key==='s'){e.preventDefault();saveNote()}return}
+  if(t===$('#search'))return;
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  switch(e.key){
+    case'e':e.preventDefault();enterEdit();break;
+    case'n':e.preventDefault();newNote();break;
+    case'd':e.preventDefault();deleteCurrentNote();break;
+    case'/':e.preventDefault();$('#search').focus();break;
+    case'b':e.preventDefault();toggleSidebar();break;
+    case'ArrowDown':e.preventDefault();if(notes.length)selectNote(Math.min(currentIndex+1,notes.length-1));break;
+    case'ArrowUp':e.preventDefault();if(notes.length)selectNote(Math.max(currentIndex-1,0));break;
+  }
+});
+
+// ── Settings ───────────────────────────────────────────────
+function getFont(){
+  const custom=$('#set-font-custom').value.trim();
+  if(custom)return custom.includes(',')?custom:`'${custom}', monospace`;
+  return $('#set-font-preset').value||"'JetBrains Mono', monospace";
+}
+function loadSettings(){
+  const s=JSON.parse(localStorage.getItem('mem-settings')||'{}');
+  if(s.font){
+    document.documentElement.style.setProperty('--font-mono',s.font);
+    const preset=$('#set-font-preset');
+    const opts=[...preset.options].map(o=>o.value);
+    if(opts.includes(s.font)){preset.value=s.font;$('#set-font-custom').value=''}
+    else{preset.value='';$('#set-font-custom').value=s.font}
+  }
+  if(s.size){document.documentElement.style.setProperty('--font-size',s.size+'px');$('#set-size').value=s.size;$('#set-size-val').textContent=s.size}
+  if(s.lh){document.documentElement.style.setProperty('--line-height',s.lh);$('#set-lh').value=s.lh;$('#set-lh-val').textContent=s.lh}
+  if(s.fg){document.documentElement.style.setProperty('--fg',s.fg);$('#set-fg').value=s.fg}
+  if(s.bg){document.documentElement.style.setProperty('--bg',s.bg);$('#set-bg').value=s.bg}
+  if(s.sidebarWidth){$('#sidebar').style.width=s.sidebarWidth+'px';document.documentElement.style.setProperty('--sidebar-width',s.sidebarWidth+'px')}
+}
+function saveSettings(){
+  const s={font:getFont(),size:parseInt($('#set-size').value),lh:parseFloat($('#set-lh').value),
+    fg:$('#set-fg').value,bg:$('#set-bg').value,
+    sidebarWidth:$('#sidebar').offsetWidth};
+  localStorage.setItem('mem-settings',JSON.stringify(s));
+  document.documentElement.style.setProperty('--font-mono',s.font);
+  document.documentElement.style.setProperty('--font-size',s.size+'px');
+  document.documentElement.style.setProperty('--line-height',s.lh);
+  document.documentElement.style.setProperty('--fg',s.fg);
+  document.documentElement.style.setProperty('--bg',s.bg);
+  if(cmEditor)applyFontToEditor();
+}
+function applyFontToEditor(){
+  if(!cmEditor)return;const el=cmEditor.getWrapperElement();const s=getComputedStyle(document.documentElement);
+  el.style.fontFamily=s.getPropertyValue('--font-mono');el.style.fontSize=s.getPropertyValue('--font-size');
+  el.style.lineHeight=s.getPropertyValue('--line-height');cmEditor.refresh();
+}
+function openSettings(){$('#settings-modal').classList.add('open')}
+function closeSettings(){$('#settings-modal').classList.remove('open')}
+$('#set-font-preset').addEventListener('change',()=>{$('#set-font-custom').value='';saveSettings()});
+$('#set-font-custom').addEventListener('input',()=>{$('#set-font-preset').value='';saveSettings()});
+['set-size','set-lh'].forEach(id=>{$(`#${id}`).addEventListener('input',()=>{$(`#${id}-val`).textContent=$(`#${id}`).value;saveSettings()})});
+$('#set-fg').addEventListener('input',saveSettings);
+$('#set-bg').addEventListener('input',saveSettings);
+$('#settings-modal').addEventListener('click',e=>{if(e.target===$('#settings-modal'))closeSettings()});
+
+function setStatus(msg){$('#status-msg').textContent=msg}
+
+// ── Init ───────────────────────────────────────────────────
+loadSettings(); updateShortcutBar();
+$('#search').value='#inbox'; doSearch();
+</script>
+</body>
+</html>

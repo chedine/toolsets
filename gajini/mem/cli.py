@@ -203,6 +203,31 @@ def config(ctx: click.Context) -> None:
 
 
 # ──────────────────────────────────────────────────────────────────
+# mem append <filename> <text>
+# ──────────────────────────────────────────────────────────────────
+@cli.command()
+@click.argument("filename")
+@click.argument("text")
+@click.pass_context
+def append(ctx: click.Context, filename: str, text: str) -> None:
+    """Append text to an existing note."""
+    cfg = ctx.obj["config"]
+    store = ctx.obj["store"]
+    path = cfg.memory_dir / filename
+    if not path.exists() and not filename.endswith(".md"):
+        path = cfg.memory_dir / f"{filename}.md"
+    if not path.exists():
+        click.echo(f"Note not found: {filename}", err=True)
+        sys.exit(1)
+
+    note = Note.load(path)
+    note.content = note.content.rstrip() + "\n\n" + text
+    note.save()
+    store.index_note(note)
+    click.echo(f"✓ Appended to {note.path.name}")
+
+
+# ──────────────────────────────────────────────────────────────────
 # mem edit <filename>
 # ──────────────────────────────────────────────────────────────────
 @cli.command()

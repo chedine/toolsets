@@ -3,7 +3,7 @@
   "name": "md-presenter",
   "displayName": "MD Presenter",
   "description": "Present a markdown file as slides — right-click any .md file and choose Present.",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "engines": { "vscode": "^1.74.0" },
   "categories": ["Other"],
   "main": "./src/extension.js",
@@ -12,6 +12,14 @@
       {
         "command": "mdPresenter.present",
         "title": "Present"
+      },
+      {
+        "command": "mdPresenter.toHtml",
+        "title": "Markdown: Convert to HTML"
+      },
+      {
+        "command": "mdPresenter.toPdf",
+        "title": "Markdown: Convert to PDF"
       }
     ],
     "menus": {
@@ -20,11 +28,31 @@
           "command": "mdPresenter.present",
           "when": "resourceExtname == .md",
           "group": "navigation"
+        },
+        {
+          "command": "mdPresenter.toHtml",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
+        },
+        {
+          "command": "mdPresenter.toPdf",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
         }
       ],
       "editor/context": [
         {
           "command": "mdPresenter.present",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
+        },
+        {
+          "command": "mdPresenter.toHtml",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
+        },
+        {
+          "command": "mdPresenter.toPdf",
           "when": "resourceExtname == .md",
           "group": "navigation"
         }

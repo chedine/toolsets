@@ -1,0 +1,715 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "ee458857c6b4bffe",
+    "title": "Cúram 8.1.2 Person Evidence Management",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/PersonEvidenceManagementGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "ee458857c6b4bffeca497c010bdf43dbcb9e8f08db4718fa8bf0e1f80cd9d740",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:19:16+00:00",
+    "page_count": 24,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/PersonEvidenceManagementGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Person Evidence Management",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000024",
+      "start_page": 1,
+      "end_page": 24
+    },
+    "summary": "This section documents Cúram 8.1.2 Person Evidence Management. It explains the person-centric evidence lifecycle for persons and prospect persons, including registration, in-edit vs active evidence, mandatory evidence blocking completion, verifications, evidence sharing, case-management validations, program eligibility use, participant search/merge, and person owner assignment. It also covers configuration in administration: enabling Person Evidence Management, setting up evidence sharing, verification rules (due/expiry dates, waivers, conditional rules), and smart navigator. The development section describes the PEC layer on top of PDC, the `PECCommonUtil.isInitialPersonRegistrationComplete` API, and how to extend PEC-to-PDC replication for custom evidence via replicator extenders, including implementation, Guice binding, module registration, and redeployment. The remaining pages are legal notices, copyright, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice for the document, stating that users should read the Notices section before using the information or product. Includes Merative US L.P. copyright dates (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introduces the Cúram Person Evidence Management edition and scope for versions 8.1–8.1.2. Covers the overview of person-centric evidence lifecycle, registering persons/prospects, activating and managing evidence, verifications, evidence sharing, and case-management validations. Notes mandatory evidence for person registration, in-edit vs active states, verification workflows (including due/expiry dates, waivers, conditional rules), and that evidence is stored centrally at the person level for use across benefits. Also includes configuration and development chapters plus notices."
+          },
+          {
+            "title": "Edition — pages 15-22",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000022",
+              "start_page": 15,
+              "end_page": 22
+            },
+            "summary": "This section explains Person Evidence Management (PEC): how it affects program eligibility, participant search, merging, and owner assignment; how to enable it and configure evidence sharing, verifications, waivers, and smart navigator behavior; and the technical PEC/PDC architecture, including PEC as a system-level case with synchronized default evidence types. It also covers checking initial registration completion and implementing custom PEC-to-PDC replicator extenders, with example code and deployment steps."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000022",
+          "start_page": 5,
+          "end_page": 22
+        },
+        "summary": "Overview of Cúram Person Evidence Management for 8.1–8.1.2. Explains person-centric evidence lifecycle, registering persons/prospects, mandatory evidence and incomplete registration, in-edit vs active states, verifications (due/expiry, waivers, conditional rules), evidence sharing, case-management validations, program eligibility, participant search/merge, and person owner assignment. Covers configuration in admin (enable PEC, sharing, verifications, smart navigator) and development topics: PEC/PDC architecture, initial registration completion check, and custom PEC-to-PDC replicator extenders with sample implementation and deployment."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section is a legal notice covering sample data usage, copyright license terms for sample programs, warranty/disclaimer language, the Merative privacy policy link, and trademark ownership notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX. It mainly helps confirm licensing, liability, and branding/trademark information rather than product functionality."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands on this page. Covers Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks, plus a note that other names may belong to others. Also includes a privacy policy link, a sample-program copyright license and “AS IS” warranty disclaimer, and a statement that sample names are fictitious."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000023",
+          "start_page": 23,
+          "end_page": 23
+        },
+        "summary": "Legal notice and usage terms for Merative publications: permits personal noncommercial or internal enterprise reproduction only if proprietary notices stay intact, forbids derivatives or external distribution without consent, and restricts export compliance. States no warranties, “AS IS” disclaimer, no patent license, and no endorsement or verification of non-Merative products or websites. Includes copyright and privacy-policy/trademark notice context for Merative-related materials."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This contents section outlines the manual’s structure for Person Evidence Management in Cúram 8.1.2. It lists sections on business overview, configuring the feature, and developing with person evidence. Key topics include registering persons and prospects, managing evidence and verifications, evidence sharing, validations, program eligibility, participant search and merge, and person owner. It also covers enabling the feature, configuring verification rules and smart navigator, plus technical guidance for custom evidence and replicator extenders."
+      },
+      {
+        "title": "1 Business overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Summary of Person Evidence Management",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Person Evidence Management provides person-level evidence lifecycle management for person or prospect person records, independent of benefit programs but usable in eligibility/entitlement calculations. It supports a dashboard with active and in-edit evidence lists, with evidence remaining in-edit until activated and mandatory verifications completed. The person home page adds actions and context panel links for items to verify and evidence in edit, plus icons for incidents, investigations, legal actions, issues, appeals, and the participant home page owner."
+          },
+          {
+            "title": "1.2 Registering persons and prospects",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Explains how registering a new person or prospect creates evidence in in-edit status and may generate evidence for addresses, birth/death details, contact preferences, gender, identifications, names, and phone numbers. Notes that bank accounts, email addresses, and relationships are also available by default after registration. For persons, addresses, birth/death details, gender, identifications, and names are mandatory, and incomplete registration blocks benefits from reaching delivery. Also notes that when converting a prospect person to a person, the most recent version of the prospect evidence is shown for update."
+          },
+          {
+            "title": "1.3 Registering prospect persons as persons",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "When a prospect person is registered as a person, the system shows the most recent prospect-person information to the caseworker for update during registration. If the prospect evidence is active, the latest corrected/successive version is shown; if it is still in-edit and unactivated, that in-edit version is shown; and if an activated record has an unapplied update, the version returned to in-edit is shown."
+          },
+          {
+            "title": "1.4 Managing person evidence",
+            "level": 2,
+            "children": [
+              {
+                "title": "Viewing evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how person evidence is viewed and managed in the evidence workspace. Caseworkers can use the active evidence list and in-edit list to view and act on evidence, with actions such as New Evidence, Open in New Tab, Apply Changes, Validate Changes, Approve Evidence, and Reject Evidence. Also mentions the evidence dashboard, which provides a summary of evidence for a person."
+              },
+              {
+                "title": "Creating evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains evidence lifecycle and verification handling. Evidence starts In-edit, becomes Active after required approvals/verification and manual activation, and can be modified, continued, validated, approved/rejected, or deleted (active evidence moves to Pending Deletion before removal). Notes that issues are created by advisor rulesets. Describes managing verifications at the person level by streamlining across benefits, centralizing verification data so it can be reused. Also covers viewing verification lists: Outstanding Verifications (Not Verified) and All Verifications (Verified and Not Verified)."
+              },
+              {
+                "title": "Modifying evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains evidence lifecycle actions in Cúram: creating evidence starts it as In-edit, then it can become Active after required approvals/verification and manual activation. Modifying active evidence creates a new in-edit version, and in-edit evidence can be continued via “Continue Editing…”. Covers deleting evidence for in-edit and active records, with active deletions becoming Pending Deletion until applied. Also notes validation/approval checks can block activation, plus brief mentions of issues generation and managing/viewing verifications."
+              },
+              {
+                "title": "Deleting evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains evidence deletion behavior in Cúram 8.1.2. Caseworkers can discard in-edit evidence whether it has an active version or not, and can delete active evidence. Deleting active evidence changes its status to “Pending Deletion” until changes are applied. The surrounding text also briefly covers evidence lifecycle concepts, validation/approval, issues created by advisor rulesets, and verification management and viewing."
+              },
+              {
+                "title": "Validating and approving or rejecting evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains evidence lifecycle validation and approval controls. In-edit evidence can be validated for correctness, and configurable approval checks can block activation until required approvals are provided. The section also situates this within evidence handling: creating evidence starts as In-edit, active evidence can be modified into a new in-edit version, and active or in-edit evidence can be discarded or deleted with pending-deletion behavior. Covers related issues creation via advisor rulesets and verification management/viewing pages."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "Describes person-level evidence management after registration. Evidence and verifications usually retain their prospect-person status unless updated during registration; new or corrected information becomes in-edit, while transferred verifications remain unchanged and re-verification is not required. Explains the evidence workspace where caseworkers can view active and in-edit evidence, use actions such as New Evidence, Open in New Tab, Apply Changes, Validate Changes, Approve Evidence, and Reject Evidence, and consult the evidence dashboard for a person-level evidence summary."
+          },
+          {
+            "title": "1.5 Issues",
+            "level": 2,
+            "children": [],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000012",
+              "start_page": 12,
+              "end_page": 12
+            },
+            "summary": "Issues are generated and shown for evidence when advisor rulesets run. This brief section sits between evidence lifecycle handling and verification management, and mainly introduces the issue concept without additional process detail."
+          },
+          {
+            "title": "1.6 Managing verifications",
+            "level": 2,
+            "children": [
+              {
+                "title": "Viewing verifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how caseworkers view verification lists in the evidence workspace. It distinguishes Outstanding Verifications, which shows only Not Verified items, from All Verifications, which shows both Verified and Not Verified items. This section sits within managing verifications and emphasizes person-level streamlined verification across benefits, so verified data can be reused without repeated submission."
+              },
+              {
+                "title": "Verifying evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how evidence verifications are handled for person evidence: outstanding verifications appear when proof is needed, caseworkers upload documentation to move status from Not Verified to Verified, and updated evidence may trigger re-verification. Also covers configurable due date and expiry date workflows, verification waivers to bypass mandatory checks temporarily, and conditional verification rules. Ends with a note on evidence sharing, where centrally managed person/prospect person evidence can be shared across cases if configured."
+              },
+              {
+                "title": "Due date processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains due date processing for person-evidence verifications. When a verification is created with configured due date information, a sample workflow starts and warns caseworkers as due dates for outstanding verifications approach so they can act. It sits alongside related verification features such as status changes, re-verification on updates, expiry date processing, verification waivers, and conditional verification rules."
+              },
+              {
+                "title": "Expiry date processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains expiry date processing for verifications on person evidence. It says the sample expiry date workflow starts when proof is added with expiry date information configured for a verification item utilization, helping caseworkers receive warnings before verification-item expiry dates and take action. It appears alongside related verification topics such as due date processing, re-verification, and waivers, and points readers to the Verification Guide for conditional verification rules."
+              },
+              {
+                "title": "Verification waivers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Describes verification waivers for person evidence: caseworkers can temporarily bypass mandatory verification requirements for a set period to activate evidence. The surrounding section also notes verification handling on person evidence, including outstanding verifications, re-verification when evidence is updated, due date warnings, and expiry date workflows."
+              },
+              {
+                "title": "Conditonal verification rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section briefly notes that conditional verification rules can be configured for person evidence verifications, alongside related verification features such as verification, re-verification, due date processing, expiry date processing, and waivers. It points readers to the Verification Guide for details."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000012",
+              "start_page": 12,
+              "end_page": 12
+            },
+            "summary": "Explains person-level verification management in Cúram: verification requirements are streamlined across benefits so evidence and documentation are confirmed once and reused, even after entitlement lapses. It also describes two evidence-workspace lists: Outstanding Verifications, showing only Not Verified items, and All Verifications, showing both Verified and Not Verified items."
+          },
+          {
+            "title": "1.7 Evidence sharing",
+            "level": 2,
+            "children": [],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "This section explains evidence sharing in Person Evidence Management. It says evidence is maintained centrally at the person level and can be used across benefits without needing to be copied to an integrated case. It also notes that evidence can optionally be configured to share between person/prospect person evidence and other cases, such as sharing from an application case to a person or prospect person record."
+          },
+          {
+            "title": "1.8 Case management validations",
+            "level": 2,
+            "children": [],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section explains case management validations during the period after person registration starts but before it is complete. It describes how Person Evidence Management blocks delivery-phase actions that depend on active, verified person evidence, such as activating cases, adding nominees, or selecting destination bank accounts/addresses when required data or nominee registration is incomplete. It also notes which work-in-progress business processes still function normally, such as creating application/integrated cases, adding members/nominees, communications, and person search, while preventing creation of new addresses, phone numbers, or email addresses during communication setup."
+          },
+          {
+            "title": "1.9 Program eligibility",
+            "level": 2,
+            "children": [],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "Explains that program eligibility is determined using evidence stored centrally at the person level rather than on an integrated case. Benefit programs can use this person-level evidence to assess whether an individual meets eligibility criteria, and caseworkers running an eligibility check in a case can optionally include evidence that is still in edit at the person level."
+          },
+          {
+            "title": "1.10 Searching participants",
+            "level": 2,
+            "children": [],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "Caseworkers can search for persons or prospect persons in Person Evidence Management only when their data has been verified and activated. The main exception is immediately after first registration, when no other data is available to locate the person. Once registration is complete, searches revert to using only activated, verified data."
+          },
+          {
+            "title": "1.11 Merging participants",
+            "level": 2,
+            "children": [],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "Explains how participant merges work in Person Evidence Management: person evidence in both in-edit and active status can be merged, and transferred evidence is recreated as in-edit. Evidence in Pending Deletion cannot be selected. Soft links for non-merged items like cases can be shown via the curam.participant.clientmerge.softLinksEnabled property. When a person is marked duplicate, in-edit evidence can’t be modified or discarded, active evidence can’t be modified or deleted, and no new person evidence can be created."
+          },
+          {
+            "title": "1.12 Person owner",
+            "level": 2,
+            "children": [],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "A person or prospect person is assigned a caseworker owner at registration, typically the registering caseworker by default. The owner is responsible for managing person and prospect evidence through in-edit, verify, and active stages, and may need allocation for tasks and notifications such as evidence approvals. The owner can be changed on the User Roles page, which also maintains the person/prospect person’s supervisor."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000016",
+          "start_page": 9,
+          "end_page": 16
+        },
+        "summary": "This section introduces Person Evidence Management as centralized, person-level evidence lifecycle management independent of benefits but reusable for eligibility/entitlement. It covers registration of persons/prospects, evidence creation and editing, verifications, issues, evidence sharing, case-management validations, program eligibility using person evidence, participant search and merge rules, and person owner assignment. It also explains dashboard/list actions, mandatory evidence/verification requirements, and how incomplete registration blocks delivery-stage processing."
+      },
+      {
+        "title": "2 Configuring Person Evidence Management",
+        "level": 1,
+        "children": [
+          {
+            "title": "2.1 Enabling Person Evidence Management",
+            "level": 2,
+            "children": [],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000017",
+              "start_page": 17,
+              "end_page": 17
+            },
+            "summary": "Explains how to enable Person Evidence Management in the administration application by setting system property `curam.pec.enabled` to `YES`. Notes it is an intentional agency decision and, once enabled, should generally not be disabled. Also briefly mentions that evidence sharing and verifications for Person Evidence Management are configured similarly to existing case-based setups, using the same source/target values for person evidence."
+          },
+          {
+            "title": "2.2 Configuring evidence sharing",
+            "level": 2,
+            "children": [],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000017",
+              "start_page": 17,
+              "end_page": 17
+            },
+            "summary": "Explains how evidence sharing is configured when Person Evidence Management is enabled. Evidence can be shared between a person and application, integrated, or product delivery cases using the same administration setup as existing person-level evidence. To share person evidence, administrators must create the appropriate sharing configurations. The source and target values remain: Source = Person, Source type = Participant Manager; Target = Person, Target type = Participant Manager. Refers readers to the Evidence Broker Guide for more detail."
+          },
+          {
+            "title": "2.3 Configuring verifications",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring verification requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how verification requirements are configured for Person Evidence Management using Non Case Data, including due date processing, expiry date processing, waivers, and conditional verification rules. Notes that the same mechanisms used for integrated cases apply, including sample workflow initiation when due date or expiry data is set. Also mentions the waiver property that can consider person evidence, and briefly introduces smart navigator setup for Person Evidence Management by updating the relevant system property."
+              },
+              {
+                "title": "Configuring verification due date processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how verification due date processing works for Person Evidence Management: it is configured the same way as for integrated cases, and the existing sample due date workflow starts when a verification is created if due date details are set on the verification requirement. Also notes related verification setup in this area, including expiry date processing, waivers, and conditional rules, plus a pointer to configure smart navigator for Person Evidence Management via the relevant system property."
+              },
+              {
+                "title": "Configuring verification expiry date processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how verification processing works for Person Evidence Management. It says verification requirements still use Non Case Data, and due date and expiry date workflows are configured the same way as for integrated cases, using the existing sample workflows when the relevant information is set. It also covers waivers for bypassing mandatory verifications, including product-delivery activation rules and the related system property, plus conditional verification rules. Ends with a note on configuring the smart navigator to point to Person Evidence Management."
+              },
+              {
+                "title": "Configuring verification waivers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how verification waivers work for Person Evidence Management. Waivers can bypass mandatory verifications for a defined period so evidence can be activated, including blocking product delivery activation unless a valid waiver covers the date and product ID. Notes that the system property `curam.miscapp.considerproductidforpecwaivers` also applies product-ID checks to person evidence. Briefly references related verification setup for requirements, due dates, expiry dates, conditional rules, and smart navigator configuration for Person Evidence Management."
+              },
+              {
+                "title": "Configuring conditional verification rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Describes how to configure conditional verification rules for Person Evidence Management, noting they are supported the same way as for integrated case evidence. The surrounding verification setup topics include requirements, due date processing, expiry date processing, and waivers, with Person Evidence using “Non Case Data” and existing sample workflows for due/expiry dates. Also points to the Cúram Verification Guide for more detail and begins the next topic on configuring Smart Navigator for Person Evidence Management."
+              }
+            ],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000017",
+              "start_page": 17,
+              "end_page": 17
+            },
+            "summary": "This section says Person Evidence Management verifications are configured in the administration application just like integrated case verifications. It points to the existing verification setup approach for person evidence, with related topics such as verification requirements, due date and expiry date processing, waivers, and conditional verification rules covered in the surrounding sections. It is mainly a brief bridge section indicating that the same verification configuration mechanisms apply to Person Evidence Management."
+          },
+          {
+            "title": "2.4 Configuring smart navigator for Person Evidence Management",
+            "level": 2,
+            "children": [],
+            "node_id": "n000042",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Explains how to configure smart navigator for Person Evidence Management by updating the relevant system property to point search targets to Person Evidence Management, as described in the Web Client Reference Manual. The page also notes related verification setup for Person Evidence Management: verification requirements use Non Case Data, due date and expiry date processing work like integrated case behavior, waivers can bypass mandatory verifications, and conditional verification rules are supported similarly to integrated case evidence."
+          }
+        ],
+        "node_id": "n000033",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000018",
+          "start_page": 17,
+          "end_page": 18
+        },
+        "summary": "Explains how to configure Person Evidence Management in the administration application: enable it by setting `curam.pec.enabled` to `YES` and treat that as a lasting agency decision. Covers evidence sharing using the same person-level source/target values as existing setups, verification configuration for person evidence (Non Case Data, due dates, expiry dates, waivers, and conditional rules), and how to point smart navigator search targets to Person Evidence Management via the relevant system property."
+      },
+      {
+        "title": "3 Developing with Person Evidence",
+        "level": 1,
+        "children": [
+          {
+            "title": "3.1 Technical overview",
+            "level": 2,
+            "children": [],
+            "node_id": "n000044",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "Technical overview of Person Evidence Management. It introduces a new system-level Person Evidence Case (PEC) layered on top of the existing Participant Data Case (PDC) to manage the full evidence lifecycle while keeping separate copies of person evidence in PEC and PDC. Tight synchronization preserves existing PDC dependencies, but only for the 10 default person evidence types; custom evidence types are not synchronized. The section also notes an API to check activation of mandatory registration evidence and describes replicator extenders for custom evidence replication."
+          },
+          {
+            "title": "3.2 Checking that the mandatory person registration evidence is active",
+            "level": 2,
+            "children": [],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "This section describes the external API `PECCommonUtil.isInitialPersonRegistrationComplete`, used to check whether a person’s mandatory registration evidence has been activated. It explains that this status applies to tombstone data, including Addresses, Birth and Death Details, Gender, Identifications, and Names. Open this section if you need to determine when a person’s initial registration evidence is considered complete or how to check activation programmatically."
+          },
+          {
+            "title": "3.3 Implementing person evidence case to participant data case replicator extenders for custom evidence",
+            "level": 2,
+            "children": [
+              {
+                "title": "Example: Implementing a replicator extender",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Step 1: Replicator extender interface example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Shows how to extend replicator behavior for a PDC evidence type using a replicator extender interface. It defines the `PECEmailAddressReplicatorExtender` interface and `assignEvidenceDetails`, then demonstrates a custom implementation that copies a `subscribedInd` attribute from PEC to PDC evidence. It also explains wiring the implementation with a Guice binding and registering the custom module in the `ModuleClassName` database table via `ModuleClassName.DMX`."
+                  },
+                  {
+                    "title": "Step 2: Replicator extender implementation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Shows how to implement a PDC evidence replicator extender. It explains customizing the `assignEvidenceDetails` method in a new class that implements `PECEmailAddressReplicatorExtender`, with an example copying a custom `subscribedInd` attribute from PEC to PDC via `DynamicEvidenceTypeConverter`. It also covers wiring the implementation with a Guice binding in a custom module and registering that module in `ModuleClassName.DMX` so it is loaded by the system."
+                  },
+                  {
+                    "title": "Step 3: Inject the implementation using Guice",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how to wire a custom replicator extender implementation with Guice. After defining a class that implements the PDC evidence extender interface, you must bind the interface to the custom class in a Guice module, e.g. `binder().bind(PECEmailAddressReplicatorExtender.class).to(PECEmailAddressReplicatorExtenderSampleImpl.class);`. This section is part of the evidence replication customization flow and leads into adding the custom module to the database via `ModuleClassName.DMX`."
+                  },
+                  {
+                    "title": "Step 4: Inserting the custom module into the database",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how to register a custom Guice module for a Person Evidence replicator extender. The section notes that after implementing the extender and binding it in a custom module, you must add the module class name to the ModuleClassName database table by inserting an extra row in the ModuleClassName.DMX file. Useful for understanding the final deployment step needed to activate a custom evidence replication implementation."
+                  },
+                  {
+                    "title": "Step 5: Redeploy the application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000024",
+                      "start_page": 22,
+                      "end_page": 24
+                    },
+                    "summary": "Redeploy the application so the replication process invokes extenders when mapping PEC evidence to PDC evidence, ensuring custom attributes are set. This section is a brief deployment note, followed by Merative legal notices, copyright/license terms, sample code disclaimers, privacy policy link, and trademarks."
+                  }
+                ],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000024",
+                  "start_page": 20,
+                  "end_page": 24
+                },
+                "summary": "Explains how to customize PEC-to-PDC evidence replication with a replicator extender. It shows the `PECEmailAddressReplicatorExtender` interface, implementing `assignEvidenceDetails` in a custom class to copy a custom `subscribedInd` attribute, binding the implementation in Guice, adding the custom module to `ModuleClassName.DMX`, and redeploying so the extender is invoked during replication. The remaining pages are legal notices, sample-code disclaimers, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000046",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000024",
+              "start_page": 19,
+              "end_page": 24
+            },
+            "summary": "Explains how to extend PEC-to-PDC replication for custom evidence attributes. It says PEC automatically syncs the 10 default evidence types, but custom PDC fields must be handled with a replicator extender such as `PECEmailAddressReplicatorExtender`. The example shows implementing `assignEvidenceDetails` to copy a custom `subscribedInd` value, binding the class with Guice, adding the module to `ModuleClassName.DMX`, and redeploying so the extender runs during replication. Remaining pages are legal notices and sample-code disclaimers."
+          }
+        ],
+        "node_id": "n000043",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000024",
+          "start_page": 19,
+          "end_page": 24
+        },
+        "summary": "Introduces Person Evidence Management and the PEC layer on top of PDC: PEC is a system-level, caseworker-invisible case that stores the full evidence lifecycle in separate copies from PDC, with synchronization only for the 10 default person evidence types. Explains the API `PECCommonUtil.isInitialPersonRegistrationComplete` for checking whether mandatory registration tombstone evidence is active. Also covers extending PEC-to-PDC replication for custom evidence via replicator extenders, including implementation, Guice binding, module registration, and redeployment."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

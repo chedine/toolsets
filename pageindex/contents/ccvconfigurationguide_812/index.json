@@ -1,0 +1,293 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "defee79a2270f3a2",
+    "title": "Cúram 8.1.2 Citizen Context Viewer Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CCVConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "defee79a2270f3a2661aa40bd2374e030176a04c7cd5854e0691376889c264bf",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:27:10+00:00",
+    "page_count": 24,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CCVConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Citizen Context Viewer Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000024",
+      "start_page": 1,
+      "end_page": 24
+    },
+    "summary": "Front matter and chapter 1 of the Cúram 8.1.2 Citizen Context Viewer Configuration Guide. It introduces CCV configuration for displaying client information in care and protection, communities, dealings, family, and multidisciplinary teams, and explains that most settings are dynamic application properties integrated with Cúram security and case settings. The guide describes the administrator’s role, dependencies between settings, and how to configure supported case types, case/service plan/social enterprise folder types, statuses, and participant roles, plus community and dealings display options. It includes a summary table of CCV application properties. The remainder is legal front matter: a note to read Notices, edition applicability for Cúram 8.1/8.1.1/8.1.2, contents, and the Merative notices, privacy policy, and trademarks pages.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note advising readers to review the Notices section on page 23 before using the product information. Includes Merative US L.P. copyright dates 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory “Edition” front matter for the CCV guide. It states this document applies to Cúram 8.1, 8.1.1, and 8.1.2, followed by copyright/trademark notices and a contents page. The main section begins the CCV configuration guide, explaining what the Citizen Context Viewer shows, its dependency on application properties and security, and the roles of the administrator. It starts detailed configuration topics for care/protection, community, dealings, family, multidisciplinary teams, and case display settings, with many property names and defaults."
+          },
+          {
+            "title": "Edition — pages 15-22",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000022",
+              "start_page": 15,
+              "end_page": 22
+            },
+            "summary": "Cúram CCV configuration for care-and-protection items: product delivery cases, integrated cases, service plans, and social enterprise folders. Explains application properties controlling which items display by type, status, and participant role, often with “show all” flags plus comma-delimited code lists. Notes cumulative filtering: an item appears only if it matches all configured criteria. Includes default values and code-table references (CaseStatus, CaseParticipantRoleType, ProductCategory, ServicePlanType, SocialEnterpriseFolderType), plus a summary table of all CCV application properties."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000022",
+          "start_page": 5,
+          "end_page": 22
+        },
+        "summary": "Front matter and the main CCV configuration guide. It applies to Cúram 8.1/8.1.1/8.1.2 and introduces the Citizen Context Viewer, its dynamic application-property based configuration, security integration, and administrator responsibilities. The section then explains CCV settings for care/protection information (supported case types, types/statuses/participant roles), communities, dealings, family, and multidisciplinary teams, and ends with a summary table of CCV application properties."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section is a legal/footer page covering sample data disclaimers, copyright and licensing terms for sample programs, the Merative privacy policy link, and trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX. It states sample code is provided “as is” without warranty and limits liability, and notes examples use fictitious names."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Lists legal notices for fictitious examples, sample code licensing, privacy policy link, and trademark attributions. It states sample programs may be copied/modified/distributed under the Merative Client Agreement, are provided “AS IS” without warranty, and limits Merative liability. It also identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a generic notice that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000023",
+          "start_page": 23,
+          "end_page": 23
+        },
+        "summary": "Merative legal notice page covering publication reuse permissions and restrictions. It allows personal noncommercial copying with proprietary notices preserved, and limited enterprise use, but forbids derivative works or external distribution without consent. It disclaims warranties, limits rights and liability, and notes export-law compliance. It also states Merative may withdraw permissions, gives patent and third-party product disclaimers, and says external website references are not endorsements."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter (Note, Edition), then Chapter 1 “Configuring the Citizen Context Viewer” with subsections on configuring care and protection, community, dealings, family, multidisciplinary team, displayed cases, service plans, social enterprise folders, and a summary of CCV application properties. Also includes Notices, Privacy policy, and Trademarks. Useful as a navigation index rather than substantive content."
+      },
+      {
+        "title": "1 Configuring the Citizen Context Viewer",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring care and protection information",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "This section explains how to configure care and protection information shown in the CCV. It covers interdependent application properties, how some settings override others, and security controls for viewing case, service plan, and client information. The main focus is the case types supported in the CCV via `curam.ise.ccv.case.types`, which must be configured for any care and protection data to appear. It also points to related settings for displayed cases, product delivery cases, service plans, and social enterprise folders."
+          },
+          {
+            "title": "1.2 Configuring community information",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "This section explains the communities component of the Citizen Context Viewer (CCV). It shows communities a client belongs to, classified by the related benefit or service. Unlike other CCV components, community display requires development customization to map an organization’s specific benefits and services to communities, and those customizations are not covered here."
+          },
+          {
+            "title": "1.3 Configuring dealings information",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000012",
+              "start_page": 12,
+              "end_page": 12
+            },
+            "summary": "This section explains CCV dealings configuration. It describes the dealings component, which shows client interactions such as payments and communications from the InteractionType code table. It then covers application properties that control what interactions appear, emphasizing their precedence: displaying all interactions overrides the other settings, and the number of interactions shown overrides the date-range setting. It begins with curam.ise.ccv.interactions.displayall and notes its default is NO."
+          },
+          {
+            "title": "1.4 Configuring family information",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "Describes CCV family information configuration. The family component shows the client’s relationships to family members, linked to concern role relationship records from the person home page. It covers `curam.ise.ccv.familymembers.current`, which defaults to YES and restricts display to current relationships based on the absence of an end date, and `curam.ise.ccv.display.prospects`, which defaults to NO and controls whether prospect persons are shown."
+          },
+          {
+            "title": "1.5 Configuring multidisciplinary team information",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "This section explains that the multidisciplinary team component shows team members assigned to any social enterprise folders the CCV client belongs to. Unlike earlier CCV settings, these configuration options are integrated with social enterprise folders rather than controlled by CCV application properties. Open this section if you need to understand how multidisciplinary team information is sourced and configured in CCV."
+          },
+          {
+            "title": "1.6 Configuring the cases displayed",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring product delivery cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000015",
+                  "start_page": 14,
+                  "end_page": 15
+                },
+                "summary": "Explains how to configure which product delivery cases appear in the Citizen Context Viewer using CCV application properties. Covers three filter dimensions: case type, case status, and participant role, which are cumulative, so a case must match all configured criteria. Describes the “show all” vs. specific-list properties for case types and statuses, including defaults and code-table-based configuration. Also begins the participant role settings, with “show all” defaulting to NO and potentially adding many cases."
+              },
+              {
+                "title": "Configuring integrated cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains how CCV integrated case visibility is configured through cumulative application properties for case types, statuses, and participant roles. If a “show all” property is set to NO, the corresponding comma-delimited code list must be configured or no cases appear. Covers integrated case types in ProductCategory, with default show-all = YES, and begins integrated case statuses, where show-all defaults to NO. Includes an example showing all three settings must match for a case to display."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000016",
+              "start_page": 14,
+              "end_page": 16
+            },
+            "summary": "Explains how to configure which cases appear in the Citizen Context Viewer using cumulative application properties: case type, case status, and participant role must all match. Covers product delivery case settings, including show-all vs specific code lists for types, statuses, and roles; defaults include type show-all = YES, status show-all = NO, role show-all = NO. Then introduces integrated case settings, with similar type/status/role controls and show-all = YES for types, NO for statuses, using code tables like ProductCategory and CaseStatus."
+          },
+          {
+            "title": "1.7 Configuring the service plans displayed",
+            "level": 2,
+            "children": [],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000018",
+              "start_page": 17,
+              "end_page": 18
+            },
+            "summary": "This section explains how to configure which service plans appear in the Citizen Context Viewer (CCV). Display depends cumulatively on service plan type, status, and participant role, so all matching properties must align. It covers `curam.ise.ccv.case.types.showall.serviceplan` and `curam.ise.ccv.case.types.serviceplans` for type filtering, and `curam.ise.ccv.case.statuses.showall.serviceplan` and `curam.ise.ccv.case.statuses.serviceplan` for status filtering. It also lists CaseStatus codes and defaults, noting the service plan types code table is customized."
+          },
+          {
+            "title": "1.8 Configuring the social enterprise folders displayed",
+            "level": 2,
+            "children": [],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000020",
+              "start_page": 19,
+              "end_page": 20
+            },
+            "summary": "Explains how to configure which social enterprise folders (SEFs) appear in the Citizen Context Viewer using cumulative application properties for SEF type, status, and participant role. By default, all SEF types, statuses, and participant roles are shown; each can be narrowed with corresponding “showall” and code-list properties. Notes supported SEF statuses (CS closed, C4 open) and participant roles (member, meeting attendee, incident reporter, incident witness, correspondent), with examples showing all relevant criteria must match for display."
+          },
+          {
+            "title": "1.9 Summary of CCV Application Properties",
+            "level": 2,
+            "children": [],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000024",
+              "start_page": 21,
+              "end_page": 24
+            },
+            "summary": "Summarizes the CCV application properties table for Cúram Citizen Context Viewer. Covers flags controlling what CCV displays: current family/community members, prospect persons, interactions shown and their count/date range, and care and protection case filtering for product delivery, service plans, integrated cases, and social enterprise folders by type, status, and participant roles. The rest of the pages are legal notices, copyright/license text, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000024",
+          "start_page": 9,
+          "end_page": 24
+        },
+        "summary": "Introduces CCV configuration for client information shown in the Citizen Context Viewer, including care and protection, communities, dealings, family, multidisciplinary teams, and security integration. Explains that dynamic application properties control display, with some settings overriding or depending on others. Key topics include supported case types, type/status/participant-role filters for cases, service plans, and social enterprise folders, plus community and interaction settings. The section also summarizes all CCV application properties and includes legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

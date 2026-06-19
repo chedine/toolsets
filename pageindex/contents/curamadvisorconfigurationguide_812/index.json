@@ -1,0 +1,417 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "63ea3514164edeb1",
+    "title": "Cúram 8.1.2 Advisor Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramAdvisorConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "63ea3514164edeb102da76eccde30e9bfcd46c1d8ce89785e9a9fde8dc9aadbf",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:56:14+00:00",
+    "page_count": 26,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramAdvisorConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Advisor Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000026",
+      "start_page": 1,
+      "end_page": 26
+    },
+    "summary": "This section is the front matter plus Chapter 1 of the Cúram 8.1.2 Advisor Configuration Guide. It explains how to configure Cúram Advisor for context-sensitive advice: define advice contexts, add page IDs and page parameters, and assign CER rule sets. It describes the required rule class structure for advisor rule sets, including AbstractAdviceContext and AbstractAdviceItem, and the key attributes such as advice, adviceText, showAdvice, category, priority, and status. It also covers displaying advice text and links, managing evidence rule object conversion/propagation for active/in-edit succession sets, and includes a worked SpouseRuleSet example that shows advice on the Person home page when a person is married and has no spouse relationship. The section also contains the document contents and legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note stating that before using the information and the supported product, readers should review the Notices section on page 25. Includes Merative US L.P. copyright dates 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section introduces Cúram Advisor configuration. It covers defining advice contexts and page parameters, assigning rule sets, creating advisor rule sets in CER, and the required rule classes/attributes for advice context and advice items. It also explains optional advice item attributes like case, evidence, and expiry handling, plus how to create display parameters, links, and localized advice text in application resources. Useful if you need setup steps for context-sensitive advice generation and display."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Explains Advisor’s active/in-edit succession set evidence handling and how CER converts evidence rows into rule objects, including configuration requirements (ROPT2011, evidence/ruleset mappings) and error checks. Covers timeline vs non-timeline attribute population, parent/child related succession set relationships, inherited rule attributes, and access restrictions for readall/match. Ends with a worked example configuring a SpouseRuleSet and advice context/text to show “Capture the spouse relationship of this person” when a person is married and has no spouse relationship."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000024",
+          "start_page": 5,
+          "end_page": 24
+        },
+        "summary": "This section explains how to configure Cúram Advisor. It covers creating advice contexts, adding page IDs and page parameters, assigning CER rule sets, and defining advisor rule classes/attributes for advice contexts and advice items. It also describes optional advice item fields, display parameters, links, and localized advice text in application resources. Later pages explain active/in-edit succession set evidence conversion and propagation, including CER rule object mapping, configuration checks, and timeline behavior, followed by a worked SpouseRuleSet example that displays advice on the Person home page when someone is married and has no spouse relationship."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "This section is a legal notice page covering sample data disclaimers, copyright/license terms for sample programs, warranty/liability limitations, the Merative privacy policy link, and trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. It mainly serves as a reference for usage rights, privacy policy access, and brand ownership details."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "States that example names in the document are fictitious and that sample programs may be copied, modified, and distributed under the Merative Client Agreement, but are provided “AS IS” without warranty. Includes the Merative privacy policy link. Lists trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes other names may be trademarks of their owners."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000025",
+          "end_unit_id": "p000025",
+          "start_page": 25,
+          "end_page": 25
+        },
+        "summary": "Legal notice page for the publication. Covers permitted personal and enterprise use, requirement to preserve proprietary notices, and prohibition on derivative works or redistribution outside allowed terms without Merative consent. States no additional rights are granted, permissions may be withdrawn, and export laws must be followed. Includes strong “AS IS” warranty/liability disclaimer, patent notice, disclaimer for non-Merative products and external websites, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter (Note, Edition, Notices, Privacy policy, Trademarks) and Chapter 1, “Configuring Advisor,” with subsections on configuring an advice context, creating an advisor rule set, managing evidence rule objects, and an example Advisor configuration. Includes page references for navigation."
+      },
+      {
+        "title": "1 Configuring Advisor",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring an advice context",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains how to configure a Cúram Advisor advice context so context-sensitive advice appears on relevant application pages. Covers defining a new advice context in the Administration Application, naming it as a logical identifier, and adding application pages as advice context keys using PAGE_ID values from UIM files. Notes that the key type must be set to Page and is not customizable for compliance reasons."
+          },
+          {
+            "title": "1.2 Creating an advisor rule set",
+            "level": 2,
+            "children": [
+              {
+                "title": "Advice context rule classes and rule attributes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Create an advice context rule class",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Rule attributes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000014",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "This section explains rule attributes for Advisor configuration. It identifies the mandatory advice attribute on advice context rule classes as a list of advice item rule objects, and describes additional page-parameter attributes defined as NumberParameter fields matching page parameter names so the infrastructure can populate them at runtime. It also notes that advice items are created by defining an advice item rule class and adding instances to the advice list on the advice context."
+                      }
+                    ],
+                    "node_id": "n000013",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "This section explains how to create the root advice context rule class for an advisor rule set. It states that each advice rule set must contain a single rule class inheriting from Abstract Advice Context, and that this class produces the advice items shown at the case level. It also ties the class to context-sensitive advice by using page IDs and page parameters, and notes that rule sets must be created first and then assigned to an advice context."
+                  }
+                ],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains the advisor rule-set structure for advice context. It states that each advice rule set must contain one root rule class inheriting from Abstract Advice Context, and that this class produces the advice items shown at the case level. It also covers rule attributes for context-sensitive advice, including adding page IDs and page parameters (for example, concernRoleID) so advice can be narrowed to a specific page instance. It notes that rule sets must be created first, then assigned to an advice context."
+              },
+              {
+                "title": "Advice item rule class and rule attributes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating an advice item rule class",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Rule attributes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000017",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Describes mandatory and optional rule attributes for advice item rule classes in Cúram 8.1.2. Mandatory attributes are adviceText (links to the advice text property entry), showAdvice (Boolean condition for displaying the advice), category (issue or reminder), priority (display order), and status (pending or complete). Introduces that the section follows the requirement that the rule class inherit from AbstractAdviceItem in CoreAdvisorRuleSet."
+                      }
+                    ],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000012",
+                      "start_page": 11,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to create an advice item rule class in CER Editor for Advisor. The class must inherit from AbstractAdviceItem in CoreAdvisorRuleSet and is added to an advice context’s advice list. It defines mandatory attributes adviceText (property entry name for displayed text), showAdvice (Boolean display condition), category (issue/reminder), priority (list order), and status (pending/complete). Mentions an optional attributes table follows, but details are not shown here."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Explains how to create an advice item rule class in CER Editor for Advisor. The class must inherit from AbstractAdviceItem in CoreAdvisorRuleSet and be added to an advice context’s advice list. Mandatory attributes are adviceText (property entry name for displayed text), showAdvice (Boolean display condition), category (issue/reminder), priority (list order), and status (pending/complete). The section also notes that optional advice item rule attributes exist, but their details are not shown here."
+              },
+              {
+                "title": "Creating a parameter to be displayed in the advice text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to add dynamic parameters to advice text in Advisor. To display a parameter, create a rule attribute on the AdviceItem in CER Editor and set its type to StringParameter, NumberParameter, or DateParameter from CoreAdvisorRuleSet. The section also notes how to create advice-text links by defining a link rule class and adding an AdviceItem attribute based on it; Advisor automatically converts AbstractLink-based attributes into links."
+              },
+              {
+                "title": "Creating a link to be displayed in the advice text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to display a link in advice text. To do this, create a link rule class, then add an attribute to the advice item rule class based on that link rule class. Advisor automatically processes advice item attributes derived from AbstractLink and converts them into links."
+              },
+              {
+                "title": "Creating the advice text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains how to create advice text for an advice item. It shows that advice text is stored as a localized property file entry in Application Resources, under Intelligent Evidence Gathering in Application Administration. You create a resource property named var using the Advice Context name, then add a <adviceText> property whose value matches the AdviceItem rule class’s adviceText attribute. The text entered is the localized text displayed in the application."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000014",
+              "start_page": 10,
+              "end_page": 14
+            },
+            "summary": "Explains how to create an Advisor rule set and its CER rule classes. Covers the root advice context class (inherits AbstractAdviceContext, has an advice list and page-parameter attributes), advice item classes (inherit AbstractAdviceItem with mandatory adviceText, showAdvice, category, priority, status plus optional case/evidence/expiry attributes), parameter and link display in advice text, and creating localized advice text resources in Application Resources. Also notes rule sets must be created first, then assigned to an advice context."
+          },
+          {
+            "title": "1.3 Managing evidence rule objects",
+            "level": 2,
+            "children": [
+              {
+                "title": "Active/in-edit succession set rule objects",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how Advisor handles active/in-edit evidence for rules: the Active/In-Edit Succession Set Rule Object Converter turns a succession set of evidence rows into a single rule object, whether records are active or in-edit. The paired Propagator notifies the Dependency Manager when evidence changes so previously calculated advice can be recalculated. Notes distinctions from the active-only versions and that the converter also populates timeline/non-timeline attributes and parent/child rule object relationships."
+              },
+              {
+                "title": "Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Defines the configuration format for the Active/InEdit Succession Set converter/propagator. It requires propagator type ROPT2011, evidence entries matching exact EvidenceType codes, and nested ruleset targets with rule set name plus optional ruleclass. Configurations are cumulative across multiple ROPT2011 entries. Includes a sample XML configuration and lists detected errors: missing evidence type, unknown evidence type, invalid target rule class inheritance, and rule class mapped from multiple source evidence types."
+              },
+              {
+                "title": "Conversion processing",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Rule attributes inherited from ActiveInEditSuccessionSet",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains the rule attributes inherited by any rule class extending PropagatorRuleSet.ActiveInEditSuccessionSet, including successionID, caseID, description, exists, and evidenceDescriptorID. Describes how these attributes are populated and used to identify rule objects and track active evidence over time. Also states access restrictions for CER <readall>/<match>: only caseID may be retrieved, or a runtime exception occurs; suggests using <filter> for narrowing results after matching on caseID."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000018",
+                  "start_page": 17,
+                  "end_page": 18
+                },
+                "summary": "Explains how the Active/In-Edit Succession Set Rule Object Converter populates rule objects from latest evidence in a succession set. Covers mapping evidence fields to identically named rule attributes, handling timeline vs non-timeline attributes, and automatic population of related parent/child succession set rule objects. Also details inherited attributes on ActiveInEditSuccessionSet rules—successionID, caseID, description, exists, evidenceDescriptorID—and notes CER access limits: <readall>/<match> may retrieve only caseID, with other attributes causing a runtime exception."
+              },
+              {
+                "title": "Propagation processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000020",
+                  "start_page": 19,
+                  "end_page": 20
+                },
+                "summary": "Explains propagation processing for Active/In-Edit Succession Set Rule Objects. When evidence is created, edited, or canceled in the evidence workspace, the Propagator listens to Evidence Controller events, retrieves the related rule object, and updates it in memory, then notifies the Dependency Manager so advice can be recalculated. Dependencies are tracked at the case level via caseID. Includes an income evidence example showing how a rule class maps constant vs varying attributes and lifetime fields through a data configuration."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000020",
+              "start_page": 15,
+              "end_page": 20
+            },
+            "summary": "Explains how Advisor handles active/in-edit evidence as rule objects. The Active/In-Edit Succession Set Rule Object Converter turns a succession set of evidence rows into a single CER rule object, including timeline/non-timeline attributes and parent/child related succession sets. It describes configuration for propagator type ROPT2011, exact evidence type and ruleset mapping, and detected config errors. Also covers conversion and propagation behavior, inherited rule attributes, CER readall/match restrictions, precedent tracking, and an income evidence example."
+          },
+          {
+            "title": "1.4 Example Advisor configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Create an Advisor rule set using the CER editor",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000023",
+                  "start_page": 21,
+                  "end_page": 23
+                },
+                "summary": "Worked example for configuring Advisor advice with CER Editor. It defines a SpouseRuleSet and SpouseAdvice/SpouseAdviceItem rule classes, extends CoreAdvisorRuleSet advice base classes, and adds key attributes such as concernRoleID, adviceContextID, adviceText, showAdvice, priority, status, and category. The rule logic searches for a Person by concernRoleID, checks marital status = married, counts spouse relationships of type RT6, and sets showAdvice when married and no spouse relationship exists. Also includes code table values AP2001, AS2002, AC2001 and advice text startCapture."
+              },
+              {
+                "title": "Configure the Advice context and Advice text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000026",
+                  "start_page": 24,
+                  "end_page": 26
+                },
+                "summary": "Explains how to configure an Advice context and its text for a spouse rule. In Administration Workspace, create an advice context named SpouseRules, add a page key Person_homePage (type Page), assign the SpouseRuleSet, and add a concernRoleID page parameter (type Number). Then in Intelligent Evidence Gathering, create an application resource text file with AdviceItem.startCapture text, add it as AdviceContext.SpouseRules with content type text/plain, and upload it so the Smart panel can display the spouse-capture advice."
+              }
+            ],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000026",
+              "start_page": 21,
+              "end_page": 26
+            },
+            "summary": "Worked example for configuring Advisor to show spouse-related advice. It walks through building a CER Editor rule set (SpouseRuleSet, SpouseAdvice, SpouseAdviceItem) that checks a person’s marital status and spouse relationships, sets code table values and showAdvice logic, then publishes the rule set. It also explains creating the Advice context SpouseRules on Person_homePage with concernRoleID as a page parameter, and adding advice text via an application resource file so the Smart panel displays “Capture the spouse relationship of this person.”"
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000026",
+          "start_page": 9,
+          "end_page": 26
+        },
+        "summary": "Explains how to configure Cúram Advisor end to end: create an advice context, add page keys from UIM PAGE_IDs, add page parameters, and assign rule sets. Describes advisor rule set structure using CER: a root AbstractAdviceContext with an advice list and page-parameter attributes, plus AbstractAdviceItem classes with mandatory adviceText, showAdvice, category, priority, and status, and optional case/evidence/expiry fields. Covers advice text resources, link/parameter display, evidence rule object conversion/propagation, and includes a spouse-advice configuration example."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

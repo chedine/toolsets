@@ -1,0 +1,626 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "7143115fd0758e94",
+    "title": "Cúram 8.1.2 Verification Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramVerificationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "7143115fd0758e94e8fe3cd4c493a4118a8fe137c8b4b0d569ca74a9107d3c3b",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:16:56+00:00",
+    "page_count": 38,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramVerificationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Verification Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000038",
+      "start_page": 1,
+      "end_page": 38
+    },
+    "summary": "This section is the full Cúram 8.1.2 Verification Guide. It explains how verification works in Cúram, including the problem it solves, the three components of verification (administration, case, participant), and the main administration elements: verification categories, verifiable data items, item utilizations, requirements, requirement usages, and dependent data items. It covers caseworker workflows across the evidence lifecycle, such as capturing, deferring, viewing, verifying, modifying, and activating evidence/cases, and notes that mandatory verification must be satisfied before activation unless a waiver exists. It also documents customization points for extra case types and participants, skipping mandatory checks, waivers, and conditional verification rules, including CER rule artifacts and propagators. The section ends with legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This brief note directs readers to review the Notices section on page 37 before using the product or related information. It also includes the Merative US L.P. copyright notice for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front-matter and start of the Verification guide. It states this edition applies to Cúram 8.1, 8.1.1, and 8.1.2, then introduces verification as the process of checking client evidence. Key topics covered in this range are verification challenges, the three components of verification (administration, case, participant), and administration concepts: verification categories, verifiable data items, verification item utilizations, verification groups, and configuration properties. It also explains item settings such as dates, usage type, expiry, level, mandatory, SIDs, and client-supplied."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Pages 15–24 cover verification administration in Cúram: duplicate-verification prevention and submitted-document display properties; verification requirement configuration (due/warning dates, level, effective dates, minimum items, mandatory/client-supplied, reverification); conditional verifications and workflow events; usage by case type; viewing verification lists across case, evidence, product delivery, participant, and application case contexts; deadline/expiry management and sample workflows; and bypassing mandatory verifications via waiver entries. Useful if you need setup, behavior, or UI details for verification processing."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section covers verification configuration and extension points in Cúram. It explains verification waivers, including product-specific waivers controlled by curam.miscapp.considerproductidforicwaivers, and how verification items satisfy requirements and can be propagated. It also describes submitted document review, evidence modification/removal effects on verification, adding new case types for verifications, hooks for extra participants and skipping mandatory checks, implementing waiver interfaces, and custom conditional verification rules via rule classes and parameters."
+          },
+          {
+            "title": "Edition — pages 35-36",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000036",
+              "start_page": 35,
+              "end_page": 36
+            },
+            "summary": "Explains how to use propagators to populate Cúram Express Rules (CER) rule objects for verification, and warns that conditional verification rules are evaluated whenever evidence is created, modified, or deleted. Rules should be designed to run only when a limited set of evidence exists, or evaluation may cause technical runtime errors visible to users."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000036",
+          "start_page": 5,
+          "end_page": 36
+        },
+        "summary": "Front matter and the Verification guide for Cúram 8.1–8.1.2. It explains verification as checking client evidence and outlines the three parts of the module: administration, case, and participant. Key admin topics include categories, verifiable data items, requirements, usage, dependent items, and configuration properties. Later pages cover caseworker workflows, evidence lifecycle effects, waivers, conditional verification rules, extension hooks for new case types/participants, and CER propagators. Useful for setup, processing behavior, and customization of verification."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000038",
+              "end_unit_id": "p000038",
+              "start_page": 38,
+              "end_page": 38
+            },
+            "summary": "This section contains legal notices: sample data/examples disclaimer, copyright license terms for sample programs, warranty and liability disclaimers, a link to Merative’s privacy policy, and a trademarks list covering Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It is useful for locating usage rights, privacy information, and trademark attributions."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000038",
+              "end_unit_id": "p000038",
+              "start_page": 38,
+              "end_page": 38
+            },
+            "summary": "Contains legal notices: fictitious-name disclaimer for examples, sample-code copyright/license terms, Merative privacy policy link, and trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. Also notes other names may be trademarks and gives copyright years 2012, 2024."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000037",
+          "end_unit_id": "p000037",
+          "start_page": 37,
+          "end_page": 37
+        },
+        "summary": "Legal notice and permissions for use of the publication: personal use, internal commercial use, and restrictions on redistribution, derivatives, export, and implied rights. States content is provided “as-is” with no warranties, notes patent coverage may apply, disclaims responsibility for non-Merative products and external websites, and includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition), then Chapter 1 “Verification guide” with subsections on understanding verification, administration, caseworker verification across the evidence lifecycle, and customization points. Also includes entries for Notices, Privacy policy, and Trademarks. Useful as a navigation overview rather than substantive content."
+      },
+      {
+        "title": "1 Verification guide",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Understanding verification",
+            "level": 2,
+            "children": [
+              {
+                "title": "The challenges of verification",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains the main challenges of verification: requirements vary by jurisdiction, agency, program, and legislation, and traditional rule coding is inefficient because changes require rebuilds and redeployment. It introduces Cúram’s flexible verification module, which lets users define what evidence needs verification and how, at runtime. It also outlines the three verification components—administration, case, and participant—and notes administration can customize access, triggered processing, mandatory checks, and reusable settings across products, cases, and participant evidence."
+              },
+              {
+                "title": "Components of verification",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains the main verification challenges in Cúram: requirements vary by jurisdiction, agency, product, and legislation, and hardcoded rules are inefficient to change. It introduces Cúram’s flexible verification module, which lets organizations define what evidence needs verification and how, at runtime without rebuilding or redeploying. It then outlines the three verification components—administration, case, and participant—and details the administration component, including customizing access, triggered processing, and whether verification is mandatory, with settings reusable across products and cases."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Verification checks the accuracy of client evidence and can be based on documents or verbal/written confirmation. Cúram’s verification is built around three components: administration, case, and participant. The section explains why verification is hard to manage: requirements vary by jurisdiction, agency, product, and legislation, and hardcoded rules require rebuilds and redeployments. It introduces Cúram’s flexible runtime verification module, which lets users define what evidence needs verification and how. Administration can also control access, triggered processing, mandatory checks, and reusable settings."
+          },
+          {
+            "title": "1.2 Verification administration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Verification categories",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains verification categories as a way to group verifiable data items into logical evidence groups within the verification administration tree. It lists the six verification elements in the tree and describes how verification rules are used by the engine to enforce evidence requirements. It also notes that caseworkers can record, view, and fulfill verification requirements through case, evidence, and participant pages. Example categories include personal, employment, financial, and child support information."
+              },
+              {
+                "title": "Verifiable data items",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Verification item utilizations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000013",
+                      "start_page": 12,
+                      "end_page": 13
+                    },
+                    "summary": "Explains verification item utilizations for verifiable data items: how they define which evidence can verify a specific attribute, and how multiple utilizations can exist for one data item. Covers seven key configuration settings: from/to dates, usage type (shared vs unique), expiry and warning days, level, mandatory items, security identifiers for add/remove actions, and client-supplied flag. Includes runtime effects such as expiry workflows, access restrictions, and how shared items apply across multiple evidence records."
+                  },
+                  {
+                    "title": "Verification groups",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how verification groups are used when a user must submit combinations of verification items to satisfy evidence verification. Example combinations for citizenship evidence are given, and multiple groups at the same level can be defined so any one complete group satisfies the requirement. Also describes verification group levels, where a group’s level is achieved when all items in the group are provided, plus a note that item utilization settings can be configured per item. Mentions system administration property VerificationFilteringEnabled, which defaults to True and filters duplicate verifications in the UI."
+                  }
+                ],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000013",
+                  "start_page": 12,
+                  "end_page": 13
+                },
+                "summary": "Defines verifiable data items as specific evidence entity attributes that require verification, such as an income amount or an entity/attribute pair. Notes SIDs can restrict access to sensitive verifications. Explains verification item utilizations, including multiple allowed verification items per data item and seven settings: effective dates, shared vs unique usage, expiry/warning days, level 1–5, mandatory items, add/remove SIDs, and client-supplied flag. Describes runtime effects like expiry workflows, access control, and how shared items can apply to multiple evidence records."
+              },
+              {
+                "title": "Verification configuration properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains verification configuration via system administration properties, focusing on the VerificationFilteringEnabled property. It notes that verifications can be configured to prevent duplicate conditional verifications from appearing in the user interface; the default value is True, enabling duplicate filtering in the UI component. The surrounding context also mentions verification groups and levels, where multiple verification items can satisfy an evidence requirement when all items in any one group are provided."
+              },
+              {
+                "title": "Verification requirements",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Verification requirement properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000016",
+                      "start_page": 15,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains verification requirement properties and related application settings. It covers preventing duplicate verification insertion, whether submitted documents display with verifications, and the main configurable requirement properties: due date and warning date, level, from/to dates, minimum items, and mandatory. It describes how these affect when evidence is considered verified, how verification items are selected over time, and how workflow handles due dates."
+                  },
+                  {
+                    "title": "Conditional verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section explains conditional verifications and related verification settings. It covers the informational client-supplied property and the reverification property for Active evidence changes, including the options Reverify always, Reverify if changed, and Never reverify. It also defines how the verification engine evaluates conditions when evidence is added or modified, creating outstanding verification only when specified conditions are met. Examples include thresholds like earnings over $200/week, alternate ID type SSN, and dependent evidence such as household income."
+                  },
+                  {
+                    "title": "Workflow events for verification requirements",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains optional workflow events for verification requirements and how they trigger. It covers five events: due date, expiry date, add, update, and value changed, and notes they supplement due date workflow processing. It also says these events can integrate verification processing with workflow functionality, but implementing them requires software developer customization."
+                  },
+                  {
+                    "title": "Verification requirement usages",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains how verification requirements are used by different case types and how they can be customized. It covers conditional verifications via rule classes, including required rule class, optional display rule class, and optional display UIM. It also describes five optional workflow events for verification requirements—due date, expiry date, add, update, and value changed—and notes that workflow integration requires developer customization."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000018",
+                  "start_page": 15,
+                  "end_page": 18
+                },
+                "summary": "Defines verification requirements and their configurable properties. Covers preventing duplicate verification insertion, display of submitted documents, due/warning dates, level, effective from/to dates, minimum items, and mandatory settings. Explains client-supplied informational flags and reverification behavior for active evidence changes. Describes conditional verifications driven by rule classes and dependent evidence, with examples. Also outlines optional workflow events—due date, expiry date, add, update, and value changed—and notes they require developer customization."
+              },
+              {
+                "title": "Dependent data items",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains dependent data items in evidence verification. These are specific evidence fields that affect verification of a related verifiable data item; any change to a dependent item is treated like a change to the parent item. Example given: Absence Reason is verified using To/From dates as dependent data items. Notes required properties: unique name and referenced data item name, with the caseworker-entered data item pointing to an attribute from the parent evidence type."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000018",
+              "start_page": 11,
+              "end_page": 18
+            },
+            "summary": "Explains verification administration in Cúram: the tree structure of six verification elements; how verification categories group evidence; verifiable data items and SID-based access control; verification item utilizations (effective dates, shared/unique usage, expiry/warning days, levels 1–5, mandatory items, add/remove SIDs, client-supplied flag); verification groups; configuration properties for duplicate filtering and submitted-document display; verification requirements (due dates, minimum items, reverification, conditional verifications, workflow events); and dependent data items affecting parent verification."
+          },
+          {
+            "title": "1.3 Verification for caseworkers during the evidence lifecycle",
+            "level": 2,
+            "children": [
+              {
+                "title": "Capturing evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section explains how the verification engine handles evidence capture for cases and participants. It covers when case evidence triggers verification checks, including shared evidence and product deliveries, and how mandatory requirements are shown to caseworkers. It also explains that participant evidence is automatically activated and verified separately from case-level evidence. Finally, it describes deferring verification as a separate step in business processes and the “unevaluated” evidence state when verifications were not run."
+              },
+              {
+                "title": "Deferring verifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section explains how verification evaluation can be separated from evidence maintenance and deferred in business processes using product APIs. It notes that evidence can be inserted first and verifications evaluated later, improving recovery because only the verification step rolls back if problems occur. Evidence with unevaluated verifications is shown in an unevaluated state with a special icon, meaning the verification engine was not called and the system cannot determine required verification. Caseworkers cannot defer verifications manually."
+              },
+              {
+                "title": "Viewing verification requirements",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Lists of verification requirements",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000022",
+                      "start_page": 21,
+                      "end_page": 22
+                    },
+                    "summary": "Explains where caseworkers can view verification requirements and what each list shows. Covers evidence type and evidence object lists, plus integrated case, product delivery, participant, and application case verifications. Notes that lists typically show current and outstanding verifications, mandatory/satisfied status, and whether items were received. Also describes which records are included or excluded, such as superseded, deleted, canceled evidence, and when deleted evidence appears via application property."
+                  }
+                ],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000022",
+                  "start_page": 21,
+                  "end_page": 22
+                },
+                "summary": "Explains where caseworkers can view verification requirements and what verification lists show. Covers evidence type, evidence object, integrated case, product delivery, participant, and application case views. Lists typically include current and outstanding verifications plus mandatory/satisfied status and received items. Notes scope rules and exclusions: some lists include superseded evidence, deleted evidence may appear only if configured, and participant/application case lists exclude canceled or superseded evidence."
+              },
+              {
+                "title": "Verifying evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Managing deadlines",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Modify due date and workflow",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000034",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Explains how verification deadlines are managed and when caseworkers can change them. Covers due-date and expiry-date calculation for verification items, including supported due-date events, warning dates, and workflow/notification behavior when expiry dates are set. Notes that due-date functionality does not apply to participant verifications. Also states that caseworkers may modify a verification requirement’s due date only if it was configured as modifiable, and they can increase or decrease the number of days before it is due."
+                      }
+                    ],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains verification deadline management. Organizations can configure due dates and expiry periods for verification items, based on events such as evidence entered, evidence received, or case created. It covers due-date calculation, warning dates, and expiry-date options, including workflow events and notifications when expiry dates are set. Notes that due-date tracking does not apply to participant verifications. Also states that caseworkers can change a verification requirement’s due date only if it is configured as modifiable, and they may increase or decrease the days until it is due."
+                  },
+                  {
+                    "title": "Bypassing mandatory verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000025",
+                      "start_page": 24,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how mandatory verifications can be bypassed using verification waiver entries during a defined time period, allowing program delivery to proceed before all evidence is satisfied. Describes sample deadline/expiry workflows, how waivers must be created by business processes via APIs, and how the system tracks bypass history. Also covers product-specific waiver behavior controlled by curam.miscapp.considerproductidforicwaivers, including shared evidence across integrated cases and the need to align product rules with waiver duration."
+                  },
+                  {
+                    "title": "Satisfying verification rules and adding a verification item",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Explains how caseworkers satisfy evidence verification requirements by supplying verification items that meet level, quantity, mandatory, and date-range rules. Notes that all rules must be met, with examples of required verification levels and multiple items. Describes limited forward propagation of verification items across evidence instances based on reverification mode. Also covers the add verification item process: only valid items are shown, items can be applied to multiple evidences and participants, and attachments may be added as electronic records."
+                  },
+                  {
+                    "title": "Reviewing documents submitted for verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how organizations review documents citizens upload to support verification items. Describes that uploaded documents appear with outstanding verifications, are marked with a submitted-document icon while awaiting review, and disappear once all are reviewed. Caseworkers can manage documents by accepting or rejecting individual documents or using Accept All/Reject All to approve or deny multiple documents as valid proof. Also notes configuration options for how submitted documents appear in the caseworker view."
+                  }
+                ],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000027",
+                  "start_page": 23,
+                  "end_page": 27
+                },
+                "summary": "Explains how caseworkers verify evidence by adding verification items that satisfy evidence verification rules. Covers deadline management for verification due dates, warning dates, expiry dates, and related workflow/notification behavior, including that participant verifications do not use due dates. Describes bypassing mandatory verifications via time-limited waiver entries, including product-specific waiver behavior. Also explains rules for satisfying verifications, adding items and attachments, limited propagation across evidence instances, and reviewing citizen-uploaded documents with accept/reject actions."
+              },
+              {
+                "title": "Modifying and removing evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how evidence modifications and removals affect verification, including dependent data items. Covers modifying In Edit evidence with and without verification items, how workflow events are raised, and modifying Active evidence by creating a new In Edit record. Describes reverification modes (Reverify Always, Reverify If Changed, Never Reverify) and notes they do not apply to active participant evidence modifications."
+              },
+              {
+                "title": "Activating evidence and cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains how verification affects activating evidence and cases. New verification on copied In Edit records is independent of prior Active evidence; removing evidence does not remove its verifications, but they can no longer be edited. Evidence activation is blocked if mandatory verification is incomplete unless a hook bypasses it temporarily. Case activation checks all active evidence for satisfied mandatory verifications or valid waivers; otherwise activation is stopped with an error message. Also notes customization options for skipping or conditioning verifications."
+              }
+            ],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000028",
+              "start_page": 19,
+              "end_page": 28
+            },
+            "summary": "Covers how the verification engine handles case and participant evidence during the evidence lifecycle. Explains capturing evidence, deferred evaluation via APIs, and the unevaluated state. Describes where caseworkers view verification requirements across case, evidence, integrated case, product delivery, participant, and application case pages. Also covers adding verification items, deadlines, waivers, submitted document review, and how modifying/removing evidence affects verification, including reverification modes and workflow events."
+          },
+          {
+            "title": "1.4 Verification customization points",
+            "level": 2,
+            "children": [
+              {
+                "title": "Supporting extra case types for verifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains how to extend verification support to additional case types. Add the new case type to CT_VerificationTypeCode and ensure it maps to VerificationRequirementUsage relatedItemID/relatedItemType. Also configure the corresponding domain in Curam-config.xml so it appears in admin search. The section outlines four implementation steps: add the verification type code table entry, create a search page and configure it, implement and bind VerificationRelatedTypeHook, and implement VerificationRelatedItemHook for runtime caseID-to-relatedItemType logic."
+              },
+              {
+                "title": "Hook to consider extra case participants",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains verification customization for product delivery cases: the hook point curam.verification.impl.VerificationHookForProductDelivery lets you add extra case participants for verification checks beyond the primary client and case members, via ConcernRoleIDList.getOtherParticipantsForProductDelivery(CaseKey). Also covers skipVerificationCheck() for custom logic to bypass mandatory evidence verification before activation, and evidence verification waivers via the EvidenceVerificationWaiver interface, bound with Google Guice MapBinder using specific keys."
+              },
+              {
+                "title": "Skipping mandatory verifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains ways to bypass or relax mandatory verification during evidence activation. Covers the skipVerificationCheck() hook in VerificationHook, configured per product via Guice, to let custom conditions allow activation even with outstanding mandatory verifications. Also describes verification waivers, which temporarily bypass mandatory verification by implementing EvidenceVerificationWaiver and binding it with Google Guice MapBinder using the required key format. Includes a related hook, VerificationHookForProductDelivery, for adding extra case participants to verification checks on product delivery cases."
+              },
+              {
+                "title": "Implementing verification waivers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000032",
+                  "start_page": 31,
+                  "end_page": 32
+                },
+                "summary": "Explains how to implement verification waivers to bypass mandatory evidence verification for a limited period. Developers must implement `curam.verification.sl.infrastructure.impl.EvidenceVerificationWaiver` and bind it with Google Guice MapBinder using a specific key format. It defines key formats for case evidence (`[CaseTypeCode].[CaseSubTypeCode].[EvidenceTypeCode]`) and participant evidence (`[ConcernRoleType].[EvidenceTypeCode]`), with period separators. Notes that activated evidence can proceed despite outstanding verifications, and product rules/CER may need updates."
+              },
+              {
+                "title": "Implementing custom conditional verification rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000038",
+                  "start_page": 33,
+                  "end_page": 38
+                },
+                "summary": "Explains how to implement custom conditional verification rules in the verification framework. Covers rule artifacts in VerificationRuleSet, especially VerificationDeterminator, VerificationDeterminatorResult, and VerificationDeterminatorParams. Describes how business logic decides whether verification applies to evidence, what input parameters are provided (such as verifiable data item name, evidence descriptor ID, and case ID), and how results indicate whether verification is required and why it was skipped. Also notes applicable evidence states and cautions that rules must handle limited evidence sets to avoid runtime errors."
+              }
+            ],
+            "node_id": "n000040",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000038",
+              "start_page": 29,
+              "end_page": 38
+            },
+            "summary": "This section covers verification customization points: extending verification support to new case types via CT_VerificationTypeCode, Curam-config.xml search domain setup, and VerificationRelatedTypeHook/VerificationRelatedItemHook; adding extra participants for product delivery verification checks with VerificationHookForProductDelivery; skipping mandatory verification during activation with skipVerificationCheck(); implementing time-limited evidence verification waivers via EvidenceVerificationWaiver and Guice MapBinder keys; and using conditional verification rules with VerificationDeterminator artifacts, input parameters, and evidence-state constraints."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000038",
+          "start_page": 9,
+          "end_page": 38
+        },
+        "summary": "Intro to Cúram verification: what verification is, why requirements vary, and how the runtime module avoids rebuilds by letting admins define evidence, methods, and mandatory checks. Explains the three components—administration, case, and participant—and the six administration elements: categories, verifiable data items, item utilizations, requirements, requirement usages, and dependent data items. Also covers caseworker workflows for recording and fulfilling verification across evidence lifecycles, plus customization hooks for case types, product delivery, waivers, and conditional verification rules."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

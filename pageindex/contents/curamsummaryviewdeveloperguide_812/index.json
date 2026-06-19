@@ -1,0 +1,427 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "f175a184a03bae41",
+    "title": "Cúram 8.1.2 Summary View Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramSummaryViewDeveloperGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "f175a184a03bae41c320c1e43ae5f5891d1bfd3a49f2a0600a10a891149ab756",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:06:23+00:00",
+    "page_count": 18,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramSummaryViewDeveloperGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Summary View Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000018",
+      "start_page": 1,
+      "end_page": 18
+    },
+    "summary": "Introduces the Cúram 8.1.2 Summary View Developer Guide. It explains how to build configurable summary views for eligibility decision outcomes, aimed at developers and architects familiar with the Cúram Rules Engine. The chapter covers the framework’s purpose, main components (Summary View Administrator, Builder, and Renderer), benefits, and limits. It outlines the 3-step implementation flow: configure a summary view, update a UIM page using the SummaryView/viewRulesSummary server interface, and add a link to open the view. It also describes view groups and fields (Normal, List, Linked), RDO/data item mapping, linked summary navigation, and the core entities/tables for summary view, group, and field definitions. The remaining pages are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note directing readers to review the Notices section before using the product or this documentation. Includes Merative US L.P. copyright information for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introduces the Summary View framework in Cúram 8.1/8.1.1/8.1.2, explaining its purpose for displaying eligibility decision summaries to caseworkers. Covers architecture components (Administrator, Builder, Renderer), benefits and limitations, and the 3-step setup: configure a view, update UIM, and add a link. Details view/group/field definitions, RDO/data-item mapping, linked views, required UIM server interface, and the initial data model entities for summary view configurations."
+          },
+          {
+            "title": "Edition — pages 15-16",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "This section documents Summary Views configuration, focusing on field definitions. It lists attributes for summary view group definitions, including groupType (Normal or List) and groupName, then details the SummaryViewFieldDefinition entity and table. Key fields include summaryViewFieldDefinitionID, foreign key summaryViewGroupDefinitionID, fieldName, rdoName, dataItemName, dataType, fieldLinkText, fieldType (Normal or Linked), and linkedSummaryView. Useful for understanding how summary view fields map to RDO attributes and links."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000016",
+          "start_page": 5,
+          "end_page": 16
+        },
+        "summary": "Introduces Cúram Summary Views for presenting eligibility decision summaries to caseworkers. Explains the framework’s purpose, components (Administrator, Builder, Renderer), advantages, and limits. Describes the 3-step setup: configure a summary view, update UIM, and add a link. Covers group and field types (Normal, List, Linked), RDO/data item mapping, linked summaries, required UIM server interface, and the core entities/tables for view, group, and field definitions."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Provides legal and copyright notices for the document. States that sample names are fictitious, sample programs may be copied/modified/distributed under the Merative Client Agreement for API-related development, and are offered “AS IS” without warranty or liability. Includes a link to Merative’s privacy policy and lists trademark ownership for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus the copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "This section covers legal notices: fictitious example names, copyright/license terms for sample programs, warranty disclaimers, the Merative privacy policy link, and trademark attributions. It lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, UNIX, and notes other names may belong to others. Includes copyright notice © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000017",
+          "start_page": 17,
+          "end_page": 17
+        },
+        "summary": "Legal notice and permissions for using the publication: personal noncommercial use is allowed with proprietary notices preserved; enterprise-only distribution/display is allowed similarly, but derivative works and external distribution need Merative consent. States no additional rights are granted, Merative may withdraw permission, export laws apply, and the content is provided “as-is” without warranties or liability. Also notes patents may apply, non-Merative product information is unverified, external links are not endorsements, and includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a Cúram 8.1.2 document. It lists front matter (Note, Edition), then Chapter 1 “Developing with Summary Views” with sections on overview, summary view components, defining a summary view, and summary view entities. Subsections include administrator, builder, renderer, advantages/limitations, configuration steps, UIM updates, and entity definitions. Also includes Notices, Privacy policy, and Trademarks."
+      },
+      {
+        "title": "1 Developing with Summary Views",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Summary Views Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Cúram Summary View framework for developing and maintaining summary views used in eligibility decisions. Explains that summary views give case workers a simple overview of program eligibility outcomes, covering key factors such as non-financial, resource, and income checks, plus household and individual member summaries. Notes the framework exists to avoid building many custom views per program by allowing configurable presentation. Intended for developers/architects familiar with the Cúram Rules Engine and related rules documentation."
+              },
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for the Summary Views guide: readers should already know Cúram Rules Engine development and consult the Rules Definition Guide, Rules Codification Guide, Rules Editor Guide, and Web Client Reference Manual. This section sits within an overview of summary views, which are used to present case workers with concise eligibility decision summaries covering non-financial, resource, and income factors."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Cúram Summary View framework for developers and architects who need to design and implement summary views for eligibility decisions. Explains that summary views give case workers a concise overview of program eligibility outcomes, including non-financial, resource, and income factors, with household and individual member summaries plus rule/rules-group results and calculations. Notes the framework was created to avoid many custom views by making presentation configurable. Readers should already know Cúram Rules Engine development and related guides."
+          },
+          {
+            "title": "1.2 Summary View Components",
+            "level": 2,
+            "children": [
+              {
+                "title": "Summary View Administrator",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains the Summary View Framework for eligibility decisions, focusing on the Summary View Administrator. It describes how summary views are configured: defining the view, clusters, cluster headings, and fields; mapping fields to RDOs/data items; and setting screen layout details. It notes that cluster and field names come from predefined code tables, and missing names require code table updates. It also mentions the related Builder/Renderer components and that the UIM page and stylesheet must support presentation."
+              },
+              {
+                "title": "Summary View Builder",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section introduces Summary View Components and the Summary View Framework for displaying simplified eligibility decision outcomes. It explains that summary views must be configured by defining the view, clusters, and fields, using data from rules result XML stored on Case Decision entities and accessed via RDO attributes. It also outlines the framework’s three parts: Summary View Administration, Builder, and Renderer. The Builder specifically generates summary view content by reading eligibility results and populating fields for display."
+              },
+              {
+                "title": "Summary View Renderer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how the Summary View Renderer uses the Cúram Renderer Framework to convert XML from the Builder into presentation-layer screen content via a stylesheet. Also outlines framework advantages: generic across modules, supports current/superseded case decisions, configurable screens, and extensible rendering. Notes key limitations: only product rule sets, one stylesheet, requires data items to be used in rules, and no local-context sub-rule sets. Ends with the three steps to define a summary view: configure it, update UIM, and add a link."
+              },
+              {
+                "title": "Advantages of Summary View framework",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains the Summary View framework’s benefits for Cúram case decisions: it is a generic, configurable solution for any module storing rules output as case decisions, works for current and superseded decisions, and uses the extensible Cúram Renderer framework for multiple renderings. It also notes key limitations, including support only for product rule sets, a single stylesheet, and restrictions on which data items and rule contexts can be displayed."
+              },
+              {
+                "title": "Limitations of Summary View Framework",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section lists current limitations of the Summary View framework: summary views can only be defined for product rule sets, support only one stylesheet, display only data items actually used in the rule set after load/assignment, and do not support local-context sub-rule sets (only global-context rules and rule sets). It follows the framework’s advantages and leads into the three stages for defining a summary view."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Introduces Summary View Components for presenting simplified eligibility decision outcomes. Explains that a summary view must be configured by defining the view, clusters, headings, and fields, with field mappings to RDOs/data items and layout details set in the Summary View Administrator. Notes that decision data comes from rules result XML stored on Case Decision entities and accessed through RDO attributes. Also identifies the three framework parts: Summary View Administration, Builder, and Renderer, plus the need for UIM content and a presentation stylesheet."
+          },
+          {
+            "title": "1.3 Defining a Summary View",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Introduces how to define a summary view in Cúram 8.1.2. It covers the three main stages: configure a Summary View for a product, update a UIM to display it, and add a link to open it. It explains the Summary View Administrator, the four configuration steps, Summary View Configurations and Types, and the three group types: Normal, List, and Linked. Useful for understanding setup, layout, and RDO-based data display for eligibility-related summary screens."
+              },
+              {
+                "title": "Configure a Summary View for a product",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Create Summary View Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to configure a Summary View in Cúram using the Summary View Administrator. Covers the 3 stages: configure the view for a product, update UIMs to display it, and add a link to open it. Details creation of a Summary View Configuration, including naming and assigning a type from the SummaryViewType code table. Also describes adding Summary View Groups, their three types (Normal, List, Linked), and how groups are sourced and displayed."
+                  },
+                  {
+                    "title": "Add Summary View Group to Summary View Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to add Summary View Groups when configuring a summary view in Cúram Summary View Administrator. It distinguishes groups from other UIM clusters, notes that only eligibility-decision data groups are defined here, and says layout details (columns, label width) are handled by the stylesheet. Describes three group types: Normal (RDO data, one or two columns), List (List RDO, may include hyperlinks to a Linked group), and Linked (shows details for an item selected from a List group)."
+                  },
+                  {
+                    "title": "Summary View Field Definition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Defines how summary view fields are configured and displayed. Explains field types (Normal and Linked), how to add fields to groups, and that group/field names come from extensible code tables. Describes mapping fields to RDO data items via “Save and Add Data Item,” requiring initialized data or fields appear blank. Notes stored values display as-is unless overridden in rules. Also states summary views use a widget in UIMs, which can be generic, and require a server interface definition (Class SummaryView, Operation viewRulesSummary)."
+                  },
+                  {
+                    "title": "Mapping the Field to an RDO attribute (data item)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to map summary view fields to RDO data items. Fields are added in Summary View Configuration, can be Normal or Linked, and are defined via code tables for group and field names. To display a field, use “Save and Add Data Item” and select the RDO attribute; the data item must be initialized or the field stays blank. Notes that stored values display as-is unless overridden in rules. Also mentions using the SummaryView/viewRulesSummary widget in UIMs."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to configure a product summary view in Cúram Summary View Administrator. Covers the setup stages: create a Summary View Configuration, add Summary View Groups, define fields, and map each field to an RDO attribute. Notes that view names and types come from the extensible SummaryViewType code table. Describes group types: Normal, List, and Linked, with layout controlled by stylesheet, while eligibility-decision groups are defined here and other UIM clusters elsewhere."
+              },
+              {
+                "title": "Create/ Update UIM",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to configure and display Summary Views in a UIM. Covers defining groups and fields in Summary View Configuration, using code tables for group/field names, choosing Normal vs Linked fields, and mapping fields to RDO data items (which must be initialized to show values). Notes that displayed values reflect stored data unless overridden in rules. For UIM creation/update, says a generic UIM can use a summary view widget and must include a Server Interface Definition with Class SummaryView and Operation viewRulesSummary."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000013",
+              "start_page": 11,
+              "end_page": 13
+            },
+            "summary": "Explains the three-stage process for defining a Cúram Summary View: configure the view for a product, update a UIM to display it, and add a link to open it. Covers using Summary View Administrator, creating Summary View configurations, groups and fields, and mapping fields to RDO attributes. Describes group types (Normal, List, Linked), code table-based names/types, stylesheet-driven layout, and UIM requirements including the SummaryView/viewRulesSummary server interface. Useful for setting up eligibility-related summary screens and understanding display/data mapping."
+          },
+          {
+            "title": "1.4 Summary View Entities",
+            "level": 2,
+            "children": [
+              {
+                "title": "Summary View Definition",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Defines the Cúram Summary View framework’s configuration entities and server interface inputs. It specifies three server parameters: caseDecisionID, summaryViewType, and descriptionID, plus a field source mapping to summaryViewData. The section details the SummaryViewDefinition entity, used to store summary view configurations for a product rule set, including identifiers, name, product/rule set IDs, summary type, status, and comments. It also introduces SummaryViewGroupDefinition, which stores summary view group configurations linked to a SummaryViewDefinition."
+              },
+              {
+                "title": "Summary View Group Definition",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Defines the SummaryViewGroupDefinition entity used in the Cúram Summary View framework. It stores configuration for summary view groups and links to SummaryViewDefinition via summaryViewDefinitionID (foreign key). The section also sits within the broader summary view setup, which includes server parameters for loading summary views and related entity definitions such as SummaryViewDefinition. Useful if you need the data model for summary view group configuration or its relationship to summary view definitions."
+              },
+              {
+                "title": "Summary View Field Definition",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000018",
+                  "start_page": 15,
+                  "end_page": 18
+                },
+                "summary": "Defines the SummaryViewFieldDefinition entity/table for configuring summary view fields and their mappings to RDO attributes or data items. Key attributes include summaryViewFieldDefinitionID, summaryViewGroupDefinitionID (FK), fieldName, rdoName, dataItemName, dataType, fieldLinkText, fieldType, and linkedSummaryView, with domains such as summary view field/group names, RDO object/attribute names, and field type (Normal or Linked). The remaining pages are Merative copyright, usage permissions, warranty, privacy, and trademark notices."
+              }
+            ],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000018",
+              "start_page": 14,
+              "end_page": 18
+            },
+            "summary": "Defines the Cúram Summary View framework’s core data model and server inputs. It lists three server parameters for displaying summary views: caseDecisionID, summaryViewType, and descriptionID, plus the summaryViewData field source mapping. It then details the entities SummaryViewDefinition, SummaryViewGroupDefinition, and SummaryViewFieldDefinition, including their IDs, foreign-key links, and key attributes for configuring summary views, groups, and field-to-RDO/data-item mappings. The remaining pages are Merative legal notices, privacy, and trademarks."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000018",
+          "start_page": 9,
+          "end_page": 18
+        },
+        "summary": "Explains how to develop Cúram Summary Views for eligibility decisions. Covers purpose, benefits, and limitations of the framework, then details the three implementation parts: Summary View Administrator, Builder, and Renderer. Describes the 3-step setup process: configure the view and groups/fields, update a UIM with the SummaryView/viewRulesSummary interface, and add a link to open it. Also defines the core entities and server parameters (caseDecisionID, summaryViewType, descriptionID). Remaining pages are legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

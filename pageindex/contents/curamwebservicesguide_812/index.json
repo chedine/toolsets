@@ -1,0 +1,873 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "689d566fb47848ef",
+    "title": "Cúram 8.1.2 Web Services Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramWebServicesGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "689d566fb47848efea6bf14154cba033378931b4392742ca87a9dbc3120f27f8",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:42:11+00:00",
+    "page_count": 58,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramWebServicesGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Web Services Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000058",
+      "start_page": 1,
+      "end_page": 58
+    },
+    "summary": "Front matter and legal notices for the Cúram 8.1.2 Web Services Guide, plus Chapter 1 on integrating Cúram with external applications through Apache Axis2 web services. Covers web service basics and Cúram’s outbound connectors and inbound services, supported SOAP/WSDL styles (Document/Literal wrapped emphasized; RPC noted), and Axis2 benefits. Details building outbound stubs from WSDL, developing and packaging inbound services, and configuration files such as ws_inbound.xml and services.xml. Includes security guidance for WS-Security/Rampart, custom SOAP headers, HTTPS/SSL, and keystores. Also provides troubleshooting for AxisFaults, anyType issues, and general Axis2 errors. Final sections explain how to include Axis2 Admin and SOAP Monitor in the web services WAR/EAR for validation and debugging. Notices on pages 57–58 cover usage permissions, warranty disclaimers, export compliance, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Preliminary note introducing the document and directing readers to the Notices section before using the information or product. Includes Merative US L.P. copyright information for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram 8.1/8.1.1/8.1.2 web services guide, followed by the start of Chapter 1. It introduces integrating Cúram with external applications through Apache Axis2-based web services, covering outbound and inbound services, supported SOAP/WSDL styles (Document/Literal wrapped only), security basics, and the start of outbound connector setup. Also includes edition/copyright pages and the contents list for web services topics, troubleshooting, and Axis2 admin/monitor WAR files."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram web services setup and build guidance. Covers outbound client stub generation from ws_outbound.xml and wsconnector2, using Axis2 ADB or XMLBeans, and sample client patterns (including fireAndForget and cleanup). Explains client stub pool and timeout/JMX properties. Introduces inbound web services: modeling in Rational Software Architect, directory layout, supported binding styles/data types, list limitations, security setup, build/package targets, custom ws_inbound.xml and services.xml overrides, and build-time customization options for WAR/EAR packaging."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Cúram web services customization and security. Covers extending Axis2 receivers to customize credential processing, inspect SOAP messages, override provider URL/context factory, and swap SOAP factories; explains how to build and package custom receivers and services.xml entries. Also describes XML schema validation for Document-based services using DOWSValidator. The security section introduces Rampart/WS-Security, notes Rampart authentication is unsupported for Cúram receivers, details custom SOAP headers for credentials, warns they are plaintext by default, and shows encrypting headers with Rampart."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Explains securing Cúram Axis2 web services with Rampart. Covers client/server security configuration via axis2.xml, services.xml, or Rampart policy; crypto property files and keystores; password callback handlers; and required module engagement. Shows how to load policy/configuration in client code, set headers/credentials, and notes deprecated programmatic security setup. Includes an example client descriptor and an HTTPS/SSL section on changing endpoints, trust store settings, and a WebSphere SSL socket factory workaround."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers secure Axis2 web service setup and deployment in Cúram. Includes keystore creation for server/client certificates, ws_inbound.xml properties and precedence rules, and how services.xml is generated/mapped from those properties. Also outlines troubleshooting: validating server-side first, using soapUI/TCPMon/logging, handling SOAP headers and timeouts, avoiding anyType, and interpreting AxisFaults. Ends with how to include the Axis2 Admin application in the web services WAR, with a warning against dynamic production changes."
+          },
+          {
+            "title": "Edition — pages 55-56",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000056",
+              "start_page": 55,
+              "end_page": 56
+            },
+            "summary": "This section explains how to customize Axis2 web services deployment by adding external Axis2 artifacts, packaging admin classes, optionally overriding axis2.xml credentials, and starting the EAR with axis2.include settings. It also covers enabling or excluding the Axis2 SOAP Monitor in webservices2.war, including extracting soapmonitor.mar, adding the <module ref=\"soapmonitor\"/> entry, accessing the monitor URL, changing its default port, and disabling it via exclude.soapmonitor."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000056",
+          "start_page": 5,
+          "end_page": 56
+        },
+        "summary": "Front matter and Chapter 1 of the Cúram 8.1/8.1.1/8.1.2 web services guide. It introduces Axis2-based integration with external applications, covering outbound connectors and inbound services, supported SOAP/WSDL styles (Document/Literal wrapped only), security with Rampart/HTTPS and custom headers, ws_inbound.xml and services.xml configuration, troubleshooting AxisFaults and anyType issues, and deployment of Axis2 Admin and SOAP Monitor artifacts. Contains build, packaging, and customization instructions for web services WAR/EAR files."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "Copyright and legal notices for the document. States that sample data and names are fictitious, sample code may be copied/modified/distributed under the Merative Client Agreement for API-related development, and is provided “AS IS” without warranty or liability. Points to the Merative privacy policy at merative.com/privacy. Also lists trademarks for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and notes other names may be trademarks."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "Legal notices for sample data and code: names in examples are fictitious; sample programs may be copied, modified, and distributed under Merative Client Agreement terms, but are provided “AS IS” without warranty or liability. Includes Merative privacy policy link. Lists trademark ownership for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a note that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000057",
+          "end_unit_id": "p000057",
+          "start_page": 57,
+          "end_page": 57
+        },
+        "summary": "Legal notices governing use of the publication: personal noncommercial reproduction is allowed only if proprietary notices are preserved; enterprise use is also allowed within your organization under the same condition. Derivative works and external distribution need Merative’s express consent. The section disclaims warranties, limits rights and liability, notes export-law compliance, and states Merative may withdraw permission. It also says non-Merative product/web references are informational only, may be untested, and are not endorsements. Copyright: © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter and Chapter 1, “Integrating with External Applications through Web Services,” with subsections on using web services, building outbound connectors, developing inbound services, security (Axis2/Rampart, SOAP headers, HTTPS/SSL, keystores), configuration files (ws_inbound.xml, services.xml), troubleshooting, and including Axis2 admin/soap monitor apps. Also includes notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Integrating with External Applications through Web Services",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Using Web Services",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview of Web Services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces web services in Cúram as a standardized XML-based way for applications to communicate across platforms and languages. It explains the core technologies involved—SOAP for messaging, WSDL for service description, and UDDI for service discovery—and frames web services by direction of flow: outbound (accessing external services) and inbound (implementing services). It also notes that Cúram web services are built on Apache Axis2 and that the chapter covers modeling, building, securing, deploying, and troubleshooting web services."
+              },
+              {
+                "title": "Benefits of the Apache Axis2 Platform",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains why Cúram uses Apache Axis2 for web services: improved flexibility and performance via the StAX parser, support for additional message exchange patterns (including in-only/fire-and-forget), and support for SOAP 1.1/1.2 and WSDL 1.1/2.0. It also introduces web service styles, especially Document (default, schema-based, flexible) and RPC (operation-wrapped payload with one body element), to help choose how SOAP payloads are structured."
+              },
+              {
+                "title": "Types of Web Services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000012",
+                  "start_page": 10,
+                  "end_page": 12
+                },
+                "summary": "Explains how web services are classified in Cúram, focusing on SOAP message payload handling via WSDL style and use settings. Covers document vs RPC styles, literal vs encoded use, and shows how these are defined in wsdl:binding and related SOAP elements. Notes that Document/Literal is preferred, encoded is discouraged, and Axis2 supports only the Document/Literal-wrapped pattern (not WSDL 2.0, and doclitBare is unsupported). Includes an example WSDL fragment for a simple multiply service and mentions supported style/use combinations."
+              },
+              {
+                "title": "Web Services Security",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section covers web service style/use support in Cúram with Axis2 and the associated strengths/weaknesses. It notes that Document/Literal (wrapped) is supported and WS-I compliant, RPC/Literal is Axis2-only and WS-I compliant, and RPC/Encoded is legacy and not WS-I compliant. It also explains web services security, stating security is handled by Axis2-integrated facilities like WS-Security/wss4j, with recommended custom SOAP header credentials for inbound services. Finally, it introduces outbound web service connectors that use WSDL to generate client stubs."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000012",
+              "start_page": 9,
+              "end_page": 12
+            },
+            "summary": "Introduces Cúram web services and how to use them for integration. Covers the basics of XML-based web services (SOAP, WSDL, UDDI), outbound connectors that generate client stubs from WSDL, and inbound services that expose Cúram functionality via Axis2-generated deployment artifacts. Explains why Cúram uses Apache Axis2 (better performance via StAX, more MEPs, SOAP 1.1/1.2, WSDL 1.1/2.0 support) and outlines service styles/uses: document vs RPC, literal vs encoded, with Document/Literal wrapped as the supported/preferred pattern."
+          },
+          {
+            "title": "1.2 Building Outbound Web Service Connectors",
+            "level": 2,
+            "children": [
+              {
+                "title": "Including the WSDL Files in Your Components File System",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains where to store WSDL files for outbound web service connectors and how to reference them in `ws_outbound.xml`. WSDLs should be placed under `SERVER_DIR` (typically `EJBServer/components/custom/axis/<service_name>/`) so generated stubs stay isolated from Cúram web services. The root WSDL filename must match the service name. Also notes default stub source and compiled output locations under `EJBServer/build`, and that `ws_outbound.xml` contains one `<service>` entry per web service with a relative file location."
+              },
+              {
+                "title": "Adding the WSDL File Location to the Outbound Web Services File",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to register outbound web service WSDLs in `ws_outbound.xml`. The section says each component needing an outbound connector must list its WSDL location, typically in `EJBServer/components/custom/axis/ws_outbound.xml`, using a `<service>` entry with a `name` matching the WSDL base name and a `location` relative to `SERVER_DIR`. It also notes where WSDLs should be placed in the component file system and that the root WSDL file name must use the service name."
+              },
+              {
+                "title": "Generating the Web Service Stubs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to generate web service client stubs with the Cúram build script (`build wsconnector2`) using `ws_outbound.xml`, `COMPONENT_ORDER`, and custom Axis directories. Notes that WSDLs are compiled into source and classes under `EJBServer/build/svr/wsc2/...`, with default Axis2 ADB bindings and optional XMLBeans via global or per-service `extraWsdl2javaArgs`. Also outlines client setup: reference generated code, instantiate stubs, adjust timeout, add SOAP credentials, call operations, and process responses."
+              },
+              {
+                "title": "Creating a Client and Starting the Web Service",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000016",
+                  "start_page": 15,
+                  "end_page": 16
+                },
+                "summary": "Explains how to generate web service client stubs with the Cúram build script (`build wsconnector2`) from `ws_outbound.xml` and related Axis directories, including default ADB bindings and optional XMLBeans overrides. Then shows how to create a client program to start the service: instantiate the generated stub, adjust timeouts, set SOAP header credentials, populate request objects, invoke operations, and check responses. Includes sample code for both request/response and fire-and-forget in-only calls, plus cleanup guidance."
+              },
+              {
+                "title": "Client Stub Pool Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Defines client stub pool tuning for outbound web service calls. Lists properties for stub cache size per endpoint, idle eviction time, eviction run interval, total and per-host connection limits, connection and socket timeouts, and whether JMX outbound web service statistics are enabled. Includes default values and constraint relationships between the limits."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000017",
+              "start_page": 13,
+              "end_page": 17
+            },
+            "summary": "Explains how to build Cúram outbound web service connectors from external WSDLs. Covers where to place WSDL files under `SERVER_DIR`/`components/custom/axis`, how to register them in `ws_outbound.xml` with service name and relative location, and how `build wsconnector2` generates stubs into `EJBServer/build/svr/wsc2` using ADB by default or XMLBeans via `extraWsdl2javaArgs`. Also shows client usage patterns, including stub instantiation, timeouts, SOAP headers, request/response calls, fire-and-forget calls, cleanup, and outbound stub pool tuning properties."
+          },
+          {
+            "title": "1.3 Developing Inbound Web Services",
+            "level": 2,
+            "children": [
+              {
+                "title": "Getting Started",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Introductory overview of developing inbound web services in Cúram. It explains that inbound web services expose application functionality to internal or external applications, and outlines the main workflow: model the service and implement the WS Inbound classes/operations, build/package the services and EAR file, and provide security data so services are accessible. It also notes clients must supply credentials unless custom credential processing is disabled, and shows the relevant generated and custom file locations for WSDL, ws_inbound.xml, and services.xml."
+              },
+              {
+                "title": "Modeling and Implementing an Inbound Web Service",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating Inbound Web Service Classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to create an inbound Axis2 web service class in IBM Rational Software Architect Designer and configure its Cúram model properties. It covers naming and uniqueness of web service classes, choosing whether the service passes Cúram structs/domain types or a W3C Document, enabling WS_Is_XML_Document for XML documents, and setting WS_Binding_Style for document or RPC style. It also notes document is the default style and points to schema validation and model/design guidance elsewhere."
+                  },
+                  {
+                    "title": "Adding Operations to Inbound Web Service Classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to add operations to Axis2 inbound web service classes in RSA Designer and key modeling constraints. Operations are added via the class right-click menu, then named and assigned a return type. It warns that all operations in a class share the same class properties and binding style, so mixed document/native/Cúram struct styles require separate classes. It also notes Axis2 method-name conflicts with inherited EJB methods, and that arguments/return types apply only when WS_Is_XML_Document is false."
+                  },
+                  {
+                    "title": "Adding Arguments and Return Types to Inbound Web Service Operations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to add arguments and return types to inbound web service operations in Rational Software Architect Designer. These are added like process/facade classes, but only matter when the class is not configured for W3C Document support (WS_Is_XML_Document). Also notes a modeling caveat: web service struct aggregations in graphical mode may add an extra aggregation label, which can break WSDL generation unless removed before building."
+                  },
+                  {
+                    "title": "Processing of Lists",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how Cúram list-processing works in Axis2 inbound web services. An operation uses lists when a return value or parameter contains a struct with multiple cardinality. Web client support is limited: it does not support list parameters, non-struct (domain) parameters, or non-struct returns, though such operations can still be used in Axis2 inbound web services. Also lists supported Cúram data types (all except Blob) and their WSDL/XML schema mappings, with only schema types mapping to Java primitives or java.lang.String allowed."
+                  },
+                  {
+                    "title": "Data Types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section describes data type support for Axis2 inbound web services. It lists Cúram-to-WSDL mappings for supported types (e.g., boolean, integers, string, date/datetime as strings, float/double, money) and notes that Blob is not supported. It also explains that only XML schema types mapping to Java primitives or `java.lang.String` are allowed; other schema types are unsupported."
+                  }
+                ],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000021",
+                  "start_page": 19,
+                  "end_page": 21
+                },
+                "summary": "Explains how to model and implement Axis2 inbound web services in Cúram/RSA Designer: create WS Inbound classes, set WS_Is_XML_Document for W3C Document services, and choose WS_Binding_Style (default document, RPC optional). Operations are added per class, but all operations share class-level binding/style, so mixed styles need separate classes. Covers Axis2 method-name conflicts with inherited EJB methods, argument/return modeling limits when not using XML documents, list handling constraints, and supported data types/WSDL mappings (all except Blob; only schema types mapping to Java primitives/String are supported)."
+              },
+              {
+                "title": "Building and Packaging Web Services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "This section explains how to build and package Cúram web services EAR/WAR files using the websphereWebServices, weblogicWebServices, and libertyWebServices targets. It outlines the packaging steps for global WAR directories and generated per-service directories, including property processing and services.xml generation. It also covers customization options such as disabling the Axis2 build, adding custom modules, and including external content via directory or zip with optional overwrite. It notes a limitation for inbound web services: unsupported XML schema types like xsd:anyURI and raw Cúram data types must be wrapped in structs."
+              },
+              {
+                "title": "Providing Security Data for Web Services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section explains that Cúram web services are not automatically tied to security groups, so you must add security database entries (for example, `SecurityGroupSid`) to make a service usable and secure. It also notes optional build-time default web service credentials via `Bootstrap.properties`, including username and encrypted password, which must exist in the Users table and be enabled. The section emphasizes these defaults are for development/testing only, not production."
+              },
+              {
+                "title": "Providing Web Service Customizations",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Inbound Web Service Properties File",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how inbound web service build artifacts are generated and overridden. Cúram creates a per-service ws_inbound.xml under build/svr/gen/wsc2/<service_name>; custom copies should be placed in components/custom/axis/<service_name> and override generated/default values during build. It also introduces the related services.xml deployment descriptor, generated per service from ws_inbound.xml defaults and packaged into webservices2.war. Includes pointers to customization topics such as custom receivers, security (Rampart), Axis2 Monitor, and Axis2-specific parameters."
+                  },
+                  {
+                    "title": "Deployment Descriptor File",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains the web service deployment descriptor services.xml for each inbound web service class. The build auto-generates a default descriptor from ws_inbound.xml settings, following Axis2’s services.xml format. To customize it, copy the generated file from build/svr/wsc2/<service_name> into components/custom/axis/<service_name>, then the build packages it into webservices2.war. This section points to Axis2 configuration details and notes that custom receivers may be needed for authentication headers, Rampart security, Axis2 Monitor support, or additional descriptor parameters."
+                  },
+                  {
+                    "title": "Customizing Receiver Runtime Functionality",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Custom Credential Processing",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Explains how to customize credential processing for Cúram web services by extending `curam.util.connectors.axis2.CuramMessageReceiver` and implementing `getAxis2Credentials(MessageContext)`. It describes the default authentication flow: SOAP header credentials are used unless `curamWSClientMustAuthenticate` is false, in which case `jndiUser`/`jndiPassword` are used, otherwise default credentials apply. Notes that web services may lack generated security data, so defaults alone may be insufficient. Relevant if you need external credential validation or custom login parameter handling."
+                      },
+                      {
+                        "title": "Accessing the SOAP Message",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000026",
+                          "end_unit_id": "p000026",
+                          "start_page": 26,
+                          "end_page": 26
+                        },
+                        "summary": "Shows how to access the SOAP message in a Cúram Axis2 web service by extending CuramMessageReceiver and overriding invokeBusinessLogic. The example retrieves the input MessageContext envelope (SOAPEnvelope) before calling the receiver logic, with logging and AxisFault handling. This section is useful if you need to inspect or manipulate inbound/outbound SOAP messages in custom receiver code."
+                      },
+                      {
+                        "title": "Custom Application Server-Specific Parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "Explains how to customize web service receiver behavior for application-server-specific settings. It notes that app_webservices2.xml generates provider URL and context factory values by default, but you can override getProviderURL() and/or getContextFactoryName() in a class extending curam.util.connectors.axis2.CuramMessageReceiver to support multiple environments. It also describes optionally overriding getSOAPFactory(MessageContext), and gives steps to build custom receiver code: extend the receiver class, use package webservice, place code under components/.../source/webservice, and configure a custom services.xml messageReceiver."
+                      },
+                      {
+                        "title": "Custom SOAP Factory",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section explains how to customize SOAP handling in web service receivers. It notes that the default `org.apache.axiom.soap.SOAPFactory` is usually sufficient for W3C document-based services, but you can override `getSOAPFactory(MessageContext)` to supply your own factory. It also ties this to custom receiver development, where classes extend `CuramMessageReceiver`, are placed in a `webservice` package, and are wired via `services.xml`."
+                      },
+                      {
+                        "title": "Building Custom Receiver Code",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "Explains how to build custom Axis2 receiver code for web services. You extend the appropriate `CuramMessageReceiver` class, place the Java class in a `webservice` package under the component’s `source/webservice` directory, and ensure the server build target packages it. It also notes you must create a custom `services.xml` to map the service to your receiver. Related customization points include overriding provider URL/context factory methods and `getSOAPFactory(MessageContext)`, and preserving the required `super.invokeBusinessLogic()` call."
+                      }
+                    ],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000027",
+                      "start_page": 25,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to customize Cúram Axis2 web service receiver runtime behavior by extending `CuramMessageReceiver`. Covers overriding credential processing via `getAxis2Credentials(MessageContext)`, inspecting the SOAP envelope in `invokeBusinessLogic`, customizing provider URL/context factory for different environments, and optionally supplying a custom `SOAPFactory`. Also gives build/deployment steps for custom receiver code: use a `webservice` package, place it under `components/.../source/webservice`, and wire it through a custom `services.xml`."
+                  },
+                  {
+                    "title": "Providing schema validation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains when and how to use XML schema validation for web services that exchange W3C Document objects. Notes that validation adds CPU cost and is most useful when document sources are untrusted or public. Describes two steps for inbound validation: include the XSD under SERVER_DIR/components/**/webservices/**/*.xsd in the EAR, then load the schema in BPO implementation code and pass it to the DOWSValidator along with the org.w3c.Document to validate. Includes a code example using the infrastructure validator class."
+                  }
+                ],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000028",
+                  "start_page": 23,
+                  "end_page": 28
+                },
+                "summary": "Covers build-time customization of inbound Cúram web services. Explains generated ws_inbound.xml and services.xml files, where to place overrides under components/custom/axis/<service_name>, and how they are packaged into webservices2.war. Describes custom receiver runtime behavior by extending CuramMessageReceiver for credential handling, SOAP access, environment-specific provider/context settings, and custom SOAP factories. Also outlines optional XML schema validation for W3C Document-based services using DOWSValidator and bundled XSDs."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000028",
+              "start_page": 18,
+              "end_page": 28
+            },
+            "summary": "Explains how to develop inbound Cúram web services: model WS Inbound classes/operations in RSA Designer, choose document vs RPC binding, and implement/build/package them into web service EAR/WAR files. Covers Axis2 modeling limits, supported data types, list handling, and W3C Document support with optional schema validation. Describes generated vs custom ws_inbound.xml and services.xml locations, build targets, security setup via security data and client credentials, and receiver customizations for credentials, SOAP access, provider/context parameters, and SOAP factory overrides."
+          },
+          {
+            "title": "1.4 Securing Web Services",
+            "level": 2,
+            "children": [
+              {
+                "title": "Axis2 Security and Rampart",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains Axis2 Rampart security for Cúram web services. Covers WS-Security features (authentication, integrity, encryption/decryption, non-repudiation), WS-SecurityPolicy/WS-Policy configuration via services.xml or WSDL, and performance considerations for limiting encryption scope. Important restriction: Rampart authentication cannot be used with Cúram receivers. Instead, Cúram expects custom SOAP headers for credential checking; this can be bypassed only with specific customizations."
+              },
+              {
+                "title": "Custom SOAP Headers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000032",
+                  "start_page": 30,
+                  "end_page": 32
+                },
+                "summary": "Cúram web service calls are expected to include a custom SOAP header containing credentials. The section explains the default Axis2/Rampart security setup, notes that Rampart authentication is not used in Cúram, and shows how custom SOAP headers provide similar authentication. It includes an example SOAP envelope with a `curam:Credentials` header, sample Axis2 code to add the header, and the resulting fault when the header is missing or credentials are invalid."
+              },
+              {
+                "title": "Encrypting Custom SOAP Headers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000034",
+                  "start_page": 33,
+                  "end_page": 34
+                },
+                "summary": "Warns that custom SOAP headers carrying credentials are sent in plain text by default and should be encrypted. Explains using Rampart/WS-Security to protect Cúram custom SOAP headers, either by adding the Credentials element to client descriptor encryptionParts or by defining an EncryptedElements XPath in the Rampart policy. Also notes engaging Rampart in client code and shows an example of the resulting encrypted wsse:Security SOAP message."
+              },
+              {
+                "title": "Using Rampart With Web Services",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining the Axis2 Security Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000037",
+                      "start_page": 35,
+                      "end_page": 37
+                    },
+                    "summary": "Explains how to configure Axis2/Rampart security for Cúram web services. Covers client-side options (axis2.xml, Rampart policy, or deprecated programmatic setup) and server-side options (services.xml or policy embedded in WSDL). Shows sample settings for signing/encrypting messages, including password callback classes, crypto property files, key identifiers, users, and encryption parts. Also notes that Rampart clients need a configuration context with required modules (e.g., addressing, rahas, rampart) and a basic client file structure."
+                  },
+                  {
+                    "title": "Providing the Security Data and Code",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Explains how to supply security data/code for Axis2 web services using example security configuration files and a password callback routine. It describes the signature and encryption crypto property files, which define keystore type, password, and keystore file for signing/encrypting SOAP messages. Example server and client `crypto.properties` values are shown using the Merlin provider with `server.keystore` or `client.keystore`. It also notes that when using a Rampart policy file, these property files are unnecessary because the policy contains equivalent settings."
+                  },
+                  {
+                    "title": "Coding the client",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000043",
+                      "start_page": 39,
+                      "end_page": 43
+                    },
+                    "summary": "Explains how to code an Axis2/Rampart client for secured web services. Covers creating a ConfigurationContext from a client Axis2 descriptor or just the modules directory, engaging required modules like rampart, and loading Rampart policy files programmatically. Shows a full client example that sets endpoint, credentials, timeout, and custom SOAP headers. Notes common client/server debugging pitfalls and that some programmatic security configuration is deprecated. Ends with a sample client-axis2.xml showing UsernameToken, timestamp, signature, and encryption settings."
+                  }
+                ],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000043",
+                  "start_page": 35,
+                  "end_page": 43
+                },
+                "summary": "Explains how to use Rampart with Cúram Axis2 web services. Covers three steps: define client/server security configuration, supply security data/code, and code the client. Shows client and server security settings using axis2.xml or services.xml, or a Rampart policy in WSDL, with examples for signing/encryption, callbacks, key identifiers, users, and crypto files. Notes required modules and ConfigurationContext setup, how to package keystore/property files, and includes client code examples plus deprecated programmatic security configuration."
+              },
+              {
+                "title": "Securing Web Service Network Traffic with HTTPS/SSL",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Explains how to secure web service traffic with HTTPS/SSL. Notes that setup details are out of scope, but HTTPS can be enabled via the application server environment or Rampart WS-Security policy. Shows how a client can dynamically change its endpoint from HTTP to HTTPS at runtime, and that the client must configure the trustStore and password for certificates. Includes a WebSphere-specific SSL socket class workaround using Java security properties."
+              },
+              {
+                "title": "Creating Keystore Files",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Explains how to create SSL keystore files for secure web service setup using Java keytool. Covers generating server.keystore and client.keystore, exporting certificates to .cer files, and importing each certificate into the opposite keystore for mutual trust. Also begins the next topic on ws_inbound.xml inbound web service properties, noting default generator-produced settings such as classname and ws_binding_style (document or rpc)."
+              }
+            ],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000044",
+              "start_page": 29,
+              "end_page": 44
+            },
+            "summary": "Cúram web service security covers Rampart/Axis2 WS-Security, custom SOAP credentials, HTTPS/SSL, and keystore setup. Rampart supports authentication, integrity, confidentiality, and timestamps, but not Rampart authentication with Cúram receivers, which expect custom SOAP headers instead. The section shows how to create and optionally encrypt those headers, configure Rampart via policy or descriptors, and code client/server setup. It also explains dynamic HTTP→HTTPS endpoint switching, trustStore configuration, WebSphere SSL workarounds, and using keytool to create mutual-trust keystores."
+          },
+          {
+            "title": "1.5 Inbound Web Service Properties: ws_inbound.xml",
+            "level": 2,
+            "children": [],
+            "node_id": "n000055",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000046",
+              "start_page": 45,
+              "end_page": 46
+            },
+            "summary": "Describes ws_inbound.xml, the inbound web service property file used to generate services.xml descriptors. Covers default generator-produced properties classname (always supplied), ws_binding_style (document/rpc), and ws_is_xml_document (true/false), plus customizable settings ws_binding_use (literal/encoded), ws_service_username/password for Cúram authentication, ws_client_must_authenticate to use custom SOAP headers instead, and ws_disable to exclude a service from build/WAR packaging. Also includes keystore setup steps for secure web service configuration."
+          },
+          {
+            "title": "1.6 Deployment Descriptor File: services.xml",
+            "level": 2,
+            "children": [],
+            "node_id": "n000056",
+            "range": {
+              "start_unit_id": "p000047",
+              "end_unit_id": "p000048",
+              "start_page": 47,
+              "end_page": 48
+            },
+            "summary": "Explains the Axis2 deployment descriptor services.xml generated for each web service class. It shows how app_webservices2.xml creates the file from ws_inbound.xml settings, what parameters it contains (remoteInterfaceName, ServiceClass, homeInterfaceName, beanJndiName, authentication, providerUrl, JNDI class, WSDL options), and how these map to build-time settings. Also notes the required messageReceiver setup for different MEPs and the special handling needed for in-only operations."
+          },
+          {
+            "title": "1.7 Troubleshooting",
+            "level": 2,
+            "children": [
+              {
+                "title": "Initial Server Validation and Troubleshooting",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Explains a server-first approach to web service troubleshooting: verify the application server and EAR/WAR start cleanly, then confirm service availability via the service URL with ?wsdl. For Axis2, it gives the built-in validation workflow (open axis2-web/index.jsp, run the Welcome page validation, check Available services, and inspect generated WSDL). Notes that the missing sample version service warning is expected, setSessionContext may appear harmlessly, and WSDL from Available services differs from Java2WSDL-generated WSDL."
+              },
+              {
+                "title": "Using an External Client to Validate and Troubleshoot",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "Explains how to validate and troubleshoot a web service using an external client before deeper debugging. Recommends starting with a known working client, such as soapUI, to isolate issues in service packaging, receiver processing, security configuration, and implementation. Describes the basic soapUI workflow: save the generated WSDL, create a new project from it, open the service operation request, enter SOAP XML, and execute it to view results or errors. Emphasizes checking SOAP syntax/content if failures occur."
+              },
+              {
+                "title": "Troubleshooting Axis2 errors",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "Explains how to troubleshoot Axis2 web service errors. Covers Axis2’s default security behavior, including the need to send custom SOAP header credentials, and notes that first service calls may time out due to initial jar loading/processing. Recommends debugging by enabling Axis2 HTTP/SOAP logging via JVM arguments in Eclipse or application server settings, or by using monitoring tools such as Apache TCPMon or SOAP Monitor to inspect SOAP request/response traffic."
+              },
+              {
+                "title": "Avoiding Use of anyType",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Avoid using `anyType` in WSDL, because it reduces interoperability: both service and client platforms must be able to map, serialize, and deserialize the underlying object. `anyType` is often generated when the real data type (for example, `object`) cannot be resolved. This section is a brief warning about WSDL design and type specificity for better web service compatibility."
+              },
+              {
+                "title": "Axis2 Exceptions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000054",
+                  "end_unit_id": "p000054",
+                  "start_page": 54,
+                  "end_page": 54
+                },
+                "summary": "Axis2 exceptions are returned to clients as AxisFault, usually preserving the original exception message. SOAP fault content differs for SOAP 1.1 vs 1.2, so services should provide clear, context-appropriate error messages; otherwise client handlers may not react properly. The section also notes that unresolved failures may require checking application server logs and Apache Log4j 2 output from Cúram and/or Axis2."
+              }
+            ],
+            "node_id": "n000057",
+            "range": {
+              "start_unit_id": "p000049",
+              "end_unit_id": "p000053",
+              "start_page": 49,
+              "end_page": 53
+            },
+            "summary": "Troubleshooting Axis2 web services: start by validating the server deployment, then confirm the service URL/WSDL and Axis2’s built-in validation pages. Use a known good external client like soapUI to isolate packaging, receiver, security, or implementation issues; include required custom SOAP header credentials. For deeper debugging, enable Axis2 HTTP/SOAP logging, inspect traffic with TCPMon or SOAP Monitor, review stack traces and Log4j2/server logs, and consider remote debugging. Also notes the harmless `setSessionContext`, first-call timeouts, and warns against `anyType` in WSDL."
+          },
+          {
+            "title": "1.8 Including the Axis2 Admin Application in Your Web Services WAR File",
+            "level": 2,
+            "children": [],
+            "node_id": "n000063",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "This section explains how to include the Axis2 Administration web application in a web services WAR/EAR build. It notes that the admin app is useful for validating settings, viewing services, and managing modules, but warns against using Axis2 dynamic features like hot deployment in production environments such as WebSphere or WebLogic. It begins the build steps by instructing you to download and extract the Axis2 binary distribution that matches the supported version."
+          },
+          {
+            "title": "1.9 Including the Axis2 SOAP Monitor in Your Web Services WAR File",
+            "level": 2,
+            "children": [],
+            "node_id": "n000064",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000058",
+              "start_page": 55,
+              "end_page": 58
+            },
+            "summary": "Explains how to include or exclude the Axis2 SOAP Monitor in the webservices2.war. Covers extracting soapmonitor.mar applet classes into an Axis2 include location, starting the EAR build with axis2.include.overwrite=true and axis2.include.location, adding `<module ref=\"soapmonitor\"/>` to axis2.xml, accessing the monitor at `/SOAPMonitor`, changing the default port via `soap.monitor.port`, and disabling it with `exclude.soapmonitor=TRUE`. Also notes SOAP Monitor’s use for viewing SOAP requests/responses during debugging."
+          }
+        ],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000058",
+          "start_page": 9,
+          "end_page": 58
+        },
+        "summary": "Cúram web services on Apache Axis2: overview of integrating external applications, supported SOAP/WSDL concepts, outbound connectors and inbound service development, security, deployment properties, and troubleshooting. Covers why Axis2 is used, supported styles/usages (Document/Literal wrapped preferred), building outbound stubs from WSDL, modeling inbound services, ws_inbound.xml/services.xml generation, WS-Security/custom SOAP headers/HTTPS, and debugging tools. Also explains including Axis2 Admin and SOAP Monitor in the webservices WAR."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

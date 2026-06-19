@@ -1,0 +1,541 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "9aeac9b97c853498",
+    "title": "Cúram 8.1.2 IEG in the Cúram Universal Access Responsive Web Application",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/IEGinUniversalAccess_812.pdf",
+    "source_type": "pdf",
+    "sha256": "9aeac9b97c85349893ab6a0023ae4a9c99453660ac6c37097f5641d0a05d77d5",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:52:10+00:00",
+    "page_count": 58,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/IEGinUniversalAccess_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 IEG in the Cúram Universal Access Responsive Web Application",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000058",
+      "start_page": 1,
+      "end_page": 58
+    },
+    "summary": "Guide for Cúram 8.1.2 Universal Access Responsive Web Application IEG. It explains that evidence-gathering forms now run in the browser via the IEG React Player, so existing scripts may need retesting and minor changes. The section covers design-system-specific IEG elements/attributes, unsupported authoring features, and customization patterns for the Back button, section navigation, progress text, dynamic titles, rich text/external links, hint and explainer text, help label text, required/optional labels, input masks and constraints, code-table hierarchies, combo boxes, BaseFormContainer scripting, cluster merging, relationship-page labels and dates, and quick-add-list. It also includes legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section before using the information or the product it supports. It also shows the document copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition notice for the Cúram Universal Access Responsive Web Application guide. It states the edition applies to Cúram 8.1, 8.1.1, and 8.1.2, and includes copyright/trademark notices plus the table of contents. It also introduces the main guide topics: IEG in the responsive web app, supported and unsupported IEG elements/attributes, form customization (back button, navigation, progress, titles, rich text, hints, help, labels, input constraints), combo boxes, script behavior, relationship pages, and quick-add-list."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers IEG form customization: Back button behavior for single vs multiple forms, including passing onBackForFirstPage to BaseFormContainer and redirecting from submission to apply forms. It also explains enabling section navigation with show-section, configuring progress text via ieg-config.properties and IEGPageMetadata, using ICU-based dynamic page titles with ordinal/index variables, and enabling rich text plus external links in new tabs by configuring DOMPurify to preserve target attributes."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers IEG form configuration topics: adding short hint text to containers, questions, and list questions; using explainer text for expandable background/help content; changing or hiding the form “Help” label via localization override; showing required vs optional labels with REACT_APP_DISPLAY_REQUIRED_LABEL; and configuring input formats/constraints with CSS masks, custom mask-format, field widths, and date picker behavior, including examples for phone, SSN, postal code, currency, and dates."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers IEG form field configuration for input masks and constraints: custom masks, phone/date/currency formats via environment variables, and obscured inputs using IEG_OBSCURED or custom domains. Also explains code-table hierarchies for paired questions and combo box implementation with search functions, Add New support, error handling, and required script/schema changes, including target entities and registry registration."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers IEG page customization topics. Explains BaseFormContainer script behavior properties (exit/finish/partial submission, login/signup, back navigation, onRef, first-page back action) and how to override an existing form route by copying and remapping feature code. Also describes merging IEG clusters with a grouping-id across entities/conditional clusters, configuring relationship question text and relationship start-date labels via IEG properties, and enabling/configuring quick-add-list at the script level."
+          },
+          {
+            "title": "Edition — pages 55-56",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000056",
+              "start_page": 55,
+              "end_page": 56
+            },
+            "summary": "Shows a full IEG example of configuring a quick-add-list for household members, including quick-add, edit, delete links, conditional prompts based on household count, and a hidden loop for member details. Also provides the custom function householdCount implementation used to update the number of non-primary participants by reading child Person entities from the root entity and setting a typed attribute. Useful for understanding quick-add-list structure and related backend logic."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000056",
+          "start_page": 5,
+          "end_page": 56
+        },
+        "summary": "Edition notice for the Cúram Universal Access Responsive Web Application guide. Applies to Cúram 8.1, 8.1.1, and 8.1.2, with copyright/trademark notices and contents. The section introduces IEG in the responsive web app, supported/unsupported IEG elements and attributes, and customization topics including back button behavior, section navigation, progress text, dynamic titles, rich text and external links, hints/help/labels, input constraints, combo boxes, script behavior, cluster grouping, relationship pages, and quick-add-list, including a household-members example and custom function."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "Contains legal and licensing notices: fictitious names disclaimer, sample code copyright/license terms, “AS IS” warranty disclaimer, liability limitation, and a link to Merative’s privacy policy. Also lists trademarks for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others, plus copyright notice."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "This section lists legal notices and trademark attributions for Merative and third-party products. It states that sample names in the document are fictitious, sample programs are provided “AS IS” under the Merative Client Agreement, and links to Merative’s privacy policy. It also identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice that other names may be trademarks of others."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000057",
+          "end_unit_id": "p000057",
+          "start_page": 57,
+          "end_page": 57
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and enterprise reproduction permissions, preservation of proprietary notices, and restrictions on redistribution or derivative works. States no additional rights are granted, permissions may be withdrawn, and export laws must be followed. Includes an “AS IS” warranty disclaimer, liability-related disclaimers for non-Merative products and websites, patent notice, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document, listing front matter and 20 main sections with subsections. Topics include IEG in the Cúram Universal Access Responsive Web Application, supported and unsupported IEG configuration, form UI customization (Back button, section navigation, progress info, dynamic titles, rich text, hint/explainer/help text, labels, input formats/constraints), code-table hierarchies, combo boxes, BaseFormContainer scripting, cluster merging, relationship pages and dates, and quick-add-list. Includes notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 IEG in the Cúram Universal Access Responsive Web Application",
+        "level": 1,
+        "children": [],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000010",
+          "start_page": 9,
+          "end_page": 10
+        },
+        "summary": "This section explains how IEG forms work in the Cúram Universal Access Responsive Web Application. It notes that evidence-gathering forms are still implemented in IEG, but now rendered in the browser by the IEG React Player instead of the Java player, which can change behavior. It advises script designers to consult the IEG Form Design Guidance PDF and to test existing scripts, since minor changes are often needed. It also mentions built-in connectivity handling that helps prevent data loss from unsaved changes."
+      },
+      {
+        "title": "2 IEG elements and attributes specific to the design system and Cúram Universal Access Responsive Web Application",
+        "level": 1,
+        "children": [],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000011",
+          "end_unit_id": "p000012",
+          "start_page": 11,
+          "end_page": 12
+        },
+        "summary": "Lists IEG elements and attributes used only in the design system and Cúram Universal Access Responsive Web Application. Covers display elements/attributes (combo-box, explainer, hint-text, next-button-label, relationship-detail-header, quick-add-list), the cluster grouping-id attribute, the loop-type=\"hidden\" flow-control value, and meta-display elements such as class-names and the layout type child value date-picker. Useful as a reference to identify UI-specific IEG extensions."
+      },
+      {
+        "title": "3 IEG configuration not currently supported for the Cúram Universal Access Responsive Web Application",
+        "level": 1,
+        "children": [],
+        "node_id": "n000015",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000014",
+          "start_page": 13,
+          "end_page": 14
+        },
+        "summary": "Lists IEG configuration not supported in the Cúram Universal Access Responsive Web Application/Design System. Key unsupported items include question matrices, three-field date picker, cluster-level grouped help, many display/layout elements and attributes (custom-output, footer-row/field, help-text, icon, label/alignment/width, num-cols, type, width, legislation, policy, skip-field, row-help, set-focus), meta-display codetable hierarchy layout, and several ieg-script attributes (hide-for-control-question, highlight-validation, show-progress-bar). Use this section to check unsupported authoring features before migration."
+      },
+      {
+        "title": "4 Customizing the Back button in IEG forms",
+        "level": 1,
+        "children": [],
+        "node_id": "n000016",
+        "range": {
+          "start_unit_id": "p000015",
+          "end_unit_id": "p000016",
+          "start_page": 15,
+          "end_page": 16
+        },
+        "summary": "Explains how to customize the Back button in IEG forms based on whether an app has a single form or multiple forms. For single-form apps, the Back button should be disabled on the first page because it navigates within the form, not the application. For multi-form apps, the section describes default Apply/Submit behavior and how to ensure the Submit form’s Back button returns to the previous form by adding a handler in `SubmissionFormContainer` and passing it to `BaseFormContainer` via `onBackForFirstPage`."
+      },
+      {
+        "title": "5 Configuring section navigation for forms",
+        "level": 1,
+        "children": [],
+        "node_id": "n000017",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000018",
+          "start_page": 17,
+          "end_page": 18
+        },
+        "summary": "This section explains how to configure section navigation in IEG forms. It says section navigation can be enabled to guide users through forms, especially longer ones, and recommends using section summary pages so users can review changes regularly. The procedure begins by adding the show-section element to the ieg-script element."
+      },
+      {
+        "title": "6 Configuring progress information for forms",
+        "level": 1,
+        "children": [],
+        "node_id": "n000018",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000020",
+          "start_page": 19,
+          "end_page": 20
+        },
+        "summary": "Explains how to configure progress text for IEG forms. Developers can display a progress message plus the section title (for example, “STEP 2 OF 4 · HOUSEHOLD”) so citizens know where they are in the script. This is enabled by adding `progress.bar.indicator.text=Step %1s of %2s` to `ieg-config.properties`. `%1s` is the current step and `%2s` the total steps, calculated from the number of sections. The indicator appears when `IEGPageMetadata(JSON)` contains `metadata['ieg-config']['progress-indicator']`."
+      },
+      {
+        "title": "7 Configuring dynamic titles on forms",
+        "level": 1,
+        "children": [],
+        "node_id": "n000019",
+        "range": {
+          "start_unit_id": "p000021",
+          "end_unit_id": "p000022",
+          "start_page": 21,
+          "end_page": 22
+        },
+        "summary": "Explains how to configure dynamic form and relationship page titles in IEG using ICU message templates. Covers the supported keywords for loops and nested loops: index, innerIndex, outerIndex, ordinal, innerOrdinal, and outerOrdinal. Gives examples showing how titles can change based on loop position and user data, including localized/gendered forms. Also notes the reserved word personName for displaying the person’s first name in page titles."
+      },
+      {
+        "title": "8 Configuring rich text on forms",
+        "level": 1,
+        "children": [
+          {
+            "title": "8.1 Configuring external links to open in a new tab or window",
+            "level": 2,
+            "children": [],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000024",
+              "start_page": 23,
+              "end_page": 24
+            },
+            "summary": "Explains how to make external links in IEG rich text open in a new tab/window. By default, links open in the current tab because DOMPurify sanitization removes the HTML target attribute. The section instructs adding dompurify as a dependency and setting a persistent DOMPurify config in loaded JavaScript/JSX, e.g. `DOMPurify.setConfig({ ADD_ATTR: ['target'] });`. Notes that only one active DOMPurify config exists at a time and later `sanitize` parameters are ignored until the config is changed or cleared."
+          }
+        ],
+        "node_id": "n000020",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000024",
+          "start_page": 23,
+          "end_page": 24
+        },
+        "summary": "This section explains how to configure rich text in IEG forms and specifically how to make external links open in a new tab/window. It lists the supported IEG display elements for rich text and shows that DOMPurify sanitization removes the `target` attribute by default, causing links to open in the current tab. The fix is to add `dompurify` as a dependency and set a persistent config such as `DOMPurify.setConfig({ ADD_ATTR: ['target'] });` in app-loaded JavaScript/JSX."
+      },
+      {
+        "title": "9 Configuring hint text for forms",
+        "level": 1,
+        "children": [],
+        "node_id": "n000022",
+        "range": {
+          "start_unit_id": "p000025",
+          "end_unit_id": "p000026",
+          "start_page": 25,
+          "end_page": 26
+        },
+        "summary": "Explains how to configure hint text in IEG forms using the `<hint-text>` element on container, question, and list-question elements. Notes that hint text should be short, supports no HTML, and help-text or explainer should be used for longer or formatted content. Includes examples for each element type. Also highlights globalization/date-format considerations: align `REACT_APP_DATE_FORMAT` with `DateAdapter_DateFormat` and `Errors_date` messages in the locales package."
+      },
+      {
+        "title": "10 Configuring explainer text for forms",
+        "level": 1,
+        "children": [],
+        "node_id": "n000023",
+        "range": {
+          "start_unit_id": "p000027",
+          "end_unit_id": "p000028",
+          "start_page": 27,
+          "end_page": 28
+        },
+        "summary": "Describes how to add hidden, expandable explainer text to IEG forms to provide optional background or help without cluttering the page. Explainer elements can be inserted into cluster, question-page, or relationship-page elements. The section includes example XML showing title and description usage, including a Social Security Number example, and notes that explainers are useful for large amounts of supplemental text."
+      },
+      {
+        "title": "11 Configuring the 'Help' label for forms",
+        "level": 1,
+        "children": [],
+        "node_id": "n000024",
+        "range": {
+          "start_unit_id": "p000029",
+          "end_unit_id": "p000030",
+          "start_page": 29,
+          "end_page": 30
+        },
+        "summary": "Explains how to change or remove the “Help” label shown on form input control help icons by overriding the default localized message. To remove it, set `WidgetHelp_helpToggleText` to a single space in a custom `src/locale/messages_en.json`, then update `src/config/intl.config.js` to use that messages file for the English locale and rebuild/deploy the app."
+      },
+      {
+        "title": "12 Configuring required or optional labels for form fields",
+        "level": 1,
+        "children": [],
+        "node_id": "n000025",
+        "range": {
+          "start_unit_id": "p000031",
+          "end_unit_id": "p000032",
+          "start_page": 31,
+          "end_page": 32
+        },
+        "summary": "This section explains how to configure IEG form labels to show either optional fields (default) or required fields instead. By default, non-required fields are labeled “Optional” and required fields are unlabeled. If you prefer required labels, add the environment variable REACT_APP_DISPLAY_REQUIRED_LABEL=true to your .env file. This helps reduce form clutter by highlighting only the chosen field type."
+      },
+      {
+        "title": "13 Configuring input formats and constraints for form fields",
+        "level": 1,
+        "children": [
+          {
+            "title": "13.1 Configuring phone numbers",
+            "level": 2,
+            "children": [],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "Explains how to configure phone number input masks in IEG forms using Cleave.js. Steps include adding cleave.js to package.json, importing the locale-specific addon, setting REACT_APP_PHONE_MASK_FORMAT in .env, and applying the wds-js-input-mask-phone class to the question. It also covers optional settings for a custom delimiter and a fixed country prefix via REACT_APP_PHONE_MASK_DELIMITER and REACT_APP_PHONE_MASK_LEFT_ADDON."
+          },
+          {
+            "title": "13.2 Configuring date formats",
+            "level": 2,
+            "children": [],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "This section explains how to configure IEG form date formats using the REACT_APP_DATE_FORMAT environment variable. The default is MM/DD/YYYY, and invalid values revert to the default. Supported formats are dd-mm-yyyy, mm-dd-yyyy, and yyyy-mm-dd. It notes that the same format must be used consistently in locale messages and that only slash-separated display is supported, even though the config uses dashes. It also shows the .env update procedure and an example setting for DD/MM/YYYY."
+          },
+          {
+            "title": "13.3 Configuring currency symbols",
+            "level": 2,
+            "children": [],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "This section explains how to configure the currency symbol shown in IEG form currency fields by setting the REACT_APP_CURRENCY_MASK_ADDON environment variable. It includes an example of adding a symbol such as “$” or similar to the displayed currency format."
+          },
+          {
+            "title": "13.4 Configuring inputs to be obscured for privacy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000038",
+              "start_page": 37,
+              "end_page": 38
+            },
+            "summary": "Explains how to obscure confidential form inputs for privacy in IEG data store schemas. Set an entity attribute type to IEG_OBSCURED (e.g., ssn) to hide user input as it is typed; this cannot be used with masks. If needed, create a custom domain based on IEG_OBSCURED to add constraints such as min/max length, then assign that domain type to the attribute. Includes an SSN example and references the authoring guide for data types/domains."
+          }
+        ],
+        "node_id": "n000026",
+        "range": {
+          "start_unit_id": "p000033",
+          "end_unit_id": "p000038",
+          "start_page": 33,
+          "end_page": 38
+        },
+        "summary": "Covers how to configure IEG form inputs and constraints for phones, dates, currency, and obscured confidential fields. Describes using reserved CSS mask classes and optional custom Cleave.js masks, matching field width to input length, and optionally adding a date picker. Phone numbers require cleave.js, locale-specific addons, and env vars for format, delimiter, and country prefix. Date format is controlled by REACT_APP_DATE_FORMAT with limited supported values. Currency symbols use REACT_APP_CURRENCY_MASK_ADDON. Privacy-sensitive inputs use IEG_OBSCURED or a custom domain in the data store schema."
+      },
+      {
+        "title": "14 Configuring code-table hierarchies for form fields",
+        "level": 1,
+        "children": [],
+        "node_id": "n000031",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000040",
+          "start_page": 39,
+          "end_page": 40
+        },
+        "summary": "Explains how to configure code-table hierarchies in IEG form fields to present two linked drop-down questions: selecting the first enables the second. The root code table becomes the first question; the child code table becomes the second, and summary pages show both. Notes that hierarchical values cannot be displayed in lists and codetable-hierarchy-layout options are unsupported. To render the second label correctly, each code table name must have a matching locale element in the code-table definition’s displaynames section, with an example hierarchy for County/City."
+      },
+      {
+        "title": "15 Implementing a combo box for form fields",
+        "level": 1,
+        "children": [
+          {
+            "title": "15.1 Implementing search functions for ComboBox components",
+            "level": 2,
+            "children": [],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000041",
+              "end_unit_id": "p000042",
+              "start_page": 41,
+              "end_page": 42
+            },
+            "summary": "Explains how to implement ComboBox search functions for IEG form fields using auto-complete. The search function is a JavaScript function taking the ComboBox value and returning an items array with mandatory id, value, and optional item data matching the target entity’s formData. It must be registered with IEGRegistry so IEGForm can call it. Also covers optional Add New menu support via a newItem object, and controlled error handling by returning { errorMessage: '...' } to display messages under the ComboBox."
+          },
+          {
+            "title": "15.2 Configuring combo box scripts and schemas",
+            "level": 2,
+            "children": [],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000043",
+              "end_unit_id": "p000044",
+              "start_page": 43,
+              "end_page": 44
+            },
+            "summary": "Explains how to configure an IEG combo box in a question page: add the `<combo-box>` child to a string-typed question, set `key`, `search-function`, optional `target-entity`, and optional `filter-items`. Also add a same-page cluster for the target entity to display selected item details, and update the schema with elements for both the combo-box entity and target entity, associating them to `Person`. Notes that combo-box questions cannot be control questions."
+          }
+        ],
+        "node_id": "n000032",
+        "range": {
+          "start_unit_id": "p000041",
+          "end_unit_id": "p000044",
+          "start_page": 41,
+          "end_page": 44
+        },
+        "summary": "Explains how to add a ComboBox to IEG form fields with auto-complete search. Covers implementing and registering a JavaScript search function in IEGRegistry, returning items with mandatory id/value and optional item data matching the target entity, plus optional Add New and controlled error messages. Also shows how to configure the IEG script and schema: use a string question with `<combo-box>` attributes key, search-function, optional target-entity and filter-items, add a same-page target cluster, and define both entities in the schema under Person."
+      },
+      {
+        "title": "16 Customizing script behavior with BaseFormContainer",
+        "level": 1,
+        "children": [],
+        "node_id": "n000035",
+        "range": {
+          "start_unit_id": "p000045",
+          "end_unit_id": "p000046",
+          "start_page": 45,
+          "end_page": 46
+        },
+        "summary": "Explains how script behavior is controlled and customized through the BaseFormContainer.js component. Lists key props such as mandatory iegFormId and title, plus options for login/signup, partial submission, exit/finish/save behaviors, ref access, and first-page back-button redirection. Notes default behaviors and when they apply. Also describes the procedure to customize an existing form feature by locating its path in Paths.js/Routes.js, copying the feature to a custom folder, adding a matching route, and overriding BaseFormContainer handlers like onExit and onFinish."
+      },
+      {
+        "title": "17 Merging clusters with the cluster element grouping-id attribute",
+        "level": 1,
+        "children": [],
+        "node_id": "n000036",
+        "range": {
+          "start_unit_id": "p000047",
+          "end_unit_id": "p000048",
+          "start_page": 47,
+          "end_page": 48
+        },
+        "summary": "Explains how to merge multiple clusters into one on IEG summary pages using the cluster element’s grouping-id attribute. Notes this is not supported in standard Cúram web applications. Covers when merging is useful: related data across different schema entities, or conditional data that should appear within a non-conditional cluster when the condition is met. Describes that all clusters with the same grouping-id merge into the first cluster, whose title/buttons/layout apply, so it should be chosen carefully. Includes an XML example with three merged clusters."
+      },
+      {
+        "title": "18 Configuring relationship pages questions",
+        "level": 1,
+        "children": [],
+        "node_id": "n000037",
+        "range": {
+          "start_unit_id": "p000049",
+          "end_unit_id": "p000050",
+          "start_page": 49,
+          "end_page": 50
+        },
+        "summary": "Explains how to configure relationship question text on IEG relationship pages. By default, the label is dynamic: the first page asks “What is [related person] to you?” and later pages ask “What is [related person] to [main person]?” It notes the start date attribute must be named startDate, and age appears only if the Person entity’s dateOfBirth is populated. Includes the relationship.question.label configuration property and an ICU template example for customizing the wording."
+      },
+      {
+        "title": "19 Configuring relationship starting dates on relationship summary pages",
+        "level": 1,
+        "children": [],
+        "node_id": "n000038",
+        "range": {
+          "start_unit_id": "p000051",
+          "end_unit_id": "p000052",
+          "start_page": 51,
+          "end_page": 52
+        },
+        "summary": "This section explains how to configure relationship start dates on relationship summary pages in IEG. It shows how to set the default label text for a relationship type plus start date, such as “Married since Jun 12, 2014,” using the configuration property `relationship.type.date.label=%1s since %2s`. It also clarifies that `%1s` is the relationship type and `%2s` is the relationship start date."
+      },
+      {
+        "title": "20 Configuring quick-add-list",
+        "level": 1,
+        "children": [],
+        "node_id": "n000039",
+        "range": {
+          "start_unit_id": "p000053",
+          "end_unit_id": "p000058",
+          "start_page": 53,
+          "end_page": 58
+        },
+        "summary": "Explains how to configure the IEG quick-add-list component. Notes that it is enabled at the IEG script level and takes an entity plus optional criteria. Provides a full example for a household list of Person records, including quick-edit, quick-delete, and quick-add links, page content, and a loop for editing each member. Also shows a custom householdCount function that counts child Person entities and updates a typed attribute used by the UI logic."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

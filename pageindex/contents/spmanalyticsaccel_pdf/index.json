@@ -1,0 +1,1720 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "a7ae44eaba21cbe6",
+    "title": "Cúram 8.1.2 Cúram Platform Analytics Accelerator Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/SPMAnalyticsAccel_PDF.pdf",
+    "source_type": "pdf",
+    "sha256": "a7ae44eaba21cbe6816baff7eac211fd4391c23c4c1b5a9db0c8681b9fecac91",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:34:52+00:00",
+    "page_count": 68,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/SPMAnalyticsAccel_PDF.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram Platform Analytics Accelerator Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000068",
+      "start_page": 1,
+      "end_page": 68
+    },
+    "summary": "Front matter and main guide for the Cúram 8.1.2 Platform Analytics Accelerator. It introduces the SPMP Analytics accelerator as a worked BIRT example built on Adult Social Care, centered on a caseworker scenario with default charts for assigned Sickness Benefit vs. Incapacity Benefit cases and clients with multiple diagnoses. The section explains the platform/business process, when to choose SPMP Analytics versus SPMP BI&A based on data volume, workload, and scalability needs, and covers the full accelerator lifecycle: installation prerequisites, BIRT/Eclipse setup, scenario testing, fit-gap and requirements analysis, chart development, pod/workspace customization, publishing/testing, and preserving customizations via DMX/source control. Also includes the front-matter Note, Edition, Contents, and legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Notice to read before using the information or the supported product. This section is a brief front-matter note directing the reader to the Notices section on page 67 and showing the Merative US L.P. copyright notice (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition and front matter for the SPMP Analytics accelerator guide. States this edition applies to Cúram 8.1, 8.1.1, and 8.1.2. The section introduces SPMP Analytics, its Adult Social Care caseworker scenario, the business process/components, and guidance on choosing SPMP Analytics vs SPMP BI&A based on workload and scale. It also summarizes the product’s architecture, default charts, BIRT integration, and installation/build prerequisites and steps for the accelerator."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram Platform Analytics accelerator pages 15–24 cover setup and testing of BIRT analytics in a Cúram development environment: building BI content, starting the XML server, configuring Eclipse/Tomcat with the Cúram BIRT Viewer, and verifying reports via sample pods and report lists. It then introduces the SPMP Analytics scenario and a fit-gap analysis comparing default analytics to business requirements, especially the Caseload Summary report versus a custom pie chart need. The section also explains using BIRT and the Cúram Data Dictionary to inspect reports, SQL, and underlying tables."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section covers analytics requirements analysis and design decisions for SPMP Analytics. It explains how to map report data elements, user roles, security access, chart types/formats, time periods, and display locations (user workspace or dashboard). It describes Cúram workspace and dashboard components and BIRT chart options such as dimensions, axes, legends, and output formats. It concludes with Fiona’s requirement analysis: caseworker role, Adult Social Care Eligibility Worker workspace, snapshot period, bar chart for Sickness vs Incapacity Benefit cases, and customizing the existing Caseload Summary report."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers setting Cúram Analytics component order via CustomEnvironment files, then installing/configuring BIRT Eclipse for report development and importing required projects. Describes creating and customizing a new pod and chart: adding CT_podType and CT_podLoaderBindings code table entries, generating code tables, implementing a pod loader Java class plus constants, and configuring a user workspace pod. Also begins BIRT report creation and data source setup for a new chart showing Sickness Benefit cases by number of diagnoses."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Cúram Platform Analytics steps for building and deploying a BIRT pie chart report: create a `userName` report parameter, add the `SicknessCases` dataset with SQL (including demo-data variant), configure chart category and slice size fields, labels, and tooltip, then preview/view as HTML. Also covers creating the report configuration record (`NewPODAnalyticChart`), publishing the report, testing the workspace pod, and saving required DMX/DMX-like configuration files (`PAGECONFIG`, `USERPAGECONFIG`, `BIREPORTCONFIGURATION`). Ends by introducing customization of an existing BIRT chart/report from `CaseloadSummary`."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "This section explains how to customize and deploy the SPMP Analytics BIRT report/pod for active benefit cases. It covers database connection setup, reading application data, SQL examples for sickness and incapacity benefit cases, chart formatting (size, axis, tooltips, labels), and viewing the report. It also describes configuring report records, changing the pod title and pod type, adding the pod to a user workspace, publishing the chart, testing it in the Cúram UI, and saving/extracting report configuration DMX files to preserve customizations."
+          },
+          {
+            "title": "Edition — pages 65-66",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000066",
+              "start_page": 65,
+              "end_page": 66
+            },
+            "summary": "This section explains how to save SPMP Analytics accelerator configuration files and pod name customizations under source control. It identifies the report configuration file BIREPORTCONFIGURATION.dmx in %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial, and the pod name file CT_PodType.ctx in %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\codetable. It also outlines extracting personalized pod DMX files (including CODETABLEITEM.dmx) from the database using build extractdata, then rebuilding with build database."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000066",
+          "start_page": 5,
+          "end_page": 66
+        },
+        "summary": "Edition/front matter for the SPMP Analytics accelerator guide, applying to Cúram 8.1, 8.1.1, and 8.1.2. Covers the accelerator overview and Adult Social Care caseworker scenario, when to choose SPMP Analytics vs SPMP BI&A, and the overall architecture/business process. It then walks through installation, BIRT setup, fit-gap/requirements analysis, report/chart development, pod and workspace customization, publishing/testing, and preserving customizations in DMX/source control files."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000068",
+              "end_unit_id": "p000068",
+              "start_page": 68,
+              "end_page": 68
+            },
+            "summary": "Legal notice section covering sample data, fictitious names, sample source programs, and copyright/license terms. States sample programs may be copied, modified, and distributed for API-conforming application development, but are provided “AS IS” without warranty or liability. Includes the Merative privacy policy URL and a list of trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus a copyright notice for Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000068",
+              "end_unit_id": "p000068",
+              "start_page": 68,
+              "end_page": 68
+            },
+            "summary": "Lists trademark and copyright notices for the document and related licensed material. States that sample names and data are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and are provided “AS IS” without warranty. Includes the Merative privacy policy link and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000067",
+          "end_unit_id": "p000067",
+          "start_page": 67,
+          "end_page": 67
+        },
+        "summary": "Legal and usage notice for the publication. Grants limited personal or enterprise reproduction rights only if proprietary notices are preserved, but forbids distribution, display, or derivative works outside those limits without Merative consent. States no other licenses are granted, Merative may withdraw permission, and export laws must be followed. Includes broad “AS-IS” warranty disclaimer, no patent license, and cautions that non-Merative product info and external websites are unendorsed and unsupported. Copyright: © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This section is the table of contents for the Cúram 8.1.2 document. It lists front matter (Note, Edition), the main chapter “Cúram Platform Analytics accelerator,” and its subsections: overview of the SPMP Analytics accelerator, installation steps, performing the SPMP Analytics scenario, analyzing functionality, and building the accelerator. It also includes notices, privacy policy, and trademarks, with page references for quick navigation."
+      },
+      {
+        "title": "1 Cúram Platform Analytics accelerator",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview of the SPMP Analytics accelerator",
+            "level": 2,
+            "children": [
+              {
+                "title": "The SPMP Analytics business scenario",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the SPMP Analytics business scenario in Cúram Platform Analytics. It explains that the accelerator provides BI and analytics for performance management, built as a worked example using BIRT and the Adult Social Care accelerator. The scenario centers on a caseworker, Jane, who uses two charts to review assigned caseloads: Sickness Benefit vs. Incapacity Benefit cases, and clients with multiple diagnoses on Sickness Benefit. The reports help identify case issues and support timely resolution."
+              },
+              {
+                "title": "The Cúram Platform Analytics business process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section introduces the Cúram Platform Analytics business process for the Adult Social Care application. It explains that a caseworker can use the application to view and monitor benefit case information for clients on assigned cases. The section also begins describing the components used to meet this need, including the Cúram Platform and its Case Management capabilities for searching clients and viewing client details and case information."
+              },
+              {
+                "title": "Choosing the right analytic processing landscape",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Identifying the right analytic processing infrastructure",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to choose between SPMP Analytics and SPMP BI&A based on analytics workload and infrastructure needs. SPMP Analytics is positioned for small to midsize organizations with modest data volumes and fewer analytic workloads, while BI&A targets larger, more complex environments. Key decision factors include data volume, complex data models, ad hoc queries, unpredictable computation paths, long-running queries, staging/cleansing/transformation needs, growing workloads, SLA impacts on case-processing throughput, and diverse user groups."
+                  },
+                  {
+                    "title": "SPMP Analytics architecture",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains SPMP Analytics architecture and deployment choices for performance/scalability. It contrasts caseworker and supervisor analytics workloads, noting that high-frequency queries and many users can hurt Cúram application throughput, making SPMP BI&A a better fit. It describes the Cúram BIRT Viewer as a clustered Java EE application that can scale via application server clustering without new code. Deployment options include running BIRT Viewer on the same cluster as Cúram (default) or on a separate cluster for better fault tolerance and independent scaling."
+                  },
+                  {
+                    "title": "Summary of SPMP Analytics",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Default operational charts",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000022",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "This section explains the default operational charts included in SPMP Analytics. It says 20+ charts are embedded in application pages to support decision making for caseworkers and managers. The default charts cover audit, case financials, caseload summary, investigation summary, participant information, and workflow requirements. It also briefly introduces BIRT as the reporting platform used to embed charts and reports in Cúram pages, and notes that BI&A adds more advanced analytics but is not covered here."
+                      },
+                      {
+                        "title": "Business Intelligence Reporting Tool",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000023",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "Explains the Business Intelligence Reporting Tool (BIRT) used by SPMP Analytics to create embedded charts and traditional reports for rich client and web applications. Notes that BIRT is open source, included in SPMP, and suited for lower-cost analytics using Cúram database or data-warehouse data. Describes how BIRT supports contextual, interactive summaries integrated into application pages, workspaces, panels, and dashboards. Also distinguishes BI&A as a separately licensed, more advanced product not covered here."
+                      }
+                    ],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "SPMP Analytics provides business intelligence and analytics for monitoring performance, spotting process gaps, and analyzing current issues. It supports core BI and performance management, with architecture designed for scalability and clustered deployment of the Cúram BIRT Viewer. The section notes default deployment on the same cluster as Cúram or separately for fault tolerance and independent scaling. It also distinguishes caseworker and supervisor analytics needs, where high query volume may make SPMP BI&A a better fit."
+                  },
+                  {
+                    "title": "Summary of SPMP Business Intelligence and Analytics",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section summarizes SPMP Analytics and its BIRT-based reporting support. It describes the runtime environment, report administration, integration into application pages, and default operational charts for audits, case financials, caseloads, investigations, participants, and workflow. It also explains BIRT as the open-source reporting tool used for embedded charts and reports. Finally, it distinguishes SPMP Analytics from the separately licensed Cúram BI&A product, which adds warehouse capabilities, dashboards, and more charts."
+                  }
+                ],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Compares SPMP Analytics and SPMP BI&A to help choose the right analytic processing landscape. SPMP Analytics suits small-to-midsize organizations with modest data and fewer workloads, while BI&A fits larger, more complex environments, especially with large data volumes, ad hoc queries, staging/transform needs, long queries, growing demand, or many caseworkers/supervisors. It also outlines SPMP Analytics architecture: a clustered Java EE Cúram BIRT Viewer that can run with Cúram by default or on a separate cluster for independent scaling and fault tolerance."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000012",
+              "start_page": 9,
+              "end_page": 12
+            },
+            "summary": "Introduces the SPMP Analytics accelerator as a worked BIRT example built on Adult Social Care to add analytics for performance management. It presents the business scenario of Jane, a caseworker using bar and pie charts to review assigned Sickness Benefit vs. Incapacity Benefit caseloads and clients with multiple diagnoses. It explains the underlying Cúram business process and components, then compares SPMP Analytics with SPMP BI&A to help choose an analytic landscape based on data volume, workload, query complexity, and scalability/fault-tolerance needs."
+          },
+          {
+            "title": "1.2 Installing the SPMP Analytics accelerator",
+            "level": 2,
+            "children": [
+              {
+                "title": "Installing the prerequisite software",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains prerequisites and build setup for installing Cúram accelerators. Requires installing an Application Development Environment and Cúram first, then downloading the Adult Social Care and SPMP Analytics accelerators (Merative-only access). The accelerators must be extracted at the root of the Cúram installation directory (%CURAM_DIR%, default C:\\Merative\\Curam\\Development). Also outlines build/config edits: update SetEnvironment.bat/.sh, add component order entries, and modify deployment_packaging.xml to include the accelerator components."
+              },
+              {
+                "title": "Installing and building the accelerator",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains prerequisite software and the install/build steps for the Adult Social Care and SPMP Analytics accelerators. Requires installing an ADE and Cúram, then extracting the accelerators under %CURAM_DIR% (default C:\\Merative\\Curam\\Development). The build uses shared steps, so Adult Social Care install steps are not needed separately. Also details required configuration edits in SetEnvironment.bat/.sh, including updates to SERVER_COMPONENT_ORDER, CLIENT_COMPONENT_ORDER, and deployment_packaging.xml to add SPMAnalytics, AdultSocialCare, ASCIntakeConfiguration, and IncapacityBenefit."
+              },
+              {
+                "title": "Starting the XML server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to start the Cúram XML server before running the application: go to `%CURAM_DIR%\\CuramSDEJ\\xmlserver` and run `ant -f xmlserver.xml`. It also notes the default Cúram installation paths on Windows and Linux, then briefly introduces the next setup topic, configuring Eclipse with the Cúram BIRT Viewer for displaying analytics charts in application pages."
+              },
+              {
+                "title": "Setting up Eclipse with the Cúram BIRT Viewer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to set up Eclipse with the Cúram BIRT Viewer so BIRT analytic charts display in application pages. The section notes this is mainly required for analytics developers, while Java developers may not need it. It instructs importing an existing Eclipse project from %CURAM_DIR%\\BIApp\\CuramBIRTViewer via File > Import > Existing Projects into Workspace. Also references the Cúram installation directory default path under C:\\Merative\\Curam\\Development."
+              },
+              {
+                "title": "Testing the installation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Verifies the BIRT installation in Cúram. After building the `client.birt` target from `%CURAM_DIR%\\BIContent` and adding `%CURAM_DIR%\\EJBServer\\project\\properties` to Tomcat’s JVM classpath, start the Cúram server, RMILoginClient, and Tomcat. Log in as `ascewuser`, open `http://localhost:9080/Curam/AppController.do`, and confirm two new eligibility worker pods with BIRT charts. Then open `http://localhost:9080/CuramBIRTViewer/List` to ensure the available reports list is displayed, including the first report component path."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000016",
+              "start_page": 13,
+              "end_page": 16
+            },
+            "summary": "Explains how to install and build the SPMP Analytics accelerator. Requires ADE and Cúram first, then downloading and extracting the accelerator at %CURAM_DIR% (default C:\\Merative\\Curam\\Development). Build setup includes editing SetEnvironment.bat/.sh, SERVER_COMPONENT_ORDER, CLIENT_COMPONENT_ORDER, and deployment_packaging.xml to add SPMAnalytics, AdultSocialCare, ASCIntakeConfiguration, and IncapacityBenefit. Also covers starting the XML server, importing Cúram BIRT Viewer into Eclipse, and verifying the installation by running Cúram/Tomcat and checking BIRT charts and report lists."
+          },
+          {
+            "title": "1.3 Performing the SPMP Analytics scenario",
+            "level": 2,
+            "children": [
+              {
+                "title": "Viewing the analytics on the users home page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to view SPMP analytics on the user workspace home page. After opening the Curam URL, two new pods with BIRT charts appear: “My Assigned Active Benefit Cases,” a bar chart comparing Sickness Benefit and Incapacity Benefit cases, and “Sickness Benefit Cases By Number of Diagnosis,” a pie chart showing clients with one or more diagnoses. Useful if you need the default analytics displayed to eligibility workers or the basis for later fit-gap analysis."
+              }
+            ],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000017",
+              "start_page": 17,
+              "end_page": 17
+            },
+            "summary": "Describes how to run the SPMP Analytics scenario and view default analytics on the Eligibility Worker home page. After opening the Curam URL, two BIRT chart pods appear: “My Assigned Active Benefit Cases,” a bar chart comparing Sickness Benefit and Incapacity Benefit cases, and “Sickness Benefit Cases By Number of Diagnosis,” a pie chart of clients with one or more diagnoses. This section is useful for understanding the baseline analytics shown before fit-gap analysis."
+          },
+          {
+            "title": "1.4 Analyzing the SPMP Analytics functionality",
+            "level": 2,
+            "children": [
+              {
+                "title": "Completing a fit gap analysis",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Fit gap analysis scenario",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section describes a fit gap analysis scenario for SPMP Analytics. It explains how a business analyst compares default analytics with customer requirements, focusing on benefit case charts in the user workspace. The example requirement is a bar chart showing assigned active Sickness Benefit vs Incapacity Benefit cases. It also references the default system’s BIRT pods on the Eligibility Worker home page: one bar chart for active benefit cases and one pie chart for diagnoses. Useful for assessing whether analytics meet project needs."
+                  },
+                  {
+                    "title": "Analyzing the default functionality",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000020",
+                      "start_page": 18,
+                      "end_page": 20
+                    },
+                    "summary": "Describes default SPMP Analytics charts available on the user workspace and how to assess them in fit-gap analysis. Explains table columns: business name, technical name, description, database fields used, and dynamically generated data items created via BIRT SQL/JavaScript. Lists charts by role: Audit Coordinator (case audit and audit plan pie/bar charts), Superuser (financial benefit/payment charts), and Intake super user (application processing deadline charts). Useful for identifying reusable, customizable, or new analytics content."
+                  },
+                  {
+                    "title": "Reading product documentation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section briefly explains that the Cúram product documentation is available to help users learn about Cúram Platform. It points to business and technical documentation for specific versions and editions of the Cúram product suite, including links to developerWorks, Redbooks, and white papers. The page also includes analytics report tables listing report names, technical names, descriptions, database fields, and dynamically generated data items for several workflow and caseload reports."
+                  },
+                  {
+                    "title": "Evaluating the default analytics scenario",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Examining the SPMP Analytics descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "This section explains how Fiona evaluates SPMP analytics against project requirements using Cúram BI/analytics documentation, report descriptions, and screen captures. It shows that the Caseload Summary Report has partial fit with a bar-chart requirement for sickness vs incapacity benefit cases, but the documentation alone is insufficient to confirm alignment. It also notes that no default SPMP analytics fit the “Clients with Multiple Diagnoses” pie chart, implying a custom chart is needed."
+                      },
+                      {
+                        "title": "Examining the SPMP Analytics application page captures",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "This section shows Fiona evaluating SPMP Analytics against project requirements by reviewing default analytics descriptions and screen captures. She finds partial fit for the Caseload Summary report, which uses a bar chart with case status on the x-axis and number of cases on the y-axis, similar to a required sickness/incapacity benefit comparison. However, she determines there is no existing default analytics fit for the Clients with Multiple Diagnoses pie chart, so a custom chart is needed."
+                      },
+                      {
+                        "title": "Examining analytics data by using BIRT and the Data Dictionary",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Business Intelligence Reporting Tool",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000042",
+                            "range": {
+                              "start_unit_id": "p000023",
+                              "end_unit_id": "p000023",
+                              "start_page": 23,
+                              "end_page": 23
+                            },
+                            "summary": "This section explains BIRT as an open-source, low-cost reporting and analytics tool included in SPMP for embedding charts and traditional reports in Cúram web and rich client apps. It also covers the Cúram Data Dictionary for generating analysis documentation to support fit-gap and customization impact analysis across database tables, code tables, and related artifacts. The section ends with a BIRT walkthrough for analyzing the default Caseload Summary Report, including viewing data items, SQL, and report preview."
+                          },
+                          {
+                            "title": "Cúram Data Dictionary",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000043",
+                            "range": {
+                              "start_unit_id": "p000023",
+                              "end_unit_id": "p000023",
+                              "start_page": 23,
+                              "end_page": 23
+                            },
+                            "summary": "Explains the Cúram Data Dictionary, available during installation, which generates application-specific analysis documentation for fit-gap and customization impact analysis. The documentation helps technical and non-technical users explore metadata, business functions, database tables, code tables, and related artifacts such as Domain Definitions, Message Files, Application Properties, and Workflows. The page also introduces BIRT as a reporting/analytics tool in Cúram and begins a walkthrough for analyzing the default Caseload Summary Report."
+                          },
+                          {
+                            "title": "Analyzing SPMP Analytics with BIRT",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000044",
+                            "range": {
+                              "start_unit_id": "p000023",
+                              "end_unit_id": "p000023",
+                              "start_page": 23,
+                              "end_page": 23
+                            },
+                            "summary": "Explains how to use BIRT and the Cúram Data Dictionary for SPMP analytics and fit-gap analysis. Describes BIRT as an embedded, low-cost reporting tool for charts and reports against Cúram database or data warehouse data, and notes it can integrate analytics into workspaces, context panels, and dashboards. Also introduces the Data Dictionary for generating analysis documentation on metadata, database tables, code tables, workflows, and other artifacts. Includes steps for opening the Caseload Summary Report in BIRT Eclipse."
+                          },
+                          {
+                            "title": "Analyzing requirements with the Data Dictionary",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000045",
+                            "range": {
+                              "start_unit_id": "p000024",
+                              "end_unit_id": "p000024",
+                              "start_page": 24,
+                              "end_page": 24
+                            },
+                            "summary": "This section explains how to use the Cúram Data Dictionary to analyze a report’s requirements, using the default Caseload Summary Report as an example. It shows that the report SQL references CaseHeader, CaseUserRole, and OrgObjectLink tables and highlights a gap where the chart shows case statuses instead of the required case types. The procedure begins in the Cúram doc index, opens the Data Dictionary, searches Application Database Tables, and inspects the CaseHeader table details."
+                          }
+                        ],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000024",
+                          "start_page": 22,
+                          "end_page": 24
+                        },
+                        "summary": "Explains how to examine SPMP analytics data with BIRT and the Cúram Data Dictionary. BIRT is described as an embedded, low-cost reporting tool for charts and reports against Cúram database or data warehouse data, with analytics usable in workspaces, context panels, and dashboards. The Data Dictionary generates application-specific analysis documentation for fit-gap and customization impact analysis across database tables, code tables, workflows, and related artifacts. Includes a walkthrough using the Caseload Summary Report, showing its SQL, preview results, and a gap where it displays case statuses instead of required case types."
+                      }
+                    ],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000024",
+                      "start_page": 22,
+                      "end_page": 24
+                    },
+                    "summary": "This section walks through Fiona’s evaluation of default SPMP analytics against project requirements. It compares report descriptions and screen captures, finding partial fit for the Caseload Summary Report’s bar chart, but no default analytics for the Clients with Multiple Diagnoses pie chart, implying a custom chart is needed. It then introduces BIRT and the Cúram Data Dictionary as tools for fit-gap analysis, showing how to inspect the Caseload Summary report’s SQL, preview data, and identify a mismatch: the report uses case statuses rather than required case types."
+                  }
+                ],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000024",
+                  "start_page": 17,
+                  "end_page": 24
+                },
+                "summary": "Explains how to complete a fit-gap analysis for SPMP Analytics. It uses Fiona’s scenario to compare project requirements for a user-workspace bar chart of Sickness vs Incapacity Benefit cases and a pie chart for clients with multiple diagnoses against default analytics. Summarizes available default charts by role and their report metadata, then shows how to use product documentation, BIRT, and the Cúram Data Dictionary to inspect report SQL and preview data. Key finding: Caseload Summary is a partial fit for the bar chart, but the pie chart requires custom development."
+              },
+              {
+                "title": "Analyzing the requirements",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining the user role requirements",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Users",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Defines the “Users” concept for analytics requirements: a user is an employee who creates and manages cases, and new users must be registered with a security role and user application view. Emphasizes defining reporting needs by user role, including front-line staff and managers, since each role needs timely, relevant, accurate, and consistent data. Notes that caseworkers need quick access to current, frequently updated information for day-to-day decisions in their workspace."
+                      },
+                      {
+                        "title": "Define the user role and access rights requirements",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000049",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "This section explains how to define analytics reporting needs by user role and access rights. It says each user must be registered with a security role and user application view, and analytics requirements should be considered separately for front-line staff and managers. It highlights that caseworkers need timely, current information for day-to-day decisions, with frequently updated analytics. The section sets up role-based reporting requirements for the organization."
+                      }
+                    ],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Defines analytics reporting requirements by user role. A user is an employee who creates and manages cases, and each new user must be assigned a security role and user application view. The section says analytics needs should be considered separately for front-line staff and managers, since each role expects timely, relevant, accurate, and consistent data. It highlights caseworkers in particular, who need quick access to current, frequently updated information for day-to-day decisions in their workspace."
+                  },
+                  {
+                    "title": "Defining the chart type and format requirements",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Analytics chart types and formats",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000051",
+                        "range": {
+                          "start_unit_id": "p000026",
+                          "end_unit_id": "p000027",
+                          "start_page": 26,
+                          "end_page": 27
+                        },
+                        "summary": "Explains how to choose analytics chart types and formats for Cúram/BIRT dashboards. It notes that supervisors need KPI dashboards showing summary and trend data at consolidated business unit and department levels, with drill-down into activity analytics. Security is controlled at the application page level. The section says BIRT supports 14 chart types, plus tube, pyramid, cone, and difference charts, and that tube/pyramid/cone are bar-chart equivalents with different visuals. It also highlights chart settings such as subtype, 2D/3D, output format, multiple y-axis, series type, and orientation."
+                      },
+                      {
+                        "title": "Define the analytics chart types and formats",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "This section explains how to define analytics chart types and display formats in BIRT. It covers supported output formats (PNG, BMP, JPG, Flex, SVG), chart series types and subtypes, 2D vs. 3D dimension choice, orientation, legend placement, multiple y-axes, and whether to use chart titles and label titles. It also notes that chart type and subtype should be chosen based on project requirements, and introduces defining the analytics time period (month, day, snapshot) for chart generation."
+                      }
+                    ],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000027",
+                      "start_page": 26,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to define analytics chart types and formats for Cúram/BIRT dashboards, especially KPI views for supervisors at business unit and department levels with drill-down to activity analytics. Notes that page-level security controls access to the chart. BIRT supports 14 chart types plus tube, pyramid, cone, and difference charts; the first three are bar-chart equivalents with different visuals. Key configuration options include subtype, 2D/3D, output format, multiple y-axes, series type, and orientation."
+                  },
+                  {
+                    "title": "Define the analytics time period",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Defines how often each analytics chart is generated. The section says to choose the chart’s time period requirement, such as month, day, or snapshot. Month uses one month of data, day uses one day of data, and snapshot uses the current database state with no date filtering. Useful for deciding chart refresh/granularity settings."
+                  },
+                  {
+                    "title": "Defining the location requirements",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "User workspace",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000055",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "Defines where analytics charts should appear in the application by describing the user workspace. The user workspace is a role-specific application page (for example, case worker, intake worker, or supervisor) and includes each application’s home page. The home page can be configured with pods, announcements, and quick links. The section also introduces the main components of a user workspace and references a figure showing a sample Cúram application layout."
+                      },
+                      {
+                        "title": "User workspace components",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000056",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000030",
+                          "start_page": 29,
+                          "end_page": 30
+                        },
+                        "summary": "Explains user workspace components in a Cúram application and how analytics charts fit into the home page layout. A user workspace is a role-specific application page with a configurable home page containing pods, announcements, and quick links. The section includes a figure and mapping table identifying workspace elements: Application Home Tab, Announcements, Pod, and chart parts (title, type, Y axis, X axis). Useful for understanding where charts are displayed in the application."
+                      },
+                      {
+                        "title": "Interactive dashboard",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000057",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "This section defines an interactive dashboard as a business-specific view of the data warehouse used to measure performance and communicate complex information visually. It highlights support for intuitive graphics such as dials, gauges, and traffic lights to show metric status against targets, and notes that SPMP Analytics can create dashboards for each user role. It also introduces dashboard components as the elements that make up a dashboard and enable user functions in the system."
+                      },
+                      {
+                        "title": "Dashboard components",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000058",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000032",
+                          "start_page": 31,
+                          "end_page": 32
+                        },
+                        "summary": "This section introduces interactive dashboard components in Cúram Platform Analytics/SPMP Analytics. It explains that dashboards are business-specific views of warehouse data used to measure performance and communicate metrics visually, including dials, gauges, and traffic lights. It also notes that dashboards can be created for each user role and that a dashboard consists of multiple elements enabling user functions, illustrated by a sample application figure."
+                      },
+                      {
+                        "title": "Deciding on the location for the analytics",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000059",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "Explains how to place analytics and plan the reporting data model. It says to decide whether analytics appear in a context panel, user workspace, or dashboard, choose which user role can access dashboard components, and select the right dashboard type: operational, strategic, or analytical. It also covers identifying required data elements, tracing them to business processes and physical storage, and noting that hard-to-read data (large objects, unstructured or attribute-value data) increases analytics cost."
+                      }
+                    ],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000032",
+                      "start_page": 29,
+                      "end_page": 32
+                    },
+                    "summary": "Defines requirements for where analytics charts are displayed in the application. It explains user workspaces as role-specific home pages with configurable pods, announcements, and quick links, and maps workspace elements to chart parts such as title, type, axes, and legend. It also defines interactive dashboards as role-based business views of warehouse data that use visual indicators like dials, gauges, and traffic lights to show performance against targets, and introduces dashboard components as the elements that support user functions."
+                  },
+                  {
+                    "title": "Define the data elements for your analytics",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "This section explains how to define analytics data elements for a reporting data model. It stresses identifying the business processes that generate needed data, locating where the data is physically stored, and recognizing when required data may not be captured by the application database. It also highlights that data in easy-to-access tables is simpler to analyze, while large objects, unstructured data, and attribute-value pairs are harder and more costly to process."
+                  }
+                ],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000032",
+                  "start_page": 25,
+                  "end_page": 32
+                },
+                "summary": "This section explains how to analyze analytics requirements by role, chart type, time period, and location. It distinguishes front-line staff/caseworkers, who need frequent current data, from supervisors, who need KPI summaries and drill-downs; access is controlled at the application page level. It outlines BIRT chart options and settings, including chart types, subtypes, 2D/3D, output formats, axes, series, orientation, and legend/title placement. It also defines time periods (month, day, snapshot) and where charts appear, such as user workspaces and interactive dashboards."
+              },
+              {
+                "title": "Analysis results for the SPMP Analytics requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how to plan SPMP analytics requirements, including where dashboards should appear (context panel, workspace, or dashboard), who can access them, and what dashboard type best fits the user. It also covers defining reporting data elements by tracing business processes and physical storage, noting that data in standard SQL tables is easier to use than data in large objects, unstructured formats, or attribute-value pairs. Concludes with key business and technical decisions from Fiona’s requirements analysis."
+              }
+            ],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000033",
+              "start_page": 17,
+              "end_page": 33
+            },
+            "summary": "Explains how to analyze SPMP Analytics requirements and default charts against a customer need. Covers Fiona’s fit-gap analysis for user-workspace bar and pie charts, using report metadata, BIRT, product docs, and the Cúram Data Dictionary to inspect SQL and data sources. Reviews role-based analytics needs (caseworker vs supervisor), BIRT chart types/settings, time periods, and placement options such as user workspace, context panel, or dashboard. Also notes data modeling concerns and that some charts fit partially while others need custom development."
+          },
+          {
+            "title": "1.5 Building the SPMP Analytics accelerator",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring the component order",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Explains how to add Cúram Analytics to server and client component order so it is included in builds. Involves creating and editing CustomEnvironment.bat/sh in %CURAM_DIR% rather than modifying SetEnvironment files, then rerunning SetEnvironment. Gives the exact CLIENT_COMPONENT_ORDER and SERVER_COMPONENT_ORDER entries for Windows and UNIX. Also briefly notes that BIRT development needs a separate Eclipse instance because the BIRT plug-in is incompatible with RSA, though it is not needed to view default BIRT content."
+              },
+              {
+                "title": "Installing BIRT development prerequisites",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Downloading BIRT Eclipse-based development environment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to set up the BIRT Eclipse-based development environment for creating or modifying BIRT reports. Covers downloading and extracting the Eclipse Report Designer, creating and running a birteclipse.bat file from %CURAM_DIR% with JAVA_HOME configured, and launching a second Eclipse instance for BIRT development. Also gives steps to import required projects into Eclipse from %CURAM_DIR%\\BIApp\\CuramBIRTViewer and %CURAM_DIR%\\BIContent."
+                  },
+                  {
+                    "title": "Importing projects into BIRT Eclipse",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to import the required Cúram BIRT projects into the BIRT Eclipse environment. In Eclipse, use File > Import > General > Existing Projects into Workspace twice: first for %CURAM_DIR%\\BIApp\\CuramBIRTViewer, then for %CURAM_DIR%\\BIContent. %CURAM_DIR% defaults to C:\\Merative\\Curam\\Development. Useful if you need to set up or work on BIRT reports in the development environment."
+                  },
+                  {
+                    "title": "Configuring projects within BIRT Eclipse",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains how to configure the BIRT Eclipse environment for Cúram reports. First, set the BIRT resource preference to the CuramBIRTViewer/WebContent/WEB-INF/bicontent/resources workspace folder so default or new reports work correctly. Then run the BIContent build target biapp.configure.eclipse with the Eclipse root path to copy JDBC drivers and other BIRT/Curam plug-ins into the BIRT Eclipse installation. Includes confirmation prompts and sample output showing files copied into plugin directories."
+                  },
+                  {
+                    "title": "Adding Eclipse plug-ins",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains how to add Cúram/BIRT Eclipse plug-ins and required JDBC drivers/resources to a BIRT Eclipse installation. You run build.bat biapp.configure.eclipse from the BIContent directory with the -Declipseroot path to your Eclipse install, confirm the location, and the build copies ODA JDBC drivers plus Cúram viewer files into the appropriate plugins folders. Also notes earlier BIRT preference setup for the workspace resources folder."
+                  }
+                ],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000037",
+                  "start_page": 35,
+                  "end_page": 37
+                },
+                "summary": "Explains how to set up a separate BIRT development environment for creating or editing BIRT reports. Covers downloading the Eclipse Report Designer with BIRT, creating and running birteclipse.bat from %CURAM_DIR% with JAVA_HOME set, importing the CuramBIRTViewer and BIContent projects, configuring the BIRT resource preference to the workspace resources folder, and running biapp.configure.eclipse to copy JDBC drivers and Cúram plug-ins into the Eclipse installation. Notes a second Eclipse instance is required and default report viewing does not need this setup."
+              },
+              {
+                "title": "Creating and customizing charts",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating a new chart and a new pod",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Implement a new pod and a new chart",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Creating the code table files",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Code table files for SPMP Analytics",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000073",
+                                "range": {
+                                  "start_unit_id": "p000039",
+                                  "end_unit_id": "p000039",
+                                  "start_page": 39,
+                                  "end_page": 39
+                                },
+                                "summary": "This section explains how to add SPMP Analytics code table files and records. It shows an example pod type code table entry using a java_identifier and locale description, then instructs creating CT_podLoaderBindings.ctx under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\codetable by copying the template from component core and removing existing code elements. It adds a matching pod loader binding entry that names the Java class generating the pod XML fragment, notes the binding value must match the pod type value, and ends with ctgen/database build steps."
+                              }
+                            ],
+                            "node_id": "n000072",
+                            "range": {
+                              "start_unit_id": "p000038",
+                              "end_unit_id": "p000039",
+                              "start_page": 38,
+                              "end_page": 39
+                            },
+                            "summary": "Explains how to create SPM Analytics code table files for a new pod: add the SPMAnalytics\\codetable directory, copy and edit CT_podType.ctx and CT_podLoaderBindings.ctx templates, remove existing code elements, and insert matching code table entries. The pod type entry defines the pod via java_identifier and localized description; the loader binding entry names the Java class that generates the pod XML fragment and must use the same value. Ends with ctgen and build database steps, plus a reminder to save configuration files."
+                          },
+                          {
+                            "title": "Implementing a pod loader",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Pod loader implementation for SPMP Analytics",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000075",
+                                "range": {
+                                  "start_unit_id": "p000040",
+                                  "end_unit_id": "p000041",
+                                  "start_page": 40,
+                                  "end_page": 41
+                                },
+                                "summary": "Explains how to implement an SPMP Analytics pod loader that creates a chart-based pod. It lists required code table files, Java source directories, build/refresh steps, and notes that the sample code can be adapted by changing bolded names for a new pod. Includes a full sample `MyBenefitCasesPodLoader` class extending `PodLoader`, showing injected `BIHelper`, pod creation with `PodBuilder`, title lookup from `PODTYPE`, and use of `SPMAnalyticsConst` and `BorderLayoutBuilder`."
+                              }
+                            ],
+                            "node_id": "n000074",
+                            "range": {
+                              "start_unit_id": "p000040",
+                              "end_unit_id": "p000041",
+                              "start_page": 40,
+                              "end_page": 41
+                            },
+                            "summary": "Explains how to implement an SPMP Analytics pod loader that creates a chart pod. It lists the required code table files, Java source directories, and build/refresh steps, then provides a sample `MyBenefitCasesPodLoader` extending `PodLoader`. The example injects `BIHelper`, creates the pod with `PodBuilder`, reads the title from `PODTYPE`, and uses `SPMAnalyticsConst` and `BorderLayoutBuilder`. Notes that bolded names in the sample must be changed to create a differently named pod."
+                          },
+                          {
+                            "title": "Configuring a pod for a user workspace",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000076",
+                            "range": {
+                              "start_unit_id": "p000042",
+                              "end_unit_id": "p000042",
+                              "start_page": 42,
+                              "end_page": 42
+                            },
+                            "summary": "Explains how to configure a pod for a user workspace in the Cúram Administrator application. It describes using the default wizard to add a pod to a personal page: log in as an administrator, open Administration Workspace > User Interface > Personalized Pod Pages, edit the ASCEligibilityWorkerHome UIM page, and select the “Sickness Benefit Cases By Number of Diagnosis” pod in the Configure a Personal Page wizard. Also includes a related code listing of SPMAnalyticsConst.java with pod/chart title and parameter constants."
+                          },
+                          {
+                            "title": "Creating a BIRT chart",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Creating a BIRT report",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000078",
+                                "range": {
+                                  "start_unit_id": "p000043",
+                                  "end_unit_id": "p000043",
+                                  "start_page": 43,
+                                  "end_page": 43
+                                },
+                                "summary": "This section explains how to create a new BIRT report in Eclipse for a Cúram analytics chart, specifically a chart showing Sickness Benefit cases by number of diagnoses. It covers setting up the BIRT workspace, opening the Property Editor and Resource Explorer, creating a new report design file, and configuring the data source by adding the CuramDB connection from the shared library. It also notes that an existing Case Load Summary chart can be copied and adapted as a starting point."
+                              },
+                              {
+                                "title": "Configuring the data source",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000079",
+                                "range": {
+                                  "start_unit_id": "p000043",
+                                  "end_unit_id": "p000043",
+                                  "start_page": 43,
+                                  "end_page": 43
+                                },
+                                "summary": "Explains how to configure the BIRT report’s data source for a new analytics report in Eclipse. It instructs users to open Outline and Resource Explorer, then add the shared CuramDB data source from CEFLibrary.rptlibrary to the report. This is part of creating a BIRT chart/report for Sickness Benefit cases by number of diagnoses and follows the report setup steps in the BIRT Eclipse environment."
+                              },
+                              {
+                                "title": "Adding a report parameter",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000080",
+                                "range": {
+                                  "start_unit_id": "p000044",
+                                  "end_unit_id": "p000044",
+                                  "start_page": 44,
+                                  "end_page": 44
+                                },
+                                "summary": "This section explains how to configure a BIRT report data source for Cúram reports, including supported sources CuramDB and CuramDM. It gives steps to edit the CuramDB JDBC data source, select the DB2 driver, enter database URL, username, and password from Bootstrap.properties, test the connection, and then view supported data sources in CEFLibrary.rptlibrary."
+                              },
+                              {
+                                "title": "Reading data from the application database",
+                                "level": 7,
+                                "children": [
+                                  {
+                                    "title": "SQL specified for SPMP Analytics",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000082",
+                                    "range": {
+                                      "start_unit_id": "p000045",
+                                      "end_unit_id": "p000046",
+                                      "start_page": 45,
+                                      "end_page": 46
+                                    },
+                                    "summary": "Explains how to configure an SPMP Analytics report to read case data from the application database. It shows creating a required report parameter named userName, then adding a data set called SicknessCases and linking SQL parameter p_username to the report parameter. The section includes a sample SQL query for Adult Social Care Sickness and Incapacity Benefit cases, using demo data for preview results and returning counts of clients grouped by diagnosis type (Multiple vs One)."
+                                  }
+                                ],
+                                "node_id": "n000081",
+                                "range": {
+                                  "start_unit_id": "p000045",
+                                  "end_unit_id": "p000046",
+                                  "start_page": 45,
+                                  "end_page": 46
+                                },
+                                "summary": "Explains how to configure an SPMP Analytics report to read case data from the application database. It instructs creating a required report parameter named userName, then adding a SicknessCases data set and linking SQL parameter p_username to that report parameter. Includes a sample SQL query for Adult Social Care Sickness and Incapacity Benefit cases, using demo data for preview results and returning client counts grouped by diagnosis type (Multiple vs One)."
+                              },
+                              {
+                                "title": "Choosing the chart type and selecting chart properties",
+                                "level": 7,
+                                "children": [
+                                  {
+                                    "title": "Adding a chart to the report",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000084",
+                                    "range": {
+                                      "start_unit_id": "p000047",
+                                      "end_unit_id": "p000047",
+                                      "start_page": 47,
+                                      "end_page": 47
+                                    },
+                                    "summary": "Explains how to add a chart to the report in BIRT Eclipse. It shows sample SQL with demonstration data and an expected preview table (Multiple Diagnosis = 1, One Diagnosis = 3). Then it gives steps to drag Chart-PieChartCuramStyled from the report item library onto the report, open chart properties, set size to 300x400 pixels, and add CuramAnalyticMasterPage to the report."
+                                  },
+                                  {
+                                    "title": "Clearing script properties and setting the data source",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000085",
+                                    "range": {
+                                      "start_unit_id": "p000048",
+                                      "end_unit_id": "p000048",
+                                      "start_page": 48,
+                                      "end_page": 48
+                                    },
+                                    "summary": "Instructions for modifying a report chart in BIRT: clear any existing BeforeFactory script, then set the chart’s data source to the Sickness data set. It also begins chart configuration steps for a pie chart, including updating the category definition to use NUMBEROFDIAGNOSIS and starting the slice size definition expression setup via the Expression Builder."
+                                  },
+                                  {
+                                    "title": "Setting the category definition",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000086",
+                                    "range": {
+                                      "start_unit_id": "p000048",
+                                      "end_unit_id": "p000048",
+                                      "start_page": 48,
+                                      "end_page": 48
+                                    },
+                                    "summary": "Explains how to configure a pie chart in the report designer: setting the chart category definition via the Expression Builder to use Available Column Bindings → Chart - PieChartCuramStyled → NUMBEROFDIAGNOSIS, after first clearing script properties and selecting the Sickness data set. This section is part of report layout editing and follows master page adjustments. Useful for understanding how the chart’s category field is bound before configuring slice size."
+                                  },
+                                  {
+                                    "title": "Setting the slice size definition",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000087",
+                                    "range": {
+                                      "start_unit_id": "p000048",
+                                      "end_unit_id": "p000048",
+                                      "start_page": 48,
+                                      "end_page": 48
+                                    },
+                                    "summary": "Instructions for configuring a pie chart’s slice size definition in the report/chart editor. The section explains how to open the Select Data tab, use Fx in Slice Size Definition, clear the expression builder, and choose the Available Column Bindings under Chart - PieChartCuramStyled. It follows earlier steps for setting the chart’s data source and category definition."
+                                  },
+                                  {
+                                    "title": "Setting the pie slice labels",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000088",
+                                    "range": {
+                                      "start_unit_id": "p000049",
+                                      "end_unit_id": "p000049",
+                                      "start_page": 49,
+                                      "end_page": 49
+                                    },
+                                    "summary": "Explains how to configure a BIRT chart’s pie slice labels: enable series labels, set leader line length to 5, and format labels to show percentile value data with suffix “)” and separator “ clients (”. Also covers setting tooltip text with an expression using NUMBEROFCLIENTS and NUMBEROFDIAGNOSIS, saving the report, and viewing it as HTML with parameter ascewuser."
+                                  },
+                                  {
+                                    "title": "Setting the tool tip",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000089",
+                                    "range": {
+                                      "start_unit_id": "p000049",
+                                      "end_unit_id": "p000049",
+                                      "start_page": 49,
+                                      "end_page": 49
+                                    },
+                                    "summary": "Instructions for configuring bar-chart tooltips in BIRT. The section shows how to open chart properties, go to Format Chart > Series > Value Series > Interactivity, choose Fx, and replace the expression with `row[\"NUMBEROFCLIENTS\"] + \" clients have \" + row[\"NUMBEROFDIAGNOSIS\"] + \".\"` so each bar displays a custom tooltip. It also notes applying changes, finishing, and saving the report."
+                                  },
+                                  {
+                                    "title": "Viewing the report",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000090",
+                                    "range": {
+                                      "start_unit_id": "p000049",
+                                      "end_unit_id": "p000049",
+                                      "start_page": 49,
+                                      "end_page": 49
+                                    },
+                                    "summary": "Explains how to view the report as HTML in BIRT Eclipse after configuring chart settings. It instructs the user to open View Report as HTML from the globe icon menu, then enter the caseworker parameter value ascewuser in the Parameter window and click OK. This section follows earlier steps for setting pie slice labels and tooltips, so it is mainly the final report-preview step."
+                                  }
+                                ],
+                                "node_id": "n000083",
+                                "range": {
+                                  "start_unit_id": "p000047",
+                                  "end_unit_id": "p000049",
+                                  "start_page": 47,
+                                  "end_page": 49
+                                },
+                                "summary": "Explains how to configure a pie chart in BIRT Eclipse for a sickness report. Covers adding the Chart-PieChartCuramStyled chart, resizing it and the master page, clearing any BeforeFactory script, binding the chart to the Sickness data set, and setting category and slice size expressions to NUMBEROFDIAGNOSIS and NUMBEROFCLIENTS. Also includes pie slice label formatting, a custom tooltip expression, and viewing the finished report as HTML with parameter ascewuser."
+                              }
+                            ],
+                            "node_id": "n000077",
+                            "range": {
+                              "start_unit_id": "p000043",
+                              "end_unit_id": "p000049",
+                              "start_page": 43,
+                              "end_page": 49
+                            },
+                            "summary": "Shows how to build a BIRT chart report in Eclipse for “Sickness Benefit cases by number of diagnoses.” Covers creating a new report design, adding the shared CuramDB data source, defining a required userName parameter, writing the SQL query to read case data, and using sample/demo SQL for preview. Then it configures a pie chart and master page, binds the chart to the dataset, sets category and slice-size expressions, formats labels, adds a tooltip, and views the report as HTML with parameter ascewuser."
+                          },
+                          {
+                            "title": "Configuring a report configuration record",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Report configuration values for new chart",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000092",
+                                "range": {
+                                  "start_unit_id": "p000050",
+                                  "end_unit_id": "p000050",
+                                  "start_page": 50,
+                                  "end_page": 50
+                                },
+                                "summary": "Lists the required report configuration values for creating the new BIRT chart in the SPMP Analytics accelerator. Specifies the chart’s report name (NewPODAnalyticChart), report file path (components/SPMAnalytics/birt/NewPODAnalyticChart.rptdesign), default report category, blank servlet, size (400×300), default scrolling and frame border, and description: a pie chart showing Sickness Benefit cases by number of diagnoses. Also includes the general steps to create a report configuration record in Cúram System Configurations."
+                              }
+                            ],
+                            "node_id": "n000091",
+                            "range": {
+                              "start_unit_id": "p000050",
+                              "end_unit_id": "p000050",
+                              "start_page": 50,
+                              "end_page": 50
+                            },
+                            "summary": "Explains how to create a BIRT report configuration record in Cúram System Configurations, enabling a report to be displayed on an application page. Lists the setup steps and required fields for a new report configuration, then gives the specific values for the SPMP Analytics chart: report name NewPODAnalyticChart, file path components/SPMAnalytics/birt/NewPODAnalyticChart.rptdesign, default category, blank servlet, size 400×300, default scrolling/frame border, and a description for a pie chart of Sickness Benefit cases by number of diagnoses."
+                          },
+                          {
+                            "title": "Publishing the chart",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000093",
+                            "range": {
+                              "start_unit_id": "p000051",
+                              "end_unit_id": "p000051",
+                              "start_page": 51,
+                              "end_page": 51
+                            },
+                            "summary": "Explains how to publish a new BIRT chart and verify it in the Cúram BIRT viewer, then test it in the user workspace. Covers running `build client.birt`, opening the BIRT viewer URL, selecting the `NewPODAnalyticChart` report, entering `ascewuser`, and confirming the “Sickness Benefit Cases By Number of Diagnosis” chart. Also describes refreshing projects, starting servers, logging in, customizing the home page/workspace, moving the pod, and saving chart configurations to prevent loss after database builds."
+                          },
+                          {
+                            "title": "Testing the user workspace page",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000094",
+                            "range": {
+                              "start_unit_id": "p000051",
+                              "end_unit_id": "p000051",
+                              "start_page": 51,
+                              "end_page": 51
+                            },
+                            "summary": "This section explains how to test the new analytics pod on the user workspace page. It covers publishing the BIRT chart, starting Cúram services, logging in as ascewuser, opening the user workspace, enabling the “Sickness Benefit Cases By Number of Diagnosis” pod via Customize, and repositioning the pod in the layout before saving changes. It also notes the related user home page analytics, and reminds that chart configuration files must be manually saved to avoid losing them during a database build."
+                          }
+                        ],
+                        "node_id": "n000071",
+                        "range": {
+                          "start_unit_id": "p000038",
+                          "end_unit_id": "p000050",
+                          "start_page": 38,
+                          "end_page": 50
+                        },
+                        "summary": "Explains how to implement and configure a new analytics pod and BIRT chart for the SPMP accelerator. Covers creating pod code tables (CT_podType, CT_podLoaderBindings), writing the Java pod loader and constants, enabling the pod in the user workspace, building a BIRT pie chart with SQL and labels/tooltips, viewing it as HTML, and creating the required report configuration record for NewPODAnalyticChart. Includes specific values, build steps, and reminders to save configuration files because database builds overwrite them."
+                      },
+                      {
+                        "title": "Saving your chart configurations",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Quick reference for saving the chart configurations files",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000096",
+                            "range": {
+                              "start_unit_id": "p000051",
+                              "end_unit_id": "p000051",
+                              "start_page": 51,
+                              "end_page": 51
+                            },
+                            "summary": "Quick reference for saving chart configuration files and preserving custom analytics charts. It explains that after creating a new chart, you must manually save all related chart configuration files so they are not overwritten by a build database target. This section introduces a reference table of files associated with saving a new chart and explains the meaning of its columns. Useful if you need guidance on which chart files to keep when customizing BIRT/analytics content."
+                          },
+                          {
+                            "title": "Saving the personalized pod pages configurations",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Personalized pod files for SPMP Analytics",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000098",
+                                "range": {
+                                  "start_unit_id": "p000053",
+                                  "end_unit_id": "p000053",
+                                  "start_page": 53,
+                                  "end_page": 53
+                                },
+                                "summary": "Explains where to find and save SPMP Analytics configuration files. It lists the personalized pod files USERPAGECONFIG.dmx and PAGECONFIG.dmx under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial, and the report configuration file BIREPORTCONFIGURATION.dmx under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial. It also gives steps to extract personalized pod/report DMX files from the database, copy them from build\\dataextractor, rerun build database, and save the files under source control."
+                              }
+                            ],
+                            "node_id": "n000097",
+                            "range": {
+                              "start_unit_id": "p000052",
+                              "end_unit_id": "p000052",
+                              "start_page": 52,
+                              "end_page": 52
+                            },
+                            "summary": "Explains how to save personalized pod page configuration DMX files under source control. It instructs extracting PAGECONFIG.dmx and USERPAGECONFIG.dmx from the database using the build extractdata target, then copying them from %CURAM_DIR%\\EJBServer\\build\\dataextractor. It also requires changing the config attribute type from blob to text, escaping < and > as &lt; and &gt;, and updating USERPAGECONFIG.dmx record 4500 to change pageid from ASCEligibilityWorkerHome to ASCEligibilityWorkerHome2."
+                          },
+                          {
+                            "title": "Saving your report configurations",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Report configuration files for SPMP Analytics",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000100",
+                                "range": {
+                                  "start_unit_id": "p000053",
+                                  "end_unit_id": "p000053",
+                                  "start_page": 53,
+                                  "end_page": 53
+                                },
+                                "summary": "Explains where SPMP Analytics configuration files are stored and how to preserve them in source control. It covers personalized pod files (USERPAGECONFIG.dmx, PAGECONFIG.dmx) and the report configuration file BIREPORTCONFIGURATION.dmx, with default locations under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial. It also outlines the procedure to extract DMX files from the database using the build extractdata target, copy them from the dataextractor directory, rebuild the database, and save the configuration files."
+                              }
+                            ],
+                            "node_id": "n000099",
+                            "range": {
+                              "start_unit_id": "p000053",
+                              "end_unit_id": "p000053",
+                              "start_page": 53,
+                              "end_page": 53
+                            },
+                            "summary": "Explains how to preserve SPMP Analytics configuration files under source control. It identifies the personalized pod files USERPAGECONFIG.dmx and PAGECONFIG.dmx and the report configuration file BIREPORTCONFIGURATION.dmx, with default locations under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial. It also gives the workflow to extract DMX files from the database using the build extractdata target, copy BIREPORTCONFIGURATION.dmx from the dataextractor directory, rebuild the database, and save the configurations."
+                          }
+                        ],
+                        "node_id": "n000095",
+                        "range": {
+                          "start_unit_id": "p000051",
+                          "end_unit_id": "p000053",
+                          "start_page": 51,
+                          "end_page": 53
+                        },
+                        "summary": "Explains how to preserve custom Cúram Analytics/BIRT chart settings under source control so they are not overwritten by a build database target. Covers publishing and testing a new BIRT chart, then gives a reference table for chart-related files and the required save workflow. Includes steps for extracting and editing personalized pod page DMX files (PAGECONFIG.dmx, USERPAGECONFIG.dmx, including blob-to-text and XML escaping changes) and saving report configuration BIREPORTCONFIGURATION.dmx from SPMAnalytics directories."
+                      }
+                    ],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000053",
+                      "start_page": 38,
+                      "end_page": 53
+                    },
+                    "summary": "Explains how to create and customize an SPMP Analytics chart and pod in Cúram. Covers adding pod code tables, implementing a Java pod loader and constants, enabling the pod in the user workspace, building a BIRT pie chart with data, labels, and tooltips, viewing it as HTML, and creating the required Report Configuration record for NewPODAnalyticChart. Also details how to preserve customizations by saving code table, pod page, report, and BIRT configuration DMX files because build database overwrites them."
+                  },
+                  {
+                    "title": "Customizing a chart",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Customizing a chart",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Customizing a BIRT chart",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Customizing a BIRT report",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000104",
+                                "range": {
+                                  "start_unit_id": "p000054",
+                                  "end_unit_id": "p000054",
+                                  "start_page": 54,
+                                  "end_page": 54
+                                },
+                                "summary": "Explains how to customize an existing BIRT report/chart in Eclipse without Java by copying the Caseload Summary report and saving it as a new design. The scenario targets a workspace analytic chart for Adult Social Care, specifically adapting the chart to show Sickness Benefit and Incapacity Benefit cases. The procedure covers configuring Eclipse for BIRT, opening the Property Editor, locating the report in Curam BI Content, opening CaseWorkloadReport.rptdesign, and saving it as CustomizedPODAnalyticChart.rptdesign in the SPMAnalytics/birt folder."
+                              },
+                              {
+                                "title": "Configuring the data source",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000105",
+                                "range": {
+                                  "start_unit_id": "p000054",
+                                  "end_unit_id": "p000055",
+                                  "start_page": 54,
+                                  "end_page": 55
+                                },
+                                "summary": "Explains how to configure a BIRT report’s data source for Cúram analytics. It shows adding the supported CuramDB source from CEFLibrary into a copied report, editing the JDBC connection, selecting the DB2 driver, and entering database URL, username, and password from Bootstrap.properties. Also notes CuramDM as the BI data mart source and that the connection should be tested for deployment to Tomcat or another application server."
+                              },
+                              {
+                                "title": "Reading data from the application database.",
+                                "level": 7,
+                                "children": [
+                                  {
+                                    "title": "SQL specified for SPMP Analytics",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000107",
+                                    "range": {
+                                      "start_unit_id": "p000056",
+                                      "end_unit_id": "p000057",
+                                      "start_page": 56,
+                                      "end_page": 57
+                                    },
+                                    "summary": "Explains how to modify the Case Load Data Set SQL in the Cúram report designer to read from the application database, including removing the STATUS_LOCALIZED computed column and previewing results. Provides a sample SQL query for SPMP Analytics that returns counts for Adult Social Care Sickness and Incapacity Benefit cases, with expected preview result columns PRODUCTCOUNT, DESCRIPTION, and SORTORDER."
+                                  }
+                                ],
+                                "node_id": "n000106",
+                                "range": {
+                                  "start_unit_id": "p000056",
+                                  "end_unit_id": "p000057",
+                                  "start_page": 56,
+                                  "end_page": 57
+                                },
+                                "summary": "Explains how to read from the application database in Cúram Analytics by editing the Case Load Data Set SQL in CustomizedPODAnalyticChart.rptdesign, removing the STATUS_LOCALIZED computed column, and previewing results. Includes a sample SPMP Analytics SQL query for Adult Social Care Sickness and Incapacity Benefit cases, joining case, role, org link, productdelivery, and product tables and grouping by description and sort order. Also notes the expected preview columns: PRODUCTCOUNT, DESCRIPTION, and SORTORDER."
+                              },
+                              {
+                                "title": "Choosing the chart type and updating chart properties",
+                                "level": 7,
+                                "children": [
+                                  {
+                                    "title": "Setting the chart height and width",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000109",
+                                    "range": {
+                                      "start_unit_id": "p000058",
+                                      "end_unit_id": "p000058",
+                                      "start_page": 58,
+                                      "end_page": 58
+                                    },
+                                    "summary": "Explains how to configure a BIRT chart’s height and width in the Eclipse workspace as part of report setup. This section appears in a larger workflow on choosing the chart type and updating chart properties for a demonstration report, alongside sample SQL and expected preview results for sickness/incapacity benefit data. Useful if you need chart sizing guidance within the chart/report configuration steps."
+                                  },
+                                  {
+                                    "title": "Setting the axis title and refreshing the data set",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000110",
+                                    "range": {
+                                      "start_unit_id": "p000059",
+                                      "end_unit_id": "p000059",
+                                      "start_page": 59,
+                                      "end_page": 59
+                                    },
+                                    "summary": "Explains how to configure a BIRT chart in Eclipse: set chart size, then set the Y-axis title to “Number of Cases,” clear and refresh the data binding, and update category axis values. It also shows how to set the X-axis category expression to DESCRIPTION and sort by SORTORDER. Useful for editing the CustomizedPODAnalyticChart report’s chart layout and data binding behavior."
+                                  },
+                                  {
+                                    "title": "Setting the axis values",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000111",
+                                    "range": {
+                                      "start_unit_id": "p000059",
+                                      "end_unit_id": "p000059",
+                                      "start_page": 59,
+                                      "end_page": 59
+                                    },
+                                    "summary": "This section explains how to configure a BIRT chart’s axis values in Eclipse. It updates the category (X) axis to use `row[\"DESCRIPTION\"]`, sets sorting by `row[\"SORTORDER\"]`, and continues into the value (Y) series interactivity settings. Nearby steps also cover chart sizing, setting the Y-axis title to “Number of Cases,” and refreshing/removing data bindings. Useful if you need chart axis, category, or sorting configuration details."
+                                  },
+                                  {
+                                    "title": "Setting the tool tip",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000112",
+                                    "range": {
+                                      "start_unit_id": "p000060",
+                                      "end_unit_id": "p000060",
+                                      "start_page": 60,
+                                      "end_page": 60
+                                    },
+                                    "summary": "This section explains how to configure chart tool tips in BIRT for each bar of a vertical bar chart. It instructs users to open chart properties, go to Format Chart, and set Series Interactivity so the tooltip displays `row[\"DESCRIPTION\"] + \"\\n\" + row[\"PRODUCTCOUNT\"]`. It then saves the report. The excerpt also begins adjacent topics on setting bar labels and viewing the report as HTML."
+                                  },
+                                  {
+                                    "title": "Setting the bar labels",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000113",
+                                    "range": {
+                                      "start_unit_id": "p000060",
+                                      "end_unit_id": "p000060",
+                                      "start_page": 60,
+                                      "end_page": 60
+                                    },
+                                    "summary": "Instructions for configuring a BIRT chart: set bar labels by opening chart properties, enabling Show Series Labels for the Value (Y) series, then adding Percentile value data with suffix “)” and separator “ (”. The section also includes setting tool tips to display DESCRIPTION and PRODUCTCOUNT, saving the chart, and viewing the report as HTML using caseworker ascewuser."
+                                  },
+                                  {
+                                    "title": "Viewing the report",
+                                    "level": 8,
+                                    "children": [],
+                                    "node_id": "n000114",
+                                    "range": {
+                                      "start_unit_id": "p000060",
+                                      "end_unit_id": "p000060",
+                                      "start_page": 60,
+                                      "end_page": 60
+                                    },
+                                    "summary": "This section explains how to view the BIRT report as HTML after configuring chart interactivity and labels. It instructs users to use the BIRT Eclipse toolbar’s globe icon menu to choose View Report as HTML, then enter the caseworker name parameter ascewuser in the Parameter window and click OK."
+                                  }
+                                ],
+                                "node_id": "n000108",
+                                "range": {
+                                  "start_unit_id": "p000058",
+                                  "end_unit_id": "p000060",
+                                  "start_page": 58,
+                                  "end_page": 60
+                                },
+                                "summary": "This section walks through configuring a demo BIRT chart in Eclipse for Sickness and Incapacity Benefit data. It includes the sample SQL and expected preview counts, then shows how to set the chart size (230x400), Y-axis title (“Number of Cases”), refresh/remove data bindings, define the X-axis as DESCRIPTION sorted by SORTORDER, bind PRODUCTCOUNT to the Y series, add tooltips, set bar labels, and view the report as HTML with parameter ascewuser."
+                              }
+                            ],
+                            "node_id": "n000103",
+                            "range": {
+                              "start_unit_id": "p000054",
+                              "end_unit_id": "p000060",
+                              "start_page": 54,
+                              "end_page": 60
+                            },
+                            "summary": "Explains how to reuse and customize an existing Cúram BIRT workspace chart/report without Java by copying Caseload Summary to a new design, configuring Eclipse/BIRT views, adding the supported CuramDB data source, and editing SQL to return Sickness and Incapacity Benefit case counts. Shows the sample query and expected results, then configures the chart: size 230x400, Y-axis title “Number of Cases,” category/value bindings, sorting, tooltips, bar labels, and viewing the report as HTML with parameter ascewuser."
+                          },
+                          {
+                            "title": "Configuring the report configuration record",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Report configuration values for a custom chart",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000116",
+                                "range": {
+                                  "start_unit_id": "p000061",
+                                  "end_unit_id": "p000061",
+                                  "start_page": 61,
+                                  "end_page": 61
+                                },
+                                "summary": "Explains how to customize a report configuration record for a custom chart in the Cúram Platform Analytics accelerator. It instructs sysadmins to cancel the original report configuration and create a new active one pointing to a customized BIRT report, then shows the editable fields and required values. For the SPMP Analytics accelerator, the custom chart uses Report Name CaseWorkloadReport and Report File Name components/SPMAnalytics/birt/CustomizedPODAnalyticChart.rptdesign, with default report category and blank report servlet."
+                              }
+                            ],
+                            "node_id": "n000115",
+                            "range": {
+                              "start_unit_id": "p000061",
+                              "end_unit_id": "p000061",
+                              "start_page": 61,
+                              "end_page": 61
+                            },
+                            "summary": "Explains how to customize a report configuration record by cancelling the original entry and creating a new active one that points to a customized BIRT report. It gives the procedure in the Report Configuration UI and lists the editable fields for a report record. For the SPMP Analytics accelerator, the custom chart uses Report Name CaseWorkloadReport, Report File Name components/SPMAnalytics/birt/CustomizedPODAnalyticChart.rptdesign, default report category, and a blank Report Servlet."
+                          },
+                          {
+                            "title": "Customizing the pod title",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Pod properties for SPMP Analytics",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000118",
+                                "range": {
+                                  "start_unit_id": "p000062",
+                                  "end_unit_id": "p000062",
+                                  "start_page": 62,
+                                  "end_page": 62
+                                },
+                                "summary": "This section describes SPMP Analytics pod properties and how to customize the CaseWorkLoad pod title. It shows the pod’s display settings (400x250, default scrolling and frame border), explains that the report is a bar chart of active Sickness Benefit and Incapacity Benefit cases, and gives steps to create a new localization properties file. It includes sample `CaseWorkloadSummary.properties` entries such as `caseloadsummary.pod.title=My Assigned Active Benefit Cases` and `caseloadsummary.gotomycases=My Cases`."
+                              }
+                            ],
+                            "node_id": "n000117",
+                            "range": {
+                              "start_unit_id": "p000062",
+                              "end_unit_id": "p000062",
+                              "start_page": 62,
+                              "end_page": 62
+                            },
+                            "summary": "Explains how to customize the CaseWorkLoad pod title in SPMP Analytics. It notes the pod’s default display settings (400x250, default scrolling and frame border) and that it shows active Sickness Benefit and Incapacity Benefit cases as a bar chart. The section gives steps to add a localization properties file under `webclient\\components\\SPMAnalytics\\javasource\\core\\i18n`, create `CaseWorkloadSummary.properties`, rebuild the client, refresh Eclipse, and restart the server/Tomcat. Includes sample properties such as `caseloadsummary.pod.title` and `caseloadsummary.gotomycases`."
+                          },
+                          {
+                            "title": "Configuring the pod name",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000119",
+                            "range": {
+                              "start_unit_id": "p000063",
+                              "end_unit_id": "p000063",
+                              "start_page": 63,
+                              "end_page": 63
+                            },
+                            "summary": "This section explains how to rename an existing pod type record so a new pod label appears in user workspace customization, specifically editing PodType code PT2005 to “My Assigned Active Benefit Cases” and publishing the change. It also shows how an administrator adds that pod to a user workspace via Administration Workspace > Personalized Pod Pages, enabling it for ASCEligibilityWorkerHome and saving the page layout. A short final note describes publishing BIRT reports from the BIContent directory with build client.birt."
+                          },
+                          {
+                            "title": "Configuring a pod for a user workspace",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000120",
+                            "range": {
+                              "start_unit_id": "p000063",
+                              "end_unit_id": "p000063",
+                              "start_page": 63,
+                              "end_page": 63
+                            },
+                            "summary": "This section explains how to configure a pod for a user workspace in Cúram Platform Analytics. It shows how to rename an existing pod type record (PT2005) to “My Assigned Active Benefit Cases” through Code Tables, save and publish the change, then add that pod to the ASCEligibilityWorkerHome personalized page using the Administrator application wizard. It also includes a step to publish BIRT reports from the BIContent directory with `build client.birt`."
+                          },
+                          {
+                            "title": "Publishing the chart",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000121",
+                            "range": {
+                              "start_unit_id": "p000063",
+                              "end_unit_id": "p000063",
+                              "start_page": 63,
+                              "end_page": 63
+                            },
+                            "summary": "This section explains how to publish a new BIRT chart in Cúram. It includes steps to customize a pod name in code tables, add that pod to a user workspace via the Personalized Pod Pages wizard, and then publish BIRT reports from the BIContent directory using the `build client.birt` command so the chart can be viewed on the test page."
+                          },
+                          {
+                            "title": "Testing the user workspace page",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000122",
+                            "range": {
+                              "start_unit_id": "p000064",
+                              "end_unit_id": "p000064",
+                              "start_page": 64,
+                              "end_page": 64
+                            },
+                            "summary": "Explains how to test the user workspace page after adding a new pod/chart. Steps include starting Cúram components, logging in as ascewuser, opening the user home page, confirming the “My Assigned Active Benefit Cases” pod, dragging it to the second column, and saving via Customize. Also notes that chart customizations must be manually saved to avoid being overwritten by a database build, and that report configuration DMX files (specifically BIREPORTCONFIGURATION.dmx) should be extracted and source-controlled."
+                          }
+                        ],
+                        "node_id": "n000102",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000063",
+                          "start_page": 54,
+                          "end_page": 63
+                        },
+                        "summary": "Explains how to customize a user-workspace chart in Cúram Platform Analytics without Java by copying the Caseload Summary BIRT report, adding the supported CuramDB data source, editing SQL to count Sickness and Incapacity Benefit cases, and configuring the chart (size, axis title, bindings, sorting, tooltips, labels). Also covers updating the report configuration record, changing the pod title via localization properties, renaming/adding the pod type to a workspace, publishing BIRT reports, and testing the page as ascewuser."
+                      },
+                      {
+                        "title": "Saving your chart customizations",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Saving your report configurations",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Report configuration files for SPMP Analytics",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000125",
+                                "range": {
+                                  "start_unit_id": "p000065",
+                                  "end_unit_id": "p000065",
+                                  "start_page": 65,
+                                  "end_page": 65
+                                },
+                                "summary": "Lists SPMP Analytics configuration files and where to find them. The report config file BIREPORTCONFIGURATION.dmx is under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial. It also explains saving pod name configurations: extract DMX files with build extractdata, copy CODETABLEITEM.dmx from %CURAM_DIR%\\EJBServer\\build\\dataextractor, run build database, and save the files. The pod name file CT_PodType.ctx is in %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\codetable."
+                              }
+                            ],
+                            "node_id": "n000124",
+                            "range": {
+                              "start_unit_id": "p000064",
+                              "end_unit_id": "p000064",
+                              "start_page": 64,
+                              "end_page": 64
+                            },
+                            "summary": "Explains how to preserve customized report configurations so they are not lost after running build database. It instructs you to extract DMX files with build extractdata, then copy BIREPORTCONFIGURATION.dmx from %CURAM_DIR%\\EJBServer\\build\\dataextractor and save it under source control. The section defines %CURAM_DIR% as the Cúram installation directory."
+                          },
+                          {
+                            "title": "Saving the pod name configurations",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Pod name files for SPMP Analytics",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000127",
+                                "range": {
+                                  "start_unit_id": "p000065",
+                                  "end_unit_id": "p000068",
+                                  "start_page": 65,
+                                  "end_page": 68
+                                },
+                                "summary": "Explains where to find and save SPMP Analytics configuration files and pod name files. It specifies BIREPORTCONFIGURATION.dmx under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial, and CT_PodType.ctx under %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\codetable. It also instructs extracting CODETABLEITEM.dmx from the database via build extractdata, copying it from %CURAM_DIR%\\EJBServer\\build\\dataextractor, and then running build database. The rest of the pages are standard legal notices, privacy, and trademark information."
+                              }
+                            ],
+                            "node_id": "n000126",
+                            "range": {
+                              "start_unit_id": "p000065",
+                              "end_unit_id": "p000068",
+                              "start_page": 65,
+                              "end_page": 68
+                            },
+                            "summary": "Explains how to save SPMP Analytics pod name configuration files. It identifies BIREPORTCONFIGURATION.dmx in %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\data\\initial and CT_PodType.ctx in %CURAM_DIR%\\EJBServer\\components\\SPMAnalytics\\codetable. It also instructs extracting CODETABLEITEM.dmx with build extractdata from %CURAM_DIR%\\EJBServer\\build\\dataextractor, then running build database. The remaining pages are legal notices, privacy, and trademarks."
+                          }
+                        ],
+                        "node_id": "n000123",
+                        "range": {
+                          "start_unit_id": "p000064",
+                          "end_unit_id": "p000068",
+                          "start_page": 64,
+                          "end_page": 68
+                        },
+                        "summary": "Explains how to preserve customized chart/report and pod name settings so they are not lost after running build database. It tells you to use build extractdata, copy DMX files from %CURAM_DIR%\\EJBServer\\build\\dataextractor, and save them under source control. Key files include BIREPORTCONFIGURATION.dmx, CODETABLEITEM.dmx, and the SPM Analytics files BIREPORTCONFIGURATION.dmx and CT_PodType.ctx. The rest of the range contains legal notices, privacy policy, and trademarks."
+                      }
+                    ],
+                    "node_id": "n000101",
+                    "range": {
+                      "start_unit_id": "p000054",
+                      "end_unit_id": "p000068",
+                      "start_page": 54,
+                      "end_page": 68
+                    },
+                    "summary": "Shows how to customize a Cúram Platform Analytics BIRT chart for a user workspace without Java: copy and rename the Caseload Summary report, add the supported CuramDB data source, edit SQL to show Sickness and Incapacity Benefit cases, and configure chart size, axes, bindings, sorting, labels, and tooltips. Also covers updating the report configuration, localizing the pod title, adding/renaming the pod type in a workspace, publishing via build client.birt, testing as ascewuser, and preserving changes with extractdata/source control DMX files."
+                  }
+                ],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000068",
+                  "start_page": 38,
+                  "end_page": 68
+                },
+                "summary": "Shows how to create and customize Cúram Platform Analytics charts in the SPMP accelerator. Covers building a new BIRT chart and pod via code tables, Java pod loader/constants, workspace setup, and report configuration, plus customizing an existing Caseload Summary chart without Java by copying the report, editing SQL/chart settings, localizing pod names, and publishing/testing it. Emphasizes saving DMX/config files because build database overwrites customizations."
+              }
+            ],
+            "node_id": "n000062",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000068",
+              "start_page": 34,
+              "end_page": 68
+            },
+            "summary": "Explains how to build the SPMP Analytics accelerator and reproduce its sample analytics. Covers adding SPMAnalytics to client/server component order via CustomEnvironment files, setting up a separate BIRT Eclipse environment and required plugins, and creating/customizing charts and pods for Adult Social Care. Also includes publishing/testing BIRT reports, configuring pod names and user workspace availability, and saving DMX/configuration files so customizations survive rebuilds."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000068",
+          "start_page": 9,
+          "end_page": 68
+        },
+        "summary": "Introduces the Cúram Platform Analytics (SPMP Analytics) accelerator, a worked BIRT example built on Adult Social Care for performance management analytics. Explains the Jane caseworker scenario and default charts for assigned Sickness Benefit vs. Incapacity Benefit cases and clients with multiple diagnoses. Covers the platform/components, when to choose SPMP Analytics vs. BI&A based on data volume, workload, complexity, and scalability/fault tolerance, and provides installation, scenario execution, fit-gap analysis, building/customizing charts, pod configuration, publishing/testing, and saving DMX/configuration files."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "f3c6baa1cce86084",
+    "title": "Cúram 8.1.2 Milestone Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramMilestoneDevelopersGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "f3c6baa1cce8608463b8e0089df42781be1d56d2f6992906c8b101975e6c2e3f",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:58:23+00:00",
+    "page_count": 24,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramMilestoneDevelopersGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Milestone Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000024",
+      "start_page": 1,
+      "end_page": 24
+    },
+    "summary": "Developer guide for Cúram 8.1/8.1.1/8.1.2 milestones. Explains how milestones track important case events across the case lifecycle and can be manually or automatically created/completed. Covers milestone configuration fields such as name/type, earliest start day, duration, active dates, extension/waiver flags, and optional workflow events for creation, completion, and overdue timing checks. Describes associating milestones with case/product/screening types and case components using creation/completion events, including examples like submit/approve or create/close contract. Also summarizes waiver approval setup and the main milestone entities/APIs for configuration, linking, delivery, waiver checks/requests, and business processing. The final section shows how to implement generic event handlers via handler_config.xml and Guice MapBinder/MilestoneComponentDelivery to create or complete milestone deliveries automatically at case or component level. Includes Notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section before using the product or this information. It also shows the copyright attribution for Merative US L.P. (2012, 2024) on pages 3–4."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introduces milestone functionality for cases in Cúram 8.1/8.1.1/8.1.2. Explains business use of milestones to track case events, support manual/automatic creation, and configure waiver approvals. Covers milestone configuration settings (name/type, earliest start, duration, dates, extension/waiver flags, workflow events), associating milestones with case types/components via creation/completion events, and waiver request approval logic. Also documents core entities and fields: MILESTONECONFIGURATION, MILESTONELINK, and MILESTONEWAIVERAPPROVALCHECK."
+          },
+          {
+            "title": "Edition — pages 15-22",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000022",
+              "start_page": 15,
+              "end_page": 22
+            },
+            "summary": "Defines milestone-related entities and APIs in Cúram 8.1.2. Covers MILESTONEDELIVERY and MILESTONEWAIVERAPPROVALREQUEST fields, milestone configuration and waiver approval business processes, and methods for creating, listing, modifying, approving, rejecting, and reading waivers. Also explains automatic milestone delivery creation/completion via workflow events, including case-level vs component-level handlers, handler_config.xml mapping, and use of MilestoneComponentDelivery implementations with Guice MapBinder for custom start/end date population."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000022",
+          "start_page": 5,
+          "end_page": 22
+        },
+        "summary": "Cúram 8.1/8.1.1/8.1.2 milestones overview. Explains how milestones track key case events, can be manually or automatically created/completed, and can support waiver approvals. Covers configuration fields (name/type, earliest start, duration, active dates, extension/waiver flags, workflow events), associating milestones to case types/components via creation/completion events, and waiver approval setup. Summarizes key entities and APIs (configuration, link, waiver approval check/request, delivery) plus business-process methods and generic event-handler integration using handler_config.xml and MilestoneComponentDelivery/Guice MapBinder."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Contains legal and licensing notices: fictitious example data disclaimer, sample program copyright license and warranty/liability limits, a pointer to Merative’s privacy policy URL, trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX, plus the copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Trademark and legal notices for the document. States that sample names and data are fictitious, the licensed program is provided under the Merative Client Agreement, and sample source programs may be copied/modified/distributed for compatible application development but are provided “AS IS” without warranty. Includes the privacy policy link and lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus copyright notice."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000023",
+          "start_page": 23,
+          "end_page": 23
+        },
+        "summary": "Merative publication notices and permissions: terms for personal and enterprise use, preservation of proprietary notices, and restrictions on redistribution, derivative works, export, and reuse outside the stated permissions. Includes no-license and no-warranty disclaimers (“as-is”), patent notice, third-party product and website disclaimer, and Merative’s right to withdraw permissions. Ends with copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition), Chapter 1 “Developing with milestones,” with subsections on configuring milestones, milestone entities, milestone business processing, and implementing a generic milestone event handler, plus page references. Also includes Notices, Privacy policy, and Trademarks. Useful as a navigation index rather than substantive content."
+      },
+      {
+        "title": "1 Developing with milestones",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring milestones",
+            "level": 2,
+            "children": [
+              {
+                "title": "Milestone configuration settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains the settings for case milestone configurations and how each affects milestone dates and availability. Covers mandatory fields like Name and Type, Earliest Start Day, Duration, and Start Date, plus optional End Date, Expected Date Extension Allowed, and Waiver Required. Describes how these settings determine expected start/end dates for automatic and manual milestones, validate user-entered dates, and control whether date extensions or waivers are permitted."
+              },
+              {
+                "title": "Associating milestones with cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to associate milestone configurations with case types to support manual or automatic milestone creation. Notes two options: create a new milestone configuration during association or select an existing one. Describes key automatic settings such as creation and completion events, plus component type/category matching for case-level vs component-level milestones. Gives examples like Submit Case/Approve Case and contract-level Create Contract/Close Contract triggers, with related case and component IDs linked to the milestone instance."
+              },
+              {
+                "title": "Configuring milestone waiver request approvals",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how milestone waiver request approvals work for changing expected milestone dates, especially for automatically created milestones. Covers when waiver requests are required, the role of Expected Date Extension Allowed and Waiver Required settings, and that manually created milestones can be changed without a waiver. Describes approval-check precedence: user settings override organization unit settings, then milestone-level settings, with supervisors reviewing some or all requests based on configured percentages. Also introduces milestone-related entities and tables used in the design."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Defines how case milestones are configured and linked to cases. Covers mandatory setup fields (Name/Type, Earliest Start Day, Duration, Start Date) and optional controls (End Date, Expected Date Extension Allowed, Waiver Required), plus workflow events for milestone add/complete and overdue checks. Explains associating milestone configurations to case types, either by creating a new configuration or selecting an existing one, and setting automatic creation/completion events with component type/category matching for case- vs component-level milestones."
+          },
+          {
+            "title": "1.2 Milestone entities",
+            "level": 2,
+            "children": [
+              {
+                "title": "Milestone configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Defines the MILESTONECONFIGURATION entity used to administer milestones in the Administration component. Explains that a milestone may apply to one or more case or service plan types and lists its main fields: identifiers, name/type, timing fields (earliest start day, duration, effective dates), event triggers for add/start/end/complete, comments and localized text IDs, waiver controls, and record status. Includes mandatory fields and notes that logical deletion is supported."
+              },
+              {
+                "title": "Milestone link",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Defines the MILESTONELINK entity for administering links between cases/service plans and milestones, including fields such as caseTypeID, caseType, componentCategory, componentType, creationEvent, completionEvent, and milestoneConfigurationID. Also introduces MILESTONEWAIVERAPPROVALCHECK for milestone waiver approval administration, where waivers may be associated with a user, milestone, or organization unit. Key fields include mandatory milestoneWaiverApprovalCheckID, percentage, and type."
+              },
+              {
+                "title": "Milestone waiver approval check",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Defines the MILESTONEWAIVERAPPROVALCHECK entity for administering milestone waiver approvals. It notes that a milestone waiver may be linked to a user, milestone, or organization unit. The section lists three mandatory fields: milestoneWaiverApprovalCheckID (system-assigned unique ID), percentage (waiver-request percentage requiring approval), and type (approval check type)."
+              },
+              {
+                "title": "Milestone delivery",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Describes the MILESTONEDELIVERY entity, which adds a milestone to a case such as a service plan or product delivery. Lists its fields and meanings, including mandatory identifiers and dates: milestoneDeliveryID, milestoneConfigurationID, caseID, ownerUserName, expectedStartDate, expectedEndDate, status, and createdBySystem. Also covers optional actual start/end dates, comments, and relatedID linking the milestone to a component category or type. Useful for understanding milestone record structure and lifecycle states."
+              },
+              {
+                "title": "Milestone waiver approval request",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Defines the MILESTONEWAIVERAPPROVALREQUEST entity for milestone waiver approval requests, used only for system-generated milestone deliveries. Lists its key fields, including mandatory IDs, original/requested/approved expected start and end dates, user comments, and created date. Also introduces milestone business processing and notes that the Product process class supports the MilestoneConfiguration business process, with a method to cancel a milestone configuration by setting its status to canceled."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000015",
+              "start_page": 12,
+              "end_page": 15
+            },
+            "summary": "This section defines the core milestone data model: MILESTONECONFIGURATION, MILESTONELINK, MILESTONEWAIVERAPPROVALCHECK, and MILESTONEDELIVERY. It covers milestone setup fields (names, types, timing, event triggers, waiver controls, status, localized text IDs), links between case/service plan types and milestone configurations, waiver approval rules by user/org/milestone, and milestone delivery lifecycle fields (expected/actual dates, owner, status, system-generated flag, relatedID). It also notes logical deletion and that waiver requests are needed only for automated milestone date changes when enabled."
+          },
+          {
+            "title": "1.3 Milestone business processing",
+            "level": 2,
+            "children": [
+              {
+                "title": "Milestone configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section covers milestone configuration processing in Cúram 8.1.2. It describes the MILESTONEWAIVERAPPROVALREQUEST entity for system-generated milestone deliveries, including its key fields for request, approval, dates, and comments. It also introduces milestone business processing, noting that the Product process class supports the MilestoneConfiguration business process and provides the cancelMilestoneConfiguration method to set a milestone configuration’s status to canceled."
+              },
+              {
+                "title": "Maintain milestone waiver approval",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Describes the MaintainMilestoneWaiverApproval API, with the key method viewOrgUnitMWApproval, which returns milestone waiver approval check details for an organizational unit by milestone waiver approval check ID. Notes that a similar method exists for users. This section is a brief method summary within milestone development documentation."
+              },
+              {
+                "title": "Maintain waiver approval request",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Describes the ProductDelivery process class methods for maintaining milestone waiver approval requests in milestone configuration. Covers reading milestone delivery details, creating waiver requests, listing and reading waiver requests, approving, modifying and approving, rejecting, and reading expected start/end dates. Notes that waiver requests can be auto-approved if manual approval is not required, and that approval/rejection methods enforce date validation and supervisor or approval-check permissions."
+              },
+              {
+                "title": "Milestone delivery",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Describes milestone delivery APIs and how they work with milestone configuration and workflow events. Covers `createMilestoneDelivery`, which creates deliveries from event details, marks them “Created By System,” and derives expected start date from the earliest start day plus current date; and `completeMilestoneDelivery`, which completes deliveries by related ID or by case type, component, and completion event. Also introduces generic milestone event handlers for automatically creating deliveries when milestone creation events are raised."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000018",
+              "start_page": 16,
+              "end_page": 18
+            },
+            "summary": "Covers milestone business processing APIs in Cúram 8.1.2. It defines the MILESTONEWAIVERAPPROVALREQUEST entity for system-generated milestone deliveries and its request/approval date and comment fields. It explains Product process class support for MilestoneConfiguration, including create, modify, list, read, cancel, and milestone association methods. It also summarizes MaintainMilestoneWaiverApproval methods for viewing/listing org-unit and user approval checks, and ProductDelivery waiver request methods for reading delivery details, creating, listing, approving, modifying, rejecting, and reading waiver dates."
+          },
+          {
+            "title": "1.4 Implementing a generic milestone event handler",
+            "level": 2,
+            "children": [
+              {
+                "title": "Create a milestone delivery when a milestone creation event is raised",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how to automatically create milestone deliveries when a milestone creation event is raised. It notes that milestone delivery APIs support workflow-driven creation/completion based on Administration configuration, and that createMilestoneDelivery builds deliveries from event details with the “Created By System” flag set true and expected start date calculated from the earliest start day. It also begins guidance for case-level milestones, instructing users to configure the milestone’s Creation Event."
+              },
+              {
+                "title": "Complete a milestone delivery when a milestone completion event is raised",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000024",
+                  "start_page": 20,
+                  "end_page": 24
+                },
+                "summary": "Explains how to complete milestone deliveries when a milestone completion event is raised. Covers both case-level and case-component-level milestones: configure the completion event, map it in handler_config.xml to MilestoneCompletionEventHandler, and for component-level milestones implement MilestoneComponentDelivery.populateMilestoneCompletionDetails to set the actual end date. Also describes using a Guice AbstractModule with a MapBinder to bind the implementation, and how customers raise the event with caseID (plus component ID for component-level milestones)."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000024",
+              "start_page": 19,
+              "end_page": 24
+            },
+            "summary": "Explains how to implement generic milestone event handlers for automatic milestone delivery creation and completion. Covers the shared milestone delivery APIs and Administration-driven workflow event mapping. For case-level milestones, configure Creation/Completion Events, map them in handler_config.xml to MilestoneCreationEventHandler or MilestoneCompletionEventHandler, and raise events with caseID. For case-component milestones, implement MilestoneComponentDelivery methods to populate creation start dates or actual end dates, bind via Guice MapBinder/AbstractModule, and raise events with caseID plus component ID."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000024",
+          "start_page": 9,
+          "end_page": 24
+        },
+        "summary": "Covers milestone functionality for integrated cases: how to configure milestone definitions and link them to case/service plan types, set mandatory timing fields, optional extension/waiver controls, and workflow events for add/complete/overdue checks. Explains waiver approval rules by user, org unit, and milestone, plus core entities and business APIs for milestone configurations, deliveries, and waiver requests. Also describes generic event-handler implementation for automatic case-level and component-level milestone creation/completion via handler_config.xml and MilestoneComponentDelivery."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

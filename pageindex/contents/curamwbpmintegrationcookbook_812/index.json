@@ -1,0 +1,639 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "b3cfca548c333ee0",
+    "title": "Cúram 8.1.2 Cúram WBPM Integration Cookbook",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramWBPMIntegrationCookbook_812.pdf",
+    "source_type": "pdf",
+    "sha256": "b3cfca548c333ee07c9851023783984ee3e9dd4cc780ab7b6fd678bd5922e563",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:18:44+00:00",
+    "page_count": 26,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramWBPMIntegrationCookbook_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram WBPM Integration Cookbook",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000026",
+      "start_page": 1,
+      "end_page": 26
+    },
+    "summary": "Front matter and a single integration chapter for Cúram 8.1–8.1.2. The document is a practical cookbook for integrating Cúram web services with IBM WebSphere Business Process Management tools (WID/WPS/WBPM), intended to complement the Cúram Server Modelling Guide. It covers background on WBPM components, prerequisites, and a worked example using the Cúram CreateEvidence IMT service: importing the WSDL into WID, adjusting and monitoring SOAP traffic with TCPMon, decoupling WSDL types, wrapping messages, creating and testing a WID import/process, and exposing a WID export via an Interface Map. It also includes Cúram outbound client setup, sample Java client code, and full SOAP/XML message traces showing request/response flow between Cúram inbound/outbound services and WID. The remaining pages are notices, privacy policy, and trademarks, with legal terms, warranty disclaimers, sample code permissions, and Merative copyright.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note for the document. It tells readers to review the Notices section on page 25 before using the information or the supported product, and includes the Merative US L.P. copyright years 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory section for integrating Cúram 8.1–8.1.2 web services with IBM WebSphere BPM/WID/WPS. Explains the document’s purpose, WBPM components, and prerequisites, then walks through an example CreateEvidence import: importing and preparing WSDL, monitoring traffic with TCPMon, decoupling types, wrapping messages, creating the import, and testing it in WID with a process and sample XML. Also shows expected output and mentions debugging the Cúram inbound service."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Explains how to expose a WID web service to Cúram and map it through an Interface Map to a Cúram inbound import. Covers creating the export interface (SimpleWIDCreateEvidenceService), wiring request/response mappings, generating SOAP/HTTP WSDL, configuring message monitoring/TCPMon, and writing a Cúram outbound client/service. Includes sample Java client code and end-to-end message traces for the full flow: Cúram outbound client → WID export → WID import → Cúram inbound BPO → response back through both services."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000024",
+          "start_page": 5,
+          "end_page": 24
+        },
+        "summary": "Introductory integration guide for Cúram 8.1–8.1.2 with IBM WBPM/WID/WPS. Covers background, prerequisites, and a worked CreateEvidence example: importing and preparing WSDL, monitoring with TCPMon, decoupling types, wrapping messages, creating and testing a WID import/process, and exposing a WID export via an Interface Map. Includes outbound Cúram client setup, sample Java client code, and end-to-end SOAP/XML traces showing the full flow between Cúram inbound/outbound services and WID."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "This section contains legal notices for the document: a copyright license for sample programs, warranty/liability disclaimers, a link to Merative’s privacy policy, and a list of trademarks and trademark attributions. It also notes that example names are fictitious and that licensed material is provided under the Merative Client Agreement."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "This section states that sample names in the document are fictitious, outlines Merative’s sample program copyright license and “AS IS” warranty disclaimer, and points to the Merative privacy policy. It then lists trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, and notes that other names may be trademarks of their owners."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000025",
+          "end_unit_id": "p000025",
+          "start_page": 25,
+          "end_page": 25
+        },
+        "summary": "This notices page gives the publication’s legal terms: permitted personal and internal enterprise use, restrictions on distribution and derivative works, and preservation of proprietary notices. It states no additional rights are granted, Merative may withdraw permission, and export laws apply. It also includes an “AS IS” warranty/liability disclaimer, patent notice, cautions about non-Merative products and external websites, and the Merative copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document, listing front matter and Chapter 1 on integrating with IBM WebSphere Business Process Management. It shows subsections on background, prerequisites, creating and testing an import in WID, creating an export and mapping in WID, and the message flow in the completed integration example, plus notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Integrating with IBM WebSphere Business Process Management",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Background",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces WBPM integration with Cúram web services. It explains that the guide is a practical, step-by-step handbook for developers using WID and WPS to connect to Cúram inbound services and invoke WBPM services via Cúram outbound services, alongside the Cúram Server Modelling Guide. Background covers WBPM components (WPS, WESB, WID), Cúram IMT Services, and a verified proof of concept showing these tools can connect and test SOA integrations."
+          },
+          {
+            "title": "1.2 Prerequisites",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Prerequisites for WBPM/Cúram web service integration: the reader should already understand the Cúram web service infrastructure, ideally chapters 28–30 of the Cúram Server Modelling Guide and Common Practices for a Web Service Implementation. It assumes Cúram, CuramWS, WID, and WPS are installed and a Cúram development environment is configured. The document does not cover creating inbound or outbound Cúram web services."
+          },
+          {
+            "title": "1.3 Creating an Import in WID",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This introduction outlines prerequisites for WBPM integration using Cúram web services: familiarity with Cúram web service infrastructure and key Server Modelling Guide chapters, plus installed Cúram, CuramWS, WID, and WPS in a configured development environment. It also notes that creating Cúram inbound/outbound web services is out of scope. The section then introduces an example procedure for importing the CreateEvidence IMT web service into WID, including creating a module/library, importing the WSDL, and preparing it for client generation."
+              },
+              {
+                "title": "Steps",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Create Project and Dependant Library",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains the WID setup step for creating a “CuramCreateEvidence” module and dependent “CuramWebServices” library. The section shows how to add the library to module dependencies and mark it “Deploy with Module” before importing the Cúram CreateEvidence WSDL. Useful if you need the initial project/library creation and dependency configuration for WBPM/WID web service client setup."
+                  },
+                  {
+                    "title": "Import Cúram WSDL",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how to import the Cúram CreateEvidence web service WSDL into IBM WID as part of WBPM integration. It assumes a working Cúram/CuramWS/WID/WPS development environment and familiarity with Cúram web services. The section covers creating the CuramCreateEvidence module and CuramWebServices library, adding the library as a dependency, downloading the WSDL from the local CuramWS endpoint, placing it in the library folder, refreshing the library, and editing WSDL import prefixes if WID reports errors."
+                  },
+                  {
+                    "title": "Prepare WSDL for Client Generation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains prerequisites for WBPM integration and then walks through importing the Cúram CreateEvidence WSDL into IBM WID. It covers creating a module and shared library, adding dependencies, downloading the WSDL from the CúramWS endpoint, and preparing the WSDL for client generation by editing import prefixes if WID reports errors. This section is useful if you need to set up WID to consume a Cúram web service and troubleshoot WSDL import issues."
+                  },
+                  {
+                    "title": "Add Message Monitoring",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to add message monitoring for an IBM WebSphere BPM integration by changing the WSDL service address port from 10102 to 8070 and using TCPMon to forward traffic and view responses. Also introduces a WSDL refactoring step to decouple types from the interface in WID using “Extract WSDL Components,” and begins creating a root schema (CreateEvidenceRootType.xsd) with correct xsd include paths for extracted types."
+                  },
+                  {
+                    "title": "Decouple Types From Interface",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to decouple WSDL types from the interface in IBM WebSphere BPM/WID. It instructs using Extract WSDL Components on CreateEvidenceWS, extracting business objects while keeping the port type combined, handling any type name collisions, and then creating a root schema (CreateEvidenceRootType.xsd) that includes the extracted XSDs. Also notes setting up message monitoring with TCPMon by changing the service port and forwarding to the original Cúram port."
+                  },
+                  {
+                    "title": "Wrap Messages",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to update the CreateEvidenceWS web service wrapper so both `anyType` entries are changed to `CreateEvidenceRootType`, then create an import in the assembly diagram by dragging the interface, selecting “Import with Web Service binding,” choosing the existing `CreateEvidenceWS` port, and using SOAP 1.1/HTTP. Also begins testing the import in WID by creating and wiring a test process in the assembly diagram for Business Process Choreographer Explorer."
+                  },
+                  {
+                    "title": "Create the Import",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to create an import for the CreateEvidenceWS web service in WID. The steps include opening the assembly diagram, dragging the CreateEvidenceWS interface onto it, choosing “Import with Web Service binding,” selecting the existing CreateEvidenceWS port, and using SOAP 1.1/HTTP before saving. It follows earlier schema/type setup and leads into testing the import with Business Process Choreographer Explorer, including creating and wiring a test process."
+                  }
+                ],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "Prerequisites and WID setup steps for importing the Cúram CreateEvidence IMT web service into IBM WID/WBPM. Covers required environment knowledge (Cúram web services, Cúram/CuramWS/WID/WPS), creating the CuramCreateEvidence module and CuramWebServices library, importing the CreateEvidenceWS WSDL, fixing WSDL import prefixes, configuring message monitoring with TCPMon by changing the service port, and beginning WSDL refactoring to decouple types into a shared root schema for reuse."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000011",
+              "start_page": 10,
+              "end_page": 11
+            },
+            "summary": "Explains how to import the Cúram CreateEvidence IMT web service into IBM WID as a worked example for WBPM integration. It assumes Cúram/CuramWS/WID/WPS are installed and you know Cúram web services, then covers creating the CuramCreateEvidence module and CuramWebServices library, importing and fixing the WSDL, setting up TCPMon message monitoring, and refactoring WSDL types into reusable schema files with a root type schema."
+          },
+          {
+            "title": "1.4 Testing an Import in WID",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Introduces testing a CreateEvidenceWS import in WID using Business Process Choreographer Explorer. The section explains how to create and wire a test process in the assembly diagram, rename it, connect it to the import, and add the CreateEvidenceWS interface. It follows earlier steps for wrapping messages with CreateEvidenceRootType and creating the import with SOAP 1.1/HTTP binding."
+              },
+              {
+                "title": "Steps",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Create and Wire a Test Process",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains how to create a test process in WID for an imported web service. It instructs users to drag a Process onto the assembly diagram, rename it (for example, Test_CreateEvidenceWSImport1), wire it to the import, and add the CreateEvidenceWS interface to the process. It is part of the “Testing an Import in WID” chapter and is used to prepare a Business Process Choreographer Explorer test setup."
+                  },
+                  {
+                    "title": "Implement Test Process",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Steps to implement and test a Cúram evidence creation process in IBM WebSphere BPM. It covers implementing the process, inserting an Invoke activity between Receive and Reply, configuring partner and input/output mappings, deploying the module to WebSphere Process Server, and launching Business Choreographer Explorer to start a test instance. The section includes login steps and a sample XML request, noting required valid database IDs (caseID, participantID, caseParticipantRoleID) and recommending creation of an empty Sport Grant Sample Case to obtain them."
+                  },
+                  {
+                    "title": "Launch the Server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to launch the WebSphere Process Server after adding the module: open the Servers tab, add/remove projects to include the module, then start the server and wait until “Application started: CuramCreateEvidenceApp” appears. Also includes the next step for running the test process via WebSphere Business Choreographer Explorer, logging in as admin/admin, starting a process instance, and pasting a valid XML request using required Cúram database IDs."
+                  },
+                  {
+                    "title": "Run the Test Process",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to run and test the implemented Cúram web service process in WebSphere. Steps include launching WebSphere Business Choreographer Explorer, logging in as admin/admin, opening My Process Templates, starting a process instance, and pasting a valid XML request. Notes that caseID, participantID, and caseParticipantRoleID must match Cúram database values, and suggests creating an empty Sport Grant Sample Case using James Smith to obtain them."
+                  },
+                  {
+                    "title": "Analyze Results",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how to analyze a successful Cúram web service evidence creation test. If the process succeeds, the form view shows well-formed input/output messages and the output XML matches the pasted input except for returned values like evidenceID, evidenceType, and evidenceDescriptorID. It also notes checking TCPMon to inspect SOAP request and response envelopes, and suggests adding debug output to the inbound service BPO to print the received request and returned response."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000014",
+                  "start_page": 12,
+                  "end_page": 14
+                },
+                "summary": "Instructions for testing an imported Cúram web service in WID/WebSphere BPM. Covers creating and wiring a test process to the import, implementing it with an Invoke between Receive and Reply, configuring partner and I/O mappings, deploying and starting WebSphere Process Server, then launching Business Choreographer Explorer to run the process. Uses a sample XML request requiring valid Cúram database IDs (caseID, participantID, caseParticipantRoleID). Ends with result analysis: checking input/output XML, SOAP traffic in TCPMon, and optional debug output in the inbound service BPO."
+              }
+            ],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000014",
+              "start_page": 12,
+              "end_page": 14
+            },
+            "summary": "Explains how to test the Cúram CreateEvidenceWS import in WID using Business Process Choreographer Explorer. Steps include creating and wiring a test process in the assembly diagram, implementing it with Receive/Invoke/Reply, setting partner and I/O mappings, deploying to WebSphere Process Server, and running a sample XML request. The request must use valid Cúram database IDs (caseID, participantID, caseParticipantRoleID). Results are checked via process input/output, TCPMon SOAP traffic, and optional inbound service BPO debug output."
+          },
+          {
+            "title": "1.5 Creating an Export and a Mapping in WID",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This introduction explains how to expose a WID web service to a Cúram client and create a simple mapping example. It describes the purpose of the mapping component, which can route requests to custom logic but here passes the request unchanged to the import. The section begins the “Creating an Export and a Mapping in WID” procedure and outlines initial steps for building an export and adding a request-response operation using the CreateEvidenceRootType message type."
+              },
+              {
+                "title": "Steps",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Create and Implement an Export",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section introduces creating an export in IBM WebSphere Integration Developer (WID) as part of exposing a WID web service to a Cúram client. It explains a simple mapping example and starts the implementation steps: add an Export to the Assembly Diagram, create a new interface named SimpleWIDCreateEvidenceService, add a request-response operation, and change the request/response type from string to CreateEvidenceRootType. Useful if you need the initial setup for a WID service export."
+                  },
+                  {
+                    "title": "Create and Implement Mapping Component",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section gives step-by-step instructions for creating and implementing a mapping component in Cúram, including wiring exports/imports, implementing and saving the map, and setting parameter mappings. It then covers generating a SOAP/HTTP web service binding from the assembly export, copying the generated WSDL and dependent schemas into the Cúram build tree, adjusting the port number, and adding TCPMon monitoring. It ends with a brief note to follow the Cúram Server Modelling Guide for writing an outbound service."
+                  },
+                  {
+                    "title": "Generate the WSDL",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains how to generate a SOAP/HTTP WSDL binding for an export in an assembly, after first creating and wiring an interface map and saving it to curam/maps. It then covers adding message monitoring by checking the export binding port (typically 9080), copying the generated WSDL and dependent schemas into CuramAppBuild\\EJBServer\\components\\core\\wsdl, and adjusting the Cúram WSDL port for TCPMon. It ends by pointing to the Cúram Server Modelling Guide for outbound web services."
+                  },
+                  {
+                    "title": "Add Message Monitoring",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains how to add message monitoring for a SOAP/HTTP export in Cúram. It covers locating the export’s binding properties, noting the default port (typically 9080), copying the generated WSDL and dependent schema files into the Cúram build wsdl directory, changing the Cúram copy’s port number (for example to 1000), and adding a second TCPMon monitor. It also points to the next step: writing a Cúram outbound service using the Server Modelling Guide."
+                  },
+                  {
+                    "title": "Write a Cúram Outbound Service",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000017",
+                      "start_page": 16,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to create a Cúram outbound web service from WID-generated artifacts. Covers mapping setup, WSDL generation, message monitoring, and the Cúram-side integration steps: configuring webservices_config.xml, running the wsconnector build target to generate Axis2 client code, adding required classpath libraries, and invoking the generated stub from code. Includes a sample Java method showing how to call the service and validate the response."
+                  }
+                ],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000017",
+                  "start_page": 15,
+                  "end_page": 17
+                },
+                "summary": "This section outlines the end-to-end steps for exposing a WID web service to a Cúram client. It covers creating an export and request-response interface, implementing a simple 1:1 interface map, generating a SOAP/HTTP WSDL binding, and adding message monitoring via TCPMon and port changes. It then summarizes the Cúram outbound service setup: configuring webservices_config.xml, running wsconnector to generate Axis2 client code, adding required libraries, and calling the service with a sample Java stub invocation."
+              }
+            ],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000017",
+              "start_page": 15,
+              "end_page": 17
+            },
+            "summary": "Explains how to expose a WID web service to a Cúram client and add a simple 1:1 interface map that passes the request through unchanged. Covers creating an export and request-response operation using CreateEvidenceRootType, wiring export/map/import, generating a SOAP/HTTP WSDL binding, and setting up TCPMon message monitoring. Also summarizes Cúram outbound client setup: configure webservices_config.xml, run wsconnector to generate Axis2 client code, add required libraries, and invoke the service with a sample Java stub."
+          },
+          {
+            "title": "1.6 Message Flow in Completed Integration Example",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This introduction opens the “Message Flow in Completed Integration Example” chapter and states that it presents the messages for a working end-to-end integration example. It introduces a WID integration scenario and begins with the message “Cúram Outbound Client Calls WID Export (A),” describing the request sent when the Cúram outbound web service client invokes the exposed WID Export service. It also points readers to earlier sections on creating the Cúram outbound client and the WID Export."
+              },
+              {
+                "title": "Messages",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Cúram Outbound Client Calls WID Export (A)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Example message for a completed integration: a Cúram outbound web service client invokes the exposed WID Export web service. This section belongs to the “Message Flow in Completed Integration Example” chapter and points to related setup steps for creating the Cúram Outbound Client/JUnit test and the WID Export implementation in earlier sections. Useful for understanding the actual end-to-end message sent in the WID integration scenario."
+                  },
+                  {
+                    "title": "WID Import calls Cúram Inbound Web Service (B)",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "XML request message arrives at Cúram Inbound BPO (C)",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Shows the XML payload handed from the Cúram Inbound Web Service infrastructure to the inbound BPO, after extracting a subset of the incoming SOAP message. Includes an example evidence request XML with caseID, evidenceType, dates, participantID, and dataItems such as sportingActivityType and paymentAmount. Also shows the BPO’s XML response containing success, evidenceID, evidenceType, and evidenceDescriptorID, followed by the HTTP/SOAP response returned to the WID import client."
+                      },
+                      {
+                        "title": "XML response message returned from Cúram Inbound BPO (D)",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000044",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Shows the XML response returned by a Cúram Inbound BPO and how it is converted by the inbound web service infrastructure into a SOAP response for the client. The example response contains a `<response>` root with `<evidenceCreate success=\"true\">`, including `evidenceID`, `evidenceType` (`ET500`), and `evidenceDescriptorID`. This section follows the inbound XML request example and precedes the final HTTP/SOAP response to the WID Import client."
+                      }
+                    ],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000020",
+                      "start_page": 19,
+                      "end_page": 20
+                    },
+                    "summary": "Shows the WID Import client invoking the Cúram inbound web service for CreateEvidence. Includes the SOAP/HTTP request to `/CuramCreateEvidenceWeb/sca/SimpleWIDCreateEvidenceExport` and the payload passed through the inbound service: evidence caseID `5594596637100998656`, evidenceType `ET500`, received/effective dates, participantID, and dataItems such as `caseParticipantRoleID`, `sportingActivityType`, `sportingAwardType`, and `paymentAmount`. Useful for seeing the exact client-side request structure and mapping into the inbound service."
+                  },
+                  {
+                    "title": "Cúram Inbound Web Service responds to WID Import request (E)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Shows the final outbound response from Cúram Inbound Web Service back to a WID web service client after processing an inbound XML request. Includes the HTTP 200 OK headers, content type/language, server details, and the start of the SOAP envelope returned to the caller. Useful for seeing the exact wire-level response format generated by the inbound service."
+                  },
+                  {
+                    "title": "WID Export responds to Cúram Outbound Client request (F)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000026",
+                      "start_page": 22,
+                      "end_page": 26
+                    },
+                    "summary": "Shows a sample SOAP response for “WID Export responds to Cúram Outbound Client request (F)” in IBM WebSphere BPM integration with Cúram. The example HTTP 200 OK reply returns a CreateEvidence response containing success=true, evidenceID, evidenceType ET500, and evidenceDescriptorID. Pages 24–26 are mainly copyright, notices, sample code/license, privacy policy, and trademarks."
+                  }
+                ],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000026",
+                  "start_page": 18,
+                  "end_page": 26
+                },
+                "summary": "This section presents a complete message-flow example for a WID/Cúram integration, showing wire-level SOAP/XML for outbound client calls, inbound web service requests, BPO-passed XML, BPO responses, and the final SOAP responses. It includes concrete request/response examples for CreateEvidence with IDs, dates, evidence type ET500, and data items like sportingActivityType and paymentAmount. The last pages are mostly legal notices, copyright, sample code license, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000038",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000026",
+              "start_page": 18,
+              "end_page": 26
+            },
+            "summary": "Shows a full WID/Cúram integration message flow for a completed end-to-end example. Includes wire-level SOAP/XML for six steps: Cúram outbound client calling WID Export, WID Import calling the Cúram inbound web service, XML passed into the inbound BPO, BPO response XML, the SOAP response back to WID Import, and the final WID Export response to the outbound client. Uses a CreateEvidence example with ET500, case/participant IDs, dates, and data items like sportingActivityType and paymentAmount. Final pages are notices/license text."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000026",
+          "start_page": 9,
+          "end_page": 26
+        },
+        "summary": "Introduces WBPM integration with Cúram web services using WID and WPS. It explains WBPM components, Cúram IMT services, and that the guide is a practical step-by-step companion to the Cúram Server Modelling Guide. Prerequisites include familiarity with Cúram web service infrastructure and having Cúram, CuramWS, WID, and WPS installed. The section then walks through importing, testing, and exposing a Cúram CreateEvidence web service in WID, including WSDL preparation, TCPMon monitoring, process wiring, and sample SOAP/XML message flow."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

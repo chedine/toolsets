@@ -1,0 +1,862 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "c530be77d7293760",
+    "title": "Cúram 8.1.2 Personalised Pod Page Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramPodConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "c530be77d72937605a4ff9fba8e206dab12819ba007ebfd6a47cbb3d20f89ccd",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T19:04:40+00:00",
+    "page_count": 22,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramPodConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Personalised Pod Page Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000022",
+      "start_page": 1,
+      "end_page": 22
+    },
+    "summary": "Introductory guide for configuring Cúram 8.1.2 personalised pod pages. It explains what personal pages and pods are, how application views and user roles determine default content, and that pages must be created by developers before administrators configure them. Main topics include using the wizard to set page ID, security role, default/available pods and layout, pre-defined pods for roles, Quick Links setup and translation, user personalization actions (add/remove, hide/collapse, move, filter, refresh, reset), and performance/application properties such as lazy loading, quick links limits, and maximum pod list sizes. The section is mainly administrator-focused and includes front matter plus legal notices and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Notice to readers that they should read the Notices section before using the product or this information. Includes Merative US L.P. copyright years 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory edition page for the Cúram 8.1/8.1.1/8.1.2 Pod Configuration guide. It frames the guide’s scope: configuring personalized pod pages, roles, pre-defined pods, quick links, page personalization, and related application properties. The section explains what personal pages and pods are, how administrators configure them via the wizard (page ID, user role, available/default pods, layout), and performance options like lazy loading and list limits. It also begins descriptions of pre-defined pods such as My Appointments, My Tasks, Caseload Summary, and Resolved Investigations."
+          },
+          {
+            "title": "Edition — pages 15-20",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000020",
+              "start_page": 15,
+              "end_page": 20
+            },
+            "summary": "This section explains configurable personalized pods on user home pages, including pod purposes and features for Investigations Awaiting Approval, My Case Queries, Assigned Workload, My Work Queues, My Organization Units, and Organization Summary. It covers Quick Links: what they are, how admins create/assign/translate them, and related settings. It also describes personal page customization actions such as showing/hiding, collapsing, closing, moving, filtering, and refreshing pods, plus application property settings for pod lazy loading, quick links, and maximum pod list sizes."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000020",
+          "start_page": 5,
+          "end_page": 20
+        },
+        "summary": "Introductory section for the Cúram 8.1/8.1.1/8.1.2 Pod Configuration guide. It explains personal pages and pods, how administrators configure them with the wizard (page ID, user role, default/available pods, layout), and performance settings like lazy loading. It covers pre-defined pods for different roles, Quick Links creation/assignment/translation, user personalization actions (hide, collapse, close, move, filter, refresh), and related application properties, including quick links and maximum pod list sizes."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "Contains legal and licensing notices: fictitious sample data disclaimer, Merative Client Agreement terms, copyright license for sample source programs, “AS IS” warranty/liability disclaimer, privacy policy URL, and trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands used in the document. It states Merative’s privacy policy URL, gives copyright license terms for sample source code, and notes the samples are provided “AS IS” without warranty. Also identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and says other names may belong to others."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000021",
+          "end_unit_id": "p000021",
+          "start_page": 21,
+          "end_page": 21
+        },
+        "summary": "Legal notices and usage terms for Merative publications: permitted personal/noncommercial and internal commercial reproduction only if proprietary notices are preserved; no derivatives or external redistribution without consent. Includes rights/licensing limits, export compliance, patent notice, third-party product and website disclaimers, “AS IS” warranty/liability disclaimer, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This Contents section outlines the guide’s structure for configuring personalized pod pages in Cúram 8.1.2. It lists chapter 1 topics on personal pages and pods, including introduction, page configuration using the wizard, pre-defined pods, quick links, personalizing pages, and related application property settings. It also includes front matter references such as Note, Edition, Notices, Privacy policy, and Trademarks, with page numbers for navigation."
+      },
+      {
+        "title": "1 Configuring Personalized Pod Pages",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Pod Configuration guide for configuring personal pod pages, which contain multiple pods and may use predefined pods by user role. Defines the guide’s purpose: configuring personal pages, selecting displayed pods, and managing associated pod displays. Notes that announcements on the user home page are covered in the Cúram Organization Administration Guide. Also identifies the intended audience (administrators) and outlines the guide’s chapters, including personal pages, configuration, quick links, personalization, and application properties, plus a reference to the Pod Developers Guide."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for administrators configuring personalized pod pages and their pod displays. It explains that personal pages contain multiple registered pods, with predefined pods available by user role. The section also outlines the guide’s scope, noting that announcements on the user home page are covered elsewhere, and lists the guide’s chapters on personal pages, configuration, quick links, user personalization, and application properties."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Overview of the Pod Configuration guide for personal pages. It explains that personal pages contain multiple pods, can use registered or predefined pods by user role, and are configured by administrators. This section lists the guide’s chapters: introducing personal pages, configuring appearance and performance options, quick links, user personalization (add/remove/hide pods), and application properties. It also notes that announcements on the user home page are covered in the Organization Administration Guide and refers developers to the Pod Developers Guide."
+              },
+              {
+                "title": "Further Reading",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Further Reading points to the Pod Developers Guide, which gives developers instructions for creating personal pages and associated pods. This section is mainly a cross-reference for readers who need implementation guidance beyond the configuration topics covered in this guide."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Pod Configuration guide for administrators configuring personal pages with multiple pods. It explains the guide’s purpose: defining personal pages, choosing displayed pods, and managing pod displays. It notes that announcement configuration on the user home page is covered in the Cúram Organization Administration Guide. The section outlines the guide’s chapters on introducing personal pages, configuring appearance/performance, quick links, personalizing pages, and application properties, and points developers to the Pod Developers Guide."
+          },
+          {
+            "title": "1.2 Introducing Personal Pages",
+            "level": 2,
+            "children": [
+              {
+                "title": "What is a Personal Page?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Personal pages are customizable client home pages made up of Pods, which display configurable data in different formats. Users can rearrange, add, or hide Pods to fit their needs. The section also explains the difference between application views and personal pages: application views are role-based, and their home pages may be personal pages. It notes that personal pages and pods must be created by developers first, and administrators then configure which pods appear by default or can be added."
+              },
+              {
+                "title": "What is a Pod?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Defines a Pod as a configurable container that presents a set of user data in formats like lists, charts, or other graphical views, often as a snapshot of key work data. Explains that personal pages are built from multiple Pods and users can rearrange, add, or hide them. Also covers how application views map to user roles, how home pages can be personal pages, and that administrators control default/optional Pods. Notes that pods and personal pages must be developed before configuration and that predefined Pods are supplied for common roles."
+              },
+              {
+                "title": "Application Views and Personal Pages",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains personal pages and application views in Cúram. Personal pages are user-customizable client pages built from Pods, which present configurable data in various formats and can be rearranged, added, or hidden by users. Application views provide role-specific, predefined home pages with relevant sections, shortcuts, searches, and tabs. Users are assigned an application view and home page during setup. The section also notes that personal pages and pods are created by developers, and that pre-defined pods and Quick Links are available for common roles."
+              },
+              {
+                "title": "How are Personal Pages created?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Personal Pages are customizable client home pages made up of Pods, which can be rearranged, added, or hidden by users. Application Views assign role-specific home pages, often a personal page, and administrators choose which Pods appear by default or can be added. Before configuration, the personal page and its Pods must already be created as a development task, using the Pod Developers Guide. The section also notes that pre-defined Pods are available for many roles, including common and specialized Pods like My Appointments and Quick Links."
+              },
+              {
+                "title": "Pre-defined Pods",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains personal pages and pods in Cúram 8.1.2. Personal pages are customizable client pages made of pods that users can rearrange, add, or hide. Pods are configurable containers for data displayed in formats like lists or charts. It also describes application views, which define role-based home pages and which pods are shown by default or can be user-added. Finally, it notes that pre-defined pods are provided out of the box for specific user roles, including common pods like My Appointments and Quick Links."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Introduces personal pages in Cúram: user-customizable home pages made of Pods that can be rearranged, added, or hidden. Explains Pods as configurable data containers shown in formats like lists, charts, or other graphical views. Contrasts personal pages with application views, which are role-based and include predefined sections, shortcuts, searches, tabs, and an associated home page. Notes that pages and pods must be developed before administrators configure them, and that predefined pods are available for common and specialized roles."
+          },
+          {
+            "title": "1.3 Configuring Personal Pages",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Introduces administrator setup of personalized pod pages via the personal page wizard. Covers configuring a page by page ID and security role, selecting available pods and default pods, and defining page layout. Notes that default pods are a subset of available pods, users can later personalize selections, and the layout supports a configurable number of equal-width columns (default 3)."
+              },
+              {
+                "title": "Configuring a Personal Page Using the Wizard",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Page ID",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains the “Page ID” wizard step for configuring personalized UIM pages. The administrator enters the page ID of the page to configure, as part of the personal page setup workflow. It sits within a broader process that also includes selecting a user role, available pods, default pods, and page layout. This node is useful if you need the specific step for identifying which page is being configured."
+                  },
+                  {
+                    "title": "User Role",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains the “User Role” step in the personal page wizard. Administrators choose a security role to create role-specific page configurations; different roles can see different views of the same page. If no role is selected, a default page record is created and used when no role-specific configuration exists."
+                  },
+                  {
+                    "title": "Available Pods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains the “Available Pods” wizard step for configuring personalized pages. Administrators choose which registered pods are available on a page; the Default Pods step then selects a subset shown initially to users. The section also notes the page setup flow: Page ID, User Role-based variants, Available Pods, Default Pods, and Page Layout. Useful for understanding how pod availability is defined before default display and user personalization."
+                  },
+                  {
+                    "title": "Default Pods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains the “Default Pods” step in the personal page wizard. Administrators choose which previously selected available pods appear by default when a user first opens a personal page. Users can later change this selection to fit their preferences. The section sits within personal page configuration, alongside page ID, user role, available pods, and page layout settings."
+                  },
+                  {
+                    "title": "Page Layout",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains the Page Layout step of the personal page wizard. Administrators set the number of columns on a personal page; the default is 3, and all columns are equal width (for example, 4 columns = 25% each). Users can later move pods between columns to personalize the layout."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how administrators configure personal UIM pages using the wizard. Covers entering the Page ID, choosing an optional security role to create role-specific or default page records, selecting which registered pods are available, choosing default pods shown initially to users, and setting the page layout by number of equal-width columns (default 3). Users can later personalize pod selection and placement."
+              },
+              {
+                "title": "Performance Considerations",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Lazy Loading",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains lazy loading for Personal pages: when pages with many Pods or large data load slowly, the feature loads only the first n Pod rows initially and loads the rest later, letting users keep working. Notes that lazy load behavior is controlled by administrator-configurable application properties and applies to all personal pages. Also covers limiting list sizes within Pods via an application property, and gives guidance on the My Current Cases pod, including default/max case count properties and when to prefer the My Cases list page for larger caseloads."
+                  },
+                  {
+                    "title": "Limiting the Number of Items in a List",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to limit list sizes in personal page pods for performance. Notes that each pod containing a list has an administrator-configurable property setting for the maximum number of items shown. Also covers lazy loading for personal pages, which loads only the first n pod rows initially and then loads the rest to improve responsiveness. Includes an example using the My Current Cases pod, recommending it only for small caseloads and describing default and maximum case list properties."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains performance settings for Personal pages, especially lazy loading and list-size limits. Lazy loading loads only the first n Pod rows initially, then the rest, improving responsiveness; it is controlled by administrator-configurable properties and applies to all personal pages. Each list-containing Pod also has a maximum-item property. The section highlights the My Current Cases pod as suitable only for small caseloads (about under 20 cases), with default and maximum case count properties, and recommends the My Cases list page for larger caseloads."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "Explains how administrators configure personal pages using the wizard: enter a page ID, optionally assign a security role to create role-specific or default page records, choose available pods and a subset as default pods, and set the number of equal-width columns on the page (default 3). Users can later personalize pod selection and placement."
+          },
+          {
+            "title": "1.4 Pre-defined Pods",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Introduces performance considerations for Personal pages, including application properties for optimization, lazy loading, and limiting list sizes in pods. Explains that lazy loading helps large pages by loading the first configured rows first, and that settings apply to all personal pages. Also previews pre-defined pods, especially My Current Cases, which is suitable only for small caseloads (about 20 cases or fewer) and uses default/max properties to control how many cases display."
+              },
+              {
+                "title": "My Appointments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section describes three personalized pods: My Appointments, My Items of Interest, and My Tasks. It explains what each pod shows on a personalized home page, including appointment snapshots by day with icons, linked subjects, all-day events, item-of-interest details with hyperlinks to workspace tabs and the full list page, and tasks sorted by oldest deadline with counts versus total assigned tasks."
+              },
+              {
+                "title": "My Items of Interest",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "My Items of Interest describes a personalized pod that shows a subset of items flagged as items of interest. It lists the item name plus reference, primary client name, and client reference; the reference is hyperlinked to open the relevant workspace tab. A “My Items of Interest” link leads to the full list page. The section also briefly includes nearby pod descriptions for My Appointments and My Tasks, outlining their snapshot-style displays and key navigation behaviors."
+              },
+              {
+                "title": "My Tasks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "The My Tasks pod shows a daily snapshot of tasks reserved for the logged-in user so they can focus on immediate work. Tasks are listed by oldest deadline first, and the pod shows both the number displayed and the total assigned. It is only a snapshot; the full task list must still be managed in the inbox section."
+              },
+              {
+                "title": "Caseload Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Describes the Caseload Summary pod in Cúram 8.1.2, which gives caseworkers a status-based view of assigned Product Delivery cases. It shows a bar chart with case statuses (Open, Submitted, Suspended, Active, Approved), counts by status, hover details, and a My Cases link to the full list. The surrounding text also briefly covers task pod behavior and the Resolved Investigations pod, which uses a pie chart and date filter to show founded vs. unfounded investigation outcomes."
+              },
+              {
+                "title": "Resolved Investigations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "The Resolved Investigations pod gives investigators a snapshot of how investigations were resolved over a chosen period, showing whether outcomes were founded or unfounded. It includes a pie chart representing investigation and resolution status, plus a filter to view results for a defined timeframe such as today or the previous week."
+              },
+              {
+                "title": "Investigations Awaiting Approval",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Describes the Investigations Awaiting Approval pod for investigators, showing investigations they own or submitted that are still pending approval, sorted by oldest submission date. The excerpt also begins nearby pod descriptions for My Case Queries, Assigned Workload, and My Work Queues, covering saved query access, supervisor workload totals, and queue oversight. This section is useful for understanding configurable personalized pods and their key display/link behaviors."
+              },
+              {
+                "title": "My Case Queries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Describes the My Case Queries pod for caseworkers. It shows saved case queries, including a count of displayed versus total queries when the list exceeds the pod limit. Users can create a new case query, open the full My Case Queries list, or run a query by clicking its name, which opens results in a workspace tab. This section also sits among other personalized pod page examples for investigations, assigned workload, and work queues."
+              },
+              {
+                "title": "Assigned Workload",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section describes configurable dashboard pods in Personalized Pod Pages, focusing on Assigned Workload. It explains that the pod shows supervisors the users reporting to them and each user’s assigned workload totals, including integrated cases, product delivery cases, service plans, appeals, and investigations. It also notes links to user workspaces and the full My Users list, plus display limits versus total users. Nearby pod examples include Investigations Awaiting Approval, My Case Queries, and My Work Queues."
+              },
+              {
+                "title": "My Work Queues",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section describes the My Work Queues pod for supervisors. It explains that the pod shows work queues they oversee and helps them quickly assess how many tasks remain unreserved versus how many team members can reserve tasks in each queue. This supports decisions about reassigning users to different queues or subscribing additional users to a queue."
+              },
+              {
+                "title": "My Organization Units",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "My Organization Units describes a supervisor pod that shows tasks for each organization unit they are assigned to, helping monitor workloads across units. It includes a link from the pod name to the My Organization Units list tab, displays the number of active members associated with each unit, and shows the number of unreserved tasks assigned to the unit."
+              },
+              {
+                "title": "Organization Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section describes the Organization Summary pod for administrators. It shows a summary of the active organization structure, including totals for Organization Units, Positions, Users, and Locations. Each total links to the corresponding list page in the active organization tab."
+              }
+            ],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000015",
+              "start_page": 12,
+              "end_page": 15
+            },
+            "summary": "Covers pre-defined personalized pods and when to use them. Includes performance tips for personal pages: lazy loading and list-size limits. Highlights My Current Cases for small caseloads only (about 20 or fewer) with default/max display properties. Describes pod behavior and navigation for My Appointments, My Items of Interest, My Tasks, Caseload Summary, Resolved Investigations, Investigations Awaiting Approval, My Case Queries, Assigned Workload, and My Work Queues, including snapshots, charts, filters, counts, hyperlinks, and links to full list/workspace pages."
+          },
+          {
+            "title": "1.5 Quick Links",
+            "level": 2,
+            "children": [
+              {
+                "title": "What are Quick Links?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Quick Links are configurable shortcuts to frequently used application pages, shown in the Quick Links pod on a user’s personal page. They help users quickly perform common tasks such as searching for a person or viewing lists of assigned cases. The links are mapped to application views and can be set up manually in the admin application."
+              },
+              {
+                "title": "Configuring Quick Links",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Associating Quick Links with an Application View",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how administrators assign existing quick links to specific application views so they appear in the application home page’s quick links pod. Also covers related settings: recommended quick link limits and warning behavior, ordering via a system property, and translating quick link names for different locales. Includes steps for managing translations in the administration workspace."
+                  },
+                  {
+                    "title": "Setting the recommended number of Quick Links",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how administrators configure Quick Links and, specifically, how many are recommended for an application view/user role. It notes that a default recommended count is used for usability, a warning appears if that count is exceeded, and the setting can be overridden with the curam.admin.defaultnoofquicklinks application property. Also mentions related Quick Links setup topics such as assigning to views, ordering, and translating names."
+                  },
+                  {
+                    "title": "Setting the Quick Links Order",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to configure quick links in Cúram personalized pod pages. Administrators can create quick links, assign them to application views and user roles, and remove predefined demo links if needed. This section specifically says quick link sorting is enabled by setting the system administration property `curam.userinterface.quickclinks.order` to `YES` and publishing it, after which administrators can define the display order per application view. It also notes the recommended quick-links limit and mentions translation support for quick link names."
+                  },
+                  {
+                    "title": "Translating Quick Link Names",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section explains how administrators translate quick link names for multilingual Cúram applications. It notes that the application uses the user’s locale at runtime, and if only one non-English language is supported, the quick link name can be edited directly. It provides the admin navigation path to All Quick Links and the steps to add a new translation by selecting a language and entering translated text."
+                  }
+                ],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section introduces Quick Links configuration in Cúram personalized pod pages. It explains that administrators can create quick links, assign them to application views and user roles, remove demo links, set a recommended quick-link count (with warnings and an override property), enable and define ordering via `curam.userinterface.quickclinks.order`, and translate quick link names for different locales via Administration Workspace > Shortcuts > User Interface > All Quick Links."
+              }
+            ],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000017",
+              "start_page": 16,
+              "end_page": 17
+            },
+            "summary": "Quick Links are configurable shortcuts on a user’s personal page that map to application views and help users reach common pages quickly, such as person search or assigned cases. This section explains that sample/demo quick links can be removed, and that administrators can create and assign quick links to application views and user roles, set a recommended maximum, enable ordering with the curam.userinterface.quickclinks.order property, and translate quick link names through Administration Workspace > Shortcuts > User Interface > All Quick Links."
+          },
+          {
+            "title": "1.6 Personalizing a Page",
+            "level": 2,
+            "children": [
+              {
+                "title": "Displaying and Hiding Pods",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Collapsing and Expanding Pods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how users personalize a page by displaying, hiding, collapsing, expanding, and closing pods. Focuses on collapsing/expanding pods via the arrow on each pod title bar to hide content and reduce clutter while keeping the pod available. Also notes that these preferences persist across sessions and that closed pods can be restored through the customize panel, which can also save changes or reset the page to defaults."
+                  },
+                  {
+                    "title": "Closing Pods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how users personalize a page by managing pods: pods can be collapsed/expanded via the title-bar arrow, closed with a close button, and later restored through the customize panel. Changes persist across sessions. Also notes that the customize panel lets users add/remove default and extra pods, save preferences, or reset to the default layout."
+                  },
+                  {
+                    "title": "The Customize Panel",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Describes the Customize Panel on a personal page, which lets users add or remove default and additional pods assigned to their application view role. Changes are applied by clicking Save, and the page updates to match the selected preferences. Users can also restore the default personal page layout by using Reset."
+                  }
+                ],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how users personalize a personal page by showing, hiding, collapsing, expanding, and closing pods. Pods can be collapsed/expanded via an arrow on the title bar and closed with a close button; closed pods can be restored through the customize panel. The customize panel lets users add or remove default and additional pods for their role, then save changes or reset to the default layout. Preferences persist across sessions."
+              },
+              {
+                "title": "Moving Pods",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how users move pods on personalized pages by dragging the pod title bar, with a drop indicator showing placement and the layout saved on drop. Also notes related page-refresh behavior and pod filtering, including edit buttons for editable pods. Includes application property settings for pod loading/display, especially lazy loading options such as initial rows, drop delay, and fade-in duration."
+              },
+              {
+                "title": "Filtering Pods",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how editable pods can be filtered on personalized pages: pods with editable data show an edit button in the title bar, open filter options when selected, and refresh the page after Save to show updated data. Also notes that reloading the page updates all pods and can be triggered by Save/Reset in the customize console, Save in the pod filter panel, the Refresh icon, or browser refresh."
+              },
+              {
+                "title": "Reloading the Page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how the personal page reloads after key actions: Save or Reset in the customize console, Save in the Pod filter panel, clicking the Refresh icon, or refreshing the browser. Notes that any reload updates all pods with the latest data sets. This section follows pod movement and filtering instructions and precedes application property settings for pod loading/display."
+              }
+            ],
+            "node_id": "n000052",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Explains how users personalize a page by showing, hiding, collapsing, expanding, and closing pods. Pods can be collapsed/expanded from the title-bar arrow and closed with the close button; closed pods can be restored through the customize panel. The customize panel lets users add or remove default and additional pods for their role, then save changes or reset to the default layout. Personalization persists across sessions."
+          },
+          {
+            "title": "1.7 Application Property Settings for Personal Pages",
+            "level": 2,
+            "children": [
+              {
+                "title": "Pod Loading and Display Property Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains personal page pod behavior and loading settings. Covers dragging and dropping pods to rearrange layout, filtering editable pods via an edit button, and ways to reload the page so updated data appears. Also lists pod loading application properties: enabling lazy loading for pod containers, initial rows loaded, delay between lazy-loaded pods, and fade-in duration. Useful for understanding how personalized pod pages are displayed and configured."
+              },
+              {
+                "title": "Quick Links Configuration Options",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section lists Quick Links configuration options. It documents the application property curam.admin.defaultnoofquicklinks, which sets the recommended number of quick links displayed for all application view user roles. It also introduces maximum pod list size property settings, noting that these application properties are used to control the maximum list size for each list-containing Pod and are found under the Application - Custom Widget Configuration category."
+              },
+              {
+                "title": "Maximum Pod List Size Property Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000022",
+                  "start_page": 20,
+                  "end_page": 22
+                },
+                "summary": "Describes a quick reference for application property settings, then introduces “Maximum Pod List Size Property Settings,” noting that several application properties control the maximum list size for Pods containing lists. These settings are located in the Application - Custom Widget Configuration category. The excerpt itself does not list the individual properties or values."
+              }
+            ],
+            "node_id": "n000060",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000022",
+              "start_page": 19,
+              "end_page": 22
+            },
+            "summary": "This section covers personalized pod page behavior and application property settings. It explains how users can drag and drop pods, filter editable pods via the edit button, and reload pages to refresh data. It lists pod loading properties for lazy loading, initial rows, pod drop delay, and fade-in duration, plus the quick links property curam.admin.defaultnoofquicklinks. It also notes maximum pod list size settings for list-containing pods under Application - Custom Widget Configuration."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000022",
+          "start_page": 9,
+          "end_page": 22
+        },
+        "summary": "Guidance for administrators on configuring personalized pod pages in Cúram. Covers what personal pages and pods are, how pages differ from role-based application views, and how to use the wizard to set page ID, security role, available/default pods, and column layout. Includes pre-defined pods and performance settings such as lazy loading and list-size limits, plus Quick Links setup and translation. Also explains how users personalize pages by adding, hiding, collapsing, moving, filtering, and refreshing pods, and lists related application properties."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

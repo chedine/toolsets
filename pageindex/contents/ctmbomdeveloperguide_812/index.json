@@ -1,0 +1,1504 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "e5cc41b38ceff51d",
+    "title": "Cúram 8.1.2 Business Object Module Development Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CTMBOMDeveloperGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "e5cc41b38ceff51d64a0d0799a71aa07ec19b89b4cd603c0b596f960c573e8fc",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:35:15+00:00",
+    "page_count": 50,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CTMBOMDeveloperGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Business Object Module Development Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000050",
+      "start_page": 1,
+      "end_page": 50
+    },
+    "summary": "Introductory guide for Cúram 8.1/8.1.1/8.1.2 on developing Business Object Modules (BOMs) for Configuration Transport Manager (CTM). It defines Business Object Type vs. Business Object, explains CTM release/apply transport flow, and outlines BOM responsibilities and infrastructure (including Range Aware Key Server and runtime data). The chapter covers the 11 BOM interfaces, noting which have out-of-the-box implementations, and gives implementation guidance through a worked example using Folder and User business object types. It also discusses testing transport, assumptions about required facades/adapters/DAOs/code-table classes, and how to customize revert Change Set construction with RevertChangeSetConstructionHandlerBOM. Front matter includes note, edition, contents, and legal notices/privacy/trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section on page 49 before using the product information. It also shows the Merative US L.P. copyright years 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory material for Cúram 8.1/8.1.1/8.1.2 and the start of “Developing Business Object Modules for Configuration Transport Manager.” Covers document edition/copyright, table of contents, purpose, prerequisites, and key terms (Business Object Type, Business Object, BOM). Summarizes BOM roles and the CTM release/apply flow, including which BOM interfaces are used. Introduces BOM infrastructure classes, the Range Aware Key Server, and runtime-data constraints. Begins a worked example application for developing BOMs, with folder and user screens."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section introduces example BOM analysis for two configuration screens, Folder and User, including their entities, relationships, and code table dependencies. It details Folder, FolderPermission, FolderPermissionLink, User, ToDo, UserToDoLink, Note, UserNoteLink, and Category, plus related code tables. It then explains BOM development methodology: identifying configuration entities, grouping them into business object types, defining unique BOM identifiers and keys, and ensuring RAKS-generated primary keys. It ends with Folder BOM analysis and dependency types: type-level and instance-level."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section explains how to analyze and implement Business Object Modules (BOMs) for configuration transport, using Folder and User as examples. It covers identifying initial, child, relative entities; type-level and instance-level dependencies; and mode of deletion. It then describes BOM implementation steps: enabling configuration entities for RAKS, creating a new key set (e.g., UserBOMKS) in KeyServer.dmx, configuring entities to use that key set via auto ID or direct UniqueID calls, and starting Entity Business Object Builder class development."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Explains how to implement and register Configuration Transport Manager Business Object Modules (BOMs) for entities like Category, Note, User, ToDo, and link entities. Covers EntityBOBuilder class patterns, AbstractBOM usage, singleton/thread-safe design, BOM methods for name, initial entity, dependencies, security SIDs, and deletion traits. Shows Guice module registration and MODULECLASSNAME.dmx configuration. Also describes optional BOM types (pre/post-commit, revert construction, authorisation) and testing workflows for listing, releasing, exporting, transporting, applying, and undoing change sets."
+          },
+          {
+            "title": "Edition — pages 45-48",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000048",
+              "start_page": 45,
+              "end_page": 48
+            },
+            "summary": "This section lists required classes and APIs for the User business object type: facade operations for User/Note/ToDo management, adapter classes for initial, child, and related entities, DAO classes for cross-entity searches, and Java classes generated from code tables. It then explains how to customize revert Change Set construction using `RevertChangeSetConstructionHandlerBOM`, with an example where an unrelated active User must be added to the revert set so the previous active user is restored. Includes sample implementation code and a brief reference to Google Guice 2."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000048",
+          "start_page": 5,
+          "end_page": 48
+        },
+        "summary": "Intro to developing Business Object Modules (BOMs) for CTM in Cúram 8.1/8.1.1/8.1.2. Defines Business Object Type vs. Business Object, explains CTM release/apply flow, and lists BOM interfaces and which have out-of-box implementations. Covers BOM infrastructure, Range Aware Key Server, runtime data, and a worked example using Folder and User. Ends with assumptions about required facades/adapters/DAOs/code-table classes, testing scenarios for transport, and custom revert Change Set construction via RevertChangeSetConstructionHandlerBOM."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000050",
+              "start_page": 50,
+              "end_page": 50
+            },
+            "summary": "This section contains legal notices: sample data disclaimer, sample program copyright/license terms, warranty/liability limits, Merative privacy policy link, and trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. It is mainly a reference for licensing, privacy, and trademark information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000050",
+              "start_page": 50,
+              "end_page": 50
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands. Covers Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX trademark ownership, plus a privacy policy link and a disclaimer that sample programs are provided “AS IS” under the Merative Client Agreement. Useful if you need legal notices, brand attributions, or usage terms."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000049",
+          "end_unit_id": "p000049",
+          "start_page": 49,
+          "end_page": 49
+        },
+        "summary": "Legal notice section for the publication. Covers permitted personal and enterprise use, required preservation of proprietary notices, and restrictions on redistribution, derivative works, export, and implied rights. Includes broad “AS IS” warranty/liability disclaimers, patent notice, non-Merative product and website disclaimers, and copyright ownership. Useful for licensing, compliance, and usage terms."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This section is the table of contents for a Cúram 8.1.2 manual on developing Business Object Modules (BOMs) for Configuration Transport Manager (CTM). It lists the major chapter “Developing Business Object Modules for Configuration Transport Manager” and its subsections: BOM overview, development methodology, examples for folder and user business object types, implementation, testing, assumptions about available classes, customizing revert change sets, and reference guides. It also includes front matter entries like Note, Edition, Notices, Privacy policy, and Trademarks."
+      },
+      {
+        "title": "1 Developing Business Object Modules for Configuration Transport Manager",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This prerequisites section says the document assumes familiarity with required components for developing business object modules for CTM, with Google Guice explicitly referenced. It sits within an overview of transporting administrative business objects between systems via Configuration Transport Manager. It also introduces key terminology: a Business Object Type is a logical grouping of administrative data for a function, and a Business Object is an instance of that type."
+              },
+              {
+                "title": "Terminology",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Business Object Type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Defines “Business Object Type” in Configuration Transport Manager as a logical grouping of administrative data/entities that govern a specific functionality and can be transported between systems. Explains the related terms “Business Object” as an instance of a Business Object Type and introduces the document’s purpose: guiding development of business object modules needed to transport administrative business objects via CTM. Includes a Benefit Product example and notes the section is part of the terminology/overview for CTM transport development."
+                  },
+                  {
+                    "title": "Business Object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Introduces developing Business Object modules for Configuration Transport Manager (CTM). It explains that a Business Object Type is a logical grouping of administrative data for a specific function, and a Business Object is an instance of that type. The section states the document’s purpose is to describe development activities needed to transport administrative business objects between systems using CTM, intended for developers enabling transport of their own business objects. It also notes the reader should be familiar with prerequisite components, including Google Guice 2."
+                  },
+                  {
+                    "title": "Business Object Modules",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Defines Business Object Modules (BOMs) as code that performs bespoke processing needed to transport instances of a Business Object Type. Explains that CTM infrastructure handles common transport flow and delegates business-object-specific tasks to BOMs, such as generating XML. Introduces BOM implementation requirements: up to 11 BOM interfaces may be needed, though not all must be bespoke because some have out-of-the-box support. Includes a table of BOM types, responsibilities, and OOTB availability, covering AuthorisationBOM, DeleteBOM, DependentBOM, ExistenceBOM, InformationalBOM, and PostCommitActionBOM."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Defines core CTM terms: a Business Object Type is a logical grouping of administrative data/entities for a specific function, and a Business Object is an instance of that type. Uses Benefit Product as the example (grouping related entities like Product and ProductDeliveryPattern). Also frames the document’s purpose: guidance for developers enabling transport of administrative business objects between systems via Configuration Transport Manager, with Google Guice 2 listed as a prerequisite."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the document’s purpose: guidance for developers on transporting administrative Business Objects between systems via Configuration Transport Manager (CTM). It defines a Business Object Type as a logical grouping of administrative data for a function, and a Business Object as an instance of that type, using Benefit Product as an example. It also notes prerequisites, including familiarity with required components and Google Guice 2."
+          },
+          {
+            "title": "1.2 BOM Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Implementing BOMs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section introduces Business Object Modules (BOMs) for transportable Business Object Types. It explains that BOMs provide bespoke processing during transport, while the core CTM infrastructure handles common flow and delegates Business Object–specific steps to BOMs. It summarizes BOM responsibilities and notes that up to eleven BOM interfaces may be needed, though not all require custom implementation because some have out-of-the-box support. The page begins a table listing BOM types, their purposes, and whether OOTB implementations exist."
+              },
+              {
+                "title": "CTM Core Process Flow",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The Release Operation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains the CTM Core Process Flow, focusing on the Release operation. It describes the available BOM interfaces (including PreCommitAction, RevertChangeSetConstructionHandler, ReadAndUpsert, and SecurityBOM) and notes which have OOTB no-op implementations. The Release operation checks read permissions, reads Business Object contents, converts them to XML fragments, assembles a Change Set XML document, and saves it to the release area in a single transaction. It also identifies which BOMs are invoked during release."
+                  },
+                  {
+                    "title": "Apply Operation",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Pre Apply Phase",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000024",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Pre-Apply Phase validates a Change Set before applying it. It checks that the set is eligible, verifies the user has read/write permissions for each Business Object, and creates a revert Change Set by determining current database state via ExistenceBOM. If permissions fail, processing stops. This phase uses AuthorisationBOM or SecurityBOM for authorization and ExistenceBOM for existence checks. The Apply Phase that follows performs upsert/delete actions and pre-commit actions in the same transaction."
+                      },
+                      {
+                        "title": "Apply Phase",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Describes the Apply Phase of a Change Set process, which runs in the same transaction as Pre-Apply. It explains validation and permission checks, creation of a revert Change Set by checking object existence, then applying each Business Object via upsert or delete, followed by pre-commit actions at object and type level. Key BOMs used include AuthorisationBOM/SecurityBOM, ExistenceBOM, ReadAndUpsertBOM, DeleteBOM, PreCommitActionBOM, and PreCommitActionTypeBOM."
+                      },
+                      {
+                        "title": "Post-Apply Phase",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000026",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "Explains the post-apply phase of CTM transport: after a successful apply, the transaction commits and each Business Object’s PostCommitActionBOM runs to perform post-commit work. Introduces BOM infrastructure classes, especially AbstractEntityBOBuilder for XML-to-entity building and low-level CRUD wrapper support, and AbstractBOM for shared BOM functionality. Also describes the Range Aware Key Server (RAKS), which generates identifiers unique across all systems in a system landscape, unlike the standard key server."
+                      }
+                    ],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000012",
+                      "start_page": 11,
+                      "end_page": 12
+                    },
+                    "summary": "Explains the CTM Apply Operation, which makes a released Change Set live. It has three phases: Pre-Apply validates eligibility, checks read/write permissions, and builds a revert Change Set by using ExistenceBOM to detect existing objects; Apply performs upsert/delete actions with ReadAndUpsertBOM or DeleteBOM, then runs PreCommitActionBOM and PreCommitActionTypeBOM; Post-Apply occurs after commit in a separate transaction. Also references the BOM interfaces used in CTM process flow."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Describes the CTM Core Process Flow, focusing on the two main BOM-driven operations: Release and Apply. Release checks read permissions, reads Business Objects via SecurityBOM/AuthorisationBOM and ReadAndUpsertBOM, converts them to XML, and saves a Change Set in one transaction. Apply has Pre-Apply, Apply, and Post-Apply phases; it validates permissions, builds revert Change Sets using ExistenceBOM, then upserts/deletes objects and runs PreCommitActionBOM and PreCommitActionTypeBOM."
+              },
+              {
+                "title": "BOM Infrastructure",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "AbstractEntityBOBuilder",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains the BOM infrastructure class AbstractEntityBOBuilder. It helps implement ReadAndUpsertBOM by building entity instance information from XML fragments and wrapping low-level CRUD operations for entity upserts. The section also briefly situates it within the post-apply phase and mentions related infrastructure: AbstractBOM for shared BOM functionality and the Range Aware Key Server (RAKS) for generating identifiers unique across a system landscape."
+                  },
+                  {
+                    "title": "Abstract BOM",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Introduces BOM infrastructure for Configuration Transport Manager. It covers the post-apply phase, where PostCommitActionBOM runs after a change set is committed to perform post-commit tasks. It also explains two key infrastructure classes: AbstractEntityBOBuilder, which builds entity XML fragments and wraps low-level CRUD for ReadAndUpsertBOM, and AbstractBOM, a base class providing common BOM functionality. Finally, it notes the Range Aware Key Server (RAKS), which generates identifiers unique across a system landscape."
+                  }
+                ],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section introduces BOM infrastructure for Configuration Transport Manager, focusing on the post-apply phase and post-commit actions via PostCommitActionBOM. It describes two core helper classes: AbstractEntityBOBuilder, which builds entity instance data from XML fragments and wraps low-level CRUD for ReadAndUpsertBOM, and AbstractBOM, which provides shared BOM functionality. It also explains the Range Aware Key Server (RAKS), used to generate identifiers unique across an entire system landscape."
+              },
+              {
+                "title": "The Range Aware Key Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains the Range Aware Key Server (RAKS), an infrastructure component for Business Object Types in CTM. Unlike the standard Key Server, which only guarantees uniqueness within one system, RAKS generates identifiers such as primary keys that are unique across an entire system landscape, supporting transport of Business Objects between systems."
+              },
+              {
+                "title": "Runtime Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains that transportable Business Object entities must use RAKS-generated primary keys to avoid clashes on target systems, and existing Key Server entities can be switched to RAKS. Clarifies that Business Object Types should not mix runtime and administrative data: runtime entities are not transported via CTM and should use standard Key Server keys, while administrative/configuration entities can be transported and must use RAKS keys. Begins a BOM development example using a PIM-like application with folders, users, notes, to-dos, and permissions."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000013",
+              "start_page": 10,
+              "end_page": 13
+            },
+            "summary": "Overview of CTM Business Object Modules (BOMs) for transportable Business Object Types. Explains that CTM handles common transport flow while BOMs provide type-specific behavior. Lists 11 BOM interfaces, with 5 OOTB implementations; covers responsibilities such as authorization, read/upsert, delete, existence, pre/post-commit actions, and revert construction. Describes Release and Apply flows and where each BOM is invoked. Also introduces BOM infrastructure helpers (AbstractEntityBOBuilder, AbstractBOM) and the Range Aware Key Server (RAKS) for system-wide unique identifiers."
+          },
+          {
+            "title": "1.3 Developing BOMs",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Example Application",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Folder Screen",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Entities",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000035",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "This section introduces the entities used for the Folder Screen in Configuration Transport Manager. It explains that folder management includes creating, modifying, and removing folders, as well as adding and removing folder permissions. It assumes a UIM home page named Folder_home.uim with a mandatory folderID parameter to display the selected folder. The entities involved are Folder, FolderPermission, and FolderPermissionLink, with a UML diagram showing their relationships."
+                      },
+                      {
+                        "title": "Code Tables",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000036",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "This section describes low-level entity details for Folder, FolderPermission, and FolderPermissionLink, including attributes, primary/foreign key fields, and code table associations. It explains that Folder uses FolderType and RecordStatus, FolderPermission has a soft relationship to FolderPermissionName, and FolderPermissionLink links folders to permissions. It also lists dependent code table values for Folder screens, including FolderType codes FT_PR (Private) and FT_PU (Public), and FolderPermissionName code FPN_FC (Full Control)."
+                      }
+                    ],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000016",
+                      "start_page": 15,
+                      "end_page": 16
+                    },
+                    "summary": "Defines the Folder Screen for Configuration Transport Manager: folder creation, modification, removal, and folder permission management. Assumes a Folder_home.uim home page with mandatory folderID. Introduces the related entities Folder, FolderPermission, and FolderPermissionLink and their UML relationships. Also covers low-level entity details, including keys and code table associations: Folder uses FolderType and RecordStatus, FolderPermission links to FolderPermissionName, and FolderType/FolderPermissionName codes include FT_PR, FT_PU, and FPN_FC."
+                  },
+                  {
+                    "title": "User Screen",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Entities",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000038",
+                        "range": {
+                          "start_unit_id": "p000017",
+                          "end_unit_id": "p000019",
+                          "start_page": 17,
+                          "end_page": 19
+                        },
+                        "summary": "Defines the entity model for user-related functionality in the User Screen. It introduces User, ToDo, UserToDoLink, Note, UserNoteLink, and Category, and explains their roles in managing users, to-dos, notes, and folder associations. The section includes UML context plus low-level entity details such as attributes, primary/foreign keys, and code table associations. Specific examples include User with userID/username/displayName/statusCode, ToDo with categoryId, percentageComplete, statusCode, groupName, and UserToDoLink linking users to to-dos."
+                      },
+                      {
+                        "title": "Code Tables",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "This section explains entity relationships using foreign keys and introduces the code tables used by User screen entities. It covers Folder associations (including note-to-folder via folderID), the UserNoteLink entity linking User and Note with a composite association, and the Category entity referenced by ToDo via categoryID. It also lists the CategoryName code table values: CN_BIZ (Business), CN_PERS (Personal), and CN_HOLI (Holiday)."
+                      }
+                    ],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000020",
+                      "start_page": 17,
+                      "end_page": 20
+                    },
+                    "summary": "Defines the User Screen functionality for managing users, their to-dos and notes, and note-folder links. Describes the entity model and low-level schema details for User, ToDo, UserToDoLink, Note, UserNoteLink, and Category, including primary/foreign keys and code table associations. Highlights that ToDo links to Category via categoryID, Note links to Folder via folderID, and users link to to-dos/notes through join entities. Also lists CategoryName code table values: Business, Personal, and Holiday."
+                  }
+                ],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000020",
+                  "start_page": 14,
+                  "end_page": 20
+                },
+                "summary": "Introduces a sample PIM-like application used to explain BOM development for configuration transport. The example has two screens: Folder Screen and User Screen. Folder manages folders and permissions via Folder, FolderPermission, and FolderPermissionLink, with code tables FolderType (FT_PR, FT_PU) and FolderPermissionName (FPN_FC, FPN_READ, FPN_WRITE). User manages users, to-dos, notes, folder-linked notes, and categories via User, ToDo, UserToDoLink, Note, UserNoteLink, and Category, with CategoryName codes CN_BIZ, CN_PERS, CN_HOLI."
+              },
+              {
+                "title": "BOM Development Methodology",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Explains the BOM development methodology for CTM: analyze business object types, implement BOMs, and test them. Focuses on identifying configuration entities, grouping them into logical business object types, defining business object identifiers, and ensuring RAKS-generated identifiers. Emphasizes separating configuration from runtime data, avoiding foreign-key or soft dependencies on runtime entities, and refactoring if needed. Uses the PIM example to show folder/permissions and user-related data as distinct business object groupings."
+              },
+              {
+                "title": "Analyzing Business Object Types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Identifying the Configuration Entities",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains how to identify configuration entities for CTM/BOM development. It stresses distinguishing configuration data from runtime data, since CTM only transports configuration. Developers should check for foreign keys or soft dependencies on runtime entities and refactor if needed so configuration and runtime are separate, with runtime able to depend on configuration but not vice versa. It notes that in the example PIM app, Folder and User screen entities are configuration data."
+                  },
+                  {
+                    "title": "Group Entities into Business Objects Types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains how to group identified configuration entities into Business Object Types during BOM analysis. It defines a Business Object Type as a logical grouping of related configuration data and uses the example application to show two concrete types: folder-related information with permissions, and user-specific information such as to-do and note item types. It sits within the BOM development methodology, alongside identifying configuration entities, defining identifiers, and using RAKS-generated identifiers."
+                  },
+                  {
+                    "title": "Define Business Object Identifiers",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Business Object Type Identifier",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000045",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "Explains the Business Object Type Identifier as the unique type name used by Business Object Modules to determine a Business Object’s type. It must be unique across the system and is often prefixed with an organization-specific abbreviation to avoid collisions (for example, so.Folder, so.User). Also introduces the Business Object Identifier, composed of a Business Object Type Identifier plus a Business Object Key, and notes that the key identifies a specific instance, typically derived from the initial entity’s primary key attributes."
+                      },
+                      {
+                        "title": "Business Object Key",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000046",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "Explains how a Business Object’s unique identifier is formed, focusing on the Business Object Key. The key uniquely identifies an instance within a Business Object Type, and for versioned objects identifies a specific version. It must be unique within the type and usable to find the object in persistent storage. The section gives examples: Folder uses folderID, User uses userID, and Locale may require a composite key from language, country, and variant."
+                      }
+                    ],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Defines how every Business Object is uniquely identified in CTM: by a Business Object Identifier made of a Business Object Type Identifier and a Business Object Key. The type identifier must uniquely name the business object type and avoid collisions, often by using an organization prefix (for example, so.Folder, so.User). The key uniquely identifies an instance, or versioned instance, and must map to persistent storage. Examples include folderID, userID, and composite keys such as Locale’s language/country/variant."
+                  },
+                  {
+                    "title": "Ensure that the Configuration Entities use RAKS generated identifiers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "States that all configuration entities in transportable Business Object Types must use RAKS-generated primary keys, with a reference to a later section explaining RAKS enablement. It then begins analysis of the Folder Business Object Type: identifies its configuration entities (Folder, FolderPermission, FolderPermissionLink), the Initial Entity (Folder), Child Entities (FolderPermission and FolderPermissionLink), no Relative Entities, and introduces dependency analysis, including the distinction between type-level and instance-level dependencies with a Folder-to-CodeTable example."
+                  }
+                ],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000022",
+                  "start_page": 21,
+                  "end_page": 22
+                },
+                "summary": "Explains BOM analysis steps for CTM: identify configuration entities, group them into Business Object Types, define unique Business Object Identifiers, and require RAKS-generated primary keys. It stresses separating configuration from runtime data, since CTM transports only configuration and configuration must not depend on runtime entities. The PIM example groups folder/permission data into a Folder type and user-related data into a User type. It defines identifiers as type identifier plus key, with examples like so.Folder, folderID, userID, and composite keys such as Locale’s language/country/variant."
+              },
+              {
+                "title": "Analyzing the Folder Business Object Type",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Identifying the Configuration Entities",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Identifying the Initial Entity",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000050",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Explains how to analyze the Folder Business Object Type by identifying its configuration entities and roles. It states that Folder, FolderPermission, and FolderPermissionLink are the entities; Folder is the Initial Entity because it can identify the others; FolderPermission and FolderPermissionLink are Child Entities; and there are no Relative Entities. It also introduces dependency analysis, distinguishing type-level from instance-level dependencies, and gives an example of a static type-level dependency via the Folder type attribute referencing CodeTableItem."
+                      },
+                      {
+                        "title": "Identifying the Child Entities",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000051",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Explains how to identify child entities in the Folder Business Object Type during configuration transport analysis. The Folder entity is the initial/root entity, while FolderPermission and FolderPermissionLink are its child entities; no relative entities are identified. The section also introduces dependency analysis, distinguishing type-level vs. instance-level dependencies, and gives an example of a static type-level dependency from Folder.type to CodeTableItem in the CodeTable Business Object Type."
+                      },
+                      {
+                        "title": "Identifying the Relative Entities",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Explains analysis of the Folder Business Object Type, including the need for RAKS-generated primary keys for configuration entities. It identifies Folder, FolderPermission, and FolderPermissionLink as the configuration entities, with Folder as the Initial Entity and the other two as Child Entities. It also states that there are no Relative Entities for Folder. The section then introduces dependency analysis, distinguishing Type-Level and Instance-Level dependencies, and gives an example of a static type-level dependency from Folder’s type attribute to CodeTableItem in the CodeTable Business Object Type."
+                      }
+                    ],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Defines the Folder Business Object Type’s configuration entities and dependency analysis. It states that Folder, FolderPermission, and FolderPermissionLink are configuration entities; Folder is the Initial Entity because it identifies the others; FolderPermission and FolderPermissionLink are Child Entities; and there are no Relative Entities. It also notes that configuration entities must use RAKS-generated primary keys and introduces dependency analysis, including Type-Level vs Instance-Level dependencies, with a static example where Folder.type depends on CodeTableItem from the CodeTable Business Object Type."
+                  },
+                  {
+                    "title": "Identifying dependencies",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Type-Level dependencies",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Explains type-level dependencies in Business Object Type analysis: dependencies based on possible field values, not instance state. Uses the Folder entity’s `type` attribute as the example, where values come from `CodeTableItem` in the CodeTable Business Object Type, creating a static dependency between Folder and CodeTable. Also situates this within the broader Folder B.O.T. analysis, which identifies Folder as the initial entity and FolderPermission/FolderPermissionLink as child entities, with no relative entities."
+                      },
+                      {
+                        "title": "Instance-Level dependencies",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Example 1",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000056",
+                            "range": {
+                              "start_unit_id": "p000024",
+                              "end_unit_id": "p000024",
+                              "start_page": 24,
+                              "end_page": 24
+                            },
+                            "summary": "Explains how to detect instance-level dependencies in Business Objects by inspecting attribute values, after contrasting them with type-level dependencies. Uses a Folder Business Object instance “Documents/1” to show that Folder.type = FT_PR creates an instance relationship to the CodeTable/FolderType Business Object. Also includes related instance data for FolderPermission and FolderPermissionLink as part of the example."
+                          },
+                          {
+                            "title": "Example 2",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000057",
+                            "range": {
+                              "start_unit_id": "p000025",
+                              "end_unit_id": "p000026",
+                              "start_page": 25,
+                              "end_page": 26
+                            },
+                            "summary": "Example 2 shows how a specific Folder business object instance (“Pictures/2”) creates instance-level dependencies on CodeTable business objects based on its attribute values. It lists the folder and permission data, then maps Folder.type, Folder.statusCode, and FolderPermission.name to their dependent code tables. The section emphasizes that dependency information can vary by object content, so these are called instance-level dependencies."
+                          }
+                        ],
+                        "node_id": "n000055",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000026",
+                          "start_page": 24,
+                          "end_page": 26
+                        },
+                        "summary": "Defines instance-level dependencies for Business Objects as relationships discovered from the actual object content, not the type definition. Using Folder examples (“Documents/1” and “Pictures/2”), it shows how attribute values such as Folder.type, Folder.statusCode, and FolderPermission.name point to specific CodeTable instances (FolderType, RecordStatus, FolderPermissionName). It contrasts these with type-level dependencies and notes that the dependent objects can vary by instance, so the dependency set is content-dependent."
+                      }
+                    ],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000026",
+                      "start_page": 23,
+                      "end_page": 26
+                    },
+                    "summary": "Explains how to identify dependencies in a Business Object Type, split into type-level and instance-level. Type-level dependencies come from possible field values or foreign-key links, without inspecting object state; examples include Folder.type depending on CodeTable, and File depending on Folder via folderID. Instance-level dependencies are content-specific and found by examining actual object data. Folder instances like Documents/1 and Pictures/2 show attribute values linking to CodeTable instances such as FolderType, RecordStatus, and FolderPermissionName, with dependencies varying by instance."
+                  },
+                  {
+                    "title": "Identifying the Mode of Deletion",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "This section explains how to identify a Business Object Type’s mode of deletion: whether it is logically or physically deleted, based on the Initial Entity’s supported deletion mode. In the example, Folder is logically deleted, so its Business Object Type supports logical deletion. It then begins analyzing the User Business Object Type by listing its configuration entities, identifying User as the Initial Entity, classifying ToDo, Note, UserToDoLink, and UserNoteLink as Child Entities, and introducing how to determine Relative Entities via foreign key dependencies."
+                  }
+                ],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000026",
+                  "start_page": 23,
+                  "end_page": 26
+                },
+                "summary": "Explains how to analyze the Folder Business Object Type: its configuration entities are Folder, FolderPermission, and FolderPermissionLink; Folder is the Initial Entity; the others are Child Entities; and there are no Relative Entities. It also requires RAKS-generated primary keys for configuration entities. The section distinguishes type-level dependencies (e.g., Folder.type on CodeTableItem, File.folderID on Folder) from instance-level dependencies, showing how specific Folder instances (“Documents/1”, “Pictures/2”) depend on different CodeTable items based on actual attribute values."
+              },
+              {
+                "title": "Analyzing the User Business Object Type",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Identifying the configuration entities",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Identifying the Initial Entity",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000061",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section explains how to identify the Initial Entity in a Business Object Type, using the User object type example. It shows that User is the Initial Entity because it can lead to identifying the related ToDo, Note, UserToDoLink, and UserNoteLink entities. It also outlines how child entities are determined and introduces Relative Entities, which are entities referenced by child attributes via foreign keys and may need processing first."
+                      },
+                      {
+                        "title": "Identifying the Child Entities",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000062",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section explains how to identify child entities within a Business Object Type. Using the User Business Object Type example, it lists the configuration entities, identifies User as the Initial Entity, and classifies ToDo, Note, UserToDoLink, and UserNoteLink as Child Entities. It also introduces relative entities and the rules for finding them via foreign key relationships, noting Category as the only relative entity in the example."
+                      },
+                      {
+                        "title": "Identifying the Relative Entities",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000063",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section explains how to identify Relative Entities within a Business Object Type. A Relative Entity is a parent entity that must be processed before a child entity, determined by checking child-entity attributes for foreign key constraints. It distinguishes cases where the parent is in the same Business Object Type, the Initial Entity of another type, or a Child/Relative Entity elsewhere. The example shows the User Business Object Type has one Relative Entity, Category, because ToDo.categoryID references Category."
+                      }
+                    ],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "This section explains how to analyze the User Business Object Type by identifying its configuration entities, Initial Entity, Child Entities, and Relative Entities. The entities are User, ToDo, UserToDoLink, Note, and UserNoteLink; User is the Initial Entity, and the others are Child Entities. It also defines Relative Entities as parent entities referenced by child attributes via foreign keys and shows that Category is the only Relative Entity in the example because ToDo.categoryID references it."
+                  },
+                  {
+                    "title": "Identifying dependencies",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Type-Level dependencies",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000065",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "This section identifies type-level dependencies for the User Business Object Type after analyzing its attributes and relationships. It explains that the type depends on CodeTable and Folder Business Object Types, and also shows dependencies arising from foreign key constraints. The table maps attributes such as User.statusCode, ToDo.statusCode, ToDo.groupName, Note.folderID, and ToDo.categoryID to their dependent types, including RecordStatus, GroupName, Folder, and Category."
+                      },
+                      {
+                        "title": "Instance-Level dependencies",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Example 1",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000067",
+                            "range": {
+                              "start_unit_id": "p000029",
+                              "end_unit_id": "p000029",
+                              "start_page": 29,
+                              "end_page": 29
+                            },
+                            "summary": "Example 1 illustrates how instance-level dependencies are identified by inspecting the contents of a Business Object. It uses a user Business Object instance, “Admin/1,” showing related records in User, Category, ToDo, UserToDoLink, Note, and UserNoteLink. From the attribute data, the text concludes that this instance depends on CodeTable and Folder Business Objects. This section is mainly an example of dependency analysis from actual BO data."
+                          },
+                          {
+                            "title": "Example 2",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000068",
+                            "range": {
+                              "start_unit_id": "p000030",
+                              "end_unit_id": "p000031",
+                              "start_page": 30,
+                              "end_page": 31
+                            },
+                            "summary": "Example 2 illustrates a folder Business Object instance, “SuperAdmin/2,” containing User, ToDo, Note, and link records. It highlights that only one instance-level relationship exists, and it is with a CodeTable Business Object. A key point is that Note.folderID is NULL, so the “SuperAdmin/1” Business Object is not related to Folder in this case. The section also lists dependent attribute mappings such as User.statusCode, Category.name, ToDo.statusCode, and ToDo.groupName."
+                          }
+                        ],
+                        "node_id": "n000066",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000031",
+                          "start_page": 29,
+                          "end_page": 31
+                        },
+                        "summary": "Explains how to identify instance-level dependencies by inspecting Business Object instance data. Example 1 uses user BO instance “Admin/1” and shows dependent attributes mapping to CodeTable and Folder BOs (e.g., statusCode, category name, groupName, note.folderID). Example 2 uses folder BO instance “SuperAdmin/2” and shows only CodeTable dependency because Note.folderID is NULL, so no Folder relation exists. Includes tables and UML diagrams illustrating these instance-level relationships."
+                      }
+                    ],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000031",
+                      "start_page": 28,
+                      "end_page": 31
+                    },
+                    "summary": "Explains how to identify dependencies in the User Business Object Type. At the type level, the BO depends on CodeTable and Folder BOs, with mappings for attributes like User.statusCode, ToDo.statusCode, ToDo.groupName, Note.folderID, and ToDo.categoryID to RecordStatus, GroupName, Folder, and Category. At the instance level, it shows how actual BO contents determine relationships: “Admin/1” has CodeTable and Folder dependencies, while “SuperAdmin/2” only has CodeTable dependencies because Note.folderID is NULL. Includes tables and UML diagrams."
+                  },
+                  {
+                    "title": "Identifying the Mode of Deletion",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how to determine a Business Object Type’s deletion mode from its Initial Entity. The mode can be logical or physical deletion; in the User example, the User entity supports logical deletion, so the User Business Object Type also uses logical deletion. The section then transitions into implementing BOMs, outlining the main steps: making configuration entities RAKS enabled, writing Entity Business Object Builders for all entities, and writing the BOM implementation."
+                  }
+                ],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000031",
+                  "start_page": 27,
+                  "end_page": 31
+                },
+                "summary": "Explains how to analyze the User Business Object Type: identify configuration entities (User, ToDo, UserToDoLink, Note, UserNoteLink), the Initial Entity (User), Child Entities, and Relative Entities (Category via ToDo.categoryID). Describes type-level dependencies on CodeTable and Folder business objects, with mappings from statusCode/groupName/folderID/categoryID, and instance-level dependencies using “Admin/1” and “SuperAdmin/2” examples to show when Folder is or isn’t involved. Includes tables and UML diagrams."
+              },
+              {
+                "title": "Implementing BOMs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Making Configuration Entities RAKS enabled",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Creating New Key Set Configuration",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000072",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "Explains how to create a new Key Set configuration for transportable Business Object Types so their primary keys are generated by the Range Aware Key Server (RAKS). Describes creating a KeyServer.dmx file under EJBServer\\components\\pim\\data\\initial and defining a Key Set with strategy KB1002, a keySetCode based on the BO type name, and an Annotation description. Also notes that the Key Set must be used to move entities onto RAKS-generated keys."
+                      },
+                      {
+                        "title": "Ensure Entities use the new Key Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000073",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000034",
+                          "start_page": 34,
+                          "end_page": 34
+                        },
+                        "summary": "Explains how all entities in a Business Object Type must use the new Key Set, including initial, child, and relative entities. Covers two approaches: Auto ID generation (configure insert operations with Auto ID Field and Auto ID Key in RSA) and direct Key Server use (replace UniqueID.nextUniqueID() with UniqueID.getNextIDFromKeySet using a UniqueIDKeySet). Also notes assumptions about available BO classes and introduces entity Business Object Builder classes for the example User BO."
+                      }
+                    ],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how to make transportable Business Object Type entities RAKS-enabled by defining a new Key Set and moving all entity primary keys to use it. Shows creating `EJBServer\\components\\pim\\data\\initial\\KeyServer.dmx` with `strategy=KB1002` to invoke RAKS, a `keySetCode` based on the BO type name (e.g. `UserBOMKS`), and an `Annotation` description. This section sets up the key set and points to later steps for applying it to entities."
+                  },
+                  {
+                    "title": "Business Object Classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "This section introduces the Business Object Classes used in the example User Business Object Type and notes that the code snippets assume supporting classes like façades and DAOs exist. It points readers to assumptions about class availability and then begins the process for developing Entity Business Object Builder classes for all entities in the example, referencing earlier BOM Infrastructure guidance."
+                  },
+                  {
+                    "title": "Developing Entity Business Object Builder classes for the entities",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Category Entity Business Object Builder",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000076",
+                        "range": {
+                          "start_unit_id": "p000035",
+                          "end_unit_id": "p000035",
+                          "start_page": 35,
+                          "end_page": 35
+                        },
+                        "summary": "Explains how to implement Entity Business Object Builders for CTM entities, using the Category example and briefly noting Note and User Note Link. The builder must extend AbstractEntityBOBuilder with the entity’s primary key and Dtls types (e.g. Long, CategoryDtls). It must override getName() to return the unique entity name (such as “Category” or “Note”) and getEntityAdapter() to return the corresponding adapter instance (e.g. CategoryAdapter, NoteAdapter)."
+                      },
+                      {
+                        "title": "Note Entity Business Object Builder",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000077",
+                        "range": {
+                          "start_unit_id": "p000035",
+                          "end_unit_id": "p000035",
+                          "start_page": 35,
+                          "end_page": 35
+                        },
+                        "summary": "Explains how to implement the Note Entity Business Object Builder for Configuration Transport Manager. It says the builder class should extend AbstractEntityBOBuilder<Long, NoteDtls>, override getName() to return the unique entity name “Note”, and override getEntityAdapter() to return a NoteAdapter instance. The section also briefly parallels the pattern with Category and begins introducing UserNoteLinkEntityBOBuilder."
+                      },
+                      {
+                        "title": "User Note Link Entity Business Object Builder",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000078",
+                        "range": {
+                          "start_unit_id": "p000035",
+                          "end_unit_id": "p000035",
+                          "start_page": 35,
+                          "end_page": 35
+                        },
+                        "summary": "Explains how to implement Entity Business Object Builders for CTM entities. It gives the class pattern for CategoryEntityBOBuilder and NoteEntityBOBuilder, both extending AbstractEntityBOBuilder<Long, ...>, and says to override getName() with the unique entity name and getEntityAdapter() to return the matching adapter instance. It then begins the UserNoteLinkEntityBOBuilder example, indicating it uses Long and UserNoteLinkDtls in the class declaration."
+                      },
+                      {
+                        "title": "ToDo Entity Business Object Builder",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000079",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000036",
+                          "start_page": 36,
+                          "end_page": 36
+                        },
+                        "summary": "Describes how to implement the ToDo Entity Business Object Builder and related entity BO builders. It states that `ToDoEntityBOBuilder` must extend `AbstractEntityBOBuilder<Long, ToDoDtls>`, override `getName()` to return `ToDo`, and override `getEntityAdapter()` to return `ToDoAdapter`. It also includes the `UserToDoLinkEntityBOBuilder` pattern, extending `AbstractEntityBOBuilder<Long, UserToDoLinkDtls>`, returning `UserToDoLink`, and using `UserToDoLinkAdapter`."
+                      },
+                      {
+                        "title": "User ToDo Link Entity Business Object Builder",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000080",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000036",
+                          "start_page": 36,
+                          "end_page": 36
+                        },
+                        "summary": "Explains how to implement the UserToDoLinkEntityBOBuilder by extending AbstractEntityBOBuilder<Long, UserToDoLinkDtls>. It specifies that getName() must return the unique entity name “UserToDoLink” and getEntityAdapter() must return a UserToDoLinkAdapter instance. The section also briefly parallels similar builder patterns for UserNoteLink and ToDo entities, emphasizing the required class declaration and overridden methods."
+                      },
+                      {
+                        "title": "User Entity Business Object Builder",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000081",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000037",
+                          "start_page": 37,
+                          "end_page": 37
+                        },
+                        "summary": "Explains how to implement the User entity Business Object Builder and related BOM for Configuration Transport Manager. The builder must extend AbstractEntityBOBuilder<Long, UserDtls>, override getName() to return “User”, and override getEntityAdapter() to return UserAdapter. It then describes the recommended BOM approach: create one BOM class for all required interfaces by extending curam.ctm.bom.util.impl.AbstractBOM, though direct interface implementation is possible. It also notes BOMs are singletons and must be thread-safe for concurrent change set processing."
+                      }
+                    ],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000036",
+                      "start_page": 34,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to implement Entity Business Object Builder classes for the example CTM business object entities. Each builder extends AbstractEntityBOBuilder with the entity’s primary key and Dtls types, overrides getName() to return the unique entity name, and overrides getEntityAdapter() to return the matching adapter. Examples covered include Category/CategoryDtls, Note/NoteDtls, UserNoteLink/UserNoteLinkDtls, ToDo/ToDoDtls, and UserToDoLink/UserToDoLinkDtls."
+                  },
+                  {
+                    "title": "Implementing the BOMs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Extend AbstractBOM",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000083",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000037",
+                          "start_page": 37,
+                          "end_page": 37
+                        },
+                        "summary": "Explains how to implement BOMs for a Business Object Type by extending `curam.ctm.bom.util.impl.AbstractBOM`. Uses `UserBOM` as the example and notes that a single BOM class can implement all required BOM interfaces, with `AbstractBOM` providing default methods. Also emphasizes that BOM implementations are singletons, shared across processing and thus must be thread-safe for concurrent change set handling."
+                      },
+                      {
+                        "title": "Singleton BOMs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000084",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000037",
+                          "start_page": 37,
+                          "end_page": 37
+                        },
+                        "summary": "Explains that BOM implementations for a Business Object Type should typically be a single class extending AbstractBOM, which implements the required BOM interfaces and can provide default methods. The key warning is that BOMs are singletons: one instance is shared across all processing, including concurrent change sets for the same type. Therefore, implementations must be thread-safe and suitable for simultaneous use by multiple threads."
+                      },
+                      {
+                        "title": "AbstractBOM Method Implementations",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000085",
+                        "range": {
+                          "start_unit_id": "p000038",
+                          "end_unit_id": "p000039",
+                          "start_page": 38,
+                          "end_page": 39
+                        },
+                        "summary": "Describes how to implement AbstractBOM methods for a business object type in CTM. Covers getName() for the UI display name, getInitialBO() for creating the initial entity builder from a BusinessObjectIdentifier, and BOTraits for declaring deletion mode (logical by default, physical must be explicit). Also explains getDependentBusinessObjectIdentifiers() for returning code table and related Folder dependencies, and begins getReadSecurityIdentifier() for access control identifiers."
+                      }
+                    ],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000039",
+                      "start_page": 37,
+                      "end_page": 39
+                    },
+                    "summary": "Explains how to implement BOMs for a Business Object Type, recommending a single class extending `curam.ctm.bom.util.impl.AbstractBOM` to cover required BOM interfaces. Notes BOMs are singletons shared across all processing, so implementations must be thread-safe and avoid instance-specific state. Describes key overrides: `getName()` for UI display, `getInitialBO()` to create the initial entity builder from a `BusinessObjectIdentifier`, `BOTraits` to declare logical/physical deletion, and `getDependentBusinessObjectIdentifiers()` to return code table and related Folder dependencies. Begins `getReadSecurityIdentifier()` for read access control."
+                  },
+                  {
+                    "title": "Registering the BOM implementation",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Create a new Guice Module class",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000087",
+                        "range": {
+                          "start_unit_id": "p000041",
+                          "end_unit_id": "p000041",
+                          "start_page": 41,
+                          "end_page": 41
+                        },
+                        "summary": "Shows how to create a Guice module for registering a BOM implementation with the BOM registry. Defines `UserBOMModule` extending `AbstractModule` and a `configure()` method that uses `Multibinder.newSetBinder()` to bind `UserBOM` to multiple BOM interfaces: `ReadAndUpsertBOM`, `InformationalBOM`, `SecurityBOM`, `DeleteBOM`, `DependentBOM`, and `ExistenceBOM`. Explains that the same implementation is registered in each binder because one class serves all BOM types."
+                      },
+                      {
+                        "title": "Update the new Module class in the MODULECLASSNAME DMX file",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000088",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "Explains how to register a new Module class in a component’s `MODULECLASSNAME.dmx` file. For the `pim` component, the file is located under `EJBServer\\components\\pim\\data\\initial\\`. The DMX entry must set `moduleClassName` to the fully qualified Module class name that registers the BOMs. The section then introduces optional BOM types—Pre Commit Action, Pre Commit Action Type, and Post Commit Action—and notes their roles, interfaces, registry registration pattern, and transaction behavior."
+                      }
+                    ],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000040",
+                      "end_unit_id": "p000041",
+                      "start_page": 40,
+                      "end_page": 41
+                    },
+                    "summary": "Explains how to register a BOM implementation with the Guice-based BOM registry. Using `UserBOM` as the example, it shows creating a `UserBOMModule` extending `AbstractModule` and using `Multibinder.newSetBinder()` to bind the same implementation to multiple BOM interfaces: `ReadAndUpsertBOM`, `InformationalBOM`, `SecurityBOM`, `DeleteBOM`, `DependentBOM`, and `ExistenceBOM`. Notes that one class can serve all BOM types and be registered in each binder."
+                  },
+                  {
+                    "title": "Optional BOM types",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Pre Commit Action BOM",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000090",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "Describes the Pre Commit Action BOM, an optional BOM used during Apply to run pre-processing on a Business Object before the Change Set is committed, such as validating against other objects in the Change Set. It points to implementing `curam.util.ctm.bom.PreCommitActionBOM` and registering it in the BOM registry. The page also introduces related optional BOMs for type-level pre-commit actions and post-commit actions, and notes the MODULECLASSNAME.dmx file must contain the fully qualified Module class name for BOM registration."
+                      },
+                      {
+                        "title": "Pre Commit Action Type BOM",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000091",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "Describes the Pre Commit Action Type BOM, an optional BOM for Business Object Type–level preprocessing during an Apply before the Change Set is committed. It is invoked only once per Business Object Type, regardless of how many instances are in the Change Set. Implement by creating a class that implements `curam.util.ctm.bom.PreCommitActionTypeBOM`, then register it in the component’s `MODULECLASSNAME.dmx` via the module class entry. Also briefly introduces nearby optional BOMs: Pre Commit Action BOM and Post Commit Action BOM."
+                      },
+                      {
+                        "title": "Post Commit Action BOM",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000092",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "Describes the Post Commit Action BOM, used for post-processing after an Apply transaction has been committed. It explains that implementations must follow the curam.util.ctm.bom.PostCommitActionBOM interface, run in a separate transaction, and are invoked only after commit. Unlike other BOMs, they cannot stop the Apply process by rolling back. This section is useful if you need post-commit business logic behavior or integration points."
+                      },
+                      {
+                        "title": "Revert Change Set Construction Handler BOM",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000093",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "Explains the Revert Change Set Construction Handler BOM, which lets a Business Object Type customize how revert change sets are constructed by implementing `curam.util.ctm.bom.RevertChangeSetConstructionHandlerBOM`. It points readers to the appendix and Javadoc for details. The section then begins the Authorisation BOM topic, noting it can replace `SecurityBOM` when custom programmatic security checks are needed. It also starts the “Testing the transport of Business Object Types” section with prerequisites for source/target systems and required configuration data."
+                      },
+                      {
+                        "title": "Authorisation BOM",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000094",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "Explains the Authorisation BOM for Configuration Transport Manager Business Object Types. It is used when standard SID-based SecurityBOM checks are insufficient and custom programmatic read/write authorization is needed; if provided, it overrides SecurityBOM for access verification. The section notes that the BOM is implemented via the curam.util.ctm.bom.AuthorisationBOM interface and refers readers to its Javadoc for details."
+                      }
+                    ],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "Covers optional BOM types for Configuration Transport Manager Business Object Types and how to register them via the BOM registry and `MODULECLASSNAME.dmx` (module class name must be fully qualified). Describes Pre Commit Action BOM for pre-commit preprocessing during Apply, Pre Commit Action Type BOM for type-level pre-processing invoked once per type, and Post Commit Action BOM for post-commit processing in a separate transaction that cannot roll back the Apply."
+                  }
+                ],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000042",
+                  "start_page": 32,
+                  "end_page": 42
+                },
+                "summary": "Explains how to implement BOMs for a transportable Business Object Type using the User example. Covers making entities RAKS-enabled via a new key set (KB1002, e.g. UserBOMKS) and updating auto-ID or direct key-server calls, then writing Entity Business Object Builder classes for each entity by extending AbstractEntityBOBuilder. Describes creating a single thread-safe BOM class extending AbstractBOM, including deletion mode, dependencies, and read/write security SIDs, then registering it with Guice via a BOM module and MODULECLASSNAME.dmx. Also introduces optional pre/post-commit BOM types."
+              },
+              {
+                "title": "Testing the transport of Business Object Types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Pre-requisites",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000096",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "Pre-requisites for testing Business Object Type transport: both source and target systems must be running in the same system landscape, the target must be configured as a transport destination in the source system, and all configuration data needed by the Business Object Type’s entities must be available. This section is a setup checklist for transport testing."
+                  },
+                  {
+                    "title": "Testing the User Business Object Type via the Administrative User Interface",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Listing all active User objects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000098",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Explains how to test the User Business Object Type through the Administrative User Interface, focusing on listing active User objects in a Change Set. It says the search should return only active User business objects. The section sits within a broader test workflow that also covers checking related objects, releasing, exporting, transporting, applying, and undoing Change Sets, with verification steps for each."
+                      },
+                      {
+                        "title": "Checking the dependent Business Objects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000099",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Explains how to test dependent Business Objects for the User Business Object Type through the Administrative User Interface. It instructs creating a Change Set, adding sample User objects, and using “Add Related Business Object” to confirm related items such as CodeTable/RecordStatus, CodeTable/GroupName, CodeTable/CategoryName, and any dependent Folder Business Object. It also outlines verifying Release, Export, Transport, Apply, and Undo operations, including checks for successful completion and correct active/inactive states on source and target systems."
+                      },
+                      {
+                        "title": "Releasing the Change Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000100",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Describes how to test Business Object Type implementations through the Administrative User Interface, using the User Business Object Type as the example. Covers verifying active User objects, checking related/dependent business objects, and then validating Change Set operations: release, export to XML, transport to a target machine, apply on the target system, and undo. Notes what should be observed at each step, including successful completion, availability of transported objects, and inactive state after undo."
+                      },
+                      {
+                        "title": "Exporting the Change Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000101",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Describes testing Business Object Type implementations through the Administrative User Interface using the User Business Object Type example. Covers listing active User objects, verifying related/dependent business objects, then release, export, transport, apply, and undo operations on a Change Set. The Export step specifically converts Change Set contents to XML and should complete without errors. Also notes checking target-system availability and inactive state after undo."
+                      },
+                      {
+                        "title": "Transporting the Change Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000102",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Describes how to test Business Object Model implementations through the Administrative User Interface using the User Business Object Type as an example. Covers verifying active User objects, related/dependent objects, releasing a Change Set, exporting it to XML, transporting it to a target machine, applying it on the target system, and undoing it. Emphasizes checking that each operation completes without errors and that transported/applied objects appear correctly, while undo restores them to inactive or deleted state."
+                      },
+                      {
+                        "title": "Apply the Change Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000103",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Describes how to test Business Object Type change sets via the Administrative User Interface, focusing on the User example. Covers listing active objects, verifying related/dependent business objects, then release, export to XML, transport to a target machine, apply on the target system, and undo. Notes that applying commits the transported business objects and they should appear on Folder/User home pages; undo reverts them or deletes them, leaving inactive objects if logically deleted."
+                      },
+                      {
+                        "title": "Undoing the Change Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000104",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Describes how to test Business Object Type implementations through the Administrative User Interface using the User BO example. Covers listing active User objects, verifying related/dependent objects, then releasing, exporting, transporting, applying, and undoing a Change Set. Undoing should revert applied business objects to prior values or delete them, with verification that affected Folder/User objects appear inactive after undo. Useful for understanding Change Set lifecycle testing and validation of BOM behavior across source and target systems."
+                      }
+                    ],
+                    "node_id": "n000097",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Describes how to test User Business Object Type implementations through the Administrative User Interface. It outlines a workflow using a Change Set: list only active User objects, verify related/dependent objects (including CodeTable/RecordStatus, GroupName, CategoryName, and any Folder dependency), then Release, Export to XML, Transport to a target machine, Apply on the target system, and Undo. Each step should complete without errors, with transported/applied objects visible on target screens and Undo restoring or inactivating them."
+                  }
+                ],
+                "node_id": "n000095",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000044",
+                  "start_page": 43,
+                  "end_page": 44
+                },
+                "summary": "Explains how to test transport of Business Object Types, with emphasis on using the Administrative User Interface and a Change Set workflow. Covers prerequisites: source and target systems in the same landscape, target configured as a transport destination, and required configuration data available. The testing flow for the User Business Object Type includes listing only active users, checking related objects and dependencies, then Release, Export to XML, Transport to a target machine, Apply on target, and Undo, verifying each step completes without errors and behaves as expected."
+              }
+            ],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000044",
+              "start_page": 14,
+              "end_page": 44
+            },
+            "summary": "Explains how to develop transportable BOMs for CTM using a PIM-like example. Covers identifying configuration vs runtime entities, grouping them into Business Object Types, defining identifiers, and requiring RAKS-generated keys. Describes the Folder and User object models, dependencies, and code tables. Shows BOM implementation steps: enable RAKS keys, write Entity BO Builders, create/register BOM classes in Guice/DMX, and optionally implement pre/post-commit, revert, and authorization BOMs. Ends with testing via the Administrative UI and Change Set release/export/transport/apply/undo flow."
+          },
+          {
+            "title": "1.4 Assumptions on the availability of classes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Availability of Facade APIs for managing user operations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000106",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "This section lists assumed Facade APIs available for business object examples, focused on user operations and related note/to-do management. It specifies CRUD operations for UserManager, plus association/disassociation and read-all methods for notes and to-dos linked to users. It also notes equivalent CRUD APIs for NoteManager and ToDoManager. Useful for understanding the service interface expectations before reading code examples."
+              },
+              {
+                "title": "Availability of Adapter classes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000107",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "This section states that PI Adapter classes are assumed to be generated and available for initial, child, and relative entities. For the User BOM, the available adapters include UserAdapter, NoteAdapter, UserNoteLinkAdapter, ToDoAdapter, UserToDoLinkAdapter, and CategoryAdapter. It also explains when Data Access Object classes are needed: mainly for fetching related data across foreign key associations. For the User BO type, UserDAO is required, with search operations for users, to-dos, links, notes, note links, and categories."
+              },
+              {
+                "title": "Availability of Data Access Object classes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000108",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "This section explains when Data Access Object (DAO) classes are needed alongside adapter classes. It notes that adapter classes are usually enough for database operations, but DAOs are useful when an entity needs to fetch related data through foreign key associations. For the User business object, one DAO is required: UserDAO. It provides search operations for users, to-dos, to-do links, notes, note links, and categories related to a user."
+              },
+              {
+                "title": "Availability of classes generated from Code Tables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "This section notes that User business objects depend on code-table-generated classes, specifically GroupName/GroupNameEntry and CategoryName/CategoryNameEntry. It then introduces customizing revert Change Set construction: when applying a Change Set may deactivate an existing active User and activate a new one, the revert set may need unrelated objects added back (for example, reactivating the prior User). It explains implementing RevertChangeSetConstructionHandlerBOM and constructBusinessObjectIdentifiers() to supply those unrelated identifiers."
+              }
+            ],
+            "node_id": "n000105",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000046",
+              "start_page": 45,
+              "end_page": 46
+            },
+            "summary": "This section lists the classes assumed to exist for the User business object examples: Facade APIs for user CRUD plus note/to-do association, disassociation, and read-all operations; generated PI Adapter classes for the main, child, and related entities; and required DAO support when foreign-key lookups are needed. It specifically names UserDAO and its search operations for users, to-dos, links, notes, note links, and categories. It also notes dependency on code-table classes and hints at revert Change Set construction for related object reactivation."
+          },
+          {
+            "title": "1.5 Customizing the construction of revert Change Set",
+            "level": 2,
+            "children": [],
+            "node_id": "n000110",
+            "range": {
+              "start_unit_id": "p000047",
+              "end_unit_id": "p000047",
+              "start_page": 47,
+              "end_page": 47
+            },
+            "summary": "Explains how to customize revert Change Set construction when related business objects must be restored, not just those directly changed. Example: if only one User can be active, applying a Change Set that adds User/X should also deactivate/reactivate the previously active User/A on revert. To do this, implement curam.util.ctm.bom.RevertChangeSetConstructionHandlerBOM and its constructBusinessObjectIdentifiers() method to return unrelated business object identifiers needed for revert; the infrastructure determines instruction types automatically."
+          },
+          {
+            "title": "1.6 Reference guides",
+            "level": 2,
+            "children": [],
+            "node_id": "n000111",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000050",
+              "start_page": 48,
+              "end_page": 50
+            },
+            "summary": "Reference guides and legal notices for the document. Includes a brief list of referenced guides (e.g., Google Guice 2) and extensive copyright, permissions, usage restrictions, warranty disclaimers, export compliance, privacy policy, trademarks, and sample-code license terms. Useful if you need licensing, reuse, or attribution details rather than product guidance."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000050",
+          "start_page": 9,
+          "end_page": 50
+        },
+        "summary": "Explains how to develop Business Object Modules (BOMs) for CTM transport of administrative business objects between systems. Covers core terms, BOM responsibilities, 11 BOM interfaces and their OOTB support, and how BOMs are invoked in Release and Apply flows. Describes supporting infrastructure such as AbstractEntityBOBuilder and RAKS, plus implementation guidance, testing, and revert Change Set customization via RevertChangeSetConstructionHandlerBOM. Includes assumptions for the User example (facade APIs, adapters, DAOs, code tables) and ends with reference/legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

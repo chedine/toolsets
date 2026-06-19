@@ -1,0 +1,1149 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "609863529c50308b",
+    "title": "Cúram 8.1.2 Business Intelligence Reporting Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramBIReportingDeveloperGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "609863529c50308be1f9ff31492df8d4dabd5beaf09fa29e4d7fef5f1a687310",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:05:08+00:00",
+    "page_count": 58,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramBIReportingDeveloperGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Business Intelligence Reporting Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000058",
+      "start_page": 1,
+      "end_page": 58
+    },
+    "summary": "Introductory BI reporting developer guide for Cúram 8.1–8.1.2. It explains the Business Intelligence and Analytics reporting framework: data warehousing concepts, BIRT reporting, architecture/runtime flow, and ETL stages from source to staging, central warehouse, and datamarts. It covers environment setup for DB2/Oracle, installation and configuration, build scripts, property files, database privileges, changed-data capture using required `lastwritten` timestamp columns, globalization, security, troubleshooting, and log4j2 logging setup. It also includes BIBootstrap/BIApplication configuration, patching notes, and sample scripts/configuration examples. The later pages are legal notices, privacy policy, and trademarks. Useful if you need end-to-end BI reporting setup, ETL behavior, or troubleshooting guidance.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note advising readers to review the Notices section before using the information or product. Includes Merative copyright notice (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Cúram BIA Reporting edition and introduction pages. Covers supported versions (Cúram 8.1, 8.1.1, 8.1.2) and starts Chapter 1 on developing business intelligence reports. Explains data warehousing concepts, BIRT reporting, changed-data capture via lastwritten timestamps, DB2-based system/runtime architecture, and the reporting flow from source to staging to CDW to datamarts. Also introduces development modeling, ETL design, Java transformation/connectivity code, directory structure/artifacts, and the reporting environment setup/execution overview."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers BIA Reporting setup and operation: ETL concepts and the layered flow from source to staging, CDW, and datamarts; metadata file layout and customization rules; build script usage, properties files, validation, and build/run commands; change data capture and ETL sequencing/dependencies; performance tuning options; custom Java transformations; and installation prerequisites for Ant, Java, and required environment variables for Oracle/DB2."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Cúram BI reporting setup and troubleshooting for pages 25–34. Covers encrypting BIBootstrap passwords, configuring BIApplication/BIBootstrap properties, running BIRT reports on demo data, and DB2 environment setup. Includes creating DB2/DB2 Warehouse databases and roles, setting environment variables, bootstrapping and testing the reporting environment, importing and merging warehouse projects, checking flat file paths, and running control flows for core/CCS/IS data. Ends with upgrade guidance and build-failure troubleshooting for script and configuration errors."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section covers troubleshooting and setup for BI reporting/OWB builds. It lists common build and Cognos startup errors with fixes, including JAVA_HOME, OWB_HOME, application.properties, environment.jdbc.jars, and permissions issues. It explains ETL problems such as missing last-written fields, no data after owb.environment.tests.run, and reimport matching conflicts. It also describes incremental changed data extraction behavior and the zero-error ETL setting, then details how to configure BIBootstrap.properties for Oracle/DB2, including sample connection entries and password encryption."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Cúram BI Reporting setup guidance for pages 45–54: configuring BIApplication.properties and log4j2.properties, including key environment/database variables, ETL dates, Oracle/OWB paths, and locale settings. Lists build script commands for control/operational ETL tasks, explains grant automation and changed-data handling, and notes deprecated patch-install steps. Also covers globalization (language codes and SQL initial data changes) and security best practices for BIBootstrap.properties, schema scripts, and encrypted passwords."
+          },
+          {
+            "title": "Edition — pages 55-56",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000056",
+              "start_page": 55,
+              "end_page": 56
+            },
+            "summary": "This section contains a sample Java logging property file for IBM Db2-related reporting in the “Developing business intelligence reports” chapter. It shows Log4j2 configuration for a console appender, root logger settings, pattern layout formatting, and example logger levels (TRACE through ERROR), including a specific `curam.util.reporting` logger set to INFO. Mostly configuration/example content rather than narrative explanation."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000056",
+          "start_page": 5,
+          "end_page": 56
+        },
+        "summary": "Edition for Cúram 8.1, 8.1.1, and 8.1.2. This chapter introduces developing BI/Analytics Reporting: warehousing concepts, BIRT reporting, changed-data capture via lastwritten timestamps, DB2/runtime architecture, ETL flow from source to staging/CDW/datamarts, build scripts, environment setup, customization, security, globalization, and troubleshooting. It also includes BIBootstrap/BIApplication configuration, database grants, patching notes, and log4j2 sample configuration. Useful if you need setup, build/run guidance, ETL behavior, or fixes for BI reporting environment issues."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "Copyright and legal notices for sample code and trademarks. States sample programs are provided “AS IS” without warranty, may be copied/modified/distributed for API-conforming development, and Merative is not liable for damages. Provides the Merative privacy policy URL and lists trademarks for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. Includes copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "Lists trademark and legal notices for Merative and third-party brands, including IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Also notes that sample names in the document are fictitious, sample programs are provided “AS IS” under Merative Client Agreement terms, and includes a privacy policy link. Useful for checking branding, copyright, and usage/legal information."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000057",
+          "end_unit_id": "p000057",
+          "start_page": 57,
+          "end_page": 57
+        },
+        "summary": "Legal notices for using the publication: personal use, internal commercial use, and restrictions on distribution, derivatives, export, and rights. States the content is provided “AS-IS” without warranty, with no license to patents, and disclaims responsibility for third-party products and websites. Includes Merative copyright © 2012, 2024. Useful for checking permitted use and warranty/liability terms."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a BI reporting guide. Lists Chapter 1 “Developing business intelligence reports” with subsections on reporting overview, system/runtime architecture, reporting environment, installation/configuration, customizations, troubleshooting, BIBootstrap setup, build script commands, database privileges, changed data capture, globalization, security, and log4j2 configuration. Also includes notices, privacy policy, and trademarks. Useful as an index node rather than substantive content."
+      },
+      {
+        "title": "1 Developing business intelligence reports",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Overview of the Cúram Business Intelligence and Analytics (BIA) Reporting development process for developers. It covers the framework’s architecture, design, development, and deployment, and assumes familiarity with the database platform (Oracle or DB2), ETL tools, and data warehousing concepts. Use this section if you need a high-level entry point to BIA Reporting development and the skills/background required to work in it."
+          },
+          {
+            "title": "1.2 Introduction to Reporting",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Defines data warehousing and its role in reporting. Explains that data is extracted from source databases, cleaned/transformed into a central data warehouse, then organized into data marts for specific audiences. The resulting data is viewed through reporting tools such as Business Objects or Cognos BI using charts and graphs. Emphasizes that warehousing supports analysis, extraction, reporting, and better management decisions."
+          },
+          {
+            "title": "1.3 System Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "DB2 Environment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains the DB2 reporting environment and data flow for Cúram BI Reporting: Source System to Staging, Central Warehouse, and Datamart. Describes the roles of each schema, notes use of BIRT for dashboards/reports, and highlights changed-data capture via a required `lastwritten` timestamp column on source tables. Also introduces the typical deployment setup with the BIA Reporting Module and DB2 Warehouse on a standalone machine and JDBC connectivity to the operational/source database."
+              }
+            ],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Overview of the DB2 reporting environment for Cúram BI Reporting. Describes the data flow from Source System to Staging, Central Warehouse, and Datamart, and the roles of each reporting schema. Notes that BIRT is used for dashboards and reports. Explains changed-data capture via a required `lastwritten` timestamp column on source tables. Also summarizes the typical deployment: BIA Reporting Module and DB2 Warehouse on a standalone machine, with JDBC connectivity to the operational/source database."
+          },
+          {
+            "title": "1.4 Runtime Architecture",
+            "level": 2,
+            "children": [
+              {
+                "title": "Architecture Overview",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Runtime Architecture",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Describes the BIA Reporting runtime architecture and data flow. Data moves from the source database to the Staging database, then to the Central Data Warehouse (CDW), then to Data Marts, and finally supports report generation. It notes the framework is customizable and built from relational and dimensional data models optimized for reporting. It also highlights that Staging and Central schemas must be colocated in the same DB2 database (CuramDW) so Central ETL processes can run correctly."
+                  },
+                  {
+                    "title": "Development Process And Modelling",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Data Models",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000022",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "This section explains the reporting data flow and modeling approach: source databases feed a Staging area, then the Central Data Warehouse (CDW), then denormalized Data Marts (star schema). It notes staging is a cleansed copy of source subsets, CDW stores normalized historical data and applies business logic, and datamarts are tailored for specific reporting needs. It also describes the development process, starting from a reporting requirement, then building logical user models to define data mart structure before designing ETL."
+                      },
+                      {
+                        "title": "ETL Process Design",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000023",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "This section explains ETL process design for reporting. ETL determines what data is extracted, transformed, and stored so all reporting needs are available in the Data Marts. If needed data is missing, it must be added to the Data Mart and possibly the CDW, with corresponding model and ETL updates. The process traces reporting requirements back through data sources to find the needed data. It also notes that the BIA Reporting solution includes Java transformation and connectivity code for cases where standard transformations are insufficient."
+                      },
+                      {
+                        "title": "Java Code",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000024",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "This section explains the reporting data model and ETL flow for business intelligence reports. It covers how user models drive Data Mart design (dimensional star schemas with measures, dimensions, and required granularity), how the CDW is modeled as a normalized ER structure supporting multiple Data Marts, and how the staging database mirrors source tables of interest. It also introduces ETL design and notes that the BIA Reporting solution includes Java transformation and Java connectivity code."
+                      }
+                    ],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000013",
+                      "start_page": 12,
+                      "end_page": 13
+                    },
+                    "summary": "Explains the reporting development workflow: start from a reporting requirement, create logical user models, then design Data Marts, CDW, and Staging, followed by ETL. Describes the data flow from source databases to Staging (cleansed copies), then CDW (normalized historical store with business logic), then denormalized star-schema Data Marts for specific reports. Covers granularity, measures/dimensions, and how changes may require updating models and ETL. Notes BIA Reporting includes Java transformation and connectivity code when standard ETL is insufficient."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000013",
+                  "start_page": 11,
+                  "end_page": 13
+                },
+                "summary": "Overview of BIA Reporting architecture and development flow. Explains runtime data movement from source databases to Staging, then CDW, then Data Marts for report generation. Notes Staging and Central schemas must be colocated in one DB2 database (CuramDW) for Central ETL to run. Describes the framework as customizable with relational and dimensional models. Also covers development methodology: start from reporting requirements, model user needs, then design Data Marts, CDW, Staging, and ETL, including Java transformation/connectivity code when standard ETL is insufficient."
+              },
+              {
+                "title": "Directory Structure & Artifacts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains the BIA Reporting directory structure and generated artifacts. Covers the bin folder for DDL-generated files, the build folder for Java-generated files and static data_manager.csv, and the logs directory for default log output. Also notes that the Java ETL connectivity framework is extendable, supports custom transformations, and is used to connect to different databases. Useful for understanding where build outputs, scripts, and log files are stored."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000013",
+              "start_page": 11,
+              "end_page": 13
+            },
+            "summary": "Explains BIA Reporting’s runtime data flow and extension model: data moves from source databases to Staging, then to the normalized CDW, then to denormalized Data Marts for report generation. Notes Staging and Central schemas must be colocated in one DB2 database (CuramDW) for Central ETL to run. Also outlines the development approach: start from reporting requirements/user models, then design Data Marts, CDW, Staging, and ETL, using Java transformation/connectivity code when standard ETL is insufficient."
+          },
+          {
+            "title": "1.5 The Reporting Environment Explained",
+            "level": 2,
+            "children": [
+              {
+                "title": "Initial Setup",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Introduces initial setup for BIA Reporting, noting installation/setup prerequisites and that database platform tools are assumed known; supported versions are in the Release Notes. Explains ETL (Extract, Transform, Load) and how BIA Reporting uses separate ETLs to move data from OLTP source to Staging, then CDW, then Data Marts. Uses a Person/Participant reporting example to show why multiple ETLs and transformations are needed to preserve history and build report-optimized fact and dimension tables."
+              },
+              {
+                "title": "ETL explained",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Defines ETL (Extract, Transform, Load) and its role in BIA Reporting. Explains how data moves from the OLTP source through Staging, the Central Data Warehouse (CDW), and into Data Marts. Emphasizes that separate ETLs are needed for each database/table population. Uses a person-status reporting example to show why transformations and history tracking are required, including building S_PERSON, DW_PERSONHISTORY, and DM_FACTPERSONHISTORY plus related dimension tables."
+              },
+              {
+                "title": "(deprecated)Metadata explained",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Defines metadata for BIA Reporting ETLs and explains where it is stored and how it is organized. The section describes the core folder structure under Reporting\\Components\\Core\\ETL, including separate Oracle and DB2 subfolders, database metadata files (for schemas/sequences), and ETL metadata files (for mappings/function calls). It notes that ETL files are split for concurrency and that metadata is loaded via a build script. Customizations must be copied to Reporting\\Components\\Custom before editing."
+              },
+              {
+                "title": "The Build Script",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The Build Script explained",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section explains the build script used to drive the Reporting environment. It builds Reporting database schemas, imports ETL metadata into ETL tools, validates imported metadata, and can deploy/run ETLs to load reporting tables. It emphasizes that the script is faster than manual ETL imports because it loads all ETLs in one command and uses properties files for connection info. It also notes that custom folder ETLs/schemas are loaded instead of core metadata and that validation catches schema/ETL inconsistencies."
+                  },
+                  {
+                    "title": "Using the Build script",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how the build script drives the Reporting environment by building database schemas, importing ETL metadata, validating imported metadata, and optionally deploying/running ETLs. It highlights that the script is faster than manual ETL imports, uses properties files for connection settings, and supports both database platforms. It also notes that customization in the custom folder is loaded instead of core metadata and that validation catches inconsistencies between schema and ETL definitions."
+                  },
+                  {
+                    "title": "Running the build script",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to run the Reporting build script from the components folder to populate metadata, including setting component.order for installed components and using buildhelp to list commands. Notes that build configtest verifies the database, ETL tools, and property files before importing metadata. Describes build all for all schemas, ETL metadata, and code, plus Oracle-specific commands build owb.import.all and build owb.import.staging for importing ETL metadata without rebuilding schemas."
+                  }
+                ],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000018",
+                  "start_page": 17,
+                  "end_page": 18
+                },
+                "summary": "Explains how the Reporting build script loads metadata from disk into the database and ETL tools, validates it, and can deploy/run ETLs to populate reporting tables. It works on both supported database platforms and is faster than manual imports because it imports all ETLs in one command using properties files for connection settings. It also ensures custom folder metadata is loaded instead of core metadata and catches schema/ETL inconsistencies. Covers setup of BIBootstrap.properties and BIApplication.properties, build.bat usage, buildhelp, configtest, build all, and Oracle-specific import commands."
+              },
+              {
+                "title": "Change Data Capture",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains Change Data Capture in BIA Reporting: capturing only rows changed since the last extraction to refresh the data warehouse efficiently, typically on a nightly schedule but configurable. Describes using control tables with last-written dates and the requirement that source tables populate those fields. Covers three built-in control tables—Staging ETL Control, CDW ETL Control, and Datamart ETL Control—plus the truncate flag behavior in Staging and special handling for reference table CODETABLEITEM."
+              },
+              {
+                "title": "Sequence of running ETLs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains the required ETL execution order for BIA Reporting databases: populate Staging first, then CDW, then Datamarts. Within a database, some ETLs must run in sequence because control tables must be loaded first, CDW tables have foreign key dependencies, and datamart facts depend on dimensions. Notes that ETLs can be run via build scripts in Oracle or DB2, and that run targets and batch files are configurable in BIApplication.properties."
+              },
+              {
+                "title": "Performance Tuning and Optimization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains how BIA Reporting ETLs are managed and sequenced across Staging, CDW, and Datamarts. Covers last written date tracking in ETL Control tables, reset options via manual update or resetetl.XXX, and why ETLs must run in order due to control-table dependencies, CDW foreign keys, and datamart dimension/fact dependencies. Also notes build script run targets for Oracle/DB2 and points to BIApplication.properties for sequencing details. Ends by introducing performance tuning, tied to the database and runtime environment."
+              },
+              {
+                "title": "Empty tab container on page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "This page covers BIA Reporting performance tuning and custom ETL transformations. It mentions database indexing, partitioning, and materialized views as ways to improve report speed. It also explains how to create custom Java transformations for the Reporting module: develop code in CuramBITransforms, package it as a JAR, register it in transforms.sql, and rebuild the database to deploy it. It notes transformations can be SQL functions or procedures deployed in schemas like staging or warehouse, and may support new normalized tables and ETL flows."
+              },
+              {
+                "title": "Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "This summary section introduces BIA Reporting setup and execution, including design choices, framework flexibility, build script usage, change data capture, ETL run sequencing, and optimization ideas. It also covers installation and configuration of the BIA Reporting module and third-party products, with an assumption that the user knows their database platform’s setup tools. It briefly notes Apache Ant/Ant-Contrib as the deployment mechanism for metadata and ETL tools."
+              }
+            ],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000021",
+              "start_page": 14,
+              "end_page": 21
+            },
+            "summary": "Explains the BIA Reporting runtime environment, assuming database platform tools are already known. Covers initial setup, why ETL is split across Staging, CDW, and Datamarts, and how reporting data is transformed and historized. Describes metadata storage in the Core ETL folders and customization rules, then the build script for importing/validating metadata and running ETLs. Also explains change data capture, ETL execution order and dependencies, performance tuning options, and how to create custom Java/SQL transformations."
+          },
+          {
+            "title": "1.6 Installation and Configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Ant setup",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "This section explains the Ant setup used by BIA Reporting. It describes Apache Ant as a Java-based, XML-configured tool used to deploy metadata into databases and ETL tools from disk files. It also notes the use of Ant-Contrib, a collection of custom/user-supplied tasks for Ant, and specifies that version 0.6 should be installed, with distribution files available on the core installation disks or from ant-contrib.sourceforge.net."
+              },
+              {
+                "title": "Java Platform, Standard Edition installation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains Java Platform, Standard Edition setup for the reporting build environment. It is normally installed with Oracle or DB2, but a compatible JDK version may need to be downloaded separately. The JDK must match the RDBMS vendor software, and JAVA_HOME should be set to the JDK location. The section also notes that additional environment variables are covered later and can only be configured after reporting components are installed."
+              },
+              {
+                "title": "Other Environment Variables",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Common",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "This section lists required environment variables for BIA reporting setup. It covers common settings such as ANT_HOME, ANT_OPTS, PATH, JAVA_HOME, and REPORTING_DIR, including PATH differences for DB2, Oracle, and OWB-only machines. It also specifies DB2-only variables DB2DIR and JAVA_HOME_RDBMS. Finally, it notes that the BIA Reporting Module can be installed either via the full development environment or by copying the reporting directory from an existing BIA development installation."
+                  },
+                  {
+                    "title": "DB2",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "DB2-specific environment setup for the Cúram BIA Reporting Module. It lists required variables: DB2DIR (pointing to the DB2 install directory, e.g. C:\\Program Files\\IBM\\SQLLIB) and JAVA_HOME_RDBMS (pointing to DB2’s Java folder, e.g. DB2DIR\\java\\jdk). The section is part of broader reporting build prerequisites and follows general PATH/JAVA_HOME instructions for Oracle/DB2 setups, then leads into installation options for the BIA Reporting Module."
+                  }
+                ],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section notes that additional reporting environment variables must be set only after the Reporting components are installed, since their paths are not known beforehand. It serves as a transition to the remaining setup steps for the BIA Reporting Build Environment, following Ant and Java installation guidance."
+              },
+              {
+                "title": "Install the BIA Reporting Module",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to install the BIA Reporting Module, either by installing the full development environment or copying the entire reporting directory from an existing BIA development installation. The page also notes required environment variables for reporting builds, including ANT_HOME, ANT_OPTS, JAVA_HOME, REPORTING_DIR, and PATH, with DB2-specific variables DB2DIR and JAVA_HOME_RDBMS and PATH differences for DB2, Oracle, or OWB-only setups."
+              },
+              {
+                "title": "Setup BIApplication.Properties and BIBootstrap.properties files",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how to configure BIApplication.properties and BIBootstrap.properties with database connection details after installing the BIA Reporting Module. Includes steps to encrypt Oracle, DB2, WLS, and WebSphere passwords using init.bat, bootstrap.bat, and build encrypt.password, then insert the encrypted value into BIBootstrap.properties. Also notes that BIRT reports can be run against demo data, but only after building and loading the datamart demo schema and using a vendor database (DB2 or Oracle)."
+              },
+              {
+                "title": "Executing BIRT Reports against Demo-Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how to run BIRT reports against datamart demo data instead of a full data warehouse. Notes that demo data exists for most facts and dimensions, and that you must build the demo schema, populate it, and point reports to it. Also indicates a vendor database such as DB2 or Oracle is required. The surrounding page includes setup guidance for BIApplication.properties and BIBootstrap.properties, including encrypting database passwords and where the reporting files/directories are located."
+              },
+              {
+                "title": "DB2 Environment",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Install IBM® Db2® and IBM® Db2® Warehouse",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section says Db2 must be installed with administrator rights, and that the Db2 Warehouse client is needed for ETL development. It also recommends installing IBM Data Studio to work with database objects and data, and notes the components may be installed on separate machines. The surrounding DB2 environment section indicates this is part of the setup for the Cúram BI and Analytics Data Warehouse solution on DB2."
+                  },
+                  {
+                    "title": "Deploying DB2 Warehouse",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section introduces DB2 environment setup for the Cúram BI and Analytics Data Warehouse. It says Db2 must be installed with admin rights, along with Db2 Warehouse client for ETL development and IBM Data Studio for database interaction; components may be on separate machines. It also includes demo-data setup steps: create the Demo-Data schema, match BIBootstrap.properties connection/schema settings, set environment.demodata.disabled to false, run init and build database.datamarts.demodata, and configure BIRT data sources to point to the datamart demo schema."
+                  },
+                  {
+                    "title": "DB2 BIApplication.properties, BIBootstrap.properties and Environment Variable Setup",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains setup for DB2 BI application properties and environment variables after installing DB2 and DB2 Warehouse. It instructs creating BIApplication.properties and BIBootstrap.properties in `..\\Reporting\\project\\properties` (copying sample DB2 files), keeping them together, and using referenced configuration/security sections. It also requires environment variables for staging/central tables: `ANT_HOME`, `JAVA_HOME` (JDK 1.6+), and `INFOSPHERE_SQLLIB_DIR`, plus setting them in `..\\Reporting\\setEnvironmentBI.bat`."
+                  },
+                  {
+                    "title": "IBM® Db2® bootstrap your environment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Describes how to bootstrap the IBM Db2 reporting environment and set up DB2 target schemas. It covers required environment variables (including INFOSPHERE_SQLLIB_DIR and INFOSPHERE_WAREHOUSECLIENT_DIR), testing the setup by creating log4j2.properties, running init and build jar from Reporting\\components, and checking BIApplication.properties if commands fail. It also explains creating BI Data Warehouse databases for Staging, Central, and Datamarts, noting Staging and Central may share the Central (CuramDW) database to avoid ETL errors, and mentions locale/language configuration for property names and SQL files."
+                  },
+                  {
+                    "title": "Create DB2 target schemas",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000029",
+                      "start_page": 28,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how to create and configure DB2 target schemas for BI Data Warehouse databases. Covers updating BIBootstrap.properties, setting staging, central, datamart, demo, and design database names, encrypting passwords, and running db2.create.database to create CuramDW and CuramDM. Notes that Staging and Central tables share CuramDW, while Datamart uses CuramDM, and warns that separating Staging/Central causes ETL errors. Also includes creating DB2 roles for database permissions and language/localization adjustments in BIApplication.properties and initialdata.sql."
+                  },
+                  {
+                    "title": "Test Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains test configuration for Cúram BI data warehouse setup. It notes DB user roles cannot grant to themselves, gives sample DB2 role-creation commands for CuramDW and CuramDM, and says to follow project security standards. The main procedure is to run `build configtest` from `..\\Reporting\\components` and fix errors; this also generates default DB2 Warehouse connection profiles used later with `BIBootstrap.properties`. It also references creation of warehouse databases and related build commands for static data, staging, central, and datamart objects."
+                  },
+                  {
+                    "title": "Create Data Warehouse Databases",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how to create Data Warehouse databases and related DB2 roles for CuramDW and CuramDM, noting the sample role commands are for development only and should be replaced by project security policies. It also describes running `build configtest` to validate setup and generate default DB2 Warehouse connection profiles. The section clarifies that `build database.all` creates all warehouse objects and also runs static data, staging, central, and datamart build steps, with guidance for manual static-data copying if the DB2 Warehouse client is not installed on the server."
+                  },
+                  {
+                    "title": "Set Up and Configure BIA Project in DB2 Warehouse",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Explains how to set up and configure the BIA project in DB2 Warehouse Design Studio. It covers importing the BI project from the CuramBIWarehouse folder into the workspace, then importing five database connection profiles from the database-connections folder: curamdb, curamst, curamdw, curamdm, and curamdmo. It also notes verifying each connection’s properties and entering the required passwords. Includes a preceding step to create the Data Warehouse databases via the build database.all command."
+                  },
+                  {
+                    "title": "Merging DB2 Warehouse Projects",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how to merge additional DB2 Warehouse project metadata (for example CCS or IS) into the main CuramBIWarehouse project after running `build infosphere.merge` from `..\\Reporting\\components`, then refreshing the project in DB2 Warehouse Design Studio. Also notes checking the Flat Files PATH_V variable, and mentions schema-name alignment with `BIBootstrap.properties`. Lists related commands: `build infosphere.police` for filename collisions and `build infosphere.clean` to remove merged artifacts."
+                  },
+                  {
+                    "title": "Running DB2 Warehouse Control Flows",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how to run DB2 Warehouse Control Flows in DB2 Warehouse Design Studio. It requires confirming three database connections are active (curamdb, curamdw, curamdm), then opening the CuramBIWarehouse\\Control Flows folder and executing control flows in a specific order. It covers the standard core flow sequence that runs all data flows, and a separate extended sequence to run if CCS and IS are installed, including staging, warehouse, datamart, lookup, operational, and monthly aggregate flows."
+                  }
+                ],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000033",
+                  "start_page": 26,
+                  "end_page": 33
+                },
+                "summary": "DB2 Environment covers installing and configuring the Cúram BI and Analytics Data Warehouse on Db2/Db2 Warehouse. It explains required tools and environment variables, bootstrapping with init/build jar, creating target databases and roles for CuramDW/CuramDM, and validating setup with configtest. It also describes building the warehouse objects, importing the CuramBIWarehouse project and connection profiles into DB2 Warehouse Design Studio, setting flat-file variables, merging optional CCS/IS metadata, and running core or extended control flows."
+              }
+            ],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000033",
+              "start_page": 22,
+              "end_page": 33
+            },
+            "summary": "Covers installing and configuring the BIA Reporting module and DB2 warehouse environment. Topics include Ant and Java/JDK setup, required environment variables, installing/copying the reporting directory, configuring BIApplication.properties and BIBootstrap.properties with encrypted passwords, and running BIRT reports against demo data. For DB2, it explains installing Db2/Db2 Warehouse and Data Studio, creating databases and roles, running config tests and database builds, importing warehouse projects/connection profiles, setting flat-file variables, merging optional CCS/IS metadata, and executing control flows."
+          },
+          {
+            "title": "1.7 Customizations and Upgrades",
+            "level": 2,
+            "children": [],
+            "node_id": "n000059",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Guidance for Cúram application customizations and upgrades: developers should follow compliance guidelines to preserve upgradeability and avoid impacting custom functions, with reference to the “Developing Compliantly with Cúram Business Intelligence” section. It also points to the “Upgrading” section for Merative-recommended processes to consider when upgrading a Business Intelligence and Analytics installation."
+          },
+          {
+            "title": "1.8 Troubleshooting",
+            "level": 2,
+            "children": [
+              {
+                "title": "Build fail errors when running the build script",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Troubleshooting for build script failures during BI/Analytics setup. Explains that the build script creates the database schema or imports metadata into the ETL tool, and BUILD FAILED can result from misconfigured applications.properties/BIbootstrap.properties files or incorrect database environment variables. Advises checking build output to isolate the error and running build configtest from the build script directory to verify the reporting environment; this returns BUILD SUCCESSFUL or BUILD FAILED plus the specific error message."
+              },
+              {
+                "title": "build configtest is failing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Explains how to troubleshoot a failing `build configtest` in reporting development. Advises checking `application.properties` first, then addresses common errors: missing `tools.jar` or invalid `JAVA_HOME` (must point to a JDK, Java 1.5+), and incorrect `OWB_HOME` causing missing Oracle Warehouse Builder paths. Also notes that some failures occur during RDBMS compilation and may indicate an incorrect database type setting in `application.properties`."
+              },
+              {
+                "title": "Errors with Permissions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains an OWB Control Center deployment failure caused by missing table/view permissions, indicated by ORA-06550 and ORA-00942 errors. The recommended fix is to run the build grant.all command, which grants permissions from staging, central, and datamarts to public. Intended for development environments only."
+              },
+              {
+                "title": "The lastwritten field in source table is not populated",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains a BI reporting ETL issue where data is not extracted because the source table’s last written field is not populated. Notes that all source tables used in BIAReporting must have this field mandatory and always updated; the source system developers must enforce it. Resolution includes populating the field, resetting the control table date, and rerunning the ETL. The page also begins a separate error topic about the build transform.aggcasemonth command failing, with a suggested configtest check for project property issues."
+              },
+              {
+                "title": "Error when running 'build transform.aggcasemonth'",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Troubleshooting for the `build transform.aggcasemonth` command. The build fails when project properties are incorrect; running `build configtest build` is recommended to diagnose the issue. A common error is the `environment.jdbc.jars` property pointing to a missing JDBC file such as `classes12.zip` under an Oracle 10g path. This section focuses on identifying build/configuration problems and the related file path dependency."
+              },
+              {
+                "title": "Cognos does not start",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Troubleshooting for Cognos startup failures. The key cause given is errors in Cognos Configuration preventing Cognos from starting, often because Cognos requires a Sun Java Runtime Environment 1.5. Verify that JAVA_HOME points to the Cognos JRE or a compatible JRE. The page also transitions into a separate issue about no data in tables after running owb.environment.tests.run, including an ORA-01017 invalid username/password example."
+              },
+              {
+                "title": "No Data in Tables after running owb.environment.tests.run",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Troubleshooting for when tables remain empty after running owb.environment.tests.run. The section notes that multiple causes may exist, and specifically highlights ORA-01017 (invalid username/password; logon denied) as an error to check in screen output. It appears to be a diagnostic/resolution topic for ETL/test execution problems in the Cúram reporting environment."
+              },
+              {
+                "title": "Error reimporting due to Matching Conflicts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "Explains a reimport failure in OWB caused by matching conflicts when running `build owb.import.all` without deleting the reporting folder. The fix is to install Oracle patch 10195667 from My Oracle Support; the patch Readme is noted as complicated, with clearer installation steps referenced elsewhere. The page also briefly mentions related report-building issues, including mismatched `design.db.username` and `runtime.db.username`, and an incorrect language code case where the workspace language cannot be changed and `owbsys` must be dropped and recreated."
+              },
+              {
+                "title": "Incorrect language code set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "This section explains a language-code setup problem in OWB. If a workspace is created with the wrong language code, it cannot be changed later; the owbsys user must be dropped and recreated. The excerpt also includes related troubleshooting/context text about reimport conflicts and patching, but the key topic is the “Incorrect language code set” condition and its irreversible fix requirement."
+              },
+              {
+                "title": "Error reimporting due to Matching Conflicts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Guidance for troubleshooting “Error reimporting due to Matching Conflicts.” The section describes the problem-document structure for diagnose and remedy content, then gives recovery steps for Oracle Warehouse Builder/OWB: remove OWB workspace users and owners in Repository Assistant, run SQL*Plus as owbsys, execute clean_owbsys.sql, cat_owb.sql, and reset_owbcc_home.sql, and unlock the OWBSYS account if needed. Relevant if you need reimport conflict resolution or OWB schema reset procedures."
+              },
+              {
+                "title": "(deprecated)Incremental Changed Data Extraction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "Deprecated note on incremental changed data extraction in BI ETL. Explains that changed data is loaded during daily/nightly batches and requires zero warnings/errors so the Changed Data Capture date updates correctly. Contrasts DB2 Warehouse’s strict zero-tolerance with Oracle Warehouse Builder’s configurable error threshold (“Maximum number of errors”), where failures may not update CDC dates. Describes the remedy: build-time enforcement of zero tolerance via import/build commands `owb.etl.runtime.check` and `owb.etl.runtime.set`, plus mentions configuring `BIBootstrap.properties` connection settings before running builds."
+              }
+            ],
+            "node_id": "n000060",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000040",
+              "start_page": 34,
+              "end_page": 40
+            },
+            "summary": "Troubleshooting for BI/Analytics build and ETL issues. Covers build script failures, `build configtest` problems (JAVA_HOME/JDK, tools.jar, OWB_HOME, database type settings), permission errors in OWB Control Center, missing `lastwritten` data blocking extraction, `build transform.aggcasemonth` path/config errors, Cognos startup failures, empty tables after `owb.environment.tests.run` due to mismatched credentials, OWB reimport matching conflicts and patch 10195667, and incorrect OWB language code requiring OWBSYS rebuild."
+          },
+          {
+            "title": "1.9 Configuring the BIBootstrap.properties file.",
+            "level": 2,
+            "children": [
+              {
+                "title": "Sample BIBootstrap property file for DB2",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "Provides a sample BIBootstrap.properties file for DB2, showing connection settings for the application database, staging area, central area, data mart, control database, and demo data mart. Includes sample host, port, database names, usernames, and encrypted passwords, plus a note that the usernames are examples and should be standardized to local conventions. References setup documentation for further details on BIApplication.properties and BIBootstrap.properties."
+              },
+              {
+                "title": "Sample BIBootstrap property file for Oracle",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Shows a sample BIBootstrap.properties file for Oracle in Cúram 8.1.2. It lists connection settings for multiple databases/schemas: application, staging, central, datamart, demo data, and Oracle design-time/runtime repositories. Includes example ports, service names, server names, usernames, and encrypted passwords, plus notes that the database usernames are samples and that design.db.username and runtime.db.username must match. Useful for configuring Oracle-based BI environments."
+              },
+              {
+                "title": "Sample BIApplication property file for Oracle",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Shows a sample BIApplication.properties file for Oracle and explains how to create and place it in Reporting/project/properties. It lists key build environment settings such as bootstrap ID, component order and warning level, browser path, environment variables, ETL/date formats, JDBC jar location, OWB configuration/version, and database privilege options. Also notes that the file can be copied from the provided sample and renamed, and outlines the purpose of main properties for build processing and localization."
+              }
+            ],
+            "node_id": "n000072",
+            "range": {
+              "start_unit_id": "p000041",
+              "end_unit_id": "p000044",
+              "start_page": 41,
+              "end_page": 44
+            },
+            "summary": "Explains how to configure BIBootstrap.properties before running BI build scripts. The file must be created in Reporting/project/properties, and a sample can be copied and renamed. It defines connection details for Oracle or DB2 target databases, demo data, and design/runtime repositories, plus DB2 source type. Passwords must be encrypted using build encrypt.password. Includes sample DB2 and Oracle property files with host, port, database, username, and password examples, and notes that sample usernames should be standardized; Oracle design and runtime usernames must match."
+          },
+          {
+            "title": "1.10 Empty tab container on page",
+            "level": 2,
+            "children": [],
+            "node_id": "n000076",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000046",
+              "start_page": 45,
+              "end_page": 46
+            },
+            "summary": "Explains the BIApplication.properties file required for BI build/ETL setup in the Reporting\\project\\properties folder. It recommends copying the sample BIApplication.propertiessamplexxx file and details the main properties: component order and warning level, locale order, environment variables, resetETL and aggmonth dates, JDBC driver/JAR paths, OWB settings and versions, remote datamanager directory behavior, database privilege auto-grant flags, update nulls autorun, and demo data enable/disable. Useful for configuring BI build scripts and diagnosing property-file-related errors."
+          },
+          {
+            "title": "1.11 Build Script Commands.",
+            "level": 2,
+            "children": [],
+            "node_id": "n000077",
+            "range": {
+              "start_unit_id": "p000047",
+              "end_unit_id": "p000047",
+              "start_page": 47,
+              "end_page": 47
+            },
+            "summary": "Lists build script commands for the BI reporting ETL environment, with a sample of targets and their functions. Covers environment setup and code compilation/build (`all`, `compile`, `clean`, `jar`), database/schema creation for staging, central, and datamarts (`database.*`), loading transformations and demo data, updating source nulls, exporting control tables, encrypting passwords, and resetting ETL dates. Notes that the full command list is available via `buildhelp`."
+          },
+          {
+            "title": "1.12 Granting Database Privileges",
+            "level": 2,
+            "children": [],
+            "node_id": "n000078",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "Explains how the Reporting Build Environment can automatically grant required database privileges for Data Warehouse ETLs. This is intended only for Development environments where source data is on a different database instance than staging, and not for stricter environments like Production. It documents two BIApplication.properties flags: `environment.databases.curam.privilages.autogrant` grants select on source tables to the Staging schema, and `environment.databases.bi.privilages.autogrant` grants select from Staging to Central and Central to Datamart."
+          },
+          {
+            "title": "1.13 Capturing Changed Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000079",
+            "range": {
+              "start_unit_id": "p000049",
+              "end_unit_id": "p000049",
+              "start_page": 49,
+              "end_page": 49
+            },
+            "summary": "Explains a BIA Reporting data-loading caveat: the source database may contain default rows with null values in columns of interest, and BIA only extracts rows where a LASTWRITTEN column is non-null. It describes a mechanism to update these columns so reporting schemas can be populated quickly, but warns it is intended only for Development environments and should not be used in production or other security-sensitive environments."
+          },
+          {
+            "title": "1.14 (deprecated)Installing Patches",
+            "level": 2,
+            "children": [
+              {
+                "title": "(deprecated)Installing Oracle Patches",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Deprecated Oracle patch installation guidance. It says this section provides simpler steps than the Oracle README.txt for each patch, but the README must still be consulted for the files included, bugs fixed, and required software. It also includes deprecated instructions for applying a one-off patch."
+              },
+              {
+                "title": "(deprecated)Instructions for applying a once off patch",
+                "level": 3,
+                "children": [],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Deprecated instructions for applying a one-off patch. This section appears to be a placeholder/intro and indicates the actual patch steps are not shown here. It sits alongside deprecated patch-installation guidance and references Oracle patch README files for full details such as included files, fixed bugs, and required software."
+              }
+            ],
+            "node_id": "n000080",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000050",
+              "start_page": 50,
+              "end_page": 50
+            },
+            "summary": "Deprecated patch-installation guidance. It says Cúram provides simpler Oracle patch installation steps than the patch’s README.txt, but you must still consult the README for the files included, bugs fixed, and required software. It also mentions deprecated instructions for applying a one-off patch, but the actual steps are not shown in this section."
+          },
+          {
+            "title": "1.15 Globalization",
+            "level": 2,
+            "children": [],
+            "node_id": "n000083",
+            "range": {
+              "start_unit_id": "p000051",
+              "end_unit_id": "p000051",
+              "start_page": 51,
+              "end_page": 51
+            },
+            "summary": "BIA Reports are English by default but now support multiple languages. Before building the database, set `Component.locale.order.installedLanguage` in `Reporting\\project\\properties\\BIApplication.properties` to the language code for the reporting module. Supported codes listed here are `en` for English and `es` for Spanish. This section is useful if you need to configure localization/globalization for BIA Reporting."
+          },
+          {
+            "title": "1.16 Security",
+            "level": 2,
+            "children": [],
+            "node_id": "n000084",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "This section explains that BIA ETL programs need database credentials for read/write access, supplied via the BIBootstrap.properties configuration file. It notes that when preparing production or database builds, the file should contain the batch programs’ production credentials and be protected appropriately, such as restricting access to administrators and the batch program only."
+          },
+          {
+            "title": "1.17 Configuring the log4j2.properties file",
+            "level": 2,
+            "children": [],
+            "node_id": "n000085",
+            "range": {
+              "start_unit_id": "p000053",
+              "end_unit_id": "p000058",
+              "start_page": 53,
+              "end_page": 58
+            },
+            "summary": "Explains how to configure `log4j2.properties` before running the build script for Reporting’s build environment and ETL tools. The file must be created in `Reporting/project/properties`. Provides sample contents for UNIX and IBM Db2, including environment variables (WLS, WAS, Java, Ant, Oracle, Reporting paths) and a basic Log4j2 console appender/root logger setup with `INFO` logging for `curam.util.reporting`. The section mainly contains sample configuration values and log pattern examples."
+          }
+        ],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000058",
+          "start_page": 9,
+          "end_page": 58
+        },
+        "summary": "Introduces Cúram BIA Reporting development: architecture, warehousing concepts, runtime data flow, and the modeling/ETL process from source to staging, CDW, and datamarts. Covers DB2 environment setup, installation/configuration, build scripts, property files, privileges, changed-data capture via `lastwritten`, globalization, security, log4j configuration, troubleshooting, and upgrade/compliance guidance. Best for developers setting up or extending BI reporting and ETL in Oracle or DB2 environments."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

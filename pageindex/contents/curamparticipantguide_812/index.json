@@ -1,0 +1,1970 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "72f6ad0fcc7afe5b",
+    "title": "Cúram 8.1.2 Participant Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramParticipantGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "72f6ad0fcc7afe5bf86891f9d0cbb8bc56a1dccd3ce54debee1481570d8edd9f",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T18:58:59+00:00",
+    "page_count": 58,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramParticipantGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Participant Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000058",
+      "start_page": 1,
+      "end_page": 58
+    },
+    "summary": "Overview of the Cúram 8.1.2 Participant Guide. It introduces the participant model and 10 participant types: persons, prospect persons, employers, prospect employers, product providers, service suppliers, utilities, information providers (including educational institutes), representatives, and external parties. The guide explains participant registration, searching, and maintenance; common participant data; and type-specific details such as person/prospect person evidence, pictures, cases, incidents, deductions, eligibility, employments, employer trading status, related companies, product/service supplier data, and external party offices. It also covers merging duplicate person and prospect person records, configuration settings for search and participant behavior, and client merge customization/event points. The closing sections summarize concepts, list related guides, and provide notices/legal terms, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note advises readers to review the Notices section on page 57 before using the product or the information in this document. It also shows the Merative US L.P. copyright notice for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory section for the Cúram Participant Guide. It states the guide applies to Cúram 8.1, 8.1.1, and 8.1.2 and outlines the guide’s purpose, audience, prerequisites, and chapter list. It explains participant concepts and registration, including person/prospect person, employer/prospect employer, product provider, service supplier, utility, information provider, representative, external party, and educational institute. It also covers participant search/access, Smart Navigator search behavior, and registration/merge/configuration topics referenced later in the guide."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section explains Smart Navigator search and participant information management. It covers search targets and keywords, person/Alt ID/DoB search precedence, result selection, recent searches, navigation hooks, participant search features (nicknames, phonetic search, wildcard rules, quick search), and common participant data. It also summarizes major participant record areas: bank accounts, communications and exceptions, contacts, financials, interactions, notes, roles, tasks, and registration details for external parties and educational institutes, plus person pictures and case membership for persons/prospects."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section covers participant-related records and caseworker tools in Cúram: incidents, contact logs, narrative appending/editing/history, contact search, incident notifications, and special cautions. It also explains evidence maintenance for person/prospect person data such as birth/death details, contact preferences, email addresses, gender, identification, names, and phone numbers, including correction vs succession rules, brokered-record duplicate handling, and end-dating when creating new records. Open this node for guidance on recording, searching, and managing participant evidence and contacts."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers Person/Prospect Person evidence handling and sharing: phone numbers, relationships, system selection of displayed records, sharing conflicts, and deprecated automation rules for older evidence broker versions. Explains how duplicate, partial-match, and succession/correction logic works for different evidence styles (“single over a timeline” vs “multiple records over a timeline”), with examples for gender, names, addresses, and stage names. Also introduces eligibility summary views and employment maintenance, including search rules for registered vs prospect employers."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers participant administration for pages 45–54: merging duplicate person/prospect person records (mark, merge, unmark, complete, quit/resume, duplicate list, case-related views, mergeable data and limits), plus additional information for employers, product providers, service suppliers, and external parties. Also explains configuration settings for participant search, case lists, images, nicknames, evidence sharing, and IBAN bank account support. Ends with client merge customization points and events for duplicate marking, unmarking, and merge completion."
+          },
+          {
+            "title": "Edition — pages 55-56",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000056",
+              "start_page": 55,
+              "end_page": 56
+            },
+            "summary": "This section summarizes Cúram participant concepts: the ten participant types, participant registration, shared and type-specific information, evidence handling for persons/prospect persons, merging duplicate person records, and configuration control in Cúram Administration. It also lists related guides for addresses, case management, issue management, evidence, verification, financials, deductions, service planning, communications, and workflow, and notes the next step is the Integrated Case Management Guide."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000056",
+          "start_page": 5,
+          "end_page": 56
+        },
+        "summary": "Overview of the Cúram Participant Guide for 8.1/8.1.1/8.1.2. Covers the 10 participant types, registration, common and type-specific information, and how participant data is searched, maintained, and configured. Includes person/prospect person evidence, contacts, cases, incidents, employments, eligibility, merge/duplicate handling, external party offices, and admin settings such as search behavior, images, nicknames, case lists, evidence sharing, and IBAN support. Ends with client merge customization points, summary, related guides, and next steps."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "Merative legal and copyright notices: sample names and data are fictitious; sample programs may be copied, modified, and distributed for API-conforming development, but are provided “AS IS” without warranty or liability. Includes a link to the Merative privacy policy, plus trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000058",
+              "start_page": 58,
+              "end_page": 58
+            },
+            "summary": "This section provides legal notices and trademark attributions. It states that sample names in the document are fictitious, explains copyright/license terms for sample source programs, references the Merative privacy policy, and lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. It also notes that other product and service names may be trademarks of others and includes the Merative copyright notice."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000057",
+          "end_unit_id": "p000057",
+          "start_page": 57,
+          "end_page": 57
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and enterprise reproduction limits, prohibition on derivatives and external distribution without consent, reserved rights, export-law compliance, and “AS IS” no-warranty disclaimer. Also notes no patent license is granted, disclaims responsibility for third-party product info and external websites, and includes the Merative copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Participant Guide. Lists sections on participant types, maintaining participant and related entity information, merging duplicate person/prospect records, additional info for employers, providers, service suppliers, and external parties, configuration settings, and client merge customization points. Also includes introduction, conclusion, notices, and page references. Useful as a navigation map rather than substantive content."
+      },
+      {
+        "title": "1 Cúram Participant Guide",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Cúram Participant Guide and states its purpose: to define the basic concepts of participants and participant types. It explains that readers should learn the roles of the different participant types, the importance of participant registration, and what information can be maintained for each type. It also notes the guide is aimed at business analysts in social enterprise organizations, assumes basic SEM knowledge and basic Cúram familiarity, and is meant to be read in full rather than used as a training manual."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for business analysts in a social enterprise organization, this guide assumes familiarity with SEM and basic Cúram knowledge. It explains participant concepts and the 10 participant types (including educational institutes as information providers), with emphasis on participant registration and maintainable information. It is not a training manual or user guide, and it covers understanding participants plus maintaining participant information."
+              },
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for the Cúram Participant Guide are minimal: only basic knowledge of the Cúram application is required. The guide is aimed at business analysts in social enterprise organizations and assumes familiarity with SEM and business requirements. This section sits in an introduction to participants and participant types, covering the guide’s purpose, audience, and chapter structure, including participant definitions and maintenance of participant information."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Lists the guide’s two chapters and what each covers. “Understanding Participants” defines participants and introduces the ten participant types: persons, prospect persons, employers, prospect employers, product providers, service suppliers, utilities, information providers, representatives, and external parties; it notes Educational Institute is treated as an Information Provider role in the underlying design. “Maintaining Information for Participants” covers participant registration, accessing and maintaining participant information, and common information shared across participant types."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Cúram Participant Guide and its scope: basic concepts of participants and participant types, the importance of participant registration, and what information can be maintained for each type. The guide is for business analysts in social enterprise organizations, assumes basic SEM and Cúram knowledge, and should be read in full rather than used as a training manual. It outlines two chapters: understanding the 10 participant types (including Educational Institute as an Information Provider role) and maintaining participant information."
+          },
+          {
+            "title": "1.2 Understanding Participants",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview of Participant Types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces the participant model in Cúram and explains that organizations manage ten participant types with shared and type-specific information stored centrally for reuse. It defines participants as individuals or bodies involved in delivering or receiving benefits and services, and notes that common data like addresses applies across types while other data is restricted to certain types. It also begins defining person participants and prospect person participants, including prospects who are not yet registered as persons or are not intended to be registered."
+              },
+              {
+                "title": "Person Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Defines the “Person Participant Type” within the broader participant model. Explains that a person is an individual registered with the organization, and their centrally stored information supports managing interactions and determining eligibility for benefits or services. Also situates this section among other participant-type topics, including prospect persons and additional information maintained for other participant categories."
+              },
+              {
+                "title": "Prospect Person Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains the participant model and introduces the prospect person participant type. A prospect person is someone with insufficient information to register as a person, or someone the organization chooses not to register as a person participant, while still allowing full interaction. The section also situates prospect persons within the broader overview of participant types and the central storage/reuse of participant information."
+              },
+              {
+                "title": "Employer Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Defines the Employer Participant Type in the participant model. Employers can employ persons, prospects, or other individuals, may act as nominees to receive payments for employees, and can store trading status and related company information. Also notes Prospect Employer Participant Type: an organization may interact with an employer before full registration if information is incomplete or registration is undesired, with the prospect later convertible to a full employer participant."
+              },
+              {
+                "title": "Prospect Employer Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains the Prospect Employer Participant Type: an employer with insufficient information to register fully, or one the organization does not want to fully register yet. It lets the organization interact with the employer before full registration and can later be converted to a normal employer participant if needed. This section appears alongside other participant types and follows the description of standard Employer Participant Type."
+              },
+              {
+                "title": "Product Provider Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains the Product Provider participant type: organizations or external providers that offer products to persons or employers on behalf of the organization. Products are benefits or liabilities issued to participants, such as child care or training. Notes that the organization itself may act as a product provider, and external providers let it offer non-core products through contracts, such as outsourced child care."
+              },
+              {
+                "title": "Service Supplier Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Defines the Service Supplier participant type: service suppliers provide services to persons on behalf of the organization. A service is a task performed by a qualified individual or body, such as eye examinations or court translations. This role lets the organization outsource tasks it cannot perform itself, for example covering the cost of an aged person’s periodic eye examinations."
+              },
+              {
+                "title": "Utility Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Describes the Utility participant type: utilities provide essential commodities such as electricity, gas, or water. The organization typically interacts with utilities by issuing payments based on third-party deductions taken from persons’ benefit payments; for example, electricity deductions from a monthly benefit are paid to the supplier."
+              },
+              {
+                "title": "Information Provider Participant Type",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Educational Institute",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Describes the Educational Institute participant type, a kind of information provider used to supply education-related information about a person or prospect. This information may support case processing or selection of services in a product delivery case. Examples include elementary schools, junior schools, open universities, and vocational training institutes. Although it is technically an information provider, it is modeled as its own participant type because it shares common participant functions, including dedicated educational institute registration and search."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Defines the Information Provider participant type: entities that supply the organization with information about a person or employer. This information may support fraud prevention and other case-related decisions. The section notes that information providers can include private individuals and government agencies."
+              },
+              {
+                "title": "Representative Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Defines the Representative participant type. A representative is an individual acting on behalf of another participant, such as a contact, correspondent, or nominee receiving benefits. The section notes that the information maintained for representatives is limited because most relevant data is stored on the person or case they represent. This node is useful if you need the core definition, role, and data constraints for representative participants."
+              },
+              {
+                "title": "External Party Participant Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Defines the External Party participant type as an individual or organization acting on behalf of another participant. Examples include community-based organizations, which may help submit benefit applications and verification documents such as passport copies. This section sits among other participant types and leads into participant registration, which creates participants, assigns roles/types, and stores information based on what is relevant to each participant type."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000011",
+              "start_page": 10,
+              "end_page": 11
+            },
+            "summary": "Introduces Cúram’s participant model: the organization manages ten participant types, each with centrally stored shared data plus type-specific information for reuse across the application. Defines the main participant types covered here—person, prospect person, employer, prospect employer, product provider, service supplier, utility, and information provider—and explains their roles in benefits/service delivery, screening, outsourced services, payments, and fraud prevention. Also notes prospect participants can be interacted with before full registration and later converted to full participants."
+          },
+          {
+            "title": "1.3 Maintaining Information for Participants",
+            "level": 2,
+            "children": [
+              {
+                "title": "Participant Registration",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Registering Prospect Persons, Prospect Employers, Representatives",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how participants are registered and distinguishes prospect person, prospect employer, and representative registration. Prospect persons have fewer information requirements and can later be converted to person participants, with data copied over. Prospect employers can similarly be upgraded to employer participants. Representatives are created through roles like contacts, correspondents, or case nominees rather than as standalone registrations, and their details are transferred automatically from the role context. The section also notes participant search access to records."
+                  }
+                ],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Participant registration assigns an individual or organization a participant role and type, adding them to the system as part of standalone registration or other business processes. It supports storing common participant data plus type-specific details, such as address and date of birth. The section also notes role-dependent registration patterns for participant types, including people, employers, educational institutes, representatives, and external parties, with varying information requirements and search/maintenance functions."
+              },
+              {
+                "title": "Accessing Participant Information",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Using Cúram Smart Navigator",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Searching the application",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000037",
+                        "range": {
+                          "start_unit_id": "p000014",
+                          "end_unit_id": "p000015",
+                          "start_page": 14,
+                          "end_page": 15
+                        },
+                        "summary": "Explains Cúram Smart Navigator search. Users can search from anywhere for predefined persons, pages, or tabs using person name, Alt ID, or keywords. Name search supports first/last names, multiple names, and phonetic matching via Double Metaphone, but no wildcards. Alt ID searches can return multiple matching persons and accept quoted IDs with spaces. Describes default search targets (e.g., Application Case, Integrated Case, Person Search), keyword lookup via KEYWORDS, and combined results from multiple keywords."
+                      },
+                      {
+                        "title": "Refining your search",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000038",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Explains how to refine Smart Navigator searches in Cúram 8.1.2. Covers valid person search combinations (name, Alt ID, DoB, keywords), precedence rules (Alt ID overrides name; names override keywords), and that DoB cannot be used alone. Notes search elements can be entered in any order. Describes search result behavior for person names, Alt IDs, and keywords, including displayed fields and links to Person home page or Search Target/Person pages."
+                      },
+                      {
+                        "title": "Selecting search results",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Explains how Smart Navigator search results are selected and refined. Covers valid search combinations for person searches using name, Alt ID, DoB, and keywords; precedence rules (Alt ID overrides name, names override keywords); and that DoB cannot be searched alone. Also describes result behavior for person name, Alt ID, and keyword searches, including the “[Person Name Required]” indicator, returned person details (name, DoB, age, address), and links to the Person home page or associated Person/Search Target pages."
+                      },
+                      {
+                        "title": "Navigation Hook",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000017",
+                          "end_unit_id": "p000017",
+                          "start_page": 17,
+                          "end_page": 17
+                        },
+                        "summary": "Explains Smart Navigator navigation hooks, which intercept a selected search result before navigation so custom processing can run and then hand control back to complete the page transition. Includes examples like displaying important information or requiring user acknowledgment. Also summarizes participant search behavior: common criteria, nickname and phonetic surname matching, default nickname handling, and employer searches that can include prospect employers."
+                      }
+                    ],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000016",
+                      "start_page": 14,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to use Cúram Smart Navigator to navigate from any screen to persons, predefined pages, or tabs. Covers searching by person name, Alt ID, and keywords; phonetic matching with Double Metaphone; no wildcards; quoted Alt IDs with spaces; and default search targets. Also explains refining person searches with DoB, precedence rules (Alt ID over name, names over keywords), valid combinations, and result behavior for person, Alt ID, and keyword searches, including Person home page and associated search target links."
+                  },
+                  {
+                    "title": "Searching for Participants",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains participant search criteria and behavior in Smart Navigator. Covers common identifiers such as alternate reference numbers, names, alternate names, addresses, and person date of birth. Describes nickname searching for person participants, including default nickname handling and admin configuration, and phonetic “sounds like” surname matching. Notes that employer searches can include prospect employers. Useful for understanding what participant types and matching options are supported when searching."
+                  },
+                  {
+                    "title": "Wildcard Searching",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Automatic appending of wildcards",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000018",
+                          "end_unit_id": "p000018",
+                          "start_page": 18,
+                          "end_page": 18
+                        },
+                        "summary": "Explains how Cúram database searches handle wildcards automatically. It defines `%` as a multi-character wildcard and `_` as a single-character wildcard, with examples like `test%` and `te_t`. It then shows that most participant-related searches append `%` to user input (for example, `Smith` becomes `Smith%`), while some searches also prepend `%`. The table lists which application searches auto-append or auto-prepend wildcards, including Person, Employer, User, Organization Unit, and others."
+                      }
+                    ],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains Cúram database wildcard searching. Defines % as a multi-character wildcard and _ as a single-character wildcard, with examples like test% and te_t. Also describes automatic wildcard handling in application searches: most participant searches append % to user input (e.g., Smith becomes Smith%), while User and Organization Unit searches both prepend and append wildcards. Includes a table of search types and their wildcard behavior."
+                  },
+                  {
+                    "title": "Performing a Quick Search",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains the application’s quick search feature: it can be used from anywhere to search by reference number across cases, participants, investigations, and incidents. If the reference matches a participant’s alternate ID, the participant record opens automatically, with related records returned if they exist. Notes configurable participant-role inclusion and that quick search is separate from Smart Navigator history. The section then begins common participant information, especially registration data such as preferences, sensitivity level, and payment information."
+                  }
+                ],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000018",
+                  "start_page": 13,
+                  "end_page": 18
+                },
+                "summary": "Covers participant access and search. Explains that participant search can find persons, employers, information providers, and other participant types, including prospect persons/employers. Details Smart Navigator: search by name, Alt ID, or keywords; phonetic matching and nickname support; no wildcards; Alt IDs with spaces need quotes; keyword-based navigation to pages/tabs; and search result behavior and precedence rules. Also describes refining person searches with DoB and combined criteria, plus database wildcard searching (% and _) and automatic wildcard appending in application searches."
+              },
+              {
+                "title": "Common Participant Information",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Registration Information",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains participant registration information captured when a participant is registered: preferences (preferred public office, communication method, language), sensitivity level, and payment information. Notes that sensitivity level controls which users can access or modify participant details based on their own system level. Payment information covers currency, payment method, and frequency for third-party payments issued through case processing, and is not maintained for prospects or representatives."
+                  },
+                  {
+                    "title": "Addresses, Phone Numbers, and Email Addresses",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains participant contact details: each address, phone number, or email must have a type such as private, business, or home. Address records are optional for prospects and representatives but required for all other participant types. It also briefly introduces related participant record areas on the same page: administrators, alternative IDs, and attachments."
+                  },
+                  {
+                    "title": "Administrators",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains participant administration. The administrator is the user responsible for managing interactions with a participant; the registering user is assigned by default, but this can later be changed to an individual user or an organization group (unit, position, or work queue). Ownership by a group means any member can manage the participant. Administrators are not assigned to representatives. Also briefly introduces alternative IDs and attachments as participant record elements."
+                  },
+                  {
+                    "title": "Alternative IDs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Alternative ID records store participant identification details such as passport or national insurance numbers and are used to identify and search for participants. If no alternative ID reference number is entered during registration, the system automatically generates one. Person and prospect participants use Identification records to capture alternative identification information."
+                  },
+                  {
+                    "title": "Attachments",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains participant registration data, including social community details (ethnic origin, race, indigenous group, nationality, country of birth), address/phone/email type requirements, administrator assignment and reassignment, alternative ID records, and attachments. It notes that address records are optional for prospects and representatives but mandatory for others, administrators manage participant interactions, and attachments are supplemental participant-specific files such as photos or documents."
+                  },
+                  {
+                    "title": "Bank Accounts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains participant bank accounts and how they support EFTs, payment handling, and account management. It covers required bank account details such as account type and branch, notes that jointly owned accounts can be recorded without owner details, and describes using a primary account for transactions. It also explains transferring future payments to a new account, automatic updates for nominees, and cloning accounts after payments are issued so historical transaction records retain the original account details."
+                  },
+                  {
+                    "title": "Communications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains participant communications as correspondence to or from the organization, including hard copy, telephone, and email. It notes that communications are listed under a participant even when the participant is not the correspondent, such as letters sent to outside agencies. It also describes how outgoing communications can be created from Word, XSL, or email templates and stored automatically, and how incoming or outgoing items can be recorded later, including scanned letters."
+                  },
+                  {
+                    "title": "Communication Exceptions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "This section explains communication exceptions, contacts, and financials. It defines communication exceptions as participant preferences that block specific communication formats, such as hard copy when no fixed address exists. It also notes that non-participant correspondents or contacts are automatically registered as representatives when added. The financials overview describes how transactions are recorded for participants, including payments, account adjustments, and third-party payments, and mentions that payment frequency, method, and currency can be configured per participant."
+                  },
+                  {
+                    "title": "Contacts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "This section explains contacts in Cúram: a contact is someone assigned to act on a participant’s behalf, useful when the participant cannot deal directly with the organization or for organizational representatives. If a contact is not already a participant, they are automatically registered as a representative and their details are stored for that representative. It also notes that communications require relevant participant information and may be blocked by communication exceptions."
+                  },
+                  {
+                    "title": "Financials",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Covers participant financial records and payment handling. Explains that all financial transactions between a participant and the organization are stored on the participant’s financials list, including automatic records for issued payments, case-processing payments, client payments, and manual account adjustments to credit or debit errors. Describes third-party payments to various participant types (not representatives), often aggregated and issued periodically. Also notes that payment frequency, method, and currency can be configured per participant."
+                  },
+                  {
+                    "title": "Interactions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section describes participant Interactions, Notes, Participant Roles, and Tasks. It explains that interaction records automatically capture communications and payments, giving an overview of a participant’s contact with the organization, while interactions are not maintained for representatives. It also covers notes with free text, priority, sensitivity, and history; notes cannot be stored for representatives. Participant roles are created and canceled automatically for each participant capacity. Tasks may be system-generated or manual and appear in both a user’s inbox and the participant’s task list."
+                  },
+                  {
+                    "title": "Notes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains participant notes, roles, and tasks. Notes can store free-text, priority, and sensitivity, support quick notes from the smart panel, allow appending and limited editing, and maintain change history; notes are not stored for representatives. It also describes participant roles for people/entities acting in multiple capacities, with role records auto-created and canceled, and not maintained for representatives. Finally, it defines tasks as work instructions, usually system-created, managed in user inboxes and participant task lists."
+                  },
+                  {
+                    "title": "Participant Roles",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains participant interactions, notes, roles, and tasks. Interactions automatically track a participant’s communications and payments, but are not kept for representatives. Notes can store free-text, priority, and sensitivity, with history and optional quick notes; notes also are not stored for representatives. Participant roles are created when one individual/body has multiple capacities, and are automatically added or canceled with registration changes; roles are not maintained for representatives. Tasks are work items assigned to users and shown in inboxes and participant task lists."
+                  },
+                  {
+                    "title": "Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Tasks are work instructions that can be created automatically by the system or manually by users. They are assigned to a user, managed in the user’s inbox, and, when linked to a participant, also appear in that participant’s task list. Example: a task to verify a participant’s date of birth after registration shows up in both places."
+                  }
+                ],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000023",
+                  "start_page": 19,
+                  "end_page": 23
+                },
+                "summary": "Covers common participant data maintained in Cúram: registration preferences, sensitivity, and payment info; social/community details for persons and prospects; required contact types; administrators and role ownership; alternative IDs; attachments; bank accounts and EFT handling; communications and communication exceptions; contacts; financial transactions and third-party payments; interactions; notes; participant roles; and tasks. Notes key rules such as some data not maintained for prospects, representatives, or information providers, automatic record creation for interactions/roles/tasks, and privacy/access controls via sensitivity and communication exceptions."
+              },
+              {
+                "title": "External Party Registration Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Describes registration data specific to external parties. In addition to standard preferences and payment details, some external parties (for example, community-based organizations) store verification information that determines whether they can collect verification items such as birth certificates or passports on behalf of participants, with privileged users able to submit them. Also covers educational institute registration information, including institute type, school district, and whether the organization is public or private."
+              },
+              {
+                "title": "Educational Institute Registration Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains registration data specific to educational institutes. In addition to standard participant information such as preferences and contact details, the system records the institute type (for example, graduate school), the school district it belongs to, and whether it is public or private. This section appears alongside related participant-registration distinctions and is useful if you need institute-specific registration fields."
+              }
+            ],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000023",
+              "start_page": 12,
+              "end_page": 23
+            },
+            "summary": "Explains how participants are registered, searched, and maintained in Cúram. Covers role/type-based registration for persons, prospects, employers, representatives, external parties, and educational institutes; duplicate checking and linked multiple registrations; and representative registration via contacts/correspondents. Describes participant search and Smart Navigator features, including name, Alt ID, and keyword search. Also details common maintained data: admin ownership, IDs, attachments, bank accounts, communications/exceptions, contacts, financials, interactions, notes, roles, and tasks, with limits for representatives and prospects."
+          },
+          {
+            "title": "1.4 Maintaining Additional Information for Persons and Prospects",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Introduces additional information maintained for person and prospect person participants. Covers person pictures: upload/display on the home page, removable, max 65 KB, supports jpeg/png/gif, and enabled by system administration. Also explains cases for managing eligibility and benefits/services; integrated or product delivery cases are automatically added to a person’s case list when the person is recorded as a case member."
+              },
+              {
+                "title": "Person Picture",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This section explains the “Person Picture” feature for person and prospect person participants. Users can upload or remove a picture that appears on the participant’s home page. Supported images include jpeg, png, and gif, with a maximum size of 65 KB. Whether pictures are displayed is controlled in system administration. The section also begins related content on cases for persons and prospects, including automatic case listing when a person is a case member."
+              },
+              {
+                "title": "Cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains the Cases concept in Cúram: cases manage eligibility determination and the delivery of benefits and services for person participants and prospect person participants. A case may be an integrated case or product delivery case. If a person/prospect person is recorded as a case member, the case is automatically added to that person’s case list, helping users view their case involvement."
+              },
+              {
+                "title": "Incidents",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Recording an Incident",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how to record an incident and follow-up contacts. An incident record captures incident type, severity/sensitivity, participant roles (including multiple roles), description, date/time, reporter, supporting documentation, and injury details. It also describes incident contact logs for follow-up actions such as case conferences or home visits, with associated contacts via face-to-face, email, phone, or hard copy. Contact records include participant details and key fields like location, purpose, date, type, method, subject, and mandatory narrative."
+                  },
+                  {
+                    "title": "Incident Contact Logs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000027",
+                      "start_page": 25,
+                      "end_page": 27
+                    },
+                    "summary": "Explains incident contact logs within incident management. A contact log tracks follow-up actions on an incident, such as case conferences or home visits, and can include multiple contacts by face-to-face, email, phone, or hard copy. It covers recording/editing contacts, required narrative and supporting documentation, participant details, searchable contact lists, configurable list limits, PDF preview/print, narrative append/history rules, editable-period behavior with pencil icons, and contact search by participants, location, purpose, method, date range, subject, and narrative text."
+                  },
+                  {
+                    "title": "Incident Notifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "This section explains incident notifications and special cautions. It says incident reporting can notify users when incidents are created, updated, or closed, and notifications can be configured by severity. It also covers maintaining special cautions for person participants to flag safety-related issues such as behavioral, health, or safety risks, including how they are configured, ended with an end date, and surfaced to users via a special caution icon."
+                  }
+                ],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000027",
+                  "start_page": 25,
+                  "end_page": 27
+                },
+                "summary": "This section describes incident management: what incidents are, how to record them, and how to manage follow-up contact logs. Incident records capture type, severity/sensitivity, participant roles, description, date/time, reporter, documentation, and injury details. Contact logs track follow-up actions like case conferences or home visits, with searchable/editable contacts, narratives, attachments, PDF preview/print, configurable display limits, and narrative append/edit rules. It also covers contact searching and the related incident notification and special caution features."
+              },
+              {
+                "title": "Special Cautions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "This section explains how special cautions are used for person participants to flag safety-related issues such as behavioral risks, health concerns, or safety issues. It notes that the caution list is configurable by organization, inactive cautions are end-dated and kept historically, and users are alerted through a special caution icon when a registered participant has active cautions."
+              },
+              {
+                "title": "Deductions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains deductions and evidence on person/prospect records. Deductions let benefit recipients divert part of payments to third parties or debts, or let the organization recover money; they are set up during case processing and shown across all cases, but not for prospects. Evidence is participant-provided information used in assessments and determinations, maintained on person/prospect tabs or within cases and shared between them. Covers evidence types, automatic vs manual updates, primary/preferred indicators, and how evidence appears in context panes and communications."
+              },
+              {
+                "title": "Evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Addresses",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how address evidence is handled for person/prospect person records in Cúram: addresses are static evidence with multiple address types, multiple instances, and From/To dates; succession changes are not allowed, so updates require new records or corrections. Covers brokered address handling (duplicate detection, logical matching, modify vs add), caseworker create/modify flows for applying addresses across case members, evidence sharing to person level, and combined create/end-dating of address records in one step."
+                  },
+                  {
+                    "title": "Bank Account",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Explains how bank account evidence is managed for person and prospect person participants. Covers static account details, use of from/to dates, no succession, and when to create, correct, or end-date records. Describes support for IBAN and BIC in a second evidence version, automatic processing of brokered bank account records, duplicate/logically identical matching rules, and caseworker ability to create and end-date an account in one action. Also transitions into the next topic, birth and death details."
+                  },
+                  {
+                    "title": "Birth and Death Details",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "This section explains the Birth and Death Details evidence type. It covers captured data such as date of birth, date of death, and mother’s birth last name, and notes that a birth and death record is created automatically after participant registration. Date of birth is mandatory for a person and optional for a prospect person. Only one such record can exist per participant/case, and changes are made by correcting the existing static record rather than creating successors."
+                  },
+                  {
+                    "title": "Contact Preferences",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how contact preferences evidence is stored and updated for a person or prospect person. Only one contact preferences record can exist, capturing preferred language and preferred communication method, so changes are made as corrections rather than new records. For brokered records, the system auto-processes incoming data by checking for an existing record: identical values are treated as duplicates, differing values update the existing record using the latest received date, and missing records are added."
+                  },
+                  {
+                    "title": "Email Addresses",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how email address evidence is managed for person and prospect person records. Email addresses can be personal or business, multiple of each are allowed, and validity is tracked with From/To dates. Because an email address’s details do not change over time, users must create new records or correct existing ones; successions are not allowed. For brokered records, the system detects duplicates, updates logically identical records based on latest received date, or adds a new email address when no match exists."
+                  },
+                  {
+                    "title": "Gender",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000078",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "This section explains the Gender evidence record. Gender is mandatory for a person and is created automatically on registration, with only one record allowed. It can be corrected or updated by succession when gender changes effective from a date, including brokered records from another case. The system compares incoming gender and effective dates to decide whether to treat updates as corrections or changes over time. The excerpt then begins the next topic, Identification, which covers participant IDs, validity dates, corrections, and no successions."
+                  },
+                  {
+                    "title": "Identification",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "This section explains identification evidence records used to store participant IDs such as passport, national insurance, social security, and medical card numbers. It covers automatic creation of a reference number identification record during registration if no ID is entered, support for multiple IDs with validity “From”/“To” dates, and one active SSN/medical card number at a time. It also notes that identification references do not change over time, so only corrections are allowed—no successions—and that brokered records are processed automatically."
+                  },
+                  {
+                    "title": "Names",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "This section explains how name evidence is recorded and maintained for person and prospect person records. It covers name types such as registered, preferred, alias, and stage name; automatic creation of a registered name at registration; mandatory name fields; and rules for one registered/preferred name versus multiple alias/stage names. It also describes correcting or end-dating names, and how brokered name records are matched, updated, or treated as duplicates using first name, last name, and type."
+                  },
+                  {
+                    "title": "Phone Numbers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000081",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains phone number evidence for participants. Phone numbers can be recorded for all participant types, but for persons and prospect persons they are maintained as evidence. Multiple phone number types and multiple instances per type are allowed, with From/To dates showing validity periods. Since phone numbers are treated as non-changing over time, updates are made by correcting existing records rather than creating new historical changes."
+                  },
+                  {
+                    "title": "Relationships",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Explains relationship evidence for person or prospect participants. A relationship (e.g., spouse) is reciprocal: if the related person is registered, the system automatically creates the corresponding relationship record. Relationships may also be recorded when the other person is not registered. Relationship details do not change over time, so users must create new records or correct existing ones; successions are not allowed. Includes automatic processing of brokered relationship records, with duplicate detection and logic to update existing records when attributes match."
+                  },
+                  {
+                    "title": "System Usage of Person and Prospect Person Evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how the system uses person and prospect person evidence for display and processing, including participant context panels. Describes selection logic when multiple concurrent records exist: the system chooses the highest-priority evidence type, then the most recent start date, or first-created if dates tie. Covers priority order for addresses, names, and identification records, and notes that multiple concurrent evidence records of different and same types are allowed."
+                  },
+                  {
+                    "title": "Sharing evidence",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Managing shared evidence conflicts",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000085",
+                        "range": {
+                          "start_unit_id": "p000038",
+                          "end_unit_id": "p000038",
+                          "start_page": 38,
+                          "end_page": 38
+                        },
+                        "summary": "Explains how shared evidence updates are handled when case evidence is brokered to a person record. Caseworkers review incoming evidence when it cannot be auto-resolved or when the source is not trusted. Also covers deprecated evidence sharing automation for older Evidence Broker versions (7.0.1.x and earlier), where logic prevents duplicate person evidence by comparing incoming records to existing ones and deciding whether to insert, update, create a new record, or ignore it."
+                      }
+                    ],
+                    "node_id": "n000084",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains how person/prospect person evidence can be configured for both case and Participant Manager maintenance, with updates shared back to the participant record to keep information consistent. Evidence brokering must be installed to enable sharing from Participant Manager to cases. Also notes that shared configuration supports maintaining participant information from multiple places, including case-driven updates."
+                  },
+                  {
+                    "title": "(deprecated) Person/Prospect Person Evidence Sharing Automation",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "(deprecated) Example of Evidence Sharing Automation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000087",
+                        "range": {
+                          "start_unit_id": "p000038",
+                          "end_unit_id": "p000038",
+                          "start_page": 38,
+                          "end_page": 38
+                        },
+                        "summary": "Deprecated example of evidence sharing automation for person/prospect person evidence (evidence broker 7.0.1.x and earlier, curam.aes.advancedEvidenceSharingEnabled=NO). Explains how shared evidence from another case is handled to avoid duplicate person-record evidence: incoming evidence is compared to existing records, identical records are not inserted, and partial matches determine whether to update, create, or otherwise process the record. Includes a client email-address example and notes that unresolved or untrusted shared evidence may appear in the incoming evidence list for manual review."
+                      },
+                      {
+                        "title": "(deprecated) Sharing Automation Business Rules",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "(deprecated) Birth and Death Details Evidence",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000089",
+                            "range": {
+                              "start_unit_id": "p000039",
+                              "end_unit_id": "p000039",
+                              "start_page": 39,
+                              "end_page": 39
+                            },
+                            "summary": "Deprecated sharing rules for Birth and Death Details evidence in the older evidence broker (7.0.1.x, advancedEvidenceSharingEnabled=NO). It explains that this is a single-record evidence type used only for corrections, with automated sharing behavior: insert and activate if no record exists, skip duplicate inserts if all fields match, or update the existing record in place when Date of Birth or Date of Death differs. Empty incoming values do not overwrite existing values. Includes an example of an online application where a caseworker accepts a newer DOB."
+                          },
+                          {
+                            "title": "(deprecated) Gender, Contact Preferences Evidence",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000090",
+                            "range": {
+                              "start_unit_id": "p000040",
+                              "end_unit_id": "p000040",
+                              "start_page": 40,
+                              "end_page": 40
+                            },
+                            "summary": "Deprecated gender and contact preferences evidence sharing for evidence broker v7.0.1.x and earlier (curam.aes.advancedEvidenceSharingEnabled=NO). Describes “single timeline” evidence where only one record exists and changes are handled via corrections or successions. On sharing to Person, the system first checks for exact duplicates and suppresses insertion if all attributes match. It then checks partial matches: Gender by Gender + Effective Date; Contact Preferences by Preferred Communication Method, Preferred Language, and Effective Date. Matching records may be updated, preserving missing incoming values."
+                          },
+                          {
+                            "title": "(deprecated) Names, Identifications Evidence",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000091",
+                            "range": {
+                              "start_unit_id": "p000041",
+                              "end_unit_id": "p000041",
+                              "start_page": 41,
+                              "end_page": 41
+                            },
+                            "summary": "Deprecated guidance for Names and Identifications evidence in the older evidence broker (v7.0.1.x and earlier, curam.aes.advancedEvidenceSharingEnabled = NO). Explains “single over a timeline per sub-type” behavior: one record per subtype over time, with effective-dated changes. Names subtypes: Registered, Preferred; Identification subtypes: Social Security Number, Medical Card Number. Describes duplicate and partial-match checks when sharing from case to Person evidence, including skipping inserts on exact match and updating on partial match."
+                          },
+                          {
+                            "title": "(deprecated) Names (for sub types other than Registered, Preferred), Identifications (for sub types other than Social Security Number and Medical Card Number), Addresses, Bank Accounts, Email Addresses, Phone Numbers, Relationships Evidence",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000092",
+                            "range": {
+                              "start_unit_id": "p000042",
+                              "end_unit_id": "p000043",
+                              "start_page": 42,
+                              "end_page": 43
+                            },
+                            "summary": "Describes deprecated evidence-sharing behavior for multiple overlapping records on Person for Names, Identifications, Addresses, Bank Accounts, Email Addresses, Phone Numbers, and Relationships, applying only to Evidence Broker version 7.0.1.x and earlier. Explains that incoming shared records are usually added as additional records rather than modifying existing ones, unless duplicate/partial-match checks trigger an update. Lists the matching fields used for duplicate detection by evidence type and notes that effective-date/correction/succession handling applies when attribute values differ."
+                          }
+                        ],
+                        "node_id": "n000088",
+                        "range": {
+                          "start_unit_id": "p000039",
+                          "end_unit_id": "p000043",
+                          "start_page": 39,
+                          "end_page": 43
+                        },
+                        "summary": "Deprecated automation rules for evidence sharing to Person/Prospect Person in Evidence Broker 7.0.1.x and earlier (curam.aes.advancedEvidenceSharingEnabled=NO). Covers four evidence styles: single (Birth/Death Details), single timeline (Gender, Contact Preferences), single per sub-type (Names, Identifications), and multiple-over-time (Addresses, Bank Accounts, Email, Phone, Relationships, some Names/IDs subtypes). Explains duplicate and partial-match checks, update vs insert behavior, correction/succession handling, and preservation of existing values when incoming fields are empty, with examples of shared evidence updates."
+                      }
+                    ],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000043",
+                      "start_page": 38,
+                      "end_page": 43
+                    },
+                    "summary": "Deprecated Person/Prospect Person Evidence Sharing Automation for evidence broker 7.0.1.x and earlier (curam.aes.advancedEvidenceSharingEnabled=NO). Explains how shared evidence from cases is automated onto person records to avoid duplicates and mimic caseworker decisions. Covers conflict handling for incoming evidence and business rules for evidence styles: single (Birth/Death), single timeline (Gender, Contact Preferences), single over timeline per subtype (Names, Identifications), and multiple-over-time records (Addresses, Bank Accounts, Email, Phone, Relationships, some IDs). Includes duplicate/partial-match checks, correction vs succession, preserve-empty-values behavior, and example scenarios."
+                  }
+                ],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000043",
+                  "start_page": 29,
+                  "end_page": 43
+                },
+                "summary": "Covers person/prospect person evidence on Cúram: what evidence is, how it’s maintained on the participant tab vs cases, and primary/preferred record logic. Details major evidence types and rules for addresses, bank accounts, birth/death, contact preferences, email, gender, identification, names, phone numbers, and relationships—incl. static vs changing data, effective dates, corrections vs successions, brokered duplicate/logical matching, and caseworker create/modify/end-date flows. Also explains evidence sharing between cases and person records, plus deprecated sharing behavior for older broker versions."
+              },
+              {
+                "title": "Eligibility",
+                "level": 3,
+                "children": [],
+                "node_id": "n000093",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "This section explains the eligibility summary view, which gives a consolidated view of a person’s program eligibility across integrated cases, including eligible programs, coverage dates, and transitions between programs. Caseworkers can click an eligibility bar to see details used in eligibility calculations. It also notes that displaying this summary requires development effort. A brief employment topic follows, stating that caseworkers maintain employment history by searching and selecting a registered employer; prospect employers cannot be used to record employments, though they may appear in search results."
+              },
+              {
+                "title": "Employments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000094",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "This section explains how caseworkers maintain employment information for person participants to preserve employment history and support employment-related evidence capture. To record an employment, they must search for and select a registered employer; prospect employers cannot be used, though they may appear in search results for reference."
+              }
+            ],
+            "node_id": "n000062",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000044",
+              "start_page": 24,
+              "end_page": 44
+            },
+            "summary": "Covers additional information for person and prospect person records: person pictures (upload/remove on home page, jpeg/png/gif, max 65 KB, system-controlled display), cases (integrated or product delivery cases auto-added when the person is a case member), incidents and contact logs, special cautions, evidence handling and sharing rules, eligibility summary view, and employments. Also explains evidence behaviors for corrections/successions, duplicate/partial matching, and deprecated sharing rules for older broker versions."
+          },
+          {
+            "title": "1.5 Merging Information for Persons and Prospect Persons",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Explains how Cúram merges information between person and prospect person records to create a master record with complete, accurate data. Covers the purpose of merging, examples (e.g., prospect to person after name change), and the three stages: mark a duplicate, merge data, and complete the merge. Also notes that duplicates can be unmarked or merged later, a duplicate list is maintained, and marked duplicates cannot be modified or used in future processing, though existing payments/communications may continue."
+              },
+              {
+                "title": "Marking a Record as a Duplicate",
+                "level": 3,
+                "children": [],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Explains how merging works for persons and prospect persons, focusing on marking a record as a duplicate. A duplicate is linked to a master record via search, a snapshot of both records is shown for comparison, and a reason (for example, input error or misuse of identity) is recorded. Once marked, the duplicate cannot be modified or used in future processing, though existing transactions continue and case owners are notified. The duplicate may be merged immediately or later, and an extension point supports extra processing."
+              },
+              {
+                "title": "Unmarking a Record as a Duplicate",
+                "level": 3,
+                "children": [],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "Explains how to unmark a record previously marked as a duplicate, including that the link between records is broken, the unmarking reason plus user/date are recorded, and case owners are notified when needed. Notes that merged details must be manually removed if the merge was in error, and identification records may need manual cancellation first. Also outlines configurable mergeable data types (for example addresses, contacts, bank accounts, names, notes, cautions, relationships) and that case-specific records like communications cannot be merged."
+              },
+              {
+                "title": "Merging Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "This section explains unmarking a record as a duplicate and merging information between duplicate and master records. It covers how unmarking breaks links, records the reason, user, and date, and may notify case owners if further action is needed. It also notes that merged details may need manual removal if a duplicate was merged in error. The section lists mergeable data types, including addresses, bank accounts, contacts, identifications, names, notes, phone numbers, relationships, cautions, and web/email addresses, and states that case-specific records like communications cannot be merged."
+              },
+              {
+                "title": "Completing a Merge",
+                "level": 3,
+                "children": [],
+                "node_id": "n000100",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Explains how to finish a person duplicate merge in Cúram: once required data is moved from the duplicate to the master record, the merge is completed, the user and completion date are recorded, and status changes to “merge complete.” The merge wizard cannot be reopened after completion, though extension points allow customization. Also notes view-only access to unmerged data in the main record, special handling of Registered/Preferred names becoming Alias, and related topics on quitting/resuming merges, duplicate lists, and viewing duplicate case-related information."
+              },
+              {
+                "title": "Quitting and Resuming a Merge",
+                "level": 3,
+                "children": [],
+                "node_id": "n000101",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "The merge wizard can be stopped at any point and resumed later. Quitting a merge sets its status to “merge in progress,” and resuming returns the user to the start of the wizard so more data can be merged. The section also notes that completed merges cannot be reopened, and that merge completion records the user and date automatically."
+              },
+              {
+                "title": "Viewing the Duplicates List",
+                "level": 3,
+                "children": [],
+                "node_id": "n000102",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Describes how the duplicates list is automatically maintained for persons and prospect persons to track a record from being marked duplicate through merge to master record. It logs duplicate processing actions (mark, merge, unmark) plus the user and date. Also notes that caseworkers can view case-related information for a duplicate alongside the main client, including assessments, cases, and communications."
+              }
+            ],
+            "node_id": "n000095",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000047",
+              "start_page": 45,
+              "end_page": 47
+            },
+            "summary": "Describes how Cúram merges person and prospect person records into a master record. Covers the full workflow: mark a record as duplicate, merge selected data, and complete the merge; merges can also be quit/resumed or unmarked. Explains duplicate linking, snapshots for comparison, reasons and audit details, and that marked duplicates cannot be modified or used in future processing though existing transactions continue. Lists mergeable data types, special handling for names/identifications, duplicates list tracking, and view-only access to non-merged case-related data."
+          },
+          {
+            "title": "1.6 Maintaining Additional Information for Employers and Prospect Employers",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000104",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Introduces additional information maintained for employers and prospect employers. Covers trading status (actively trading, ceased, liquidated), noting only actively trading employers/prospect employers can be a person’s current employer. Describes related companies, where adding a relationship automatically creates a reciprocal link. Explains employer/prospect employer cases: they can be primary clients of liability product delivery cases, and all such cases are listed for overview and easy access."
+              },
+              {
+                "title": "Trading Status",
+                "level": 3,
+                "children": [],
+                "node_id": "n000105",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Explains employer/prospect employer “Trading Status” as a record of whether the organization is actively trading, ceased trading, or liquidated. Notes that only actively trading employers/prospect employers can be listed as a person’s current employer. The surrounding section also covers related companies and case listings for employers/prospect employers, including automatic reciprocal relationships and automatic aggregation of their cases."
+              },
+              {
+                "title": "Related Companies",
+                "level": 3,
+                "children": [],
+                "node_id": "n000106",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Defines related companies for employers and prospect employers. A related company is another registered employer linked to a registered employer, such as a parent or subsidiary. Adding the relationship automatically creates the reciprocal link on the other employer. This section also notes that employers/prospect employers can be primary clients on liability product delivery cases, and those cases are automatically listed for easy overview and access."
+              },
+              {
+                "title": "Cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000107",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "This section explains the Cases list for employers and prospect employers. It notes that an employer or prospect employer can be the primary client on one or more liability product delivery cases, including integrated cases, and that these cases are automatically added to the employer’s case list. The list serves as an overview of all related cases and a quick way to open a specific case."
+              }
+            ],
+            "node_id": "n000103",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "Covers additional information maintained for employers and prospect employers: trading status, related companies, and cases. Trading status records whether an organization is actively trading, ceased, or liquidated; only actively trading employers/prospect employers can be a person’s current employer. Related company links are reciprocal and support parent/subsidiary relationships. Employers/prospect employers can also be primary clients on liability product delivery cases, including integrated cases, and those cases are automatically listed for overview and quick access."
+          },
+          {
+            "title": "1.7 Maintaining Additional Information for Product Providers and Service Suppliers",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "Introduces maintenance of additional information for product providers and service suppliers. For product providers, it covers products (benefits or liabilities), provider locations where products are delivered, and contracts for agreed provision of one or more products. For service suppliers, it covers services selected from an organization’s generic service list and supplier returns used to report service cost and number of persons served for payment during case processing."
+              },
+              {
+                "title": "Product Provider Information",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Products",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000111",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "This section explains additional information that can be maintained for product providers and service suppliers. It covers products (benefits or liabilities such as child care or insurance contributions), provider locations where products are delivered, and contracts for provision of one or more products. It also describes services for service suppliers, which must be chosen from generic organizational service types, and service supplier returns used to report service cost and number of persons served for payment processing."
+                  },
+                  {
+                    "title": "Product Provider Locations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000112",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Describes additional information that can be maintained for product providers and service suppliers. For product providers, it covers products, provider locations where products are delivered (including optional facilities like audio/visual impairment services), and contracts. It also notes that specific products offered at each location are set up during application administration. For service suppliers, it briefly covers services they provide and required service supplier returns used to calculate payment."
+                  },
+                  {
+                    "title": "Contracts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000113",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "This section explains maintaining additional information for product providers and service suppliers. It covers product provider products and locations, including examples like child care, insurance contributions, and delivery sites such as training facilities. It also defines contracts as signed agreements between a product provider and the organization for one or more products. For service suppliers, it describes adding services from a generic list and submitting service returns showing cost and number of persons served, which the organization uses to issue payment during case processing."
+                  }
+                ],
+                "node_id": "n000110",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "This section introduces the additional information maintained for product providers and service suppliers. It covers product provider products, locations where products are delivered (including optional facilities), and contracts between a provider and the organization. It also explains service suppliers: services must be chosen from a generic list required by the organization, and suppliers submit returns showing service cost and number of persons served for payment processing."
+              },
+              {
+                "title": "Service Supplier Information",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Services",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000115",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "This section explains how Cúram stores additional information for product providers and service suppliers. For product providers, it covers products they can supply, their delivery locations and facilities, and signed contracts with the organization. For service suppliers, it covers defining generic services they perform and processing service supplier returns, which report service cost and number of persons served and are used to issue payment during case processing."
+                  },
+                  {
+                    "title": "Service Supplier Returns",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000116",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "This section explains additional information maintained for service suppliers, specifically the requirement to submit returns showing the cost of services provided and the number of persons served. These returns are used by the organization to calculate payment, which is issued during case processing. It sits within a broader chapter covering product provider and service supplier information, including services, locations, and contracts."
+                  },
+                  {
+                    "title": "Contracts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000117",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000050",
+                      "start_page": 50,
+                      "end_page": 50
+                    },
+                    "summary": "Records signed contracts for each service supplier, defining the agreement between the supplier and the organization for one or more services. The page then begins a new chapter on maintaining additional information for external parties, introducing external party offices, office search criteria, office phone numbers and address details, and office members with roles/profiles."
+                  }
+                ],
+                "node_id": "n000114",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "This section covers additional information maintained for service suppliers. It explains that service suppliers can be assigned generic services they perform, selected from organization-defined service types, and must submit returns showing the cost of services provided and the number of persons served. These returns are used to calculate and issue payment during case processing. It sits within a broader chapter on maintaining product provider and service supplier information, alongside related topics such as products, locations, facilities, and contracts."
+              }
+            ],
+            "node_id": "n000108",
+            "range": {
+              "start_unit_id": "p000049",
+              "end_unit_id": "p000049",
+              "start_page": 49,
+              "end_page": 49
+            },
+            "summary": "Describes additional information maintained for product providers and service suppliers. Product providers can be assigned products (benefits or liabilities), delivery locations and optional facilities, and signed contracts for supplying one or more products. Service suppliers are assigned organization-defined generic services they perform and must submit returns showing service cost and number of persons served; these returns drive payment during case processing."
+          },
+          {
+            "title": "1.8 Maintaining Additional Information for External Parties",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000119",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Introduces additional information maintained for external parties. Covers external party offices (multiple offices per party, office-specific service types), searching offices by name/type/address, maintaining office phone numbers and addresses, and managing office members with profiles/roles. Also notes contracts for service suppliers: signed contracts can be recorded for one or more services."
+              },
+              {
+                "title": "External Party Offices",
+                "level": 3,
+                "children": [],
+                "node_id": "n000120",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "This section explains how to maintain additional information for external party offices. It defines external party offices as locations where an external party provides services, notes that one external party may have multiple offices, and that each office can be associated with specific service types. It covers searching offices by name, type, and address; maintaining office phone numbers and addresses; and managing office members, including their profiles and roles."
+              },
+              {
+                "title": "External Party Office Search",
+                "level": 3,
+                "children": [],
+                "node_id": "n000121",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Describes how to search for external party offices using criteria such as external party name/type, office name/type, and address details. Also notes related maintenance for office phone numbers, office addresses, and office members. External party offices are service locations (for example, libraries, schools, shelters) and may offer different service types configured in administration."
+              },
+              {
+                "title": "External Party Office Phone Number",
+                "level": 3,
+                "children": [],
+                "node_id": "n000122",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "This section explains that external party office phone numbers can be maintained for each office, and each phone number must have a type selected, such as personal or business. It sits within broader documentation on maintaining additional information for external parties, alongside office search, addresses, and office members."
+              },
+              {
+                "title": "External Party Office Address",
+                "level": 3,
+                "children": [],
+                "node_id": "n000123",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Describes how to maintain address information for external party offices. An office can have a specific address or reuse an address already recorded for the external party. This section sits within the broader “Maintaining Additional Information for External Parties” chapter, which also covers external party offices, searches, phone numbers, and office members. Useful for finding how office-level addresses are defined and assigned."
+              },
+              {
+                "title": "Office Members",
+                "level": 3,
+                "children": [],
+                "node_id": "n000124",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Office members are people associated with an external party office. Each office member record includes a profile tied to the member’s user role within the external party. The section notes that some office members may act on behalf of a participant, for example by providing verification items to the organization."
+              }
+            ],
+            "node_id": "n000118",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000050",
+              "start_page": 50,
+              "end_page": 50
+            },
+            "summary": "This section introduces additional information maintained for external parties. It covers external party offices as service locations, notes that one external party may have multiple offices, and that office-specific service types are configured in administration. It also describes searching offices by external party/name/type and address, maintaining office phone numbers and addresses, and managing office members with profiles tied to user roles. It briefly includes signed contracts for service suppliers, which can record one agreement for one or more services."
+          },
+          {
+            "title": "1.9 Configuring Participant Information",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000126",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "Overview of configuration settings for managing participant information in Cúram. Covers common participant settings for search behavior (which participant types are returned, maximum results, age filtering), case list display (primary client vs. all member cases), and participant role lists (whether case members appear). Also covers person/prospect person settings: displaying person images, maximum uploaded image size, and nickname-inclusive search when searching by forename."
+              },
+              {
+                "title": "Common Participant Settings",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Participant Search",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000128",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000051",
+                      "start_page": 51,
+                      "end_page": 51
+                    },
+                    "summary": "This section explains administrative settings for participant information management, focusing on participant search configuration. It covers search controls such as which participant types appear in results, the maximum number of results, and age-based filtering. It also notes related participant settings for case lists (including non-primary client cases), participant role lists (whether case members appear), person pictures (display and upload size limits), and nickname-aware person search."
+                  },
+                  {
+                    "title": "Case List",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000129",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000051",
+                      "start_page": 51,
+                      "end_page": 51
+                    },
+                    "summary": "Explains configuration settings for participant information, especially search behavior and case/role display. Covers participant search properties, including which participant types appear, maximum results, and age filtering. The Case List section notes that cases can show either all cases where a participant is a member or only those where they are the primary client, controlled by curam.participant.includenonprimaryclientcases. Also mentions participant role lists, person picture display and upload size limits, and nickname-inclusive person search."
+                  },
+                  {
+                    "title": "Participant Role List",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000130",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000051",
+                      "start_page": 51,
+                      "end_page": 51
+                    },
+                    "summary": "Explains configuration settings for participant information management. This section specifically covers the Participant Role List setting, where curam.participantRole.returncasemember controls whether case members appear in the case participant role list. It sits among other participant administration options like search behavior, case list filtering, person images, and nickname search."
+                  }
+                ],
+                "node_id": "n000127",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "Overview of administrative settings for participant information. Covers participant search controls by participant type, maximum results, and age filtering; case list behavior for showing all participant-linked cases vs only primary client cases; whether case members appear in the participant role list; person image display and upload size limits; and nickname-aware person search."
+              },
+              {
+                "title": "Participant Settings for Person and Prospect Person",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Person Picture",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000132",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000051",
+                      "start_page": 51,
+                      "end_page": 51
+                    },
+                    "summary": "Explains administrative configuration for participant information, especially person/ prospect person settings. Covers participant search controls, case list display options, participant role list behavior, and person-specific settings. For “Person Picture,” it notes curam.miscapp.personimages_display enables/disables displaying person images, and curam.participant.max.image.size sets the maximum upload size. Also mentions nickname search behavior via curam.miscapp.searchwithnicknames."
+                  },
+                  {
+                    "title": "Nickname Search",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000133",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000051",
+                      "start_page": 51,
+                      "end_page": 51
+                    },
+                    "summary": "Explains the configuration setting for nickname-aware participant search. The key property, curam.miscapp.searchwithnicknames, controls whether a person’s nickname is included in search results when searching by forename. Useful for administrators tuning person search behavior within participant information settings."
+                  },
+                  {
+                    "title": "Participant Evidence",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Configuring New Person and Prospect person Evidence Types",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000135",
+                        "range": {
+                          "start_unit_id": "p000052",
+                          "end_unit_id": "p000052",
+                          "start_page": 52,
+                          "end_page": 52
+                        },
+                        "summary": "Explains how to configure new person and prospect person evidence types for participants and cases. Evidence must first be created in the Dynamic Evidence Editor, then added via New and enabled for sharing. Case-level evidence must also be configured and enabled before sharing with cases, using the evidence broker for sharing rules. Covers enabling person/prospect person evidence for cases and notes these types can be used on other cases too. Also describes how to activate IBAN maintenance for Bank Account evidence by enabling the IBAN property and activating the relevant evidence version."
+                      },
+                      {
+                        "title": "Configuring Person or Prospect Person Evidence for Cases",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000136",
+                        "range": {
+                          "start_unit_id": "p000052",
+                          "end_unit_id": "p000052",
+                          "start_page": 52,
+                          "end_page": 52
+                        },
+                        "summary": "Explains how to configure person or prospect person evidence so it can be shared with cases. New evidence types must first be created in the Dynamic Evidence Editor, then added and enabled in the participant’s evidence configuration, and separately added and enabled in the target case’s evidence list. Sharing is finalized via the evidence broker. Also covers enabling International Bank Account Number maintenance for Bank Accounts evidence by turning on the IBAN system property and activating the correct evidence version; static bank account pages need only the property enabled."
+                      },
+                      {
+                        "title": "Configuring Evidence for Sharing",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000137",
+                        "range": {
+                          "start_unit_id": "p000052",
+                          "end_unit_id": "p000052",
+                          "start_page": 52,
+                          "end_page": 52
+                        },
+                        "summary": "This section explains how person and prospect person evidence is configured for sharing with cases. It covers creating evidence types in the Dynamic Evidence Editor, adding them to participant and case evidence configurations, enabling them for sharing, and using the Evidence Broker to define sharing rules. It also notes that these evidence types can be used on other cases such as IC and application cases. A final note describes how to enable and configure Bank Account evidence for maintaining IBANs."
+                      },
+                      {
+                        "title": "Configuring Bank Account Evidence for maintaining International Bank Account Numbers",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000138",
+                        "range": {
+                          "start_unit_id": "p000052",
+                          "end_unit_id": "p000052",
+                          "start_page": 52,
+                          "end_page": 52
+                        },
+                        "summary": "Explains how to configure bank account evidence to maintain IBANs for person/prospect person records. Requires enabling the system property curam.participant.enableibanfunctionality and activating the Bank Accounts dynamic evidence version with an effective-from date matching the property enablement date. Notes that if participant evidence is not used, static bank account pages can still maintain IBAN information, requiring only the property to be enabled."
+                      }
+                    ],
+                    "node_id": "n000134",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000052",
+                      "start_page": 52,
+                      "end_page": 52
+                    },
+                    "summary": "Explains how participant evidence works for person and prospect person records. New evidence types must be created in the Dynamic Evidence Editor, added to participant evidence, and enabled for sharing. To share with cases, the same evidence type must also be added to the target case and enabled there, then configured in the Evidence Broker; these types can also be used on IC and application cases. It also describes enabling Bank Account evidence for IBAN maintenance via a system property and active evidence version."
+                  }
+                ],
+                "node_id": "n000131",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000052",
+                  "start_page": 51,
+                  "end_page": 52
+                },
+                "summary": "Covers participant information settings for person/prospect person records. Includes search controls, case list and participant role list behavior, person images and upload size, and nickname-aware search. Also explains participant evidence setup: create evidence types in Dynamic Evidence Editor, add and enable them for participants and target cases, then configure sharing in Evidence Broker. Notes IBAN maintenance for bank account evidence requires enabling the IBAN property and activating the relevant evidence version."
+              }
+            ],
+            "node_id": "n000125",
+            "range": {
+              "start_unit_id": "p000051",
+              "end_unit_id": "p000052",
+              "start_page": 51,
+              "end_page": 52
+            },
+            "summary": "Covers Cúram participant configuration for search, case lists, role lists, person images, upload size, and nickname-aware forename search. Also explains participant evidence setup for person/prospect person: create evidence types in Dynamic Evidence Editor, add and enable them for participants and target cases, then configure sharing in Evidence Broker. Includes IBAN bank account evidence setup by enabling the IBAN property and activating the relevant evidence version."
+          },
+          {
+            "title": "1.10 Client Merge Customization Points",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating a Custom Event Handler for Client Merge",
+                "level": 3,
+                "children": [],
+                "node_id": "n000140",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Describes client merge customization points for persons and prospect persons, focusing on how to raise custom events during merge processing. Explains the three stages of merge: marking a duplicate, merging data, and completing the merge. This section specifically covers events triggered at Mark New Duplicate and Unmark Duplicate, defined in ClientMerge.evx and usable as extension points. It lists CLIENTMERGE.MARKDUPLICATE and CLIENTMERGE.UNMARKDUPLICATE, both passing DuplicatedConcernRoleID and raised only when the duplicate client has non-PDC closed cases."
+              },
+              {
+                "title": "Mark New Duplicate",
+                "level": 3,
+                "children": [],
+                "node_id": "n000141",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Explains the client merge customization point for the Mark New Duplicate step. It describes the event raised by `curam.core.sl.impl.ClientMerge.markDuplicate(MarkDuplicateCreateDetails)`: `CLIENTMERGE.MARKDUPLICATE`, with `DuplicatedConcernRoleID` as primary event data. The event is only raised when the duplicate client has non-closed cases other than a Participant Data Case (PDC). Also notes that merge customization supports event-based extension points defined in `ClientMerge.evx`."
+              },
+              {
+                "title": "Unmark Duplicate",
+                "level": 3,
+                "children": [],
+                "node_id": "n000142",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Describes client merge customization points and the unmark duplicate stage. It explains that merge has three stages and that `curam.core.sl.impl.ClientMerge.unmarkDuplicate(UnmarkDuplicateDetails)` raises the `CLIENTMERGE.UNMARKDUPLICATE` event with `DuplicatedConcernRoleID` as primary event data. The event is raised only when the duplicate client has open cases other than a Participant Data Case (PDC). Useful for extension-point/event-handler work in client merge."
+              },
+              {
+                "title": "Complete Merge",
+                "level": 3,
+                "children": [],
+                "node_id": "n000143",
+                "range": {
+                  "start_unit_id": "p000054",
+                  "end_unit_id": "p000054",
+                  "start_page": 54,
+                  "end_page": 54
+                },
+                "summary": "`ClientMerge.completeMerge(ConcernRoleDetailsForMerge)` raises two merge events: `CLIENTMERGE.MERGE_PERSON_TO_PERSON` and `CLIENTMERGE.MERGE_PROSPECT_PERSON_TO_PERSON`. Both carry PrimaryEventData as the original ConcernRoleID and SecondaryEventData as the duplicated ConcernRoleID. The section explains how to customize handling by adding a `handler_config.xml` under the custom component’s `events` folder, implementing `curam.util.events.impl.EventHandler`, and registering an event handler for the `ClientMerge` event class. It also notes the custom component must take precedence and requires a clean server build after changing component order."
+              }
+            ],
+            "node_id": "n000139",
+            "range": {
+              "start_unit_id": "p000053",
+              "end_unit_id": "p000053",
+              "start_page": 53,
+              "end_page": 53
+            },
+            "summary": "Client Merge Customization Points describes how to extend person/prospect person merge processing with events defined in ClientMerge.evx. Merge has three stages: mark duplicate, merge data, and complete merge. Mark New Duplicate raises CLIENTMERGE.MARKDUPLICATE and Unmark Duplicate raises CLIENTMERGE.UNMARKDUPLICATE, both with DuplicatedConcernRoleID as PrimaryEventData and only when the duplicate has open/non-closed cases other than a PDC. It also indicates complete-merge event customization via custom event handlers."
+          },
+          {
+            "title": "1.11 Conclusion",
+            "level": 2,
+            "children": [
+              {
+                "title": "Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000145",
+                "range": {
+                  "start_unit_id": "p000054",
+                  "end_unit_id": "p000054",
+                  "start_page": 54,
+                  "end_page": 54
+                },
+                "summary": "This section describes the events raised by `curam.core.sl.impl.ClientMerge.completeMerge(ConcernRoleDetailsForMerge)` during person/prospect person merges. It lists the two merge event types and their parameters, and explains how to add custom handling: create a `handler_config.xml`, implement a custom `EventHandler`, register it for the `ClientMerge` event class, and ensure the custom component has precedence in the component order. It also notes that a clean server build is required after changing component order."
+              },
+              {
+                "title": "Additional Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000146",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "Lists related Cúram guides for further reading, including Address, Integrated Case Management, Issue Management, Evidence, Evidence Broker, Verification, Financials, Deductions, Service Planning, Communications, and Workflow. Also reiterates key participant concepts: participant types and registration, common vs. type-specific information, evidence handling for person/prospect person data, merging duplicate person/prospect records, and configurable presentation/management of participant information in Cúram Administration."
+              },
+              {
+                "title": "Where to Go Next",
+                "level": 3,
+                "children": [],
+                "node_id": "n000147",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000058",
+                  "start_page": 56,
+                  "end_page": 58
+                },
+                "summary": "Closing section that points readers to the Cúram Integrated Case Management Guide for next learning steps. The rest is legal and publishing matter: usage permissions for personal and enterprise copying, restrictions on redistribution and derivative works, export controls, “as-is” warranty disclaimer, patent and third-party product notices, sample data/program disclaimer, privacy policy link, and trademark listings for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others."
+              }
+            ],
+            "node_id": "n000144",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000058",
+              "start_page": 54,
+              "end_page": 58
+            },
+            "summary": "Conclusion for the Cúram Participant Guide. Recaps core participant concepts: participant types/registration, common vs type-specific data, evidence for persons/prospect persons, merging duplicate person/prospect records, and administration-driven presentation/configuration. Notes related guides for further study and points next to the Cúram Integrated Case Management Guide. The final pages cover merge-event customization for ClientMerge, then legal notices: usage permissions, export and warranty disclaimers, sample code terms, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000058",
+          "start_page": 9,
+          "end_page": 58
+        },
+        "summary": "Cúram Participant Guide introduces the participant model: 10 participant types, shared vs type-specific data, and why registration matters. It covers registering, searching, and maintaining participants; extra details for persons/prospects, employers, product providers, service suppliers, and external parties; evidence, pictures, cases, and banking setup; merging duplicate person/prospect records; and admin configuration/customization points for search, evidence, and client merge events. It ends with a conclusion, related guides, and legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

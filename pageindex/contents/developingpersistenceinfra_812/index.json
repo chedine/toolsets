@@ -1,0 +1,2186 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "3ea7d9fcd228a52a",
+    "title": "Cúram 8.1.2 Persistence Cookbook",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/DevelopingPersistenceInfra_812.pdf",
+    "source_type": "pdf",
+    "sha256": "3ea7d9fcd228a52a054fa0f90f5b97c5d155ff53a44d9d0bd80e9adb8d293572",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:24:44+00:00",
+    "page_count": 142,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/DevelopingPersistenceInfra_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Persistence Cookbook",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000142",
+      "start_page": 1,
+      "end_page": 142
+    },
+    "summary": "Cúram 8.1.2 Persistence Cookbook is a practical guide to using and extending the Persistence Infrastructure for service-layer APIs. It explains the façade-to-service data translation model and is aimed at developers of server functionality and callers of PI-based APIs. The main content covers how to read, insert, modify, delete/cancel, and list rows; how to define entity and DAO interfaces and implementations; validation rules and defaults; Guice module setup; events and listeners; entity context; state transitions; inheritance mappings; and adding new read-only searches to shipped entities. It includes scenarios plus implementation patterns, with JavaDoc as the detailed reference. The book also contains legal notices, privacy policy, trademarks, and sample-code permissions.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This section is a brief preliminary note telling readers to review the “Notices” section on page 141 before using the information or the supported product. It also includes Merative US L.P. copyright notices for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter and the start of “Developing with the Persistence Infrastructure.” States this edition applies to Cúram 8.1, 8.1.1, and 8.1.2, then introduces the cookbook’s purpose, audience, and document structure. Begins section 1.2 on making calls to service-layer APIs, with the first scenario showing how a façade reads a database row using a DAO injected by Guice, retrieves the entity by key, and maps entity getters (including ID, version, and DateRange) into a return struct."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section explains how to use Persistence Infrastructure service-layer APIs for create, modify, remove, and cancel operations on database rows, contrasting them with classic Cúram entity calls. It shows the standard façade pattern: inject a DAO, get or create an entity instance, map client struct fields via setters, call insert/modify/remove, and map returned IDs when needed. It emphasizes validation performed by the entity and the need to pass the client’s version number for optimistic locking, warning against using the retrieved entity’s version."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section shows Persistence Infrastructure façade patterns for deleting and listing data: canceling an entity row with optimistic locking, listing all rows via a DAO readAll() returning Set<Entity>, and listing child rows by first fetching the parent entity then iterating its child set. It includes complete Java façade examples, terser variants, and a summary class with CRUD methods. Useful for understanding DAO injection, entity retrieval, mapping entity fields to client structs, and avoiding incorrect use of an entity’s own version number."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Explains how to start coding service-layer APIs for a new database table. Covers creating an entity interface extending StandardEntity and a matching DAO interface extending StandardDAO. Describes when to add getters/setters for columns, excluding primary key accessors, using DateRanged for start/end dates, generated codetable entry classes for coded fields, related-entity accessors instead of foreign key IDs, and Set-returning getters for child entities. Includes conventions, visibility guidance, and skeletal APIs for related entities."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers how to extend an entity API and DAO for persistence in Cúram: adding insert, modify, cancel (logical delete), and remove operations via marker interfaces, plus guidance on optimistic locking. Explains where to place non-key retrievals on the DAO (singleton reads and searches), and recommends using entity parameters instead of raw IDs. Also introduces implementation steps: model the table, generate an adapter, implement the DAO with StandardDAOImpl, and annotate the DAO with @ImplementedBy to avoid injection failures."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Shows how to complete a new entity in Cúram Persistence Infrastructure: create a DAO implementation, define a skeletal entity implementation extending SingleTableLogicallyDeleteableEntityImpl, and annotate the entity interface with @ImplementedBy. Explains implementing getters from Dtls fields, including date ranges, codetable values, and related single/multi-entity lookups via injected DAOs. Notes the null/zero-ID pattern for related single records, and adds a searchByParent method to a child DAO. Also warns not to depend on implementation classes in DAO interfaces."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Explains how to implement a Cúram entity’s setters, defaults, and single-field validation. Covers defaulting new instances via setNewInstanceDefaults (type and today-onwards DateRange), implementing setters for simple fields, code-table values, date ranges, and related entities, and using generated adapter constants. Also shows validation patterns: trim/length checks for name with ValidationHelper and message catalog errors, DateRange.validateRange for range validity, and notes that mandatory-field validation is handled separately. Includes a full MyNewEntityImpl code listing."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "Explains how to implement validation and extensibility in Cúram persistence entities, then introduces Guice modules and events. Covers mandatory-field, cross-field, and cross-entity validation lifecycle, including when each is invoked and restrictions on database access. Shows example mandatory validation for name, start date, type, and parent entity. Also explains overriding default implementations with a Guice AbstractModule and ModuleClassName table entry, then outlines event support: defining event interfaces, using EventDispatcherFactory, raising events, and creating listeners."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "Covers persistence event listeners and entity context in Cúram Persistence Infrastructure. Explains how to write and wire Guice listeners for custom events and automatic persistence events using Multibinder, with singleton/thread-safety guidance and backward-compatibility notes. Shows using entity context (ContextContainer, Class/TypeLiteral keys) to pass extra data between façade and listeners for insert/read and mentions modify/readmulti/remove/cancel events. Ends with the start of state transitions: entities as state machines with controlled lifecycle transitions and validation/data/notification logic."
+          },
+          {
+            "title": "Edition — pages 95-104",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000095",
+              "end_unit_id": "p000104",
+              "start_page": 95,
+              "end_page": 104
+            },
+            "summary": "Explains how to implement entity state transitions using the Cúram Persistence Infrastructure. Covers defining lifecycle states in a codetable (open, suspended, closed), extending `Lifecycle`, adding specialized transition methods (`suspend`, `resume`, `close`), implementing `getLifecycleState`, and using `State`, `CodetableState`, and `Transition` helper classes. Shows how to set the initial state, perform transitions via a private helper, add validation/notifications with `onEnter`, `onLeave`, `onUnsupportedTransitionFrom`, and optionally override `modify` to block updates by state."
+          },
+          {
+            "title": "Edition — pages 105-114",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000105",
+              "end_unit_id": "p000114",
+              "start_page": 105,
+              "end_page": 114
+            },
+            "summary": "Covers a full lifecycle-entity example using the persistence infrastructure: interface methods for suspend/resume/close with optimistic locking; implementation of modify validation, state transitions, state maps, transitionTo logic, state-specific onEnter behavior, and default state setup. Then introduces inheritance support, showing how to identify inheritance, define Animal/Cat/Dog interfaces, and create DAO interfaces (including read-only AnimalDAO). Begins database storage strategies for hierarchies, especially one table per class with a discriminator and shared keys, and starts the AnimalImpl example."
+          },
+          {
+            "title": "Edition — pages 115-124",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000124",
+              "start_page": 115,
+              "end_page": 124
+            },
+            "summary": "Explains Cúram persistence implementations for inheritance mapping, especially one-table-per-class and one-table-per-concrete-class patterns using Animal, Cat, and Dog. Covers abstract/concrete entity implementation classes, discriminators, key mapping, adapters, getters/setters, and per-type behavior like speak(). Also shows DAO implementations: concrete DAOs via StandardDAOImpl and an abstract AnimalDAOImpl that routes reads to CatDAO or DogDAO based on the discriminator. Ends by introducing the alternative concrete-class table strategy and its simplified AnimalImpl/CatImpl structure."
+          },
+          {
+            "title": "Edition — pages 125-134",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000125",
+              "end_unit_id": "p000134",
+              "start_page": 125,
+              "end_page": 134
+            },
+            "summary": "Explains persistence mappings for inheritance hierarchies in Cúram. Covers both “one table per concrete class” and “one table for the whole hierarchy” approaches, with implementation/DAO examples for Animal, Cat, and Dog. Key points include use of standard impl classes, Guice-injected DAOs, discriminators (Animal.animalType), type checks in setEntityInfo, and limitations such as not being able to retrieve a generic Animal by ID in the per-concrete-class design."
+          },
+          {
+            "title": "Edition — pages 135-140",
+            "level": 2,
+            "children": [],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000135",
+              "end_unit_id": "p000140",
+              "start_page": 135,
+              "end_page": 140
+            },
+            "summary": "Explains single-table inheritance DAOs in the Persistence Infrastructure: concrete CatDAOImpl/DogDAOImpl use StandardDAOImpl and filtered searches, while abstract AnimalImpl uses BaseDAOImpl with a discriminator and injected concrete DAOs to resolve Cat vs Dog. Also introduces adding new read-only searches to existing Cúram-shipped entities, outlining two supported approaches: a custom DAO wrapping an extension entity, or direct DAL invocation. Notes that write SQL on shipped entities is not supported."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000140",
+          "start_page": 5,
+          "end_page": 140
+        },
+        "summary": "Front matter and the start of “Developing with the Persistence Infrastructure” for Cúram 8.1/8.1.1/8.1.2. Introduces the cookbook’s audience, purpose, and structure, then covers service-layer API usage and development: reading, inserting, modifying, deleting/canceling, and listing rows; defining entity/DAO interfaces and implementations; validation, defaults, Guice modules, events, entity context, state transitions, inheritance mappings, and adding new read-only searches to shipped entities."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000142",
+              "end_unit_id": "p000142",
+              "start_page": 142,
+              "end_page": 142
+            },
+            "summary": "Legal notice page covering sample data and code disclaimers, copyright/license terms for Merative sample programs, and a link to the Merative privacy policy. It also lists trademark ownership for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, and notes other names may be trademarks."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000142",
+              "end_unit_id": "p000142",
+              "start_page": 142,
+              "end_page": 142
+            },
+            "summary": "States trademark and copyright notices for the document and sample code. Notes that example names are fictitious, sample programs are provided “as is” under the Merative Client Agreement, and includes Merative privacy policy link. Lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice that other names may be trademarks. Includes © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000017",
+        "range": {
+          "start_unit_id": "p000141",
+          "end_unit_id": "p000141",
+          "start_page": 141,
+          "end_page": 141
+        },
+        "summary": "Legal notices and permissions for using Merative publications: personal and internal enterprise reproduction is allowed only if proprietary notices are preserved; redistribution, derivative works, export, and external use require Merative consent and legal compliance. Disclaims warranties and liability, notes no patent license is granted, and says third-party product/site references are informational only. Includes trademark/copyright ownership and sample code/privacy-policy-related notices, plus © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000020",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the guide “Developing with the Persistence Infrastructure.” Lists major sections and subtopics: service-layer API usage, coding entity APIs and implementations, Guice module creation, events, entity context, state transitions, inheritance, and adding new searches to existing entities. Also includes front matter and notices, with page references throughout."
+      },
+      {
+        "title": "1 Developing with the Persistence Infrastructure",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Intended Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for designers and developers of server application functionality that either calls or implements service-layer APIs using the Persistence Infrastructure. The section explains that, unlike classic Cúram’s separate process/struct classes, Persistence Infrastructure service layers combine data and processing in the same classes. It focuses on using and developing service-layer APIs, translating UI data via façade-layer logic, and customizing out-of-the-box software built on this infrastructure."
+              },
+              {
+                "title": "Background",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces developing with the Persistence Infrastructure, which bridges UI façade logic and service-layer APIs by translating data to and from service calls. Explains that this document targets designers and developers of server application functionality that either calls or implements service-layer APIs using the Persistence Infrastructure. Contrasts classic Cúram service layers, where process and struct classes were separate, with the new model where classes contain both data and processing. Notes the document covers usage, development, and customization scenarios, with JavaDoc as further reference."
+              },
+              {
+                "title": "Further Reading",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Points readers to the Persistence Infrastructure JavaDoc for detailed class and interface reference. This section is a brief further-reading note, useful if you need API-level documentation after learning how the infrastructure supports service-layer development, façade-layer translation, and customization of software built on it."
+              },
+              {
+                "title": "Structure of this document",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains how the cookbook is organized. It groups scenarios into three categories: making calls to service-layer APIs, coding service-layer APIs, and coding service-layer implementations. It notes that out-of-the-box customization may only require the chapters on creating a Guice module, events, and using entity context, while more advanced topics include state transitions, inheritance, and adding searches to existing entities. It also introduces service-layer API call scenarios focused on typical database operations such as read, insert, modify, remove, cancel, and list."
+              }
+            ],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Persistence Infrastructure document for designers and developers using or building service-layer APIs. It explains how façade-layer logic translates data between UI screens and service calls, and contrasts this model with classic Cúram’s separate process and struct classes. The section states the document covers using, developing, and customizing software built on the infrastructure, with JavaDoc as the reference for detailed class and interface information."
+          },
+          {
+            "title": "1.2 Making calls to service-layer APIs",
+            "level": 2,
+            "children": [
+              {
+                "title": "You want to read some data from a database table",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "This section introduces the cookbook’s structure and scenario categories, then explains that service-layer API scenarios typically support façade-layer database operations such as read, insert, modify, remove, cancel, and list. It also notes when you may only need to read chapters on creating a Guice module, events, and using entity context, with additional advanced topics like state transitions, inheritance, and new searches. It begins the first service-layer example: writing a façade method to retrieve a database row by primary key."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000015",
+                      "start_page": 11,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to read a database row from a service-layer API using the Persistence Infrastructure. Shows replacing classic Cúram entity reads with a DAO-injected façade: declare `@Inject` DAO, add a constructor calling `GuiceWrapper.getInjector().injectMembers(this)`, call `dao.get(key)` to obtain the entity, then map fields via getters into the return struct. Notes `getID()`, `getVersionNo()`, and object-returning getters like `getDateRange()`. Includes a complete example and a brief classic-vs-service-layer comparison."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000015",
+                  "start_page": 10,
+                  "end_page": 15
+                },
+                "summary": "Explains how a façade method reads a database row by primary key using the Persistence Infrastructure. Contrasts classic Cúram entity reads with the service-layer approach: inject a DAO with `@Inject`, add a constructor calling `GuiceWrapper.getInjector().injectMembers(this)`, call `dao.get(key)` to obtain the entity, then map entity getters into the return DTO. Notes use of `getID()`, `getVersionNo()`, and object-returning getters like `getDateRange()`. Includes a complete example and brief classic-vs-service-layer comparison."
+              },
+              {
+                "title": "You want to insert a new row onto a database table",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains the “insert new row” problem for a façade method using service-layer APIs with the Persistence Infrastructure. It contrasts classic Cúram entity insertion—creating an entity instance, mapping details, calling insert, handling informational exceptions, and returning the generated key—with the service-layer approach. Also notes the general service-layer pattern: use an injected DAO to retrieve or persist data, map entity data to client structs, and expect less terse retrieval code but more verbose mapping in façade logic."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section outlines the basic insert flow using a persistence DAO and entity. It says to keep a DAO as a class member, create a new entity instance with `dao.newInstance()`, map client/struct data into the entity via setters, and then let the entity insert itself into the database. It also notes that some fields may be read-only, with the entity controlling values such as IDs."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Shows the full create-flow example for an entity façade method: create a return key struct, instantiate a new entity, map client fields, call the entity’s insert() method, and optionally map the generated ID back to the client. It reinforces that setters may accept complex objects, perform single-field validation, and that insert() triggers mandatory, cross-field, and cross-entity validation plus primary key assignment and database insertion."
+                  }
+                ],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000018",
+                  "start_page": 16,
+                  "end_page": 18
+                },
+                "summary": "Explains how to insert a new database row using a Persistence Infrastructure service-layer API in a façade method. The pattern is: keep an injected DAO as a class member, call `dao.newInstance()` to create an entity, map client struct fields via entity setters, call `insert()`, and return the generated key if needed. Notes that some fields are read-only or use complex types like `DateRange`, setters perform single-field validation, and `insert()` triggers mandatory, cross-field, and cross-entity validation before persisting."
+              },
+              {
+                "title": "You want to modify a row on a database table",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains the problem of modifying an existing database row from a façade method in classic Cúram. Shows the typical generated-entity pattern: create an entity instance, map input details into a details object, build a key from the entity ID, call modify(key, details), then explicitly call TransactionInfo.getInformationalManager().failOperation() to handle informational exceptions. Useful as the setup for discussing row-update handling in the persistence infrastructure."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to modify an existing database row using a service-layer API built with the Persistence Infrastructure. The approach combines earlier patterns for reading and inserting: define a DAO class variable, retrieve the entity instance via the DAO, map client struct values into entity setters, then call the entity to persist the update. Notes that façade classes often have both insert and update methods, and shared client-to-entity mapping logic should be refactored into a common helper method."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Shows the full `modifySomeEntityDetails` scenario implementation. It maps client details into an entity, including nested value objects like `DateRange`, then calls `someEntity.modify(details.details.versionNo)` to persist changes. The section emphasizes that the version number must come from the client struct to preserve optimistic locking, not from the retrieved entity instance. It also notes that extra validation happens during modify, including mandatory, cross-field, and cross-entity checks."
+                  }
+                ],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000021",
+                  "start_page": 19,
+                  "end_page": 21
+                },
+                "summary": "Explains how to update an existing database row in the Persistence Infrastructure. It contrasts classic Cúram’s generated entity modify(key, details) plus failOperation() with the service-layer approach: use a DAO to get the entity, map client struct values into setters, then call someEntity.modify(details.details.versionNo). Highlights factoring shared mapping into a private helper, and stresses optimistic locking by using the client-provided version number, not the retrieved entity’s version. Also notes extra validation during modify."
+              },
+              {
+                "title": "You want to remove (physically delete) a row from a database table",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains the problem of physically deleting a database row from a façade method in Cúram. It contrasts the standard pattern for modifying an entity with the classic approach for remove operations, where a façade creates a service-layer entity instance and key, then invokes the generated entity remove method. Useful for understanding how deletion is handled in the façade/service-layer API and how it differs from modify logic."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to remove an existing database row using a service-layer API with the Persistence Infrastructure. The pattern is to define a DAO variable, use it to retrieve the entity instance, then call the entity’s remove method to delete the row. It notes that removal performs cross-entity validation and that optimistic-locking entities must use the client-supplied version number, not the retrieved entity’s version, to avoid bypassing lock checks."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Shows the full façade “remove” example for optimistic locking, emphasizing the correct pattern: fetch the entity by ID, then call `remove(key.versionNo)` using the client-supplied version number rather than `getVersionNo()` from the entity instance. It also transitions to the next scenario: logically deleting a row by setting `recordStatus` to “Canceled,” with a classic Cúram example using an entity factory and a key/version object."
+                  }
+                ],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000023",
+                  "start_page": 22,
+                  "end_page": 23
+                },
+                "summary": "Shows how to physically delete a database row from a façade method. Contrasts classic Cúram removal, where a façade creates an entity instance/key and calls the generated remove method, with the Persistence Infrastructure service-layer pattern: get the DAO, retrieve the entity, then call `remove(key.versionNo)`. Emphasizes that remove performs cross-entity validation and, for optimistic locking, must use the client-supplied version number rather than the retrieved entity’s version to preserve lock checks."
+              },
+              {
+                "title": "You want to cancel (logically delete) a row on a database table",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains the problem of logically deleting a database row by setting `recordStatus` to `Canceled` in a façade method. Shows the classic Cúram approach using a non-stereotyped entity method and a `SomeEntityKeyVersion` passed to `cancel(...)`, then contrasts it with an incorrect remove pattern that bypasses optimistic locking by using the entity’s own version number. Useful for understanding the cancellation/remove scenario and locking-safe method design."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how to cancel an existing database row via a service-layer API using the Persistence Infrastructure. The pattern is: define a DAO field, use it to retrieve the entity instance, then call the entity’s cancel method with the client-provided version number. Notes that the entity performs cross-entity validation before deletion. Warns strongly not to use the retrieved entity’s own version number, since that breaks optimistic locking."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Shows the completed façade “cancel” example, then introduces a new problem: a façade method that must retrieve all rows from a database table and format them for UI display. It contrasts this with classic Cúram usage, where the generated entity method `readAll()` returns `SomeEntityDtlsList`, which is then iterated over and mapped into a summary list (`SomeEntitySummaryDetailsList`) before returning to the caller."
+                  }
+                ],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000025",
+                  "start_page": 24,
+                  "end_page": 25
+                },
+                "summary": "Explains how to logically delete a database row by setting `recordStatus` to `Canceled`. Contrasts classic Cúram’s non-stereotyped entity `cancel(...)` call with the Persistence Infrastructure service-layer pattern: keep a DAO, retrieve the entity, then call `someEntity.cancel(key.versionNo)`. Emphasizes optimistic locking and warns against using the retrieved entity’s own version number, which bypasses locking. Also notes the entity can perform cross-entity validation before cancellation."
+              },
+              {
+                "title": "You want to list all rows of a database table",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section introduces the problem of building a façade method that retrieves all rows from a database table and formats them for UI display. It shows the classic Cúram approach: create an entity instance, call `readAll()`, then map each returned detail into a summary object and add it to the result list. The example sets up the need for a better or more complete listing implementation."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to list all rows from a database table through a service-layer API using the Persistence Infrastructure. The solution is to define a DAO class variable, call a DAO readAll() method to retrieve a Set of entity instances, then iterate over that set and map each entity’s fields into client summary structs. Notes that readAll() returns a Set typed to the entity interface and may be a custom DAO method, not provided by default."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Provides the complete Java façade “list all” method example for the scenario solution. It shows creating a `SomeEntitySummaryDetailsList`, reading all `SomeEntity` records via `someEntityDAO.readAll()`, mapping each entity to a `SomeEntitySummaryDetails` with ID and name, adding each to the return list, and returning it. Also shows a terser equivalent version that iterates directly over `someEntityDAO.readAll()` without storing the set first."
+                  }
+                ],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000028",
+                  "start_page": 26,
+                  "end_page": 28
+                },
+                "summary": "Shows how to implement a façade “list all” method for database rows in Cúram/Persistence Infrastructure. Contrasts classic Cúram’s entity `readAll()` plus detail-to-summary mapping with the service-layer DAO approach: define a DAO field, call `someEntityDAO.readAll()` to get a `Set<SomeEntity>`, then iterate and copy fields into `SomeEntitySummaryDetails` objects added to a `SomeEntitySummaryDetailsList`. Notes `readAll()` may be a custom DAO method and includes a complete example plus a terser inline-loop version."
+              },
+              {
+                "title": "You want to list all child rows of a database table belonging to some parent row (on another table)",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "This section introduces the persistence-infrastructure use case of listing all child rows for a given parent row. It frames the problem as a façade method that must retrieve child records by parent ID and map database details into UI-facing summary objects. It contrasts the classic Cúram approach using a generated entity method and manual mapping, then poses the question of how to do the same with a service-layer API."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Introduces the problem of listing all child rows for a given parent ID in a façade method and formatting them for UI display. It contrasts classic Cúram entity-based access (searching by parent key and mapping returned details into a summary list) with the service-layer approach using the Persistence Infrastructure. The section begins the solution steps for implementing this pattern with a service-layer API."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000031",
+                      "start_page": 30,
+                      "end_page": 31
+                    },
+                    "summary": "Shows the complete façade method for listing child entities of a parent. It injects a parent DAO, retrieves the parent by key, gets its child set, iterates over children, and maps each child’s ID and name into a summary details list returned to the client. Includes both the full version with an intermediate Set variable and a shorter inline loop version."
+                  }
+                ],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000031",
+                  "start_page": 29,
+                  "end_page": 31
+                },
+                "summary": "Shows how to implement a façade method that lists all child rows for a parent using the Persistence Infrastructure service layer. It contrasts classic Cúram entity search/mapping with the DAO-based approach: inject the parent DAO, call get() with the parent ID, use the parent’s getter to obtain its child set, then iterate and map child fields into a UI summary list. Includes complete and shortened code versions."
+              },
+              {
+                "title": "Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000035",
+                  "start_page": 32,
+                  "end_page": 35
+                },
+                "summary": "Shows the full `MyFacade` class for persistence operations. It demonstrates dependency injection of DAOs and CRUD-style methods for `SomeEntity`: view, create, modify, remove, cancel, and list. It also includes a helper mapping client DTO fields to service-layer setters, with version-number handling for optimistic concurrency. The final method lists child records by loading a `SomeParent` and iterating its `SomeChild` set. Useful for understanding façade-to-entity mapping patterns and child-list retrieval."
+              }
+            ],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000035",
+              "start_page": 10,
+              "end_page": 35
+            },
+            "summary": "Explains how façade-layer code calls Persistence Infrastructure service-layer APIs for database operations: read by primary key, insert, modify, physically remove, logically cancel, list all rows, and list child rows by parent. Core pattern is to inject DAOs with @Inject, request Guice injection in the constructor, retrieve entities via dao.get() or dao.newInstance(), map entity data to/from client structs, and use getID(), getVersionNo(), and object getters like getDateRange(). Emphasizes optimistic locking and validation during modify/remove/cancel/insert."
+          },
+          {
+            "title": "1.3 Coding service-layer APIs",
+            "level": 2,
+            "children": [
+              {
+                "title": "You want to start writing the API for a new database table",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to start a service-layer API for a new database table. The table access is split into a DAO interface for searching rows (“readmultis”) and an entity interface for operations on retrieved entities. The solution begins by creating an entity interface Java file named after the entity and extending `StandardEntity`, which is required for all entity APIs. This section is a practical entry point for coding new entity-based service-layer APIs."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to start coding a service-layer API for a new database table. The solution splits the interface into two parts: a DAO interface for searching rows (“readmultis”) and an entity interface for actions on retrieved rows. It instructs you to create two Java files: an entity interface extending `StandardEntity`, and an entity DAO interface. Emphasizes naming the entity interface after the entity and documenting it well."
+                  }
+                ],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains how to begin a service-layer API for a new database table. The table access is split into a DAO interface for searching rows (“readmultis”) and an entity interface for operations on retrieved rows. To start, create an entity Java interface named after the entity and extending StandardEntity, which is required for all entity APIs. Also create a separate entity DAO interface. Useful as the entry point for implementing new entity-based service-layer APIs."
+              },
+              {
+                "title": "You want to add getters and setters to your entity interface",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "This section introduces the need to add getters, setters, and navigation methods to an entity interface. It explains that a database table has multiple columns, and callers must be able to read some values, modify others, and traverse to related entities. It contrasts this with classic Cúram, where callers had full access to all fields on the entity Dtls struct, so access control at the field level was not needed."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000043",
+                      "start_page": 38,
+                      "end_page": 43
+                    },
+                    "summary": "Explains how to design entity interface getters/setters in Cúram based on column visibility and logical grouping. Key points: do not add getters/setters for primary key IDs; add simple accessors for ordinary fields like name; model date ranges via the DateRanged interface instead of per-field setters; use generated codetable Entry types for code table columns; and expose foreign keys as related entity objects, not raw IDs, with skeletal APIs if needed."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000045",
+                      "start_page": 44,
+                      "end_page": 45
+                    },
+                    "summary": "This section shows the completed entity API design for the example, tying together the earlier guidance. It emphasizes exposing related entities as object references, not foreign key IDs, and includes a child collection via `Set<MyChildEntity>`. It also shows the skeletal API needed for related entities if not already defined. The final interface `MyNewEntity` extends `StandardEntity` and `DateRanged`, with getters/setters for name, parent entity, children, and type, illustrating the full inheritance and relationship structure."
+                  }
+                ],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000045",
+                  "start_page": 37,
+                  "end_page": 45
+                },
+                "summary": "Explains how to design an entity interface with appropriate getters, setters, and navigation methods. Covers which columns should be exposed, why primary key accessors should not be added, how to handle simple fields, date ranges via `DateRanged`, codetable values via generated `Entry` types, and foreign keys as related entity objects rather than raw IDs. Also shows child collections as `Set<ChildEntity>` and concludes with a complete `MyNewEntity` interface example extending `StandardEntity` and `DateRanged`."
+              },
+              {
+                "title": "You want to add persistence methods to your entity interface",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000046",
+                      "end_unit_id": "p000046",
+                      "start_page": 46,
+                      "end_page": 46
+                    },
+                    "summary": "This section explains the problem of adding persistence methods to an entity interface so callers can store entity data in the database. It contrasts classic Cúram’s modeled process methods with entity APIs and introduces the need to decide which write operations to expose: insert, modify, cancel (logical delete), and remove (physical delete), including whether optimistic locking is needed. It also notes that exposing persistence methods is optional, and APIs may instead use specialized business methods."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000046",
+                      "end_unit_id": "p000047",
+                      "start_page": 46,
+                      "end_page": 47
+                    },
+                    "summary": "Explains how to add persistence methods to an entity interface. It says to decide which write operations the API should expose: insert, modify, cancel, and remove, and whether modify/remove need optimistic locking. It notes that some entities may expose no persistence methods or only specialized business methods. Examples show extending Insertable for insert() and OptimisticLockModifiable or Modifiable for modify() when setter methods exist. Also mentions insert() can throw InformationalException and historical tables usually should not support modify."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Explains how to combine persistence operations in an entity API. For logical deletion, an entity should extend LogicallyDeleteable, and this requires optimistic locking. For physical deletion, an entity may support remove via Removable, OptimisticLockRemovable, or both, with business tables rarely physically deleted and technical/link tables more likely to be. The section frames these choices as part of the entity’s inheritance hierarchy and overall persistence design."
+                  }
+                ],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000048",
+                  "start_page": 46,
+                  "end_page": 48
+                },
+                "summary": "Explains how to add persistence methods to an entity API by choosing which write operations to expose: insert, modify, cancel (logical delete), and remove (physical delete). It highlights when optimistic locking is needed, especially for modify/remove and always for logical delete, and notes that some entities may expose no persistence methods or use specialized business methods instead. Gives guidance on extending Insertable, Modifiable/OptimisticLockModifiable, LogicallyDeleteable, and Removable/OptimisticLockRemovable, with warnings that historical tables usually should not support modify and business tables rarely support physical delete."
+              },
+              {
+                "title": "You want to specify searches on your entity",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Explains how to support non-key retrievals for an entity in the persistence infrastructure. The problem is that entities may need singleton reads or searches by fields other than the primary key. In classic Cúram these were modeled as readmulti/nsread on the entity, but here retrieval methods belong on the entity DAO API, not the entity itself. Singleton reads should return the entity API and null if not found; searches should return a collection, typically a Set, of the entity API."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Non-key retrievals belong on the entity DAO API, not on the entity itself. The section explains how to model singleton reads and searches for an entity: singleton DAO methods return the entity API and should return null when nothing is found; search DAO methods return a collection, typically Set<MyNewEntity>, and may be empty. It contrasts this with classic Cúram readmulti/nsread patterns and their RecordNotFoundException/NotFoundIndicator handling."
+                  }
+                ],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "This section explains how to add non-key retrievals to an entity in the persistence infrastructure. It distinguishes singleton reads and multi-row searches, notes that these belong on the entity DAO API rather than the entity itself, and shows the expected return types: singleton DAO methods return the entity API and null if not found, while search methods return a collection, typically a Set, that may be empty. It contrasts this with classic Cúram readmulti/nsread and their exception/NotFoundIndicator handling."
+              },
+              {
+                "title": "Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "This section summarizes service-layer API design for modeled entities and DAOs. It stresses using entity instances in DAO methods instead of primary key values, following naming standards for modeled entity operations, and avoiding “ID-based” access patterns. It also explains that once entity and DAO APIs are defined, the full component’s service-layer APIs can often be designed before implementation, enabling API publication or JavaDoc generation. Alternatively, you can define a small set of APIs and begin implementing them."
+              }
+            ],
+            "node_id": "n000056",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000049",
+              "start_page": 36,
+              "end_page": 49
+            },
+            "summary": "Covers how to design service-layer APIs for modeled entities and DAOs. It explains starting with an entity interface extending StandardEntity plus a separate DAO extending StandardDAO, then adding getters/setters for columns, DateRanged for date spans, codetable Entry types, related entities instead of foreign-key IDs, and child collections as Set. It also details persistence interfaces for insert/modify/cancel/remove with optimistic locking rules, and placing singleton/search retrievals on the DAO, returning null or empty sets as appropriate."
+          },
+          {
+            "title": "1.4 Coding service-layer implementations",
+            "level": 2,
+            "children": [
+              {
+                "title": "You want to start implementing your entity API",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000051",
+                      "start_page": 51,
+                      "end_page": 51
+                    },
+                    "summary": "Explains how to implement entity and DAO interfaces using the Cúram persistence infrastructure. You must first model the database table in the Cúram model, then create three classes: an adapter for generated data access methods, a DAO implementation, and an entity implementation. It gives modeling rules for primary key, standard read/write operations, AUTO_ID, optimistic locking, search criteria structs, logical deletes, and what not to model (non-standard operations, extra return types, exits)."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Create an implementation for your entity DAO interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000076",
+                        "range": {
+                          "start_unit_id": "p000052",
+                          "end_unit_id": "p000054",
+                          "start_page": 52,
+                          "end_page": 54
+                        },
+                        "summary": "Explains how to implement an entity DAO using generated persistence code. Covers creating a generated adapter via `adapters.properties`, then defining a DAO implementation class in the same package, named `EntityDAOImpl`, extending `StandardDAOImpl<Entity, Dtls>` and annotated `@Singleton`. Shows adding a static adapter instance, a protected constructor passing adapter and entity class, and implementing custom methods like `readByName`, `searchByParent`, and code-table-based searches. Also requires annotating the DAO interface with `@ImplementedBy` to avoid Guice injection failures."
+                      },
+                      {
+                        "title": "Create an implementation for your entity interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000077",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000058",
+                          "start_page": 55,
+                          "end_page": 58
+                        },
+                        "summary": "Defines how to create an entity implementation class for a new interface. The class should be in the same package, named `MyNewEntityImpl`, implement `MyNewEntity`, and typically extend `SingleTableLogicallyDeleteableEntityImpl<MyNewEntityDtls>`. It adds a protected no-arg constructor, then stubs required getters, related-entity accessors, setters, and validation methods. It also notes the final step: annotate the entity interface with `@ImplementedBy(MyNewEntityImpl.class)` to make this the default implementation."
+                      }
+                    ],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000058",
+                      "start_page": 51,
+                      "end_page": 58
+                    },
+                    "summary": "Explains how to implement persistence-layer classes after defining entity and DAO interfaces. First, model the database table in the Cúram model with a primary key, standard read/write operations, optional optimistic locking and logical-delete status, then generate code. Next, create a generated adapter via `adapters.properties`, implement the DAO as `EntityDAOImpl` extending `StandardDAOImpl<Entity,Dtls>` with `@Singleton`, custom read/search methods, and `@ImplementedBy` on the DAO interface. Finally, create the entity implementation `EntityImpl`, often extending `SingleTableLogicallyDeleteableEntityImpl`, and annotate the entity interface with `@ImplementedBy`."
+                  }
+                ],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000058",
+                  "start_page": 50,
+                  "end_page": 58
+                },
+                "summary": "Explains how to start implementing an entity API after defining entity and DAO interfaces. First model the database table in Cúram with a single long primary key, standard read/write operations, optional optimistic locking and logical deletes, plus search-criteria structs where needed; avoid nonstandard operations and exits. Then create a generated adapter via `adapters.properties`, implement the DAO as `EntityDAOImpl` extending `StandardDAOImpl<Entity,Dtls>` with `@Singleton`, and mark the DAO interface with `@ImplementedBy`. Finally, create the entity skeleton `EntityImpl`, often extending `SingleTableLogicallyDeleteableEntityImpl`, and annotate the entity interface with `@ImplementedBy`."
+              },
+              {
+                "title": "You want to implement getters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000059",
+                      "start_page": 59,
+                      "end_page": 59
+                    },
+                    "summary": "This section explains how to implement entity getter methods after creating a skeletal entity implementation. It describes using the entity’s RowManager and its generated Dtls struct, with getters accessing data via RowManager.getDtls() (or the convenience getDtls() in SingleTableEntityImpl-based classes). It also lists the required example getters: getName, getDateRange, getType, getMyParentEntity, and getMyChildren."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000061",
+                      "start_page": 59,
+                      "end_page": 61
+                    },
+                    "summary": "Explains how to implement entity getters in a persistence-infrastructure entity class using the RowManager’s Dtls struct. Covers simple field mapping, combining columns into a DateRange object, resolving codetable entries from a code string, and loading related entities. For single references, the getter returns null when the foreign key is zero; otherwise it uses the related DAO. For collections, the getter calls a DAO searchByParent method, which must accept the API type, not the implementation class."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000081",
+                    "range": {
+                      "start_unit_id": "p000062",
+                      "end_unit_id": "p000064",
+                      "start_page": 62,
+                      "end_page": 64
+                    },
+                    "summary": "Shows the completed example after implementing getter methods in an entity class and adding a DAO search method for related children. The section presents the full `MyNewEntityImpl` with injected parent/child DAOs, field getters (`getName`, `getDateRange`, `getType`), related-entity getters (`getMyChildren`, `getMyParentEntity`), and placeholder setters/validation methods. It also highlights the correct DAO API design: `MyChildEntityDAO.searchByParent(MyNewEntity)` rather than depending on implementation classes."
+                  }
+                ],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000059",
+                  "end_unit_id": "p000064",
+                  "start_page": 59,
+                  "end_page": 64
+                },
+                "summary": "Explains how to implement getter methods in a skeletal entity implementation using the RowManager’s generated Dtls struct. Covers simple field mapping, composing a DateRange from start/end dates, resolving codetable entries from a code string, and loading related entities. Single references return null when the foreign key is zero; collections use a DAO searchByParent method that must accept the entity API type, not the implementation. Includes the completed MyNewEntityImpl and MyChildEntityDAO example."
+              },
+              {
+                "title": "You want to implement new row defaults",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains how to define default values for new database rows in an entity. The solution is to override setNewInstanceDefaults, call super, and initialize fields before insert, such as setting a type code and using DateRange.todayOnwards() for an open-ended date range. It notes that super may set defaults like recordStatus for logically deletable entities, and that some defaults may use private setters not exposed in the public entity API."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000084",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains how to define default values for new database rows in an entity by overriding `setNewInstanceDefaults()`. The example sets `typeCode` to `SomeType` and the date range to `DateRange.todayOnwards()`, using a private `setDateRange()` setter not exposed in the public API. It emphasizes calling `super.setNewInstanceDefaults()` first, especially for logically deletable entities where it defaults `recordStatus` to active."
+                  }
+                ],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000065",
+                  "end_unit_id": "p000065",
+                  "start_page": 65,
+                  "end_page": 65
+                },
+                "summary": "Explains how to set default values for newly inserted entity rows by overriding `setNewInstanceDefaults()`. The example defaults `typeCode` to `SomeType` and sets an open-ended date range with `DateRange.todayOnwards()`, using a private `setDateRange()` method not exposed in the public API. It emphasizes calling `super.setNewInstanceDefaults()` first, especially for logically deletable entities where the superclass sets `recordStatus` to active."
+              },
+              {
+                "title": "You want to implement setters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000066",
+                      "end_unit_id": "p000066",
+                      "start_page": 66,
+                      "end_page": 66
+                    },
+                    "summary": "Explains how to implement setter methods for a skeletal entity implementation. Setters populate fields in the underlying Dtls struct from values supplied by callers. Examples include public setters for name, type, and myParentEntity, plus a private setDateRange. Notes that public setter JavaDoc can inherit from the entity API, while private setters need their own JavaDoc. The setName example trims/compresses whitespace and converts null to an empty string using StringHelper.trim."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000087",
+                    "range": {
+                      "start_unit_id": "p000066",
+                      "end_unit_id": "p000066",
+                      "start_page": 66,
+                      "end_page": 66
+                    },
+                    "summary": "Explains how to implement skeletal setter methods for an entity by mapping input values to fields on an underlying Dtls struct. Covers required setters: `setName`, private `setDateRange`, `setType`, and `setMyParentEntity`. Highlights that public setter JavaDoc can usually inherit from the entity API, while private setters need their own documentation. Gives an example `setName` implementation using `StringHelper.trim` to convert null to empty string and normalize whitespace."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000067",
+                      "end_unit_id": "p000069",
+                      "start_page": 67,
+                      "end_page": 69
+                    },
+                    "summary": "Shows the completed `MyNewEntityImpl` class with field getters, related-entity getters, and setters wired to the persistence `Dtls` struct. It demonstrates mapping a `DateRange` into separate start/end columns, trimming string input, converting codetable entries to stored codes, and translating related entities to IDs with null-as-zero handling. The section also shows injected DAOs for fetching related parent/child entities and begins the validation area."
+                  }
+                ],
+                "node_id": "n000085",
+                "range": {
+                  "start_unit_id": "p000066",
+                  "end_unit_id": "p000069",
+                  "start_page": 66,
+                  "end_page": 69
+                },
+                "summary": "Explains how to implement setters in a skeletal entity implementation by mapping caller-supplied values onto fields in an underlying Dtls struct. Covers `setName` with whitespace trimming/null-to-empty via `StringHelper.trim`, private `setDateRange` writing start/end dates, `setType` storing codetable codes, and `setMyParentEntity` storing related entity IDs with null as zero. Also notes JavaDoc rules for public vs private setters and shows the completed `MyNewEntityImpl` with getters, DAO-injected related-entity accessors, and the start of validation."
+              },
+              {
+                "title": "You want to implement single-field validation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000070",
+                      "end_unit_id": "p000070",
+                      "start_page": 70,
+                      "end_page": 70
+                    },
+                    "summary": "Explains how to implement single-field validation in entity setter methods. Each setter must validate only its own incoming value, with no dependence on other fields. Validation errors should be accumulated via InformationalManager so callers can see all field-level issues at once, which is especially helpful for online users. The section frames a field as the value passed to the setter, typically matching one database field."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000091",
+                    "range": {
+                      "start_unit_id": "p000070",
+                      "end_unit_id": "p000072",
+                      "start_page": 70,
+                      "end_page": 72
+                    },
+                    "summary": "Explains how to implement single-field validation in entity setters. Validation should be accumulated via InformationalManager/ValidationHelper, and each setter must validate only its own field. Covers special cases like DateRange, where the object is validated as a whole and mandatory-field checks are deferred. Shows message catalog entries and sample code for setName, including min/max length checks and use of generated adapter length constants. Begins requirements for setDateRange validation: valid range and required start date, with end date optional depending on other fields."
+                  },
+                  {
+                    "title": "Putting it all together",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000092",
+                    "range": {
+                      "start_unit_id": "p000073",
+                      "end_unit_id": "p000075",
+                      "start_page": 73,
+                      "end_page": 75
+                    },
+                    "summary": "This section ties together the `MyNewEntityImpl` example, showing how single-field validation is implemented alongside mandatory-field checks. It presents the entity’s getter/setter code using injected DAOs, `StringHelper.trim`, `DateRange`, and `ValidationHelper` with generated validation errors. It also shows related-entity access via `myChildEntityDAO.searchByParent(this)` and parent lookup by stored ID. Useful for seeing the complete persistence-layer entity implementation pattern and how date-range, name-length, and code-table fields are handled."
+                  }
+                ],
+                "node_id": "n000089",
+                "range": {
+                  "start_unit_id": "p000070",
+                  "end_unit_id": "p000075",
+                  "start_page": 70,
+                  "end_page": 75
+                },
+                "summary": "Explains how to implement single-field validation in entity setters. Each setter must validate only its own incoming value, with errors accumulated via InformationalManager/ValidationHelper so users see all field errors at once. Covers `setName` length checks with message-catalog entries and generated max-length constants, `setDateRange` validation via `DateRange.validateRange()`, and setters for type and parent entity that defer to mandatory-field validation. Includes the full `MyNewEntityImpl` persistence-layer example with DAOs, related-entity access, and injected validation logic."
+              },
+              {
+                "title": "You want to implement mandatory-field validation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000076",
+                      "end_unit_id": "p000076",
+                      "start_page": 76,
+                      "end_page": 76
+                    },
+                    "summary": "Explains how to implement mandatory-field validation for an entity. The section states that an entity is only valid when required fields are populated and asks how to add this validation logic. It appears alongside a code example for an entity implementation with validation stubs and default values, but the focus here is specifically on handling required/mandatory fields."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000095",
+                    "range": {
+                      "start_unit_id": "p000077",
+                      "end_unit_id": "p000077",
+                      "start_page": 77,
+                      "end_page": 77
+                    },
+                    "summary": "Explains how to implement entity validation in the persistence infrastructure. Classes implementing Validator must provide validation methods, especially mandatoryFieldValidation for missing field checks before insert/modify operations. It must validate fields individually, avoid cross-field logic and database access, and note that setter errors also block further validation. The example entity requires name, start date, type, and parent instance, and shows sample code for checking empty name, started date, and unspecified type."
+                  }
+                ],
+                "node_id": "n000093",
+                "range": {
+                  "start_unit_id": "p000076",
+                  "end_unit_id": "p000077",
+                  "start_page": 76,
+                  "end_page": 77
+                },
+                "summary": "Explains how to implement mandatory-field validation for an entity. Classes implementing `Validator` must define `mandatoryFieldValidation`, which the persistence layer calls before insert/modify operations. This method should check each field independently for missing values, not perform cross-field or database access, and runs after setter validations; errors stop later validation. The example entity requires name, start date, type, and parent instance, with sample checks for empty name, missing start date, and unspecified type."
+              },
+              {
+                "title": "You want to implement cross-field validation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000097",
+                    "range": {
+                      "start_unit_id": "p000078",
+                      "end_unit_id": "p000078",
+                      "start_page": 78,
+                      "end_page": 78
+                    },
+                    "summary": "Explains cross-field validation for Cúram entities. If business rules depend on relationships between fields, implement the logic in each Validator’s crossFieldValidation method. This runs automatically after single-field and mandatory-field validation, before insert or modify operations (not before remove), and blocks further processing if errors are found. The persistence layer prevents database access during crossFieldValidation and stops cross-entity validation when cross-field errors exist."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000098",
+                    "range": {
+                      "start_unit_id": "p000078",
+                      "end_unit_id": "p000078",
+                      "start_page": 78,
+                      "end_page": 78
+                    },
+                    "summary": "Explains cross-field validation for entities implementing Validator. The crossFieldValidation method is where rules comparing one field to others belong. It runs automatically after successful single-field and mandatory-field validation, before insert/modify operations only, and not before physical remove. If it raises errors, the operation fails and cross-entity validation is skipped. The persistence layer prevents database access during crossFieldValidation."
+                  }
+                ],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000078",
+                  "end_unit_id": "p000078",
+                  "start_page": 78,
+                  "end_page": 78
+                },
+                "summary": "Explains where to put cross-field business rules in Cúram entities that implement Validator: use the crossFieldValidation method to compare one field against others. It runs automatically only after single-field and mandatory-field validation succeeds, before insert or modify operations, and not before physical remove. If it raises errors, the operation fails and cross-entity validation is skipped. The persistence layer also blocks database access during crossFieldValidation."
+              },
+              {
+                "title": "You want to implement cross-entity validation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The problem",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000100",
+                    "range": {
+                      "start_unit_id": "p000079",
+                      "end_unit_id": "p000079",
+                      "start_page": 79,
+                      "end_page": 79
+                    },
+                    "summary": "Explains cross-entity validation for persistent entities: an entity is valid only if its data satisfies business rules involving other entities. The persistence infrastructure calls a validator’s crossEntityValidation method after insert or modify (not physical remove), and database access is allowed there to support lookup-based validation. Also introduces Guice modules as a configurable alternative to @ImplementedBy, with module bindings taking precedence and a basic AbstractModule example."
+                  },
+                  {
+                    "title": "The solution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000101",
+                    "range": {
+                      "start_unit_id": "p000079",
+                      "end_unit_id": "p000079",
+                      "start_page": 79,
+                      "end_page": 79
+                    },
+                    "summary": "Explains cross-entity validation in the persistence infrastructure: implement `crossEntityValidation` in each `Validator` to check an entity against other entities’ data. It runs automatically after insert or modify (not physical remove), after cross-field validation, and may access the database; failed validations block the operation. The page then begins “Creating a Guice module,” noting that a custom Guice `Module` (extending `AbstractModule`) overrides `@ImplementedBy` defaults and is used for customisation or testing."
+                  }
+                ],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000078",
+                  "end_unit_id": "p000078",
+                  "start_page": 78,
+                  "end_page": 78
+                },
+                "summary": "Explains cross-entity validation for persistent entities: implement `crossEntityValidation` in each `Validator` to enforce business rules that depend on other entities’ data. The persistence layer invokes it automatically after single-field and cross-field validation, and only for insert/modify operations, not physical remove. Database access is allowed here for lookup-based checks, and any validation errors stop the operation. Also begins the next topic on creating a Guice module, where custom `Module` bindings can override `@ImplementedBy` defaults."
+              }
+            ],
+            "node_id": "n000072",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000078",
+              "start_page": 50,
+              "end_page": 78
+            },
+            "summary": "Covers how to start implementing an entity API after defining entity/DAO interfaces: model the table with a single long primary key, standard read/write ops, optional optimistic locking and logical deletes, then add a generated adapter via `adapters.properties`, a DAO implementation extending `StandardDAOImpl`, and `@ImplementedBy` on the DAO interface. Also shows entity skeleton implementation patterns with `SingleTableLogicallyDeleteableEntityImpl`, getter/setter mapping, defaults, and single-field and mandatory-field validation. Demonstrates correct DAO search methods taking entity APIs, not IDs."
+          },
+          {
+            "title": "1.5 Creating a Guice module",
+            "level": 2,
+            "children": [
+              {
+                "title": "Create a class extending AbstractModule",
+                "level": 3,
+                "children": [],
+                "node_id": "n000103",
+                "range": {
+                  "start_unit_id": "p000079",
+                  "end_unit_id": "p000079",
+                  "start_page": 79,
+                  "end_page": 79
+                },
+                "summary": "Shows how to create a Guice module by defining a class that extends `AbstractModule` and overriding `configure()`. It notes that Guice Module configuration overrides `@ImplementedBy`, making it useful for custom implementations and testing. The example `MyModule` contains no explicit bindings."
+              },
+              {
+                "title": "Store a row on ModuleClassName",
+                "level": 3,
+                "children": [],
+                "node_id": "n000104",
+                "range": {
+                  "start_unit_id": "p000080",
+                  "end_unit_id": "p000080",
+                  "start_page": 80,
+                  "end_page": 80
+                },
+                "summary": "The Persistence Infrastructure loads Guice modules from the ModuleClassName database table. To register a module, add a row containing your module’s class name, typically via a custom DMX file using the Data Manager. The example shows a table entry for curam.mypackage.MyModule. This section follows guidance on Guice bindings and notes that only one implementation can be bound per interface, so customer-extensible code should avoid hard-wiring bindings where customers may need their own."
+              }
+            ],
+            "node_id": "n000102",
+            "range": {
+              "start_unit_id": "p000079",
+              "end_unit_id": "p000080",
+              "start_page": 79,
+              "end_page": 80
+            },
+            "summary": "Explains how to create a Guice module for the Persistence Infrastructure. A module is a class extending `AbstractModule` with `configure()`, and its bindings override `@ImplementedBy` defaults, useful for customization or testing. The example module starts with no bindings, then shows binding an interface to a custom implementation. It also warns that each interface can have only one binding. Finally, it explains registering the module by adding its class name to the `ModuleClassName` table, typically via a custom DMX file."
+          },
+          {
+            "title": "1.6 Events",
+            "level": 2,
+            "children": [
+              {
+                "title": "Identify where an event must be raised",
+                "level": 3,
+                "children": [],
+                "node_id": "n000106",
+                "range": {
+                  "start_unit_id": "p000081",
+                  "end_unit_id": "p000081",
+                  "start_page": 81,
+                  "end_page": 81
+                },
+                "summary": "Introduces Persistence Infrastructure events and the first implementation step: identifying where an event should be raised. Explains that events decouple a raiser from listeners through shared interfaces, supporting one or many listeners plus built-in persistence events. Uses a simple `MyEventSource.doSomething()` example to show deciding event points before and after method logic (`preDoSomething` and `postDoSomething`). This section helps you determine where to place event hooks before defining interfaces, dispatchers, listeners, and Guice configuration."
+              },
+              {
+                "title": "Define the Event interface",
+                "level": 3,
+                "children": [],
+                "node_id": "n000107",
+                "range": {
+                  "start_unit_id": "p000082",
+                  "end_unit_id": "p000082",
+                  "start_page": 82,
+                  "end_page": 82
+                },
+                "summary": "Defines how to create an Event interface/class for event handling. It explains that the event source raises events through the interface and listeners implement it to react. It warns that if event methods may change, abstract classes with empty implementations are safer than Java interfaces to avoid breaking existing code. The section also notes the interface is usually public, often inner to the entity/interface, and that event methods should typically include the raising instance as a parameter; return values are ignored by the dispatcher."
+              },
+              {
+                "title": "Create an EventDispatcherFactory",
+                "level": 3,
+                "children": [],
+                "node_id": "n000108",
+                "range": {
+                  "start_unit_id": "p000083",
+                  "end_unit_id": "p000083",
+                  "start_page": 83,
+                  "end_page": 83
+                },
+                "summary": "Explains how to add event dispatching to a class using `EventDispatcherFactory<Event>`. Shows defining an inner `Event` interface/class with `preDoSomething` and `postDoSomething` callbacks that receive the raising `MyEventSource` instance, injecting the dispatcher with Guice, and preparing the class to raise events at the appropriate points in its logic."
+              },
+              {
+                "title": "Raise events",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000083",
+                  "end_unit_id": "p000083",
+                  "start_page": 83,
+                  "end_page": 83
+                },
+                "summary": "Explains how to raise events in a persistence-infrastructure class using `EventDispatcherFactory<Event>`. After defining an `Event` interface with `preDoSomething` and `postDoSomething` callbacks that receive the event source instance, inject a dispatcher and call the event methods at appropriate points in the class logic. The section shows the pattern for dispatching pre/post events around `doSomething()`, so listeners can react to the operation."
+              },
+              {
+                "title": "Create an event listener",
+                "level": 3,
+                "children": [],
+                "node_id": "n000110",
+                "range": {
+                  "start_unit_id": "p000084",
+                  "end_unit_id": "p000084",
+                  "start_page": 84,
+                  "end_page": 84
+                },
+                "summary": "Explains how to create event listeners for the event system. Listener classes can be placed in any package, and you can define as many as needed, each reacting differently to the same event interface. Example code shows a `@Singleton` `MyListener` implementing `MyEventSource.Event` with a protected Guice-only constructor and `preDoSomething`/`postDoSomething` methods that receive the raiser object and log messages when events are fired."
+              },
+              {
+                "title": "Configure Guice",
+                "level": 3,
+                "children": [],
+                "node_id": "n000111",
+                "range": {
+                  "start_unit_id": "p000085",
+                  "end_unit_id": "p000085",
+                  "start_page": 85,
+                  "end_page": 85
+                },
+                "summary": "Explains how to configure Guice to wire event listeners to an event source. In a Guice module’s configure() method, use Multibinder.newSetBinder(binder(), MyEventSource.Event.class) and add listener bindings such as to(MyListener.class). Notes that no Guice config is needed for plain event interfaces, only for implementations, and that the same event-interface listener set can be assembled across multiple modules. After wiring, MyEventSource.doSomething() triggers listener output before and after the action."
+              },
+              {
+                "title": "Writing listeners for automatic persistence events",
+                "level": 3,
+                "children": [],
+                "node_id": "n000112",
+                "range": {
+                  "start_unit_id": "p000086",
+                  "end_unit_id": "p000086",
+                  "start_page": 86,
+                  "end_page": 86
+                },
+                "summary": "This section explains how to write listeners for automatic persistence events on entity classes in Cúram. It says the Persistence Infrastructure dispatches events automatically, and you implement them by creating a `PersistenceEvent<TEntity>` listener and wiring it with Guice. The example shows a `MyListener` class that overrides `postInsert` for `MyEntity`, and a module that registers it with `Multibinder` using a `TypeLiteral<PersistenceEvent<MyEntity>>`."
+              },
+              {
+                "title": "Design Considerations with Events",
+                "level": 3,
+                "children": [],
+                "node_id": "n000113",
+                "range": {
+                  "start_unit_id": "p000087",
+                  "end_unit_id": "p000087",
+                  "start_page": 87,
+                  "end_page": 87
+                },
+                "summary": "Guidance for defining events and listeners: event interfaces can be package-protected to limit API exposure; listeners should usually be singleton and thread-safe, since dispatching may require it; listener methods generally should not mutate their arguments because all listeners share the same event data and execution order is unspecified. The section also notes that older EventDispatcher/StandardEventDispatcher APIs are deprecated but still supported. It then introduces Entity Context, which lets you attach arbitrary runtime context data to an entity instance via a class-keyed ContextContainer."
+              },
+              {
+                "title": "Backward compatibility",
+                "level": 3,
+                "children": [],
+                "node_id": "n000114",
+                "range": {
+                  "start_unit_id": "p000087",
+                  "end_unit_id": "p000087",
+                  "start_page": 87,
+                  "end_page": 87
+                },
+                "summary": "This section notes that older Persistence Infrastructure event APIs, EventDispatcher and StandardEventDispatcher, are deprecated but still supported for backward compatibility. It recommends the newer event model for new development. The surrounding text also highlights event design considerations such as package-protected event interfaces, thread-safe singleton listeners, and avoiding mutation of listener arguments."
+              }
+            ],
+            "node_id": "n000105",
+            "range": {
+              "start_unit_id": "p000081",
+              "end_unit_id": "p000086",
+              "start_page": 81,
+              "end_page": 86
+            },
+            "summary": "Explains how to use Persistence Infrastructure events: decide where to raise pre/post hooks, define an Event interface (or abstract class for compatibility), inject an EventDispatcherFactory, and dispatch events to one or more listeners via Guice Multibinder. Shows a listener implementation and wiring, then covers automatic persistence events using parameterized PersistenceEvent<TEntity> listeners. Notes design considerations: event interfaces can be package-protected, listeners should usually be singleton and thread-safe, and older EventDispatcher/StandardEventDispatcher APIs are deprecated but still supported."
+          },
+          {
+            "title": "1.7 Using Entity Context",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Problem",
+                "level": 3,
+                "children": [],
+                "node_id": "n000116",
+                "range": {
+                  "start_unit_id": "p000087",
+                  "end_unit_id": "p000087",
+                  "start_page": 87,
+                  "end_page": 87
+                },
+                "summary": "This section explains how to use Entity Context in the Persistence Infrastructure to attach extra runtime information to an entity instance when the entity interface itself cannot be customized. The added data is available to event handlers and custom code, and can store multiple types of information keyed by Java class. It is implemented via a ContextContainer, essentially a map attached to the entity. The section also notes event design considerations, including package-protected event interfaces, thread-safe singleton listeners, and avoiding mutation of listener arguments, plus deprecated older event dispatch APIs."
+              },
+              {
+                "title": "The Solution",
+                "level": 3,
+                "children": [],
+                "node_id": "n000117",
+                "range": {
+                  "start_unit_id": "p000087",
+                  "end_unit_id": "p000087",
+                  "start_page": 87,
+                  "end_page": 87
+                },
+                "summary": "This section recommends using Entity Context to attach runtime metadata to entity instances when the entity interface can’t be customized. Context data is stored in a ContextContainer, essentially a map attached to the entity and indexed by Java class, making it available to event handlers and custom code. It also notes event design considerations: package-protected event interfaces can limit API exposure, listeners should generally be thread-safe and often singleton-scoped, and listener methods should avoid mutating arguments. Deprecated EventDispatcher/StandardEventDispatcher are mentioned for backward compatibility."
+              },
+              {
+                "title": "Customising Inserts using entity context",
+                "level": 3,
+                "children": [],
+                "node_id": "n000118",
+                "range": {
+                  "start_unit_id": "p000088",
+                  "end_unit_id": "p000090",
+                  "start_page": 88,
+                  "end_page": 90
+                },
+                "summary": "Explains using entity context to customize inserts without subclassing out-of-the-box entities. Shows how to store extra façade data in a MyEntity context container, then retrieve it in a postInsert listener to create a separate MyAdditionalEntity with the same ID. Notes ContextContainer supports Class and TypeLiteral keys, and recommends owning custom context classes to avoid collisions. Also covers the design choice of whether to store null/blank additional details when no context is present."
+              },
+              {
+                "title": "Customising Reads using entity context",
+                "level": 3,
+                "children": [],
+                "node_id": "n000119",
+                "range": {
+                  "start_unit_id": "p000091",
+                  "end_unit_id": "p000092",
+                  "start_page": 91,
+                  "end_page": 92
+                },
+                "summary": "Explains how to customize read operations using entity context, mirroring the earlier insert pattern. A subclassed façade reads the original entity, then retrieves extra attributes from the entity’s context container and returns them. A persistence listener on the original entity handles post-read, reads a related supplemental entity, and stores its details in entity context for the façade to use. Notes that the same listener can handle both insert and read, and must be registered via Guice Multibinder."
+              },
+              {
+                "title": "Customising other operations using entity context",
+                "level": 3,
+                "children": [],
+                "node_id": "n000120",
+                "range": {
+                  "start_unit_id": "p000093",
+                  "end_unit_id": "p000093",
+                  "start_page": 93,
+                  "end_page": 93
+                },
+                "summary": "The section explains that the same facade-level and listener-based approach used for Insert and Read can also customize other entity operations with extra data. For updates, you handle the `PersistenceEvent.postModify(ENTITY)` event. It also notes that persistence events exist for `readmulti`, `remove`, and `cancel` operations. The key idea is using entity context to pass supplemental information through persistence processing."
+              }
+            ],
+            "node_id": "n000115",
+            "range": {
+              "start_unit_id": "p000087",
+              "end_unit_id": "p000093",
+              "start_page": 87,
+              "end_page": 93
+            },
+            "summary": "Explains Entity Context in the Persistence Infrastructure: attach runtime data to an entity instance when the interface can’t be customized. Context is stored in a ContextContainer map keyed by Class or TypeLiteral and is available to listeners and custom code. Shows insert/read customization patterns using a separate supplemental entity, façade overrides, and PersistenceEvent listeners registered with Guice Multibinder. Also notes handling null context, using owned context classes to avoid collisions, and extending the approach to modify, readmulti, remove, and cancel events."
+          },
+          {
+            "title": "1.8 State Transitions",
+            "level": 2,
+            "children": [
+              {
+                "title": "The problem",
+                "level": 3,
+                "children": [],
+                "node_id": "n000122",
+                "range": {
+                  "start_unit_id": "p000094",
+                  "end_unit_id": "p000094",
+                  "start_page": 94,
+                  "end_page": 94
+                },
+                "summary": "Introduces the state transitions problem for persistence entities with lifecycles. It explains that an entity’s state is stored in a database column, can typically be read directly, but must be changed only through specialized methods. The section frames an example state machine where multiple transitions each require distinct validation, data manipulation, and notification logic, setting up guidance for implementing state-based lifecycle management."
+              },
+              {
+                "title": "The solution",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Specify states",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000124",
+                    "range": {
+                      "start_unit_id": "p000095",
+                      "end_unit_id": "p000095",
+                      "start_page": 95,
+                      "end_page": 95
+                    },
+                    "summary": "Identify the entity’s lifecycle states before implementing transitions. This section states the possible states are open, suspended, and closed. It also notes that the state value is typically stored via a codetable; in the example, a new codetable named MYLIFECYCLEENTITYSTATE is used, with values exposed as MYLIFECYCLEENTITYSTATEEntry instances."
+                  },
+                  {
+                    "title": "Specify storage mechanism for the state value",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000125",
+                    "range": {
+                      "start_unit_id": "p000095",
+                      "end_unit_id": "p000095",
+                      "start_page": 95,
+                      "end_page": 95
+                    },
+                    "summary": "Explains how to store an entity’s lifecycle state when using the Persistence Infrastructure. States are open, suspended, and closed, and the example uses a codetable named MYLIFECYCLEENTITYSTATE, storing the code’s String value in a database column and exposing it as a MYLIFECYCLEENTITYSTATEEntry instance. This section is part of a step-by-step process for implementing state transitions, including defining states, transition methods, getLifecycleState, permitted-state maps, state objects, transition validation, and initial-state setup."
+                  },
+                  {
+                    "title": "Identify transition methods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000126",
+                    "range": {
+                      "start_unit_id": "p000096",
+                      "end_unit_id": "p000097",
+                      "start_page": 96,
+                      "end_page": 97
+                    },
+                    "summary": "Explains how to define entity state transitions in Cúram lifecycle entities. Recommends specialized methods instead of a generic setState, with each method named for the target state and taking the entity version number for optimistic locking. Methods may also take extra arguments as needed, such as a suspension reason or end date. Shows example interface declarations for suspend(reason, versionNo) and resume(versionNo), including validation and InformationalException when transitions are invalid."
+                  },
+                  {
+                    "title": "Implement getLifecycleState",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000127",
+                    "range": {
+                      "start_unit_id": "p000098",
+                      "end_unit_id": "p000098",
+                      "start_page": 98,
+                      "end_page": 98
+                    },
+                    "summary": "Explains how to implement `getLifecycleState()` for a Lifecycle entity by returning the enum value from the stored state (`MYLIFECYCLEENTITYSTATEEntry.get(getDtls().state)`). It also notes that state transitions should be handled through specialized methods like `close(...)`, which can enforce validations and trigger notifications, rather than exposing public setters for state/end date. The section then begins introducing a map of permitted states using `State` helper instances."
+                  },
+                  {
+                    "title": "Create a map to hold the permitted states",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000128",
+                    "range": {
+                      "start_unit_id": "p000098",
+                      "end_unit_id": "p000098",
+                      "start_page": 98,
+                      "end_page": 98
+                    },
+                    "summary": "Explains how to support lifecycle state transitions in code. It shows specialized transition methods like close(), recommends this over public setters for state/endDate, and demonstrates implementing getLifecycleState() by mapping the stored state value to an enum. It then introduces creating a map to hold permitted states, where each valid state is represented by a State helper instance."
+                  },
+                  {
+                    "title": "Create an object for each state",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000129",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "Defines one `State` object per permitted lifecycle state using `CodetableState`. Example states are `OPEN`, `SUSPENDED`, and `CLOSED`, each added to a `states` map keyed by code-table values. The constructor parameters specify the map, state identifier, whether the entity can be modified in that state, and whether it can be removed. This section explains how the entity’s valid states and their permissions are represented."
+                  },
+                  {
+                    "title": "Create an object for each permitted transition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000130",
+                    "range": {
+                      "start_unit_id": "p000100",
+                      "end_unit_id": "p000100",
+                      "start_page": 100,
+                      "end_page": 100
+                    },
+                    "summary": "Explains how to model allowed lifecycle changes by creating one `Transition` helper object per permitted state change. Example transitions shown are open→closed, open→suspended, suspended→open, and suspended→closed. Each `Transition` is an anonymous class initialized with the source state and target state. Also notes that modifying/removing restrictions are not automatic; you must override `modify`/`remove` and call `State.isModifyAllowed` or `State.isRemoveAllowed` if needed."
+                  },
+                  {
+                    "title": "Create a private getter to retrieve the current State",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000131",
+                    "range": {
+                      "start_unit_id": "p000101",
+                      "end_unit_id": "p000101",
+                      "start_page": 101,
+                      "end_page": 101
+                    },
+                    "summary": "Explains how to support lifecycle state transitions in a persistence entity. It introduces a private `getState()` method that returns the current `State` by looking up `getLifecycleState()` in a states map, keeping the `State` object internal to the entity. It also shows a private `setState()` that writes the state code to the entity details, and begins a helper method for performing state transitions. Notes that the initial state is set in `setNewInstanceDefaults`, not via transition rules."
+                  },
+                  {
+                    "title": "Create a private setter to set the current State",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000132",
+                    "range": {
+                      "start_unit_id": "p000101",
+                      "end_unit_id": "p000101",
+                      "start_page": 101,
+                      "end_page": 101
+                    },
+                    "summary": "Explains how an entity’s lifecycle state is managed internally: a private getter returns the current State by looking it up from the lifecycle state map, and a private setter writes the codetable state field from a State object. Notes that state transition rules are usually easier to define than invalid-transition prevention, that the initial state is set in setNewInstanceDefaults, and that a helper method is required to perform transitions."
+                  },
+                  {
+                    "title": "Create a private helper method to perform a state transition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000133",
+                    "range": {
+                      "start_unit_id": "p000101",
+                      "end_unit_id": "p000101",
+                      "start_page": 101,
+                      "end_page": 101
+                    },
+                    "summary": "Explains how to implement a private helper for lifecycle state transitions in a persistence entity. It shows related private accessors: getState() maps the entity’s current lifecycle code to the corresponding State object, and setState() writes the State’s code back to the entity details. The transition helper is responsible for moving the entity to a specified new state, taking the target state and current version number, and may throw InformationalException if validation fails."
+                  },
+                  {
+                    "title": "Implement state transition methods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000134",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000102",
+                      "start_page": 102,
+                      "end_page": 102
+                    },
+                    "summary": "Shows how to implement specialized state transition methods using a private helper `transitionTo(newState, versionNo)`. The helper reads the current state, sets the new state, validates the change via `oldState.transitionTo(newState)`, and persists it with `super.modify(versionNo)` to bypass overridden modify validation. Example methods include `close(endDate, versionNo)` setting the end date then transitioning to `CLOSED`, and `resume(versionNo)` clearing the suspension reason before transitioning to `OPEN`."
+                  },
+                  {
+                    "title": "Specify the initial state",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000135",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "Explains how to define the default initial state for a new persistent entity instance by setting its state in `setNewInstanceDefaults()` (example: `OPEN`). Notes that if an entity can start in multiple states, you should reconsider the design—either let calling code initialize and transition it, or split different concepts into separate entities via inheritance/polymorphism. Also introduces state transition validation, where only explicitly allowed transitions are permitted and invalid transitions raise errors."
+                  },
+                  {
+                    "title": "Add state transition validation logic",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000136",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "Explains how to add validation and related logic to entity state transitions. The framework’s CodetableState and Transition helpers block any transition not explicitly allowed by the state diagram, e.g. trying to suspend a closed entity raises “Cannot transition from 'Closed' to 'Suspended'.” It also notes where custom transition logic can go, especially in State objects via onEnter when a state is entered."
+                  },
+                  {
+                    "title": "Override the modify method (if required)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000137",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "Explains when to override an entity’s modify method to block updates in inappropriate lifecycle states. Shows checking the current state with isModifyAllowed(), adding a validation error if modification is disallowed, then calling super.modify(versionNo). This section follows examples of state-transition validation logic and is useful if you need state-based edit restrictions in your entity."
+                  }
+                ],
+                "node_id": "n000123",
+                "range": {
+                  "start_unit_id": "p000095",
+                  "end_unit_id": "p000104",
+                  "start_page": 95,
+                  "end_page": 104
+                },
+                "summary": "Explains how to implement lifecycle state transitions for a Persistence Infrastructure entity. It defines the example states open/suspended/closed, stores state in a codetable-backed column, and exposes the entity as Lifecycle<MYLIFECYCLEENTITYSTATEEntry>. It recommends specialized transition methods (suspend/resume/close) with version numbers, getLifecycleState(), private State lookup/set helpers, permitted State/Transition maps, transition validation, initial state setup in setNewInstanceDefaults(), and optional modify() restrictions and state-entry/exit hooks."
+              },
+              {
+                "title": "Putting it all together",
+                "level": 3,
+                "children": [],
+                "node_id": "n000138",
+                "range": {
+                  "start_unit_id": "p000105",
+                  "end_unit_id": "p000110",
+                  "start_page": 105,
+                  "end_page": 110
+                },
+                "summary": "Shows a complete lifecycle-entity example using the persistence infrastructure. The interface extends standard persistence, date-ranged, lifecycle, insertable, and optimistic-locking capabilities, and declares suspend/resume/close operations with validation errors. The implementation demonstrates state-aware modify validation, getters/setters, and transition methods that update fields then call `transitionTo`. It also defines the state map, state objects with modify permissions, an `onEnter` hook for closure email, and transitions between OPEN, SUSPENDED, and CLOSED."
+              }
+            ],
+            "node_id": "n000121",
+            "range": {
+              "start_unit_id": "p000094",
+              "end_unit_id": "p000110",
+              "start_page": 94,
+              "end_page": 110
+            },
+            "summary": "Explains how to model persistence entities as state machines with lifecycle state stored in a database column and changed only through specialized transition methods. Uses an open/suspended/closed example backed by a codetable and the Lifecycle interface, with versioned suspend/resume/close methods, state/transition helper objects, getLifecycleState, private state accessors, transition validation, initial state setup, and optional modify restrictions plus on-enter/on-leave hooks. Includes a full implementation example showing state-aware persistence behavior."
+          },
+          {
+            "title": "1.9 Inheritance",
+            "level": 2,
+            "children": [
+              {
+                "title": "Identifying inheritance",
+                "level": 3,
+                "children": [],
+                "node_id": "n000140",
+                "range": {
+                  "start_unit_id": "p000111",
+                  "end_unit_id": "p000111",
+                  "start_page": 111,
+                  "end_page": 111
+                },
+                "summary": "Explains how to identify inheritance in the Persistence Infrastructure. Look for natural “is a” / “kind of” / “type of” relationships in requirements, or discover them during implementation and refactor. Common signs include behavior that varies by entity type, a table row linked to exactly one of two other tables, or lists containing mixed entity types. Also notes that entities can extend other entity interfaces and that base/concrete data may be stored in different ways."
+              },
+              {
+                "title": "Entity interface inheritance",
+                "level": 3,
+                "children": [],
+                "node_id": "n000141",
+                "range": {
+                  "start_unit_id": "p000112",
+                  "end_unit_id": "p000112",
+                  "start_page": 112,
+                  "end_page": 112
+                },
+                "summary": "Shows an entity interface inheritance example using Animal as a common interface for Cat and Dog. Animal extends StandardEntity, Insertable, OptimisticLockModifiable, and Named, and declares speak(). Cat and Dog both extend Animal and add their own properties. The section also introduces DAO needs: create and retrieve Cat and Dog instances, plus retrieve a generic Animal by ID that returns the concrete Cat or Dog implementation."
+              },
+              {
+                "title": "DAO interfaces",
+                "level": 3,
+                "children": [],
+                "node_id": "n000142",
+                "range": {
+                  "start_unit_id": "p000112",
+                  "end_unit_id": "p000112",
+                  "start_page": 112,
+                  "end_page": 112
+                },
+                "summary": "This section explains DAO interfaces for an inheritance model with Animal as a common interface extended by Cat and Dog. It shows that Cat and Dog share behaviors via Animal, while adding their own specific attributes. The DAO requirements are to create and retrieve Cats and Dogs by ID, and to retrieve a generic Animal by ID while returning the correct concrete Cat or Dog instance."
+              },
+              {
+                "title": "Deciding on database storage",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "One table per class",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "AnimalImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000145",
+                        "range": {
+                          "start_unit_id": "p000114",
+                          "end_unit_id": "p000116",
+                          "start_page": 114,
+                          "end_page": 116
+                        },
+                        "summary": "Describes the “one table per class” persistence pattern for an Animal/Cat/Dog hierarchy and shows the abstract base implementation `AnimalImpl`. It explains that `AnimalImpl` extends `BasePlusConcreteTableImpl` with `Long` keys and `AnimalDtls`, uses an `animalType` discriminator, and supplies a base `EntityAdapter`. It also covers the package-protected abstract class design, shared `getName`/`setName` behavior via `getBaseRowDtls`, and notes that concrete behavior like `speak` is left to subclasses."
+                      },
+                      {
+                        "title": "CatImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000146",
+                        "range": {
+                          "start_unit_id": "p000117",
+                          "end_unit_id": "p000117",
+                          "start_page": 117,
+                          "end_page": 117
+                        },
+                        "summary": "Defines `CatImpl`, the concrete persistence implementation for `Cat` in a one-table-per-class inheritance example. It extends `AnimalImpl<Cat, CatDtls>` and implements `Cat`, overrides the discriminator value to `ANIMAL_TYPE.CAT`, and maps the base `animalID` key into the concrete details row. It provides accessors for `numberOfLivesRemaining`, a `speak()` method, and empty hooks for defaults and validations. Useful for understanding how a concrete subclass is wired into the persistence infrastructure."
+                      },
+                      {
+                        "title": "DogImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000147",
+                        "range": {
+                          "start_unit_id": "p000118",
+                          "end_unit_id": "p000118",
+                          "start_page": 118,
+                          "end_page": 118
+                        },
+                        "summary": "Explains implementation details for inheritance-based entity classes, using CatImpl as an example and introducing DogImpl. Covers overriding getDiscriminatorValue to return a code-table discriminator, mapBaseKeyToConcreteDtls to copy the shared Animal primary key into the concrete table row, and use of BasePlusConcreteTableImpl getters/setters. Notes that Animal.speak is implemented differently in CatImpl and DogImpl, with DogImpl beginning on this page."
+                      },
+                      {
+                        "title": "CatDAOImpl and DogDAOImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000148",
+                        "range": {
+                          "start_unit_id": "p000119",
+                          "end_unit_id": "p000119",
+                          "start_page": 119,
+                          "end_page": 119
+                        },
+                        "summary": "Shows the `Dog` concrete implementation in a one-table-per-class inheritance mapping, including discriminator handling, base-to-concrete key mapping, `favouriteTrick` accessors, `speak()`, and validation hooks (all no-op). Introduces the “CatDAOImpl and DogDAOImpl” section and begins the DAO implementation imports (`Cat`, `CatDAO`, `CatDtls`, `StandardDAOImpl`, `@Singleton`) for persistence access."
+                      },
+                      {
+                        "title": "AnimalDAOImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000149",
+                        "range": {
+                          "start_unit_id": "p000120",
+                          "end_unit_id": "p000122",
+                          "start_page": 120,
+                          "end_page": 122
+                        },
+                        "summary": "Introduces `AnimalDAOImpl`, the DAO for an abstract `Animal` hierarchy in a “one table per class” persistence example. It extends `BaseDAOImpl<Long, Animal, AnimalDtls>`, injects `CatDAO` and `DogDAO`, and uses an `AnimalAdapter`. The class overrides `getDiscriminator()` to read `animalType` from the row and `getConcreteReaderDAOs()` to map discriminator values (`ANIMAL_TYPE.CAT`, `ANIMAL_TYPE.DOG`) to the appropriate concrete DAO. Also includes `readAllAnimals()` and compares it with simpler `CatDAO`/`DogDAO` implementations."
+                      }
+                    ],
+                    "node_id": "n000144",
+                    "range": {
+                      "start_unit_id": "p000114",
+                      "end_unit_id": "p000122",
+                      "start_page": 114,
+                      "end_page": 122
+                    },
+                    "summary": "Explains the “one table per class” inheritance mapping for Animal/Cat/Dog. It uses a shared animalID key and an animalType discriminator to identify concrete types without extra reads. Shows the required implementation stack: abstract AnimalImpl (BasePlusConcreteTableImpl, shared getName/setName, base adapter), concrete CatImpl and DogImpl (discriminator value, base-key mapping, subclass fields, speak()), concrete CatDAO/DogDAO via StandardDAOImpl, and abstract AnimalDAOImpl via BaseDAOImpl with injected concrete DAOs and discriminator-based dispatch."
+                  },
+                  {
+                    "title": "One table per concrete class",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "CatImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000151",
+                        "range": {
+                          "start_unit_id": "p000124",
+                          "end_unit_id": "p000124",
+                          "start_page": 124,
+                          "end_page": 124
+                        },
+                        "summary": "Defines `CatImpl`, a concrete implementation extending `AnimalImpl<CatDtls>` and implementing `Cat`. It provides protected construction, field accessors for `numberOfLivesRemaining` and inherited `name`, a `speak()` method that prints a cat-specific message, and begins `crossFieldValidation()`. The surrounding text explains why a shared base implementation may or may not be possible in inheritance hierarchies, especially when data is stored in different tables per concrete type."
+                      },
+                      {
+                        "title": "DogImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000152",
+                        "range": {
+                          "start_unit_id": "p000125",
+                          "end_unit_id": "p000125",
+                          "start_page": 125,
+                          "end_page": 125
+                        },
+                        "summary": "Introduces the DogImpl concrete class in the inheritance persistence example. The excerpt shows the package/imports and begins the class definition following the same pattern as CatImpl: a concrete implementation class for Dog that likely extends the shared AnimalImpl base and implements the Dog interface. This section is mainly the start of the Dog-specific implementation, useful for seeing how another concrete animal class is wired into the single-table/entity infrastructure."
+                      },
+                      {
+                        "title": "CatDAOImpl and DogDAOImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000153",
+                        "range": {
+                          "start_unit_id": "p000126",
+                          "end_unit_id": "p000127",
+                          "start_page": 126,
+                          "end_page": 127
+                        },
+                        "summary": "This section shows DAO implementations for the concrete classes Cat and Dog using `StandardDAOImpl`. `CatDAOImpl` and `DogDAOImpl` are Guice `@Singleton`s with protected no-arg constructors and static adapters (`CatAdapter`, `DogAdapter`). Each DAO passes its adapter and entity class to `super(...)` and provides a convenience method (`readAllCats`, `readAllDogs`) that returns all entities via `adapter.readAll()` wrapped in a set. It emphasizes straightforward CRUD support for concrete-class persistence."
+                      },
+                      {
+                        "title": "AnimalDAOImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000154",
+                        "range": {
+                          "start_unit_id": "p000128",
+                          "end_unit_id": "p000128",
+                          "start_page": 128,
+                          "end_page": 128
+                        },
+                        "summary": "`AnimalDAOImpl` is a Guice-managed singleton DAO for the abstract `Animal` type. It injects `CatDAO` and `DogDAO`, then implements `readAllAnimals()` by combining all cats and dogs into one `Set<Animal>`. There is no adapter or physical `Animal` table because the model uses one table per concrete class. The `get(Long id)` method is unimplemented and throws `UnimplementedException`."
+                      }
+                    ],
+                    "node_id": "n000150",
+                    "range": {
+                      "start_unit_id": "p000123",
+                      "end_unit_id": "p000128",
+                      "start_page": 123,
+                      "end_page": 128
+                    },
+                    "summary": "Explains the “one table per concrete class” persistence pattern for inheritance. `AnimalImpl` is an optional abstract base for shared behavior, but common getters/setters can’t be centralized because `Cat` and `Dog` store inherited fields in different tables. Shows concrete implementations `CatImpl` and `DogImpl`, each extending `AnimalImpl`, using `getDtls()`, and defining `speak()`. Also covers `CatDAOImpl` and `DogDAOImpl` as `StandardDAOImpl`-based DAOs, and `AnimalDAOImpl`, which aggregates cats and dogs via injected DAOs and has no physical `Animal` table."
+                  },
+                  {
+                    "title": "One table for the whole hierarchy",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "AnimalImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000156",
+                        "range": {
+                          "start_unit_id": "p000130",
+                          "end_unit_id": "p000130",
+                          "start_page": 130,
+                          "end_page": 130
+                        },
+                        "summary": "Defines the abstract `AnimalImpl` base implementation for a single-table inheritance hierarchy. It extends `SingleTableEntityImpl<AnimalDtls>` and implements `Animal`, with package-protected, abstract class visibility. The class provides shared accessors for `name` via `getDtls()`, while leaving other `Animal` methods to subclasses. The section also notes the hierarchy uses a discriminator attribute `Animal.animalType` to distinguish `Cat` vs `Dog`, and lists the required related implementation/DAO classes."
+                      },
+                      {
+                        "title": "CatImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000157",
+                        "range": {
+                          "start_unit_id": "p000131",
+                          "end_unit_id": "p000132",
+                          "start_page": 131,
+                          "end_page": 132
+                        },
+                        "summary": "CatImpl is the concrete implementation for cats in a single-table inheritance example. It extends AnimalImpl and implements Cat, uses a protected constructor, and validates in setEntityInfo that the retrieved row’s animalType is CAT, otherwise throwing a RuntimeException. It provides cat-specific accessors for numberOfLivesRemaining, overrides speak() to print a cat-specific message, and sets defaults by assigning ANIMAL_TYPE.CAT in setNewInstanceDefaults()."
+                      },
+                      {
+                        "title": "DogImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000158",
+                        "range": {
+                          "start_unit_id": "p000133",
+                          "end_unit_id": "p000133",
+                          "start_page": 133,
+                          "end_page": 133
+                        },
+                        "summary": "Introduces `DogImpl`, the concrete persistence/entity implementation for `Dog` in a single-table inheritance setup. It shows how the class extends `AnimalImpl`, uses `SingleTableEntityImpl` and `AnimalDtls`, and overrides `setEntityInfo` to verify the row’s discriminator matches a Dog. The surrounding context also explains inherited getters/setters, the need to implement `speak` differently from `CatImpl`, and how new instances must set the correct discriminator value."
+                      },
+                      {
+                        "title": "CatDAOImpl and DogDAOImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000159",
+                        "range": {
+                          "start_unit_id": "p000134",
+                          "end_unit_id": "p000135",
+                          "start_page": 134,
+                          "end_page": 135
+                        },
+                        "summary": "Shows DAO implementations for concrete classes in a single-table inheritance design. CatDAOImpl and DogDAOImpl extend StandardDAOImpl<Cat/Dog, AnimalDtls>, use a shared AnimalAdapter, and are Guice singletons. They support creating new Cat/Dog instances and retrieving existing ones. Since there is no separate Cat or Dog table, readAllCats/readAllDogs use the modeled searchByAnimalType query to filter AnimalDtls rows. The section notes that CatDAOImpl must return only cat rows, or CatImpl.setEntityInfo throws an error."
+                      },
+                      {
+                        "title": "AnimalDAOImpl",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000160",
+                        "range": {
+                          "start_unit_id": "p000136",
+                          "end_unit_id": "p000137",
+                          "start_page": 136,
+                          "end_page": 137
+                        },
+                        "summary": "Implementation of an abstract Animal DAO using `BaseDAOImpl` for single-table inheritance. `AnimalImpl` is a Guice `@Singleton` with injected `CatDAO` and `DogDAO`, an `AnimalAdapter`, and a protected constructor for DAO setup. It overrides `getDiscriminator()` to read `animalType` from `AnimalDtls`, and `getConcreteReaderDAOs()` to map `CAT` and `DOG` to the correct concrete DAOs. Also provides `readAllAnimals()` to return all animals."
+                      }
+                    ],
+                    "node_id": "n000155",
+                    "range": {
+                      "start_unit_id": "p000129",
+                      "end_unit_id": "p000137",
+                      "start_page": 129,
+                      "end_page": 137
+                    },
+                    "summary": "This section explains single-table inheritance for the “one table for the whole hierarchy” option. One physical `AnimalDtls` table stores all `Animal`, `Cat`, and `Dog` fields, with `Animal.animalType` as the discriminator. It defines the required implementations: `AnimalImpl`, `CatImpl`, `DogImpl`, `CatDAOImpl`, `DogDAOImpl`, and `AnimalDAOImpl`. `CatImpl`/`DogImpl` validate the discriminator, set defaults, and implement type-specific behavior. `CatDAOImpl`/`DogDAOImpl` filter by type, while `AnimalDAOImpl` reads all animals and dispatches to the correct concrete DAO."
+                  }
+                ],
+                "node_id": "n000143",
+                "range": {
+                  "start_unit_id": "p000113",
+                  "end_unit_id": "p000137",
+                  "start_page": 113,
+                  "end_page": 137
+                },
+                "summary": "Compares three inheritance storage options: one table per class, one table per concrete class, and one table for the whole hierarchy. Explains when to choose each based on commonality, retrieval, and performance. Shows required DAO/implementation patterns for Animal/Cat/Dog, including discriminator use (`animalType`), shared key handling (`animalID`), abstract vs concrete implementations, and DAO dispatch/read filtering. Useful for understanding how persistence mappings affect object creation, retrieval, and type validation."
+              }
+            ],
+            "node_id": "n000139",
+            "range": {
+              "start_unit_id": "p000111",
+              "end_unit_id": "p000137",
+              "start_page": 111,
+              "end_page": 137
+            },
+            "summary": "Covers simple entity inheritance in the Persistence Infrastructure: how to spot “is a” hierarchies, define inherited entity interfaces (Animal, Cat, Dog), and structure DAOs so concrete types can be created/retrieved while generic Animal reads return the right subtype. Compares storage strategies: one table per class, one per concrete class, or one table for the whole hierarchy. Includes discriminator use (animalType), shared key handling, and implementation patterns for abstract/base and concrete entities."
+          },
+          {
+            "title": "1.10 Adding New Searches to Existing Entities",
+            "level": 2,
+            "children": [
+              {
+                "title": "Approach 1",
+                "level": 3,
+                "children": [],
+                "node_id": "n000162",
+                "range": {
+                  "start_unit_id": "p000138",
+                  "end_unit_id": "p000138",
+                  "start_page": 138,
+                  "end_page": 138
+                },
+                "summary": "Approach 1 describes how to add new read-only searches to a Cúram-shipped PI-based entity. Create an extension entity in the custom model package, define a stereotyped retrieval operation (read/readmulti/nsread/nsmulti/ns) that returns the full generated Dtls/DtlsList for the original entity, and ensure custom SQL populates all fields including versionNo. Then implement the new search in a hand-crafted custom DAO interface/implementation, which does not extend PI-supplied infrastructure classes."
+              },
+              {
+                "title": "Approach 2",
+                "level": 3,
+                "children": [],
+                "node_id": "n000163",
+                "range": {
+                  "start_unit_id": "p000139",
+                  "end_unit_id": "p000142",
+                  "start_page": 139,
+                  "end_page": 142
+                },
+                "summary": "Approach 2 for custom searches in Cúram: define an extension entity in the custom model package that extends the shipped entity, then add a stereotyped retrieval operation (read/readmulti/nsread/nsmulti/ns). This operation can return any needed data, including joins to custom tables, using any return struct. Client code calls the generated DAL directly, but must not perform writes; derived service-layer data is unavailable, and custom side-saddle data requires a separate DAL call."
+              }
+            ],
+            "node_id": "n000161",
+            "range": {
+              "start_unit_id": "p000138",
+              "end_unit_id": "p000142",
+              "start_page": 138,
+              "end_page": 142
+            },
+            "summary": "Explains how to add new read-only searches to existing Cúram PI-based entities. Cúram supports two approaches: (1) create a custom DAO plus an extension entity whose retrieval operation returns the full shipped Dtls/DtlsList and whose SQL must populate all fields, including versionNo; or (2) directly invoke a generated DAL from client code, with more flexible return data but no writes, no derived service-layer data, and separate calls for custom side-saddle data. Write SQL additions to shipped entities are not supported."
+          }
+        ],
+        "node_id": "n000021",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000142",
+          "start_page": 9,
+          "end_page": 142
+        },
+        "summary": "Overview of Persistence Infrastructure for designers/developers using or building service-layer APIs. Explains façade-to-service translation, contrasts with classic Cúram, and covers core usage patterns: DAO injection with Guice, entity read/insert/modify/remove/cancel/list calls, validation and optimistic locking. Also details how to design and implement entity/DAO interfaces and implementations, create Guice modules, raise events, attach entity context, model state transitions and inheritance, and add new read-only searches to shipped entities. JavaDoc is the detailed reference."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

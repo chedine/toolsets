@@ -1,0 +1,437 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "c1b3b7e0834ddfea",
+    "title": "Cúram 8.1.2 Cúram on Kubernetes",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/SPM_on_Kubernetes_812.pdf",
+    "source_type": "pdf",
+    "sha256": "c1b3b7e0834ddfea1a98a03c2ae4f56c493b9fa68e11d4bda263223fd5084d37",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:37:02+00:00",
+    "page_count": 40,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/SPM_on_Kubernetes_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram on Kubernetes",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000040",
+      "start_page": 1,
+      "end_page": 40
+    },
+    "summary": "Introductory front matter and deployment guide for Cúram 8.1/8.1.1/8.1.2. It explains containerized Cúram on IBM Cloud Kubernetes Service using WebSphere Application Server Liberty, Docker, Helm, and IBM MQ LTS, including the roles of each technology and support/version notes. It then covers Kubernetes architecture changes needed for cloud-native deployment: transaction isolation, JMS producer/consumer separation, EJB local interfaces, MQ constraints, and elasticity. The Liberty deployment section covers prerequisite software, deployment properties, server configuration, web server plug-in, security and SSO, building and installing EAR/web service artifacts, JSP precompilation, deployment verification, remote debugging, JMX, and known limitations such as no collectives and unsupported dropins. Also includes notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section on page 39 before using the information or the supported product. It also includes the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory edition/front-matter for Cúram 8.1/8.1.1/8.1.2, followed by the start of the Kubernetes deployment guide. It introduces Cúram on Kubernetes, the container stack (WebSphere Liberty, Docker, Helm, IBM Cloud Kubernetes Service, IBM MQ LTS), and notes supported technology updates. It then begins the Kubernetes architecture section, explaining that cloud-native deployment required architectural changes and describing transaction isolation in Liberty, including separate JMS Producer/Consumer runtime instances to avoid thread exhaustion."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Pages 15–24 cover Kubernetes and Liberty deployment architecture for Cúram 8.1.2. Key topics: JMS Producer/Consumer split, queue manager limits, independent scaling, EJB local interface changes, and the new coreinf-ejb-interfaces.jar. It explains IBM MQ messaging support and multi-instance queue managers, Kubernetes elasticity, and that Liberty collectives are not supported. It then starts the WebSphere Liberty deployment guide: prerequisites, environment variables, Bootstrap.properties/AppServer.properties, configtest, and the configure target that generates Liberty server.xml and related XML configs."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Cúram deployment on WebSphere Liberty: how to customize server config via server_extra_config.xml or a custom Ant script, configure the web server plug-in (internal use only, self-signed certs), and manage security defaults and JAAS login modules. Explains changing the JMS user password across AppServer.properties, Liberty XML, and the admin UI, plus logging/auth tracing and SSO notes. Also covers building EARs and web services EARs, splitting client/server code, and installing or uninstalling applications with Ant targets."
+          },
+          {
+            "title": "Edition — pages 35-38",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "Covers WebSphere Liberty deployment tasks for Cúram: uninstalling, starting/stopping the server, precompiling JSPs before EAR installation, and verifying deployment by logging into the application and locating the URL from CWWKT0016I in logs. Also explains debugging and monitoring via messages.log, trace.log, FFDC, remote debugging setup, and JMX statistics. Lists known limitations including no Liberty collectives, ignorable J2CA8050I warnings, ICWWKS4001I log noise after redeployments, and that the dropins folder is unsupported."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000038",
+          "start_page": 5,
+          "end_page": 38
+        },
+        "summary": "Introductory front matter for Cúram 8.1–8.1.2, then the Kubernetes and WebSphere Liberty deployment guide. It covers containerized Cúram on IBM Cloud Kubernetes Service using Liberty, Docker, Helm, and IBM MQ LTS, plus architecture changes for transaction isolation, JMS producer/consumer split, and elasticity. It then explains Liberty deployment setup, configuration, security, EAR/web services build and install targets, JSP precompilation, deployment verification, debugging/JMX, and known limitations such as no collectives and unsupported dropins."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "This page is the document’s legal footer. It covers copyright and sample code licensing terms, including permission to copy/modify/distribute sample programs “as is” with no warranty or liability. It also points to Merative’s privacy policy at https://www.merative.com/privacy and lists trademarks and ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Lists trademark notices and legal attributions for Merative and third-party products. Covers Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX marks, plus a note that other names may be trademarks. Also includes a privacy policy link and copyright/license text stating sample programs may be copied and distributed under specified terms, provided “as is” without warranty."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000039",
+          "start_page": 39,
+          "end_page": 39
+        },
+        "summary": "Legal notices and publication use terms for Merative materials. Covers personal and enterprise use permissions, required preservation of proprietary notices, and restrictions on distribution, derivative works, export, and reuse outside the permitted scope. States the content is provided “as is” without warranties, with no patent license implied, and disclaims responsibility for third-party product claims and external websites. Includes © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter, then chapters on Cúram on Kubernetes and Kubernetes architecture (transaction isolation, messaging architecture, elasticity), followed by deploying on WebSphere Application Server Liberty with setup, configuration, security, EAR build/deploy, JSP precompilation, testing, debugging, and known issues. Also includes notices, privacy policy, and trademarks. Useful for finding where specific deployment or Kubernetes topics are covered."
+      },
+      {
+        "title": "1 Cúram on Kubernetes",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000010",
+          "start_page": 9,
+          "end_page": 10
+        },
+        "summary": "Introduces running Cúram as a containerized application on IBM Cloud Kubernetes Service using WebSphere Application Server Liberty, Docker, Helm, and IBM MQ LTS. Explains that Cúram 7.0.10.0+ supports these cloud-native technologies only in this containerized Kubernetes setup, and outlines their roles: Liberty as the runtime, Docker for packaging, Helm for deployment management, Kubernetes for orchestration, and MQ for messaging. Notes frequent technology updates and points readers to the runbook, sample assets, and supported versions."
+      },
+      {
+        "title": "2 Kubernetes architecture",
+        "level": 1,
+        "children": [
+          {
+            "title": "2.1 Transaction isolation",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000015",
+              "start_page": 13,
+              "end_page": 15
+            },
+            "summary": "Explains transaction isolation changes for Cúram on IBM Cloud Kubernetes Service, driven by WebSphere Liberty’s single default executor and lack of remote-interface pass-by-reference optimization. To avoid thread exhaustion, HTTP and JMS transactions are split across separate Liberty instances: a JMS Producer (HTTP only, MDBs disabled) and a JMS Consumer (JMS processing, no web UI), connected by IBM MQ. Covers queue manager limits, independent scaling, cache invalidation, and added EJB local interfaces plus a shared coreinf-ejb-interfaces.jar."
+          },
+          {
+            "title": "2.2 Messaging architecture",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000017",
+              "start_page": 16,
+              "end_page": 17
+            },
+            "summary": "This section explains the Kubernetes messaging architecture for Cúram container deployments. It states that IBM MQ is used to manage JMS messages for Cúram Deferred Processes and Cúram Workflows. It also notes that each application instance (for example, Cúram, Citizen Portal, REST) must use its own dedicated queue manager. A reference diagram of the JMS-based messaging architecture is included."
+          },
+          {
+            "title": "2.3 Elasticity",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000020",
+              "start_page": 18,
+              "end_page": 20
+            },
+            "summary": "This section explains Kubernetes elasticity for Cúram on WebSphere Liberty. It defines elasticity as scaling pods and nodes up or down to match demand, and notes that Cúram applications run as independent replicas managed by Kubernetes rather than a middleware cluster. It also states that WebSphere Liberty collectives are not supported on Kubernetes. The section additionally mentions configuring session storage in server.xml and refers to security configuration guidance."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000011",
+          "end_unit_id": "p000020",
+          "start_page": 11,
+          "end_page": 20
+        },
+        "summary": "Cúram 7.0.10+ supports Kubernetes deployment via WebSphere Liberty containers on IBM Cloud Kubernetes Service, with DB and IBM MQ initially remaining on VMs. The section covers key architecture changes for cloud-native runtime: transaction isolation to avoid Liberty thread exhaustion by splitting HTTP and JMS processing into separate JMS Producer/Consumer instances via IBM MQ, added EJB local interfaces and a shared coreinf-ejb-interfaces.jar, JMS queue manager limits, and independent scaling. It also describes JMS messaging architecture, MQ support constraints, and Kubernetes elasticity/replica behavior."
+      },
+      {
+        "title": "3 Deploying on WebSphere® Application Server Liberty",
+        "level": 1,
+        "children": [
+          {
+            "title": "3.1 Installing prerequisite and additional software",
+            "level": 2,
+            "children": [],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000021",
+              "start_page": 21,
+              "end_page": 21
+            },
+            "summary": "Explains the prerequisite and optional software needed to deploy Cúram on WebSphere Application Server Liberty. It covers installing Cúram, Liberty, Java EE 8, and Apache Ant via IBM Installation Manager, then setting environment variables and paths. It also notes optional site-dependent components: Oracle or Db2 databases (H2 may be used only for development/JUnit tests, not Liberty configuration) and web server access via Liberty support or IBM HTTP Server."
+          },
+          {
+            "title": "3.2 Managing deployment properties",
+            "level": 2,
+            "children": [],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000023",
+              "start_page": 22,
+              "end_page": 23
+            },
+            "summary": "Explains how to set up deployment properties for Cúram on WebSphere Liberty. It covers required environment variables and PATH entries (ANT_HOME, ANT_OPTS, WLP_HOME, JAVA_HOME), then describes two properties files in $SERVER_DIR/project/properties: Bootstrap.properties for database connection settings and AppServer.properties for application server settings. Notes that Bootstrap.properties is packaged into the EAR and merged with AppServer properties. Includes sample property names and advises verifying configuration by running Ant configtest."
+          },
+          {
+            "title": "3.3 Configuring WebSphere® Liberty",
+            "level": 2,
+            "children": [],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000025",
+              "start_page": 24,
+              "end_page": 25
+            },
+            "summary": "Explains how to configure WebSphere Liberty for Cúram using properties from AppServer.properties and Bootstrap.properties via the Ant `configure` target (`./build.sh configure`). It lists the generated/modified XML files for database, security, JMS, logging, transactions, endpoints, and application settings, and notes that `installapp`/`uninstallapp` also modify application XML files. It also covers customization rules: prefer changing properties and rerunning configure, track changes, and optionally customize `adc_conf/server_extra_config.xml` or use a custom Ant script."
+          },
+          {
+            "title": "3.4 Configuring a web server plug-in",
+            "level": 2,
+            "children": [],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000027",
+              "start_page": 26,
+              "end_page": 27
+            },
+            "summary": "Explains how to configure a web server plug-in for Cúram on WebSphere Liberty using the Ant `configurewebserverplugin` target. Notes it is intended only for internal development/testing because it generates self-signed certificates. Lists required environment tools and paths (Liberty server running, plugin path, `openssl`, `keytool`, `gskcmd`, `pluginUtility`) and required command-line properties such as `certificate.password` and `subject.string`. Also documents optional overrides like certificate location, duration, key length, server name, and webserver name."
+          },
+          {
+            "title": "3.5 Configuring security",
+            "level": 2,
+            "children": [
+              {
+                "title": "Default configuration for WebSphere® Liberty",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Describes the default WebSphere Liberty security setup used by Cúram. It notes the Ant configure target creates a basic, unsupported-by-default configuration that must be reviewed and modified by in-house security teams. Key elements include the Cúram JAAS login module (CuramLoginModule), a basicRegistry for Liberty admin and JMS users, an orb for LTPA authentication, and an example web SSL client configuration. Credentials come from AppServer.properties, and related Liberty security options are available if compatible."
+              },
+              {
+                "title": "Changing the JMS password",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000030",
+                  "start_page": 29,
+                  "end_page": 30
+                },
+                "summary": "Explains how to change the JMS user password after deployment. It warns to do this during application inactivity to avoid JMS processing failures and notes the server must be running. The process has three parts: update `security.credentials.async.password` in `AppServer.properties` (encrypted with Ant), update the WebSphere Liberty configuration in `server_security.xml` and each `application_*.xml` using `securityUtility encode`, and change the password in the Cúram administration UI for the `SYSTEM` user."
+              },
+              {
+                "title": "Logging the authentication process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "This section explains how to log CuramLoginModule authentication activity in WebSphere Liberty. It notes that trace entries appear in console.log and messages.log, and can be enabled by setting curam.security.login.trace=true in AppServer.properties before running Ant configure. For an existing server, login_trace must be changed from false to true in adc_conf/server_security.xml, followed by a Liberty restart. It also mentions optional deeper security tracing via server.xml logging configuration and briefly introduces SAML 2.0-based SSO."
+              },
+              {
+                "title": "Configuring Single Sign On",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how to enable and debug Single Sign On in Cúram on WebSphere Liberty. It notes that federated SSO uses SAML 2.0 browser profile with either IdP-initiated or SP-initiated HTTP POST binding. The section also covers authentication tracing for CuramLoginModule, including enabling trace in AppServer.properties or server_security.xml and optional detailed logging in server.xml. It then transitions into building Cúram EAR files with the Ant libertyEAR target."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000030",
+              "start_page": 28,
+              "end_page": 30
+            },
+            "summary": "Cúram’s default Liberty security is only a basic starter configuration and must be reviewed by in-house security teams. It includes CuramLoginModule, a basicRegistry for admin/JMS users, an orb for LTPA, and example SSL settings, with credentials from AppServer.properties. The section also explains how to change the JMS password after deployment: update the encrypted password in AppServer.properties, update Liberty config files with `securityUtility encode`, and change the SYSTEM user password in the Cúram admin UI."
+          },
+          {
+            "title": "3.6 Building EAR files",
+            "level": 2,
+            "children": [],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000031",
+              "end_unit_id": "p000033",
+              "start_page": 31,
+              "end_page": 33
+            },
+            "summary": "Explains how to build Cúram EAR files for WebSphere Liberty using Ant targets. Covers the main `libertyEAR` build, output location, EAR contents, and variants for client-only or server-only packaging. Describes server code splitting for Kubernetes and multi-EAR deployments, including `CuramServerCode.ear` and packaging steps. Also includes building the web services EAR with `libertyWebServices`, its output path, and the requirement that BPOs mapped as web services generate the needed Java files and descriptors."
+          },
+          {
+            "title": "3.7 Deploying applications",
+            "level": 2,
+            "children": [],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Explains how to deploy packaged Cúram applications and web services as EAR files to the application server. Covers the Ant installapp and uninstallapp targets for WebSphere Liberty, including required AppServer.properties setup, install options (-Dserver.name, -Dear.file, -Dapplication.name), and the need to restart after installation. Notes a BIRT-specific attribute for installapp and mentions libertyEAR/libertyWebServices outputs in the build/ear/WLP folder. Also gives the general web service/WSDL URL format."
+          },
+          {
+            "title": "3.8 Pre-compiling JSPs",
+            "level": 2,
+            "children": [],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "Explains how to pre-compile JSPs during deployment using the Ant `precompilejsp` target before installing the client EAR, which improves first-page load time. The key option is `-Dear.file`, specifying the fully qualified EAR path, with an example command shown for `Curam.ear`."
+          },
+          {
+            "title": "3.9 Testing the deployment by logging in to the application",
+            "level": 2,
+            "children": [],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "Explains how to verify a Liberty deployment by logging into the application and checking the landing page. It instructs you to ensure the server is started, browse to the application URL in the form https://<machine>:<port>/<context-root>, and find the correct URL by searching Liberty console logs for the CWWKT0016I message (for example with grep on console.log)."
+          },
+          {
+            "title": "3.10 Debugging Cúram",
+            "level": 2,
+            "children": [],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "Explains how to verify a deployed Cúram application by using the returned URL, logging in, and checking the landing page; notes some contexts like CitizenPortal may open directly. Introduces WebSphere Liberty debugging: key log locations (`messages.log`, `trace.log`, `./ffdc`), remote debugging setup via `server_logging.xml` and `jvm.options` with JDWP on port 8787, restarting with `server debug CuramServer`, and using JMX statistics for performance debugging."
+          },
+          {
+            "title": "3.11 Known issues and limitations",
+            "level": 2,
+            "children": [],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000040",
+              "start_page": 37,
+              "end_page": 40
+            },
+            "summary": "Lists known issues for deploying Cúram on WebSphere Liberty. Key points: Liberty collectives are not supported; a J2CA8050I authentication-alias warning at startup can be ignored because Cúram uses component-managed data sources; repeated ICWWKS4001I security-token log messages are usually caused by users not clearing browser caches after redeployment, with a workaround to clear caches or hide the message via bootstrap.properties; the Liberty dropins folder cannot be used with Cúram EAR files."
+          }
+        ],
+        "node_id": "n000016",
+        "range": {
+          "start_unit_id": "p000021",
+          "end_unit_id": "p000040",
+          "start_page": 21,
+          "end_page": 40
+        },
+        "summary": "Covers deploying Cúram on stand-alone WebSphere Liberty for development/testing: required software and environment setup, deployment properties, Liberty server configuration, web server plug-in setup, security basics, EAR/web services build and installation, JSP precompilation, deployment verification, debugging, and known limitations. Includes Ant targets like configure, installapp, precompilejsp, and configtest, plus notes on databases, JMS, logs, remote debugging, and unsupported features such as collectives and dropins."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

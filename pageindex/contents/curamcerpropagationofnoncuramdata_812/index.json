@@ -1,0 +1,283 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "43cba3c9b4c6fbd1",
+    "title": "Cúram 8.1.2 Propagating Non Cúram Data For Cúram Express RulesPropagating Non Cúram Data For Cúram Express Rules Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramCERPropagationOfNonCuramData_812.pdf",
+    "source_type": "pdf",
+    "sha256": "43cba3c9b4c6fbd1c7844f7ece1d961beba7c37a83e6bbc28afe164e741df550",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:13:27+00:00",
+    "page_count": 14,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramCERPropagationOfNonCuramData_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Propagating Non Cúram Data For Cúram Express RulesPropagating Non Cúram Data For Cúram Express Rules Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000014",
+      "start_page": 1,
+      "end_page": 14
+    },
+    "summary": "Front matter and the main guide for Cúram 8.1.2. It explains how to create initial CER Rule Objects for rate table data loaded outside Cúram APIs, especially bulk-loaded production data. The guide is aimed at system administrators and covers when to run the batch process, how it differs from API-based automatic propagation, and that it must run before system startup or other processing. It notes the process applies only to rate tables and that custom CER storage needs custom handling. It identifies the RuleObjectPropagatorControl table flag used to suppress automatic startup propagation, and the batch program name curam.core.sl.infrastructure.rate.intf.RateCreateInitialRuleObjects.propa with optional rateTableType parameter for all or specific rate tables. The remaining pages are notices, copyright, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the “Notices” section on page 13 before using the document or the supported product. It also shows the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000012",
+          "start_page": 5,
+          "end_page": 12
+        },
+        "summary": "Edition notice for Cúram 8.1, 8.1.1, and 8.1.2, with Merative copyright/trademark information. This section is mainly front matter and a table of contents previewing the guide “Propagating non Cúram Data for Cúram Express Rules,” which explains initial CER rule object creation for bulk-loaded rate table data, audience, related reading, and batch program setup/process details."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section provides legal notices: sample data/examples are fictitious, sample programs are offered “as is” without warranty, and Merative disclaims liability for their use. It points to the Merative privacy policy at https://www.merative.com/privacy and lists trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands. States that sample names in the document are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and the examples are provided “AS IS” without warranty. Also includes the privacy policy link and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000013",
+          "start_page": 13,
+          "end_page": 13
+        },
+        "summary": "Legal notices and usage terms for Merative publications. Covers personal and commercial copying limits, prohibition on derivative works without consent, export-law compliance, and Merative’s right to withdraw permissions. States the publications are provided “AS IS” with no warranties, and that Merative/its licensors may hold relevant patents. Notes that information on non-Merative products/websites is from external sources, not endorsed or guaranteed. Includes copyright notice and references to third-party trademarks and Merative’s privacy policy."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents listing front matter and the main guide sections. It includes Note and Edition, then chapter 1, “Propagating non Cúram Data for Cúram Express Rules,” with subsections for Introduction, About This Guide, Audience, Related Reading, and Process Overview with Introduction and Process Details. Also listed are Notices, Privacy policy, and Trademarks. Useful for navigating to specific sections rather than substantive content."
+      },
+      {
+        "title": "1 Propagating non Cúram Data for Cúram Express Rules",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "About This Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces this guide for system administrators on running the batch program that stores initial CER Rule Objects for rate data loaded outside application APIs. Explains that API-published rate table data automatically creates, updates, or removes stored CER Rule Objects via configured propagators. Also lists related references: the Cúram Express Rules Reference Manual and Inside Cúram Eligibility and Entitlement Using Cúram Express Rules, which cover rules, the Dependency Manager, and rule object propagation."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for system administrators involved in deploying and loading a new Cúram system. This section explains how to run the batch program that stores initial CER rule objects for rate data loaded outside application APIs, where API-published rate table data would otherwise create, update, or remove rule objects automatically. It also points to related documentation on Cúram Express Rules, the Dependency Manager, and rule object propagation."
+              },
+              {
+                "title": "Related Reading",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Lists related documentation for the guide on propagating non-Cúram data into Cúram Express Rules. It points readers to the Cúram Express Rules Reference Manual for full details on CER rules and the Dependency Manager, and to Inside Cúram Eligibility and Entitlement Using Cúram Express Rules for Rule Object Propagation. The section is mainly a navigation aid for background and deeper technical reference."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the guide for system administrators who need to run the batch program that stores initial CER Rule Objects for rate data loaded outside application APIs. Notes that API-published rate table data automatically creates, updates, or removes stored CER Rule Objects via CER Rule Object Propagators. Points to related references: the Cúram Express Rules Reference Manual for CER rules and the Dependency Manager, and Inside Cúram Eligibility and Entitlement Using Cúram Express Rules for Rule Object Propagation."
+          },
+          {
+            "title": "1.2 Process Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces a guide for system administrators on running a batch program to store initial CER Rule Objects for rate data loaded outside application APIs. Explains that API-published rate table data automatically creates, updates, or removes CER Rule Objects via configurable propagators. Also states the guide’s audience and points to related Cúram Express Rules documentation, including the Reference Manual and a guide to Rule Object Propagation."
+              },
+              {
+                "title": "Process Details",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Initial Setup",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "The RuleObjectPropagatorControl Database Table",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000016",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "This section explains the RuleObjectPropagatorControl database table, which holds a single row indicating whether initial CER rule object propagation has been executed. Setting the executed attribute to 1/true prevents automatic CER Rule Object creation on system startup when the batch program runs. It also introduces the rate table rule object propagator batch program, which can process all rate tables at once or one table at a time, and notes it must be run after bulk-loading rate table data outside the application APIs."
+                      }
+                    ],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains initial setup for bulk-populated rate table data that was created outside application APIs and therefore lacks CER Rule Objects. It describes the RuleObjectPropagatorControl table, whose single row’s executed flag should be set to 1/true so startup does not try to create initial rule objects again after the batch run. It also introduces the rate table rule object propagator batch program, which can process all rate tables or one at a time, and must be run before system startup and after each bulk data load."
+                  },
+                  {
+                    "title": "Running the Rate Table Rule Object Propagator Batch Program",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Name",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000018",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "This section identifies the batch process name as curam.core.sl.infrastructure.rate.intf.RateCreateInitialRuleObjects.propa and states that it accepts one parameter: rateTableType, used to specify the rate table to process or left blank to process all rate tables."
+                      },
+                      {
+                        "title": "Parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000019",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000014",
+                          "start_page": 11,
+                          "end_page": 14
+                        },
+                        "summary": "Lists the Parameters for the RateCreateInitialRuleObjects batch program. It notes the batch name curam.core.sl.infrastructure.rate.intf.RateCreateInitialRuleObjects.propa and describes a single parameter: rateTableType, which selects the rate table to process or can be left blank to process all rate tables. The rest of the pages are legal notices, copyright/license terms, privacy policy, and trademarks."
+                      }
+                    ],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000014",
+                      "start_page": 10,
+                      "end_page": 14
+                    },
+                    "summary": "Describes how to run the Rate Table Rule Object Propagator batch program to create initial CER Rule Objects for bulk-loaded rate table data. It explains that the batch should be run before system startup, either once for all rate tables or separately per rate table, and that it only processes newly populated data. The batch name is curam.core.sl.infrastructure.rate.intf.RateCreateInitialRuleObjects.propa, with one parameter, rateTableType, which can be blank to process all rate tables. Remaining pages are legal notices and trademarks."
+                  }
+                ],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000014",
+                  "start_page": 10,
+                  "end_page": 14
+                },
+                "summary": "Explains how to propagate initial CER Rule Objects for bulk-loaded rate table data created outside application APIs. Covers when the batch must be run (before system startup and after each bulk load), that it processes only newly loaded data, and the RuleObjectPropagatorControl table flag that should be set to prevent startup from recreating objects. Gives the batch name curam.core.sl.infrastructure.rate.intf.RateCreateInitialRuleObjects.propa and its optional rateTableType parameter for all or specific rate tables. Remaining pages are legal notices and trademarks."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000014",
+              "start_page": 9,
+              "end_page": 14
+            },
+            "summary": "Explains how to create initial CER Rule Objects for rate data loaded outside application APIs, mainly for bulk-loaded rate tables. It contrasts API-based propagation with this batch-based approach, notes the batch must run before startup and after each new bulk load, and only processes newly added data. Describes the RuleObjectPropagatorControl flag to prevent automatic startup creation, and gives the batch name curam.core.sl.infrastructure.rate.intf.RateCreateInitialRuleObjects.propa with optional rateTableType to target all or specific rate tables."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000014",
+          "start_page": 9,
+          "end_page": 14
+        },
+        "summary": "Explains how to create initial CER Rule Objects for rate data loaded outside Cúram APIs, mainly bulk-loaded rate tables. It contrasts API-based automatic propagation with a batch program required after each external data load and before startup, processing only newly added data. Notes this applies only to rate tables; custom rule-object storage needs custom processing. Covers the RuleObjectPropagatorControl flag to suppress automatic startup creation and names the batch curam.core.sl.infrastructure.rate.intf.RateCreateInitialRuleObjects.propa with optional rateTableType to target all or specific tables."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

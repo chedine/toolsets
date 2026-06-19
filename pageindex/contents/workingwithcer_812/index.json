@@ -1,0 +1,889 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "b4cac9d7aec6e9e4",
+    "title": "Cúram 8.1.2 Working with Cúram Express Rules Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/WorkingWithCER_812.pdf",
+    "source_type": "pdf",
+    "sha256": "b4cac9d7aec6e9e474ec865f990b10d85ce02d6d7a916b5937eeaccc364de57b",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:45:33+00:00",
+    "page_count": 36,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/WorkingWithCER_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Working with Cúram Express Rules Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000036",
+      "start_page": 1,
+      "end_page": 36
+    },
+    "summary": "Front matter and Chapter 1 of the Cúram 8.1.2 Working with Cúram Express Rules guide. It introduces CER Rules Editor, its audience (business analysts and technical developers), and editor layout. The chapter covers creating a simple rule set, classes, attributes, folders, rules, calculations, organizing, exporting diagrams, validation, publishing, and execution. It also explains point-in-time business rules, how technical developers extend them with implementation details, timeline-aware rules and existence timelines, and testing by extracting rule sets/resources, generating test classes, and writing/running JUnit tests. Includes notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note directing readers to read the Notices section before using the product or information. Includes copyright attribution to Merative US L.P. for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram Express Rules guide. States the edition applies to Cúram 8.1, 8.1.1, and 8.1.2, with Merative copyright/trademark notices and the table of contents. The section introduces the guide’s scope and audience, then begins “Working with Cúram Express Rules,” covering CER basics: creating rule sets, editor layout, business vs technical views, creating classes/attributes/folders/rules, adding simple calculations, organizing rules, exporting diagrams, validating rule sets, and publishing."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section moves from creating business-friendly point-in-time rules to technically wiring them for execution. It covers building Sample Benefit eligibility, household income, countable members, and eligible person rules using AND/OR groups, repeating rules, filters, compares, and sums. It then shows how technical users organize rules into classes (SampleBenefit, Person, Income), create attributes, and bind empty references/compare operands to existing or new rules and data values. Useful if you need step-by-step CER rule authoring and business-to-technical rule mapping."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers completing and updating SampleBenefit CER rules (householdIncome, countableHouseholdMembers, isCountable, totalIncome, countableIncome, entitlement, numEligibleMembers), including reference edits, codetable mappings, arithmetic, and deleting old diagram references. Introduces timeline-aware rules: identifying candidates, marking rules/intervals, and creating existence timelines. Also explains testing CER rules: validating, publishing, extracting rule sets/resources from the database, generating test classes, and writing/running JUnit tests with an example for Person eligibility."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000034",
+          "start_page": 5,
+          "end_page": 34
+        },
+        "summary": "Front matter and the main “Working with Cúram Express Rules” chapter for Cúram 8.1–8.1.2. Introduces CER purpose, audience, and editor layout, then covers creating simple rule sets, business vs technical views, classes/attributes, calculations, organization, validation, publishing, and execution. Also explains point-in-time business rules, technical implementation with SampleBenefit, timeline-aware rules and existence timelines, and testing: extracting rule sets/resources, generating test classes, and writing/running JUnit tests."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "This section is a legal notice page covering sample data disclaimers, copyright and license terms for sample programs, warranty/liability limitations, Merative’s privacy policy link, and a list of trademarks owned by Merative, IBM, Adobe, Oracle, Linux Foundation, Microsoft, and others. It also states the document copyright years (2012, 2024)."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "States that example names in the document are fictitious and that sample programs may be copied, modified, and distributed under the Merative Client Agreement for API-conforming development. Notes the samples are provided “AS IS” without warranty or liability. Includes the privacy policy link and a trademarks notice listing Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX as protected marks, plus a copyright notice for Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000035",
+          "end_unit_id": "p000035",
+          "start_page": 35,
+          "end_page": 35
+        },
+        "summary": "Legal notices for the publication’s use and reproduction: personal noncommercial and internal enterprise copying is allowed only if proprietary notices are kept; distribution or derivative works need Merative consent. It disclaims warranties and liability, notes no patent license is granted, and warns that non-Merative product info and external websites are not endorsed or verified. Also includes export-law compliance and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Express Rules guide. It lists front matter and Chapter 1, “Working with Cúram Express Rules,” covering introductions, getting started basics, point-in-time business rules, technical development of point-in-time rules, timeline-aware rules, and testing rules. Also includes page references for each subsection, plus Notices, Privacy policy, and Trademarks. Useful as a navigation node, not substantive content."
+      },
+      {
+        "title": "1 Working with Cúram Express Rules",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces Cúram Express Rules and the CER Rules Editor, which is used to create and maintain rule sets, logical conditions, and associated results. Explains the guide’s purpose: covering the fundamentals of building CER rule sets and adding business and technical logic. Defines the intended audience as business analysts and technical rules developers, and outlines their roles in translating legislative rules into executable CER rules. Also points to related reference and eligibility/entitlement documentation."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The Role of the Business Analyst",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Explains the purpose of Cúram Express Rules and the CER Rules Editor for creating and maintaining rule sets with business and technical logic. Introduces the guide’s audience: business analysts and technical rules developers. Defines the business analyst’s role as translating legislative requirements into logical CER rules and describing each rule clearly for both business and technical users. Also notes the technical rules developer expands the analyst’s work into complete executable rules."
+                  },
+                  {
+                    "title": "The Role of the Technical Rules Developer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Explains the purpose of the CER Rules Editor and who uses it to create and maintain Cúram Express Rule sets. It introduces the collaborative process between business analysts and technical rules developers: analysts translate legislative requirements into logical rules, while technical developers expand those rules into a complete executable set. Also notes the guide covers fundamentals for building rule sets and points to related CER reference material."
+                  }
+                ],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the guide for Cúram Express Rules and the CER Rules Editor, which is used to create and maintain rule sets with business and technical logic. It defines the audience as business analysts and technical rules developers working collaboratively. Business analysts translate legislative requirements into logical CER rules and describe them clearly for business and technical users. Technical rules developers then expand those rules into a complete executable set. It also points to related CER reference manuals."
+              },
+              {
+                "title": "Related Reading",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces Cúram Express Rules and the CER Rules Editor, which is used to create and maintain rule sets, logical conditions, and associated results. Explains the guide’s purpose as covering the fundamentals of building CER rule sets with business and technical logic. Identifies the intended audience as business analysts and technical rules developers, and outlines their roles in translating legislative rules into executable CER rules. Points readers to the Cúram Express Rules Reference Manual and the Eligibility and Entitlement guide for related information."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces Cúram Express Rules and the CER Rules Editor for creating and maintaining rule sets, logical conditions, and results. States the guide covers fundamentals for building CER rule sets and adding business and technical logic. Defines the audience as business analysts and technical rules developers: analysts translate legislative rules into logical CER rules, while developers expand them into executable rules. Points readers to the Cúram Express Rules Reference Manual and the Eligibility and Entitlement guide for related details."
+          },
+          {
+            "title": "1.2 Start with the Basics",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces CER basics: the CER language expresses qualification criteria as logical rules combined with real-world data to drive decisions or display outcomes. Explains rule sets, their unique names and statuses (e.g., Newly Created, Published, Published - In Edit), and outlines this chapter’s focus on the CER Editor from layout to execution, including creating rules, adding diagram logic, validating, and publishing. Also gives initial steps to create a simple rule set in the Cúram Administration Application and describes the main editor layout components."
+              },
+              {
+                "title": "Creating a Simple Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to create a new CER rule set in Cúram: open Cúram Express Rule Sets from Administration Workspace, choose Actions > New, enter name/display name and category, then reopen via List Actions > Continue Editing (or Open Editor when Published). Introduces CER basics, including rule sets’ purpose, statuses, and the editor’s main layout: global menu, business/technical views, diagram canvas with pan/zoom, outline views, and properties/validations panel."
+              },
+              {
+                "title": "CER Editor Layout",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "CER Editor Business View",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains the CER Editor Business View, which presents rules in a business-user-friendly, readable, business-rule-centric format by showing only relevant text, structure, and needed data. It contrasts this with the Technical View, which exposes classes, attributes, and implementation details for technical users. The section also begins the technical workflow for creating rule classes and attributes, noting naming constraints, localization via Display Name, attribute renaming impacts, and initialization settings."
+                  },
+                  {
+                    "title": "CER Editor Technical View",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "CER Editor Technical View explains the editor mode for technical users, who need access to all tools and templates to work with rulesets. It covers technical rule structure elements such as classes, attributes, and their properties. The section includes how to create a Rule Class and a new Attribute from the Rule Outline View, plus key constraints: class and attribute names are not localizable and should avoid multibyte/accented characters. It also notes attribute localization via Business Tab display name, renaming in the Technical Tab, and manual dependency resolution after renaming."
+                  }
+                ],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces the CER Editor’s layout and purpose. It explains that the editor supports both business and technical users for creating, editing, and validating rulesets. Key UI components are the global menu, business and technical views, diagram canvas with pan/zoom, rule/class outline views, and the properties/validations panel. The section also places the editor in the broader CER basics workflow, from creating a simple ruleset to validating and publishing it."
+              },
+              {
+                "title": "Creating a Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains the CER Editor’s technical view and how to create rule classes. A Rule Class holds one or more attributes; class names are not localizable and should not use multibyte or accented characters. To create one, open the “New Rule Class” dialog via the “Class” button in the Rule Outline View. Also introduces attribute creation, including naming rules, localization via the Business tab “Display Name,” renaming in the Technical tab, dependency impacts, and the “Require Initialization” option."
+              },
+              {
+                "title": "Creating an Attribute",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how technical users create attributes in Cúram Express Rules. Attributes capture a piece of information and are grouped within classes. The section notes that attribute names are not localizable and should avoid multibyte or accented characters; localized labels can be set in the Business Tab’s Display Name field. It also explains renaming via the Technical Tab’s Attribute field and warns that dependencies must then be resolved manually. Includes the steps to open the New Attribute dialog and the “Require Initialization” option."
+              },
+              {
+                "title": "Creating a Folder",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains how a business user creates a folder in the Rule Outline View to group related rules. It briefly describes opening the New Folder dialog via the Folder button and notes the folder name property. The page also transitions into rule creation basics: naming a rule, choosing a Number type, and starting a simple calculation rule diagram. It then shows adding an Arithmetic element and setting both inputs to 2 to create an “Adding 2 and 2” example."
+              },
+              {
+                "title": "Creating a Rule",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains how to create a new rule in the Cúram CER Editor and define a simple calculation. It covers opening the Rule dialog from the Rule Outline View, entering a rule name and type, and setting a business description. It then shows how to build the rule diagram by adding an Arithmetic element, renaming it to “Adding 2 and 2,” and inserting Number data elements with value 2 on both sides."
+              },
+              {
+                "title": "Adding a Simple Calculation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains how to create a simple numeric calculation rule in Cúram CER. It covers creating a rule named “Simple Calculation,” setting its type to Number, adding a description, and building an arithmetic expression on the rule diagram. The example uses an Addition element labeled “Adding 2 and 2,” then adds two Number data elements with value 2 on both sides."
+              },
+              {
+                "title": "Organizing the Business Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to organize business rules after business users define high-level rules: technical users can edit a rule’s name, folder, and attribute from the Rules Outline view to move or copy diagrams across classes. Also covers exporting diagrams from the CER Editor, including single diagram export to PNG via the Export button and notes that the exported image reflects the diagram’s current mode (for example, technical mode)."
+              },
+              {
+                "title": "Exporting Diagrams",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Single Business Rule Diagram Export",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to export a single Cúram Express Rules business rule diagram as a PNG file. The user opens the diagram, clicks the Export button in the top-right corner, and saves it via a dialog with chosen filename and location. The export captures the diagram’s current state, including technical mode details if that is active. This section is useful if you need the single-diagram export workflow or want to know what exactly gets included in the exported image."
+                  },
+                  {
+                    "title": "All Business Rule Diagrams Export",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how to export all business rule diagrams from the CER Editor as a ZIP via Actions > Export. The export includes a PNG for each diagram in the rule outline view plus an HTML index file named after the rule set, preserving outline order and showing diagram name, description, and class/attribute names. Describes the export workflow, saving the ZIP locally, and notes diagrams need not be opened and are exported in business mode. Also begins coverage of rule set validation and publishing."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains diagram export in CER Editor, covering two export paths: exporting one open business rule diagram as a PNG from the diagram’s top-right Export button, or exporting all diagrams from the rule outline as a ZIP via Actions > Export. The single export saves to a chosen file name/location and captures the diagram’s current state, including technical mode details if shown. The all-diagrams export produces PNGs plus an HTML index in outline order."
+              },
+              {
+                "title": "Validating the Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains how to validate a rule set in CER Editor before publishing or execution. It describes using the Save button’s dropdown to select Validate, then viewing validation messages in a panel below the diagram canvas. It also notes that double-clicking an error highlights the related element in red. The excerpt follows an earlier export feature description and precedes publishing rules, which requires fixing validation errors first."
+              },
+              {
+                "title": "Publishing the Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how CER rule sets are published after editing and validation. It notes that while a rule set is in Published - In Edit or Newly Created status, editor changes are not used by the next execution. Once the user is satisfied with the changes and any validation errors are fixed, the rule set can be published."
+              },
+              {
+                "title": "Executing the Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to execute a Cúram Express rule set by selecting published rule sets and publishing them, then describes that running a rule set creates a rule session used to answer eligibility or other questions in production or test environments. Begins the next topic on creating point-in-time business rules, introducing rules evaluated for a specific date and a Sample Benefit eligibility example with income and age criteria."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000014",
+              "start_page": 10,
+              "end_page": 14
+            },
+            "summary": "Introduces CER basics and the editor workflow for creating and running rule sets. Explains rule set purpose and statuses, then outlines how to create a new rule set in Cúram, including opening it in the editor. Describes the CER Editor layout for business and technical users, creation of rule classes, attributes, folders, and a simple Number rule with an arithmetic example. Also covers organizing rules, exporting diagrams, validating rule sets, and publishing changes after fixing errors."
+          },
+          {
+            "title": "1.3 Creating Point-in-time Business Rules",
+            "level": 2,
+            "children": [
+              {
+                "title": "What Are Point-in-time Rules?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section introduces point-in-time rules in Cúram Express Rules. It explains that these rules answer questions for a specific date and are used to intentionally capture data valid only on that date, such as eligibility on a particular day. The section begins a Sample Benefit case study, outlining business requirements for eligibility based on household composition and income, and shows how a business user identifies high-level eligibility questions to derive the needed rules."
+              },
+              {
+                "title": "Defining Business Requirements",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Identify High-level Questions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section shows how to identify the high-level questions needed to turn Sample Benefit requirements into point-in-time business rules. It explains that a business user extracts basic eligibility questions from legislation, starting with whether the household contains an eligible person. The surrounding context introduces CER rule execution and defines point-in-time rules as rules answering questions for a specific date, such as eligibility on a particular day."
+                  },
+                  {
+                    "title": "Group Related Questions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to group high-level business questions into related folders before building a rule set. Using the Sample Benefit example, it recommends creating folders like “Sample Benefit Rules” and “Person Rules,” then creating one business rule per question. It walks through creating a Boolean rule named “Eligibility” with a description, and notes that business users can add business logic to diagrams using descriptive text without worrying about technical implementation details."
+                  }
+                ],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Introduces how a business user derives point-in-time business rules from legislation for the Sample Benefit program. The requirements state a household is eligible if it contains either a child under 16 or a student aged 16–22, and if total annual household income is between 0 and 20,000. The section’s main focus is identifying the first high-level eligibility question: whether the household contains an eligible person, as the starting point for building business rules."
+              },
+              {
+                "title": "Creating a Point-in-time Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Introduces how to create a point-in-time rule set for the “Sample Benefit” example. It explains grouping related eligibility questions into folders, specifically “Sample Benefit Rules” and “Person Rules,” and creating a business rule named “Eligibility” with Boolean type and description “Eligibility for Sample Benefit.” It also notes that business users can add business logic visually in the CER editor using descriptive rule text, without handling technical implementation details."
+              },
+              {
+                "title": "Creating Folders for Related Questions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains how to organize related “Sample Benefit” questions into folders in the rules editor. It recommends creating two folders, “Sample Benefit Rules” and “Person Rules,” to group business rules by topic. The section then starts creating the first business rule, “Eligibility,” under the Sample Benefit Rules folder, using a Boolean type and adding the description “Eligibility for Sample Benefit.” It also introduces adding business logic to rule diagrams using editable descriptive text."
+              },
+              {
+                "title": "Creating a Business Rule for Each Question",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains how to create a business rule for each high-level question in a “Sample Benefit” rule set. It recommends grouping related questions, creating folders such as “Sample Benefit Rules” and “Person Rules,” then adding a new Boolean rule named “Eligibility” with the description “Eligibility for Sample Benefit.” The section emphasizes that business users can define rules without technical implementation details, which are later organized by technical users into an executable structure."
+              },
+              {
+                "title": "Adding Business Logic For Rules",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to build CER eligibility logic in the SampleBenefit rules: an “Eligibility” rule using nested AND groups and compares for income between 0 and 20000, plus a “Household Contains Eligible Person” boolean rule using a repeating rule with Succeed on Any. Also introduces adding context via descriptions and starts a “Person Rules” example with an OR group for a person being either a child or a student."
+                  },
+                  {
+                    "title": "Household Income",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000019",
+                      "start_page": 18,
+                      "end_page": 19
+                    },
+                    "summary": "This section explains how to build household income-related business rules in Cúram CER. It shows creating a “Household Income” numeric rule that sums the total income for each countable household member, plus supporting rules for “Countable Household Members,” “Countable Person” (age 18+), “Person Income” (sum of income items), and “Countable Income” using a decision table for wages, tips/commission, and otherwise zero. It focuses on using repeating rules, filters, rule references, and decision tables."
+                  },
+                  {
+                    "title": "Entitlement",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how to build an entitlement decision rule in Cúram CER. It walks through creating a Boolean “Entitlement” rule with a decision table based on eligible household member count, mapping one, two, or three people to amounts 100, 200, and 300, with an otherwise value of 400. It also introduces a related “Number of eligible members” rule using Size and Filter elements to count eligible people in a household."
+                  },
+                  {
+                    "title": "Eligible Members",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how to create a CER rule for the number of eligible household members. It defines a rule called “Number of eligible members” with type Number and description “Number of eligible people in the household.” The rule uses a Size element with a Filter over household members, referencing two subrules: “All the people in the household” and “The person is eligible.” It is part of the broader eligibility/income/entitlement business rules examples."
+                  }
+                ],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000020",
+                  "start_page": 16,
+                  "end_page": 20
+                },
+                "summary": "Shows how to add business logic to CER rules for Sample Benefit. It builds an Eligibility rule with nested AND groups and compares for income between 0 and 20000, then a Household Contains Eligible Person rule using a repeating rule with Succeed on Any. It also creates a Person Rules example for Eligible Person using an OR group (child under 16 or student aged 16–22). The section then defines household income rules, countable members/person/income, a countable income decision table, entitlement decision table, and number of eligible members using Size + Filter."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000020",
+              "start_page": 15,
+              "end_page": 20
+            },
+            "summary": "Introduces point-in-time rules in Cúram Express Rules, which answer questions for a specific date. Uses the Sample Benefit case study to derive requirements: a household is eligible if it has a child under 16 or a student aged 16–22, and annual household income is 0–20,000. Explains how to create a rule set, organize folders, and build business rules for eligibility, household membership, age, income, entitlement, and eligible-member count using AND/OR groups, repeating rules, filters, size, and decision tables."
+          },
+          {
+            "title": "1.4 For the Technical Reader - Developing Point-in-time Rules",
+            "level": 2,
+            "children": [
+              {
+                "title": "How Do Business and Technical Users Work Together?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Explains how business analysts and technical users collaborate in Cúram Express Rules. Business users create diagrams and rule logic; technical users then organize rules into classes/attributes, connect empty business rules to technical rules, fill in compare arguments and data values, update decision tables, and validate/test the rule set for publication. Gives a SampleBenefit example showing the switch between Business and Technical tabs and creating classes like SampleBenefit, Person, and Income."
+              },
+              {
+                "title": "Organizing Rules into Classes and Attributes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "This section explains how technical users turn business-created rules into publishable technical rule sets in Cúram Express Rules. It covers organizing rules into meaningful classes and attributes, switching between Technical and Business modes, creating rule classes such as SampleBenefit, Person, and Income, and linking a business diagram like Eligibility to its technical rule class/attribute via Edit Rule and Change links. It also notes broader technical tasks such as filling compare arguments, setting data values, updating decision tables, and validating the rule set."
+              },
+              {
+                "title": "Adding Technical Logic to a rule set",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000023",
+                      "start_page": 21,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how a technical user turns business-created Cúram Express Rules into publishable technical rules for the SampleBenefit example. Covers organizing rules into classes and attributes, switching between Business and Technical tabs, creating classes (SampleBenefit, Person, Income), and linking many business rules to new or existing attributes with Boolean/Number types. Also begins populating rule comparisons and references using existing rules and data values (e.g., householdIncome > 0 and < 20000). Useful for rule-set implementation steps."
+                  },
+                  {
+                    "title": "Household Income",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000025",
+                      "start_page": 24,
+                      "end_page": 25
+                    },
+                    "summary": "This section walks through updating Cúram Express Rules for household income calculation. It covers editing the householdIncome, countableHouseholdMembers, isCountable, totalIncome, and countableIncome diagrams; changing rule references and current rule classes; creating or reusing rules/attributes such as household, age, isStudent, incomes; setting types and numeric thresholds (16, 18, 22); and deleting an entry in countableIncome. Useful if you need the step-by-step rule configuration for household and income eligibility logic."
+                  },
+                  {
+                    "title": "Entitlement",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section explains how to edit the “entitlement” rule diagram in SampleBenefit. It walks through expanding the One Person, Two People, Three People, and Otherwise branches, then changing numeric values to define entitlement amounts: 1→100, 2→200, 3→300, and otherwise 400. It is a step-by-step rule configuration procedure focused on adjusting output values in the diagram."
+                  },
+                  {
+                    "title": "Eligible Members",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to update the “numEligibleMembers” CER rule diagram by editing references from “All the people in the household” and “The current person is eligible” to use the Person rule class with existing rules “household” and “eligiblePerson,” then notes removing old diagram references. It also introduces timeline-aware rules, defining them as values that vary over time, and identifies Sample Benefit rules that may need timeline awareness: Household Income, Number of eligible members, and Person Income."
+                  }
+                ],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000026",
+                  "start_page": 21,
+                  "end_page": 26
+                },
+                "summary": "Explains how a technical user converts SampleBenefit business diagrams into publishable technical rules by creating classes (SampleBenefit, Person, Income), assigning attributes, and wiring references/types. Covers editing eligibility, eligible members, household income, countable household members, isCountable, totalIncome, countableIncome, and entitlement. Includes creating/reusing rules like household, age, isStudent, incomes, amount, and setting numeric thresholds and outputs (e.g., 0, 16, 18, 22, 100/200/300/400). Useful for step-by-step CER implementation and rule organization."
+              }
+            ],
+            "node_id": "n000048",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000026",
+              "start_page": 21,
+              "end_page": 26
+            },
+            "summary": "Explains how technical users take business-created Cúram Express Rules diagrams and make them publishable by organizing rules into classes/attributes, wiring empty rules and references, setting compare/data values, updating decision tables, and validating/testing. Uses the SampleBenefit example to map Business diagrams to Technical classes SampleBenefit, Person, and Income, then implement key rules like eligibility, household income, countable members, age/student checks, countable income, and entitlement values. Useful for step-by-step CER technical setup and rule completion."
+          },
+          {
+            "title": "1.5 Creating Timeline Aware Rules",
+            "level": 2,
+            "children": [
+              {
+                "title": "What Are Timeline Aware Rules?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains CER timeline aware rules: rules whose values vary over time and may need recalculation on different days. Uses income as the example of a time-varying Number timeline. Notes that in Sample Benefit, candidate timeline aware rules include Household Income, Number of eligible members, and Person Income. Useful for deciding whether to open if you need the concept of timeline-aware rules or which rules in the sample application should be made time-dependent."
+              },
+              {
+                "title": "Identifying Timeline Aware Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to identify timeline-aware CER rules in Sample Benefit. A timeline-aware rule is one whose value can change over time, so it may need calculation on different days. Uses income as the example: point-in-time income is a Number, while changing income is a timeline of Numbers. Lists candidate rules to make timeline aware: Household Income, Number of eligible members, and Person Income."
+              },
+              {
+                "title": "Making Expressions Timeline Aware by Setting Up Timeline Markers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to make a rule timeline aware in technical view by adding timeline markers to only the expressions that vary over time. Uses the “Total income for a person” example: make the rule timeline-aware, then mark “All the incomes for this person” and “The countable amount for this income” as timeline intervals. Also briefly introduces existence timelines, which define start/end dates and values before, during, and after the date range, using a “Student Grants Amount” example."
+              },
+              {
+                "title": "Creating an Existence Timeline",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to make rules timeline aware in technical view and use timeline markers for expressions that change over time. Focuses on existence timelines: defining the dates a rule exists and the values before, during, and after that range. Gives a step-by-step example creating a “Student Grants Amount” number rule with start/end dates, then setting values such as 0 before college and 1000 during college. Useful for learning timeline-aware rule setup and existence timeline configuration."
+              },
+              {
+                "title": "Testing Timeline Outputs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "This section says timeline attributes should be tested, and points to the “Testing the rules” section plus the Cúram Express Rules Reference Manual for methods to test timeline calculations. It then outlines the overall CER testing workflow: validate the rule set, publish it, extract rule set/data from the database with the extractdata target, generate skeleton test classes with creole.generate.test.classes, and implement/run unit tests."
+              }
+            ],
+            "node_id": "n000056",
+            "range": {
+              "start_unit_id": "p000027",
+              "end_unit_id": "p000028",
+              "start_page": 27,
+              "end_page": 28
+            },
+            "summary": "Explains how to create timeline-aware CER rules in technical view. A timeline-aware rule is one whose value can change over time, so it may need recalculation on different days; Sample Benefit candidates include Household Income, Number of eligible members, and Person Income. Shows how to mark only changing expressions as timeline intervals, using “Person Income” and “All the incomes for this person” / “The countable amount for this income” as examples. Also introduces existence timelines with start/end dates and values before, during, and after a date range, including a “Student Grants Amount” example."
+          },
+          {
+            "title": "1.6 Testing the rules",
+            "level": 2,
+            "children": [
+              {
+                "title": "Extracting rule sets from the database",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000030",
+                  "start_page": 29,
+                  "end_page": 30
+                },
+                "summary": "Explains how to test CER rule sets and extract them from the database for file-system use. Covers validating and publishing a rule set, then using the extractdata target to export CREOLERULESET and APPRESOURCE records. Describes copying the extracted XML/DMX files into the component’s CREOLE_Rule_Sets and data\\initial directories, pruning unrelated entries, setting the ruleSetDefinition path, clearing ruleSetVersion, and copying referenced resource blobs. Useful for preparing a newly created or database-edited rule set for testing and source control."
+              },
+              {
+                "title": "Generating test classes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how to generate CER rule set test classes for testing, using the Sample Benefit “Eligible Person” example. It describes running `build creole.generate.test.classes` from `Curam/EJBServer`, where generated sources appear in `EJBServer/build/svr/creole.gen/source`. Notes the output is for test environments only, is not portable because it contains absolute local paths, and must not be used in production. Also lists when regeneration is required after structural rule set changes versus derivation-only changes."
+              },
+              {
+                "title": "Writing and running unit tests",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000036",
+                  "start_page": 32,
+                  "end_page": 36
+                },
+                "summary": "Explains how to write and run unit tests for a Cúram Express Rules rule set using JUnit, either directly in an IDE or via an Apache Ant target. Includes a sample `CuramServerTest` for the `Person` rule class that creates a session, specifies `age` and `isStudent`, and asserts `eligible` is true. Notes that tests should be added to the component’s test directory and refers readers to the Cúram Express Rules Reference Manual for more testing details."
+              }
+            ],
+            "node_id": "n000062",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000036",
+              "start_page": 29,
+              "end_page": 36
+            },
+            "summary": "Explains how to test a Cúram Express Rules rule set: validate and publish it, extract rule sets and related APPRESOURCE data from the database into component file-system directories, and copy/prune/adjust XML and blob files for testing and source control. Shows how to generate skeleton test classes with `creole.generate.test.classes`, where outputs are placed, and when regeneration is needed after structural changes. Also provides a JUnit example for testing rule logic in a `Person` rule class and notes tests should be added to the component test directory."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000036",
+          "start_page": 9,
+          "end_page": 36
+        },
+        "summary": "Introduces Cúram Express Rules and the CER Rules Editor for creating and maintaining rule sets, logical conditions, and results. Covers the guide’s audience (business analysts and technical developers), core editor basics, creating and organizing rule sets, classes, attributes, folders, and simple rules, plus exporting and validating diagrams. Also explains moving business rules into technical implementation, and how to test rule sets by extracting data, generating test classes, and writing JUnit tests."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

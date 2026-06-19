@@ -1,0 +1,518 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "51022cc90920ca65",
+    "title": "Cúram 8.1.2 Batch Processes Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramBatchProcessingGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "51022cc90920ca65f4cdc8c28fad61faf26f8539b5c1e68364e2d4616ef5fc07",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T03:25:37+00:00",
+    "page_count": 26,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramBatchProcessingGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram  8.1.2",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000026",
+      "start_page": 1,
+      "end_page": 26
+    },
+    "summary": "This section is the front matter and opening chapter of the Cúram 8.1.2 Batch Processes Developer Guide. It introduces Cúram SDEJ batch processing and how to define batch operations in UML, including key restrictions: only one batch operation per process class, one flat struct parameter, and a void return type. It documents supported server data types and their string formats, batch process output responsibilities, and the Batch Launcher for running queued or single requests, including startup properties, security, error codes, output directory, debugging, and monitoring. It also covers Batch Administration setup: process definitions, groups, requests, and error code mapping. A major topic is limited DB-to-JMS support for deferred processing/workflow from batch programs, with required properties, deferred-process registration, security requirements, and limitations. The section ends with key-point summary plus legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This brief front-matter note directs readers to the Notices section on page 25 before using the product or information in the document. It also includes copyright information for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition note for Cúram 8.1, 8.1.1, and 8.1.2, with copyright/trademark information. This node also begins the “Developing batch processes” chapter, covering batch process basics, how to define batch operations, supported struct field data types, Batch Launcher usage and startup options, required/optional application properties, security behavior, error-code mapping, output directory handling, and debugging/testing batch programs."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers Cúram batch processing setup and operation: defining batch operations in the UML model, loading generated XML into the database, and managing descriptions, parameters, groups, and requests through the Batch Administration interface and Batch Launcher. It details the database tables involved, scheduling, and the advantages of the Batch Launcher. It also explains DB-to-JMS for enabling limited deferred processing/workflow in batch programs, including required properties, deferred process registration, security requirements, limitations, and key summary points."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000024",
+          "start_page": 5,
+          "end_page": 24
+        },
+        "summary": "Edition note for Cúram 8.1/8.1.1/8.1.2 and the start of “Developing batch processes.” Covers batch process basics, defining batch operations in UML, struct/type restrictions, batch launcher usage and startup properties, output handling, administration/scheduling, and debugging. Also explains DB-to-JMS support for limited deferred processing/workflow from batch programs, including required properties, deferred-process registration, security requirements, and limitations."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "This section covers legal notices: fictitious example data, sample program copyright/license terms, warranty disclaimer, and liability limits. It also points to the Merative privacy policy URL and lists trademark ownership for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. Includes copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "Lists trademark and copyright notices for the document. Identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX as trademarks or registered trademarks, and notes that other names may belong to others. Also includes a disclaimer that sample programs and fictitious names are provided “AS IS,” plus a privacy policy link and copyright/license information for Merative."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000025",
+          "end_unit_id": "p000025",
+          "start_page": 25,
+          "end_page": 25
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and enterprise copying rights, restrictions on distribution and derivative works, export compliance, and Merative’s right to withdraw permission. Includes an “AS-IS” warranty disclaimer, no implied licenses to patents, and caveats about non-Merative products and external websites. Ends with copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition, Notices, Privacy policy, Trademarks) and Chapter 1, “Developing batch processes,” with subsections on batch operations, the batch launcher, administration and scheduling, and accessing application server functionality. The listed topics cover creating batch operations, restrictions, data types, output, launcher properties and security, error codes, debugging, performance, process definitions/groups/requests, and DB-to-JMS/deferred processing considerations."
+      },
+      {
+        "title": "1 Developing batch processes",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for the batch processing chapter: you should already know the Cúram Modeling Reference Guide and the Server Development Environment (SDEJ). This section sits in the “Developing batch processes” overview, which explains how batch processes are specified, written, configured, managed, and run via the Batch Launcher and external task scheduler."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Overview of Cúram SDEJ batch processing: it explains how batch processes are specified, written, managed, configured, and executed. It introduces the batch processing framework, where an external task scheduler triggers the Batch Launcher to run user-requested process class operations without intervention. It also notes the section’s prerequisites: familiarity with the Cúram Modeling Reference Guide and the Server Development Environment (SDEJ)."
+          },
+          {
+            "title": "1.2 Batch Operations",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating batch Operations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section explains how to create batch operations in Cúram SDEJ. A batch process is defined by marking a process-class operation in the UML model with the batch stereotype, then implementing it like any normal process operation. The generator produces SQL so the operation can be submitted to the Batch Launcher for scheduler-driven execution without user intervention. It also notes a key restriction: only one operation in a process class may use the batch stereotype."
+              },
+              {
+                "title": "Restrictions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section explains how batch processes work in the Cúram SDEJ: an external scheduler starts the Batch Launcher, which runs user-requested batch operations without intervention. It covers defining batch stereotyped operations in process classes and notes a key restriction: only one operation in a process class may use the batch stereotype."
+              },
+              {
+                "title": "Available Data Types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Describes the basic server data types allowed in a batch process operation’s single flat struct parameter, with their string formats and value constraints. Covers char, integer sizes, float/double ranges, string, datetime/date ISO 8601 formats, money as double, and case-insensitive boolean values. Also notes batch process operations take only one struct parameter and should return void."
+              },
+              {
+                "title": "Batch Process Output",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Batch operations are responsible for producing their own output, which may be sent to a printer, database table, or output file. The Batch Launcher is a separate program that processes queued batch requests from the database, typically started by a scheduler, and can also run a single batch request via command-line -D properties. It uses database connection parameters rather than application authentication. Key startup properties include batch.program, batch.parameters, and optional batch.username."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Explains how to define and run batch operations in Cúram BPOs. A batch process is created by marking one process-class operation with the batch stereotype in the UML model and implementing it normally; the generator produces SQL so it can be submitted to the Batch Launcher. Key restrictions: only one batch operation per process class, one flat struct parameter only, and void return type recommended. Also lists allowed server data types and their string formats for the batch struct parameter."
+          },
+          {
+            "title": "1.3 The Batch Launcher",
+            "level": 2,
+            "children": [
+              {
+                "title": "Starting the batch launcher",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to start the Batch Launcher, which runs batch requests without the full application server and can be scheduled separately. Describes default behavior: processing queued requests from the database in insertion order, or starting a single batch program via command-line `-D` properties. Lists key startup properties: `batch.program` (fully qualified batch class), `batch.parameters` (optional parameter string with no whitespace), and `batch.username` (optional valid username). Also notes startup via Apache Ant targets `runbatch` or the default target in `build.xml`."
+              },
+              {
+                "title": "Application Properties for the Batch Launcher",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Describes Batch Launcher application properties and how to specify a batch operation for `batch.program` using a fully qualified name. Explains where to find application, code package, class, and operation names in `BatchProcDef` and `FunctionIdentifier`, and notes the required `curam.batchlauncher.erroremail.recipient` property for failure emails. Also includes a command-line example for running batch programs via `build runbatch` and notes z/OS batch programs require WebSphere Application Server for z/OS."
+              },
+              {
+                "title": "Security",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "The Batch Launcher performs no application-level authentication or authorization because it can run without the application server. It authenticates only to the database using the same credentials as Bootstrap.properties. The optional batch.username setting controls the audit trail user name, effective locale, and TransactionInfo.getProgramUser() result; if unset, that method returns null. This section also mentions optional error-email and default error-code properties for the launcher."
+              },
+              {
+                "title": "Batch Error Codes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains Batch Launcher error-code configuration and related behavior. It covers the optional `curam.batchlauncher.default.error.code` property, which sets the return code used when no entry exists in the `BatchErrorCodes` database table (default is 1), and `curam.batchlauncher.erroremail.nostacktrace`, which suppresses stack traces in unhandled-exception emails. It also notes the Batch Launcher’s integer exit codes, where 0 indicates success and nonzero values indicate errors."
+              },
+              {
+                "title": "Batch Launcher Output Directory",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains where Batch Launcher output files are written and how to control the base directory with `batch.base.dir` when running `runbatch`. By default, output goes to `%SERVER_DIR%\\buildlogs`, and logs are captured as `BatchLauncheryyyyMMddHHmmss.log` via Ant `<record>`, so jobs started at the same time share a file. Also notes a method for debugging/testing batch programs in an IDE by creating a wrapper `main()` class in EJBServer that delegates to `curam.util.impl.BatchLauncher.main(args)`."
+              },
+              {
+                "title": "Debugging Batch Programs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to debug or test batch programs from an IDE by adding a wrapper Java class in the EJBServer project whose main() delegates to curam.util.impl.BatchLauncher.main(). Also covers batch error handling and output behavior: default error code is 1 unless overridden, specific application error messages can be mapped to custom codes via the BatchErrorCodes table, and batch logs are written to a timestamped BatchLauncher*.log file in the batch base directory."
+              },
+              {
+                "title": "Performance and monitoring",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains that the Batch Launcher uses JMX to capture operational data and monitor batch program performance, with a reference to the Cúram JMX Configuration Guide. It also introduces batch administration and scheduling: batch requests are submitted through the Administration interface, then processed when the Batch Launcher is scheduled to run by a third-party scheduler. The section notes that generated batch definitions are loaded from <ProjectName>_batch.xml and that administrators can add descriptions and parameter details via BatchAdmin."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000014",
+              "start_page": 11,
+              "end_page": 14
+            },
+            "summary": "Describes the Batch Launcher as a stand-alone program that processes queued batch requests from the database in insertion order, or a single batch job via `-D` command-line properties. Covers startup with Ant `runbatch`, batch.program naming, optional batch.parameters and batch.username, required email/smtp properties, and security behavior (no app-level auth; database-only login). Also explains error codes and `BatchErrorCodes`, output directory/log naming, and using a wrapper `main()` to debug batch jobs in an IDE."
+          },
+          {
+            "title": "1.4 Administration and Scheduling",
+            "level": 2,
+            "children": [
+              {
+                "title": "Administration Interface",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Describes the SDEJ Batch Administration interface for configuring and updating batch administration database tables. Explains that generated batch process definitions are loaded from the `<ProjectName>_batch.xml` file via Data Manager, after which administrators can add process descriptions and parameter details. Notes that the interface methods and parameters are documented in `curam.util.administration.intf.BatchAdmin` JavaDoc, and that the section supports managing batch request setup for scheduling and execution."
+              },
+              {
+                "title": "Batch Process Definitions and Descriptions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000016",
+                  "start_page": 15,
+                  "end_page": 16
+                },
+                "summary": "Explains how batch process definitions are generated and loaded into the database via the `<ProjectName>_batch.xml` file and Data Manager, then supplemented through the Administration interface with descriptions, types, parameter descriptions, and default values. Introduces key batch administration tables, especially `BatchProcDef` (process name, application name, class name, operation name) and `BatchParamDef` (parameter name, process name). Useful for understanding batch metadata setup and database-backed batch request administration."
+              },
+              {
+                "title": "Batch Process Groups",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to define batch process groups and assign batch processes to them, so related processes appear in a tree widget for easier navigation. Notes key rules: a process must have a description before grouping, default parameter descriptions are created automatically when a process description is added, and a process may belong to multiple groups but only once per group. Also describes the database tables for group metadata and associations, including BatchGroupDesc and BatchProcGrpAssoc."
+              },
+              {
+                "title": "Batch Process Request",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Defines batch process request storage and execution support. Batch Administration adds requests that Batch Launcher reads from two tables: BatchProcRequest (request metadata like processRequestId, processDefName, username, timeRequested, priority) and BatchParamValue (parameter name/value pairs tied to a request). Also mentions batch error code mapping to integers and introduces DB-to-JMS, a mechanism that lets batch programs trigger workflow/deferred processing by storing messages in a database table for later transfer to JMS queues by the online application."
+              },
+              {
+                "title": "Batch Error Code Mapping",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section notes that the Batch Error Codes table maps error codes to integers and refers readers to the Batch Error Codes section for details. It sits alongside batch request storage tables (BatchProcRequest and BatchParamValue) and transitions into accessing application server functionality, introducing batch-side DB-to-JMS handling for workflows and deferred processes."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000017",
+              "start_page": 15,
+              "end_page": 17
+            },
+            "summary": "Explains how batch requests are administered and scheduled: users submit requests through the SDEJ Batch Administration interface, then a third-party scheduler runs the Batch Launcher to process queued requests. Covers loading generated `<ProjectName>_batch.xml` definitions into the database, adding process descriptions, parameter metadata, and default values, and organizing processes into groups for tree-based navigation. Highlights the main batch admin tables (BatchProcDef, BatchParamDef, BatchProcDesc, BatchParamDesc, BatchGroupDesc, BatchProcGrpAssoc) and notes BatchAdmin JavaDoc guidance."
+          },
+          {
+            "title": "1.5 Accessing Application Server Functionality",
+            "level": 2,
+            "children": [
+              {
+                "title": "How it works",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000019",
+                  "start_page": 18,
+                  "end_page": 19
+                },
+                "summary": "Explains DB-to-JMS support for batch programs accessing online-style workflow/deferred processing. Batch messages are intercepted and stored in a database table, then transferred to JMS after the batch transaction commits. Describes how the application server can be triggered from batch, online, or Batch Launcher calls, and that the server must be running for transfer. Covers configurable properties for triggering mode and messages per transaction, plus logging and concurrency behavior when multiple triggers occur."
+              },
+              {
+                "title": "Properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000021",
+                  "start_page": 20,
+                  "end_page": 21
+                },
+                "summary": "Lists DB-to-JMS batch launcher properties and their defaults/behavior. Covers enabling deferred processing/workflow, host/port/SSL settings for notifying the application server, SSL protocol and encoding options, notification modes for batch launcher runs, stand-alone notification suppression, messages-per-transaction limit, and a test stub trigger that disables actual DBtoJMS.beginTransfer() calls for debugging."
+              },
+              {
+                "title": "Deferred processing configuration required",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains required configuration for DB-to-JMS deferred processing. Defines the mandatory `curam.custom.deferredprocessing.dpcallback` property, which must point to a `DPCallback` implementation whose `dpHandleError` handles DB-to-JMS failures. Warns not to set `curam.test.stubdeferredprocessing`, and notes host/port properties may need adjustment between environments. Also says the `DB_TO_JMS` deferred process must be registered in the `DPProcess` table, with examples using SQL or a Data Manager file."
+              },
+              {
+                "title": "Security Considerations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains DB-to-JMS security requirements for batch-triggered message transfer. The batch launcher or batch programs can invoke the application server using a valid Cúram username and password. By default, the DBTOJMS account must exist, be enabled, and have the SYSTEMROLE role. Custom DB-to-JMS credentials can be configured via `curam.security.credentials.dbtojms.username` and `.password` (encrypted), with the same user/role requirements. Notes that the older `curam.omega3.DBtoJMSCredentialsIntf` method is deprecated. Also summarizes DB-to-JMS limitations."
+              },
+              {
+                "title": "Limitations of DB-to-JMS",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "DB-to-JMS is a deferred processing mechanism for batch programs that transfers messages from the database to specific Cúram JMS queues. This section covers its security requirements: it triggers the application server using a valid Cúram user, defaults to the DBTOJMS account with SYSTEMROLE, and can be configured with encrypted custom credentials via properties. It also notes that the older DBtoJMSCredentialsIntf API is deprecated. Key limitations: it only enqueues messages, requires transaction commit before visibility, must be explicitly notified, and is not a general JMS implementation."
+              }
+            ],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000023",
+              "start_page": 18,
+              "end_page": 23
+            },
+            "summary": "Explains DB-to-JMS, which lets batch programs trigger online-style workflow/deferred processing by storing JMS-bound messages in a database until the batch transaction commits, then notifying the application server to transfer them to JMS queues. Covers trigger paths (batch launcher, batch code, online code), required server availability, transaction/message batching, logging, and concurrency. Lists configuration properties for enabling, host/port/SSL, notification modes, messages per transaction, and test stubbing. Also covers deferred-process registration, required callback configuration, security credentials, and limitations."
+          },
+          {
+            "title": "1.6 Summary of Key Points",
+            "level": 2,
+            "children": [],
+            "node_id": "n000037",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000026",
+              "start_page": 24,
+              "end_page": 26
+            },
+            "summary": "Summarizes Cúram batch processing basics: how to define batch operations in the UML model, parameter and return-type constraints, code generation of batch operation definitions for Data Manager, and post-load administration via Batch Administration. Also notes Batch Launcher responsibility and configuration, plus limited deferred processing/workflow support through DB-to-JMS for batch programs. The rest of the pages are legal notices, copyright, privacy, and trademark information."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000026",
+          "start_page": 9,
+          "end_page": 26
+        },
+        "summary": "Explains Cúram SDEJ batch processing: how to define batch operations in UML, restrictions on one flat struct parameter and void return, and supported server data types. Covers the Batch Launcher, including queued or single-job execution, command-line/configuration properties, security, error codes, output handling, and debugging. Also describes Batch Administration setup and scheduling, loading batch definitions and grouping processes, plus DB-to-JMS for limited deferred/workflow support from batch programs. The rest is legal notices and trademarks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,1495 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "c4d2e4252db29ffa",
+    "title": "Cúram 8.1.2 Business Intelligence BIRT Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramBIRTDeveloperGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "c4d2e4252db29ffa6f441a7ca714ce249f1d8ae4252c9703d929ef273a26567f",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:00:49+00:00",
+    "page_count": 52,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramBIRTDeveloperGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Business Intelligence BIRT Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000052",
+      "start_page": 1,
+      "end_page": 52
+    },
+    "summary": "Front matter and core guide for Cúram 8.1–8.1.2 on Business Intelligence with BIRT. It introduces BIRT as the reporting engine for chart/tabular decision-support content, explains the BIRT stack and system landscape, and covers build/deployment workflow, Eclipse setup, viewing and integrating report content, authentication/entitlements, creating new reports, JDBC/data sources, localization, design standards, compliance, datamart datasource setup for WebLogic/WebSphere, WebSphere logging, troubleshooting, deployment considerations, runtime architecture, and report-viewing dependencies across Application Server, Tomcat BIRT Viewer, and Eclipse. It also includes WebSphere CuramBIRTViewer deployment and session/cookie configuration, HTTP server plugin/update notes, plus performance, scalability, and security guidance. The section ends with legal notices, privacy policy, trademarks, and copyright/license terms.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "A brief front-matter note directing readers to review the Notices section on page 51 before using the document or the product it supports. It also includes the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the BIRT guide: applies to Cúram 8.1–8.1.2 and includes copyright/trademark notices plus the table of contents. It introduces the purpose of using BIRT for business intelligence and reporting, outlines business and technical features, system landscape, build/publish process, Eclipse setup for viewing reports, integration basics, DMX/report name configuration, and troubleshooting/deployment/runtime topics. Open this if you need the guide’s scope, navigation, or setup/integration entry points."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram BIRT development guidance: examples of embedding reports in UIM/POD facades, building report parameters, and adding BIRT content to pages. Covers DB2 portability steps for ZOS/non-ZOS, including a special `db2numbertype` viewer parameter and `zos` dataset scripting. Also outlines BIRT security notes (authentication only, no entitlement check), Eclipse/BIRT setup and project import/configuration, creating sample reports and reporting-tab reports, required data sources/JDBC setup, report content compliance, and localization via `.properties` files and `__locale` testing."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "BIRT reporting guidance covering KPI performance and summary table design, report development standards, chart setup, drill-down navigation, accessibility, and compliance rules. Includes naming conventions, parameter types, SQL best practices, and chart axis sorting notes. Also documents data source setup for Oracle and DB2 on WebSphere and WebLogic, WebSphere logging configuration, and troubleshooting for common BIRT/Eclipse/report execution failures such as missing drivers, library issues, preview crashes, and workspace loading problems."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Pages 35–44 cover BIRT troubleshooting and WebSphere deployment/setup for CuramBIRTViewer. It lists fixes for Tomcat memory issues, missing viewer/report lists, report NullPointerExceptions, and dataset entity limits. The bulk of the section explains non-homogeneous BI cluster deployment: uninstalling/redeploying CuramBIRTViewer, creating a BICluster, configuring JDBC drivers/data sources, classloaders, web container ports/virtual hosts, logs, ORB, JVM tuning, and installing the EAR with class loading set to parent last."
+          },
+          {
+            "title": "Edition — pages 45-50",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000050",
+              "start_page": 45,
+              "end_page": 50
+            },
+            "summary": "Covers deployment and configuration of Curam BIRT Viewer on WebSphere, including mapping the EAR to HTTP Server/BI cluster, overriding session management, and setting distinct cookie names/paths for Curam and CuramBIRTViewer. Explains regenerating the HTTP server plugin and restarting HTTP Server. Also introduces runtime architecture for BIRT, report-rendering request flow, performance/scalability and security guidance for report design, and environment-specific dependencies for viewing reports in Application Server, Tomcat BIRT Viewer, and BIRT Eclipse."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000050",
+          "start_page": 5,
+          "end_page": 50
+        },
+        "summary": "Front matter and core BIRT guide for Cúram 8.1–8.1.2. Covers purpose, business/technical overview, system landscape, build and Eclipse setup, viewing/integrating report content, DB2 portability, authentication/entitlements, new report creation, data sources/JDBC, localization, design standards, compliance, datamart/WebSphere-WebLogic setup, troubleshooting, deployment considerations, runtime architecture, and viewing-report dependencies across Application Server, Tomcat BIRT Viewer, and Eclipse. Includes WebSphere CuramBIRTViewer deployment, session/cookie configuration, HTTP server plugin updates, performance/scalability, and security guidance."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "This section contains legal notices: sample data disclaimer, copyright license for sample source programs, warranty/liability limitations, a link to the Merative privacy policy, and trademark acknowledgments for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and others. It is useful for locating usage rights, legal terms, and product trademark information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third parties. Covers fictitious example names, sample program usage rights and “AS IS” warranty disclaimer, Merative privacy policy link, and trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Includes © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000051",
+          "end_unit_id": "p000051",
+          "start_page": 51,
+          "end_page": 51
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and commercial reproduction permissions, required preservation of proprietary notices, limits on derivative works and redistribution, and withdrawal of permissions. Includes export-law compliance, “AS IS” warranty and liability disclaimer, patent notice, third-party product/source disclaimer, and non-Merative website disclaimer. Ends with copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for chapter 1, “Developing Business Intelligence with BIRT,” listing sections on BI overview, BIRT system landscape and build process, viewing/integrating reports, authentication, developing new reports, design guidelines, compliance, datamart data sources for WebLogic/WebSphere, WebSphere logging, troubleshooting, deployment considerations, runtime architecture, and report-viewing dependencies. Includes page references for quick navigation and later front matter notices/privacy/trademarks."
+      },
+      {
+        "title": "1 Developing Business Intelligence with BIRT",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Cúram Business Intelligence and Reporting Tools (BIRT) guide. Explains that BIRT is an open-source reporting environment used to develop and run chart and tabular reports for decision support. Summarizes why BIRT was chosen: visual integration, licensing/cost benefits, and technical merit across analytics, reports, dashboards, and charting. Notes the intended audience as readers with Java and BIRT knowledge who create and integrate report content into the application."
+          },
+          {
+            "title": "1.2 Business Intelligence Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Business Features",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Business Intelligence and Reporting Tools (BIRT) used by the application for reporting and decision support. Explains that BIRT is an open-source development/runtime environment for charting and tabular reports, aimed at front-line staff, managers, and senior managers. Notes key evaluation factors such as look and feel, licensing cost/options, and technical merit across analytics, reports, dashboards, and charting. Also states the guide’s purpose, intended audience, and that the application uses BI to measure performance, find process gaps, and analyze issues."
+              },
+              {
+                "title": "Technical Features",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Describes Cúram 8.1.2 reporting technical features and BI capabilities: embedded analytics, interactive dashboards/reports, and ad-hoc reporting. It explains that the application integrates the online app with a data warehouse for summarized decision-support information for case workers, managers, and senior managers. It also outlines the architecture components: Cúram BIRT Viewer (Java EE wrapping the open-source BIRT Engine), Cúram Platform BIRT Manager for template lookup and report-page rendering, and Administration configuration for viewer and BIRT reports."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces Cúram’s Business Intelligence and Reporting Tools (BIRT) as an open-source reporting environment for charting and tabular reports, used to deliver decision-support information to front-line staff, managers, and senior managers. Summarizes the guide’s purpose, audience, and evaluation criteria for BIRT: look and feel, licensing cost/options, and technical merit for analytics, reports, dashboards, and charting. Also states that BI helps agencies measure performance, find process gaps, and analyze operational issues."
+          },
+          {
+            "title": "1.3 BIRT System Landscape",
+            "level": 2,
+            "children": [
+              {
+                "title": "BIRT System Environment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains the BIRT system environment used for reporting: BIRT is an open-source development and runtime platform chosen after evaluating alternatives. It highlights the BIRT Report Designer (Eclipse plug-in for creating reports), Charting Engine (built-in and user-defined charts), and Report Engine (renders reports to formats like HTML and PDF). Also notes a new build step for publishing BIRT content from BIContent to the BIRT Viewer, with revised Eclipse/Tomcat build and deploy instructions."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Overview of the BIRT reporting architecture and system environment, including how Cúram uses the open-source BIRT engine for charts and reports. Covers the supported third-party reporting tools and their dependencies, plus the main components involved: BIRT Viewer/Engine, BIRT Manager, and administration configuration for viewer/report settings. Useful as an entry point for understanding how reporting is structured and deployed in the Cúram platform."
+          },
+          {
+            "title": "1.4 Build Process Reviewed",
+            "level": 2,
+            "children": [
+              {
+                "title": "Build Process Note",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains the updated build process for BIRT-enabled client applications. It notes that BIRT content must now be published from the BIContent folder to the BIRT Viewer so reports can be executed and rendered. The section lists the required Eclipse steps: build the server in EJBServer, build the client in webclient, publish BIRT content with build client.birt, then refresh Eclipse and start Apache Tomcat to view the application."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "This section explains the updated BIRT-enabled build process. It says BIRT content must be published from the BIContent folder to the BIRT Viewer so reports can execute and render. It also lists the required Eclipse workflow: build the server in EJBServer, build the client in webclient, publish BIRT content with build client.birt, then refresh Eclipse and start Apache Tomcat to view the client application."
+          },
+          {
+            "title": "1.5 Viewing and Integrating Report Content",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Introduces how to view BIRT content in the client application, including importing required Eclipse projects, performing post-install configuration so report content renders on application pages, and embedding BIRT into pages using the renderer and server-side classes. Explains the need for a separate Eclipse instance for BIRT development, notes that existing source database content may not require a BIRT development environment, and mentions H2 remote mode. Begins step-by-step Eclipse setup for viewing report content with CuramBIRTViewer and Tomcat settings."
+              },
+              {
+                "title": "Viewing BIRT Reports Within Eclipse",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to view BIRT report content within Eclipse for Curam 8.1.2. It introduces the required BIRT development environment, notes that a second Eclipse instance is needed for report development but not for viewing shipped content, and mentions H2 must be in remote mode if used. The section gives setup steps for the CuramBIRTViewer project: import into Eclipse, set Java compliance to 1.5, update Tomcat context, and add the EJBServer project properties directory to the Tomcat JVM classpath."
+              },
+              {
+                "title": "Eclipse - BIRT Development",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to set up Eclipse for BIRT report development and viewing report content in the client application. Covers importing the CuramBIRTViewer project, setting Java compiler compliance to 1.5, updating Tomcat context, adding the EJBServer project properties to the JVM classpath, and optionally configuring licensed Reports tab content. Notes that a separate BIRT Eclipse instance is needed for development, but not for viewing shipped BIRT content; H2 must be in remote mode if used as the RDBMS."
+              },
+              {
+                "title": "Viewing Report Content Within Eclipse",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to configure Eclipse to view BIRT report content in the client application. Covers importing the CuramBIRTViewer project, setting Java compiler compliance to 1.5, updating Tomcat project context, and adding the EJBServer project properties directory to Tomcat JVM classpath. Notes that a separate BIRT development environment may be needed for report development, but not for viewing shipped content; H2 must be in remote mode when used as the RDBMS."
+              },
+              {
+                "title": "Developing Report Content/ BIRT Reports",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how to create or modify BIRT report design documents and how to integrate BIRT content into Cúram. It points to related guidance on UIM examples, report naming, report configuration/DMX requirements, and embedding BIRT in PODs or report pages. It also notes the BIRT-specific domain definitions: BIRT_REPORT for report pages and BIRT_POD for POD embedding."
+              },
+              {
+                "title": "Integrating BIRT Content",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "UIM Example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains the UIM setup needed to display BIRT content. A new domain definition, BIRT_REPORT, must be referenced on the relevant struct field for report pages, and BIRT_POD must be used when embedding a BIRT report in a POD. BIRT_POD is a POD styling definition that must already be configured. Useful for developers integrating BIRT reports into Cúram UIM pages or PODs."
+                  },
+                  {
+                    "title": "Report Name",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains that a BIRT report’s logical name is defined in a constants file and mapped to a physical report through the BIHelper component. The required DMX configuration must exist in the database; otherwise BIHelper throws an exception. Introduces reporting configuration via the BIReportConfiguration DMX, notes it must be included in custom initial demo data, and shows an example DMX entry with fields such as reportName, reportFileName, dimensions, and description."
+                  },
+                  {
+                    "title": "Reporting Configuration - DMX",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains that BIRT reports use a logical report name mapped via BIHelper to a physical report, and that a matching DMX entry must exist in the database or BIHelper throws a runtime exception. Shows that custom demo data should include the report configuration DMX, referencing BIREPORTCONFIGURATION.dmx and Cúram Server Developer’s Guide. Provides an example DMX row for a report, including fields like reportName, reportFileName, dimensions, scrolling, description, and versioning."
+                  },
+                  {
+                    "title": "UIM Example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Shows examples of embedding BIRT reports in application pages. Includes a UIM snippet using a SERVER_INTERFACE named DISPLAY with a centered FIELD bound to the report property, plus Java examples for retrieving BIRT report data and creating a pod with links for investigation-related pages. Useful if you need implementation patterns for integrating BIRT reports into UI/pod structures."
+                  },
+                  {
+                    "title": "POD Facade Implementation Example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Shows Java POD facade code for embedding a BIRT report in a report page and building an investigation summary pod. Includes `getBIRTReportData()` calling `biHelper.getReportData(...)` and `createPod(...)` using `PodBuilder.newPod(...)` to add chart content. Useful if you need implementation details for integrating BIRT reports into PODs or wiring pods to investigation/navigation pages."
+                  },
+                  {
+                    "title": "Non POD Facade Implementation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000017",
+                      "start_page": 16,
+                      "end_page": 17
+                    },
+                    "summary": "Shows non-POD facade Java examples for BIRT integration. Includes a method that builds an investigations summary report using current date and a one-month lookback, then calls `biHelper.getReportData`. Main focus is `getBIRTReportDetails(long concernRoleID)`, which creates a `ContentPanelBuilder`, adds rounded corners, sets `ConcernRoleID` as a report parameter, gets a `WidgetDocumentBuilder` for an employer workforce report, and inserts it into the panel. Useful for UI content-panel/report assembly patterns."
+                  }
+                ],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000017",
+                  "start_page": 13,
+                  "end_page": 17
+                },
+                "summary": "Explains how to integrate BIRT content into Cúram UI pages and PODs. Covers using BIRT_REPORT for report-page struct fields and BIRT_POD for POD embedding, with BIRT_POD needing prior styling setup. Describes logical report names mapped by BIHelper to physical reports via required BIReportConfiguration DMX entries; missing DMX causes runtime exceptions. Includes UIM and Java facade examples for embedding reports, building pods/content panels, and passing report parameters such as dates and ConcernRoleID."
+              },
+              {
+                "title": "Writing Portable BIRT Reports across DB2 databases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Steps for making BIRT reports portable across DB2 z/OS and non-z/OS: add a Viewer Configuration parameter `db2numbertype=bitdata`, duplicate the relevant dataset and rename it `zos`, remove dataset parameters and `?` query placeholders, then in the report’s Before Factory script switch to the `zos` dataset when `db2numbertype` is `bitdata`. Also add a `beforeOpen` script that converts report parameters with `BigDecimal` and `UniqueIDUtil.longToString` for use in the SQL query."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000018",
+              "start_page": 11,
+              "end_page": 18
+            },
+            "summary": "Explains how to view and integrate BIRT report content in Cúram. Covers Eclipse setup for viewing shipped reports, including importing CuramBIRTViewer, setting Java 1.5 compliance, updating Tomcat, adding EJBServer properties, publishing BIContent, and using H2 remote mode if applicable. Describes embedding BIRT in report pages and PODs via BIRT_REPORT/BIRT_POD, BIHelper, and DMX configuration. Includes UIM and Java facade examples, plus steps for making BIRT reports portable across DB2 z/OS and non-z/OS with a special viewer parameter and dataset scripting."
+          },
+          {
+            "title": "1.6 Authentication and Entitlements",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "This overview covers BIRT Viewer security and report development setup. It states that only authenticated users can access and run BIRT reports, but entitlement/authorization checks are not yet included and should be reviewed for public-facing apps. It also introduces development guidance for creating new reports: use a separate Eclipse instance for BIRT development, install it in a folder named `<eclipsebirt>`, and optionally create a startup batch file. It references the Third Party Tools Guide and BIRT Developer Guide for more detail."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "BIRT Viewer requires authenticated users to access and run reports. It does not currently include entitlement/authorization checks, so public-facing uses need review. The section also starts guidance for developing new reports, recommending a separate Eclipse instance for BIRT, installed in a folder named `<eclipsebirt>`, with an optional startup batch file."
+          },
+          {
+            "title": "1.7 Developing New Reports",
+            "level": 2,
+            "children": [
+              {
+                "title": "Eclipse Installation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Recommends using a separate Eclipse instance for BIRT development so BIRT versions can be updated independently of the main development setup; an all-in-one Eclipse/BIRT install is used internally. It also notes the BIRT Eclipse environment must be installed in a folder named <eclipsebirt>, or the build client.birt troubleshooting guidance must be followed. The section ends by recommending creation of a batch file to launch the BIRT Eclipse development environment."
+              },
+              {
+                "title": "Eclipse Post Installation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Import BIRT Projects",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Instructions for setting up and importing BIRT report projects in BIRT Eclipse. Covers importing the Curam reporting content project, Curam BIRT Viewer Samples, and CuramBIRTViewer; setting TOMCAT_HOME and Java compiler compliance to 1.5; configuring resource paths and workspace settings; and verifying setup by opening sample reports. Ends by stating the environment is ready to create a first report using operational database data."
+                  },
+                  {
+                    "title": "Configure BIRT Projects",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to configure BIRT projects in Eclipse: set the BIRT workspace/resource path, import the Curam reporting content, Curam BIRT Viewer Samples, and CuramBIRTViewer projects, configure TOMCAT_HOME and Java compliance level 1.5, and enable workspace settings for shared resources. Also covers verifying access to the CEFLibrary and running sample reports to confirm the environment is correctly set up before creating reports from the operational database."
+                  }
+                ],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000020",
+                  "start_page": 19,
+                  "end_page": 20
+                },
+                "summary": "Explains post-installation setup for the BIRT Eclipse development environment. Recommends using a separate Eclipse instance and a startup batch file, with the workspace named descriptively. Details importing the Curam reporting content, Curam BIRT Viewer Samples, and CuramBIRTViewer projects, setting TOMCAT_HOME, and configuring Java compliance to 1.5. Also covers workspace resource settings, verifying access to CEFLibrary, and opening sample reports to confirm the environment is ready for creating reports from operational database data."
+              },
+              {
+                "title": "Creating your first Sample Report",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Steps for creating a first BIRT sample report in Curam BI Content. It covers creating a new report, attaching the CEFLibrary from shared resources, configuring a local DB2 data source or CuramDM datamart source, creating a dataset with example SQL, adding Curam styled chart report items from ReportItemLibrary.rptlibrary, linking and formatting the chart, and deploying/testing the report through the Cúram BIRT Viewer using appbuild client.birt and localhost:9080/CuramBIRTViewer."
+              },
+              {
+                "title": "Creating your first Sample Report for a reporting tab",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Steps for creating a first sample report for a licensed reporting tab. It explains configuring Reporting/project/properties with BIBootstrap.properties, pointing centraldm to the correct datamart, and encrypting the database password. It also covers adding the properties path to Tomcat JVM classpath, saving reports in the correct BIContent/components/reportingForCEF or reportingForPlatform folder, verifying the library in Resource View, using CEFLibrary in the report outline, and adding the CuramDM data source to the report."
+              },
+              {
+                "title": "Report Content Compliance",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section explains report content compliance and BIRT setup for Cúram. It instructs developers not to modify report designs directly, but to copy reports before changing them. It also defines the required application database data source for BIRT content: CuramDB, which must be manually created on application servers. The excerpt includes JDBC connection details, creating a dataset and adding Curam-styled chart items, and testing reports through the Cúram BIRT Viewer or application pages."
+              },
+              {
+                "title": "Data Sources and JDBC Connections",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section explains BIRT data source and JDBC setup for reports. It shows how to edit a local preview data source with DB2 driver details, URL, user name, and password, then test the connection. It also notes creating datasets and adding Curam-styled chart items from the report library, linking them to datasets, and formatting charts. For application testing, it describes copying reports to the Cúram BIRT Viewer. Key compliance point: use the required CuramDB data source for all BIRT content, created manually on application servers."
+              },
+              {
+                "title": "Internationalization and Localization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to localize and internationalize BIRT reports in Cúram 8.1.2. Covers creating matching .properties files alongside the .rptdesign, publishing them with client.birt, linking the resource file in Report Designer, assigning Content keys in the Localization tab, and testing locale output in Eclipse and Tomcat via __locale parameters. Specifies naming convention ReportName_lang_country.properties, ASCII-only .properties files with Unicode escapes, and gives sample key/value patterns for report labels and messages."
+              }
+            ],
+            "node_id": "n000037",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000024",
+              "start_page": 19,
+              "end_page": 24
+            },
+            "summary": "Covers setting up a separate BIRT Eclipse environment for report development, including required folder naming, workspace setup, project imports, TOMCAT_HOME, and Java 1.5 compliance. Explains creating and testing a first sample report using CEFLibrary, CuramDB/CuramDM data sources, datasets, Curam-styled chart items, and deployment via appbuild client.birt and the BIRT Viewer. Also covers licensed reporting-tab setup with BIBootstrap.properties and Tomcat classpath changes, report content compliance rules, required JDBC CuramDB usage, and BIRT report localization with .properties files and locale testing."
+          },
+          {
+            "title": "1.8 Design Guidelines",
+            "level": 2,
+            "children": [
+              {
+                "title": "Real Time KPI Design Guidelines",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Guidelines for real-time KPI design and summary tables in BIRT. Assess each KPI for standalone performance and impact on other users; if issues exist, first apply BIRT performance tuning and benchmark, then consider a denormalized summary table. Real-time use must be truly necessary, and direct SQL against transaction tables must be too slow or disruptive. Summary tables should include denormalized columns to avoid scans and keyed columns to support future joins and retrieval of related data."
+              },
+              {
+                "title": "Summary Table Design Guidelines",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Guidelines for designing summary tables to support real-time KPI reporting in BIRT. It recommends first confirming the KPI must be real time and that querying transaction tables is either too slow or harms other users. If so, optimize the report and benchmark; if performance remains poor, use a summary table with denormalized columns to avoid scans and speed record identification. Include additional keyed columns to enable retrieval of related data and future-proof the table, while keeping joins performant."
+              },
+              {
+                "title": "BIRT Development Standards",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Naming Standard",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Defines report naming and parameter conventions for Cúram BIRT reports. File names must have no spaces, with examples for CCS and CEF reports, data sources, datasets, and report/data set parameter names. Specifies how external parameters should be typed and passed: operational IDs as Decimal, numbers as Integer, strings as String, dates as Date in MM/DD/YYYY, all without quotes. Also gives SQL guidance (minimal records, database-level calculations, portable Oracle/DB2, no vendor functions), PNG chart output, and a workaround for correctly sorting month labels on charts."
+                  },
+                  {
+                    "title": "External Parameters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Guidelines for BIRT report external parameters, SQL, and chart setup. External parameters should be typed without quotes: operational IDs as Decimal, numbers as Integer, strings as String, and dates as Date in MM/DD/YYYY format. SQL should return minimal records, push calculations/aggregations to the database, be portable across Oracle and DB2, and avoid vendor-specific functions. Charts should output as PNG. For month-name x-axis sorting, use month numbers sorted ascending and override labels via the chart script."
+                  },
+                  {
+                    "title": "SQL",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Guidelines for BIRT report SQL and chart setup. SQL should return the minimum records, do calculations/aggregations in the database, be portable across Oracle and DB2, and avoid vendor-specific functions. It also covers external parameter typing and formatting rules: operational IDs as Decimal, numbers as Integer, strings as String, dates as Date in MM/DD/YYYY, all passed without quotes. Chart output should be PNG, and month labels on the x-axis may need numeric sorting with script-based label overrides."
+                  },
+                  {
+                    "title": "Chart Type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section gives BIRT chart configuration guidance. It says chart output format should be PNG, set in the Select Chart Type tab. It also explains how to handle X-axis sorting when labels like month names would otherwise sort alphabetically: use the month number on the X-axis, sort ascending, then override displayed labels in the chart script via beforeDrawAxisLabel."
+                  },
+                  {
+                    "title": "Sorting Columns on X-Axis E.g. Displaying Month Name",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Guidelines for BIRT report design: naming standards for report, data source, dataset, and parameter names; how to define external parameter types and formats; SQL best practices for portability and minimizing returned data; chart output format should be PNG. Also explains how to correctly sort X-axis labels when displaying renamed values like month names: use month numbers on the axis, sort ascending, and override labels via chart scripting."
+                  }
+                ],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000026",
+                  "start_page": 25,
+                  "end_page": 26
+                },
+                "summary": "BIRT development standards for reports: naming rules (no spaces in filenames; conventions for report/data source/data set/parameter names), external parameter typing and formatting (Decimal for operational IDs, Integer for numbers, String for text, Date in MM/DD/YYYY, all unquoted), SQL best practices (return minimal rows, do calculations in DB, keep Oracle/DB2 portable, avoid vendor-specific functions), chart output as PNG, and a workaround for correctly sorting month labels on X-axes using month numbers plus chart scripting."
+              },
+              {
+                "title": "Drilling Down From a BIRT Report to a Reporting Application Page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to drill down from a BIRT report to a reporting application page by passing a page ID parameter and adding onclick JavaScript that calls `window.parent.curam.util.Navigation.goToUrl()` for different statuses (Completed, Pending, Overdue). Notes that BIRT XML stores quotes as `&quot;`, requiring editing in the source tab. Also covers BIRT chart accessibility: set a chart title in Eclipse’s Chart Wizard/Format Chart tab, and the title may be visible or hidden while still satisfying accessibility requirements."
+              },
+              {
+                "title": "Accessibility and BIRT Charts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to drill down from a BIRT report to a Reporting Application page by passing a page id parameter and adding onclick JavaScript that uses `curam.util.Navigation.goToUrl`, with examples for Completed, Pending, and Overdue categories. Also notes a BIRT XML quoting quirk (`&quot;` must be changed back to quotes in the source tab). For accessibility, it states that charts must have a title set in Eclipse’s chart wizard; the title may be visible or hidden, but must exist to meet accessibility standards."
+              }
+            ],
+            "node_id": "n000047",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000027",
+              "start_page": 25,
+              "end_page": 27
+            },
+            "summary": "Design guidelines for BIRT cover real-time KPI assessment, summary table design, development standards, drill-down navigation, and chart accessibility. KPIs should be real time only if necessary and performant without harming other users; otherwise tune BIRT first, then use denormalized summary tables with keyed columns. Standards include naming conventions, unquoted external parameters, portable SQL, PNG charts, and month-label sorting workarounds. It also shows how to drill from reports to application pages via onclick JavaScript and notes chart titles are required for accessibility, visible or not."
+          },
+          {
+            "title": "1.9 BIRT Compliance",
+            "level": 2,
+            "children": [
+              {
+                "title": "BIRT Reports",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "This section gives a BIRT compliance note and starts reporting datasource setup guidance. It recommends copying report design documents instead of modifying existing BIRT reports to avoid difficult upgrades. It then begins instructions for creating a Datamart data source on WebLogic/WebSphere, noting reporting support for Oracle and DB2, that BIRT Viewer was tested with both XA and non-XA sources, and recommending a non-XA datasource on WebSphere. It also introduces steps for creating a CuramReporting login alias and configuring the Oracle non-XA JDBC driver."
+              }
+            ],
+            "node_id": "n000058",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "BIRT Compliance advises copying BIRT report design documents rather than editing existing ones, to avoid difficult upgrades. The section then begins datamart reporting setup for WebLogic/WebSphere, noting reporting support for Oracle and DB2, BIRT Viewer testing with both XA and non-XA datasources, and recommending a non-XA datasource on WebSphere. It also starts steps for configuring a CuramReporting login alias and an Oracle non-XA JDBC driver."
+          },
+          {
+            "title": "1.10 Creating a Datamart Data Source on WebLogic and WebSphere",
+            "level": 2,
+            "children": [
+              {
+                "title": "WebSphere for OWB",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating the Data Source Login Alias",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Instructions for configuring the data source login alias for reporting on WebLogic/WebSphere. It says supported databases are IBM Db2 (including z/OS) and Oracle, and recommends using a non-XA data source on WebSphere. The main steps are creating a J2C authentication alias in the Administrative Console with alias name CuramReporting, database username/password, then configuring the Oracle non-XA JDBC driver under Resources > JDBC > JDBC providers."
+                  },
+                  {
+                    "title": "Setup the Oracle Non-XA Database Driver",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how to set up the Oracle non-XA database driver for Datamart/BIRT reporting in WebLogic/WebSphere. It notes that reporting supports Oracle and DB2, recommends using a non-XA data source on WebSphere, and gives prior steps for creating a database login alias (CuramReporting) with database username/password. The Oracle driver setup begins by navigating to Resources > JDBC > JDBC providers, selecting the correct scope, adding a new driver, and choosing Oracle / Oracle JDBC Driver."
+                  },
+                  {
+                    "title": "Setup the Oracle XA Database Driver",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Instructions for configuring the Oracle XA JDBC driver in WebSphere: navigate to Resources > JDBC > JDBC providers, create a new Oracle JDBC Driver provider with XA data source implementation, set the name to “Oracle XA JDBC Driver For Reporting,” point the class path to ojdbc6.jar, and finish without changing properties. The section also begins the non-XA data source setup for reporting, including data source name curamdm, JNDI jdbc/curamdm, Oracle SID-style JDBC URL, Oracle helper class, and authentication alias settings."
+                  },
+                  {
+                    "title": "Set up the Oracle Non-XA Database Driver Data Source",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Instructions for creating an Oracle non-XA JDBC data source for reporting. It tells you to navigate to Resources > JDBC > Data Source, create a new data source named curamdm with JNDI jdbc/curamdm, select the JDBC driver created for the XA setup, and configure the Oracle SID URL format jdbc:oracle:thin:@serverName:port:databaseName. It also specifies using the Oracle data store helper class and setting authentication/mapping aliases to <none>, with container-managed auth using the alias from the non-XA driver setup."
+                  },
+                  {
+                    "title": "Setup the DB2 Environment Variable",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Instructions for configuring DB2 in WebSphere: set the DB2UNIVERSAL_JDBC_DRIVER_PATH environment variable to the SDEJ drivers directory, then create a DB2 JDBC provider using the DB2 Universal JDBC Driver Provider with XA data source. If connecting to z/OS, verify the DB2 Connect license JAR path. Finally, create a DB2 data source named curamdm with JNDI jdbc/curamdm and the appropriate authentication aliases, then continue to custom properties."
+                  },
+                  {
+                    "title": "Set up the DB2 Database Driver Provider",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how to configure the DB2 Universal JDBC Driver Provider in WebSphere. It directs you to the JDBC Providers area, create a new DB2 provider, choose the DB2 Universal JDBC Driver Provider and XA data source type, then review settings and verify the DB2UNIVERSAL_JDBC_DRIVER_PATH for z/OS connectivity if needed. This section is part of the DB2 setup flow and leads into creating the DB2 data source (curamdm / jdbc/curamdm)."
+                  },
+                  {
+                    "title": "Set up the DB2 Database Driver Data Source",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Configures the DB2 database driver data source in WebSphere. It covers setting the DB2UNIVERSAL_JDBC_DRIVER_PATH environment variable, creating a DB2 Universal JDBC Driver Provider (XA), and adding a new data source named curamdm with JNDI name jdbc/curamdm. It also notes using the correct authentication aliases, leaving most defaults unchanged, and selecting the new data source’s custom properties for further configuration."
+                  }
+                ],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000030",
+                  "start_page": 28,
+                  "end_page": 30
+                },
+                "summary": "WebSphere for OWB explains how to configure Cúram BIRT reporting datamart data sources on WebSphere, noting both Oracle and DB2 are supported and recommending non-XA for WebSphere. It covers creating a J2C authentication alias (CuramReporting), setting up Oracle JDBC drivers and a curamdm data source (including SID URL and alias settings), and configuring DB2 by setting DB2UNIVERSAL_JDBC_DRIVER_PATH, creating the DB2 Universal JDBC Driver Provider (XA), and adding the curamdm data source with proper authentication aliases."
+              },
+              {
+                "title": "WebLogic",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Guidance for configuring BIRT Viewer on WebLogic. Recommends using a non-XA Oracle data source for the Datamart Data Source, named `curamdm` with JNDI `jdbc/curamdm`, targeting the Cúram node. Lists WebLogic Console steps to create the JDBC data source, set the Oracle Thin XA driver, use the Oracle SID connection URL, and restart AdminServer afterward. The excerpt also notes prior BIRT setup to set `fullyMaterializeLobData` to false and begins a separate section on enabling WebSphere logging for BIRT."
+              }
+            ],
+            "node_id": "n000060",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000030",
+              "start_page": 28,
+              "end_page": 30
+            },
+            "summary": "Instructions for creating the BIRT datamart data source (`curamdm`, JNDI `jdbc/curamdm`) on WebLogic and WebSphere. Covers supported Oracle and DB2 setups, with WebSphere recommending non-XA. Includes creating the `CuramReporting` J2C authentication alias, configuring Oracle JDBC providers/drivers and SID-based connection URL, and setting up DB2 Universal JDBC Driver Provider with `DB2UNIVERSAL_JDBC_DRIVER_PATH`, plus authentication alias mapping for the data source. Useful for app server-specific reporting datasource configuration."
+          },
+          {
+            "title": "1.11 Enabling WebSphere Application Server logging for BIRT",
+            "level": 2,
+            "children": [],
+            "node_id": "n000070",
+            "range": {
+              "start_unit_id": "p000031",
+              "end_unit_id": "p000031",
+              "start_page": 31,
+              "end_page": 31
+            },
+            "summary": "This section explains how to enable BIRT logging in WebSphere Application Server. It says logging is controlled through the WebSphere Integrated Solutions administrative console and recommends setting the org.eclipse.birt.* component to Severe to produce appropriate log output for production use."
+          },
+          {
+            "title": "1.12 Troubleshooting",
+            "level": 2,
+            "children": [
+              {
+                "title": "Cannot view BIRT content through Eclipse with H2",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Troubleshooting guidance for viewing BIRT content through Eclipse when using H2. The section mainly notes that BIRT logging can be increased on test systems, but requires `BIRT_VIEWER_LOG_LEVEL` in `WEB-INF/web.xml` to be set to `OFF`. It then gives WebSphere steps to change `org.eclipse.birt.*` log detail levels to Severe and restart the application server."
+              },
+              {
+                "title": "Build client.birt fails to execute.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Troubleshooting for BIRT report build and execution issues. Covers why the build client.birt may fail (requires DEVENV to point to the parent directory of the BIRT Eclipse install, and possibly updating version-eclipsebirt in BIRTthird_party_version.properties), fixing missing CEFLibrary by refreshing the library in Eclipse and checking workspace setup, and diagnosing report execution errors such as database/connection failures by verifying JDBC drivers in the ODA drivers directory."
+              },
+              {
+                "title": "The library with the namespace CEFLibrary is not found.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Troubleshooting for BIRT report development and execution in Cúram. Covers build.client.birt failures, requiring the DEVENV environment variable to point to the parent Eclipse directory and possibly updating version-eclipsebirt in BIRTthird_party_version.properties. Also addresses the “library with the namespace CEFLibrary is not found” error, recommending Refresh Library in Eclipse and verifying workspace/setup steps from Develop New Reports. Begins a section on report execution errors, especially database/JDBC connection issues."
+              },
+              {
+                "title": "Error when executing a report.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Troubleshooting for BIRT report execution failures. It explains that build/client.birt publish commands require the DEVENV environment variable to point to the parent of the BIRT Eclipse folder, and may need the `version-eclipsebirt` property updated in `BIRTthird_party_version.properties`. It also covers the “CEFLibrary not found” issue, recommending refreshing the library in Eclipse and verifying the workspace setup. For runtime report errors like database connection failures or missing Oracle message files, it advises checking that JDBC drivers exist in the ODA drivers directory."
+              },
+              {
+                "title": "Eclipse dies when previewing a BIRT report.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Troubleshooting BIRT report preview issues in Cúram/Eclipse. Covers missing JDBC JARs in the ODA drivers/plugins directories, especially when previewing in Eclipse or Tomcat, and notes that Eclipse can crash when previewing a BIRT report due to the JVM used; fix by setting birteclipse.bat to use %DEVENV%\\eclipsejre\\bin\\javaw.exe. Also mentions a race condition where only one report appears on the operational workspace and suggests bootstrapping BIRT by running any report from CuramBIRTViewer\\List."
+              },
+              {
+                "title": "Report Page only displays one report when more that one report exists on the operational workspace.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Troubleshooting note for BIRT report preview issues. This section explains that when the Report Page shows only one report in an operational workspace, the likely cause is a race condition while loading JDBC drivers. The workaround is to initialize the BIRT environment before opening the first Report Page by running any report from CuramBIRTViewer/List. It also sits among related BIRT/Eclipse/Tomcat driver and preview errors."
+              },
+              {
+                "title": "Tomcat closes on report preview or ODA SQL preview.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Troubleshooting for BIRT report preview issues in Tomcat/Eclipse. Covers verifying JDBC jar files are in the ODA drivers directory and copied to Eclipse or via the BIContent client.birt build target for Tomcat. Notes Eclipse can die when previewing reports due to JVM settings, fixed by pointing birteclipse.bat to eclipsejre\\bin\\javaw.exe. Also mentions a BIRT initialization/race-condition workaround using CuramBIRTViewer/List to bootstrap the environment before loading the Report Page."
+              },
+              {
+                "title": "BIRT Viewer does not run / List of reports not present.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Troubleshooting for BIRT Viewer failures and missing report lists. Covers a Tomcat preview failure caused by memory/permanent generation heap issues, recommending adding `-XX:MaxPermSize=256m` to Tomcat JVM settings. Also gives recovery steps for “BIRT Viewer does not run / List of reports not present”: delete `BIAppBIRTInfrastructureVersion.txt`, run `appbuild client.birt`, verify the `CuramBIRTViewer` web content/classes folder, then restart the tname server, operational database server, and Tomcat before accessing the viewer at `localhost:9080/CuramBIRTViewer/`."
+              },
+              {
+                "title": "Exception thrown when running report",
+                "level": 3,
+                "children": [],
+                "node_id": "n000080",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains a BIRT report runtime NullPointerException caused by missing classpath configuration. The fix is to go to Menu > Preferences > Tomcat > JVM Settings and add the full path to the EJBServer\\project\\properties directory for the stream in the classpath. The page also begins a separate topic about being unable to view all entities after creating a dataset, noting BIRT has a cap on how many tables it displays."
+              },
+              {
+                "title": "Unable to view all entities after creating dataset.",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains that after creating a dataset in Cúram/BIRT, not all entities/tables may be visible because BIRT caps the number of tables displayed when creating a Data Set. Also includes a separate report-running issue where a NullPointerException occurs in BIRT, with a workaround to add the EJBServer\\project\\properties directory to the Tomcat JVM classpath."
+              }
+            ],
+            "node_id": "n000071",
+            "range": {
+              "start_unit_id": "p000032",
+              "end_unit_id": "p000036",
+              "start_page": 32,
+              "end_page": 36
+            },
+            "summary": "Troubleshooting for BIRT in Cúram/Eclipse/Tomcat/WebSphere. Covers increasing BIRT logging in WebSphere, fixing Eclipse/H2 viewing issues, `client.birt` build failures via `DEVENV` and `version-eclipsebirt`, missing `CEFLibrary`, report execution errors from missing JDBC/Oracle files, Eclipse crashes during preview (`javaw.exe` fix), JDBC load race conditions, Tomcat memory/permgens (`-XX:MaxPermSize=256m`), restoring BIRT Viewer/report lists, a NullPointerException when running reports via JVM classpath setup, and the limit on visible entities when creating a dataset."
+          },
+          {
+            "title": "1.13 Deployment Considerations",
+            "level": 2,
+            "children": [
+              {
+                "title": "Default deployment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000083",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "This section explains BIRT Viewer deployment options for Curam BI. It highlights the default setup: BIRT is co-located with the Curam application on the same application server, and this standard installation is supported by the installer. It also notes an alternative separate-server deployment for greater fault tolerance and independent scaling, but requires manual steps. A non-homogeneous WebSphere/BIRT deployment example is included, with assumptions and uninstall/redeployment notes for moving CuramBIRTViewer to a BI cluster."
+              },
+              {
+                "title": "Non-Homogeneous Deployment for WebSphere and BIRT",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "How to Install the CuramBIRTViewer application on a BI Cluster",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000085",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Covers non-homogeneous deployment of CuramBIRTViewer on a separate BI WebSphere cluster. Lists assumptions: BI application already installed and working, JDBC resources defined at the Curam cluster level, and server configuration steps apply to the BI cluster. Also explains first step of migration: uninstall CuramBIRTViewer from the Curam cluster via WebSphere enterprise applications, confirm removal, save changes, and note that OOTB scripts may redeploy it unless manually deleted in production."
+                  },
+                  {
+                    "title": "Uninstall the CuramBIRTViewer application from the Curam Cluster",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains deployment options for Curam BIRT Viewer, including default co-located deployment and non-homogeneous deployment on a separate BI cluster. Lists assumptions for installing on a BI Cluster and gives steps to uninstall CuramBIRTViewer from the Curam Cluster via WebSphere enterprise applications. Notes that OOTB scripts automatically redeploy the application and may need manual deletion in production."
+                  },
+                  {
+                    "title": "Create a BI Cluster and Add the Application Servers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000087",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Explains how to create a WebSphere BICluster and convert existing server1 into a cluster member, including enabling Prefer Local and deferring HTTP session memory-to-memory replication. Also covers saving the cluster configuration. Then describes setting BICluster-scoped environment variables and JDBC driver paths needed for CuramBIRTViewer and related applications, with DB2/Oracle-specific variable setup if not already defined at cell scope."
+                  },
+                  {
+                    "title": "Database Drivers and associated environment variables",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000040",
+                      "start_page": 38,
+                      "end_page": 40
+                    },
+                    "summary": "Explains how to configure BICluster-level database connectivity for CuramBIRTViewer in WebSphere. It covers creating required JDBC driver environment variables (DB2UNIVERSAL_JDBC_DRIVER_PATH, UNIVERSAL_JDBC_DRIVER_PATH, or ORACLE_JDBC_DRIVER_PATH), deleting node-level overrides when needed, defining a JDBC provider at BICluster scope, creating JDBC data sources, setting authentication aliases, and adjusting custom properties such as fullyMaterializeLobData=false. Also includes saving, node synchronization, and testing the data source configuration."
+                  },
+                  {
+                    "title": "Application Servers and required configuration steps",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "WebSphere application server configuration steps for BI cluster nodes. Emphasizes cluster scope where available and repeating settings on each application server. Key items include classloader setup (policy MULTIPLE, class loading mode Parent first) to isolate the BI application, and web container settings such as Default Virtual host = default_host and transport chain/TCP channel thread pool = Web Container. Also references JDBC provider/data source testing to confirm DB connectivity from each node."
+                  },
+                  {
+                    "title": "ClassLoader Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "Configures WebSphere application server classloading for the BI cluster. It instructs admins to set the application Classloader policy to MULTIPLE for application isolation and the Class loading mode to Parent first to ensure proper class resolution, then apply and save if changed. The section sits within broader per-server cluster configuration steps and leads into Web Container settings."
+                  },
+                  {
+                    "title": "Web Container Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000091",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "Configures WebSphere web container settings for the BI application. It instructs administrators to open the application server’s Web Container settings, set the Default Virtual Host to default_host, and review web container transport chains. For each transport chain and TCP channel, the thread pool should be set to Web Container. This section is part of broader per-server BI cluster configuration and is useful for WebSphere deployment tuning and validation."
+                  },
+                  {
+                    "title": "Configure Port Access",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000092",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "This section explains how to configure WebSphere port access for Cúram. It covers updating the BOOTSTRAP_ADDRESS port to match AppServer.properties, creating unique client and web services TCP/IP ports, and defining corresponding transport chains. It also notes enabling user persistent connections for the client chain and creating virtual hosts named client_host and webservices_host. The steps emphasize uniqueness of port values when multiple application servers share a WebSphere node."
+                  },
+                  {
+                    "title": "WebSphere Logs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "WebSphere Logs covers administrative tuning for WebSphere application servers. It recommends directing transaction logs to fast disks, then outlines ORB Container Configuration (enable “Pass by reference” in ORB Service and save to master configuration) and JVM Configuration (example settings: verbose garbage collection enabled, initial and maximum heap size around 1024). This section is useful for WebSphere performance and runtime configuration guidance."
+                  },
+                  {
+                    "title": "ORB Container Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "Configures IBM WebSphere application server settings. The ORB Container Configuration section instructs enabling the ORB Service “Pass by reference” option via the Administration Console and saving to the master configuration. It sits alongside related tuning guidance for WebSphere logs (using fast disk paths) and JVM settings (verbose GC, heap sizes). Useful if you need application server performance or integration configuration details, especially for server1 and multi-instance host alias adjustments."
+                  },
+                  {
+                    "title": "JVM Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000095",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "Describes WebSphere JVM tuning for an application server (example: server1). From the Administration Console, navigate to Servers > Server Types > WebSphere application servers > Java and Process Management > Process Definition > Java Virtual Machine, then set Verbose garbage collection to true and configure initial and maximum heap sizes (example 1024 MB each). The section notes these values are examples and may be adjusted for tuning."
+                  },
+                  {
+                    "title": "Install the CuramBIRTViewer application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000096",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "This section explains how to install the CuramBIRTViewer EAR in WebSphere via the deployment manager’s Administration Console. It covers starting a new enterprise application from a local EAR file, using detailed installation options, targeting the HTTP Server and BI Cluster, and completing the install with default values. It also describes a required post-install change: update the application class loading policy to “Classes loaded with local class loader first (parent last)” to avoid restart-related class loader exceptions."
+                  },
+                  {
+                    "title": "Update the HTTP Server Plugin and restart HTTP Server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000097",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "Explains how to ensure Curam BIRTViewer is correctly deployed in WebSphere: map the application to an HTTP Server and BI cluster, verify the EAR is installed, and override application-level session management so Curam and CuramBIRTViewer use separate cookie names and paths. It then instructs regenerating and redeploying the HTTP Server plugin and restarting the HTTP Server so requests reach the cluster, followed by starting the application installation process via the Deployment Manager’s New Enterprise Application path."
+                  }
+                ],
+                "node_id": "n000084",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000045",
+                  "start_page": 37,
+                  "end_page": 45
+                },
+                "summary": "Covers non-homogeneous WebSphere deployment of CuramBIRTViewer on a separate BI cluster. Explains uninstalling the default Curam cluster deployment, creating BICluster, defining cluster-scoped JDBC driver paths, providers, and data sources, then configuring each BI server (classloader, web container, ports, virtual hosts, ORB, JVM, logs). Also describes installing the EAR, mapping to HTTP Server and BI cluster, setting app-level session cookies, and regenerating the HTTP Server plugin/restarting HTTP Server."
+              }
+            ],
+            "node_id": "n000082",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000045",
+              "start_page": 37,
+              "end_page": 45
+            },
+            "summary": "Covers Curam BIRT Viewer deployment options. Default installation co-locates BIRT with Curam on the same application server via installer support; separate-server deployment is possible for fault tolerance and independent scaling but requires manual WebSphere steps. The main example details non-homogeneous WebSphere setup on a BI cluster: uninstall/redeploy CuramBIRTViewer, create BICluster, define JDBC driver paths/providers/data sources, configure server ports, virtual hosts, classloading, ORB/JVM/logs, install the EAR, adjust session cookies, and regenerate the HTTP Server plugin."
+          },
+          {
+            "title": "1.14 Runtime Architecture",
+            "level": 2,
+            "children": [
+              {
+                "title": "Default Runtime Architecture",
+                "level": 3,
+                "children": [],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Describes the default BIRT runtime architecture and how report rendering works. It outlines the component flow from database to server/BIRT server and then to the client application, with the client selected by configuration. It introduces the BIRT Viewer Application, the BIRT Engine Abstraction Layer for locating templates, and the BIRT Viewer that renders reports from the source database. It also gives the request/response sequence for displaying report content across client browser, Curam client/server apps, database, and BIRT server app."
+              },
+              {
+                "title": "BIRT Viewer Application",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "BIRT Engine Abstraction Layer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000101",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Describes the BIRT runtime architecture and the BIRT Engine Abstraction Layer. The layer manages report template lookup when the BIRT Engine is used, while the BIRT Viewer wraps the open source BIRT Engine to render selected templates from the source database. Also outlines the default component flow among database, server applications, and client application, plus the request sequence for rendering report content through client browser, Curam client/server apps, database, and BIRT server app."
+                  },
+                  {
+                    "title": "BIRT Viewer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000102",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Describes the BIRT viewer runtime architecture and how report content is rendered. It introduces the BIRT Viewer Application, which wraps the open source BIRT Engine, and the BIRT Engine Abstraction Layer for report template lookup. The BIRT Viewer acts as the report engine, rendering selected templates and serving reports from the source database. It also outlines the request flow between client browser, Curam client/server applications, Curam database, and BIRT server app when a user opens a page containing report content."
+                  }
+                ],
+                "node_id": "n000100",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Introduces the BIRT Viewer Application, a new component that wraps the open source BIRT Engine. Explains the BIRT Engine Abstraction Layer, which manages report template lookup when the BIRT Engine is used, and the BIRT Viewer, which renders selected templates and serves reports from the source database. Also outlines the default runtime/component flow and the request sequence for rendering report content across client browser, Curam client/server applications, Curam database, and the Curam BIRT server app."
+              },
+              {
+                "title": "BIRT",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Rendering report content using BIRT",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000104",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Describes how BIRT-rendered report content is delivered in the default runtime architecture and when a user opens a page containing reports. Introduces the BIRT Viewer Application, the BIRT Engine Abstraction Layer for locating report templates, and the BIRT Viewer/Engine that renders templates against the source database. Also outlines the interaction flow among client browser, Curam client/server applications, database, and BIRT server app when report content is requested."
+                  },
+                  {
+                    "title": "BIRT Performance and Scalability",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000105",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "This section outlines BIRT report performance and scalability considerations: SQL query quality, use of summary tables in the transactional database, and fallback to the data warehouse when needed. It also covers security implications of aggregated versus detailed data, recommending direct database queries for aggregate-only reports and EJB/facade calls when underlying data is exposed or stricter security is required. It briefly introduces report-viewing dependencies across three environments: Application Server, Tomcat BIRT Viewer, and BIRT Eclipse."
+                  },
+                  {
+                    "title": "Security",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000106",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Explains BIRT report security considerations. If reports use only aggregated data, underlying data security can be ignored; if views expose underlying data, security must be enforced. Recommends either querying the application database directly for aggregate-only reports, or using EJB calls to application facades when detailed data or strict security requirements apply. Also briefly notes report-viewing dependencies across Application Server, Tomcat BIRT Viewer, and BIRT Eclipse, including that Application Server testing auto-sets the JNDI data source."
+                  }
+                ],
+                "node_id": "n000103",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Introduces BIRT’s default runtime architecture and how report content is rendered. It defines the BIRT Viewer Application, the BIRT Engine Abstraction Layer for locating templates, and the BIRT Viewer/Engine that renders templates against the source database. It also describes the request flow among client browser, Curam client/server applications, database, and BIRT server app when a page contains report content."
+              }
+            ],
+            "node_id": "n000098",
+            "range": {
+              "start_unit_id": "p000046",
+              "end_unit_id": "p000047",
+              "start_page": 46,
+              "end_page": 47
+            },
+            "summary": "Defines the default BIRT runtime architecture and report-rendering flow. It introduces the BIRT Viewer Application, which wraps the open source BIRT Engine, plus the BIRT Engine Abstraction Layer for locating report templates and the BIRT Viewer that renders templates against the source database. It also outlines how report content is requested and returned across the client browser, Curam client/server apps, database, and Curam BIRT server app, with the client chosen by configuration."
+          },
+          {
+            "title": "1.15 Viewing Reports - Dependencies",
+            "level": 2,
+            "children": [
+              {
+                "title": "Viewing Reports",
+                "level": 3,
+                "children": [],
+                "node_id": "n000108",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "This section explains report viewing dependencies in BIRT and the surrounding performance/security considerations. It covers that report performance depends on well-designed SQL, optional summary tables in the transactional database, and data warehouse use when needed. It also notes security rules for aggregated vs. detailed data, recommending direct database queries for aggregated data and EJB facade calls when underlying data or strict security is involved. It introduces three viewing environments: Application Server, Tomcat BIRT Viewer, and BIRT Eclipse, and notes JNDI datasource behavior on Application Server."
+              },
+              {
+                "title": "Application Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "This section explains BIRT report viewing in the Application Server environment. It notes that the server automatically sets the JNDI data source property for all reports, overriding report-level settings, and requires the JNDI data source to already exist on the application server. It also touches on BIRT report performance and scalability (SQL design, summary tables, data warehouse use) and security guidance for choosing between direct database queries and EJB/facade access based on whether underlying data is exposed."
+              },
+              {
+                "title": "Tomcat - BIRT Viewer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000110",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "Explains how to test BIRT reports in two environments. In Tomcat, the developer must manually set data source properties in `SERVER_DIR\\project\\properties\\Bootstrap.properties`, which overrides report settings, then reports can be tested successfully. In BIRT Eclipse, the developer must manually enter data source properties for each report as described in “Developing New Reports” and use the report’s Preview tool."
+              },
+              {
+                "title": "BIRT Eclipse",
+                "level": 3,
+                "children": [],
+                "node_id": "n000111",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000052",
+                  "start_page": 49,
+                  "end_page": 52
+                },
+                "summary": "Explains how to test BIRT reports in Eclipse: developers must manually enter data source properties for each report, as described in “Developing New Reports,” then use the report’s Preview tool. Contrasts this with Tomcat/BIRT Viewer testing, where Bootstrap.properties in SERVER_DIR\\project\\properties overrides report settings. The rest of the section is mainly legal notices, copyright, privacy policy, trademarks, and sample code/license disclaimers."
+              }
+            ],
+            "node_id": "n000107",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000052",
+              "start_page": 48,
+              "end_page": 52
+            },
+            "summary": "Explains BIRT report-viewing dependencies across three environments: Application Server, Tomcat BIRT Viewer, and BIRT Eclipse. Covers performance/scalability guidance (well-designed SQL, summary tables, data warehouse use) and security rules for aggregated vs. detailed data, recommending direct database queries for aggregate-only reports and EJB/facade calls when underlying data is exposed or tightly secured. Notes that Application Server auto-sets the JNDI datasource, Tomcat uses Bootstrap.properties, and Eclipse requires per-report datasource entry plus Preview. Includes mostly legal notices on pages 51–52."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000052",
+          "start_page": 9,
+          "end_page": 52
+        },
+        "summary": "Introduces Cúram’s BIRT-based business intelligence stack for chart/tabular reporting and decision support. Covers BIRT architecture and components, build and deployment workflow, viewing/integrating reports in Eclipse/Tomcat, authentication, report development setup, design guidelines, compliance, datamart datasource configuration for WebLogic/WebSphere, logging, troubleshooting, deployment options, runtime architecture, and environment-specific viewing dependencies. Includes performance, scalability, security, and localization guidance."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,650 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "ddde437e723c85d4",
+    "title": "Cúram 8.1.2 Data Mapping Editor Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/DataMappingEditorGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "ddde437e723c85d42d0f5ca8b676ef75830112ea763e7bfad39a8a8005c4f762",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:06:47+00:00",
+    "page_count": 18,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/DataMappingEditorGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Data Mapping Editor Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000018",
+      "start_page": 1,
+      "end_page": 18
+    },
+    "summary": "Front matter and opening chapter of the Cúram 8.1.2 Data Mapping Editor Configuration Guide. It states the guide’s purpose, audience, and prerequisites, then explains data mapping for moving CDS data into evidence entities for program mappings on intake applications. The chapter covers creating, editing, releasing, deleting, and maintaining multiple effective-dated mapping configurations, noting that released mappings are immutable and newer mappings with the same effective date supersede older ones. It also describes the Data Mapping Editor UI: title bar, menu bar, information panel, datastore entity tree, evidence entity list, and mapping workspace. The guide explains how to create entity and attribute mappings with drag-and-drop, add conditions and set values, use code table mappings, and delete mappings; it also notes invalid attribute mapping rules and that mappings cannot be edited after creation. The section includes notices, privacy policy, trademarks, and legal/copyright information.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the “Notices” section on page 17 before using the product or this documentation. It also includes the copyright statement for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter and overview for the Cúram Data Mapping Editor guide. States this edition applies to Cúram 8.1, 8.1.1, and 8.1.2. Introduces the guide’s purpose, audience, and prerequisites, then explains data mapping concepts, creating/editing/releasing/deleting program mappings, and supporting multiple effective-dated configurations. Describes the editor UI panels and workspace behavior, and covers how to create entity and attribute mappings, including conditions, set value, and basic validity rules/limitations."
+          },
+          {
+            "title": "Edition — pages 15-16",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "This section explains Data Mapping Editor rules and actions. It covers attribute mapping constraints: mappings must originate from datastore entities, cannot map from a larger to smaller type of the same kind, and datastore entity attributes cannot be dragged onto other datastore attributes. It describes attribute mapping conditions, which apply only when a specified condition is met, and code table mappings between code table attributes. It also notes that entity and attribute mappings cannot be edited after creation, only deleted and recreated, and deletion removes any attached condition."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000016",
+          "start_page": 5,
+          "end_page": 16
+        },
+        "summary": "Front matter and core guidance for the Cúram Data Mapping Editor guide, applicable to Cúram 8.1, 8.1.1, and 8.1.2. Introduces the purpose, audience, prerequisites, and overall data mapping flow for program mappings. Explains the editor layout and workspace behavior, then covers creating entity and attribute mappings, including conditions, set value, code table mappings, validity limits, and deletion rules. Also notes mappings are effective-dated, can be released only once, and released mappings cannot be edited."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Provides legal notices for the document: sample data is fictitious, sample programs are offered “AS IS” without warranty, and Merative disclaims liability. Points to the Merative privacy policy at https://www.merative.com/privacy. Also lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others, plus copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "This section lists trademark and copyright notices for Merative and third-party products. It identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks, notes that sample names in the document are fictitious, and states that sample programs are provided “as is” under the Merative Client Agreement. It also includes a privacy policy link and the copyright notice © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000017",
+          "start_page": 17,
+          "end_page": 17
+        },
+        "summary": "Legal and usage notices for the publications. Covers personal and enterprise reproduction limits, preservation of proprietary notices, and prohibition on redistribution or derivative works without permission. States no additional rights are granted, Merative may withdraw permission, and export laws apply. Includes an “as-is” warranty disclaimer, patent notice, third-party product/site disclaimer, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This Contents section lists the guide’s front matter and Chapter 1, “Configuring with the Data Mapping Editor.” It outlines the chapter’s scope: introduction, data mapping concepts and lifecycle actions, the Data Mapping Editor UI, and creating/editing/deleting entity and attribute mappings. It also includes notices, privacy policy, and trademarks, plus publication/version information for Cúram 8.1.2."
+      },
+      {
+        "title": "1 Configuring with the Data Mapping Editor",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section states that the document explains how to use the Cúram Data Mapping Editor. It identifies the intended audience as people configuring data mappings and assumes familiarity with the Data Mapping Engine, Cúram Data Store (CDS), and Cúram Dynamic Evidence. It also previews the guide’s chapters: Data Mapping, The Data Mapping Editor, and Creating Entity Mappings."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for people responsible for configuring data mappings in Cúram. This guide explains how to use the Data Mapping Editor, assuming familiarity with the Data Mapping Engine, Cúram Data Store (CDS), and Cúram Dynamic Evidence. It outlines the guide’s scope and chapters, including data mapping concepts, creating and releasing mappings, editor layout and workspace manipulation, and creating entity mappings with conditions and validity rules."
+              },
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for using the Cúram Data Mapping Editor: readers should already have the Using the Data Mapping Engine guide and be familiar with the Cúram Data Store (CDS) and Cúram Dynamic Evidence. This section appears in an introduction to the guide, which explains the guide’s purpose, audience, and chapter overview for configuring data mappings between CDS and Cúram evidence entities."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the guide’s scope, audience, and prerequisites for using the Cúram Data Mapping Editor. It explains that data mapping moves data from the Cúram Datastore into Cúram evidence entities via mappings configured in the editor, typically for a program on an intake application. It also lists the guide’s chapters: Data Mapping, The Data Mapping Editor, and Creating Entity Mappings, which cover mapping concepts, editor layout/workspace actions, and creating valid entity mappings with conditions."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Cúram Data Mapping Editor guide. It states the document explains how to use the editor to configure mappings from the Cúram Data Store (CDS) into Cúram evidence entities, mainly for people responsible for data mapping on intake applications. It assumes familiarity with the Data Mapping Engine, CDS, and Cúram Dynamic Evidence, and previews the chapters on data mapping concepts, editor layout/workspace use, and creating entity mappings with conditions and validity rules."
+          },
+          {
+            "title": "1.2 Data Mapping",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Cúram Data Mapping Editor guide. It explains that data mapping transfers data from the Cúram Data Store into Cúram evidence entities using mappings configured in the editor for a program on an intake application. The section states the guide’s purpose, intended audience, and prerequisite familiarity with the Data Mapping Engine, CDS, and Dynamic Evidence, and outlines the main chapters: Data Mapping, The Data Mapping Editor, and Creating Entity Mappings."
+              },
+              {
+                "title": "What Happens During a Mapping?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains what happens when an application’s answers in CDS are mapped into Cúram evidence entities on a case, and how mapping configurations are managed. Covers creating mappings with an effective date, editing them in the Data Mapping Editor, releasing mappings so they become active and immutable, deleting mappings, and using multiple effective-dated mappings over time. Also notes that a newer released mapping with the same effective date supersedes an earlier one."
+              },
+              {
+                "title": "Configuring a Mapping",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to configure program data mappings in Cúram’s Data Mapping Editor. Covers creating a mapping from the application programs list with an effective date, editing mappings while in “in-edit” status, releasing mappings to make them active from the effective date, and deleting them from the list. Notes that released mappings cannot be edited, and if two released mappings share the same effective date, the newer one supersedes the older. Also describes using multiple mappings over time to support changing business rules."
+              },
+              {
+                "title": "Editing a Mapping Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how program mapping configurations are created, edited, released, deleted, and managed over time in the Cúram Data Mapping Editor. Editing is done from the program mappings list via Edit, which opens the DME to define entity and attribute mappings while the mapping remains in “in-edit” status until release. Covers effective dates, release behavior, precedence when dates match, and support for multiple mappings to handle changes over time."
+              },
+              {
+                "title": "Releasing a Mapping Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to release a Cúram Data Mapping configuration from the program mappings list. Releasing changes the status to “released,” makes the mapping active from its effective date, and it is then used by the system for CDS-to-evidence mapping. If another released mapping has the same effective date, the newly released one takes precedence. Released mappings cannot be edited afterward."
+              },
+              {
+                "title": "Deleting a Mapping Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how Cúram program mappings are managed in the Data Mapping Editor: creating a mapping with an effective date, editing entity/attribute mappings while in “in-edit” status, releasing it to make it active from the effective date, and deleting it from the mappings list. Notes that released mappings cannot be edited, later mappings with the same effective date take precedence, and multiple mappings can be maintained over time for changing requirements."
+              },
+              {
+                "title": "Maintaining Multiple Mapping Configurations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains how to manage Cúram Data Mapping configurations for a program: creating mappings with an effective date, editing them in the Data Mapping Editor while in “in-edit” status, releasing them so they become active from the specified date, and deleting them from the list. It also notes that released mappings cannot be edited and that if two released mappings share the same effective date, the newer one supersedes the older. It emphasizes using multiple mappings over time to support changing business rules."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Defines data mapping in Cúram: moving CDS data into evidence entities using mappings configured in the Data Mapping Editor for intake program applications. Explains the mapping lifecycle—create with an effective date, edit while in “in-edit” status, release to activate from that date, and delete from the mappings list. Notes that released mappings are immutable, newer mappings with the same effective date supersede older ones, and multiple effective-dated mappings support changing business rules over time."
+          },
+          {
+            "title": "1.3 The Data Mapping Editor",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Introduces the Cúram Data Mapping Editor, a drag-and-drop tool for mapping CDS data to evidence entities. It explains that administrators create mapping rules by connecting attributes or entities, and submitted application data is replicated to evidence for case worker viewing. The section also notes how the editor is opened from a program mappings list and outlines main UI areas, especially the Title Bar, Menu Bar, Information Panel, and the Datastore Entity Tree used to browse and select datastore entities."
+              },
+              {
+                "title": "Title Bar",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section introduces the Cúram Data Mapping Editor and its main UI areas. It explains the Title Bar, which shows the Application and Program name, and briefly describes the adjacent Menu Bar and Information Panel. It also covers the Datastore Entity Tree, including its hierarchical parent/child display, expand/collapse behavior, and role in selecting datastore entities for mapping to evidence."
+              },
+              {
+                "title": "Menu Bar",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Describes the Data Mapping Editor’s interface, including the Menu Bar beneath the Title Bar. It notes the Menu Bar contains action icons such as Save, while the adjacent Information Panel shows status messages. Also situates the Menu Bar within the overall editor layout alongside the Title Bar and Datastore Entity Tree. Useful for understanding where editor commands are located and what controls are available."
+              },
+              {
+                "title": "Information Panel",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "The Information Panel is a status panel in the Cúram Data Mapping Editor. Positioned to the right of the Menu Bar, it provides general information to the user while mapping CDS and evidence entities in the editor."
+              },
+              {
+                "title": "Datastore Entity Tree",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Describes the Datastore Entity Tree panel in the Cúram Data Mapping Editor. It shows the application’s datastore schema as a hierarchical parent/child tree, letting administrators select datastore entities for mapping to evidence. On open, all entities appear with child entities collapsed; expandable arrows indicate entities with children and support recursive expand/collapse. Each tree item shows the entity name and icon. Entity attributes are not displayed in this panel."
+              },
+              {
+                "title": "Evidence Entity List",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Describes the Evidence Entity List panel in the Cúram evidence editor: it shows only top-level dynamic evidence entities for the case type, cannot be expanded in the list, and hides attributes until a parent is dragged into the mapping workspace. Also introduces the Evidence Mapping Workspace and its tabs, where datastore and evidence entities can be opened, dragged, linked by parent/child relationships, and closed recursively with their descendants."
+              },
+              {
+                "title": "Evidence Mapping Workspace",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Evidence Mapping Workspace Tab",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Describes the Evidence Mapping Workspace tab in the Cúram editor. It explains that each datastore entity can open a tab showing the selected datastore entity with a distinct title bar/icon and an internal attribute tree. The parent datastore entity is fixed in the tab and cannot be removed. It also covers dragging child datastore entities and evidence entities into the workspace, recursively opening descendants, showing parent-child connector lines, and closing child entities along with their descendants."
+                  },
+                  {
+                    "title": "Opening Child Datastore Entities",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how child datastore entities are opened in the Evidence Mapping Workspace. Child entities (and their descendants) can be dragged from the parent datastore entity into the workspace, where connecting lines show parent/child relationships. Child entities can be closed with the close button, which also closes any nested child entities. This section sits alongside related guidance on the Evidence Entity List and opening evidence entities, and is useful for understanding how mappings are built from datastore hierarchies."
+                  },
+                  {
+                    "title": "Opening Evidence Entities",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how the Evidence Entity List and mapping workspace work in the editor. The list shows only top-level dynamic evidence entities, without attributes or expandable children; child entities become accessible only after the parent is dragged into the workspace. Evidence entities can be dragged into the mapping workspace, where parent/child relationships are shown with connecting lines and children can be opened recursively. Closing a child also closes its descendant child entities."
+                  },
+                  {
+                    "title": "Moving Entities Around the Workspace",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to move datastore or evidence entities by dragging the title bar to free workspace space and access attributes. This page also introduces entity mappings between CDS datastore entities and evidence entities, including how to create them by dragging the source entity “>>” icon to a target entity. It notes that entity mappings create target records for each source record, can use set value, may have conditions, and have no invalid source-target combinations."
+                  }
+                ],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Describes the Evidence Mapping Workspace and Evidence Entity List in the Cúram editor. The workspace is the middle panel where datastore-to-evidence mappings are defined via tabs opened from datastore entities. It covers tab behavior, fixed parent datastore entities, internal attribute trees, and recursive opening/closing of child datastore and evidence entities with connector lines showing parent-child relationships. The Evidence Entity List shows only top-level dynamic evidence entities; child entities are accessible only after dragging the parent into the workspace."
+              }
+            ],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000012",
+              "start_page": 11,
+              "end_page": 12
+            },
+            "summary": "Introduces the Cúram Data Mapping Editor, a drag-and-drop tool for creating mapping rules between CDS and evidence entities. It explains that submitted application data is replicated from datastore attributes to evidence attributes for case worker viewing. The section also covers how the editor is opened from a program mappings list and describes the main UI panels: Title Bar, Menu Bar, Information Panel, Datastore Entity Tree, Evidence Entity List, and Evidence Mapping Workspace, including hierarchy, expand/collapse, tabs, and parent/child drag-and-drop behavior."
+          },
+          {
+            "title": "1.4 Creating Entity and Attribute Mappings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to create entity mappings between Cúram Datastore (CDS) entities and evidence entities in the Data Mapping Editor. Covers dragging from a datastore entity’s “>>” icon to an evidence entity, how the mapping line appears, and that entity mappings create a target record for each source record. Notes use with set value to populate constants, support for mapping differing attribute types, optional conditions, and that any datastore-to-evidence entity mapping is valid."
+              },
+              {
+                "title": "Creating Entity Mappings",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Successful Entity Mappings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains what happens when an entity mapping is successfully created between a datastore entity and an evidence entity. Dropping the dragged “>>” link onto the evidence entity title bar permanently connects the two entities, and the right-click menu then offers options to add a condition or remove the mapping. It also notes that any datastore entity can be mapped to any evidence entity; unlike attribute mappings, there are no invalid entity mappings."
+                  },
+                  {
+                    "title": "Entity Mapping Conditions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains entity mapping conditions for mapping a source attribute to a target attribute of a different type, using set value on the target entity. Gives an example mapping a boolean blindness indicator to a target disability type string. Describes how to add conditions and set values via right-click actions, and how attribute mappings are created by drag-and-drop. Also covers successful vs. unsuccessful mappings and invalid cases such as duplicate mappings or mismatched underlying data types."
+                  }
+                ],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to create entity mappings in the Data Mapping Editor by dragging the source datastore entity’s “>>” icon onto an evidence entity title bar. An entity mapping creates a target record for each source record, can support set value usage, and may help map source attributes to target attributes of different types. Successful drops permanently connect the entities and enable right-click options to add conditions or remove the mapping. Any datastore entity can map to any evidence entity; there are no invalid entity mappings."
+              },
+              {
+                "title": "Creating Attribute Mappings",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Successful Attribute Mappings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how to create successful attribute mappings in the Cúram data mapping editor by dragging a source datastore attribute onto a valid target evidence attribute. A successful drop creates a mapping line between attributes and an entity-level line between title bars; later mappings show only attribute lines. Also covers entity mapping conditions and set value actions for mapping between different types, such as boolean to string. Notes invalid mappings are not highlighted and fail if the target already has a source mapping or data types differ."
+                  },
+                  {
+                    "title": "Unsuccessful Attribute Mappings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how attribute mappings work in the data mapping editor, including valid drag-and-drop behavior and entity mapping conditions. For unsuccessful mappings, a target attribute is not highlighted if the mapping is invalid; releasing the cursor removes the dragged attribute and line. Invalid mappings occur when an evidence attribute already has a datastore attribute mapped to it, or when source and target attributes have different underlying data types."
+                  },
+                  {
+                    "title": "Attribute Mapping Conditions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains attribute mapping conditions in the Data Mapping Editor: conditions are added to an existing mapping via the target attribute’s Add Condition action and restrict mapping based on source datastore values (for example, only map if a field exceeds a threshold). Also notes related mapping rules: datatype size restrictions, mappings must originate from datastore entities, datastore-to-datastore attribute dragging is disallowed, code table mappings are supported, and mappings cannot be edited after creation—only deleted and recreated, with conditions removed on deletion."
+                  },
+                  {
+                    "title": "Code Table Mapping",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to create code table mappings in the Data Mapping Editor: code table attributes can be explicitly mapped between datastore and evidence entities via the Code Table Mapping tab, creating a new mapping and adding list-item pairs for source and target code items. This section sits alongside mapping rules and constraints, including that mappings must originate from datastore entities, cannot map larger same-type attributes to smaller ones, and cannot be edited after creation. It also notes deletion behavior for mappings and conditions."
+                  }
+                ],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to create attribute mappings in the Data Mapping Editor by dragging a datastore attribute onto a valid evidence attribute. Valid targets highlight orange; a successful drop creates an attribute line, and the first mapping also draws an entity-to-entity line. Invalid targets do not highlight and the dragged line disappears on release. Notes constraints: each evidence attribute can have only one datastore source, and source/target data types must match. Also covers entity mapping conditions and set value for mapping different types."
+              },
+              {
+                "title": "Editing Entity and Attribute Mappings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section states that entity and attribute mappings cannot be edited after creation; they must be deleted and recreated. It also covers deletion behavior for entity and attribute mappings, including confirmation prompts and removal of any attached conditions. Related rules shown nearby include mapping constraints (e.g., no mappings from evidence attributes, no same-type narrowing from larger to smaller types), attribute mapping conditions, and code table mapping setup."
+              },
+              {
+                "title": "Deleting an Entity Mapping",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to delete an entity mapping in the Data Mapping Editor: right-click the target entity title bar, choose Delete Mapping, and confirm the prompt. Deleting a mapping also removes any condition attached to it. This section appears alongside notes that entity and attribute mappings cannot be edited after creation, so they must be deleted and recreated if changes are needed."
+              },
+              {
+                "title": "Deleting an Attribute Mapping",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000018",
+                  "start_page": 15,
+                  "end_page": 18
+                },
+                "summary": "Explains how to delete an attribute mapping in the Data Mapping Editor: right-click the target attribute and choose Delete Mapping, then confirm. Notes that any condition attached to the mapping is deleted too. This section is adjacent to related mapping rules, including constraints on creating mappings, attribute mapping conditions, code table mappings, and deleting entity mappings."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000018",
+              "start_page": 13,
+              "end_page": 18
+            },
+            "summary": "Explains how to create mappings in the Data Mapping Editor between Cúram Datastore and evidence entities at both entity and attribute level. Covers drag-and-drop creation, visual feedback, successful vs invalid mappings, and that entity mappings create one target record per source record. Notes conditions and set value for mapping different types or constants, rules such as one source per evidence attribute and matching data types, plus that mappings cannot be edited after creation and must be deleted/recreated."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000018",
+          "start_page": 9,
+          "end_page": 18
+        },
+        "summary": "Introduces configuring Cúram data mappings from the Data Mapping Editor. Covers what data mapping is, how mappings are created/edited/released/deleted with effective dates, and that released mappings are immutable and can be superseded by newer ones. Explains the editor’s main UI panels and drag-and-drop workspace for CDS and evidence entities. Also describes creating entity and attribute mappings, adding conditions and set values, code table mappings, invalid mapping rules, and that mappings cannot be edited after creation."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

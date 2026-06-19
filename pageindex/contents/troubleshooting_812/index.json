@@ -1,0 +1,725 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "2793cdac8cec55e4",
+    "title": "Cúram 8.1.2 Troubleshooting Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/troubleshooting_812.pdf",
+    "source_type": "pdf",
+    "sha256": "2793cdac8cec55e44945d0b707a1a9898e3237a5e522e526d9fdd21eabb1c7c2",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:52:53+00:00",
+    "page_count": 40,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/troubleshooting_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Troubleshooting Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000040",
+      "start_page": 1,
+      "end_page": 40
+    },
+    "summary": "Front matter and main troubleshooting content for Cúram 8.1, 8.1.1, and 8.1.2. Covers systematic problem diagnosis, including describing symptoms, tracing logs across components, isolating the failing layer, timing/conditions, reproducibility, and collecting support data such as versions, configs, logs, XML server logs, and database connectivity details. Includes guidance for blank/frozen pages, batch process failures, contacting Cúram Support, and submitting enhancement requests via the Merative Ideas Portal. A notable workaround addresses the “double load” modal resolver-page issue, including `DISMISS_MODAL=\"false\"`. The known limitations section documents several UI and rules/CER issues: empty tab containers, Dynamic UIM modal wizard page-id conflicts, file download failures, default server error-page behavior, hidden action sets in modal SVG dialogs, `\\n` property and rules widget errors, validation message ordering, restricted propagator classes, CER comment stripping, and CER export display/progress quirks. Includes notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the “Notices” section on page 39 before using the product or this information. It also identifies the copyright holder and date range: Merative US L.P., 2012–2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram 8.1/8.1.1/8.1.2 documentation, including edition/copyright information and the table of contents. The actual content begins with troubleshooting guidance: how to describe and isolate a problem, examine log files, determine where/when/under what conditions it occurs, and whether it can be reproduced. It also introduces what information to gather when contacting support, including environment/version details and configuration artifacts such as config reports and application server deployment files."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers troubleshooting data collection and performance-related page issues. Includes where to find application server logs (WebSphere, Liberty, WebLogic), FFDC logs, JMX statistics, XML server logs, and how to check application server, OS, Java, database versions, and database connectivity/configreport. Also explains causes and diagnostics for blank/frozen pages (network, browser, hardware, keep-alive, user behavior, long lists, JavaScript errors) plus what to gather for support. Ends with the “double load” modal-dialog resolver-page issue and required JSP_SCRIPLET changes."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Cúram 8.1.2 documentation covering a modal dialog “double load” resolver-page issue and its fix (`DISMISS_MODAL=\"false\"` on links to resolve pages), then batch process troubleshooting guidance (check `BatchLauncher<DATE_TIME>.log`, skipped-case counts, multiple server logs, DB exception details). It also includes contact/support and enhancement request pointers, followed by known limitations: empty conditional-link tabs, duplicate page-id modal wizard errors, file download error reporting, missing catalog-message default error-page behavior, action sets hidden in modal dialogs with SVG trees, and malformed string literals from `\\n` in properties files."
+          },
+          {
+            "title": "Edition — pages 35-38",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "Known limitations in Cúram 8.1.2 for rules/CER tools: new line characters can break the rules decision tree widget; field-level validation messages may appear out of order; RuleObjectPropagatorConfigurationSnapshot classes are internal and misuse can hurt performance or cause outages; CER Editor removes externally added XML comments, with annotations suggested instead; and in the standalone CER Editor, diagrams may disappear after large exports and the export progress bar may not update until completion."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000038",
+          "start_page": 5,
+          "end_page": 38
+        },
+        "summary": "Front matter for Cúram 8.1/8.1.1/8.1.2, followed by the troubleshooting chapter. Covers how to describe and isolate problems, what log/version/configuration data to collect, blank/frozen page diagnostics, batch process troubleshooting, contacting support, and requesting enhancements. Also includes a “double load” resolver-page/modal dialog workaround (`DISMISS_MODAL=\"false\"`), and a known-limitations section for UIM and CER/rules tools: empty tabs, modal wizard page-id issues, file download errors, default error-page behavior, hidden action sets, `\\n` in properties, rules decision tree JavaScript errors, validation order, internal propagator classes, XML comment stripping, and CER export UI issues."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "This section contains legal notices: fictional-use disclaimer for sample data, copyright license terms for sample programs, warranty/liability disclaimers, a link to Merative’s privacy policy, and trademark/copyright attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX. It is mainly reference material for licensing, privacy, and trademark information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Lists trademark notices and legal attributions for Merative and third-party brands. Covers Merative, IBM, Adobe/PostScript, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a note that other names may be trademarks. Also includes privacy policy link, sample program copyright/license terms, and disclaimer that examples are fictitious and provided “as is” without warranty."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000039",
+          "start_page": 39,
+          "end_page": 39
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise reproduction is allowed only with proprietary notices preserved, but distribution or derivative works need Merative consent. It disclaims warranties, limits liability, notes export-law compliance, and says no patent license is granted. It also states that information about non-Merative products/websites is unverified and not endorsed. Includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 guide. Lists major chapters on troubleshooting problems, collecting diagnostic information, blank/frozen pages, resolver page “double load” impact, batch processes, contacting Cúram Support, requesting enhancements, and known limitations. Also includes detailed subtopics under each chapter, plus notices, privacy policy, and trademarks. Useful as an index node to locate specific troubleshooting or support sections."
+      },
+      {
+        "title": "1 Troubleshooting a problem",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Examine the log files",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains that troubleshooting starts by examining log files to determine what happened and why. Notes that Cúram runs in a complex multitier environment, so relevant information may be in multiple logging sources across related products. Mentions that logging uses curam.util.resources.Trace, a wrapper for Apache Log4j 2, and output can be directed to an application server log, standalone log file, console, or database. Useful for finding error causes and identifying the right log sources."
+          },
+          {
+            "title": "1.2 Where does the problem occur?",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "This section explains that identifying where a problem occurs is a key troubleshooting step because many technology layers can exist between the reporting and failing components. It notes that most errors happen in the application server or database, but issues may also involve networks, I/O systems, or other environment components. The section frames “where does the problem occur?” as a way to isolate the affected layer and guide further diagnosis."
+          },
+          {
+            "title": "1.3 When does the problem occur?",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Explains how to identify when a problem occurs by building a detailed timeline of events, especially for one-time failures. Review logs from the first reported error back to the last known good state, since later errors may be cascading and misleading. Key questions include whether the issue happens at a specific time, how often it occurs, what events precede it, and whether it appears after environment changes like software or hardware upgrades/installations."
+          },
+          {
+            "title": "1.4 Under what conditions does the problem occur?",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Focuses on identifying the conditions present when a problem occurs. It advises checking whether the issue always happens during the same task, requires a specific sequence of events, or coincides with failures in other applications. The section emphasizes documenting which systems and applications are running, since simultaneous problems may be unrelated. Useful for troubleshooting root cause by describing the environment and correlating dependencies."
+          },
+          {
+            "title": "1.5 Can the problem be reproduced?",
+            "level": 2,
+            "children": [],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000012",
+              "start_page": 11,
+              "end_page": 12
+            },
+            "summary": "This section explains that reproducibility is ideal in troubleshooting because it provides more tools and makes problems easier to debug and solve. It also warns that recurring issues can be harmful, so the problem should be recreated in a test or development environment when possible. Key questions include whether the issue can be reproduced on a test system, whether multiple users or applications see it, and whether it can be triggered by a specific command or application."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000012",
+          "start_page": 9,
+          "end_page": 12
+        },
+        "summary": "Introduces a systematic approach to troubleshooting a Cúram problem by first describing it with basic questions about symptoms, reporters, error messages, failure type, location, timing, conditions, and reproducibility. Emphasizes two main techniques: examining log files across multiple components in a multitier environment, and understanding messages. Also covers narrowing the fault by identifying the affected layer, building a timeline of events, checking environmental conditions and dependencies, and determining whether the issue can be reproduced, ideally in a test or development system."
+      },
+      {
+        "title": "2 Gathering information about a problem",
+        "level": 1,
+        "children": [
+          {
+            "title": "2.1 Development environment configuration settings",
+            "level": 2,
+            "children": [],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "This section explains that development environment misconfiguration can cause problems and that the `appbuild configreport` target should be run from `%CURAM_DIR%\\EJBServer`. It generates `config_report.zip` with relevant settings, property files, environment variables, installer logs, and software versions to support remote diagnosis of configuration/environment issues."
+          },
+          {
+            "title": "2.2 Application server configuration and deployment settings",
+            "level": 2,
+            "children": [],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section identifies key files for application server configuration and deployment issues: AppServer.properties, deployment_packaging.xml, and Application.prx. It explains their roles in build configuration, EAR/WAR packaging, and runtime properties loaded from the database and exposed via JMX/system administration. It also advises using the application server admin console to compare runtime settings with a default deployment, and lists tools for collecting static configuration for support: ISADC for WebSphere, WebLogic config archives, or Liberty server package."
+          },
+          {
+            "title": "2.3 Application server logs",
+            "level": 2,
+            "children": [],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "This section explains where to find application server logs when troubleshooting deployed application errors, including WebSphere Application Server, Liberty, and Oracle WebLogic log locations and key files such as SystemOut/SystemErr, console.log, messages.log, trace.log, FFDC, and redirect logs. It also notes that logs can be made verbose and advises creating compressed logs folders for support. Finally, it covers Cúram JMX statistics, how to download them, and when to provide them for performance-related issues."
+          },
+          {
+            "title": "2.4 XML server logs",
+            "level": 2,
+            "children": [],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Use the XML server log when troubleshooting XML server issues, XSL templates, or PDF/RTF/plain-text rendering. The log is written to XMLServer.log in the \\XMLServer directory and is not controlled by application properties because it does not need a database connection."
+          },
+          {
+            "title": "2.5 Application server version",
+            "level": 2,
+            "children": [],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "This section explains how to identify the application server version for troubleshooting. It notes that the version appears in the application server logs and can also be checked from the command line: IBM WebSphere via versionInfo.bat, Oracle WebLogic via setDomain and java weblogic.version, and WebSphere Application Server Liberty via productInfo version. Use this section if you need version details to help a customer representative diagnose issues."
+          },
+          {
+            "title": "2.6 Operating system version",
+            "level": 2,
+            "children": [],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Explains how to identify the operating system version for troubleshooting. For Microsoft Windows, run `winver` at the command prompt; for Linux, run `uname -a`. Useful when a customer representative needs the OS version to diagnose issues."
+          },
+          {
+            "title": "2.7 Java™ version",
+            "level": 2,
+            "children": [],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Explains how to determine the Java version for troubleshooting. Use `java -version` at the command line, and ensure PATH or the Java install location is set correctly because multiple Java versions may exist on a platform. Notes that application server logs usually show the Java version used by that server, which may differ across nodes."
+          },
+          {
+            "title": "2.8 Database version",
+            "level": 2,
+            "children": [],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000017",
+              "start_page": 17,
+              "end_page": 17
+            },
+            "summary": "Use this section to find the database version for troubleshooting. It says IBM Db2 users can run `db2level` to print the installed DB2 version and service level, and Oracle users should connect with `sqlplus` and log in to view the version."
+          },
+          {
+            "title": "2.9 Database connectivity",
+            "level": 2,
+            "children": [],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000018",
+              "start_page": 17,
+              "end_page": 18
+            },
+            "summary": "Explains how to troubleshoot database connectivity issues using the `configreport` build target. Run `appbuild configreport` from `%CURAM_DIR%\\EJBServer` to generate `config_report.zip`, which includes a `-- DATABASE CONNECTIVITY --` section showing whether the database connection succeeded. Also points to `bootstrap.properties` in `%CURAM_DIR%\\EJBServer\\project\\properties\\` as the starting file for connection settings, and notes that the deployed application uses `bootstrap.properties` packaged in `properties.jar` inside the EAR."
+          }
+        ],
+        "node_id": "n000017",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000018",
+          "start_page": 13,
+          "end_page": 18
+        },
+        "summary": "This section explains what information to gather when reporting a Cúram problem: affected version, third-party tool versions, clear symptoms, logs, relevant files, and deployment details. It then covers key troubleshooting data sources: development environment config reports, application server configuration files, logs, XML server logs, version checks for app server/OS/Java/database, and database connectivity diagnostics via configreport and bootstrap.properties. Use this node when you need guidance on collecting must-have diagnostic information for support."
+      },
+      {
+        "title": "3 Troubleshooting a blank or frozen page",
+        "level": 1,
+        "children": [
+          {
+            "title": "3.1 Network, bandwidth, and server performance",
+            "level": 2,
+            "children": [],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "This section explains that blank or frozen application pages can result from performance problems and focuses on network bandwidth, web server load, and Cúram application server load. It advises checking network/bandwidth usage at the time of the issue, reviewing server load, and gathering performance data for analysis. It also points to possible tuning help from support. Related topics mentioned are browser/hardware differences and persistent HTTP keep-alive timeout settings that can cause intermittent blank screens."
+          },
+          {
+            "title": "3.2 Internet browser and hardware specification",
+            "level": 2,
+            "children": [],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "This section notes that blank or frozen pages can result from performance-related issues, including browser choice and hardware specification. It says Cúram supports multiple browsers, but browser selection can affect page response times. It directs readers to the Cúram Prerequisites for supported software/browser requirements and to Hardware requirements for development and testing for hardware details."
+          },
+          {
+            "title": "3.3 Persistent connection settings",
+            "level": 2,
+            "children": [],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "Persistent connection settings can contribute to intermittent blank Cúram pages. The section explains HTTP keep-alive as a single connection reused for multiple requests, notes that browsers, application servers, and web servers can close it based on idle timeout values, and advises reviewing keep-alive timeout settings when blank screens occur. It also notes that if a persistent connection times out, the browser may detect the close and repost the request."
+          },
+          {
+            "title": "3.4 User perception",
+            "level": 2,
+            "children": [],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "Slow rendering can make a page look blank, leading users to refresh, restart, or click repeatedly; this behavior can itself freeze the browser by opening too many connections. When investigating blank screen reports, capture user usage scenarios to determine whether frustration with slow response times is the cause."
+          },
+          {
+            "title": "3.5 Pages with long lists",
+            "level": 2,
+            "children": [],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "Long lists can slow page rendering significantly, especially when pages contain hundreds or thousands of items. The section recommends using pagination and adding search to narrow results, and refers readers to related guidance on handling long lists."
+          },
+          {
+            "title": "3.6 Reproducible JavaScript™ errors",
+            "level": 2,
+            "children": [],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "A reproducible blank page in the same usage scenario usually indicates an underlying JavaScript error preventing the Cúram loading mask from disappearing. To diagnose, inspect the browser console with F12 for JavaScript errors and use developer tools to check whether the HTML is present but hidden by CSS such as visibility:hidden. If this pattern occurs, contact Cúram support."
+          },
+          {
+            "title": "3.7 Gathering information about a blank or frozen page",
+            "level": 2,
+            "children": [],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000022",
+              "start_page": 20,
+              "end_page": 22
+            },
+            "summary": "Guidance for diagnosing blank or frozen page issues before contacting support. Collect browser version and compatibility mode, machine OS/spec/memory, usage scenario and number of tabs, user recovery behavior, server response times and general performance, network location/bandwidth, system configuration (clusters, concurrency, static content server, keep-alive timeout), HTML source for the blank page, and JavaScript error details/screenshots. If needed, enable client/browser tracing via CDEJResources.properties or use Fiddler to capture local JavaScript debug output and network traffic, noting possible performance impact."
+          }
+        ],
+        "node_id": "n000027",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000022",
+          "start_page": 19,
+          "end_page": 22
+        },
+        "summary": "Troubleshooting blank or frozen pages covers common causes and diagnostics: network bandwidth, web/web app server load, browser choice, hardware, HTTP keep-alive timeouts, user behavior that makes slow pages appear blank, long list rendering, and reproducible JavaScript errors. It also explains how to gather support data: browser and machine details, usage scenario, recovery behavior, server response times, system configuration, HTML source, console errors, and optional browser/client tracing or Fiddler captures."
+      },
+      {
+        "title": "4 Resolver page impact caused by the \"double load\" solution",
+        "level": 1,
+        "children": [
+          {
+            "title": "4.1 Changing the Return Page URL and the screen context to 256 (modal)",
+            "level": 2,
+            "children": [],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Explains a fix for resolve pages that redirect with Return Page URL and screen context 256 (modal), which can make pages load with modal-style controls instead of tab menu controls. The recommended change is to remove the explicit screen context and use system parameters from the request handler when building the redirect URL. Also introduces a related modal-dialog/search “double load” scenario where the resolve page is expected to submit the parent form and close the modal, but now loads on the parent page instead."
+          },
+          {
+            "title": "4.2 Closing the modal dialog and refreshing the parent page and modal dialog",
+            "level": 2,
+            "children": [],
+            "node_id": "n000037",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000026",
+              "start_page": 24,
+              "end_page": 26
+            },
+            "summary": "Explains a “double load” modal issue where a resolve page used to close a modal, submit the parent page form, and refresh results. After the new post-processing behavior, the resolve page may load on the parent page instead of the modal, breaking JavaScript access to the parent form. The fix is to set `DISMISS_MODAL=\"false\"` on UIM links to these resolve pages so the modal is not closed prematurely. Includes example JSP/UIM patterns before and after the change."
+          }
+        ],
+        "node_id": "n000035",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000026",
+          "start_page": 23,
+          "end_page": 26
+        },
+        "summary": "Explains how the “double load” modal fix can break resolve pages that use JSP_SCRIPTLET redirection or JavaScript to close/refresh a modal. One issue is adding screen context 256 to the Return Page URL, which makes pages render with modal controls instead of tab menu controls; the remedy is to use system parameters from the request handler instead. Another issue is resolve pages that close a modal and submit the parent form; these should set DISMISS_MODAL=\"false\" on UIM links so the modal is not closed prematurely."
+      },
+      {
+        "title": "5 Troubleshooting batch processes",
+        "level": 1,
+        "children": [],
+        "node_id": "n000038",
+        "range": {
+          "start_unit_id": "p000027",
+          "end_unit_id": "p000028",
+          "start_page": 27,
+          "end_page": 28
+        },
+        "summary": "Explains how to troubleshoot batch process failures. It advises checking the BatchLauncher<DATE_TIME>.log for errors and the <BatchName>_<DateTime>.log for skipped-case counts. Guidance notes that, depending on deployment topology, logs may be spread across multiple locations; if the stream component runs on multiple servers, each server’s BatchLauncher log must be reviewed. Technical errors may include useful stack traces in the BatchLauncher log, and exception details are also stored in the database."
+      },
+      {
+        "title": "6 Contacting Cúram Support",
+        "level": 1,
+        "children": [],
+        "node_id": "n000039",
+        "range": {
+          "start_unit_id": "p000029",
+          "end_unit_id": "p000030",
+          "start_page": 29,
+          "end_page": 30
+        },
+        "summary": "Explains when to contact Cúram Support: after trying self-help resources such as product documentation and support articles and still needing assistance. This section is a brief pointer to support escalation rather than technical guidance."
+      },
+      {
+        "title": "7 Requesting a product enhancement",
+        "level": 1,
+        "children": [],
+        "node_id": "n000040",
+        "range": {
+          "start_unit_id": "p000031",
+          "end_unit_id": "p000032",
+          "start_page": 31,
+          "end_page": 32
+        },
+        "summary": "This section explains how to request a product enhancement for Cúram. It directs users to submit enhancement ideas through the Merative Ideas Portal."
+      },
+      {
+        "title": "8 Known limitations",
+        "level": 1,
+        "children": [
+          {
+            "title": "8.1 Empty tab container on page",
+            "level": 2,
+            "children": [],
+            "node_id": "n000042",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000033",
+              "start_page": 33,
+              "end_page": 33
+            },
+            "summary": "An empty tab container may appear on a page when page navigation includes conditional links and none of those links are shown. This is a known Cúram limitation with no workaround stated here. Use this section if you need to understand or diagnose unexpected blank tab containers in conditional page navigation."
+          },
+          {
+            "title": "8.2 Errors in Dynamic UIM modal dialog wizard pages",
+            "level": 2,
+            "children": [],
+            "node_id": "n000043",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000033",
+              "start_page": 33,
+              "end_page": 33
+            },
+            "summary": "Known limitation: Dynamic UIM modal dialog wizard pages linked via explicit ACTION_CONTROL labels can display errors if page IDs are not distinct. A duplicate or substring page-id relationship may cause page display failures. This section explains the condition and cause only, useful for diagnosing modal dialog wizard page linking issues."
+          },
+          {
+            "title": "8.3 File download error reporting",
+            "level": 2,
+            "children": [],
+            "node_id": "n000044",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000033",
+              "start_page": 33,
+              "end_page": 33
+            },
+            "summary": "File downloads started from a tab-level action menu may fail silently without reporting an error. To troubleshoot, enable client logging and inspect the Eclipse console for errors, or use an HTTP monitor (for example, Firebug NET panel) to find failed requests to servlet/FileDownload."
+          },
+          {
+            "title": "8.4 Error displayed in the application server's default error page",
+            "level": 2,
+            "children": [],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Describes a Cúram error-handling issue where, if the application reports a message that is missing from the server message catalog, the error is shown on the application server’s default error page instead of the Cúram error page. Includes the condition and cause only; no remedy is given in this section."
+          },
+          {
+            "title": "8.5 Action sets not displayed in modal dialog page",
+            "level": 2,
+            "children": [],
+            "node_id": "n000046",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "In modal dialogs containing an SVG tree widget, page-level action sets do not appear. The remedy is to define the action set within a cluster instead."
+          },
+          {
+            "title": "8.6 Runtime error displayed when a string literal is not properly closed by a double quotation mark",
+            "level": 2,
+            "children": [],
+            "node_id": "n000047",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "This section explains a runtime error caused by using newline escape sequences (\\n) in UIM properties files. Cúram UIM properties do not support \\n for formatting page descriptions or field labels, and this can trigger the error “String literal is not properly closed by a double quote.” Useful if you need to diagnose property-file formatting issues or related runtime exceptions."
+          },
+          {
+            "title": "8.7 JavaScript error in the rules decision tree widget",
+            "level": 2,
+            "children": [],
+            "node_id": "n000048",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "JavaScript error can occur in the rules decision tree widget if text in nodes or input data contains newline characters. The widget does not support newlines and may fail to display. Remedy: avoid using newline characters in this widget’s displayed text and input data."
+          },
+          {
+            "title": "8.8 Field level validation messages",
+            "level": 2,
+            "children": [],
+            "node_id": "n000049",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "Field level validation messages may appear in a different order than the fields on the screen. This occurs when users leave mandatory Cúram application fields blank. The section notes the mismatch as a known limitation but does not provide a remedy."
+          },
+          {
+            "title": "8.9 RuleObjectPropagatorConfigurationSnapshot classes are not for external use",
+            "level": 2,
+            "children": [],
+            "node_id": "n000050",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "RuleObjectPropagatorConfigurationSnapshot classes are restricted internal classes and not intended for external use. The section warns that improper use can cause performance problems and, in some cases, a system outage. Open this node if you need details on this limitation or the risks of using these classes incorrectly."
+          },
+          {
+            "title": "8.10 The CER Editor strips comments from XML in a rule set",
+            "level": 2,
+            "children": [],
+            "node_id": "n000051",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "The CER Editor removes externally added XML comments when a rule set is reopened and saved, due to an Adobe Flex limitation that affects performance tradeoffs for large rule sets. The section explains this behavior and recommends using CER Language annotations instead, since all elements support `<Annotations>` with `<Documentation>` for comment-like metadata."
+          },
+          {
+            "title": "8.11 Diagram disappears after export of many diagrams in a large ruleset",
+            "level": 2,
+            "children": [],
+            "node_id": "n000052",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "Stand-alone CER Editor issue: exporting a large number of diagrams from a large ruleset can cause a diagram to disappear. This section states the problem only; no workaround or remedy is provided here."
+          },
+          {
+            "title": "8.12 Progress bar doesn't update during export of diagrams in the Cúram Express Rules Editor",
+            "level": 2,
+            "children": [],
+            "node_id": "n000053",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000040",
+              "start_page": 37,
+              "end_page": 40
+            },
+            "summary": "Standalone CER Editor limitation: exporting a large number of diagrams in a large rule set does not update the progress bar during the export. A spinner still indicates the editor is busy, and when the export finishes the progress bar completes and you are prompted to save the export. This section also contains the document’s legal notices and copyright/trademark information."
+          }
+        ],
+        "node_id": "n000041",
+        "range": {
+          "start_unit_id": "p000033",
+          "end_unit_id": "p000040",
+          "start_page": 33,
+          "end_page": 40
+        },
+        "summary": "Lists known limitations in Cúram and related products. Covers empty tab containers from conditional page navigation, Dynamic UIM modal wizard errors from non-distinct page IDs, silent tab-menu file download failures, and default application-server error pages when a catalog message is missing. Also notes SVG-tree modal dialogs hiding action sets, \\n in UIM properties causing runtime errors, newline issues in rules decision tree widgets, validation-message ordering, restricted RuleObjectPropagatorConfigurationSnapshot use, CER Editor XML comment stripping, and CER export display/progress issues. Includes remedies for some items plus notices/copyright."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

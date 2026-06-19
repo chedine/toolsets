@@ -1,0 +1,548 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "4c57f745a15bf894",
+    "title": "Cúram 8.1.2 Calendaring Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramCalendaringGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "4c57f745a15bf89425bc3f45898f5152d26a71c2be88eeee9f86195cc50ca588",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:18:06+00:00",
+    "page_count": 20,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramCalendaringGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Calendaring Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000020",
+      "start_page": 1,
+      "end_page": 20
+    },
+    "summary": "Overview of the Cúram 8.1.2 Calendaring Guide. This section introduces the guide’s scope and core calendaring model: user, case, organization, location, and financial/payment calendars. It explains how calendars store events, meetings, activities, holidays, and recurring items, and how they support scheduling across users, cases, and administration. Key functional topics include user calendars with PIM/email invite integration and homepage summaries; case calendars for integrated and product delivery cases; meetings (scheduling, invites, acceptance, minutes, external email); activities (single and recurring, attendees, concerning case/participant, conflict handling); and case reviews, referrals, and product delivery appeals. The latter pages also contain legal notices, copyright, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section before using the product or this information. It also gives the copyright notice for Merative US L.P. covering 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Cúram Calendaring Guide edition info for 8.1, 8.1.1, and 8.1.2, followed by the guide’s scope and main calendar concepts. Covers application calendar types (user, case, organization, location, financial), user and case calendars, administration calendars, and the meetings workflow: scheduling, invites, rescheduling, updates, cancellation, acceptance, meeting minutes, sensitivity, and external email/PIM integration. Good entry point for understanding calendaring features, calendar categories, and meeting management behavior."
+          },
+          {
+            "title": "Edition — pages 15-18",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000018",
+              "start_page": 15,
+              "end_page": 18
+            },
+            "summary": "Explains Cúram calendaring for user and case activities, including one-time and recurring activities, invites, conflict handling, locations, case association, and concerning participants. Notes that activities can be shown as busy/free/out of office/provisional, recur only within one day, and case-related activities appear on the case events calendar. Also covers case calendar reviews, referrals, and product delivery appeals: how they’re scheduled, required fields, notifications, and where they appear/accessed."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000018",
+          "start_page": 5,
+          "end_page": 18
+        },
+        "summary": "Edition pages 5–18 introduces the Cúram Calendaring Guide for versions 8.1, 8.1.1, and 8.1.2. It covers the scope and core calendar types (user, case, organization, location, financial), then explains meetings, activities, calendar reviews, referrals, and appeals. Key details include scheduling, invites, conflict handling, recurring items, case association, meeting minutes, sensitivity, and PIM/email integration. Useful as the guide’s entry point for understanding how calendaring works across users, cases, and administration."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "This page covers legal and attribution notices: sample data is fictitious, sample programs are provided “as is” under the Merative Client Agreement, and Merative disclaims warranties and liability. It also points to the Merative privacy policy at https://www.merative.com/privacy and lists trademark ownership for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "Lists trademark notices and legal attributions for Merative and third-party brands, including IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Also notes that example names in the document are fictitious, sample programs are provided “as is” under the Merative Client Agreement, and links to the Merative privacy policy. Useful for identifying licensing, warranty, copyright, and trademark information."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000019",
+          "start_page": 19,
+          "end_page": 19
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and commercial reproduction limits, requirement to preserve proprietary notices, no derivative works without Merative consent, export compliance, and Merative’s right to withdraw permission. States the content is provided “as-is” without warranties, mentions possible patents, non-Merative product disclaimer, and that external sites are not endorsed. Includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Calendaring Guide. Lists front matter (Note, Edition), then Chapter 1 sections on application calendars: User Calendars, Case Calendars, and Administration Calendars; meetings (overview, scheduling, inviting/accepting, minutes, external email integration); calendar activities (scheduling, attendees, case/participant association, recurring activities); and calendar reviews/referrals/appeals. Also includes notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Cúram Calendaring Guide",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 About the Application Calendars",
+            "level": 2,
+            "children": [
+              {
+                "title": "User Calendars",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how user calendars in Cúram are used to schedule and maintain meetings and activities for organization users. Covers meetings as appointments tied to clients/cases, invite delivery through PIM tools like Outlook, and accept/reject behavior. Describes activities as case-related scheduled events that can block time on a user’s calendar and recur at set frequencies. Also notes the homepage summary view of a user’s meetings/activities for today or a selected day in the current/next week."
+              },
+              {
+                "title": "Case Calendars",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Integrated Case Calendars",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000013",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains case calendars in Cúram: they track client case events, meetings, and related calendaring information for clients and family members. Distinguishes integrated case calendars from product delivery calendars. Integrated case calendars provide a holistic view across associated product delivery cases and are used for case-level referrals, reviews, activities, and meetings. The section also notes that product delivery calendars track events within the product delivery lifecycle, with some events manually created and others system generated."
+                  },
+                  {
+                    "title": "Product Delivery Calendars",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains Cúram case calendars, focusing on product delivery calendars versus integrated case calendars. Product delivery calendars track activities and meetings at the product delivery case level, keeping calendaring separate from the integrated case. They support activities, recurring activities, meetings, referrals, reviews, and can also create appeals from product delivery or issue calendars. The section describes product delivery cases as the vehicle for benefit eligibility and delivery, with events created manually or by system processing during the case lifecycle."
+                  }
+                ],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Case calendars track client case events, meetings, and related calendaring information for clients and family members. The section distinguishes integrated case calendars, which give a holistic view across associated product delivery cases and support case-level referrals, reviews, activities, and meetings, from product delivery calendars, which manage events within the product delivery case lifecycle. It also notes that calendars can be used for investigations, issues, and appeals, and that events may be manually created or system generated."
+              },
+              {
+                "title": "Administration Calendars",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Organization Calendars",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Organization calendars schedule and maintain activities for all users in an organization. These activities are not tied to participants or cases, cannot have attendees, and appear on both the organization activity calendar and each user’s individual calendar. Activities can be one-time or recurring. The surrounding section also distinguishes related administration calendars: location holiday calendars for location closures and payment processing calendars for delivery-method exclusion dates."
+                  },
+                  {
+                    "title": "Location Holiday Calendars",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Location holiday calendars record dates when a specific organization location is closed, including sub-locations if configured to apply. These holidays appear on the calendars of users assigned to that location and related sub-locations. The section sits within Administration Calendars, alongside organization calendars and payment processing calendars, and distinguishes location holidays from organization-wide activities and payment exclusion dates."
+                  },
+                  {
+                    "title": "Payment Processing Calendars",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Describes payment processing calendars as an administration calendar type used to record payment exclusion dates for a delivery method. These dates mark non-processing days when the organization cannot make payments via that method, often set at the start of the fiscal year to account for non-working days. The section sits within an overview of administration calendars, alongside organization calendars and location holiday calendars."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Administration Calendars introduces three calendar types used to track organizational activities, holidays, and payment exclusions: organization calendars, location holiday calendars, and payment processing calendars. Organization calendars manage organization-wide activities not tied to cases or participants, with no attendees and visibility on organization and user calendars, including recurring events. Location holiday calendars record closures for locations and sub-locations, appearing on assigned users’ calendars. Payment processing calendars store delivery-method exclusion dates, typically set for non-working days in the fiscal year."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "This section defines Cúram application calendars as storage for events, activities, meetings, and holidays used to manage schedules. It introduces the calendar types: user, case, organization, location, and financial. User calendars support meetings and recurring activities, invitations via PIM tools like Outlook, and a homepage summary view. Case calendars track client/case events, including integrated and product delivery calendars, and support activities, meetings, referrals, and reviews, with both manual and system-generated events."
+          },
+          {
+            "title": "1.2 User and Case Calendar Meetings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Meetings Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains what meetings are in Cúram and how they work with cases, calendars, and external email. Covers scheduling from a case or user calendar, setting meeting details, inviting attendees, and automatic email requests for valid addresses. Notes PIM integration so meetings appear in the application calendar and external accounts like Outlook. Also describes case-specific behavior: automatic case activity and transaction log updates, conflict warnings, and options to invite clients, case members, system users, or external email-only participants."
+              },
+              {
+                "title": "Scheduling a Meeting",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Inviting Attendees to a Meeting",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to invite attendees when creating Cúram meetings. Valid email addresses trigger automatic meeting requests, and invitees can accept, decline, or mark tentative in their PIM calendars. If no valid email exists, no request is sent and the organizer is notified. From a case calendar, organizers can invite the primary client, other case members, related users/participants, system-registered people, or manually entered email addresses. Also notes meetings can be stored in external mail/calendar tools like Microsoft Outlook."
+                  },
+                  {
+                    "title": "Rescheduling Meetings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains meeting lifecycle actions in Cúram Calendaring: rescheduling by editing date/time, notifying all invitees (including those who declined), updating meeting details with change notifications, canceling meetings with email notifications, and accepting/rejecting invites from a PIM tool. It also introduces the record meeting minutes wizard, which captures meeting details, notes, decisions, and attendance, supports optional steps and work-in-progress minutes, and can issue minutes to attendees and other interested parties."
+                  },
+                  {
+                    "title": "Updating the Details of a Meeting",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how to update an existing meeting after creation. It covers rescheduling by changing the date/time, editing meeting details and content, and notifying invitees of changes. It also notes that rescheduled meetings notify all invitees, including those who previously declined, and that organizers can cancel meetings, triggering cancellation emails. The section further mentions how attendees can accept or reject invites in their PIM tool, with responses visible to organizers."
+                  },
+                  {
+                    "title": "Canceling a Meeting",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains meeting management actions in Cúram Calendaring, focusing on canceling a meeting. It states that the meeting organizer can cancel a meeting, and all invited individuals receive a cancellation email notification so they can remove it from their PIM calendar. The surrounding text also briefly covers rescheduling, updating meeting details, accepting invites, and recording meeting minutes."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to schedule meetings in Cúram from a case or user calendar, including setting location, start/end time, and notes. When invitees have valid email addresses, the system sends meeting requests; otherwise, the organizer is notified and no request is sent. From a case calendar, organizers can invite the primary client, case members, related users/participants, registered people, or manual email addresses. Meetings also integrate with PIM/external mail tools like Microsoft Outlook."
+              },
+              {
+                "title": "Accepting a Meeting Invite",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how attendees accept a meeting invite from their PIM tool and how their acceptance or rejection updates the meeting so the organizer can see it in meeting details. It also briefly covers related meeting lifecycle actions: rescheduling, updating details, canceling meetings, and recording meeting minutes with optional steps for details, notes, decisions, and attendance."
+              },
+              {
+                "title": "Recording Meeting Minutes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Meeting Minutes Sensitivity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Meeting minutes can be given a sensitivity rating from 1 to 5 to restrict access to sensitive case and participant information. A rating of 1 allows all attendees to view the minutes; higher ratings require the viewer’s sensitivity to meet or exceed the minutes’ rating, and the minutes can only be set up to the logged-in user’s level and the lowest client sensitivity in the meeting. This section also sits alongside notes on issuing minutes, baselining versions, and email/PIM calendar integration."
+                  }
+                ],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains the record meeting minutes wizard for capturing and sharing details after a meeting. It supports optional, step-by-step entry and work-in-progress editing. Users can record meeting details (subject, location, dates, organizer, agenda), rich-text notes and decisions, and attendance information, including adding post-meeting attendees and their email addresses. Minutes can be issued to attendees and other interested parties, and are supported for meetings created from user or case calendars."
+              },
+              {
+                "title": "Integrating Meetings with External Email Accounts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains PIM integration for meetings with external email/calendar systems such as Microsoft Outlook. It lets invited attendees with valid email addresses receive meeting requests, accept or decline them in their PIM calendar, and sync reminders back to the application calendar. Accepted invitees are marked accepted, declined invitees remain visible in the application calendar but not their PIM calendar, and tentative invitees are marked tentative in both."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000014",
+              "start_page": 11,
+              "end_page": 14
+            },
+            "summary": "Cúram meetings can be scheduled from user or case calendars, with location, time, notes, and invitees. Valid email addresses trigger automatic meeting requests and PIM/external calendar integration (e.g., Outlook). Case meetings create case activities, update the transaction log, and warn on conflicts. Attendees can accept, decline, or tentatively respond; rescheduling and cancellations resend notifications. The section also covers recording meeting minutes, including details, notes, attendance, actions, files, sensitivity, issue history, and sharing minutes by email."
+          },
+          {
+            "title": "1.3 User and Case Calendar Activities",
+            "level": 2,
+            "children": [
+              {
+                "title": "Scheduling User Calendar and Case Activities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how users schedule calendar activities for themselves or a case, including one-time or recurring activities, invitations, conflict handling, and location selection. It covers showing activities as busy/free/out of office/provisional, linking an activity to a case and concerning participant, and how case-related activities also appear on the integrated case events calendar. It also notes that invites appear in user calendars for accept/decline, and unlike meetings, activities do not support minutes."
+              },
+              {
+                "title": "Inviting Attendees to Activities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how users invite attendees to standard or recurring activities. It notes that invited users are automatically notified through their personal calendars, where they can accept or decline. The system shows scheduling conflicts with existing activities or meetings, and the organizer can reschedule or ignore conflicts. It also clarifies that activities may be linked to cases and participants, with case-related activities creating an event on the related case calendar."
+              },
+              {
+                "title": "Associating a Concerning Case and Participant with an Activity",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how user and case calendar activities work in Cúram. Activities are scheduled events that can be one-time or recurring, may include invited users/participants, locations, and “Show As” availability, and do not support minutes. Activities can be linked to a concern or case, including selecting a concerning participant and associating a case reference number. Case-related activities appear on both the user calendar and integrated case events calendar, and invitations/conflicts are handled through users’ personal calendars."
+              },
+              {
+                "title": "Scheduling Recurring Activities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains recurring activities in the calendar: they are created like one-off activities, can be managed as either a whole series or individual instances, and cannot last longer than one day. It also introduces calendar-based case reviews, referrals, and product delivery appeals, including how users select participants, reviewers, suppliers, or service providers, and set required dates, types, and comments."
+              }
+            ],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "Explains Cúram user and case calendar activities: scheduled events for a specific time, one-time or recurring, with optional inviting of users/participants and no minutes. Activities can be linked to a case and concerning participant, display on the user calendar and, if case-related, on the integrated case events calendar. Organizers can set “Show As” status (busy/free/out of office/provisional), choose a location, search/select a case by reference or attributes, and handle invite accept/decline plus scheduling conflicts."
+          },
+          {
+            "title": "1.4 Calendar Reviews, Referrals, and Appeals",
+            "level": 2,
+            "children": [
+              {
+                "title": "Case Reviews and Referrals",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Scheduling a Review",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to schedule a case review from the case calendar: search and select a suitable reviewer, add rich text comments and a reason, set a required start date, and optionally a projected end date. When created, the reviewer is notified with a task. Reviews appear on the case calendar and in the reviewer’s inbox."
+                  },
+                  {
+                    "title": "Scheduling a Referral",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to schedule a case referral from a case calendar. The user searches for and selects the service supplier, then specifies the referral type and a start date; an expected end date can also be entered. This section sits alongside related calendar workflows for reviews and appeals, which are created and managed from case or product delivery calendars."
+                  }
+                ],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains calendar-based case reviews and referrals. A review is an examination of a case by another user: the scheduler selects a reviewer, adds rich text comments and a reason, sets a required start date, and may set a projected end date. The reviewer is notified with a task, and reviews appear on the case calendar and in the reviewer’s inbox. A referral lets the user select a service supplier, choose a referral type, and set start and optional expected end dates."
+              },
+              {
+                "title": "Product Delivery Appeals",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000020",
+                  "start_page": 16,
+                  "end_page": 20
+                },
+                "summary": "Explains how to create product delivery appeals from a case calendar. Appeals are used to manage disputes against service providers delivering services to clients. The user searches and selects the service supplier, chooses an appeal type (for example, disqualification conditions or payment rate), and must enter expected start and end dates. An outcome can also be recorded. This section appears within broader calendaring guidance and is followed by legal notices/trademark material."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000020",
+              "start_page": 16,
+              "end_page": 20
+            },
+            "summary": "Covers calendaring actions for case reviews, referrals, and product delivery appeals. Reviews let a user choose a reviewer, add rich text comments and a reason, set a required start date and optional projected end date, and notify the reviewer via task/inbox. Referrals let a user select a service supplier, specify a referral type, and set start and optional expected end dates. Appeals are created from product delivery case calendars to dispute service provider issues, with service supplier and appeal type selection, required start/end dates, and optional outcome recording."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000020",
+          "start_page": 9,
+          "end_page": 20
+        },
+        "summary": "Introduces Cúram calendaring and the main calendar types: user, case, organization, location, and financial. Explains that calendars store events, activities, meetings, holidays, and recurring items. Covers user calendars for meetings/activities with PIM email integration and homepage summaries; case calendars for integrated and product delivery case events, including manually created and system-generated events; administration calendars for organization activities, holidays, and payment exclusions. Also outlines meeting scheduling, activities, reviews, referrals, and product delivery appeals."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

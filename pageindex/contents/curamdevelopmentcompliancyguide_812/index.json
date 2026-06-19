@@ -1,0 +1,533 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "82592f660c5ab125",
+    "title": "Cúram 8.1.2 Development Compliancy Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramDevelopmentCompliancyGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "82592f660c5ab125e66051f83994201ac9d3ed9d7f99ac239d5650a246e13ffb",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:25:30+00:00",
+    "page_count": 26,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramDevelopmentCompliancyGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Development Compliancy Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000026",
+      "start_page": 1,
+      "end_page": 26
+    },
+    "summary": "Introductory compliancy guide for Cúram 8.1, 8.1.1, and 8.1.2. It explains how to start a new project with source control and version tagging, where custom artifacts belong (webclient and EJBServer custom folders), and how to keep customizations upgrade-safe. Key server rules include using project-specific prefixes, avoiding name collisions, using reserved numeric ranges for initial/demo data, not editing delivered files in place, not depending on sample/demo artifacts, and syncing runtime changes back into development. It also covers supported changes for DMX data, code tables, messages, events, preferences, properties, Java APIs, source code, and server extension mechanisms. Client development guidance emphasizes customizing without altering original artifacts. A component section gives access/customization rules for Internal, External, Access Restricted, Modeled, and Non-Modeled classes, plus notes for CDEJ, SDEJ, Persistence Infrastructure, CER, Dependency Manager, and several Cúram components. The section ends with deprecation guidance and full legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Brief notice page stating that, before using the information or the supported product, readers should review the Notices section on page 25. Includes Merative US L.P. copyright dates 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory compliance guidance for Cúram 8.1–8.1.2. Covers project setup and directory structure, placing custom artifacts in webclient/EJBServer custom areas, and using source control/tagging. Main server-development rules include project-specific naming prefixes, reserved ID ranges, avoiding in-place edits, not depending on sample/demo artifacts, and syncing runtime changes back to development. Also outlines compliant change types for messages, code tables, events, preferences, properties, and DMX data. Includes Java API access levels (internal/restricted/external) and source-code/build constraints."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Guidance for compliant Cúram development and customization. Covers where to place new source files, safe extension of code tables, naming prefixes, and supported server extension mechanisms. Summarizes what can be referenced or customized for modeled classes (Entity, Struct, other modeled types) and non-modeled classes, including limits on internal/access-restricted APIs, entity/struct rules, domain definition changes, relationship constraints, and use of events/strategies. Also includes client/server component compliancy notes, persistence/CER/Dependency Manager restrictions, and deprecation guidance."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000024",
+          "start_page": 5,
+          "end_page": 24
+        },
+        "summary": "Introductory compliance guide for Cúram 8.1–8.1.2. Explains new-project setup, source control/tagging, and where custom artifacts belong (webclient/EJBServer custom areas). Covers server-compliancy rules: project-specific prefixes, reserved ID ranges, avoiding in-place edits, not depending on sample/demo artifacts, and syncing runtime changes back to development. Describes supported change types for DMX data, code tables, messages, events, preferences, and properties, plus Java API access levels and source/build constraints. Also includes client, component-specific, persistence/CER/Dependency Manager, and deprecation guidance."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "This page contains legal notices: sample data disclaimer, copyright license for sample programs, warranty/liability limits, a link to Merative’s privacy policy, and a trademarks list for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. It is useful for understanding usage rights, disclaimers, and brand ownership, not product functionality."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "Lists trademark and copyright/legal notices for the document. States that sample names are fictitious, sample programs may be copied/modified/distributed under the Merative Client Agreement, and are provided “AS IS” without warranty. Includes the Merative privacy policy link. Identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000025",
+          "end_unit_id": "p000025",
+          "start_page": 25,
+          "end_page": 25
+        },
+        "summary": "Legal notice and usage terms for the publication. Covers personal and commercial reproduction rules, preservation of proprietary notices, restrictions on redistribution and derivative works, and no implied licenses or rights beyond what is stated. Includes export-control compliance, an “AS IS” warranty disclaimer, patent notice, non-Merative product/source disclaimers, and a warning that external websites are provided only for convenience. Also includes Merative copyright."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the guide. Lists front matter and the main section “Compliant development with Cúram,” covering starting a new project, server compliancy issues and artifact changes, Java APIs, source code, server extension mechanisms, client development compliancy, individual components, and deprecated functionality. Also includes notices, privacy policy, trademarks, and page references."
+      },
+      {
+        "title": "1 Compliant development with Cúram",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Starting a new project",
+            "level": 2,
+            "children": [
+              {
+                "title": "Review the client and server development directory structure",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains where Cúram client and server development artifacts are installed and how to organize custom code. Client artifacts go in webclient; server artifacts go in EJBServer. Both contain a components/custom subdirectory intended for project-specific artifacts, though projects may choose a different component. Also notes to place new project files under source control, tag development artifacts by application version, and use file comparison tools to identify changes during upgrades."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Starting a new project in Cúram requires reviewing the client/server development directory structure and putting files under source control. Client artifacts are installed in webclient and server artifacts in EJBServer; both include a components/custom area for project-specific development, though a project may use another component. The section also advises tagging artifacts by application version and using file comparison reports to track added or changed files during upgrades."
+          },
+          {
+            "title": "1.2 Compliancy for server development",
+            "level": 2,
+            "children": [
+              {
+                "title": "Avoiding common server compliancy issues",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Use project-specific prefixes in custom artifact names",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Use a consistent project-specific prefix for all new custom artifact names to avoid collisions with future Merative-delivered artifacts during upgrades. The section explains that prefixes should be short, consistent, and based on the project acronym, and notes that some overridden artifacts may need to keep default names. It highlights naming risks across different identifier types, including file names, XML IDs, Java class names, database fields, and application code table items, which may each have length limits and shared namespaces."
+                  },
+                  {
+                    "title": "Use numeric identifiers in custom initial and demo data",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Use reserved numeric identifier ranges for custom initial and demo data to avoid conflicts with application/runtime data. The section explains that DMX-loaded data should use customer-reserved primary key ranges: 45,000–49,999 and 900,000–949,999 for non-human-readable keys, 11,521–12,799 for human-readable keys, and 4,500–4,999 for rule sets. For large datasets, use the key server and load the final key set value into the key set table if importing into a pre-built database."
+                  },
+                  {
+                    "title": "Avoid directly modifying application files in place",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Client and Server: Exceptions for in-place modifications",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000017",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Lists rare client/server exceptions to the “do not modify application files in place” rule. The page follows broader compliant-development guidance: use unique project-specific prefixes for custom entity classes and transaction object identifiers, choose numeric IDs from reserved ranges for custom initial/demo data, or use the key server for large datasets. It warns that direct file edits can be overwritten by fixes and upgrades. This section appears to introduce the specific exceptions, starting with EJBServer."
+                      }
+                    ],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Warns against editing application files in place because upgrades, fix packs, and iFixes may overwrite changes and make them unrecoverable. The section begins the exception list for client/server development, indicating only a small number of cases allow in-place modification, starting with EJBServer."
+                  },
+                  {
+                    "title": "Never create dependencies on sample or demo artifacts",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "The CPMSample folder",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000019",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "The CPMSample folder is marked internal and may change without notice. Any code or artifacts in this folder should not be depended on directly by custom code; if needed, customers must duplicate the functionality into their own codebase. The section also sits within guidance about avoiding dependencies on sample/demo artifacts and keeping runtime changes to dynamic artifacts synchronized back to the development system."
+                      }
+                    ],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Do not create custom-code dependencies on sample/demo artifacts, which may change without notice. Artifacts may be identifiable by names, packages, models, or paths containing Internal, Sample, or Demo; if unsure, contact support. The related CPMSample folder is internal and must not be used directly—customers should duplicate needed functionality into their own codebase. The section also says runtime changes to dynamic artifacts (for example, code tables and workflows) must be synchronized back to the development codebase, which is the system of record."
+                  },
+                  {
+                    "title": "Apply changes to dynamic artifact types back to the development system",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "If dynamic artifacts like code tables or workflows are modified on production/test systems, those changes must be synchronized back to the development codebase. Development is the system of record and the central place where runtime changes are merged with concurrent development, fix pack, or upgrade changes before deployment."
+                  }
+                ],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000012",
+                  "start_page": 10,
+                  "end_page": 12
+                },
+                "summary": "Guidelines to avoid server compliancy issues: use a consistent project-specific prefix for custom artifacts and identifiers, noting namespace and length limits across files, XML IDs, Java classes, database fields, and code table items. Use reserved numeric ranges for custom initial/demo data (including rule sets), or the key server for large sets. Do not edit application files in place except listed exceptions. Avoid dependencies on sample/demo artifacts, and sync any runtime changes to dynamic artifacts back to the development codebase."
+              },
+              {
+                "title": "Overview of compliant server development artifact changes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section lists which server development artifacts can be changed in a compliant Cúram customization. It covers message files, code tables, event definitions/handler registrations, user preferences, workflow process definitions, application properties via Application.prx, and DMX data files, with examples of allowed edits for each. It also explains Java API usage rules: External APIs are supported, while Internal and Restricted APIs should not be referenced in custom code, with Restricted causing Eclipse errors and unsupported APIs producing warnings."
+              },
+              {
+                "title": "Java APIs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains compliant Cúram development artifact changes and the Java API access model. It lists which customizations are allowed for message files, code tables, event registrations, user preferences, workflow definitions, application properties, and demo/test data. The Java APIs section defines annotations for API levels: External APIs are supported for custom code, while Internal APIs (@Accesslevel(INTERNAL) or unannotated) and Restricted APIs (@Accesslevel(RESTRICTED)) should not be referenced; restricted APIs trigger Eclipse errors and internal/unsupported APIs warnings."
+              },
+              {
+                "title": "Source code",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains where external APIs and source code are delivered, and how server artifacts can be changed. It notes that external APIs are annotated with @Accesslevel(EXTERNAL), documented per component, and should only be used with Javadoc. It also describes that most Java functionality ships as JARs, sample source code is provided mainly for documentation, and customer builds usually rebuild only project-specific and regenerated code. Finally, it distinguishes modeled vs. handcrafted interfaces and states that handcrafted interfaces cannot be customized."
+              },
+              {
+                "title": "Changing server source artifacts",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Source code for new methods and classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Guidance for adding new source code in Cúram customizations: place all new source files, including wrappers, under EJBServer\\components\\custom\\source. Modeled classes must follow the generated package hierarchy; handcrafted classes can be packaged more flexibly, and Google Guice may be used for subclass configuration. The section also links to related guidance on CER rule sets and code tables, and reiterates using consistent project-specific prefixes to avoid naming collisions."
+                  },
+                  {
+                    "title": "Changing CER rule sets",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section says CER Editor rule sets are stored in the database, not the file system, and core component rule sets should not be customized. It appears alongside guidance on related customization limits, including source file placement for new classes and warnings about restricted code tables. Useful if you need to know whether CER rules can be modified or where customization boundaries lie."
+                  },
+                  {
+                    "title": "Extending code tables",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Some code tables can be extended, but restricted ones cannot be customized without a product enhancement request. Use CADT to identify restricted code tables, and consult the RestrictedCodeTables folder in the project documentation for each installation. This section also points to related guidance on code tables and configuration."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains which server-side artifacts can be changed. Modeled interfaces appear in the UML model and can have limited changes via model regeneration, while handcrafted interfaces are not customizable and are identified in component source directories by @ImplementedBy Google Guice annotations. It also notes that implementations of both kinds may be customizable, that some interfaces are documented only in component-specific docs, and that external APIs are separate from source code customization rules."
+              },
+              {
+                "title": "Server extension mechanisms",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Summary Guidance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Guidance for referencing and customizing application classes. External classes may be referenced; Internal classes should not be referenced; Access Restricted classes are unsupported for reference. Modeled classes must follow allowed customization rules, while non-modeled classes require checking Javadoc or parent component docs. Entity classes generally must not be directly used or modified, but adding stereotyped or non-stereotyped operations and certain Entity options is allowed. For screen changes involving new data, create customer-specific Entity classes and use custom process classes to wrap external maintenance operations atomically."
+                  },
+                  {
+                    "title": "Entity classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Application Entity classes cannot be directly used or modified by customers. Many Entity operations have equivalent External Facade-layer APIs that should be used instead. However, customers may add stereotyped or non-stereotyped operations and adjust certain Entity options (such as Auto ID, optimistic locking, order by, SQL where, etc.). For new data shown on screens, create customer-specific Entity classes and use process classes to wrap external maintenance operations atomically."
+                  },
+                  {
+                    "title": "Struct classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Application struct classes are treated as external and may be referenced in customer-specific code. Customers must not create aggregations from application structs to other structs, because their usage is not fully visible. They may, however, aggregate application structs into their own project-specific structs."
+                  },
+                  {
+                    "title": "Other modeled classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section states that modeled classes like Process, Facade, and WSInbound do not support extension mechanisms. Customers should create and use their own versions, wrapping external APIs or adding new functionality, and UIM pages can be pointed to new Facade operations. It also begins guidance on domain definitions: overriding is generally allowed, but changing the fundamental type is not. A table indicates some code table-related domain options, such as Code table Name and Code table Root, are not allowed."
+                  },
+                  {
+                    "title": "Domain definitions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains extension rules for modeled elements and domain definitions. It says customers should not add or change struct attributes directly; instead, create project-specific composite structs and use them in custom functionality. Changing struct options (e.g., Audit Fields) requires a Support case. No extension mechanisms are allowed for other modeled classes like Process, Facade, and WSInbound; customers should implement their own classes instead. For domain definitions, overriding is generally allowed, but changing the fundamental type or certain code table options (Code table Name/Root) is not."
+                  },
+                  {
+                    "title": "Non-modeled classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to handle non-modeled classes in Cúram: their external interfaces/classes are documented in Javadoc, and some have Eclipse access restrictions that should not be removed because restricted/internal APIs can change and break upgrades. Package-protected classes must not be used or referenced from custom code. Only APIs marked with @Implementable may be extended or implemented; others must not be customized due to upgrade risk."
+                  },
+                  {
+                    "title": "Relationships",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section describes extension mechanisms for relationship customization in Cúram 8.1.2. It explains that for @Implementable classes, customers typically extend behavior through events or strategies (using Guice bindings for strategy overrides). It then summarizes supported relationship customization cases: customer-supplied structs can be assignable, can aggregate application structs, can define foreign keys as child entities, and can create indexes on application or customer entities using customer structs. It also notes several unsupported inverse cases, especially when the application struct/entity is the child or used directly for indexing/aggregation."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000020",
+                  "start_page": 15,
+                  "end_page": 20
+                },
+                "summary": "This section explains supported server extension mechanisms in Cúram. It covers rules for referencing/customizing application classes by visibility (External allowed, Internal not referenced, Access Restricted unsupported), plus guidance for modeled and non-modeled classes. It details Entity and Struct customization limits, allowed Entity operations/options, and when to create customer-specific Process/Facade/WSInbound classes instead. It also covers domain definition overrides, non-modeled @Implementable extension via events/strategies, and supported/unsupported relationship customization (assignable, aggregation, foreign keys, indexes)."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000020",
+              "start_page": 10,
+              "end_page": 20
+            },
+            "summary": "Guidance for compliant Cúram server development: use project-specific prefixes to avoid naming collisions, reserve numeric ranges for custom initial/demo data, do not edit application files in place except listed exceptions, avoid dependencies on sample/demo artifacts, and sync runtime changes to dynamic artifacts back to development. It summarizes allowed customizations to messages, code tables, events, user preferences, workflows, properties, and DMX data, plus Java API access rules. It also outlines source/customization limits for modeled vs handcrafted classes, entities, structs, domains, non-modeled @Implementable APIs, and supported relationship extensions."
+          },
+          {
+            "title": "1.3 Compliancy for client development",
+            "level": 2,
+            "children": [],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000021",
+              "start_page": 21,
+              "end_page": 21
+            },
+            "summary": "Cúram client development must be customized without modifying original web client components or their artifacts. The section says custom data conversion and sorting can handle most presentation-layer data management changes. It points readers to compliance guidance for individual components, including rules for referencing application classes: External classes may be referenced, Internal classes should not be referenced in new code, and Access Restricted classes must not be referenced."
+          },
+          {
+            "title": "1.4 Compliancy for individual components",
+            "level": 2,
+            "children": [],
+            "node_id": "n000037",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000022",
+              "start_page": 21,
+              "end_page": 22
+            },
+            "summary": "Guidance on compliancy rules for customizing or referencing individual Cúram components. It distinguishes External, Internal, Access Restricted, Modeled, and Non-Modeled classes, and says to follow component-specific docs/Javadoc. Examples include CDEJ and SDEJ build-folder files not being customizable, SDEJ Ant scripts not to modify directly, drivers replaceable only with supported versions, and Persistence Infrastructure, CER Infrastructure, and Dependency Manager being non-customizable/internal. It also lists several components that require their own customization guidance."
+          },
+          {
+            "title": "1.5 Compliancy for deprecated functionality",
+            "level": 2,
+            "children": [],
+            "node_id": "n000038",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000026",
+              "start_page": 23,
+              "end_page": 26
+            },
+            "summary": "This section explains compliant development guidance for deprecated functionality in Cúram. It says planned deprecation is intended to reduce the impact of change on custom applications, and developers should review and remove dependencies on deprecated features where practical. It also points to additional deprecation information. The surrounding pages contain legal notices, copyright, licensing, warranty disclaimers, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000026",
+          "start_page": 9,
+          "end_page": 26
+        },
+        "summary": "Guidelines for compliant Cúram development to support upgrades and custom support. Covers starting a project with source control, version tagging, and webclient/EJBServer custom folders; server rules on prefixes, reserved numeric ranges, avoiding in-place edits, sample/demo dependencies, and syncing runtime changes back to development; compliant customization of messages, code tables, events, preferences, workflows, and properties; client development restrictions and class reference rules; component-specific exceptions/guidance; and handling deprecated functionality. Includes legal notices and trademarks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

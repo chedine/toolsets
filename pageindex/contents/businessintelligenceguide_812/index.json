@@ -1,0 +1,480 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "08eb707a897232b9",
+    "title": "Cúram 8.1.2 Business Intelligence and Analytics Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/BusinessIntelligenceGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "08eb707a897232b97ce8942a4cd53821507f71e94f3110a2accc1a4d3a7a4667",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T05:30:38+00:00",
+    "page_count": 16,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/BusinessIntelligenceGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Business Intelligence and Analytics Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000016",
+      "start_page": 1,
+      "end_page": 16
+    },
+    "summary": "Intro/front matter for the Cúram 8.1.2 Business Intelligence and Analytics Guide. It identifies the guide’s scope and audience, then explains BI&A at a business level: why SEM agencies use it to measure performance, detect process gaps, and support decision-making. The section outlines the main BI elements—data warehousing, embedded analytics, ad hoc reporting with BIRT, and interactive dashboards/reports—and describes the BI infrastructure: reporting schema, ETL/extraction flow, central data warehouse, datamarts, and optional viewers such as Cognos. It also covers how to define reporting requirements, model reporting data, generate initial reports, and use change data capture for warehouse refreshes. The remaining pages are notices and legal/front-matter content: permissions, warranty/disclaimer language, export and patent notes, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section on page 15 before using the information or the supported product. It also shows the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000014",
+          "start_page": 5,
+          "end_page": 14
+        },
+        "summary": "Edition notice for Cúram 8.1, 8.1.1, and 8.1.2. Includes Merative copyright/trademark information and the document’s contents listing. The contents preview shows this guide covers Business Intelligence and Analytics: introduction, overview, infrastructure, and using the infrastructure, plus notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "This section contains legal and licensing notices: sample data disclaimer, copyright license terms for sample programs, warranty/liability disclaimers, a link to Merative’s privacy policy, and trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX. It is mainly administrative/legal reference material."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Lists trademark and copyright notices for the document. Identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX as trademarks or registered trademarks, and notes other names may belong to third parties. Also includes a privacy policy link and a copyright/license notice stating sample programs may be copied, modified, and distributed under the Merative Client Agreement, with the examples provided “as is” and without warranty."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000015",
+          "end_unit_id": "p000015",
+          "start_page": 15,
+          "end_page": 15
+        },
+        "summary": "Administrative legal notice section covering use permissions for the publication (personal/commercial), required preservation of proprietary notices, and restrictions on redistribution or derivative works. It includes broad warranty and liability disclaimers, export-control compliance, patent notice, third-party product and website disclaimers, and the copyright statement © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This is the table of contents for the Cúram Business Intelligence and Analytics Guide. It lists the main chapters and subsections, including Introduction, an overview of business intelligence and analytics, business intelligence infrastructure, and using the infrastructure. It also includes front/back matter such as notes, edition, notices, privacy policy, and trademarks, with page references for each entry."
+      },
+      {
+        "title": "1 Cúram Business Intelligence and Analytics Guide",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Cúram Business Intelligence and Analytics Guide and states its purpose: to provide a business-level overview of Cúram BI and Analytics and the business logic behind it. It explains that the guide should be read in full for best understanding. The section also identifies the intended audience as anyone wanting to understand reporting concepts in the application and outlines the guide’s main chapters, covering overview, infrastructure, and using the infrastructure."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for readers who want to understand the business concepts of reporting within the application. This section introduces the guide’s purpose and scope, explaining that it provides a high-level overview of Cúram Business Intelligence and Analytics, including the data warehouse, embedded analytics, ad hoc reporting, dashboards, and reports. It also previews the guide’s main chapters on BI overview, infrastructure, and using the infrastructure."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the guide’s scope, purpose, audience, and chapter structure. It explains that Cúram Business Intelligence and Analytics helps agencies measure performance, detect process gaps, and analyze issues using a data warehouse, embedded analytics, ad hoc reporting, dashboards, and reports. It lists the main chapters: an overview of BI and Analytics, the BI infrastructure, and using the infrastructure to build business-specific data warehouses and expose data through dashboards, analytics, or reports."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Cúram Business Intelligence and Analytics Guide and its purpose: to give a business-level overview of BI and Analytics and the business logic behind it. It states the intended audience is anyone seeking to understand reporting concepts in the application. The section also outlines the guide’s structure, covering an overview of BI and Analytics, the BI infrastructure, and how to use that infrastructure to build business-specific data warehouses and expose data through dashboards, embedded analytics, and reports."
+          },
+          {
+            "title": "1.2 Overview of Business Intelligence and Analytics",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces Cúram Business Intelligence and Analytics as a business intelligence solution for agencies to measure performance, detect process gaps, and analyze issues. Defines the main components: a data warehouse, embedded analytics, ad hoc reporting, and interactive dashboards/reports. States the guide’s purpose is to provide a business-level overview of the business logic behind BI and Analytics, intended for readers seeking to understand reporting concepts within the application. Also outlines the guide’s chapters and notes that agencies use BI tools to support better decision-making."
+              },
+              {
+                "title": "Elements of Business Intelligence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Data Warehousing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains data warehousing as part of the application’s Business Intelligence stack: transactional data is consolidated for decision support and data mining, with business-specific warehouses such as Income Support. Introduces embedded analytics for interactive, aggregated views in context, ad-hoc reporting via BIRT and other reporting tools, and interactive dashboards/reports with metrics, gauges, traffic lights, scheduling, and scalable distribution. Also notes that Chapter 3 covers the infrastructure supporting data warehouses."
+                  },
+                  {
+                    "title": "Embedded Analytics",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Embedded Analytics describes how Cúram presents aggregated warehouse data in interactive, context-based views for front line staff and managers. It explains that users can explore alternate sub-groupings of data beyond the original design, with embedded analytics supported by Business Intelligence and Analytics and some out-of-the-box application content. The section positions embedded analytics alongside data warehousing, ad-hoc reporting, interactive dashboards, and reports, emphasizing decision support and summarized information integrated into the online application."
+                  },
+                  {
+                    "title": "Ad-hoc Reporting",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "This section explains ad-hoc reporting within Cúram’s Business Intelligence layer. It says the platform uses BIRT to render charts and also supports more advanced BI tools for chart output suited to ad-hoc reporting. The goal is to give users direct access to underlying reporting data so they can tailor reports to specific needs. It sits alongside related BI capabilities such as data warehousing, embedded analytics, and interactive dashboards/reports for decision support."
+                  },
+                  {
+                    "title": "Interactive Dashboards and Reports",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains the business-specific dashboard and reporting view over a data warehouse (e.g., Income Support or Child Services). Interactive dashboards show aggregated performance data with visual indicators such as dials, gauges, and traffic lights against targets. Reports support formatted, interactive output with scalable distribution and scheduling. The application provides the infrastructure for these capabilities, with business-specific reports added over time. Also situates this within broader business intelligence tools for front-line staff and managers."
+                  }
+                ],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Overview of Cúram’s Business Intelligence capabilities for decision support. It covers data warehousing of transactional data for decision making and data mining, including business-specific warehouses like Income Support. It describes embedded analytics for interactive, context-based alternate views of aggregated data, ad-hoc reporting using BIRT and other tools, and interactive dashboards/reports with dials, gauges, traffic lights, scheduling, and scalable distribution. The section also notes that Chapter 3 covers the supporting data warehouse infrastructure."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "This section explains why agencies use Cúram Business Intelligence and Analytics: to measure performance, spot process gaps, and analyze issues to support better decisions. It frames BI&A as a solution combining a consolidated data warehouse, embedded analytics, ad hoc reporting, and interactive dashboards/reports. Useful for understanding the business need and high-level scope of the BI&A approach before exploring infrastructure or usage details."
+          },
+          {
+            "title": "1.3 Business Intelligence Infrastructure",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces Cúram 8.1.2 Business Intelligence as a reporting framework for decision support across front-line staff, managers, and senior managers. It outlines the main BI elements: data warehousing for consolidated transactional data, embedded analytics for interactive data exploration, ad-hoc reporting via BIRT and other tools, and interactive dashboards/reports for business-specific views with charts, gauges, alerts, scheduling, and distribution. It also notes the chapter will cover infrastructure for building and exposing data warehouses to business users."
+              },
+              {
+                "title": "Define Business Requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how SEM agencies should define business intelligence/reporting requirements by scoping business logic, data location, required data elements, and logical groupings. Describes the data warehousing flow from source databases through extraction, transformation, central repository, and datamarts to graphs/charts. Defines business intelligence as tools for analyzing and reporting business measures. Notes the application supports data warehouses, business-specific datamarts, embedded analytics, BIRT, and optionally Cognos, with dashboards for areas like Income Support and Child Services."
+              },
+              {
+                "title": "How It Works",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how business intelligence in Cúram works: data is extracted from source databases, transformed, loaded into a central data warehouse, then organized into datamarts for reporting and charts. It distinguishes data warehousing from business intelligence and notes that the application provides infrastructure, embedded analytics, and business-specific datamarts for areas like Income Support and Child Services. It also mentions BIRT as the default viewer, optional Cognos support, and the main BI components: reporting schema, extraction processes, and embedded analytics."
+              },
+              {
+                "title": "Business Intelligence Components",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Reporting Schema",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Describes the BI/analytics reporting schema for Cúram: a domain-specific reporting warehouse composed of Staging, Central Data Warehouse, and Datamart layers fed from the operational application database via ETL. Explains the data flow from source to staging, CDW, and datamarts, plus how viewers/reports (BIRT, Cognos) access the data. Defines ETL (extract, transform, load), the purpose of each step, and embedded analytics charts in the application for business users."
+                  },
+                  {
+                    "title": "Extraction Processes",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "ETL Explained",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000026",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "ETL is defined as Extract, Transform, and Load: reading data from a source, converting it with business rules/lookup tables, and writing it to a target database. In this BI architecture, ETLs move data from the OLTP application database to Staging, then to the Central Data Warehouse, and finally to Datamarts for reporting and dashboards. The section also briefly notes embedded analytics charts in the application and that reporting tools like BIRT or Cognos can use the datamart data."
+                      }
+                    ],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains the BI extraction pipeline. ETL (Extract, Transform, Load) moves data from the application/OLTP database to Staging, then the Central Data Warehouse, and finally Datamarts. It describes each stage’s role: staging pulls source data, central ETLs apply business logic and changes, and datamarts store dimensional, denormalized data for reporting and cubes. It also notes viewing options such as dashboards, reports, embedded BIRT charts, and third-party tools like Cognos that read from the datamart."
+                  },
+                  {
+                    "title": "Embedded Analytics",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains the Business Intelligence and Analytics reporting architecture: a reporting schema built from Staging, Central, and Datamart layers fed from the operational application database via ETL. Describes how data moves from source to staging, then the Central Data Warehouse, then datamarts for reporting tools and dashboards. Defines ETL (extract, transform, load) and notes integration with BIRT for embedded charts, with optional tools like Cognos. Ends by defining embedded analytics as in-app charts for business users’ decision support."
+                  },
+                  {
+                    "title": "Dashboards and Cubes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains dashboards and cubes in Cúram BI. It notes that business areas like Income Support and Child Services include data warehouses and online charts; BIRT charts are used for graphical views in areas such as the Employer homepage and Payment Correction cases. It defines dashboards as visual tools for measuring business performance and communicating information. It then introduces BI infrastructure, covering how to define reporting requirements, model reporting data, and create logical user models to shape data marts, measures, dimensions, and granularity."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Introduces Cúram’s BI infrastructure: a reporting schema with Staging, Central Data Warehouse, and Datamart layers fed from the operational application database via ETL. Explains the extraction pipeline from source to staging, CDW, and datamarts, where data is denormalized for easier reporting and cubes. Notes viewing options such as dashboards, reports, embedded BIRT charts, and Cognos. Also defines ETL and embedded analytics as in-app charts that expose warehouse data to business users for decision support."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000012",
+              "start_page": 10,
+              "end_page": 12
+            },
+            "summary": "Overview of Cúram 8.1.2 business intelligence infrastructure for building data warehouses and exposing data to business users. Covers defining BI requirements, the BI workflow from source databases through ETL, staging, central data warehouse, and datamarts, and the main components: reporting schema, extraction processes, and embedded analytics. Also describes viewing options such as BIRT dashboards/reports and optional Cognos support, plus business-specific datamarts for areas like Income Support and Child Services."
+          },
+          {
+            "title": "1.4 Using the Business Intelligence Infrastructure",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Introduces BI features in Cúram, noting that Income Support and Child Services use data warehouses to support online charts, dashboards, embedded analytics, and reports. Gives examples of BIRT charts on the Employer homepage and Payment Correction cases. Explains that dashboards help communicate business performance in business-specific areas. Describes the BI infrastructure approach: define reporting business requirements first, then model data and design ETL from OLTP to reports. Emphasizes logical user models, facts/dimensions, and granularity for building data marts."
+              },
+              {
+                "title": "Defining Business Requirements for Reports",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how to define reporting business requirements before designing reports, dashboards, or embedded analytics. It notes that agencies should identify the expected outcome, required input data, current data location, and whether data must be available online to caseworkers. It then describes how requirements are translated into logical user models, which guide data mart structure, measures, dimensions, and granularity. The section also outlines the workflow from business requirement to data model design and ETL from OLTP systems to reporting outputs."
+              },
+              {
+                "title": "Modeling Reporting Data from Business Requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how reporting data is modeled from business requirements. It starts with a report need, then builds or extends data models before designing ETL from OLTP to report output. It recommends creating a logical user model to represent the desired cube/view, identifying measures, dimensions, and required granularity. The user model helps determine data mart structure and what data must be captured."
+              },
+              {
+                "title": "Generating an Initial Report",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to generate an initial report by populating the datamart through ETL: data is extracted from source databases, transformed to remove inconsistencies, and loaded for reporting. Focuses on Change Data Capture for refreshing the warehouse efficiently by extracting only changed data, typically on a nightly schedule but configurable. Describes use of an ETL control table and pre-/post-mapping transformations to track last-written dates, and notes that source tables must populate last-written fields; initial loads may reset dates to capture all data since a chosen start date."
+              },
+              {
+                "title": "Change Data Capture",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000016",
+                  "start_page": 14,
+                  "end_page": 16
+                },
+                "summary": "Explains Change Data Capture for BI/Analytics data warehouse refreshes. It says refreshes should extract and transform only data changed since the last load, typically on a nightly schedule but configurable. The method uses a control table with last written dates per table; ETL reads the prior timestamp before mapping and updates it afterward. For CDC to work, source tables must populate last written fields. After initial control-table population, last written dates can be reset to a start date (optionally 1 Jan 1934) to force full extraction."
+              }
+            ],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000016",
+              "start_page": 13,
+              "end_page": 16
+            },
+            "summary": "Explains how to use Cúram’s BI infrastructure to build business-specific data warehouses and deliver dashboards, embedded analytics, BIRT charts, and reports. Recommends starting with reporting business requirements, then creating logical user models to define measures, dimensions, and granularity before designing ETL from OLTP systems to datamarts. Also outlines initial report population and Change Data Capture refreshes, including control tables, last-written dates, nightly scheduling, and the need for source tables to populate last-written fields."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000016",
+          "start_page": 9,
+          "end_page": 16
+        },
+        "summary": "Introduces Cúram Business Intelligence and Analytics, a business-level guide for understanding reporting concepts and BI logic. It explains why agencies use BI&A to measure performance, find process gaps, and support decisions. The section outlines the BI infrastructure: reporting schema, ETL flow from source database to staging, central data warehouse, and datamarts, plus embedded analytics, BIRT reports/dashboards, and optional Cognos viewing. It also describes how to define reporting requirements, model user needs, and use change data capture for warehouse refreshes."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,873 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "d8f3687dc0b797d7",
+    "title": "Cúram 8.1.2 Evidence Broker Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/EvidenceBroker_812.pdf",
+    "source_type": "pdf",
+    "sha256": "d8f3687dc0b797d79572142a91f908d201b34e97a0d776cae7521ea8bdeb6a00",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:28:00+00:00",
+    "page_count": 96,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/EvidenceBroker_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Evidence Broker Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000096",
+      "start_page": 1,
+      "end_page": 96
+    },
+    "summary": "Introductory chapter for the Cúram 8.1.2 Evidence Broker Guide. Explains how the evidence broker shares evidence between cases, why sharing is needed, and core terminology. Covers evidence sharing between cases, shared data sets, matching and maintenance patterns, sharing rules, identical vs logically equivalent evidence, verification sharing, triggers, incoming list review, and end-to-end scenarios. Also describes configuration of sharing and matching, custom matching and delivery-plan filters, controls for when to share or not share evidence, paid employment special handling, pull-workflow setup, troubleshooting via shared instance search and trace logging, and generated workflow tasks for failed activation or manual review. Includes front matter, contents, notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note instructs readers to review the Notices section on page 95 before using the information or the supported product. It also contains the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory pages for the “Sharing evidence by using the evidence broker” chapter. Covers edition/version applicability (Cúram 8.1/8.1.1/8.1.2), then explains what the evidence broker does, why evidence is shared between cases, and key terminology. Main concepts include sharing configurations, trusted source vs manual processing, identical vs logically equivalent evidence, evidence sharing triggers, maintenance patterns, parent-child evidence, verification sharing, and the “set of shared evidence data” with period of interest. Includes an example scenario showing how evidence is shared across cases over time."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section explains how the evidence broker shares evidence between cases: it builds evidence data sets from parent/child/grandchild records, applies data matching to insert, modify, or delete records, and handles multiple source cases while avoiding duplicates and preferring identical over logically equivalent evidence. It also describes when manual caseworker review is required, and the core sharing rules: only through configured open-case trusted-source links, only active records, with participant, overlap, and evidence-maintenance-pattern constraints."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Explains evidence broker sharing for identical and logically equivalent evidence, including removal of in-edit records, manual review when discrepancies or unmapped attributes exist, and how administrators configure sharing via XML rules, mappings, and maintenance patterns. Covers analysis needed to define logical equivalence, supported actions, handling of extra target data, end-dating and recreation of target evidence, verification item sharing, and triggers such as adding a case member. Useful for setup, rules, and edge-case behavior in evidence sharing."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Explains evidence broker sharing on cases: when evidence is activated, authorized, or pre-authorization shared, including exceptions for application cases and mandatory verifications. Describes the Incoming Evidence page for manual review, the circumstances that send evidence there, and how caseworkers compare timelines and choose actions like Update, Add as new, Ignore, Edit, or Delete Existing. Covers update patterns for comparable evidence: correction, timeline update, and combined correction/timeline update, including conflict handling, start-date changes, and In-Edit processing."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "This section explains evidence sharing via the evidence broker: adding incoming evidence as new, updating existing evidence, ignoring evidence, editing missing or corrected information, and deleting previously shared records. It covers handling timelines, mandatory/missing information, parent-child evidence hierarchies, and case participant roles created during sharing. It also walks through conflict-resolution scenarios where incoming or existing information may be correct, plus special cases with different start dates or logically equivalent evidence patterns."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "This section explains evidence broker sharing and how incoming evidence is processed in integrated cases. It covers update vs add-as-new decisions, conflict handling, identical evidence suppression, and parent-child evidence sharing. It also outlines planning sharing configurations, Universal Access sharing patterns, logically equivalent SSN-to-identifications mapping, relationship sharing to related people, and sharing of verifications with income evidence. Useful for understanding how evidence timelines, corrections, and automatic acceptance behave across person, application, integrated, and product delivery cases."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Cúram evidence broker documentation covering evidence record end dating, incoming evidence FAQs, and evidence sharing configuration. Explains how caseworkers can create evidence with optional end-dating of prior records, including preferred indicator behavior and wizard steps. Describes administration of evidence sharing between case types: identical vs logically equivalent evidence, bidirectional configurations, trusted source, and sharing verifications. Also details XML rules for logically equivalent evidence mapping, including EvidenceMapping, Mapping, CodeTableValue, Filter, Action, Set, Display, Create, MaintenanceStyle, and ShareWhen."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "This section explains evidence broker sharing configuration for logically equivalent evidence, including mapping attributes with ParamMapping, using Display to trigger manual review, Create for child evidence instances, MaintenanceStyle ENDDATE succession, and ShareWhen conditions. It also covers custom data matching to control matching of shared evidence via AESCustomDataMatching and Guice registration, plus delivery plan filtering to prevent sharing in certain cases using AESDeliveryPlanFilter. Useful for understanding how to configure, customize, or restrict evidence sharing between cases."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "Covers advanced evidence sharing with the evidence broker: custom delivery logic for paid employment evidence via a PaidEmployment getDetails() extension, Guice binding, and module registration. Also explains deferring pull-workflow sharing with AESShareSetPullManualEnactment. Main focus is troubleshooting shared-evidence failures: how validations/verifications redirect evidence to incoming lists or in-edit states, using shared instance search and optional trace logging, plus a catalog of broker system actions and generated tasks for manual review or failed activation."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000094",
+          "start_page": 5,
+          "end_page": 94
+        },
+        "summary": "Introductory and reference section for the Cúram evidence broker chapter (8.1–8.1.2). Explains what the broker does, why evidence is shared, and key terminology, then covers sharing rules, maintenance patterns, identical vs logically equivalent evidence, verification sharing, manual review, and incoming-list processing. Also includes configuration of sharing/matching, custom matching and delivery-plan filters, paid employment extensions, pull-workflow setup, troubleshooting via shared instance search/trace, and generated workflow tasks for failed activation or manual intervention."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000096",
+              "end_unit_id": "p000096",
+              "start_page": 96,
+              "end_page": 96
+            },
+            "summary": "This page contains legal notices: sample data and names are fictitious; sample source programs may be copied, modified, and distributed for API-conforming development, but are provided “AS IS” without warranty or liability; the Merative privacy policy is linked at merative.com/privacy. It also lists trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others, plus copyright notice."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000096",
+              "end_unit_id": "p000096",
+              "start_page": 96,
+              "end_page": 96
+            },
+            "summary": "Lists trademark and copyright notices for the document. It identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX as trademarks or registered trademarks, notes that other names may belong to others, and states the document’s sample names are fictitious. Also includes Merative’s privacy policy link and a sample-program copyright license/disclaimer allowing copying and modification under the client agreement, with no warranty."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000095",
+          "end_unit_id": "p000095",
+          "start_page": 95,
+          "end_page": 95
+        },
+        "summary": "Legal notice page covering permissions to reproduce Merative publications for personal or internal enterprise use only, with proprietary notices preserved. It prohibits redistribution, derivative works, export violations, and use outside the stated terms without consent. It disclaims warranties and liability, states the content is provided “as-is,” notes possible patent coverage, and says non-Merative product and website references are informational only. Includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000015",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter and Chapter 1, “Sharing evidence by using the evidence broker,” with subsections on terminology, sharing between cases, shared data, records/matching, maintenance patterns, rules, equivalent evidence, verification items, triggers, incoming list review, configuration, matching control, non-sharing, paid employment evidence, pull workflow prep, and troubleshooting. Also includes notices, privacy policy, and trademarks. Useful for navigating to specific evidence-sharing topics rather than substantive content."
+      },
+      {
+        "title": "1 Sharing evidence by using the evidence broker",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Evidence sharing key terminology",
+            "level": 2,
+            "children": [],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Defines core evidence-sharing terms for Cúram’s evidence broker. It explains the broker’s role in mediating evidence between cases, why sharing is needed, and how configuration can control what is shared and whether manual review is required. The glossary covers key actions and concepts such as add as new, correction, delete existing, edit, update, ignore, exact match, trusted source, manual intervention, shared verifications, source/target case, delivery plan, logical equivalence, maintenance patterns, and parent-child evidence."
+          },
+          {
+            "title": "1.2 Evidence sharing between cases",
+            "level": 2,
+            "children": [
+              {
+                "title": "Set of shared evidence data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000015",
+                  "start_page": 13,
+                  "end_page": 15
+                },
+                "summary": "Defines what the evidence broker treats as a “set of shared evidence data” and when it shares evidence across cases. A set includes an active evidence record, its succession/correction history, related parent-child hierarchy records, and members/participants, but not in-edit, superseded, deleted records, or verifications unless configured. It explains the “period of interest” (typically 15 months before case start for retroactive programs) and that overlap triggers sharing of the full set. Includes examples of employment/earnings, alien, tax, medical expense, and income hierarchies."
+              },
+              {
+                "title": "Evidence records and data matching",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000019",
+                  "start_page": 16,
+                  "end_page": 19
+                },
+                "summary": "Explains how the evidence broker matches shared evidence records between source and target cases to decide insert, modify, delete, or manual review. Covers exact-match rules, excluded attributes, superseded vs active records, and handling multiple source cases (latest version, duplicate prevention, identical vs logically equivalent evidence). Also lists when manual intervention is required, including untrusted sources, no exact match, and parent/child sharing conflicts, with examples of matching and duplicate detection."
+              },
+              {
+                "title": "Evidence maintenance patterns",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section explains evidence maintenance patterns, which control how evidence types are instantiated, corrected, and succeeded, including sharing behavior and validation rules. It says the default pattern is multiple over time, unless an administrator configures another pattern per evidence type. It covers three patterns: multiple over time (multiple active instances, corrections, and successions), multiple (multiple active instances and corrections, but no successions), and single (only one active instance per case member and no successions)."
+              },
+              {
+                "title": "Evidence sharing rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000024",
+                  "start_page": 21,
+                  "end_page": 24
+                },
+                "summary": "Defines how the evidence broker shares evidence between cases and the main restrictions that govern it. Sharing requires a defined configuration, applies only to open cases, and only trusted sources can be auto-shared without review. It distinguishes identical vs logically equivalent sharing, active vs corrected/in-edit records, and requires matching evidence types and overlapping active membership periods on source and target cases. It also explains participant-based sharing rules and how evidence maintenance patterns (single, single over time, etc.) affect whether shared evidence can be activated."
+              },
+              {
+                "title": "Identical and logically equivalent evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining logically equivalent evidence",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Evidence analysis",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000026",
+                          "end_unit_id": "p000027",
+                          "start_page": 26,
+                          "end_page": 27
+                        },
+                        "summary": "Explains how to analyze logically equivalent evidence for sharing between source and target case types. Covers comparing underlying data structures, possible one-to-one or one-to-many mappings, validating attribute and code table values, and checking evidence flow starting points. Notes that logically equivalent mapping is used when attributes differ by name, subset sharing is needed, or target code tables differ. Also references XML rules file use for attribute and code table mapping, with examples like Pregnancy, SSN Details, and Identifications."
+                      },
+                      {
+                        "title": "Supported actions and data structures",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Identifications and SSN details evidence types",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000027",
+                            "range": {
+                              "start_unit_id": "p000030",
+                              "end_unit_id": "p000030",
+                              "start_page": 30,
+                              "end_page": 30
+                            },
+                            "summary": "Explains how the XML sharing rules schema maps identifications evidence to SSN details evidence in Cúram Insurance Affordability. Covers shared attributes (participant, alternateID, altIDType, fromDate, toDate), notes unmapped fields (ssnStatus, noSSNReasonCode, noSSNReason, OtherDetails, preferredInd), and shows that altIDType uses the ConcernRoleAlternateID code table with CA1 for Social Security Number. Also describes filtering identifications by evidence subtype to select the SSN identification correctly."
+                          }
+                        ],
+                        "node_id": "n000026",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000030",
+                          "start_page": 28,
+                          "end_page": 30
+                        },
+                        "summary": "Explains supported logically equivalent evidence sharing actions and data structures in Cúram XML rules. Covers review/confirmation, creating child evidence, end-dating succession, and filtering evidence subtypes. Describes supported mappings: single-to-single, single-to-many, and many-to-single, with the restriction that shared output must resolve to one evidence record. Includes the identifications vs SSN details example: shared fields participant, alternateID, altIDType, fromDate, toDate; unmapped SSN-specific and preferredInd fields; CA1 in ConcernRoleAlternateID; and subtype filtering to select SSN identifications."
+                      }
+                    ],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000030",
+                      "start_page": 26,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how to define logically equivalent evidence sharing in Cúram when source and target evidence types differ in structure, attribute names, or code tables. Covers analysis of underlying data, attribute and code table value matching, and evidence flow starting points. Describes supported XML rules actions: review/confirmation, create child evidence, end-dating succession, and subtype filtering. Supports single-to-single, single-to-many, and many-to-single mappings, with shared output resolving to one evidence record. Includes the Identifications/SSN Details example and CA1 code table mapping."
+                  },
+                  {
+                    "title": "System processing for logically equivalent evidence sharing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000032",
+                      "start_page": 31,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how logically equivalent evidence sharing works in the evidence broker. It mirrors identical sharing rules but requires configured source/target cases, mapped logical equivalence in XML rules, and a trigger on mapped attribute changes. The broker creates/activates target evidence when needed and shares only mapped attributes. It also covers handling unmapped target attributes via dependency attributes, including when evidence is auto-accepted vs sent to the incoming list for review, with examples for social security number and disability evidence."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000032",
+                  "start_page": 25,
+                  "end_page": 32
+                },
+                "summary": "Explains logically equivalent evidence sharing in Cúram when source and target evidence differ in structure, attributes, or code tables. Covers data and flow analysis, XML rule mapping, attribute/code table matching, subtype filtering, and supported actions such as review/confirmation, child evidence creation, and end-dating succession. Includes single-to-single, single-to-many, and many-to-single mapping patterns. Describes broker behavior: shares only mapped attributes, creates target evidence if needed, and may route records to incoming review when unmapped dependency-driven data changes. Uses SSN Details/Identifications and disability examples."
+              },
+              {
+                "title": "Verification items",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "By default, the evidence broker does not share verification items tied to evidence records. Administrators can configure it to share verification documentation for identical or logically equivalent evidence along with the evidence itself. When shared, the source verification documentation is copied to the target case and reapplied to the target evidence. If the shared evidence is inserted or modified on the target case, the verification engine reruns on the copied verification documentation."
+              },
+              {
+                "title": "Evidence sharing triggers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains when evidence sharing can trigger between source and target cases. If a sharing configuration exists, adding a case member normally causes the broker to share the person’s evidence and evidence from other cases they belong to, using the most recent active version and either resolving it automatically or placing it in the incoming evidence list. It also notes verification behavior: shared evidence may need reverification if source and target requirements differ, and verification items can be shared always or only if applicable."
+              },
+              {
+                "title": "Reviewing evidence on a case's incoming list",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Understanding the Incoming Evidence page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000040",
+                      "start_page": 38,
+                      "end_page": 40
+                    },
+                    "summary": "Explains the Incoming Evidence page used to manually process evidence sharing decisions. Covers its main parts: cards for actions, descriptions of current evidence, and a timeline of changes. Details how caseworkers compare incoming vs existing evidence, choose comparable records, update existing evidence, add as new, ignore, or delete existing records. Describes timeline indicators for selected, cleared, conflict, and information-missing states, plus default record selection behavior and when update actions are enabled or hidden."
+                  },
+                  {
+                    "title": "Updating existing evidence with incoming evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000044",
+                      "start_page": 41,
+                      "end_page": 44
+                    },
+                    "summary": "Explains how the Update action shares comparable incoming evidence with existing evidence and automatically builds a new timeline, including parent-child hierarchies and historical changes. Covers three patterns: correction, timeline update, and combined correction/timeline update. Describes Update Existing Evidence card guidance, conflict labels, radio-button choices for “incoming information is correct” or “existing information is correct,” effects on same-date conflicts, and when start dates are automatically adjusted. Also notes missing mandatory/conditional information can block updates and trigger validations."
+                  },
+                  {
+                    "title": "Adding new evidence to a case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "Explains how to add incoming evidence to a case manually using Add as New, which adds the entire evidence timeline to the existing case in one action. Also covers shared evidence handling when mandatory information is missing: the Update Existing Evidence card is hidden until missing details are entered via the timeline’s Edit action, and the missing information applies only to the existing case. Notes special handling for parent-child evidence, where Update can automatically apply the full hierarchy and timeline changes."
+                  },
+                  {
+                    "title": "Ignoring evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000046",
+                      "end_unit_id": "p000046",
+                      "start_page": 46,
+                      "end_page": 46
+                    },
+                    "summary": "Explains how to ignore incoming evidence during case sharing. Choosing Ignore removes the evidence from the incoming evidence list and prevents it from being shared to the existing case. The section also contrasts this with adding evidence, where missing mandatory information must be supplied and parent-child evidence hierarchies are added automatically. Useful for understanding when evidence can’t be added and how to discard unwanted incoming evidence."
+                  },
+                  {
+                    "title": "Editing evidence on an incoming case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Explains how to edit incoming evidence in the comparison view. Use Edit on the incoming evidence side to add missing mandatory or conditionally mandatory details and resolve validation issues before sharing. Missing information is flagged with a label and “!” icon on the change timeline until corrected. Edits apply only to the existing case, not the associated incoming case. For parent/child hierarchies, each record can be edited separately via its own Edit Evidence page."
+                  },
+                  {
+                    "title": "Deleting a previously shared record",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Explains what happens when evidence previously shared from a source case is deleted: the deleted status appears against each affected incoming evidence record. This section is part of evidence-sharing behavior and helps users understand how deletions are reflected on the target/incoming case after sharing."
+                  },
+                  {
+                    "title": "Understanding sharing and case participant roles",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Explains how sharing affects case participant roles on existing cases. Before incoming evidence is shown, the broker creates related participant roles for shared evidence; if incoming evidence is ignored, those roles may need to be manually removed. Example: shared student evidence adds a school participant to an integrated case, and ignoring the evidence leaves the school on the case. Also introduces evidence-sharing patterns for comparable evidence, including correcting non-parent/child evidence when incoming and existing records differ by a field like Student Status."
+                  },
+                  {
+                    "title": "Evidence sharing patterns when comparing comparable evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000051",
+                      "start_page": 48,
+                      "end_page": 51
+                    },
+                    "summary": "Explains evidence broker sharing patterns for comparable evidence, focusing on when to use Update Existing Evidence versus ignoring or deleting shared records. Covers deletion of incoming evidence, case participant role side effects, and four common comparison scenarios: correction for non-parent/child evidence, correction for parent-child evidence, timeline update when dates differ, and combined correction plus timeline update. Uses student and student expense examples to show conflict indicators, radio-button choices, and how incoming or existing evidence affects the target case timeline and status."
+                  },
+                  {
+                    "title": "Specific evidence sharing scenarios",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000057",
+                      "start_page": 52,
+                      "end_page": 57
+                    },
+                    "summary": "This section covers uncommon evidence sharing scenarios in Cúram evidence broker processing. It shows how incoming evidence is handled when dates conflict, start dates differ, parent/child evidence is involved, logically equivalent evidence is shared, or identical evidence was already linked. Examples include Student Status, Phone Number, SSN Details, Income with Employer Sponsored Coverage, and Benefit evidence. It explains when users see Update Existing Evidence, when they can choose Incoming vs Existing information is correct, when Add as New is allowed, and when no processing is needed."
+                  }
+                ],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000057",
+                  "start_page": 35,
+                  "end_page": 57
+                },
+                "summary": "Explains how caseworkers review incoming evidence on the Incoming Evidence page and decide whether to Update, Add as New, Ignore, Edit, or Delete Existing records. Covers the page’s comparison view, cards, timelines, conflict/missing-information indicators, and selection of comparable evidence. Includes key sharing patterns: corrections, timeline updates, parent-child hierarchies, deletion of previously shared evidence, participant-role side effects, and special scenarios where evidence is identical, logically equivalent, or has start-date conflicts."
+              },
+              {
+                "title": "Planning evidence sharing configurations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000058",
+                  "start_page": 58,
+                  "end_page": 58
+                },
+                "summary": "Guidelines for configuring evidence sharing across case types. It advises checking whether the same evidence type appears in multiple case types, whether changes should be communicated, and whether target cases should auto-accept or require caseworker review. It notes that person/prospect person evidence outside the person tab must share changes back to the person tab. It also outlines recommended sharing patterns for Universal Access: person to application, application to person/prospect person, application to ongoing integrated/product delivery cases, and ongoing case to application."
+              },
+              {
+                "title": "End-to-end evidence scenarios",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Citizen applies for benefits",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000060",
+                      "start_page": 59,
+                      "end_page": 60
+                    },
+                    "summary": "End-to-end evidence flow when a citizen applies for benefits. Mary’s online application creates a person, application case, integrated case, and product delivery case. The section shows how evidence broker sharing works from application case to ongoing cases and person record, including trusted source behavior and which evidence types are shared. It also covers correcting erroneous data, automatic activation on authorization, and selective sharing of generic vs program-specific evidence such as name, birth/death, gender, contact details, address, income, expenses, and employment."
+                  },
+                  {
+                    "title": "Registered person applies for benefits",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000061",
+                      "end_unit_id": "p000061",
+                      "start_page": 61,
+                      "end_page": 61
+                    },
+                    "summary": "Describes the workflow when an already registered person applies for benefits online. It covers search and match to an existing person record, automatic creation of an application case, mapping submitted data as evidence, and evidence broker sharing between the person tab, application case, integrated case, and product delivery case. The example highlights caseworker review of incoming vs existing evidence, especially choosing to ignore an incoming phone number, and shows that authorized application evidence is shared back to the person record only when new or changed."
+                  },
+                  {
+                    "title": "Adding a relationship and related person to an integrated case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000062",
+                      "end_unit_id": "p000062",
+                      "start_page": 62,
+                      "end_page": 62
+                    },
+                    "summary": "This section explains how relationship evidence is added to an integrated case and shared to related person records, including creation of reciprocal relationships and later adding the related person as a case member with incoming evidence acceptance. It also introduces logically equivalent evidence sharing, showing how SSN details evidence on an integrated case can map to identifications evidence for a person/prospect person via an XML rules configuration."
+                  },
+                  {
+                    "title": "Sharing logically equivalent SSN evidence to identifications evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000062",
+                      "end_unit_id": "p000063",
+                      "start_page": 62,
+                      "end_page": 63
+                    },
+                    "summary": "Explains logically equivalent evidence sharing between SSN details on an integrated case and identifications evidence on a person/prospect person. An XML rules configuration maps participant, alternateID, altIDType, fromDate, toDate, and comments, leaving SSN status and no-SSN reason fields unmapped. Example: Fred applies online with SSN identification, is registered as a person, his application case is created and authorized, and an integrated case is automatically created. The evidence broker then treats the two evidence types as equivalent for sharing."
+                  },
+                  {
+                    "title": "Mandatory verifications on an integrated case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000064",
+                      "end_unit_id": "p000064",
+                      "start_page": 64,
+                      "end_page": 64
+                    },
+                    "summary": "Explains how mandatory verifications on integrated cases are created, shared, and satisfied across cases. Example: Lisa has two integrated cases with income verification rules; Case A requires a pay slip, while Case B requires both an employer letter and a pay slip. When income evidence and its pay slip verification are added and activated on Case A, the evidence broker shares both to Case B as incoming evidence. After acceptance, Case B’s income verification requirement is satisfied because the shared verification item is accepted."
+                  },
+                  {
+                    "title": "Applying end dating in the creation of evidence records",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains how caseworkers can end date previous evidence records while creating a new evidence record in the evidence wizard, if the evidence type’s end dating feature is enabled by an administrator. Describes the two-page wizard flow, conditions for showing the end-dating option, and how setting a Preferred Indicator on a new record automatically clears it on an existing preferred record, creating an in-edit record that must be applied. Includes a step-by-step procedure for creating evidence and ending dating prior records."
+                  }
+                ],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000059",
+                  "end_unit_id": "p000065",
+                  "start_page": 59,
+                  "end_page": 65
+                },
+                "summary": "This section gives end-to-end evidence broker scenarios across application, person, integrated, and product delivery cases. It covers: a new citizen registering and having evidence shared/updated; an already registered person applying and caseworker review of incoming evidence; adding relationship evidence and reciprocal sharing; logically equivalent SSN-to-identifications mapping via XML rules; sharing mandatory verifications between integrated cases; and end-dating previous evidence records during evidence creation, including preferred indicator behavior."
+              },
+              {
+                "title": "Frequently asked questions (FAQs) about evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000066",
+                  "end_unit_id": "p000066",
+                  "start_page": 66,
+                  "end_page": 66
+                },
+                "summary": "FAQs about evidence give a brief guide to common evidence-handling scenarios in social programs. It explains that evidence is client-supplied information used for assessments or determinations, and highlights five FAQ topics for caseworkers, including using the Incoming Evidence timeline, evidence corrections over time, and modifying evidence. This section is a navigation entry to specific evidence-related questions and examples."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000066",
+              "start_page": 12,
+              "end_page": 66
+            },
+            "summary": "Explains how the evidence broker shares evidence between source and target cases via configurable, unidirectional rules per evidence type. Covers identical vs logically equivalent sharing, trusted-source auto-activation vs manual incoming review, and sharing of verifications when enabled. Defines the shared evidence “set,” including active records, successions, corrections, parent-child hierarchies, and participants, plus the period of interest that drives when full history is shared. Ends with end-dating during evidence creation and links to FAQs and related evidence-sharing scenarios."
+          },
+          {
+            "title": "1.3 Configuring evidence sharing",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating sharing configurations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000067",
+                  "end_unit_id": "p000068",
+                  "start_page": 67,
+                  "end_page": 68
+                },
+                "summary": "Explains how to create evidence sharing configurations in Cúram using the Sharing Configuration wizard. Covers prerequisites, including configuring and enabling evidence types on source and target case types, and uploading XML sharing rules for logically equivalent evidence. Describes configuring identical and logically equivalent evidence, setting bidirectional sharing as separate configurations, and choosing Share Verifications and Trusted Source options. Includes procedure steps in Administration Workspace and notes that edits apply only to future sharing triggers."
+              },
+              {
+                "title": "Configuring evidence patterns",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000069",
+                  "end_unit_id": "p000069",
+                  "start_page": 69,
+                  "end_page": 69
+                },
+                "summary": "Explains how to configure evidence maintenance patterns for evidence types in Cúram. Covers setting a single pattern per evidence type, including for both non-dynamic (static) and dynamic evidence. Notes the default pattern is “multiple over time” unless overridden per evidence type, and describes the admin path: Administration Workspace > Rules and Evidence > choose Non-Dynamic Evidence or Dynamic Evidence > edit the evidence type and select the sharing maintenance pattern. Includes a related concept on how patterns control instantiation, correction, and succession, and links to logically equivalent evidence configuration."
+              },
+              {
+                "title": "Configuring logically equivalent evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "XML sharing rules schema",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000071",
+                      "end_unit_id": "p000078",
+                      "start_page": 71,
+                      "end_page": 78
+                    },
+                    "summary": "Defines the XML sharing rules schema for mapping logically equivalent evidence types in Cúram evidence broker sharing. Covers the required XML structure (EvidenceMapping, Mapping, CodeTableValue) and optional controls: Filter for evidence subtypes, Action behaviors (Set, Display, Create with Parameter/ParamMapping), MaintenanceStyle end-dating, and ShareWhen expressions. Explains key attributes, code table/value lookup, and how source/target evidence, attributes, and code-table mappings are configured. Useful for implementing or editing evidence-sharing XML rules."
+                  },
+                  {
+                    "title": "Sharing rules XML samples",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000079",
+                      "end_unit_id": "p000079",
+                      "start_page": 79,
+                      "end_page": 79
+                    },
+                    "summary": "This section explains that sharing rules XML samples are available to help map logically equivalent evidence types using the sharing rules XML schema. It notes that the downloadable samples include predefined Income Support sharing configurations that can be customized, are available from the Merative Support Docs code samples site, and were last refreshed in Cúram 8.0.0."
+                  }
+                ],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000069",
+                  "end_unit_id": "p000079",
+                  "start_page": 69,
+                  "end_page": 79
+                },
+                "summary": "Explains how to configure logically equivalent evidence sharing in Cúram using an XML rules file that maps source and target evidence types and attributes. Covers the XML schema and key elements: EvidenceMapping, Mapping, CodeTableValue, optional Filter for subtypes, Action behaviors (Set, Display, Create with Parameter/ParamMapping), MaintenanceStyle end-dating, and ShareWhen expressions. Notes code table lookup, validation on upload, and provides downloadable sample XMLs, including customizable Income Support examples last refreshed in Cúram 8.0.0."
+              }
+            ],
+            "node_id": "n000050",
+            "range": {
+              "start_unit_id": "p000067",
+              "end_unit_id": "p000079",
+              "start_page": 67,
+              "end_page": 79
+            },
+            "summary": "Explains how to configure evidence sharing in Cúram. Covers creating sharing configurations between source and target case types for identical or logically equivalent evidence, with separate configurations needed for bidirectional sharing. Notes prerequisites: evidence types must exist on both cases and be enabled for sharing; logically equivalent sharing requires an XML rules file uploaded and validated in the wizard. Also covers share verifications and trusted source settings, evidence maintenance patterns for static/dynamic evidence, and the XML schema/actions for logical equivalence (mapping, set/display/create, maintenance style, share-when, filters)."
+          },
+          {
+            "title": "1.4 Controlling when to match shared evidence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000056",
+            "range": {
+              "start_unit_id": "p000080",
+              "end_unit_id": "p000081",
+              "start_page": 80,
+              "end_page": 81
+            },
+            "summary": "Explains how the evidence broker matches shared evidence when Trusted Source is Yes, and how unmatched records may still go to Incoming Evidence for manual review. Describes using the AESCustomDataMatching hook to supply custom matching logic when the broker cannot determine a match, such as automatically treating records with different start dates as a succession. Includes the customDataMatching method signature, return values (recommended AESBORAction and target evidence ID), and registering the implementation in Guice with a MapBinder keyed by concatenated source and target evidence type codes."
+          },
+          {
+            "title": "1.5 Controlling when not to share evidence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000057",
+            "range": {
+              "start_unit_id": "p000082",
+              "end_unit_id": "p000084",
+              "start_page": 82,
+              "end_page": 84
+            },
+            "summary": "Explains how to control when evidence is not shared by using the AESDeliveryPlanFilter hook. A custom filter implementation can inspect delivery plans, read source and target case details, and return plans to ignore; ignored plans are marked AESDELIVERYPLANSTATUS.IGNORED and not processed. The section includes sample Java code and notes that the implementation must be registered via Guice binding in a custom module. It gives an example rule: ignore sharing when case types match but case start dates differ."
+          },
+          {
+            "title": "1.6 Paid employment evidence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000058",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000086",
+              "start_page": 85,
+              "end_page": 86
+            },
+            "summary": "Explains how paid employment evidence is shared when income evidence moves from Insurance Affordability to Income Support. Because mandatory fields cannot be filled automatically, sharing uses logically equivalent XML plus the curam.aes.sl.delivery.processor.impl.PaidEmployment interface to enable manual-assisted matching. Describes required fields (employmentID, empCaseParticipantRoleID, employmentType), validation rules for returned values, and that getDetails is invoked for each XML mapping with sourceLookUp=\"employment\". Includes the PaidEmployment interface signature and a sample custom implementation of getDetails."
+          },
+          {
+            "title": "1.7 Preparing to share data in the pull workflow",
+            "level": 2,
+            "children": [],
+            "node_id": "n000059",
+            "range": {
+              "start_unit_id": "p000087",
+              "end_unit_id": "p000087",
+              "start_page": 87,
+              "end_page": 87
+            },
+            "summary": "Explains how to defer advanced evidence sharing in the pull workflow until manually triggered. Normally, when a case member is added, AdvancedEvidenceSharingWorkflowPull starts automatically at transaction end and initiates sharing. This section describes using the AESShareSetPullManualEnactment interface, whose process() method prepares data to share so the pull workflow can be started later after conditions are met, such as completing a second workflow activity and mapping all evidence to the application case."
+          },
+          {
+            "title": "1.8 Troubleshooting evidence sharing errors",
+            "level": 2,
+            "children": [
+              {
+                "title": "Evidence validations and verifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000088",
+                  "end_unit_id": "p000089",
+                  "start_page": 88,
+                  "end_page": 89
+                },
+                "summary": "Explains how evidence broker sharing handles validation and verification failures when evidence is delivered or activated on a target case. If checks fail, evidence may be routed to the incoming evidence list for manual review or left in in-edit state. Includes two examples: shared evidence failing a target-case validation rule, and differing verification requirements causing incoming verifications on the target case. Notes that verification items are usually not shared by default unless configured."
+              },
+              {
+                "title": "Searching for shared instances",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000090",
+                  "end_unit_id": "p000091",
+                  "start_page": 90,
+                  "end_page": 91
+                },
+                "summary": "Explains how administrators use Shared Instances Search in Cúram Evidence Sharing to inspect completed or in-progress evidence sharing on a case or person reference. The search shows source/target cases, initiation time, status, and a graphical view of all cases involved. Hovering over icons reveals evidence type and broker action. The section also lists broker system action values and their meanings, including insert, correct link, ignore variants, caseworker review, manual intervention, and several duplicate/no-overlap conditions."
+              },
+              {
+                "title": "Enabling the evidence sharing trace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000092",
+                  "end_unit_id": "p000092",
+                  "start_page": 92,
+                  "end_page": 92
+                },
+                "summary": "This section explains how to enable the evidence sharing trace for troubleshooting evidence sharing errors when the shared instance search is insufficient. It instructs a system administrator to go to System Configurations, then Application Data > Property Administration, search for curam.aes.advancedEvidenceSharingTrace, and set it to YES (default NO). It also notes that the trace records each step of the evidence broker’s sharing process in the system log files."
+              },
+              {
+                "title": "Generated tasks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000092",
+                  "end_unit_id": "p000096",
+                  "start_page": 92,
+                  "end_page": 96
+                },
+                "summary": "Describes generated tasks in evidence sharing. Three task types are created in Workflow Released Processes when shared evidence cannot be applied: failed activation, incoming evidence requiring manual intervention/caseworker review, and the person data case variant. It states default no deadline, tasks are only generated when evidence remains in edit or system action is MANUAL_INTERVENTION/CASEWORKER_REVIEW, the task owner is the target case owner (or source case owner for PDC cases), and only one task per target case is generated per broker execution."
+              }
+            ],
+            "node_id": "n000060",
+            "range": {
+              "start_unit_id": "p000088",
+              "end_unit_id": "p000096",
+              "start_page": 88,
+              "end_page": 96
+            },
+            "summary": "Explains how to troubleshoot evidence sharing errors in Cúram evidence broker flows. Covers delivery/activation fallback behavior, validation and verification failures, and examples where shared evidence is routed to incoming lists or left in edit. Describes Shared Instances Search for inspecting completed/in-progress sharing and the broker system action codes it shows. Also explains enabling advanced evidence sharing trace via curam.aes.advancedEvidenceSharingTrace=YES, and the three generated task types for failed activation or manual review, including ownership and one-task-per-target-case rules."
+          }
+        ],
+        "node_id": "n000016",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000096",
+          "start_page": 9,
+          "end_page": 96
+        },
+        "summary": "Introduces Cúram’s evidence broker for sharing evidence between cases, why evidence sharing is needed, and how admins configure it. Covers key terminology, unidirectional per-evidence sharing rules, identical vs logically equivalent evidence, trusted source auto-sharing vs manual review, shared verifications, and the shared evidence set/period of interest. Also includes hooks for custom matching and delivery-plan filtering, paid employment and pull-workflow special cases, plus troubleshooting with shared instance search, trace logging, and generated review tasks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "b836afa65f585120",
+    "title": "Cúram 8.1.2 Integrated ERP Operations Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramIntegratedERPOperationsGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "b836afa65f585120bee91bb19f12e1da8981f0e867e43ed120eafe7d485729f8",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:42:10+00:00",
+    "page_count": 16,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramIntegratedERPOperationsGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Integrated ERP Operations Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000016",
+      "start_page": 1,
+      "end_page": 16
+    },
+    "summary": "Overview of the Cúram 8.1.2 Integrated ERP Operations Guide. This section explains how to configure a Cúram-ERP financial environment, focusing on shared configuration data, administration properties for the financial and master data adapters, codetable alignment, and disabled batch processes handled by the ERP system. It covers synchronization of address formats, banks/branches, currencies, delivery methods, and selected codetables between Cúram and ERP. It also documents runtime and static adapter properties, including tracing, polling, adapter enablement, registrar settings, and external tax authority handling. The later pages are legal and reference material: usage notices, copyright/trademark information, privacy policy, and license terms.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Preliminary note before using the product documentation. Directs readers to the Notices section on page 15 for important legal and usage information. Includes copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000014",
+          "start_page": 5,
+          "end_page": 14
+        },
+        "summary": "Edition notice for Cúram documentation. States this edition applies to Cúram 8.1, 8.1.1, and 8.1.2, with Merative copyright/trademark information. Useful mainly as a version/applicability page, not technical content."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "This section is a legal notice page covering sample-data disclaimers, copyright/license terms for sample programs, the Merative privacy policy link, and trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It states the sample programs are provided “AS IS” without warranty and limits liability."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Lists trademark and legal notices for Merative and third-party brands. Identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks, notes other names may belong to others, and includes privacy policy and sample code copyright/license disclaimers with “as is” warranty limits."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000015",
+          "end_unit_id": "p000015",
+          "start_page": 15,
+          "end_page": 15
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and commercial reproduction limits, required preservation of proprietary notices, no derivative works or redistribution outside allowed scope, export-law compliance, and Merative’s right to withdraw permissions. States the content is provided “AS IS” without warranties, includes patent and third-party product disclaimers, and notes non-Merative website links are for convenience only. Includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Integrated ERP Operations Guide. Lists sections on integration with an Enterprise Resource Planning system, including configuration, administration properties (dynamic and static), codetables, and batch processing, along with notices, privacy policy, and trademarks. Includes page references for each subsection."
+      },
+      {
+        "title": "1 Integrating with an Enterprise Resource Planning System",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Cúram Integrated ERP Operations Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces configuring a Cúram–ERP financial environment. Explains that common configuration data must be synchronized between Cúram and the ERP system, and that the Cúram Financial Adapter and Master Data Adapter are configured through application/administration properties. States the guide covers areas to configure in an integrated ERP setup, assumes Cúram development/build knowledge, and does not cover ERP installation/configuration. Includes a deployment diagram showing the Cúram–ERP interaction points supported by the configuration."
+              },
+              {
+                "title": "Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces configuration for a Cúram-ERP financial environment. Explains that common configuration data must be synchronized between Cúram and the ERP system, and that the Cúram Financial Adapter and Master Data Adapter are configured via application/administration properties. Notes the guide is for users familiar with the Cúram development environment and does not cover ERP installation or configuration. Includes the interaction points the configuration must support."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces configuring a Cúram–ERP financial environment. It covers two main areas: synchronizing common configuration data between Cúram and the ERP system, and configuring the Cúram Financial Adapter and Master Data Adapter through administration/application properties. The guide is for readers familiar with the Cúram development and build environment, and it does not address ERP installation or setup. A deployment diagram shows the Cúram–ERP interaction points the configuration must support."
+          },
+          {
+            "title": "1.2 Configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces configuration requirements for an integrated Cúram-ERP financial environment. It explains that common configuration data must be synchronized between Cúram and the ERP system, and that some items may need manual synchronization. The excerpt specifically highlights address formats: Cúram supports customizable address formats, so if a custom format is used, the mapping between Cúram address fields and the corresponding ERP fields must be configured."
+              },
+              {
+                "title": "Common Configuration Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section describes common configuration data that must be synchronized between Cúram and ERP systems for an integrated financial environment. It highlights that the listed items are required on both systems and may need manual synchronization. The excerpt specifically mentions address formats, including support for customizable Cúram address formats and the need to configure mappings between Cúram address fields and corresponding ERP fields."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "This section explains that integrated Cúram-ERP environments require synchronization of common configuration data across both systems, sometimes manually. It highlights address formats as a key shared item: Cúram supports customizable address formats, and if a custom format is used, the mapping between Cúram address fields and ERP fields must be configured."
+          },
+          {
+            "title": "1.3 Administration Properties",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Introduces Cúram-ERP integration administration properties for configuring financial and master data adapters and related Cúram settings. It highlights shared data needed across systems, including banks/bank branches, codetables, currencies, and delivery methods, mainly to support EFT payments and aligned currency setup. Also lists dynamic runtime properties for tracing exchange progress in internal/external master data and financial adapters, plus a polling interval for exchange tables."
+              },
+              {
+                "title": "Dynamic Properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section lists runtime-configurable properties for an integrated Cúram-ERP financial environment. It covers trace/exchange progress flags for the internal and external master data adapters and financial adapters, plus the financial adapter polling interval used to control how often exchange tables are re-polled. Useful if you need to adjust adapter logging or polling behavior without redeploying."
+              },
+              {
+                "title": "Static Properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section lists static configuration properties for an integrated Cúram-ERP financial environment, noting that changes require server restart. It documents flags and registrar settings for master data and financial adapters, plus external adapter registrars and an external tax authority setting that affects transfer of tax payment instruction line items. It also begins the codetable synchronization topic, explaining that Cúram codetables must be mapped to ERP equivalents, with hierarchy support noted, and introduces the ConcernRoleType codetable."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "Defines administration properties for a Cúram-ERP financial integration. Covers runtime-configurable settings for tracing exchange progress in internal/external master data and financial adapters, plus the financial adapter polling interval for re-polling exchange tables. It also introduces static adapter and registrar settings that require a server restart, including an external tax authority option affecting transfer of tax payment instruction line items. Useful for configuring logging, adapter behavior, and ERP integration settings without or with restart."
+          },
+          {
+            "title": "1.4 Codetables",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "ConcernRoleType",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Defines the ConcernRoleType codetable, which lists all participant/concern role types that can be registered in Cúram. Examples given include Person and Employer. This section is useful if you need the set of valid role categories for participants or want to map Cúram role codes to ERP or other system codes."
+                  },
+                  {
+                    "title": "ConcernRoleAlternateID",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section describes the ERP integration codetables used by Cúram to map reference values such as identification types (ConcernRoleAlternateID), gender, titles, countries, languages, bank account types, instruction line item categories/types, delivery methods, and currencies. It notes these values are implementation-specific and gives examples like Social Security Number, Passport Number, Mr., Ireland, EFT, and Euro."
+                  },
+                  {
+                    "title": "Gender",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section describes the Gender codetable in Cúram, which contains the values used to represent “Male” and “Female” in the system. It appears in a broader list of codetables for ERP integration, alongside identification, titles, countries, languages, bank accounts, instruction line items, delivery methods, and currencies."
+                  },
+                  {
+                    "title": "PersonTitle",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Defines the PersonTitle codetable used by the Cúram system. It lists supported title values, which vary by customer implementation, with examples such as “Mr.” and “Dr.”. This section appears in a broader set of ERP integration codetable definitions covering identifiers, gender, country, language, bank account type, instruction line item categories/types, delivery methods, and currency."
+                  },
+                  {
+                    "title": "Country",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Defines the Cúram codetable for countries, listing the country values supported by the system. It notes that the exact entries depend on the customer’s implementation, with examples such as Ireland and Germany. This section sits among related codetables for identification, gender, titles, language, bank account types, instruction line item categories/types, delivery methods, and currency."
+                  },
+                  {
+                    "title": "Language",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section lists Cúram codetables used in ERP integration, covering reference values such as identification types, gender, person titles, countries, languages, bank account types, instruction line item categories and types, delivery methods, and currencies. It notes that supported values vary by customer implementation and gives examples like Social Security Number, Male/Female, English/French, and US Dollar/Euro."
+                  },
+                  {
+                    "title": "BankAccountType",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Defines the BankAccountType codetable used by Cúram ERP integration. It lists supported bank account types, which vary by implementation, with examples such as “Personal Current” and “Corporate Deposit.” The surrounding page also references other codetables for identification, gender, titles, countries, languages, instruction line item categories/types, delivery methods, and currencies."
+                  },
+                  {
+                    "title": "ILICategory",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Defines the Cúram codetable for instruction line item categories used in financial processing. It lists the supported categories, which vary by implementation, with examples such as “Payment Instruction” and “Liability Instruction.” This section appears alongside other ERP integration codetables like alternate IDs, gender, titles, countries, languages, bank account types, ILI types, delivery methods, and currencies."
+                  },
+                  {
+                    "title": "ILIType",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Defines Cúram codetable values used in ERP integration for common reference data and instruction line items. Covers identification types, gender, person titles, countries, languages, bank account types, instruction line item categories, instruction line item types, delivery methods, and currencies. For ILIType specifically, it lists instruction line item types generated by the Cúram system, with examples such as “Deduction Item” and “Tax Payment.”"
+                  },
+                  {
+                    "title": "MethodOfDelivery",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section lists several Cúram codetables used in ERP integration, including identification types, gender, titles, countries, languages, bank account types, instruction line item categories and types, delivery methods, and currencies. For each, it notes that supported values vary by implementation and gives examples. The MethodOfDelivery codetable specifically records delivery methods on financial instruction line items, with examples such as Cash and EFT."
+                  },
+                  {
+                    "title": "Currency",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Lists enterprise ERP integration codetable definitions used by Cúram, including identification types, gender, person titles, countries, languages, bank account types, instruction line item categories and types, delivery methods, and currencies. For Currency specifically, it describes supported system currencies recorded on financial instruction line items, with examples such as US Dollar and Euro."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000013",
+                  "start_page": 12,
+                  "end_page": 13
+                },
+                "summary": "Introduction to Cúram ERP integration codetables. It explains that codetable values in Cúram must be synchronized and mapped to ERP equivalents, with hierarchy mapping possibly required. It then lists the main codetables covered: ConcernRoleType, ConcernRoleAlternateID, Gender, PersonTitle, Country, Language, BankAccountType, ILICategory, ILIType, MethodOfDelivery, and Currency, each with implementation-specific examples such as Person, Social Security Number, Male/Female, Ireland, EFT, and Euro."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000013",
+              "start_page": 12,
+              "end_page": 13
+            },
+            "summary": "This section explains that Cúram ERP integration requires synchronizing codetables between Cúram and the ERP system, with values mapped to ERP equivalents and hierarchy mappings considered where needed. It lists the main codetables involved: ConcernRoleType, ConcernRoleAlternateID, Gender, PersonTitle, Country, Language, BankAccountType, ILICategory, ILIType, MethodOfDelivery, and Currency, with examples such as Person, Social Security Number, Male/Female, Ireland, EFT, and Euro."
+          },
+          {
+            "title": "1.5 Batch Processing",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000016",
+                  "start_page": 14,
+                  "end_page": 16
+                },
+                "summary": "Introduces disabled Cúram batch processes that must be handled by the integrated ERP financial system: Generate Instruments, Generate Payslips, Issue Concern Payments, Load Payments Received, Process Payment Instrument Types, and Expire Payments. The remainder of the pages are legal notices covering usage permissions, warranty/disclaimer terms, export restrictions, sample code licensing, privacy policy link, and trademarks."
+              }
+            ],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000016",
+              "start_page": 14,
+              "end_page": 16
+            },
+            "summary": "Describes batch processing support in Cúram 8.1.2. It states that several batch processes are disabled in Cúram and should instead be handled by the integrated ERP financial system: Generate Instruments, Generate Payslips, Issue Concern Payments, Load Payments Received, Process Payment Instrument Types, and Expire Payments. The remaining pages are notices covering usage permissions, export restrictions, warranty/disclaimer terms, sample code licensing, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000016",
+          "start_page": 9,
+          "end_page": 16
+        },
+        "summary": "Configures a Cúram–ERP financial environment. Covers synchronizing shared configuration data between systems, including address formats, banks/branches, currencies, delivery methods, and codetable mappings. Explains administration properties for the financial and master data adapters, including runtime tracing, polling intervals, adapter enablement, registrars, and external tax authority handling. Lists codetables that must be aligned with ERP equivalents. Notes that several batch processes are disabled in Cúram and should be performed by the ERP system. Includes end-of-document legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

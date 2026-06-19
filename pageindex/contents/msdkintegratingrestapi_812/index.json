@@ -1,0 +1,2578 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "6eb9cbe84f288c5c",
+    "title": "Cúram 8.1.2 Cúram REST API Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/MSDKIntegratingRESTAPI_812.pdf",
+    "source_type": "pdf",
+    "sha256": "6eb9cbe84f288c5c47411176e223ee7df5ab8ba60e8cf85b5340af152eec551e",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T22:59:55+00:00",
+    "page_count": 114,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/MSDKIntegratingRESTAPI_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram REST API Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000114",
+      "start_page": 1,
+      "end_page": 114
+    },
+    "summary": "Introduction and full guide for Cúram 8.1.2 REST API integration. It covers inbound REST APIs for mobile and external systems, using existing Social Program REST APIs via Swagger, authentication, GET/POST/PUT/DELETE usage, JSON responses, path/query parameters, security, data types, troubleshooting, and domain APIs. It then explains how to develop custom inbound REST APIs, including API design, creating Social Program REST APIs, reference material, and GraphQL. The outbound section shows how to call external REST services with Jersey, including JSON serialization, client setup, authentication, deployment/build steps, request filters, and HTTPS/SSL handling, plus application-server classpath/JAR conflict notes. Also includes notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note instructs readers to review the “Notices” section on page 113 before using the product or this information. It also shows the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition info for Cúram 8.1, 8.1.1, and 8.1.2, followed by the start of Chapter 1 on integrating with external applications through REST APIs. Covers inbound REST APIs, mobile and external system integration, using existing Social Program REST APIs via Swagger, and example GET/POST requests (with path/query parameters, _fields filtering, authentication, and JSON responses)."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section explains how to use Cúram Social Program REST APIs with notes as the example resource: POST, PUT, DELETE, collection vs member URLs, required headers, request/response formats, and HTTP status codes (201, 200, 204). It also covers REST security: authentication via j_security_check, cookies, authorization, logout, session timeouts, CSRF protection and token-based CSRF setup/integration. A Swift/iOS example shows programmatic login and calling a GET person resource with cookies and referer headers."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Cúram REST API guidance on request/response conventions for member resources (GET, PUT, DELETE), headers, and status codes. Covers Content-Type, Accept-Language, Referer requirements, response headers, and handling optional/mandatory properties with defaults. Explains REST data types and JSON mappings, including read-only/non-editable/system-generated fields, API versioning, dates/datetimes, code tables and hierarchies, frequency patterns, binary data uploads/downloads, nested list/object structures, informational message patterns, and a file download example."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section covers Cúram REST API integration basics: file upload/linking flows, troubleshooting 403 and 415 responses, and Domain API concepts. It explains error codes and response fields, list handling (include_cancelled, expired records), and how to secure/enable the Files API with custom file validation. A detailed use case shows linking a scanned file to a person via Persons, Files, and Person File Links APIs. It also lists the main Domain API catalog and introduces developing custom inbound REST APIs."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "This section explains how to design, model, and implement Cúram Social Program REST APIs. It covers REST basics vs RPC, resource/method/representation conventions, plural lowercase paths, collection/member behavior, and nested resources. It gives a full notes API example: structs, query/path parameters, mandatory fields, façade operations, and Swagger documentation. It also describes modeling JSON with structs, domain definitions, REST façade stereotypes, and configuration via ResourcesConfig.xml. Finally, it outlines GET binary-response conventions and POST request/response rules."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Covers Cúram REST API conventions and deployment. Details POST handling for binary data, metadata via X-IBM-Curam-Metadata, PUT/DELETE input struct rules, build validations, and how to create ResourcesConfig.xml/RestConfig.properties. Includes sample Notes API XML mappings, Tomcat deployment and test steps, and deployment of Rest.ear to application servers. Also starts the REST configuration reference, defining the <api>, <version>, <resource>, and <method> elements and key method attributes."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Covers REST API configuration and error handling, plus GraphQL basics. Documents XML elements like facade, additional-error, produces/consumes, tags, cache-control, disable/disable-recursive, and path, and explains how to disable endpoints by version, namespace, or individually. Describes REST security/config properties for CSRF, CORS, base URI, and unknown-field errors, plus RestConfig.properties defaults. Explains HTTP 400/500 behavior, custom AppException mappings to other HTTP codes, Swagger documentation, and an intro to GraphQL concepts, endpoint, and configuration properties."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "This section explains how to build and configure GraphQL APIs in Cúram/Social Program Management. It covers GraphQL-specific properties, required artifacts (schema, data fetcher, runtime wiring), schema creation and type/scalar rules, directives for code and frequency items, and performance testing guidance. It also shows how to implement data fetchers, use nested/field-level fetchers, wire them in runtime_wiring.yaml, and customize data sources for existing APIs without changing schema definitions."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "Explains how to customize and build GraphQL APIs in Social Program Management REST. Covers identifying schema and runtime wiring, creating custom facades and data fetchers, overriding wiring in custom components, and rebuilding REST/GraphQL artifacts (including build targets for Tomcat or app servers). Also shows a readIntegratedCase customization example, use of GraphiQL for introspection and testing, how clients send POST queries to /Rest/graphql, and security requirements for authenticated, authorized access."
+          },
+          {
+            "title": "Edition — pages 95-104",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000095",
+              "end_unit_id": "p000104",
+              "start_page": 95,
+              "end_page": 104
+            },
+            "summary": "This section covers REST API integration security and outbound client development. It explains CORS, CSRF, extra response headers, locale handling, and GraphQL error response structure for client vs internal errors. It then introduces developing outbound REST APIs with Jersey: JSON/POJO mapping, storing credentials, packaging Java classes, custom Jackson serializers/deserializers and ObjectMapper setup, and configuring/creating reusable Jersey clients with timeouts and optional request filters."
+          },
+          {
+            "title": "Edition — pages 105-112",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000105",
+              "end_unit_id": "p000112",
+              "start_page": 105,
+              "end_page": 112
+            },
+            "summary": "Explains how to make outbound REST API calls with Jersey: build requests with WebTarget/Invocation.Builder, send GET/POST/PUT, and handle responses safely by checking status, deserializing success bodies, handling errors, and closing connections. Covers authentication flows with access tokens and refresh tokens, including secure credential storage and token reuse. Describes build/deploy requirements for adding Jersey and related JARs to Cúram/Eclipse/Ant, server configuration issues (WebSphere, jsr311 conflicts), request filters, and HTTPS/SSL caveats."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000112",
+          "start_page": 5,
+          "end_page": 112
+        },
+        "summary": "Edition pages 5–112 for Cúram 8.1/8.1.1/8.1.2. Covers the full REST/GraphQL integration guide: inbound REST APIs for mobile and external systems, using and customizing Social Program REST APIs, REST conventions/data types/security/troubleshooting, building custom inbound APIs and GraphQL, and outbound REST APIs with Jersey including authentication, deployment, filters, and HTTPS/SSL. Good entry point for understanding Cúram API integration across client, server, and security configurations."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000114",
+              "end_unit_id": "p000114",
+              "start_page": 114,
+              "end_page": 114
+            },
+            "summary": "This section contains legal notices: fictitious examples disclaimer, sample program copyright license and “AS IS” warranty/liability limits, a link to Merative’s privacy policy, trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, and the copyright years 2012 and 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000114",
+              "end_unit_id": "p000114",
+              "start_page": 114,
+              "end_page": 114
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands used in the document. States that sample names are fictitious, sample code may be copied and modified under the Merative Client Agreement, and is provided “AS IS” without warranty. Includes the Merative privacy policy URL and identifies trademarks for IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Useful for legal, attribution, and usage-rights details."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000113",
+          "end_unit_id": "p000113",
+          "start_page": 113,
+          "end_page": 113
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and commercial reproduction limits, required preservation of proprietary notices, prohibition on derivative works and external distribution without consent, and no additional IP rights granted. Includes export-law compliance, “AS IS”/no-warranty disclaimer, patent notice, third-party product and website disclaimers, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000017",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a Cúram 8.1.2 guide. It lists the major REST API chapters: integrating with inbound REST APIs, developing inbound REST APIs, GraphQL, and developing outbound REST APIs. It also includes subtopics such as mobile app integration, security, REST API methods and data types, troubleshooting, creating and referencing APIs, Jersey client usage, authentication, deployment, HTTPS/SSL, plus notices and legal pages. Useful for navigation, not technical content itself."
+      },
+      {
+        "title": "1 Integrating with external applications through REST APIs",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Integrating with inbound REST APIs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Integration of mobile applications with Cúram",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section explains how mobile applications integrate with Cúram using REST APIs, especially Social Program REST APIs. It covers using existing inbound Cúram APIs or creating custom inbound APIs when needed, including for hybrid and native mobile apps. It also notes outbound REST requests for integrating with external systems, supports JSON-based retrieval and modification of data, and mentions Child Welfare Intake interoperability plus related guidance for developing and creating REST APIs."
+              },
+              {
+                "title": "Integrating external systems with Cúram",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section explains how Cúram integrates with external systems through REST APIs. It covers using existing inbound Cúram REST APIs, creating custom inbound APIs when needed, and making outbound REST requests to external services. It highlights Social Program REST APIs for mobile apps, which use JSON for retrieving and modifying data, and notes that REST APIs also support Child Welfare Intake interoperability and notifications to external systems."
+              },
+              {
+                "title": "Using existing Social Program REST APIs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Making a basic GET request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how to make a basic GET request to a Cúram Social Program REST API resource using a web browser. It shows the required authentication URL via `/Rest/j_security_check` with `j_username` and `j_password`, then an example GET to `/Rest/v1/persons?full_name=smith` returning a JSON list of Person objects. It also clarifies URL parts: `/Rest` as the context path, `v1` as the API version, and `persons` as the resource."
+                  },
+                  {
+                    "title": "Making a GET request with a path parameter",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000012",
+                      "start_page": 11,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to make a GET request for a specific Cúram Person using a path parameter in the REST URL. Shows authenticating to the server with j_security_check, then calling /Rest/v1/persons/101/ to retrieve a single member resource. Describes the URL parts (context path, API version, resource, unique identifier) and notes that a successful response returns one person as a JSON object, while failures or unauthenticated requests return an HTTP error code."
+                  },
+                  {
+                    "title": "Making a GET request using the field selection query parameter",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to use the `_fields` query parameter in a GET request to return only selected properties from a REST resource. Uses a Cúram example: authenticate via `/Rest/j_security_check`, then request `/Rest/v1/persons/101?_fields=concern_role_id,fullName,photo,primaryPhoneNumber`. Describes the URL parts, the purpose of field selection, and notes that a successful response returns only the specified fields as JSON in the browser."
+                  },
+                  {
+                    "title": "Making a POST request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how to create a new Note via the Cúram REST API using a POST request. It notes that browsers alone cannot send POST, so a REST client plugin is needed, then outlines authenticating with j_security_check, calling POST on /Rest/v1/notes, setting Referer and Content-Type: application/json headers, and sending a JSON note payload. A successful request returns HTTP 201 Created."
+                  },
+                  {
+                    "title": "Making a PUT request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to update a Note resource using a PUT request to the Cúram REST API. It notes that PUT cannot be done directly in a web browser and requires a REST client plugin. The section gives the authentication URL, the PUT endpoint format for `/Rest/v1/notes/{note_id}`, explains the URL parts, and lists required headers: `Referer: curam://foundational.app` and `Content-Type: application/json`."
+                  },
+                  {
+                    "title": "Making a DELETE request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to delete a Note object using the DELETE method on the Notes resource. Notes that you cannot perform DELETE directly in a web browser because browsers only support GET requests; a REST client browser plugin is required for the example."
+                  }
+                ],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000016",
+                  "start_page": 10,
+                  "end_page": 16
+                },
+                "summary": "Shows how to use existing Cúram Social Program REST APIs. It first explains how to review available APIs via the Swagger definitions endpoint and Swagger-enabled tools. Then it demonstrates REST invocation patterns: authenticating with `/Rest/j_security_check`, basic GET on a collection, GET with a path parameter for a single resource, GET with `_fields` for partial responses, and POST/PUT/DELETE on Notes using a REST client plugin. Includes URL structure, required headers, and typical success/error responses."
+              },
+              {
+                "title": "Social Program REST API security",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Cross-Site Request Forgery (CSRF) protection for RESTful web services",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains CSRF protection for Cúram RESTful web services. It says REST endpoints use the HTTP referrer header to defend against CSRF, with configuration controlled by REST properties. It also describes optional token-based CSRF protection, supported for all REST methods (GET, POST, PUT, DELETE), but disabled by default. It points to the CSRF Prevention Cheat Sheet for background."
+                  },
+                  {
+                    "title": "Integrating token-based Cross-Site Request Forgery (CSRF) protection",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to integrate clients with token-based CSRF protection for REST APIs. Token protection is disabled by default and strengthens domain checks to include subdomains; trusted subdomains must be added to `curam.rest.refererDomains`. The flow is: authenticate first, request a CSRF token from `baseURL/v1/csrf/tokens`, read it from the `X-IBM-SPM-CSRF` response header, send it on every request in the same header, and let the server validate it. Invalid tokens are blocked with 403."
+                  },
+                  {
+                    "title": "Enabling token-based Cross-Site Request Forgery (CSRF) protection",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to enable token-based CSRF protection in Cúram, which is disabled by default. It notes that enabling it changes allowed referrer domain behavior and can affect existing clients, so related CSRF integration docs should be reviewed first. The steps are: log in as system administrator, go to System Configurations > Shortcuts > Application Data, search for enable.rest.csrf.validation, edit its value to TRUE, save, and publish. It also references that tokens remain valid for the session and must be reacquired after session invalidation."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000019",
+                  "start_page": 17,
+                  "end_page": 19
+                },
+                "summary": "Cúram Social Program REST APIs require authenticated users with valid authorization; unauthenticated access returns 401, unauthorized access 403. The section covers programmatic login via `j_security_check`, required session cookies, logout, and session timeout behavior. It also explains CSRF defenses: default referrer-header checks, optional token-based CSRF protection for all REST methods, how enabling it tightens subdomain validation, and the client flow for acquiring and sending the `X-IBM-SPM-CSRF` token."
+              },
+              {
+                "title": "Connecting to a Curam REST API using Swift for Apple iOS",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000022",
+                  "start_page": 20,
+                  "end_page": 22
+                },
+                "summary": "Explains how to connect to a Cúram REST API from Swift on iOS, including optional token-based CSRF protection and how to enable it in Cúram administration. The Swift example creates a LoginService class, posts to `j_security_check`, sets a `Referer` header for CSRF, handles cookies and authentication cookies like `LtpaToken2`, processes success/authentication/error status codes, and shows how to invoke login from a view controller."
+              },
+              {
+                "title": "Social Program REST API methods",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Request Headers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains request headers for REST API calls. Content-Type is required for GET, PUT, POST, and DELETE, usually application/json, or */* for binary data. Accept-Language is optional and controls the response language for the current request; if multiple values are supplied, only the highest-priority locale is used. Referer is required for state-changing requests (PUT, POST, DELETE) and is validated against allowed conditions, including a matching curam URI scheme."
+                  },
+                  {
+                    "title": "Response headers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section describes standard response headers returned by Cúram REST requests: Cache-Control (default no-cache/private), Content-Length, Content-Type (usually application/json;charset=utf-8, or binary media type), and Location for newly created resources. It also explains how optional and mandatory JSON properties work in POST/PUT requests, including allowed ways to omit optional values (empty string, absent, or null) and that Cúram assigns defaults which appear on later GETs. Includes a Note example with required and optional fields."
+                  },
+                  {
+                    "title": "Optional and mandatory properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Explains how optional and mandatory JSON properties work in POST/PUT requests. Mandatory attributes must be present or the request errors. Optional properties can usually be omitted, set to empty string, or set to null; if omitted, Cúram assigns a default value that appears on later GETs. Uses a Note example with required note_id and text, and optional username and highPriority, plus a sample PUT containing only the required fields."
+                  },
+                  {
+                    "title": "System-generated properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how Cúram REST JSON properties are classified in Swagger documentation as read-only, non-editable, or system-generated, and how each behaves with GET, POST, and PUT requests. Read-only properties are returned but never settable; non-editable properties can be set only on creation; system-generated properties cannot be set on POST but can be modified by PUT. Also notes REST API versioning in URLs and that adding optional properties does not require a new version, but removing properties does."
+                  },
+                  {
+                    "title": "API Versions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how REST API versioning is encoded in the URL (for example, `/Rest/v1/...`) and that the version usually appears as the first path segment after the context path. It notes that a new API version is created only for resource changes that affect users; adding optional properties does not require a new version, but removing properties from a resource representation does."
+                  }
+                ],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000026",
+                  "start_page": 23,
+                  "end_page": 26
+                },
+                "summary": "Describes how Cúram Social Program REST APIs use GET, POST, PUT, and DELETE on collection and member resources, using notes as the example. Explains expected HTTP results for each method, how POST creates a resource and returns a Location header, and how PUT/DELETE act on /notes/{note_id}. Also covers request headers (Content-Type, Accept-Language, Referer/CSRF rules), standard response headers, optional vs mandatory JSON properties, and how omitted optional fields get default values that appear on later GETs."
+              },
+              {
+                "title": "Cúram REST data types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Date and date time",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "This section defines date and date-time formatting for Cúram data types. It states both use ISO 8601, with dates as timezone-independent YYYY-MM-DD values and date-times as YYYY-MM-DDThh:mm:ss.sss[+hhhh]. It notes that any time portion in a date is ignored. Example accepted inputs include 2015-01-24 and 2015-01-24T23:00:00.000+0000."
+                  },
+                  {
+                    "title": "Code tables",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Explains Cúram code tables as locale-independent constants used to encode values like statuses. Describes their JSON representation in Social Program REST APIs with four properties: value, description, tableName, and optional parentCodeTable for hierarchies. Gives an example object for addressType. Notes that for PUT/POST only value is required; other fields are ignored. Also introduces a shorthand way to specify code table values."
+                  },
+                  {
+                    "title": "Code table hierarchies",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000031",
+                      "start_page": 30,
+                      "end_page": 31
+                    },
+                    "summary": "Explains how code table hierarchies work in Cúram REST APIs. A code table may have parent/child levels where choosing a parent entry filters the child list. Uses SpecialCautionCategory and SpecialCautionType as the example hierarchy. Describes the JSON representation of hierarchical entries, including the parentCodeTable field to indicate parent-child relationships. Also notes that GET /codetables/{table_name} returns the full localized code table or hierarchy details for use in UIs and data validation."
+                  },
+                  {
+                    "title": "Frequency patterns",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Defines Cúram “frequency patterns” as a nine-digit, non-human-readable datatype used to represent how often something occurs (for example, scheduling meetings). In Social Program REST API responses, it is represented as a JSON object with `value` (the nine-digit code) and `description` (localized display text). Example shown: `\"100101600\"` with description `\"Recur every 1 week(s) on Friday\"`. For PUT/POST, only `value` is required; `description` is ignored if supplied."
+                  },
+                  {
+                    "title": "Binary data",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how REST resources can handle binary data instead of JSON. For GET, Swagger marks the response content type as non-application/json and the body contains binary content with Content-Length and Content-Type headers. For POST/PUT, the request body must be binary and the documented input type must not be application/json. Notes that some Swagger tools may not support binary handling and provides cURL examples for uploading a file after authentication."
+                  },
+                  {
+                    "title": "Lists and nested structures",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains how Cúram REST JSON represents lists and nested structures: lists use a standard `{\"data\":[...]}` format, nested objects and arrays can model related data, and nesting depth should generally not exceed three levels. Also introduces informational message patterns for warnings/errors and a common file-download pattern where a resource JSON includes a link to binary content such as a photo."
+                  },
+                  {
+                    "title": "Informational Message Pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Defines Cúram’s informational message pattern: a specialized datatype for representing multiple warnings or errors, collected and later shown to users in localized form. This section sits alongside guidance on JSON resource structures, including arrays, nested objects, and nested arrays, with a best-practice limit of no more than three nesting levels. It also introduces common REST API usage patterns, such as file download links included in JSON alongside binary content references."
+                  }
+                ],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000033",
+                  "start_page": 27,
+                  "end_page": 33
+                },
+                "summary": "This section defines Cúram REST JSON datatypes and their defaults, including primitives, dates/datetimes (ISO 8601), code tables, code table hierarchies, frequency patterns, binary data, and informational messages. It explains how each is represented in resource payloads, what POST/PUT requires, and which fields are ignored or read-only. It also covers /codetables/{table_name} retrieval for localized values and hierarchy filtering, plus handling binary uploads/downloads in Swagger and cURL."
+              },
+              {
+                "title": "Common usage patterns",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "File download",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains the “File download” REST pattern: a GET resource can return JSON metadata plus a separate link to binary content, such as a person’s photo. The example Person resource includes fields like concern_role_id, dateOfBirth, full_name, and a photo URL path. This section is useful for understanding how downloadable files are exposed alongside standard JSON resource representations."
+                  },
+                  {
+                    "title": "File upload",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Explains how to upload files/binary content via REST APIs in two steps: first POST the binary to `/v1/files`, which returns `201` and a `Location` header for the uploaded file, then POST an attachment resource to `/v1/attachments` referencing that file path. Includes an example attachment JSON with name, creation date, username, and file path, and notes that the upload is complete after both steps succeed."
+                  }
+                ],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Common usage patterns describes standard Curam REST API approaches for binary and structured data. It explains file download, where a GET resource can return JSON metadata plus a separate link to binary content, illustrated by a Person resource with fields like concern_role_id, dateOfBirth, full_name, and photo path. It also covers lists and nested structures in JSON, including standard `data` arrays and nested objects/arrays, with a best-practice limit of three nesting levels."
+              },
+              {
+                "title": "Troubleshooting REST APIs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "403 Forbidden HTTP status code response",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Explains when REST API requests return 403 Forbidden. The section lists three causes: insufficient user access rights for the requested method, missing valid Referer header, or enabled enhanced CSRF protection without a valid CSRF token. Useful for troubleshooting authorization and request-header issues in Social Program REST APIs."
+                  },
+                  {
+                    "title": "415 Unsupported media type response",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to diagnose and fix a 415 Unsupported Media Type response in Cúram REST APIs. The key cause is a missing or invalid Content-Type header; the remedy is to set Content-Type, usually to application/json. The surrounding procedure also covers related access and request validation checks: security role/group permissions, valid Referer header and curam.rest.refererDomains, and CSRF token presence/expiry using X-IBM-SPM-CSRF and the /v1/csrf/tokens endpoint."
+                  }
+                ],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000036",
+                  "start_page": 35,
+                  "end_page": 36
+                },
+                "summary": "Troubleshooting guidance for Social Program/Cúram REST APIs. Covers 403 Forbidden causes and fixes: insufficient user permissions, missing/invalid Referer header, and missing/expired CSRF token (X-IBM-SPM-CSRF; refresh via /v1/csrf/tokens). Also covers 415 Unsupported Media Type, usually caused by a missing or invalid Content-Type header, typically requiring application/json. Useful for diagnosing access, header, and CSRF-related request failures."
+              },
+              {
+                "title": "Domain APIs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Getting started with Domain APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Domain API error codes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000056",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000037",
+                          "start_page": 37,
+                          "end_page": 37
+                        },
+                        "summary": "Explains Cúram Domain API error handling. Returns HTTP status codes plus a more specific error code in the response body. Covers 200 OK, 400 Bad Request, 401 Unauthorised, 403 Forbidden, 404 Not Found, and 500 Server with brief meanings. Also describes failure response body fields: Code (HTTP or internal exception code) and Field (populated when a field-level API request can be linked to the exception)."
+                      },
+                      {
+                        "title": "Domain API lists",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000057",
+                        "range": {
+                          "start_unit_id": "p000038",
+                          "end_unit_id": "p000038",
+                          "start_page": 38,
+                          "end_page": 38
+                        },
+                        "summary": "Explains domain API list behavior: some GET APIs can return canceled records using `include_cancelled=true`, while expired period-based records are excluded by default. Includes an example for person cautions. Also notes that the Files API POST `/v1/api/docs/files` is disabled by default for security, and enabling it requires file security/validation controls; enabling it also enables Document Service POST `/v1/dbs/files`."
+                      },
+                      {
+                        "title": "Securing and enabling the Files API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000058",
+                        "range": {
+                          "start_unit_id": "p000038",
+                          "end_unit_id": "p000038",
+                          "start_page": 38,
+                          "end_page": 38
+                        },
+                        "summary": "Explains how to enable the Files API safely. The default POST /v1/api/docs/files endpoint is disabled for security, and enabling it via the curam.rest.docservice.fileupload.enabled property also enables the Document Service POST /v1/dbs/files upload API. Notes that file security and validation must be in place before enabling uploads, either in another system (such as a CMS or gateway) or via the provided hook point. Useful for understanding file-upload security prerequisites and related API side effects."
+                      }
+                    ],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000038",
+                      "start_page": 37,
+                      "end_page": 38
+                    },
+                    "summary": "Introductory overview of Cúram Domain APIs, aimed at new users. Explains that Domain APIs are reusable REST APIs aligned to domain language and designed to hide backend complexity. Covers common error handling with HTTP status codes and failure-body fields. Describes list behavior: GET endpoints return only active records by default, with `include_cancelled=true` to include canceled items, while expired period-based records are excluded. Also notes that the Files POST API is disabled by default and requires file security/validation before enabling."
+                  },
+                  {
+                    "title": "Exploring API use cases (with real-world examples)",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Linking a file to a person",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000060",
+                        "range": {
+                          "start_unit_id": "p000040",
+                          "end_unit_id": "p000042",
+                          "start_page": 40,
+                          "end_page": 42
+                        },
+                        "summary": "Shows how to attach an externally scanned document to a person in Cúram using REST APIs. Uses a mail-room scenario where Abby White is identified by SSN via the Persons API, a file is uploaded with the Files API, and then linked to her person record with the Person File Link API. Includes required fields, sample curl calls, and notes that the attachment appears on the person’s Attachments tab for caseworker review."
+                      }
+                    ],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000042",
+                      "start_page": 39,
+                      "end_page": 42
+                    },
+                    "summary": "This section explains a real-world file-linking workflow using Cúram REST APIs. It covers enabling and securing the Files API, including the RESTFileValidation hook for virus scanning and file checks. The main example shows a mail-room process where Abby White is found via the Persons API using SSN, a scanned document is uploaded with the Files API, and then linked to her person record with the Person File Link API. It includes required request fields, sample curl calls, and notes that the file appears on the person’s Attachments tab."
+                  },
+                  {
+                    "title": "Cúram Domain API catalog",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Persons API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000062",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "This section lists Cúram Domain REST APIs in the Swagger catalog and explains what each supports. The Persons API returns specific information recorded for a person or prospect person in Cúram. Nearby related APIs include Cautions, Person Notes, Verifications, Case Notes, Case Overview, Files, and File Locations, with brief notes on their purposes and, for Files, a security reminder."
+                      },
+                      {
+                        "title": "Cautions API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000063",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "Cautions API returns special caution information recorded for a person in Cúram. This section is part of the Cúram Domain API catalog, which lists REST APIs documented in Swagger for review before integration. Open this node if you need person-related caution data or want to see where this API fits among other domain APIs such as Persons, Notes, Verifications, and Case APIs."
+                      },
+                      {
+                        "title": "Person Notes API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000064",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "This section is a Cúram Domain API catalog entry for the Person Notes API. It says the Person Notes API returns and lets you view the most recent version of a note recorded for a person in Cúram, and points to Swagger for the actual API details."
+                      },
+                      {
+                        "title": "Verifications API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000065",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "The Verifications API lets you view verification details and retrieve all verifications for a specified person or case in Cúram. This page is part of the Cúram Domain API catalog, which lists REST APIs documented in Swagger for integrating external applications."
+                      },
+                      {
+                        "title": "Case Notes API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000066",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "Lists Cúram’s REST API catalog in Swagger for external integration. This node highlights the Case Notes API, which returns and lets you view the most recent version of a note recorded on a case in Cúram. The surrounding catalog includes related APIs for persons, cautions, person notes, verifications, case overviews, files, and file locations, each with a brief purpose statement and “See the Swagger” reference."
+                      },
+                      {
+                        "title": "Case Overview API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000067",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "The Case Overview API returns unique information recorded on a case in Cúram. It is intended to provide an overview of fields common to all case types, making it useful when you need case-level data without type-specific details. The page sits within the Cúram Domain API catalog of REST APIs documented in Swagger for integration review."
+                      },
+                      {
+                        "title": "Files API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000068",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "The Files API supports uploading, retrieving, and deleting files in Cúram, but only when the file is linked through one of the linking APIs. It also warns to review the “Securing the Files API” section before use. This page sits within the Cúram Domain API catalog alongside related REST APIs such as Persons, Cautions, Notes, Verifications, Case Overview, and File Locations, the latter used to record links to files stored outside Cúram."
+                      },
+                      {
+                        "title": "File Locations API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000069",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "This section lists the Cúram Domain REST API catalog and briefly describes each API, including Persons, Cautions, Person Notes, Verifications, Case Notes, Case Overview, Files, and File Locations. The File Locations API is used to record a file location when the file is stored outside Cúram, linking to an external system such as a document management system. It also notes that the APIs are documented in Swagger and that the Files API requires review of its security guidance before use."
+                      },
+                      {
+                        "title": "Person File Links API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000070",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Explains the Person File Links API, which links a specific uploaded file to a specific person in Cúram. Notes that the file must already be uploaded via the Files API. The section also sits alongside Case File Links API guidance and introduces custom inbound REST API development, including prerequisites, gap analysis, and when to create custom Social Program REST APIs for external integrations."
+                      },
+                      {
+                        "title": "Case File Links API",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000071",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Explains the Case File Links API, which links a previously uploaded file to a specific case in Cúram; the file must first be uploaded via the Files API. The section also briefly mirrors the Person File Links API and then transitions into guidance for developing custom inbound REST APIs, including the need for a gap analysis of existing Cúram APIs and functions before building new resources."
+                      }
+                    ],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "This page is a Swagger-based catalog of Cúram Domain REST APIs for external integration. It lists APIs for Persons, Cautions, Person Notes, Verifications, Case Notes, Case Overview, Files, and File Locations, each with a brief purpose. Key points: Persons and Cautions return person data; Notes APIs return the most recent note; Verifications returns verification details for a person or case; Case Overview returns common case fields; Files supports upload/retrieve/delete but requires linking and security review; File Locations records links to files stored outside Cúram."
+                  }
+                ],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000043",
+                  "start_page": 37,
+                  "end_page": 43
+                },
+                "summary": "Domain APIs are Cúram’s reusable REST APIs, built around domain language and designed to hide backend complexity. This section covers common HTTP/error handling, failure-body fields, and list behavior: GETs return active records by default, with include_cancelled=true to include canceled items; expired period-based records are excluded. It also explains securing/enabling the Files API, including RESTFileValidation for virus scanning and file checks. Examples show finding a person by SSN, uploading a file, and linking it to a person. A Swagger catalog lists available APIs."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000043",
+              "start_page": 9,
+              "end_page": 43
+            },
+            "summary": "This section introduces inbound Cúram REST integration: using existing APIs or creating custom ones for mobile and external systems, with JSON support and Child Welfare Intake interoperability. It shows how to discover APIs via Swagger and basic invocation patterns for collection/member GETs, field filtering, and POSTing resources. It also covers REST security (authentication, session cookies, 401/403, CSRF/referrer rules), request headers and methods, data types, troubleshooting common failures, and example Domain API use cases such as file upload and linking files to people."
+          },
+          {
+            "title": "1.2 Developing inbound REST APIs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating a Social Program REST API",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Social Program REST API design basics",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Social Program REST API design principles",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000075",
+                        "range": {
+                          "start_unit_id": "p000045",
+                          "end_unit_id": "p000045",
+                          "start_page": 45,
+                          "end_page": 45
+                        },
+                        "summary": "This section explains how to design Social Program REST APIs in Cúram. It covers REST basics versus RPC, key design elements (resources, methods, representations), and conventions for custom resources: plural lowercase paths, snake_case names, consistent representations across GET/PUT/POST, and no URI identifiers/HATEOAS. It also describes collection vs. member resources, including collection responses returning a `data` array, empty results returning 200 with empty `data`, and missing member resources returning a 4xx status."
+                      },
+                      {
+                        "title": "Social Program REST API resource design example",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000076",
+                        "range": {
+                          "start_unit_id": "p000046",
+                          "end_unit_id": "p000046",
+                          "start_page": 46,
+                          "end_page": 46
+                        },
+                        "summary": "This section gives a simple REST API design example using a note resource. It explains naming conventions for paths with plurals, defining collection and member endpoints (/notes and /notes/{note_id}), and choosing supported HTTP methods. It maps GET/POST to the collection and GET/PUT/DELETE to a single note. It also shows the JSON representation for a note object with note_id and text, illustrating how to design resource representations for REST APIs."
+                      },
+                      {
+                        "title": "Social Program REST API method design example",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000077",
+                        "range": {
+                          "start_unit_id": "p000046",
+                          "end_unit_id": "p000046",
+                          "start_page": 46,
+                          "end_page": 46
+                        },
+                        "summary": "This section gives a simple REST API design example for a note resource. It explains choosing plural path names, using `/notes` for the collection and `/notes/{note_id}` for individual notes. It maps supported methods to each path: GET and POST on the collection, and GET, PUT, DELETE on a member resource. It also introduces JSON representation design, showing a note object with `note_id` and `text` properties."
+                      },
+                      {
+                        "title": "Social Program REST API representation example",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000078",
+                        "range": {
+                          "start_unit_id": "p000046",
+                          "end_unit_id": "p000046",
+                          "start_page": 46,
+                          "end_page": 46
+                        },
+                        "summary": "This section gives a simple REST API design example using a note resource. It explains naming conventions for resource paths with plural collections and member endpoints: `/notes` for all notes and creation, and `/notes/{note_id}` for single-note operations. It also lists supported HTTP methods: GET and POST on `/notes`, and GET, PUT, DELETE on `/notes/{note_id}`. Finally, it shows the JSON representation of a note object with `note_id` and `text`."
+                      },
+                      {
+                        "title": "Nested resources",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000079",
+                        "range": {
+                          "start_unit_id": "p000047",
+                          "end_unit_id": "p000047",
+                          "start_page": 47,
+                          "end_page": 47
+                        },
+                        "summary": "This section explains nested resources in REST APIs using a note modification history example. It shows how related data can be separated into its own endpoint, such as `/notes/{note_id}/modification_history`, with independent methods and its own representation. It highlights when to use nesting: when data is a complete business object, referenced outside the parent, changes frequently, or is large enough to clutter the main resource."
+                      }
+                    ],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000047",
+                      "start_page": 45,
+                      "end_page": 47
+                    },
+                    "summary": "Introduces Social Program REST API basics in Cúram: REST vs RPC, and the three design elements—resources, methods, and JSON representations. Covers conventions for custom resources: plural lowercase paths, snake_case names, consistent representations across GET/PUT/POST, and no URI identifiers or HATEOAS. Explains collection vs member resources, including `data` arrays for collections, 200 with empty `data` for no matches, and 4xx for missing members. Also gives a note API example and when to use nested resources for separate, large, frequently changed, or standalone business data."
+                  },
+                  {
+                    "title": "Modeling Social Program REST APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Modeling the JSON representation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000081",
+                        "range": {
+                          "start_unit_id": "p000048",
+                          "end_unit_id": "p000049",
+                          "start_page": 48,
+                          "end_page": 49
+                        },
+                        "summary": "Explains how to model a REST resource’s JSON in Cúram as structs. It defines domain types for note fields, then creates structs for ModificationHistory, Note, NoteList, NoteIdentifier, and NotesQueryParameter. It also describes required 1-1 and 1-* aggregations, including using aggregation roles like modificationHistory and data. The section notes that some structs are only for query parameters, and that all structs/parameters need documentation for Swagger generation."
+                      },
+                      {
+                        "title": "Modeling the REST façade",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000082",
+                        "range": {
+                          "start_unit_id": "p000050",
+                          "end_unit_id": "p000050",
+                          "start_page": 50,
+                          "end_page": 50
+                        },
+                        "summary": "This section explains how to model REST API resource methods as Cúram façade operations. It introduces a `NoteAPI` façade with stereotype `rest` and maps REST endpoints to modeled operations using specific input/output structs. Covered methods include `GET /notes` for listing notes with a `username` query parameter, `GET /notes/{note_id}` for retrieving a note, and `POST /notes` for creating a note and returning a `note_id` in the `Location` header."
+                      },
+                      {
+                        "title": "Modeling the mandatory properties",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000083",
+                        "range": {
+                          "start_unit_id": "p000051",
+                          "end_unit_id": "p000051",
+                          "start_page": 51,
+                          "end_page": 51
+                        },
+                        "summary": "This section explains how to model mandatory properties for REST resource methods in Cúram façade operations. It shows that the same resource struct can have different mandatory field settings for PUT and POST, configured via a comma-delimited mandatory fields property on each façade operation. It covers nested fields using dot notation (for example, modificationHistory.username), notes that whole nested objects/lists cannot be marked mandatory in the model, and says such cases must be enforced in Java by throwing a Cúram AppException."
+                      },
+                      {
+                        "title": "Social Program REST API modeling conventions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000084",
+                        "range": {
+                          "start_unit_id": "p000052",
+                          "end_unit_id": "p000056",
+                          "start_page": 52,
+                          "end_page": 56
+                        },
+                        "summary": "Defines Cúram REST façade modeling conventions for Social Program APIs. GET operations return a struct mapped to JSON; input structs hold path/query params, with path params named exactly and marked mandatory. Binary GETs require data, fileName, optional contentType/metaData. POST uses one input struct for the resource, no query params, path params must match request body, and returns a unique ID for Location; binary POSTs use data plus optional contentType/metaData. PUT also uses one input struct and no query params."
+                      }
+                    ],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000056",
+                      "start_page": 48,
+                      "end_page": 56
+                    },
+                    "summary": "Explains how to model Social Program REST APIs in Cúram after gap analysis: create domains, structs, façade operations, and documentation for Swagger, then implement Java logic. Covers JSON resource modeling with nested aggregations (Note, ModificationHistory, NoteList, NoteIdentifier, NotesQueryParameter) and mandatory-field handling, including dot notation for nested fields and AppException for mandatory nested objects/lists. Also gives modeling conventions for GET/POST/PUT/DELETE, including path/query parameter rules, binary payload variants, and Location-header ID returns."
+                  },
+                  {
+                    "title": "Configuring the resource configuration files",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Creating a configuration file",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000086",
+                        "range": {
+                          "start_unit_id": "p000058",
+                          "end_unit_id": "p000059",
+                          "start_page": 58,
+                          "end_page": 59
+                        },
+                        "summary": "Explains how to create a Cúram REST resource configuration XML file in `%CURAM_DIR%/EJBServer/components/<COMPONENT_NAME>/rest/config`. It defines API resource paths, HTTP methods, and their mapped façade operations, plus optional settings like mime type and cache-control. The steps show building `ResourcesConfig.xml` for the notes API with versioned resources, multiple methods per resource (GET/POST/PUT/DELETE), and path parameters such as `notes/{note_id}`. It also optionally creates `RestConfig.properties` for Swagger title and description, then directs you to build the REST APIs."
+                      },
+                      {
+                        "title": "Example: REST API configuration file",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000087",
+                        "range": {
+                          "start_unit_id": "p000060",
+                          "end_unit_id": "p000060",
+                          "start_page": 60,
+                          "end_page": 60
+                        },
+                        "summary": "Shows an example ResourceConfig.xml for a Notes REST API, mapping GET/POST on `notes` and GET/PUT/DELETE on `notes/{note_id}` to `NoteAPI` facade methods with `Note` tags. Also explains how to deploy Social Program REST APIs on Tomcat: set `CATALINA_HOME`, then run `build rest` from `%CURAM_DIR%/EJBServer` after completing modeling, Java implementation, and REST config creation."
+                      }
+                    ],
+                    "node_id": "n000085",
+                    "range": {
+                      "start_unit_id": "p000057",
+                      "end_unit_id": "p000059",
+                      "start_page": 57,
+                      "end_page": 59
+                    },
+                    "summary": "Explains how to create REST resource configuration files for Cúram APIs under `%CURAM_DIR%/EJBServer/components/<COMPONENT_NAME>/rest/config`. It shows defining `ResourcesConfig.xml` with versioned resources, resource paths (including path parameters), HTTP verbs, mapped façade operations, and optional tags, mime type, and cache-control. The example builds a Notes API with `/notes` and `/notes/{note_id}` methods (GET/POST/PUT/DELETE), and optionally adds `RestConfig.properties` for Swagger title/description. Ends by directing you to build the REST APIs."
+                  },
+                  {
+                    "title": "Deploying Social Program REST APIs on Tomcat",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000060",
+                      "end_unit_id": "p000060",
+                      "start_page": 60,
+                      "end_page": 60
+                    },
+                    "summary": "Explains how to deploy Social Program REST APIs on Tomcat after creating the REST configuration file. Covers prerequisites (completed modeling, Java implementation, and REST config) and two setup steps: set the CATALINA_HOME environment variable to point to the Tomcat installation, then run `build rest` from `%CURAM_DIR%/EJBServer` to automatically deploy the REST API resources in the development environment. Includes an example `ResourceConfig.xml` for a Notes API with GET/POST/PUT/DELETE mappings."
+                  },
+                  {
+                    "title": "Social Program REST API testing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000061",
+                      "end_unit_id": "p000061",
+                      "start_page": 61,
+                      "end_page": 61
+                    },
+                    "summary": "Explains how to test Cúram Social Program REST APIs. It covers manual browser/plugin testing of REST endpoints, including setting Referer to curam://foundational.app and Content-Type to application/json for PUT/POST/DELETE requests, and confirms deployment/operation via Swagger and a sample /v1/notes GET endpoint. It also recommends automated unit testing with JUnit and suggests Jackson for JSON handling and Apache HTTP Client to simplify REST test implementation."
+                  },
+                  {
+                    "title": "Deploying a Social Program REST API on an application server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000062",
+                      "end_unit_id": "p000062",
+                      "start_page": 62,
+                      "end_page": 62
+                    },
+                    "summary": "Explains the final deployment step for a custom Cúram Social Program REST API. After modeling, Java implementation, REST config, and application server/database setup are complete, build the REST EAR from %CURAM_DIR%/EJBServer with `build restEAR`, verify `Rest.ear` was created, then deploy it to the same application server hosting the Cúram server EAR. Notes that `Rest.ear` is platform neutral and can be deployed to WebSphere Application Server, Liberty, or Oracle WebLogic Server, with an example `build installapp` command."
+                  }
+                ],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000062",
+                  "start_page": 44,
+                  "end_page": 62
+                },
+                "summary": "This section explains how to create, model, configure, deploy, and test a custom Social Program REST API in Cúram. It covers REST design basics and conventions, modeling JSON resources with structs/domains, creating `ResourcesConfig.xml` and optional Swagger properties, deploying to Tomcat with `build rest`, testing manually or with JUnit, and final deployment as `Rest.ear` to an application server. It uses a Notes API example throughout."
+              },
+              {
+                "title": "Social Program REST API reference",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Social Program REST API configuration file",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000092",
+                    "range": {
+                      "start_unit_id": "p000063",
+                      "end_unit_id": "p000067",
+                      "start_page": 63,
+                      "end_page": 67
+                    },
+                    "summary": "Describes the REST API configuration file ResourcesConfig.xml for Social Program. Explains where it lives, that one file exists per EJBServer component, and that all files are combined with Cúram model data to generate Swagger docs per API version. Details the XML structure and supported elements: api, version, resource, method, facade, additional-error, produces, consumes, type, tags, tag, cache-control, disable, disable-recursive, and path, including key attributes, required child elements, supported HTTP verbs, path parameters, and disabling endpoints or namespaces."
+                  },
+                  {
+                    "title": "REST configuration properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000068",
+                      "end_unit_id": "p000068",
+                      "start_page": 68,
+                      "end_page": 68
+                    },
+                    "summary": "This section documents Cúram REST configuration properties, focusing on security and cross-origin access. It explains the mandatory `curam.rest.refererDomains` property for CSRF protection in deployed environments, including whitelist requirements for referrer domains and subdomains, plus exceptions for mobile apps and development localhost/`curam://` refs. It also covers `curam.rest.allowedOrigins` for CORS, how origin matching works, examples of allowed domains, and notes that it is not required for mobile apps."
+                  },
+                  {
+                    "title": "RestConfig.properties file",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000069",
+                      "end_unit_id": "p000069",
+                      "start_page": 69,
+                      "end_page": 69
+                    },
+                    "summary": "This section explains the RestConfig.properties file, which controls the REST API’s Swagger title and description. It notes that developers can override the defaults by placing a copy in EJBServer/components/custom/rest/config and updating the values. The default settings are title=“Smarter Care & Social Programs REST API” and description=“This is the Smarter Care & Social Programs REST API.”"
+                  },
+                  {
+                    "title": "Social Program REST API error handling",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000095",
+                    "range": {
+                      "start_unit_id": "p000070",
+                      "end_unit_id": "p000070",
+                      "start_page": 70,
+                      "end_page": 70
+                    },
+                    "summary": "Describes REST API error handling for Social Program APIs. Explains common HTTP responses: 400 for recoverable user errors and 500 for unrecoverable server errors. Shows how façade operations control status codes by throwing `AppException` (maps to 400) or `AppRuntimeException` (maps to 500). Also documents customizing `AppException` via catalog message names starting with `HTTP_4XX` to trigger other statuses such as 403, 404, 405, 406, 409, 410, 412, and 416. Notes that REST errors include the exception’s string catalog identifier."
+                  },
+                  {
+                    "title": "Swagger and the Swagger UI",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000096",
+                    "range": {
+                      "start_unit_id": "p000071",
+                      "end_unit_id": "p000071",
+                      "start_page": 71,
+                      "end_page": 71
+                    },
+                    "summary": "Explains Swagger as an open specification for defining REST APIs: resources, operations, parameters, required/optional settings, allowed values, and request/response JSON Schema. Also describes Swagger UI as a browser-based tool to visualize and test Swagger-defined APIs by entering inputs, invoking operations, and inspecting results. This section sits alongside guidance on REST error handling and configuration of additional HTTP response codes such as 404 and 403."
+                  },
+                  {
+                    "title": "Disable inbound REST APIs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000097",
+                    "range": {
+                      "start_unit_id": "p000072",
+                      "end_unit_id": "p000072",
+                      "start_page": 72,
+                      "end_page": 72
+                    },
+                    "summary": "Explains how to disable inbound REST APIs at runtime by adding exclusions to ResourcesConfig.xml. Covers prerequisites for custom REST components, where to create the file if none exists, and recommends keeping it in a custom component to avoid overwrites during upgrades. Describes three disable methods: individual endpoints, entire namespaces, or specific API versions. Gives XML examples for <disable> and <disable-recursive>, and notes that namespace disabling requires an entry for each version."
+                  }
+                ],
+                "node_id": "n000091",
+                "range": {
+                  "start_unit_id": "p000063",
+                  "end_unit_id": "p000072",
+                  "start_page": 63,
+                  "end_page": 72
+                },
+                "summary": "Reference for Social Program REST APIs: how ResourcesConfig.xml is structured and used to generate Swagger per API version, including elements for versions, resources, methods, facades, tags, media types, cache control, error codes, and disabling endpoints/namespaces/versions. Also covers REST security and CORS properties (referer domains, allowed origins, CSRF, base URI, unknown-field handling), Swagger/Swagger UI overview, REST API error handling and custom HTTP codes via AppException/AppRuntimeException, and how to disable inbound REST APIs at runtime."
+              },
+              {
+                "title": "GraphQL",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "GraphQL terms",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000099",
+                    "range": {
+                      "start_unit_id": "p000073",
+                      "end_unit_id": "p000073",
+                      "start_page": 73,
+                      "end_page": 73
+                    },
+                    "summary": "Explains GraphQL as a query language for APIs where clients request only needed data from a schema-based graph of entities and API entry points. Notes that GraphQL can combine multiple server APIs into one query, reducing network traffic. In Merative Social Program Management, a GraphQL API includes a schema definition and a data fetcher that wraps a server facade operation. Queries are sent over HTTP and return JSON, and the GraphQL infrastructure is built into the REST application and deployed with the REST EAR."
+                  },
+                  {
+                    "title": "Configuring GraphQL properties",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Procedure",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000101",
+                        "range": {
+                          "start_unit_id": "p000075",
+                          "end_unit_id": "p000075",
+                          "start_page": 75,
+                          "end_page": 75
+                        },
+                        "summary": "This section lists GraphQL-related REST configuration properties and how to set them in Social Program Management. It covers enabling the GraphQL endpoint, enabling introspection for schema viewing/testing, limiting maximum schema query depth, and setting schema complexity. It also notes that REST configuration properties apply to GraphQL as well. The procedure to update these settings is: log in as system administrator, open Property Administration via System Configurations > Shortcuts > Application Data, then search for “GraphQL” in the Name field."
+                      }
+                    ],
+                    "node_id": "n000100",
+                    "range": {
+                      "start_unit_id": "p000074",
+                      "end_unit_id": "p000075",
+                      "start_page": 74,
+                      "end_page": 75
+                    },
+                    "summary": "Explains how to configure GraphQL in Social Program Management. It covers enabling the GraphQL endpoint, turning introspection on/off for schema discovery and GraphiQL testing, and limiting schema query depth and overall query complexity. Notes that GraphQL uses REST configuration properties too, and changes may require a server restart to refresh the REST property cache. Also gives the admin path to update settings in Property Administration by searching for “GraphQL.”"
+                  },
+                  {
+                    "title": "Developing a GraphQL API",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Performance testing for new GraphQL APIs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000103",
+                        "range": {
+                          "start_unit_id": "p000076",
+                          "end_unit_id": "p000076",
+                          "start_page": 76,
+                          "end_page": 76
+                        },
+                        "summary": "This section explains how to create and test new GraphQL APIs in Cúram. It notes that each API needs three artifacts: a schema file entry, Java data fetcher class(es), and a runtime wiring configuration. It emphasizes performance testing because GraphQL can improve efficiency but also has known caveats and anti-patterns. It also covers modeling a supporting facade in Rational Software Architect, schema API definitions, and creating a single schema.graphqls file per server component under the custom component directory."
+                      },
+                      {
+                        "title": "Modeling the GraphQL APIs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000104",
+                        "range": {
+                          "start_unit_id": "p000076",
+                          "end_unit_id": "p000076",
+                          "start_page": 76,
+                          "end_page": 76
+                        },
+                        "summary": "This section explains how to model GraphQL APIs in Cúram. It outlines the three required artifacts: a GraphQL schema file entry, one or more Java data fetcher classes, and a runtime wiring configuration file entry. It also advises performance testing new GraphQL APIs due to GraphQL caveats. For modeling, you must create or reuse a facade in Rational Software Architect, using the <<rest>> or <<facade>> stereotype (with a note that <<facade>> cannot model nested lists). It begins the steps for creating a schema.graphqls file."
+                      },
+                      {
+                        "title": "Adding APIs to the GraphQL schema",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Creating a schema file",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000106",
+                            "range": {
+                              "start_unit_id": "p000076",
+                              "end_unit_id": "p000076",
+                              "start_page": 76,
+                              "end_page": 76
+                            },
+                            "summary": "Explains how to create the GraphQL schema file for a server component. Only one schema file is added per server component. If a custom component does not already have one, create `schema.graphqls` under `%CURAM_DIR%/EJBServer/components/<COMPONENT_NAME>/rest/graphql/config/`."
+                          },
+                          {
+                            "title": "Adding API definitions to a schema",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000107",
+                            "range": {
+                              "start_unit_id": "p000077",
+                              "end_unit_id": "p000077",
+                              "start_page": 77,
+                              "end_page": 77
+                            },
+                            "summary": "Explains how to add a new API to a schema by extending the top-level Query type, defining the API name, input parameters, and response object type, then creating a response type whose attribute names exactly match the facade return struct. Notes that attributes may be scalars or nested object types, with custom types used for special handling. Also describes build-time merging and validation of component schema files to prevent duplicate definitions, plus an example showing graph-connected domain types like DOMIntegratedCase and DOMBenefit."
+                          },
+                          {
+                            "title": "Example",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000108",
+                            "range": {
+                              "start_unit_id": "p000077",
+                              "end_unit_id": "p000077",
+                              "start_page": 77,
+                              "end_page": 77
+                            },
+                            "summary": "Explains how to add API definitions to a GraphQL schema for integrating with external applications through REST APIs. It outlines extending the default Query type, defining API input and response object types, and ensuring response fields exactly match facade return struct attributes. It notes that schema files from EJBServer components are merged and validated at build time to prevent duplicate APIs/types. The example shows a readIntegratedCase API returning a DOMIntegratedCase object with a benefits array of DOMBenefit objects, illustrating graph-based data retrieval."
+                          },
+                          {
+                            "title": "Cúram data types and GraphQL scalars",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "List of available GraphQL data types and scalars",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000110",
+                                "range": {
+                                  "start_unit_id": "p000078",
+                                  "end_unit_id": "p000078",
+                                  "start_page": 78,
+                                  "end_page": 78
+                                },
+                                "summary": "Explains how Cúram data types map to GraphQL scalars and JSON response types. Notes that GraphQL object fields must use the correct scalar, and custom scalars are not supported. Provides a table of built-in and Cúram-specific scalars: SVR_STRING, SVR_BOOLEAN, SVR_INT8/16/32/64, SVR_FLOAT, SVR_DOUBLE, SVR_DATE, SVR_DATETIME, and SVR_MONEY, with examples like GQL_ID, GQL_Date, and GQL_DateTime. Includes sample schema snippets and mentions directives for code items."
+                              }
+                            ],
+                            "node_id": "n000109",
+                            "range": {
+                              "start_unit_id": "p000078",
+                              "end_unit_id": "p000078",
+                              "start_page": 78,
+                              "end_page": 78
+                            },
+                            "summary": "Explains how Cúram data types map to GraphQL scalars and JSON response types. Object fields must use the correct scalar, and custom scalars are not supported. The section lists built-in and Cúram-specific scalars, including SVR_STRING, SVR_BOOLEAN, SVR_INT8/16/32/64, SVR_FLOAT, SVR_DOUBLE, SVR_DATE, SVR_DATETIME, and SVR_MONEY, with GraphQL examples such as GQL_ID, GQL_Date, GQL_DateTime, and GQL_Money. Also notes that scalars serialize to JSON and shows sample schema snippets using directives like @code."
+                          },
+                          {
+                            "title": "GraphQL directives for code items and frequency patterns",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Codes",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000112",
+                                "range": {
+                                  "start_unit_id": "p000079",
+                                  "end_unit_id": "p000079",
+                                  "start_page": 79,
+                                  "end_page": 79
+                                },
+                                "summary": "This section explains GraphQL directives for special handling of code items and frequency patterns in Cúram’s REST API integration. It defines the two supported directives, @code and @frequency, and notes that no additional directives can be created. For code items, fields backed by RSA CODETABLE_CODE domains must use the CodeItem type with @code, and CodeItem includes code, description, and tablename fields. An example Case type and JSON response are shown. It also begins describing frequency pattern handling."
+                              },
+                              {
+                                "title": "Frequency patterns",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000113",
+                                "range": {
+                                  "start_unit_id": "p000079",
+                                  "end_unit_id": "p000079",
+                                  "start_page": 79,
+                                  "end_page": 79
+                                },
+                                "summary": "This section explains GraphQL directives used for special handling of Java attributes that represent code items and frequency patterns. It introduces the two supported directives, @code and @frequency, and notes that custom directives are not supported. It describes how CODETABLE_CODE attributes must be modeled as CodeItem fields with @code, including the CodeItem type structure and an example JSON response. It also begins describing frequency patterns as attributes modeled with FREQUENCY_PATTERN definitions."
+                              }
+                            ],
+                            "node_id": "n000111",
+                            "range": {
+                              "start_unit_id": "p000079",
+                              "end_unit_id": "p000079",
+                              "start_page": 79,
+                              "end_page": 79
+                            },
+                            "summary": "Explains Cúram GraphQL directives for special handling of code items and frequency patterns. Only two directives are supported: @code and @frequency; custom directives cannot be created. For fields backed by RSA CODETABLE_CODE domains, the schema must use the CodeItem type with @code, where CodeItem has code, description, and tablename fields, and an example Case response is shown. It also introduces frequency-pattern attributes modeled with FREQUENCY_PATTERN definitions and begins their handling in GraphQL."
+                          }
+                        ],
+                        "node_id": "n000105",
+                        "range": {
+                          "start_unit_id": "p000076",
+                          "end_unit_id": "p000079",
+                          "start_page": 76,
+                          "end_page": 79
+                        },
+                        "summary": "Explains how to add GraphQL APIs to a server component schema. Each component has one `schema.graphqls` under `EJBServer/components/<COMPONENT>/rest/graphql/config/`. New APIs are added by extending `Query` with input args and a response type whose fields exactly match the facade return struct. Schema files are merged and validated at build time to prevent duplicates. Includes an example `readIntegratedCase` returning nested `DOMIntegratedCase`/`DOMBenefit` objects, plus guidance on Cúram scalars and the supported `@code` and `@frequency` directives."
+                      },
+                      {
+                        "title": "Creating a data fetcher class",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "About this task",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000115",
+                            "range": {
+                              "start_unit_id": "p000080",
+                              "end_unit_id": "p000080",
+                              "start_page": 80,
+                              "end_page": 80
+                            },
+                            "summary": "This section explains what a GraphQL data fetcher class must do. Each data fetcher must implement `graphql.schema.DataFetcher`, and only the `get()` method is required. The method maps query input parameters to the facade’s input struct, then calls a GraphQL server utility with the target facade class/method and populated struct to retrieve data. It also notes that a top-level data fetcher is mandatory, while additional field-level fetchers are optional and can improve efficiency when not all fields are requested."
+                          },
+                          {
+                            "title": "Procedure",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000116",
+                            "range": {
+                              "start_unit_id": "p000081",
+                              "end_unit_id": "p000081",
+                              "start_page": 81,
+                              "end_page": 81
+                            },
+                            "summary": "This section gives the procedure for creating a GraphQL data fetcher class in a custom component, including the required Java package path under EJBServer. It explains that the fetcher should typically call an EJBServer facade method and return a POJO/response struct matching the schema’s query response object. It also begins an example of a single data fetcher for an API (`readIntegratedCase`) that returns a nested `DOMIntegratedCase` object with `DOMBenefit` items."
+                          },
+                          {
+                            "title": "Examples of data fetcher classes",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Example 1: A single data fetcher for a GraphQL API",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000118",
+                                "range": {
+                                  "start_unit_id": "p000081",
+                                  "end_unit_id": "p000081",
+                                  "start_page": 81,
+                                  "end_page": 81
+                                },
+                                "summary": "Shows a simple GraphQL data fetcher pattern where one EJB facade method directly supplies the full response object. The example `readIntegratedCase(case_id)` returns a `DOMIntegratedCase` with a nested list of `DOMBenefit` objects, and the facade `DOMIntegratedCaseGQL.readIntegratedCase()` populates all fields to match the schema exactly. Also includes the recommended Java file path for custom data fetchers under `graphql/datafetcher/<CLASS_NAME>.java`."
+                              },
+                              {
+                                "title": "Example 2: Multiple data fetchers for a GraphQL API",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000119",
+                                "range": {
+                                  "start_unit_id": "p000082",
+                                  "end_unit_id": "p000082",
+                                  "start_page": 82,
+                                  "end_page": 82
+                                },
+                                "summary": "Explains a GraphQL example where one query (`readIntegratedCase`) still uses the same data fetcher pattern, but retrieving full results requires two facade methods. `DOMIntegratedCaseGQL.readIntegratedCase()` returns case details, while `DOMBenefitGQL.listBenefitsByIntCase()` is used separately to fetch nested benefit data because `DOMIntegratedCase` no longer contains the benefit list. Also shows accessing the query parameter via `env.getArgument(\"case_id\")`."
+                              }
+                            ],
+                            "node_id": "n000117",
+                            "range": {
+                              "start_unit_id": "p000081",
+                              "end_unit_id": "p000082",
+                              "start_page": 81,
+                              "end_page": 82
+                            },
+                            "summary": "Explains how to implement GraphQL data fetchers that wrap EJB facade methods. Recommends placing custom fetchers under `graphql/datafetcher/<CLASS_NAME>.java` and returning a POJO matching the schema. Example 1 shows a single fetcher for `readIntegratedCase(case_id)` where `DOMIntegratedCaseGQL.readIntegratedCase()` returns the full `DOMIntegratedCase` including nested `DOMBenefit` list, with `case_id` read via `env.getArgument(\"case_id\")`. Example 2 shows splitting retrieval across two facade methods when benefits are fetched separately."
+                          }
+                        ],
+                        "node_id": "n000114",
+                        "range": {
+                          "start_unit_id": "p000080",
+                          "end_unit_id": "p000082",
+                          "start_page": 80,
+                          "end_page": 82
+                        },
+                        "summary": "Explains how to create a GraphQL data fetcher class that links a schema type to an EJBServer facade. Each fetcher must implement `graphql.schema.DataFetcher` and only `get()` is required; it maps query args to an input struct, calls a GraphQL server utility with the facade class/method, and returns a matching POJO/response struct. Gives the custom-component Java path under `EJBServer`, and examples of single vs. multiple fetchers, including `readIntegratedCase` and separate benefit retrieval."
+                      },
+                      {
+                        "title": "Configuring the runtime wiring for APIs",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "About this task",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000121",
+                            "range": {
+                              "start_unit_id": "p000083",
+                              "end_unit_id": "p000083",
+                              "start_page": 83,
+                              "end_page": 83
+                            },
+                            "summary": "Explains how to configure GraphQL runtime wiring to connect schema APIs to data fetcher implementations. Notes that a server component can have only one runtime_wiring.yaml file, located under %CURAM_DIR%/EJBServer/components/<COMPONENT_NAME>/rest/graphql/config/. Describes creating the file for custom components, adding a top-level Query section if needed, and shows how higher-level fetcher responses are stored in DataFetchingEnvironment so child fetchers can read values like an integrated case ID."
+                          },
+                          {
+                            "title": "Procedure",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Creating a new runtime wiring configuration file",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000123",
+                                "range": {
+                                  "start_unit_id": "p000083",
+                                  "end_unit_id": "p000083",
+                                  "start_page": 83,
+                                  "end_page": 83
+                                },
+                                "summary": "Explains how to create a runtime wiring configuration file for GraphQL APIs in a custom server component. Covers that runtime wiring links schema APIs to data fetcher implementations, and that only one runtime wiring file is used per server component. Gives the file path for `runtime_wiring.yaml` under `%CURAM_DIR%/EJBServer/components/<COMPONENT_NAME>/rest/graphql/config/` and notes to add a top-level `Query` section if it does not already exist."
+                              },
+                              {
+                                "title": "Adding an entry to the runtime wiring configuration file",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000124",
+                                "range": {
+                                  "start_unit_id": "p000084",
+                                  "end_unit_id": "p000084",
+                                  "start_page": 84,
+                                  "end_page": 84
+                                },
+                                "summary": "Explains how to add entries to `runtime_wiring.yaml` to wire GraphQL APIs to Java data fetchers. Shows `Query` entries for API-level fetchers and optional `FieldLevelWiring` entries for specific object fields, with YAML examples. Notes that runtime wiring files from server components are merged at build time, and duplicate query/field entries use the higher server component order. Includes an example wiring `readIntegratedCase` and its `benefits` field. Also states that existing GraphQL schemas/type definitions cannot be customized, only their data sources."
+                              }
+                            ],
+                            "node_id": "n000122",
+                            "range": {
+                              "start_unit_id": "p000083",
+                              "end_unit_id": "p000083",
+                              "start_page": 83,
+                              "end_page": 83
+                            },
+                            "summary": "Explains how to configure GraphQL runtime wiring so schema APIs map to data fetcher implementations. A server component uses only one `runtime_wiring.yaml`, created under `%CURAM_DIR%/EJBServer/components/<COMPONENT_NAME>/rest/graphql/config/`, with a top-level `Query` section if needed. The section also illustrates how data fetchers can use `DataFetchingEnvironment` to access the parent object (for example, retrieving a case ID from `env.getSource()` when `readIntegratedCase` returns benefits)."
+                          },
+                          {
+                            "title": "Example",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000125",
+                            "range": {
+                              "start_unit_id": "p000084",
+                              "end_unit_id": "p000084",
+                              "start_page": 84,
+                              "end_page": 84
+                            },
+                            "summary": "Explains how to add entries to the runtime_wiring.yaml configuration for GraphQL APIs. Covers wiring a query to a data fetcher, optionally wiring specific object fields via FieldLevelWiring, and how duplicate entries are resolved when server component files are merged at build time. Includes a worked example for readIntegratedCase and its benefits field. Also states that existing GraphQL APIs and schema type definitions cannot be customized, but their underlying data sources can be changed through data fetchers."
+                          }
+                        ],
+                        "node_id": "n000120",
+                        "range": {
+                          "start_unit_id": "p000083",
+                          "end_unit_id": "p000083",
+                          "start_page": 83,
+                          "end_page": 83
+                        },
+                        "summary": "Explains how GraphQL runtime wiring links schema APIs to data fetcher implementations. A server component can have only one `runtime_wiring.yaml`, placed in `%CURAM_DIR%/EJBServer/components/<COMPONENT_NAME>/rest/graphql/config/`, and custom components should add it if missing, with a top-level `Query` section as needed. Also notes that data fetchers receive parent results through `DataFetchingEnvironment.getSource()`, allowing child fetchers to use values like an integrated case ID returned by a higher-level fetcher."
+                      }
+                    ],
+                    "node_id": "n000102",
+                    "range": {
+                      "start_unit_id": "p000076",
+                      "end_unit_id": "p000083",
+                      "start_page": 76,
+                      "end_page": 83
+                    },
+                    "summary": "Explains how to develop a GraphQL API in Cúram. It requires three artifacts: a schema.graphqls entry, Java data fetcher class(es), and a runtime_wiring.yaml entry. Covers modeling a facade in Rational Software Architect, schema creation and Query extensions, response types, built-in scalars, and supported @code/@frequency directives. Describes data fetcher implementation, including top-level vs. nested fetchers and use of DataFetchingEnvironment.getSource(). Notes build-time schema merging/validation and advises performance testing because GraphQL has caveats and anti-patterns."
+                  },
+                  {
+                    "title": "Customizing data sources for existing GraphQL APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Before you begin",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000127",
+                        "range": {
+                          "start_unit_id": "p000085",
+                          "end_unit_id": "p000085",
+                          "start_page": 85,
+                          "end_page": 85
+                        },
+                        "summary": "This section explains prerequisites and the customization workflow for integrating GraphQL APIs with REST applications in a Social Program Management development environment. It requires understanding GraphQL schema files, data fetchers, runtime wiring, and API modeling/building. It then outlines how to customize an API: identify schema elements and current wiring, create a custom facade with matching input/output structs, implement a data fetcher to map GraphQL inputs, and update the runtime_wiring.yaml to point to the new wiring."
+                      },
+                      {
+                        "title": "Procedure",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000128",
+                        "range": {
+                          "start_unit_id": "p000085",
+                          "end_unit_id": "p000085",
+                          "start_page": 85,
+                          "end_page": 85
+                        },
+                        "summary": "Explains how to customize REST/GraphQL integration with external applications in Social Program Management. The procedure covers identifying schema elements and existing data fetchers in `schema.graphqls` and `runtime_wiring.yaml`, creating a custom facade with the same interface and structs as the existing one, writing a data fetcher to map GraphQL input to facade calls, and updating the runtime wiring YAML to link the schema to the new implementation. Includes prerequisites: development environment, GraphQL schema/fetchers/runtime wiring knowledge."
+                      },
+                      {
+                        "title": "Example of customizing the data source for a GraphQL API",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Customizing the data source",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000130",
+                            "range": {
+                              "start_unit_id": "p000087",
+                              "end_unit_id": "p000087",
+                              "start_page": 87,
+                              "end_page": 87
+                            },
+                            "summary": "Explains how to customize GraphQL data sources by replacing existing data fetchers with custom ones in a custom component’s `runtime_wiring.yaml`. Custom fetchers must return the same schema object types (`DOMIntegratedCase`, `List<DOMBenefit>`), and higher component order causes custom wiring to overwrite the original entries at build time. Also summarizes the deployment workflow: build model changes if needed, build/deploy the REST app, and enable the GraphQL endpoint via `curam.graphql.endpoint.enabled`."
+                          }
+                        ],
+                        "node_id": "n000129",
+                        "range": {
+                          "start_unit_id": "p000086",
+                          "end_unit_id": "p000086",
+                          "start_page": 86,
+                          "end_page": 86
+                        },
+                        "summary": "Shows how to customize a GraphQL API data source by defining an example schema for `readIntegratedCase(case_id: GQL_ID!)`, returning `DOMIntegratedCase` with nested `DOMBenefit` objects. Explains core GraphQL/Cúram scalar mappings (`GQL_ID`, `GQL_Date`, `CodeItem`) and the `@code` directive for converting code values into `CodeItem`. Useful for understanding the structure of the sample schema and how Cúram data types are represented in GraphQL."
+                      }
+                    ],
+                    "node_id": "n000126",
+                    "range": {
+                      "start_unit_id": "p000084",
+                      "end_unit_id": "p000086",
+                      "start_page": 84,
+                      "end_page": 86
+                    },
+                    "summary": "Explains how to customize data sources for existing GraphQL APIs in Social Program Management without changing the schema or type definitions. It outlines the workflow: inspect the merged schema and current runtime wiring, create a custom facade with the same interface and output struct, implement a data fetcher to map GraphQL inputs to facade calls, override wiring in a custom `runtime_wiring.yaml`, and rebuild the REST app. Includes an example `readIntegratedCase` schema showing `GQL_ID`, `GQL_Date`, `CodeItem`, and the `@code` directive."
+                  },
+                  {
+                    "title": "Building the GraphQL APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Building your model changes for a facade",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "About this task",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Modeled new facades and structs",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000134",
+                                "range": {
+                                  "start_unit_id": "p000088",
+                                  "end_unit_id": "p000088",
+                                  "start_page": 88,
+                                  "end_page": 88
+                                },
+                                "summary": "Explains how to rebuild modeled facades and structs after RSA modeling changes: generate code, implement facade operations, compile implemented code, update database security identifiers, and regenerate client/server artifacts for structs. Also describes building and deploying GraphQL APIs on Tomcat via the REST build: set CATALINA_HOME, run `build rest`, and note it merges component GraphQL schema and runtime wiring files, with higher-priority component entries overriding duplicates."
+                              }
+                            ],
+                            "node_id": "n000133",
+                            "range": {
+                              "start_unit_id": "p000088",
+                              "end_unit_id": "p000088",
+                              "start_page": 88,
+                              "end_page": 88
+                            },
+                            "summary": "This section explains how to keep a local Cúram development environment built and runnable. It covers rebuilding modeled facades and structs after RSA changes: generate code, implement facade operations, compile implemented code, update database security identifiers, and regenerate client/server artifacts for structs. It also describes building and deploying GraphQL APIs on Tomcat via `build rest`, including setting `CATALINA_HOME`, building the REST app, and merging component GraphQL schema and runtime wiring files with higher-priority component overrides."
+                          }
+                        ],
+                        "node_id": "n000132",
+                        "range": {
+                          "start_unit_id": "p000087",
+                          "end_unit_id": "p000087",
+                          "start_page": 87,
+                          "end_page": 87
+                        },
+                        "summary": "Explains when and how to build model changes for GraphQL facades. If a GraphQL API introduces a new facade, you must run the appropriate model build targets; if existing facades are reused, this step can be skipped. This section is part of the larger GraphQL API build/deploy flow, alongside building the REST application and enabling the GraphQL endpoint."
+                      },
+                      {
+                        "title": "Building and deploying GraphQL APIs on Tomcat",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "About this task",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000136",
+                            "range": {
+                              "start_unit_id": "p000088",
+                              "end_unit_id": "p000088",
+                              "start_page": 88,
+                              "end_page": 88
+                            },
+                            "summary": "This section explains prerequisites for local development builds and the Ant targets used to build generated code, facades, structs, and GraphQL APIs. It covers the sequence for new facade classes/operations (generate, implement, compile, update database) and for added/modified structs (rebuild server, client, and REST). It also describes building and deploying GraphQL on Tomcat, including setting `CATALINA_HOME`, running `build rest`, and how GraphQL schemas and runtime wiring files are merged from server components."
+                          },
+                          {
+                            "title": "Procedure",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Changing GraphQL artifacts",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000138",
+                                "range": {
+                                  "start_unit_id": "p000089",
+                                  "end_unit_id": "p000089",
+                                  "start_page": 89,
+                                  "end_page": 89
+                                },
+                                "summary": "Explains how to handle GraphQL artifact changes and deployment. If only data fetcher classes, schema entries, or runtime wiring change, run `build graphql` from `EJBServer` to update the built REST application. To deploy GraphQL APIs, build the REST EAR with `build restEAR`; the GraphQL artifacts are packaged in the REST EAR for application server deployment. Also covers using the GraphiQL IDE in development to view schema/query structure via introspection, noting introspection must be enabled and the HTML page is not included in production deployments."
+                              }
+                            ],
+                            "node_id": "n000137",
+                            "range": {
+                              "start_unit_id": "p000088",
+                              "end_unit_id": "p000088",
+                              "start_page": 88,
+                              "end_page": 88
+                            },
+                            "summary": "Explains how to build and deploy GraphQL APIs on Tomcat as part of the REST application. You must set `CATALINA_HOME`, then run `build rest` from `EJBServer` to build the REST dev app and merge GraphQL schema and runtime wiring files from server components; higher-priority component files win on duplicates. Notes the GraphQL server is packaged inside the REST application, so the full REST build is required at least once, with separate GraphQL builds available later to update only GraphQL artifacts."
+                          }
+                        ],
+                        "node_id": "n000135",
+                        "range": {
+                          "start_unit_id": "p000088",
+                          "end_unit_id": "p000088",
+                          "start_page": 88,
+                          "end_page": 88
+                        },
+                        "summary": "Explains how to build and deploy GraphQL APIs on Tomcat as part of the REST application. You must set `CATALINA_HOME`, then run `build rest` from `EJBServer` to create the REST dev app and package GraphQL artifacts. The build merges server component `schema.graphqls` and `runtime_wiring.yaml` files into the REST application, with higher-order component files winning on duplicates. Notes that GraphQL is built into REST, so a full REST build is required at least once; later GraphQL-only builds can update artifacts."
+                      },
+                      {
+                        "title": "Building and deploying GraphQL APIs on an application server",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Procedure",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000140",
+                            "range": {
+                              "start_unit_id": "p000089",
+                              "end_unit_id": "p000089",
+                              "start_page": 89,
+                              "end_page": 89
+                            },
+                            "summary": "This section explains GraphQL build and deployment procedures for Cúram REST APIs. It covers updating GraphQL artifacts with the build graphql target, building the REST EAR with build restEAR, and deploying GraphQL APIs on an application server. It also describes using the GraphiQL IDE in a development environment to view GraphQL queries via introspection, notes that introspection must be enabled, and states that GraphiQL is not included in production deployments."
+                          }
+                        ],
+                        "node_id": "n000139",
+                        "range": {
+                          "start_unit_id": "p000089",
+                          "end_unit_id": "p000089",
+                          "start_page": 89,
+                          "end_page": 89
+                        },
+                        "summary": "Explains how to build and deploy GraphQL APIs with Cúram REST on an application server. It covers updating only GraphQL artifacts with the EJBServer `build graphql` target, including them in the REST EAR via `build restEAR`, and deploying the EAR to the server. It also describes using GraphiQL in a development Tomcat environment to inspect schemas via introspection queries, noting introspection must be enabled and GraphiQL is not included in production deployments."
+                      }
+                    ],
+                    "node_id": "n000131",
+                    "range": {
+                      "start_unit_id": "p000087",
+                      "end_unit_id": "p000088",
+                      "start_page": 87,
+                      "end_page": 88
+                    },
+                    "summary": "Explains how to build and deploy GraphQL APIs after implementation. It first notes when model rebuilds are needed for new facades or structs, including `build generated`, `build compile.implemented`, `build database`, and client/rest rebuilds for structs. It then covers Tomcat deployment: set `CATALINA_HOME`, run `build rest` from `EJBServer`, and merge GraphQL `schema.graphqls` and `runtime_wiring.yaml` from server components, with higher-order components overriding duplicates. GraphQL is bundled into REST, so a full REST build is required at least once."
+                  },
+                  {
+                    "title": "Viewing the GraphQL queries by using the GraphiQL IDE",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "About this task",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000142",
+                        "range": {
+                          "start_unit_id": "p000089",
+                          "end_unit_id": "p000089",
+                          "start_page": 89,
+                          "end_page": 89
+                        },
+                        "summary": "Explains how to build and deploy GraphQL artifacts for a Cúram REST application and how to inspect them in development. It covers using Ant targets such as build graphql to update changed GraphQL files and build restEAR to package them into the REST ear for application server deployment. It also describes viewing queries with the GraphiQL IDE at /Rest/graphql.html, using introspection to browse available APIs and data objects, and notes that introspection must be enabled and the GraphiQL page is not included in production deployments."
+                      },
+                      {
+                        "title": "Viewing the queries structure",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000143",
+                        "range": {
+                          "start_unit_id": "p000089",
+                          "end_unit_id": "p000089",
+                          "start_page": 89,
+                          "end_page": 89
+                        },
+                        "summary": "This section explains how to inspect GraphQL query structure using the GraphiQL IDE in a development environment. It notes that the Documentation Explorer on the right side of the GraphiQL page lists available GraphQL APIs and their data objects via introspection queries. It also states the GraphiQL HTML page is available at `/Rest/graphql.html`, requires introspection to be enabled, and is not included in the deployed REST EAR, so the schema is not exposed in production."
+                      }
+                    ],
+                    "node_id": "n000141",
+                    "range": {
+                      "start_unit_id": "p000089",
+                      "end_unit_id": "p000089",
+                      "start_page": 89,
+                      "end_page": 89
+                    },
+                    "summary": "Explains how to inspect GraphQL queries in development using the GraphiQL IDE at `/Rest/graphql.html`. GraphiQL sends introspection queries to display available GraphQL APIs and their data objects in the Documentation Explorer. Introspection must be enabled, and the application must be running on Tomcat in the dev environment. The page is not included in the deployed REST EAR, so the schema is not exposed in production."
+                  },
+                  {
+                    "title": "Testing a GraphQL query by using the GraphiQL IDE",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000144",
+                    "range": {
+                      "start_unit_id": "p000090",
+                      "end_unit_id": "p000092",
+                      "start_page": 90,
+                      "end_page": 92
+                    },
+                    "summary": "Explains how to test a GraphQL query in the GraphiQL IDE in a development environment running on Tomcat. Notes that introspection queries must be enabled and that GraphiQL is only available in dev, not in the deployed REST EAR/production. Gives the GraphiQL URL and step-by-step instructions to build and run a query: choose an API, enter arguments, add requested return attributes, and execute to view JSON results."
+                  },
+                  {
+                    "title": "Sending a GraphQL query from a client",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Constructing a GraphQL query",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Examples of a request body for a GraphQL query",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000147",
+                            "range": {
+                              "start_unit_id": "p000093",
+                              "end_unit_id": "p000093",
+                              "start_page": 93,
+                              "end_page": 93
+                            },
+                            "summary": "Shows how to construct a GraphQL request body for the REST-integrated GraphQL endpoint. It explains that the client sends a POST to `https://<server>:<port>/Rest/graphql`, with the query in the request body, and that the server validates the query against the schema before execution. The section includes a basic schema with `readIntegratedCase` and `readPerson` APIs and example return types, plus a sample query requesting only the `reference` field for `readIntegratedCase(case_id: \"2012\")`."
+                          }
+                        ],
+                        "node_id": "n000146",
+                        "range": {
+                          "start_unit_id": "p000093",
+                          "end_unit_id": "p000093",
+                          "start_page": 93,
+                          "end_page": 93
+                        },
+                        "summary": "Explains how a client constructs a GraphQL query for the REST-integrated endpoint at `https://<server>:<port>/Rest/graphql`. The client inspects the schema to choose which API and return fields to request, then sends them in a POST request body. The server parses and validates the query against the schema, including required parameters, before execution. Includes a basic schema with `readIntegratedCase(case_id)` and `readPerson(person_id)` and an example query requesting only `reference` from `readIntegratedCase(case_id: \"2012\")`."
+                      },
+                      {
+                        "title": "Security",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Authentication",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000149",
+                            "range": {
+                              "start_unit_id": "p000094",
+                              "end_unit_id": "p000094",
+                              "start_page": 94,
+                              "end_page": 94
+                            },
+                            "summary": "Explains GraphQL security requirements in Social Program Management. Before making any GraphQL queries, users must authenticate with the application. Authenticated users also need sufficient authorization permissions for the relevant facade methods; otherwise the query response returns an error. Permissions are controlled via security identifiers (SIDs) assigned to the underlying facades. Includes a pointer to Cúram REST API Security for more details."
+                          },
+                          {
+                            "title": "Authorization",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000150",
+                            "range": {
+                              "start_unit_id": "p000094",
+                              "end_unit_id": "p000094",
+                              "start_page": 94,
+                              "end_page": 94
+                            },
+                            "summary": "Explains GraphQL security requirements in Social Program Management. Users must be authenticated before making queries, and must also have sufficient authorization permissions for the relevant facade methods. Permissions are controlled through security identifiers (SIDs) applied to the underlying facades. If a user lacks permission, the query response returns an error. Also points readers to the REST API Security documentation for authentication details."
+                          },
+                          {
+                            "title": "Cross Origin Request Forgery (CORS)",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000151",
+                            "range": {
+                              "start_unit_id": "p000095",
+                              "end_unit_id": "p000095",
+                              "start_page": 95,
+                              "end_page": 95
+                            },
+                            "summary": "This section explains GraphQL/REST request security and localization. It covers CORS allowlisting via the `curam.rest.allowedOrigins` property and browser `OPTIONS` preflight handling, CSRF protection using the `referer` header and `curam.rest.refererDomains` allowlist, with `curam://` allowed for non-web/system calls, plus optional token-based protection. It also lists default security response headers (`X-XSS-PROTECTION`, `X-FRAME-OPTIONS`, `X-CONTENT-TYPE-OPTIONS`) and notes that GraphQL localized text follows the `accept-language` header."
+                          },
+                          {
+                            "title": "Cross Site Request Forgery (CSRF)",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000152",
+                            "range": {
+                              "start_unit_id": "p000095",
+                              "end_unit_id": "p000095",
+                              "start_page": 95,
+                              "end_page": 95
+                            },
+                            "summary": "Explains GraphQL security and localization behavior. CSRF protection applies only to web-based GraphQL requests and relies first on validating the browser-sent referer header against the curam.rest.refererDomains allowlist; non-web or system-to-system calls are exempt if using curam://. It also notes optional token-based CSRF protection. The section includes related browser security headers (X-XSS-PROTECTION, X-FRAME-OPTIONS, X-CONTENT-TYPE-OPTIONS), CORS allowlisting via curam.rest.allowedOrigins, and language/locale selection for localizable GraphQL responses via the accept-language header."
+                          },
+                          {
+                            "title": "Extra response headers",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000153",
+                            "range": {
+                              "start_unit_id": "p000095",
+                              "end_unit_id": "p000095",
+                              "start_page": 95,
+                              "end_page": 95
+                            },
+                            "summary": "This section lists security-related response headers automatically added to every GraphQL response: X-XSS-PROTECTION=1; mode=block, X-FRAME-OPTIONS=deny, and X-CONTENT-TYPE-OPTIONS=nosniff. It explains these headers help prevent cross-site scripting, click-jacking, and MIME sniffing attacks. The surrounding page also covers CORS, CSRF, and localization for GraphQL APIs, including allowlist-based origin/referer checks and language selection via the accept-language header."
+                          }
+                        ],
+                        "node_id": "n000148",
+                        "range": {
+                          "start_unit_id": "p000094",
+                          "end_unit_id": "p000094",
+                          "start_page": 94,
+                          "end_page": 94
+                        },
+                        "summary": "Explains GraphQL security in Social Program Management. Users must authenticate before making any GraphQL queries, then have sufficient authorization for the relevant facade methods. Access control is enforced through security identifiers (SIDs) assigned to underlying facades; lacking permission returns an error in the query response. Includes a pointer to Cúram REST API Security for authentication details."
+                      },
+                      {
+                        "title": "Localization",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000154",
+                        "range": {
+                          "start_unit_id": "p000095",
+                          "end_unit_id": "p000095",
+                          "start_page": 95,
+                          "end_page": 95
+                        },
+                        "summary": "GraphQL APIs can localize translatable responses such as client error messages, code table descriptions, and other text. Localization is driven per query by the HTTP accept-language header; for example, fr-CA makes the server try to render localizable fields in that locale. This section is useful if you need to understand how GraphQL responses respect user language/locale settings."
+                      },
+                      {
+                        "title": "Error handling in GraphQL",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Example",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000156",
+                            "range": {
+                              "start_unit_id": "p000096",
+                              "end_unit_id": "p000096",
+                              "start_page": 96,
+                              "end_page": 96
+                            },
+                            "summary": "This section explains GraphQL error handling and response structure. It notes that GraphQL can return HTTP 200 even when a query fails, because errors are reported in an `errors` array alongside `data`. The example shows a failed query with `data: null`, and describes key error fields such as `message`, `locations`, `path`, and `extensions.classification`. It also mentions that the server adds error-specific information to `extensions`, and introduces the distinction between client and internal errors."
+                          },
+                          {
+                            "title": "Structure of the error response",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Client errors",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000158",
+                                "range": {
+                                  "start_unit_id": "p000096",
+                                  "end_unit_id": "p000096",
+                                  "start_page": 96,
+                                  "end_page": 96
+                                },
+                                "summary": "Explains GraphQL error handling for client-side issues in the REST application. Even when a query fails, GraphQL returns HTTP 200 with an errors array plus data, where failed queries may be null and successful ones still returned. The error object includes message, locations, path, and extensions/classification; the path helps identify which query failed in multi-query requests. Notes that messages are for debugging and should not be shown on the UI. Also mentions accept-language defaults and priority behavior."
+                              },
+                              {
+                                "title": "Internal errors",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000159",
+                                "range": {
+                                  "start_unit_id": "p000097",
+                                  "end_unit_id": "p000097",
+                                  "start_page": 97,
+                                  "end_page": 97
+                                },
+                                "summary": "This section explains how REST API errors are classified as internal errors versus client errors. It states that any error not treated as a client error is internal, the cause is not shown to the user, and all such errors use code -150600. It also contrasts this with client errors, which may carry localized messages and identifiers from AppException or ConversionException, and notes that detailed tracing is only logged at trace_on or higher."
+                              }
+                            ],
+                            "node_id": "n000157",
+                            "range": {
+                              "start_unit_id": "p000096",
+                              "end_unit_id": "p000097",
+                              "start_page": 96,
+                              "end_page": 97
+                            },
+                            "summary": "Explains GraphQL and REST error-response structure. GraphQL always returns HTTP 200 with separate data and errors objects; failed queries may be null while successful ones still return, and error fields include message, locations, path, and extensions/classification. The path identifies the failing query in combined requests, and messages are for debugging only. For REST client errors, extensions include client_error, code (-130002 or -150601), and localized error_messages from AppException or ConversionException. All other errors are internal, hidden from users, and use code -150600."
+                          }
+                        ],
+                        "node_id": "n000155",
+                        "range": {
+                          "start_unit_id": "p000096",
+                          "end_unit_id": "p000097",
+                          "start_page": 96,
+                          "end_page": 97
+                        },
+                        "summary": "Explains GraphQL error handling and response format. GraphQL returns HTTP 200 even when some queries fail, with errors reported in an `errors` array alongside `data`. The section covers key fields (`message`, `locations`, `path`, `extensions.classification`) and notes `extensions` may include server-specific details. It then distinguishes client errors from internal errors: client errors include localized messages, `client_error: true`, and codes `-130002` or `-150601`; internal errors hide the cause and use code `-150600`."
+                      }
+                    ],
+                    "node_id": "n000145",
+                    "range": {
+                      "start_unit_id": "p000093",
+                      "end_unit_id": "p000097",
+                      "start_page": 93,
+                      "end_page": 97
+                    },
+                    "summary": "Explains how to call the REST-integrated GraphQL endpoint (`POST https://<server>:<port>/Rest/graphql`) by inspecting the schema, building a query body, and requesting only needed fields. Shows example queries for `readIntegratedCase` and `readPerson`. Covers access control via authentication and facade SIDs, plus CORS/CSRF protections and response headers. Also describes localization via the `accept-language` header. Error handling uses HTTP 200 with `errors` plus `data`, and distinguishes client errors (localized, `client_error: true`, codes `-130002`/`-150601`) from internal errors (`-150600`)."
+                  }
+                ],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000073",
+                  "end_unit_id": "p000097",
+                  "start_page": 73,
+                  "end_page": 97
+                },
+                "summary": "Defines GraphQL in Social Program Management as a schema-based API query language returning JSON over POST `/Rest/graphql`, deployed inside the REST EAR. Covers core terms, endpoint enablement, introspection, depth/complexity limits, and admin property setup. Explains building GraphQL APIs with schema files, Java data fetchers, and runtime wiring; schema merging/validation; and performance considerations. Also describes GraphiQL use in dev only, client query examples, security (auth, SIDs, CORS/CSRF), localization, and error handling with client vs internal errors."
+              }
+            ],
+            "node_id": "n000072",
+            "range": {
+              "start_unit_id": "p000044",
+              "end_unit_id": "p000097",
+              "start_page": 44,
+              "end_page": 97
+            },
+            "summary": "Explains how to develop custom inbound Cúram REST APIs when existing APIs are insufficient. Covers REST design basics and conventions (plural lowercase paths, snake_case, collection/member resources, consistent JSON representations, no HATEOAS), gap analysis before modeling, and a Notes API example. Describes modeling JSON resources with Cúram structs/domains, creating and aggregating facades/operations, and following the build/deploy/test process. Also includes REST infrastructure topics such as ResourcesConfig/Swagger, security, CORS/CSRF, error handling, runtime enablement/disablement, and GraphQL API support, client usage, security, localization, and error handling."
+          },
+          {
+            "title": "1.3 Developing outbound REST APIs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Before you begin",
+                "level": 3,
+                "children": [],
+                "node_id": "n000161",
+                "range": {
+                  "start_unit_id": "p000099",
+                  "end_unit_id": "p000099",
+                  "start_page": 99,
+                  "end_page": 99
+                },
+                "summary": "Outbound REST APIs must use JSON. To create one in Social Program Management, you need to write Java classes, optionally store authentication credentials in the Properties table, and manually add required third-party JARs to the application server and class path. Outbound API code goes under the SERVER_DIR custom folder (typically EJBServer/components/custom) and is packaged into Curam.ear, not Rest.ear. Ant build targets include the new classes automatically; no extra configuration is needed."
+              },
+              {
+                "title": "Getting started",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Storing Java classes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000163",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "Explains how to add outbound REST API Java code to Social Program Management. Outbound API classes go under the SERVER_DIR custom folder (typically EJBServer/components/custom) and are packaged into Curam.ear, not Rest.ear. Shows the typical package hierarchy for client configuration, API classes, and optional serializers, mappers, modules, and request filters. Also notes that authentication credentials must be stored in the Properties table with encryption, and third-party JARs must be added manually to the EAR and class path."
+                  },
+                  {
+                    "title": "Storing authentication credentials",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000164",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "Explains how to securely store authentication credentials for outbound REST API integrations. If the API provider requires authentication, add new fields to the Properties database table and encrypt any passwords before storing them. The section sits within guidance for building outbound APIs into the Cúram EAR and references related authentication details in “Authenticating with the API service.”"
+                  },
+                  {
+                    "title": "Building outbound APIs into the Cúram EAR",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000165",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "Explains how to add outbound REST API support to the Cúram EAR. Requires JSON-based APIs, writing Java classes under EJBServer/components/custom, optionally adding serializer/mapper/module/filter classes, and storing encrypted credentials in the Properties table if authentication is needed. Outbound APIs are packaged into Curam.ear, not Rest.ear. Notes that build targets automatically include new Java classes, but required third-party JARs must be manually added to the EAR and application server class path."
+                  }
+                ],
+                "node_id": "n000162",
+                "range": {
+                  "start_unit_id": "p000099",
+                  "end_unit_id": "p000099",
+                  "start_page": 99,
+                  "end_page": 99
+                },
+                "summary": "Introductory guidance for building outbound REST APIs in Social Program Management. It says the API must use JSON, requires Java classes under SERVER_DIR/custom and packaging into Curam.ear (not Rest.ear), and may include optional serializer/mapper/module/filter classes. If authentication is needed, credentials must be stored in the Properties table and encrypted. It also notes that build targets include new Java classes automatically, but third-party JARs must be added manually to the EAR and class path."
+              },
+              {
+                "title": "Serializing JSON and Java objects",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating custom serialization",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Creating custom serializer and deserializer classes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000168",
+                        "range": {
+                          "start_unit_id": "p000101",
+                          "end_unit_id": "p000101",
+                          "start_page": 101,
+                          "end_page": 101
+                        },
+                        "summary": "Explains how to create custom Jackson serializer and deserializer classes by extending `StdSerializer` or `JsonDeserializer` and registering them on a custom `ObjectMapper`. Notes that registering for a Java type affects all attributes of that type in JSON mapping. Provides an example `CustomDateSerializer` for Cúram `Date` values that outputs ISO8601 strings, handles `Date.kZeroDate` as null, and implements `ContextualSerializer`."
+                      },
+                      {
+                        "title": "Registering the custom classes with Jackson",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000169",
+                        "range": {
+                          "start_unit_id": "p000102",
+                          "end_unit_id": "p000102",
+                          "start_page": 102,
+                          "end_page": 102
+                        },
+                        "summary": "Explains that custom Jackson serializers/deserializers must be registered to override default handling. Shows creating a `SimpleModule` subclass (`CustomSimpleModule`) that adds a custom serializer and deserializer for `curam.util.type.Date`, including a date deserializer that maps empty/invalid ISO8601 (`yyyy-MM-dd`) strings to `Date.kZeroDate`. This section is about wiring custom date handling into Jackson via module registration."
+                      }
+                    ],
+                    "node_id": "n000167",
+                    "range": {
+                      "start_unit_id": "p000101",
+                      "end_unit_id": "p000102",
+                      "start_page": 101,
+                      "end_page": 102
+                    },
+                    "summary": "Explains how to customize Jackson serialization by creating custom `StdSerializer`/`JsonDeserializer` classes and registering them on a custom `ObjectMapper`. Emphasizes that type-based registration affects all fields of that Java type. Shows a `CustomDateSerializer` for Cúram `Date` values that outputs ISO8601 (`yyyy-MM-dd`) and treats `Date.kZeroDate` as null, plus a `CustomDateDeserializer` that maps empty or invalid date strings to `Date.kZeroDate`. Also demonstrates wiring both into Jackson via a `SimpleModule`."
+                  }
+                ],
+                "node_id": "n000166",
+                "range": {
+                  "start_unit_id": "p000100",
+                  "end_unit_id": "p000102",
+                  "start_page": 100,
+                  "end_page": 102
+                },
+                "summary": "Explains how Jersey REST client JSON mapping works with Jackson POJOs and default type mappings, and when custom serialization is needed. Shows that nested JSON/arrays must map to complex Java objects/lists. Introduces custom Jackson `StdSerializer`/`JsonDeserializer` classes for types like Cúram `Date`, noting type-based registration affects all fields of that type. Gives ISO8601 `yyyy-MM-dd` serializer/deserializer examples that treat `Date.kZeroDate`, empty strings, invalid dates, and nulls as empty/default values, then registers them via a `SimpleModule` and custom `ObjectMapper`."
+              },
+              {
+                "title": "Creating the Jersey REST client",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring the REST client",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000171",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "This section explains how to configure a Jersey REST client before creating the client instance. It shows registering custom providers such as a custom ObjectMapper provider when using custom Jackson serializer/deserializer classes, and setting client properties like read timeout and connection timeout. It also notes that custom providers are only needed when replacing Jackson’s default serializers/deserializers."
+                  },
+                  {
+                    "title": "Creating the REST client",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000172",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "Explains how to create a Jersey REST client using a reusable ClientConfig, emphasizing that client creation/disposal is heavyweight and the same client instance can be reused for multiple outbound requests. Shows creating a client with ClientBuilder.newClient(clientConfig), optionally adding request filters, and provides a full example where ClientConfig registers a custom ObjectMapper provider and sets read/connect timeouts. Also notes the default transport is HttpUrlConnection and alternative connectors like Apache require extra Jersey libraries."
+                  },
+                  {
+                    "title": "Full example of how to configure and create a REST client",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000173",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "Shows a complete Jersey REST client setup example. It explains that one shared ClientConfig can be used for all outbound API requests when the same ObjectMapper, serializers, and deserializers apply. It notes Jersey’s default HttpUrlConnection transport and mentions alternative connectors like ApacheConnectorProvider require extra libraries. The example code creates a ClientConfig, registers a custom ObjectMapper provider, sets read and connection timeouts, and builds a Client with ClientBuilder.newClient(...)."
+                  }
+                ],
+                "node_id": "n000170",
+                "range": {
+                  "start_unit_id": "p000103",
+                  "end_unit_id": "p000104",
+                  "start_page": 103,
+                  "end_page": 104
+                },
+                "summary": "Explains how to configure and create a Jersey REST client for outbound API requests. It shows registering a custom ObjectMapper/provider only when using custom Jackson serializers/deserializers, setting properties such as read and connect timeouts, and reusing one ClientConfig across requests. It notes Jersey’s default HttpUrlConnection transport, mentions optional alternative connectors like Apache, and emphasizes that client creation/disposal is heavyweight, so a single Client can be reused. Includes a full example using ClientBuilder.newClient(clientConfig)."
+              },
+              {
+                "title": "Making an outbound API request that uses the REST client",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Constructing an outbound request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000175",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "Explains how to build and send an outbound REST API request with Jersey. It covers creating a `WebTarget` with URL, path, and query parameters; adding headers and expected response media type via `Invocation.Builder`; and invoking GET, POST, or PUT requests, including sending a JSON body with a POJO. It also notes checking the HTTP response code and deserializing a successful response body to a Java object."
+                  },
+                  {
+                    "title": "Sending an outbound request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000176",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "Explains how to send an outbound REST request using a Jersey client. Covers building a `WebTarget` with URL, path, and query parameters, then adding headers and expected response media type with `Invocation.Builder`. Shows how to execute GET requests with `.get()` and POST/PUT requests with an entity body. Also notes checking the HTTP status code and deserializing a successful response body into a Java object."
+                  },
+                  {
+                    "title": "Handling the response from the request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000177",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000106",
+                      "start_page": 105,
+                      "end_page": 106
+                    },
+                    "summary": "Explains how to handle Jersey REST client responses: check the HTTP status before deserializing, since success codes vary by API (e.g., 200, 201, 204). If successful and a body exists, use `readEntity()` to map JSON to a Java POJO; if not, close the response manually unless `readEntity()` was called. Error responses may be handled by status code alone or deserialized into an error POJO. Notes that `readEntity()` closes the connection and that generic `Object.class` can map JSON to a `Map`."
+                  },
+                  {
+                    "title": "Full example of how to make an outbound API request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000178",
+                    "range": {
+                      "start_unit_id": "p000107",
+                      "end_unit_id": "p000107",
+                      "start_page": 107,
+                      "end_page": 107
+                    },
+                    "summary": "Shows a complete Java REST client example for an outbound GET request: building a WebTarget with path/query params, adding an Authorization header, sending the request, reading a successful 200 response, handling 401 reauthentication, and closing failed responses. It then explains API authentication as a two-step process: obtain an access token from an auth URL via POST with credentials, then include the token in outbound requests until it expires. Includes a note on securely storing credentials and an example token JSON response."
+                  }
+                ],
+                "node_id": "n000174",
+                "range": {
+                  "start_unit_id": "p000105",
+                  "end_unit_id": "p000106",
+                  "start_page": 105,
+                  "end_page": 106
+                },
+                "summary": "Shows how to use the Jersey REST client to make outbound API calls and process responses. It covers building a WebTarget with URL, path, and query parameters; adding headers and expected media type with Invocation.Builder; sending GET, POST, and PUT requests, including JSON request bodies via POJOs; and checking status codes before deserializing response entities. It also explains handling success and error responses, closing connections properly, and using readEntity() or Object.class for JSON mapping."
+              },
+              {
+                "title": "Authenticating with the API service",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Authenticating and retrieving an access token",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000180",
+                    "range": {
+                      "start_unit_id": "p000107",
+                      "end_unit_id": "p000107",
+                      "start_page": 107,
+                      "end_page": 107
+                    },
+                    "summary": "Explains how to authenticate to an API service and retrieve an access token via a programmatic POST request using the REST client. Describes the typical two-step flow: call an authentication URL with credentials, receive a token, then include that token in subsequent outbound requests until it expires. Includes a security note to store credentials securely (for example, encrypt passwords in the Properties table and decrypt before use) and shows an example token response with access_token and token_type."
+                  },
+                  {
+                    "title": "Sending an access token in the outbound API request",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000181",
+                    "range": {
+                      "start_unit_id": "p000108",
+                      "end_unit_id": "p000108",
+                      "start_page": 108,
+                      "end_page": 108
+                    },
+                    "summary": "Explains how to send an access token with outbound API requests, typically using an Authorization header with a Bearer token. Notes that access tokens and optional refresh tokens should be retained temporarily, with 401/invalid_token responses indicating expiration and prompting a refresh-token request or reauthentication when needed. Also covers building and deploying outbound APIs with Ant, including adding required Jersey JARs to the EJBServer class path and custom lib directory for the EAR."
+                  },
+                  {
+                    "title": "Refresh tokens",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000182",
+                    "range": {
+                      "start_unit_id": "p000108",
+                      "end_unit_id": "p000108",
+                      "start_page": 108,
+                      "end_page": 108
+                    },
+                    "summary": "Explains how to handle OAuth-style refresh tokens for outbound API calls. It notes that access tokens must be retained and sent in request headers, often using a Bearer token. If the API returns a refresh token and expiry, store it temporarily too. When a 401/invalid_token response indicates expiration, use the refresh token to request a new access token; when the refresh token itself expires, resend credentials. Also begins guidance on building and deploying outbound APIs and required Jersey JAR locations."
+                  }
+                ],
+                "node_id": "n000179",
+                "range": {
+                  "start_unit_id": "p000107",
+                  "end_unit_id": "p000107",
+                  "start_page": 107,
+                  "end_page": 107
+                },
+                "summary": "Explains how to authenticate with an API service before making outbound REST calls. Describes the typical two-step flow: POST credentials to an authentication URL, receive an access token (example JSON includes access_token and token_type), then send that token with subsequent requests until it expires. Includes a security note to store credentials securely, such as encrypting passwords in the Properties table and decrypting them before use."
+              },
+              {
+                "title": "Building and deploying outbound APIs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Building the outbound REST APIs in your development environment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000184",
+                    "range": {
+                      "start_unit_id": "p000109",
+                      "end_unit_id": "p000109",
+                      "start_page": 109,
+                      "end_page": 109
+                    },
+                    "summary": "Explains how to build and deploy outbound REST APIs in the development environment. It lists the required Jersey/HK2/Jackson/Javassist JARs and their locations, then gives setup steps for Eclipse (set J2EE_JAR classpath variable, add external JARs) and for Ant builds (set J2EE_JAR env var, copy JARs into EJBServer/components/custom/lib, use standard server and EAR targets). It also notes deployment is normal, with a class-loading fix: remove jsr311-api-1.0.jar if javax.ws.rs.core.Response conflicts occur."
+                  },
+                  {
+                    "title": "Building the application by using Ant targets",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000185",
+                    "range": {
+                      "start_unit_id": "p000109",
+                      "end_unit_id": "p000109",
+                      "start_page": 109,
+                      "end_page": 109
+                    },
+                    "summary": "Explains how to build outbound REST APIs with Ant targets. You must set the J2EE_JAR environment variable, copy the required Jersey JARs into EJBServer/components/custom/lib so they’re added to the compile classpath and Cúram EAR, then use the standard server target to compile. Use websphereEAR or weblogicEAR to package the APIs into Curam.ear. Notes deployment is standard, but if a javax.ws.rs.core.Response class-loading conflict occurs, remove jsr311-api-1.0.jar from the EAR."
+                  },
+                  {
+                    "title": "Deploying to an application server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000186",
+                    "range": {
+                      "start_unit_id": "p000109",
+                      "end_unit_id": "p000109",
+                      "start_page": 109,
+                      "end_page": 109
+                    },
+                    "summary": "Explains how to deploy the built Cúram EAR to an application server and notes a runtime class-loading issue to watch for. If `javax.ws.rs.core.Response` is already loaded, remove `jsr311-api-1.0.jar` from the EAR because its JAX-RS 1.0 APIs can conflict with server-provided JAX-RS classes. This section is a short deployment note following the build instructions for outbound REST APIs."
+                  },
+                  {
+                    "title": "Configuring a WebSphere application server to use Jersey",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000187",
+                    "range": {
+                      "start_unit_id": "p000110",
+                      "end_unit_id": "p000110",
+                      "start_page": 110,
+                      "end_page": 110
+                    },
+                    "summary": "Explains how to configure WebSphere Application Server 9+ to use the Jersey JAX-RS implementation packaged in the Cúram EAR instead of WebSphere’s default Apache CXF. The key step is setting the WebSphere JAX-RS provider to support only the JAX-RS 2.0 specification. Also includes troubleshooting for adding REST JARs, noting when javax.ws.rs-api-2.0.jar is needed, classpath issues with J2EE_JAR in Eclipse, and extra JARs required for older Java EE 6 application servers."
+                  },
+                  {
+                    "title": "Troubleshooting when adding JARs to your application server or Tomcat environment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000188",
+                    "range": {
+                      "start_unit_id": "p000110",
+                      "end_unit_id": "p000110",
+                      "start_page": 110,
+                      "end_page": 110
+                    },
+                    "summary": "Troubleshoots JAR-related issues when deploying to application servers or Tomcat. Explains that javax.ws.rs-api-2.0.jar is usually already provided, but should be added if javax.ws.rs.* classes are missing, and that the J2EE_JAR Eclipse classpath must point to an up-to-date Java EE JAR. Notes older Java EE 6 servers may need extra JARs and can conflict with JAX-RS 1.0. Also covers configuring WebSphere 9+ to use Jersey by setting the JAX-RS provider to 2.0 instead of Apache CXF."
+                  }
+                ],
+                "node_id": "n000183",
+                "range": {
+                  "start_unit_id": "p000108",
+                  "end_unit_id": "p000110",
+                  "start_page": 108,
+                  "end_page": 110
+                },
+                "summary": "Explains how to build and deploy outbound REST APIs into the Cúram EAR. It lists the required Jersey-related JARs and where to place them for Eclipse development and Ant builds, including J2EE_JAR setup and copying JARs into EJBServer/components/custom/lib. Deployment is standard, but a javax.ws.rs.core.Response class-loading conflict may require removing jsr311-api-1.0.jar. Also covers configuring WebSphere 9+ to use Jersey instead of CXF and troubleshooting missing JAX-RS/JAR issues, especially for older Java EE 6 servers."
+              },
+              {
+                "title": "Adding client request filters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating a client request filter",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000190",
+                    "range": {
+                      "start_unit_id": "p000111",
+                      "end_unit_id": "p000111",
+                      "start_page": 111,
+                      "end_page": 111
+                    },
+                    "summary": "Explains how to add a client request filter as a hook for processing all outbound REST requests. Shows that a filter implements `ClientRequestFilter`, can modify request headers such as adding `Accept-Language: en-US`, and is registered with the client using `client.register(...)` so it applies to every request. Also notes that HTTPS/SSL is handled by the application server, and warns that self-signed certificates may cause `SSLHandshakeException`; accepting them is only for test/development, not production."
+                  },
+                  {
+                    "title": "Registering a client request filter with a client",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000191",
+                    "range": {
+                      "start_unit_id": "p000111",
+                      "end_unit_id": "p000111",
+                      "start_page": 111,
+                      "end_page": 111
+                    },
+                    "summary": "Explains how to add a client request filter to hook into all outbound REST requests and apply shared processing. Shows creating a `ClientRequestFilter` implementation, such as adding an `Accept-Language: en-US` header in `filter(ClientRequestContext)`, and registering it with a client via `client.register(new OutboundRequestFilter())`. Also notes HTTPS/SSL is handled by the application server and warns that self-signed certificates may cause `SSLHandshakeException`, with nonproduction workaround guidance."
+                  }
+                ],
+                "node_id": "n000189",
+                "range": {
+                  "start_unit_id": "p000111",
+                  "end_unit_id": "p000111",
+                  "start_page": 111,
+                  "end_page": 111
+                },
+                "summary": "Explains how to add a client request filter as a hook for all outbound REST requests. Shows implementing `ClientRequestFilter` to centralize request processing, such as adding an `Accept-Language: en-US` header in `filter(ClientRequestContext)`, and registering it with `client.register(...)` so it applies to every request. Notes HTTPS/SSL is handled by the application server and warns that self-signed certificates may trigger `SSLHandshakeException`; accepting them is for test/development only, not production."
+              },
+              {
+                "title": "Communicating over HTTPS/SSL",
+                "level": 3,
+                "children": [],
+                "node_id": "n000192",
+                "range": {
+                  "start_unit_id": "p000111",
+                  "end_unit_id": "p000114",
+                  "start_page": 111,
+                  "end_page": 114
+                },
+                "summary": "Explains how outbound REST requests can use a ClientRequestFilter to apply shared request logic, such as adding an Accept-Language header, by registering the filter with the client. Also notes that HTTPS/SSL is handled by the application server, and that self-signed certificates may cause SSLHandshakeException; Jersey can be configured to trust them in test/development only, not production. The rest of the pages are legal notices, copyright, trademarks, and sample-code/disclaimer information."
+              }
+            ],
+            "node_id": "n000160",
+            "range": {
+              "start_unit_id": "p000098",
+              "end_unit_id": "p000114",
+              "start_page": 98,
+              "end_page": 114
+            },
+            "summary": "Cúram outbound REST APIs use the Jersey client to call external JSON-based services. This section covers setup and packaging in EJBServer/components/custom into Curam.ear, optional auth credentials in the Properties table, and manual addition of required Jersey/third-party JARs. It explains POJO/JSON mapping, custom Jackson serializers/deserializers and ObjectMapper registration, creating and reusing a Jersey Client, making GET/POST/PUT requests, handling responses, authenticating with access tokens, deploying/troubleshooting JAR conflicts, and adding request filters/SSL considerations."
+          }
+        ],
+        "node_id": "n000018",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000114",
+          "start_page": 9,
+          "end_page": 114
+        },
+        "summary": "Cúram supports both inbound and outbound REST integration. This section introduces existing Social Program/Child Welfare APIs, Swagger discovery, and basic REST usage (collection/member GETs, field filtering, POST with JSON, auth/session and error handling). It also covers creating custom inbound APIs when gaps exist, including REST design conventions, JSON resource modeling, facades/operations, build/deploy/test, CORS/CSRF, and GraphQL support. Outbound integration uses Jersey clients to call external JSON services, with setup, JSON mapping, auth, JAR/deployment conflicts, request filters, and SSL considerations."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

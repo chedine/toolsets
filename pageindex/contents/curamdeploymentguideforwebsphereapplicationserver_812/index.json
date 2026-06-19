@@ -1,0 +1,1083 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "54d03ac635dead8c",
+    "title": "Cúram 8.1.2 Deploying on IBM® WebSphere® Application Server Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramDeploymentGuideForWebsphereApplicationServer_812.pdf",
+    "source_type": "pdf",
+    "sha256": "54d03ac635dead8cfcc5c42b5cdbc049552e755db29abd67522ba2ed35a23a94",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:23:55+00:00",
+    "page_count": 54,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramDeploymentGuideForWebsphereApplicationServer_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Deploying on IBM® WebSphere® Application Server Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000054",
+      "start_page": 1,
+      "end_page": 54
+    },
+    "summary": "WebSphere deployment guide for Cúram 8.1.2 (applies to 8.1, 8.1.1, 8.1.2). Covers building deployable EARs with SDEJ Ant targets, including the main application EAR and web services EAR, required WAS_HOME setup, EAR contents, and optional facade generation. Explains WebSphere Application Server configuration: web server plug-ins, security/LDAP and user registry, authentication logging, custom security properties, cryptography, startup/shutdown, application deployment, JSP precompilation, and deployment testing. Includes a long manual configuration walkthrough for console/wsadmin use, Db2 and Oracle data sources, admin and transport security, JAAS, JMS and Service Integration Bus, historical log files, and post-configuration tasks. Also covers Network Deployment basics: creating profiles, federating nodes, node synchronization, BOOTSTRAP_ADDRESS considerations, and deploying on federated nodes. The final pages are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice for the document and supported product, directing readers to the “Notices” section on page 53 before use. Includes Merative copyright information (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section explains how to deploy Cúram on IBM WebSphere Application Server. It covers building EAR files for the main application and web services, required environment variables, EAR contents, optional facade generation, multiple EAR packaging, and alternative targets for web-client-only or server-only builds. It also introduces WebSphere configuration at a high level, including profiles, data sources, JMS, security, and Ant-based configure targets."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram 8.1.2 WebSphere deployment guide covering automatic configuration, web server plug-in setup, security configuration, server start/stop/restart, application install/uninstall, JSP precompilation, testing, and manual config. Key facts: `configure` uses `AppServer.properties`/`Bootstrap.properties`, may overwrite the default profile unless `-Dkeep.profile=true`; `configurewebserverplugin` is for non-z/OS topologies; identity-only/LDAP and user-registry behavior are configurable; SSL/LTPA hardening and cryptographic password handling are discussed; deployment requires running database and `prepare.application.data` before first start."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers WebSphere Application Server deployment setup: using the Administrative Console, enabling scripting credentials, and editing sas.client.props, soap.client.props, and server.policy. Explains creating the DB login alias and configuring Db2 or Oracle JDBC providers and data sources (JNDI names, auth aliases, LOB settings, driver paths, XA/non-XA). Also includes saving the master configuration, enabling administrative and application security, SSO/HTTPS settings, TLS v1.2 configuration, required JAR updates, server restart, and adding users to the registry."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section covers IBM WebSphere Application Server deployment configuration for Cúram. It includes setting up JAAS login modules, disabling cross-cluster authentication, and configuring server/JVM settings, timer service, ports, virtual hosts, and session security. It also details creating and securing a Service Integration Bus, JMS connection factories, and required queues/topics via the admin console and wsadmin. Useful if you need step-by-step WebSphere setup values, aliases, ports, bus/security settings, or JMS resource configuration."
+          },
+          {
+            "title": "Edition — pages 45-52",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000052",
+              "start_page": 45,
+              "end_page": 52
+            },
+            "summary": "This section covers IBM WebSphere Application Server deployment for Cúram: configuring JMS topics, queue and topic activation specs, historical log file retention, and creating SIB and Timer Service database tables. It then walks through manual application deployment, including class loading, user creation, security role mapping, RunAs setup, and starting the app. The final pages explain network deployment basics: creating profiles, federating nodes, synchronization, security jar placement, BOOTSTRAP_ADDRESS/port considerations, and deploying applications on a node."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000052",
+          "start_page": 5,
+          "end_page": 52
+        },
+        "summary": "Cúram 8.1.2 WebSphere deployment guide. Covers building EARs (main app and web services), required env vars, EAR contents, optional facade generation, and web-client/server-only targets. Explains WebSphere setup: profiles, plug-ins, security, data sources (Db2/Oracle), JAAS, JMS/SIB, timer service, and manual console/wsadmin configuration. Also includes application install/start, JSP precompilation, testing, historical log retention, and network deployment/federation details like node sync, BOOTSTRAP_ADDRESS, and deploying on federated nodes."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "Contains legal and licensing notices: sample data is fictitious, sample programs may be copied/modified/distributed under the Merative Client Agreement, but are provided “AS IS” without warranty or liability. Includes a link to the Merative privacy policy, plus trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "This section contains legal notices for sample data and code, including fictitious-name disclaimers, sample-program copyright/license terms, and a link to Merative’s privacy policy. It lists trademarks and registered trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes that other names may be trademarks of their owners. It also includes the copyright notice © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000053",
+          "end_unit_id": "p000053",
+          "start_page": 53,
+          "end_page": 53
+        },
+        "summary": "Legal notices governing use of the publications: personal and enterprise copying is allowed only with proprietary notices preserved, while distribution, display, or derivative works outside the stated limits require Merative’s consent. It also states that no additional rights are granted, export laws apply, Merative may withdraw permission, and the material is provided “AS IS” without warranty. The section disclaims responsibility for non-Merative products and external websites and ends with © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the guide’s WebSphere deployment chapter. Lists sections on building EAR files, configuring WebSphere Application Server, security, server start/stop, application deployment, JSP precompilation, testing, manual configuration, JMS, historical logs, and network deployment. Includes page references for topics like data sources, transport security, Service Integration Bus, node federation, and post-configuration tasks. Useful as a navigation index to the deployment and administration procedures."
+      },
+      {
+        "title": "1 Deploying on IBM® WebSphere® Application Server",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Building EAR files",
+            "level": 2,
+            "children": [
+              {
+                "title": "The enterprise application EAR file",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000010",
+                  "start_page": 9,
+                  "end_page": 10
+                },
+                "summary": "Explains how to build the IBM WebSphere Application Server EAR for Cúram deployment. Covers prerequisite setup (WAS_HOME, base WebSphere installation, built application), the `build websphereEAR` target, output location (`<SERVER_DIR>/build/ear/WAS`), and the role of generated Java files and deployment descriptors. Describes EAR contents, including META-INF files, core JARs/WARs, and optional facade JAR generation via `-Denablefacade=true`. Notes that EARs cannot be built for H2 database."
+              },
+              {
+                "title": "The web services application",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Building the web services EAR file",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to build the web services EAR for IBM WebSphere by running the `build websphereWebServices` target from the project root. Notes optional overrides for web IP address, JNDI context provider URL, and context factory name, and states the output is `<SERVER_MODEL_NAME>WebServices.ear` in `<SERVER_DIR>/build/ear/WAS`. Requires a fully built Cúram application first. Also describes that the target packages generated Java files and deployment descriptors for model-defined web service components, with BPO classes mapped to `webservice` stereotypes."
+                  },
+                  {
+                    "title": "Contents of web services EAR file",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section describes the structure and contents of the Cúram web services EAR file. It lists the META-INF files (application.xml, IBM WAS extension files, was.policy, MANIFEST.MF) and the web service WAR contents, including key JARs such as coreinf.jar, axis.jar, and appwebservices.jar, plus server-config.wsdd. It also notes that deployed Cúram web services expose their own WSDL and gives an example service URL."
+                  },
+                  {
+                    "title": "Web service WSDL",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Describes the structure and contents of the Cúram web services EAR/WAR, including META-INF files (application.xml, IBM WAS extension files, was.policy, MANIFEST.MF) and WEB-INF/lib JARs (coreinf.jar, axis.jar, appwebservices.jar) plus server-config.wsdd for mapping BPOs to web services. It also notes that web service interfaces wrap publicly available BPOs and that each deployed Cúram web service exposes its own WSDL at its service URL."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Explains how to build the Cúram web services EAR with `build websphereWebServices`, including optional IP/JNDI overrides and the requirement for a fully built application first. Describes how model-defined `webservice` BPOs are packaged into the EAR and its structure: META-INF files, `webservices.war`, support JARs (`coreinf.jar`, `axis.jar`, `appwebservices.jar`), and `server-config.wsdd` for BPO-to-web-service mapping. Notes that deployed services expose their own WSDL."
+              },
+              {
+                "title": "Multiple EAR files",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains optional `deployment_packaging.xml` for building multiple EAR files in WebSphere deployments. The file goes in `SERVER_DIR/project/config` and lets you split client components across WAR/EAR files and control EAR configuration. Shows example `<deployment-config>` with multiple `<ear>` entries, each specifying `name`, optional `requireServer`, `components`, `context-root`, and optional `custom-web-xml`. Notes output EARs go to `SERVER_DIR/build/ear/WAS`, and only one EAR per cluster should have `requireServer=true` to avoid server module conflicts."
+              },
+              {
+                "title": "Alternative targets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Describes alternative `websphereEAR` build targets for generating separate Cúram `.ear` files: web client only (`-Dclient.only=true`) or server only (`-Dserver.only=true`), useful when deploying client and server on different machines, such as for external access security. Also notes the need for a fully built application and references custom web.xml handling and environment-variable paths from the preceding configuration context."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000013",
+              "start_page": 9,
+              "end_page": 13
+            },
+            "summary": "Explains how to package Cúram for IBM WebSphere Application Server by building EAR files. Covers the main `build websphereEAR` target, required `WAS_HOME`, need for a fully built application, H2 not supported, and the EAR contents (generated deployment descriptors, core JARs/WARs, optional facade JARs via `-Denablefacade=true`). Also describes the web services EAR (`build websphereWebServices`), its WSDL-based packaging, and optional `deployment_packaging.xml`/alternative targets for splitting client and server into multiple EARs."
+          },
+          {
+            "title": "1.2 Configuring WebSphere® Application Server",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring a web server plug-in",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains how to configure a web server plug-in in WebSphere Application Server when a web server exists in the topology. Covers adding web server virtual hosts to client hosts, propagating the plug-in key ring, and mapping deployed application modules to the web server. Notes that the configurewebserverplugin target can be run after deployment/redeployment and only remaps redeployed apps, requires the mandatory -Dserver.name argument, and should not be used on z/OS. Also references HTTP verb permissions for verb tampering mitigation."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000016",
+              "start_page": 14,
+              "end_page": 16
+            },
+            "summary": "This section explains how to configure IBM WebSphere Application Server for Cúram using SDEJ Ant targets. It covers automatic profile, datasource, JMS, security, and JVM setup via build configure, including AppServer.properties/Bootstrap.properties, default profile values, heap sizing, and Type 2 vs Type 4 datasources. It also describes configuring a web server plug-in when a web server exists in the topology, including host, key ring, and module mapping, via build configurewebserverplugin -Dserver.name=..., noting it works after deployment/redeployment and should not be used on z/OS."
+          },
+          {
+            "title": "1.3 Configuring security",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring identity only and LDAP",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to configure IBM WebSphere Application Server for identity-only authentication combined with LDAP by setting `curam.security.check.identity.only=true` in `AppServer.properties` before running the Ant `configure` target. Notes this makes `CuramLoginModule` compatible with the setup, but additional manual steps may still be required. Includes troubleshooting for startup failures, especially adding a WebSphere z/OS-generated username to the login module `exclude_usernames` list when `SECJ0270E` appears in `SystemOut.log`."
+              },
+              {
+                "title": "User registry",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains that when CuramLoginModule is configured for identity-only authentication, IBM WebSphere Application Server’s user registry is queried, unlike the default behavior. Notes this can be overridden before running Ant configure by setting curam.security.user.registry.enabled in AppServer.properties, or for an existing server by setting the corresponding CuramLoginModuleuser_registry_enabled property via the system JAAS login module setup."
+              },
+              {
+                "title": "Logging the authentication process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how to trace CuramLoginModule authentication for debugging. Set `curam.security.login.trace=true` in `AppServer.properties` before running Ant configure, or for an existing server set the JAAS `login_trace` property in the System JAAS Login Module. Trace entries are written to `SystemOut.log`. This section follows discussion of user registry/authentication precedence and external user type controls."
+              },
+              {
+                "title": "Establishing an alternate exclude username delimiter",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains how to change the CuramLoginModule exclude-username delimiter when usernames contain commas, using `curam.security.usernames.delimiter` in `AppServer.properties` before Ant configure, or by updating an existing system JAAS setting. Also notes WebSphere security cache behavior: cached user credentials can prevent the login module from running for about 10 minutes of inactivity. Finally, describes the `com.ibm.ws.security.webChallengeIfCustomSubjectNotFound` security property and its impact on LTPA Token2 logins, especially cluster failover and reauthentication behavior."
+              },
+              {
+                "title": "WebSphere® Application Server caching behavior",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Covers WebSphere Application Server security caching and related login behavior. It explains that user information and credentials are cached for 10 minutes of inactivity, preventing the login module from being invoked while the cache entry is valid. It also notes security custom properties for LTPA Token2 single sign-on, especially com.ibm.ws.security.webChallengeIfCustomSubjectNotFound, which defaults to false for seamless cluster failover but can be set to true to force reauthentication when a custom subject is missing."
+              },
+              {
+                "title": "Security custom properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains security custom properties for single sign-on LTPA Token2 logins, especially WebSphere’s `com.ibm.ws.security.webChallengeIfCustomSubjectNotFound`. By default it is set to `false` so sessions can move between cluster servers without re-prompting for credentials, even in failover. If set to `true`, users may be challenged again when a custom Subject is missing, which can affect downstream attributes. Also notes this property can be changed during JAAS login module setup."
+              },
+              {
+                "title": "Security hardening measures",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "The section explains WebSphere application security hardening for LTPA tokens: after login, tokens are used for subsequent requests and cannot be invalidated on logout, so IBM recommends requiring SSL and limiting LTPA cookies to SSL only. It also advises using cryptography to encrypt passwords and notes that default settings should be strengthened for production. Finally, it introduces Ant targets for starting, stopping, and restarting WebSphere, including required parameters and the need to run database and prepare.application.data before first startup."
+              },
+              {
+                "title": "Cryptography",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "This section explains Cúram cryptography for password encryption and notes that detailed guidance is in the Cúram Security Handbook. It advises modifying default cryptography settings for production and assessing whether defaults are acceptable in development/test. The page also discusses WebSphere security hardening around LTPA tokens, recommending SSL-only protections because logout does not invalidate tokens."
+              }
+            ],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000020",
+              "start_page": 17,
+              "end_page": 20
+            },
+            "summary": "Cúram WebSphere security setup covers configuring identity-only authentication with LDAP via AppServer.properties before Ant configure, plus manual JAAS updates for existing servers. It explains when the WebSphere user registry is queried, how to enable login tracing, and how to change the exclude-username delimiter. It also documents 10-minute WebSphere security caching and the LTPA Token2 property com.ibm.ws.security.webChallengeIfCustomSubjectNotFound, which affects cluster failover and reauthentication. Security hardening guidance emphasizes SSL-only LTPA tokens and stronger production cryptography settings."
+          },
+          {
+            "title": "1.4 Starting, stopping, and restarting IBM® WebSphere® Application Server",
+            "level": 2,
+            "children": [],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000021",
+              "start_page": 21,
+              "end_page": 21
+            },
+            "summary": "Explains how to start, stop, and restart IBM WebSphere Application Server using Ant targets from the <SERVER_DIR> directory, assuming AppServer.properties is configured. The startserver target requires -Dserver.name (example: CuramServer). It warns that before first startup, the database target must be run followed by prepare.application.data, and this sequence must be repeated whenever the database target is rerun to avoid login transaction timeouts and application initialization failures."
+          },
+          {
+            "title": "1.5 Deploying an application",
+            "level": 2,
+            "children": [],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "This section explains how to deploy Cúram applications to WebSphere Application Server using SDEJ Ant targets. It notes that the provided IBM scripts support only a simple single-server configuration in Express or Base editions. It describes the installapp target for deploying an EAR, requiring Dserver.name, Dear.file, and Dapplication.name, and gives an example command. It also states that installation automatically starts the application, so no server restart is needed, and that the server-module EAR must be deployed before any client-only EAR files."
+          },
+          {
+            "title": "1.6 Pre-compiling JSPs",
+            "level": 2,
+            "children": [],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000023",
+              "start_page": 23,
+              "end_page": 23
+            },
+            "summary": "This section explains how to pre-compile JSPs during deployment using the Ant precompilejsp target before installing a client EAR. It notes that pre-compiling JSPs improves first-page load time in the browser. The only listed option is -Dear.file, the fully qualified EAR file name to pre-compile."
+          },
+          {
+            "title": "1.7 Testing the deployment",
+            "level": 2,
+            "children": [],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Explains how to verify a deployment on WebSphere Application Server: start the server, browse to `https://<host>:<port>/<context-root>`, log in with a valid Cúram user, and confirm the app redirects correctly. Notes that no server restart is needed after deployment, and that a web services app may also need installation. It also clarifies the example EAR/application names are illustrative and may differ in customized deployments."
+          },
+          {
+            "title": "1.8 Manual WebSphere® Application Server configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "The administrative console",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how to use the IBM WebSphere Application Server Administrative Console to configure the server: start the default server (server1), open the console at http://localhost:9060/ibm/console, and navigate via the console’s left-hand tree and right-hand detail pane. Also notes that the first login can use any username. Includes scripting setup for Ant by editing sas.client.props and soap.client.props in the profile properties directory to use property-file credentials matching the console/WebSphere login."
+              },
+              {
+                "title": "Scripting support",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "This section explains how to enable scripted administration in IBM WebSphere Application Server by editing client property files. It instructs you to update `sas.client.props` and `soap.client.props` in `profiles/AppSvr01/properties` so Ant scripts can authenticate using stored credentials. Key settings include `com.ibm.CORBA.loginSource=properties` and matching the login userid/password to the Administration Console credentials (example: `websphere/websphere`). Open this node if you need the exact WebSphere property changes required for script-based execution."
+              },
+              {
+                "title": "Creating the data source login alias",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Explains how to create a data source login alias in the WebSphere administrative console for supported databases: IBM DB2, IBM DB2 for z/OS, and Oracle. It instructs users to go to Security > Global security, open Java Authentication and Authorization Service, choose J2C authentication data, and click New to configure the alias. The section is part of server setup and includes preceding WebSphere login/timeout and server.policy configuration notes."
+              },
+              {
+                "title": "Configure Db2® data sources",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configure the Db2® environment variable",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Sets the Db2 environment variable in WebSphere Application Server. The procedure is to open Environment > WebSphere variables, select DB2_JCC_DRIVER_PATH, and point it to the directory containing the Type 4 JDBC drivers, typically the SDEJ drivers folder (for example, D:\\Curam\\CuramSDEJ\\drivers). Also notes this variable is used when configuring Db2 data sources and may need to reference the Db2 Connect license jar for IBM z/OS connectivity."
+                  },
+                  {
+                    "title": "Configure the database driver provider",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Instructions for configuring the Db2 database driver provider in WebSphere: navigate to Resources > JDBC > JDBC providers, choose the correct scope, add a new provider, set Database type to DB2, Provider type to DB2 Using IBM JCC Driver, and Implementation type to XA data source. The section notes that defaults usually need no change unless connecting to an IBM z/OS database, in which case DB2_JCC_DRIVER_PATH must point to the directory containing the Db2 Connect license JAR."
+                  },
+                  {
+                    "title": "Configure the database driver data source",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Adds and configures DB2 JDBC data sources for each application database: curamdb, curamsibdb, and curamtimerdb. Covers creating each data source under DB2 Using IBM JCC Driver (XA), setting JNDI names, database/server/port and CMP options, assigning component- and container-managed authentication aliases, and then setting the custom property fullyMaterializeLobData to false."
+                  }
+                ],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000028",
+                  "start_page": 27,
+                  "end_page": 28
+                },
+                "summary": "Explains how to configure Db2 data sources in WebSphere Application Server. Covers setting DB2_JCC_DRIVER_PATH to the Type 4 drivers directory (and Db2 Connect license jar for z/OS), creating a DB2 Using IBM JCC Driver (XA) provider, and adding data sources for curamdb, curamsibdb, and curamtimerdb with JNDI names, host/port/database settings, authentication aliases, CMP enabled, and fullyMaterializeLobData set to false."
+              },
+              {
+                "title": "Configure an Oracle Database data source",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configure the Oracle environment variable",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Sets the WebSphere ORACLE_JDBC_DRIVER_PATH environment variable for Oracle Database support. It instructs you to open Environment > WebSphere variables, edit ORACLE_JDBC_DRIVER_PATH, and point it to the SDEJ drivers directory containing the Type 4 driver, then confirm. This section appears in the broader Oracle Database configuration flow and precedes JDBC provider setup, including XA and non-XA driver configuration."
+                  },
+                  {
+                    "title": "Configure the XA database driver",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "How to add and configure the Oracle XA JDBC driver in WebSphere. It instructs selecting Resources > JDBC > JDBC providers, creating a new provider with Database type Oracle, Provider type Oracle JDBC Driver, and Implementation type XA data source, naming it “Oracle JDBC Driver (XA),” verifying the ORACLE_JDBC_DRIVER_PATH class path, and reviewing configuration properties before finishing."
+                  },
+                  {
+                    "title": "Configure the non-XA database driver",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Introduces the start of configuring the non-XA database driver in WebSphere. It says to use Resources > JDBC > JDBC providers to add and configure the non-XA driver, following the earlier Oracle/JDBC setup context. This section appears to continue the driver setup procedure for database connectivity, likely alongside the XA driver and Oracle environment variable configuration."
+                  },
+                  {
+                    "title": "Configure the XA database driver data sources",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how to configure XA database driver data sources in Cúram/WebSphere for Oracle. The steps are repeated twice for curamdb and thencuramsibdb. It directs you to open the existing DB2 Using IBM JCC Driver(XA) provider, add a new data source, set the data source name and JNDI name, and enter an Oracle JDBC URL using either service name or SID format. It also specifies using the Oracle 11g data store helper and leaving other fields unchanged."
+                  },
+                  {
+                    "title": "Configure the non-XA database driver data source",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Explains how to create and configure a non-XA Oracle JDBC data source in WebSphere Application Server. It instructs selecting the Oracle JDBC provider, adding a new data source named curamtimerdb with JNDI name jdbc/curamtimerdb, and setting the Oracle URL for either service name or SID. It also specifies using the Oracle 11g data store helper and notes that the WebSphere admin console does not support the extra-slash service-name URL format, so the standard URL form should be used."
+                  }
+                ],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000031",
+                  "start_page": 29,
+                  "end_page": 31
+                },
+                "summary": "Explains how to configure Oracle Database connectivity in WebSphere: set ORACLE_JDBC_DRIVER_PATH to the SDEJ drivers directory, create Oracle JDBC providers for XA and non-XA drivers, then add data sources. XA data sources are configured for curamdb and thencuramsibdb with Oracle service-name or SID JDBC URLs, Oracle 11g data store helper, and recovery/component-managed authentication aliases. The non-XA data source curamtimerdb is similarly configured, with a note that WebSphere admin console does not support Oracle’s extra-slash service-name URL format."
+              },
+              {
+                "title": "Save the master configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section explains two WebSphere administration tasks: saving the master configuration after datasource changes, and configuring administration security. It notes an Oracle service name JDBC URL format issue in the admin console, then instructs setting the component-managed authentication alias and saving changes via the Message(s) box. The security procedure covers switching the realm definition to Federated repositories, setting the primary admin user (websphere), enabling admin and application security, disabling Java 2 security, and applying the configuration."
+              },
+              {
+                "title": "Configure administration security",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Configures IBM WebSphere Application Server administration security. It changes Global security to use Federated repositories, sets the primary administrative username to websphere, uses automatically generated server identity, and enables case-insensitive authorization. It also sets the default admin password, marks the federated repository as current, enables both administrative and application security, disables Java 2 security for local resource access, and applies the changes."
+              },
+              {
+                "title": "Configure transport layer security",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "This section explains how to configure TLS for IBM WebSphere Application Server. It instructs administrators to open each SSL configuration, go to QoP settings, set the protocol to TLSv1.2, and choose Strong cipher suites. It notes TLS v1.2 requires Java 7 or later, recommends periodically reviewing ciphers, and ends with applying, confirming, and saving the master configuration."
+              },
+              {
+                "title": "Restart the application server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Restart WebSphere Application Server after enabling security. Stop the server, copy required JARs first: Registry.jar into the WAS lib directory and CryptoConfig.jar into the Java jre/lib/ext directory after generating it with the configtest Ant target. Then restart the server (for example, server1) and open the Administrative Console using the newly configured credentials. This step is mandatory so security changes take effect and additional users can be added to the user registry."
+              },
+              {
+                "title": "Add users to the user registry",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "This section explains that, after enabling global security and restarting WebSphere Application Server, the required administrative users and database user must be manually added to the user registry. It notes that the configured registry is used for authentication and instructs users to open the Administrative Console and go to Users and Groups > Manage Users, then select Create."
+              },
+              {
+                "title": "Set up the system JAAS login module",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Add the login module",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Configures the JAAS system login module for WebSphere application security. Instructions cover adding `curam.util.security.CuramLoginModule` under Security > Global security > Java Authentication and Authorization Service > System logins, for the `DEFAULT`, `WEB_INBOUND`, and `RMI_INBOUND` aliases. The module must use `REQUIRED` strategy and `Use login module proxy`. It also documents custom properties such as `exclude_usernames` (including WebSphere admin and database users), optional delimiter, and `login_trace` for debugging."
+                  },
+                  {
+                    "title": "Reorder the login module",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Instructions for reordering the Curam login module in WebSphere. It applies to the DEFAULT, WEB_INBOUND, and RMI_INBOUND aliases under Security > Global security > Java Authentication and Authorization Service > System logins. The procedure uses Set Order and Move Up to move `curam.util.security.CuramLoginModule` to the top of the login module list, then confirms with OK."
+                  },
+                  {
+                    "title": "Disable cross-cluster authentication",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains how to disable cross-cluster authentication in WebSphere by setting the custom property `com.ibm.ws.security.webChallengeIfCustomSubjectNotFound` to `false`, allowing seamless LTPA Token2 session transfer between cluster members without reauthentication. The section also begins server configuration tasks, including setting the JNDI lookup port by matching `BOOTSTRAP_ADDRESS` to `curam.server.port`, and starts ORB pass-by-reference configuration."
+                  }
+                ],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000036",
+                  "start_page": 35,
+                  "end_page": 36
+                },
+                "summary": "Configures WebSphere Application Server’s JAAS system login module for application security across the DEFAULT, WEB_INBOUND, and RMI_INBOUND aliases. It explains how to add `curam.util.security.CuramLoginModule` as a REQUIRED login module with the login module proxy enabled, set custom properties such as `exclude_usernames` (including admin and database users), and optionally enable `login_trace` for debugging. It also covers reordering the module so CuramLoginModule is placed at the top of each alias’s login list."
+              },
+              {
+                "title": "Configuring the server",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configure the JNDI lookup port",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Sets the WebSphere JNDI lookup port by editing the server’s BOOTSTRAP_ADDRESS port under Servers > Server Types > WebSphere application servers. The port must match curam.server.port in AppServer.properties, then the configuration is saved to the master config. This section is part of server setup and sits alongside related WebSphere settings like cross-cluster authentication and ORB configuration."
+                  },
+                  {
+                    "title": "Configure the ORB pass by reference",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Configures WebSphere application server settings, including disabling cross-cluster authentication for seamless failover, setting the JNDI lookup/BOOTSTRAP_ADDRESS port to match curam.server.port, and beginning the ORB pass-by-reference configuration under Container Services. Useful for administrators adjusting cluster security and server communication settings."
+                  },
+                  {
+                    "title": "Configure the Java Virtual Machine",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Instructions for configuring the WebSphere Java Virtual Machine for Cúram: navigate to the target application server, open Java and Process Management > Process definition > Java Virtual Machine, set initial and maximum heap size to 1024, then add custom properties including com.ibm.websphere.security.util.authCacheCustomKeySupport=false and, on non-Windows platforms, java.awt.headless=true. End by saving the master configuration. The page also begins the next section on configuring the timer service for the EJB timer scheduler."
+                  },
+                  {
+                    "title": "Configure the timer service",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "This section explains how to configure the WebSphere EJB timer service. It instructs you to navigate to the application server, open EJB Container Settings, select EJB timer service settings, and choose the “Use internal EJB timer service scheduler instance” option. Useful if you need the exact server-side settings for timer scheduling in the master configuration."
+                  },
+                  {
+                    "title": "Configure the port access",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000039",
+                      "start_page": 39,
+                      "end_page": 39
+                    },
+                    "summary": "Configures WebSphere port access for Cúram by adding two user-defined TCP/IP ports: CuramClientEndPoint on host * port 9044 and CuramWebServicesEndPoint on host * port 9082. It then creates matching web container transport chains, CuramClientChain using the WebContainer-Secure template and CuramWebServicesChain using the WebContainer template, each bound to the existing port. This section is a step-by-step server configuration procedure for client and web services endpoints."
+                  },
+                  {
+                    "title": "Configure session security integration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000040",
+                      "end_unit_id": "p000040",
+                      "start_page": 40,
+                      "end_page": 40
+                    },
+                    "summary": "This section explains how to configure session security integration for Cúram web applications in WebSphere. It instructs you to navigate to a specific application server, open Session management under Container Settings, uncheck Security integration, confirm the change, and save it to the master configuration. This node is useful if you need the exact administrative steps to disable security integration as part of Cúram web app setup."
+                  }
+                ],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000039",
+                  "start_page": 37,
+                  "end_page": 39
+                },
+                "summary": "Covers core WebSphere server setup for Cúram: disable cross-cluster authentication for seamless cluster failover, set the JNDI lookup BOOTSTRAP_ADDRESS port to match curam.server.port, configure ORB pass-by-reference, tune the JVM (heap 1024/1024 plus custom properties), enable the internal EJB timer service with jdbc/curamtimerdb, and define client/web services port access and transport chains (9044 and 9082). Useful for administrators configuring server communication, clustering, timers, and endpoint ports."
+              },
+              {
+                "title": "Configure the Service Integration Bus",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Creates the Service Integration Bus for Cúram in WebSphere. The procedure navigates to Service integration > Buses, creates a new bus named CuramBus with default settings, and proceeds through the bus security wizard using the default options. This section is part of broader WebSphere setup tasks, following session security integration and virtual host configuration."
+              },
+              {
+                "title": "Configuring JMS",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configure the JMS connection factories",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000043",
+                      "start_page": 41,
+                      "end_page": 43
+                    },
+                    "summary": "Explains how to configure JMS connection factories in WebSphere for Cúram. It creates two Default messaging provider factories: CuramQueueConnectionFactory and CuramTopicConnectionFactory, both on CuramBus with specific JNDI names and authentication aliases. It notes the need to save the master configuration. The section also warns that manual console steps cannot correctly set security for these factories, so wsadmin must be used to verify or set authDataAlias in the WebSphere resources.xml and save the changes."
+                  },
+                  {
+                    "title": "Configure the required queues",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Steps to configure the required WebSphere JMS queues for CuramBus. It instructs creating queue destinations for DPEnactment, DPError, CuramDeadMessageQueue, WorkflowActivity, WorkflowEnactment, and WorkflowError, naming them SIB_<QueueName>. It also specifies exception destination mappings for each queue and then creating matching JMS provider queue entries with Name <QueueName>, JNDI name jms/<QueueName>, Bus Name CuramBus, and Queue Name SIB_<QueueName>."
+                  },
+                  {
+                    "title": "Configure the required topics",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "Configures IBM WebSphere JMS resources required by the application. It adds the topic CuramCacheInvalidationTopic under the Default messaging provider with JNDI jms/CuramCacheInvalidationTopic, bus CuramBus, topic space Default.Topic.Space, and persistent delivery mode, then saves the master configuration. It also begins setup of queue activation specifications for DPEnactment, DPError, CuramDeadMessageQueue, WorkflowActivity, WorkflowEnactment, and WorkflowError, using queue-specific names, eis/<QueueName> AS JNDI, destination type Queue, and the same authentication alias as the jdbc/curamdb data source."
+                  },
+                  {
+                    "title": "Configure the required queue activation specifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "Configures IBM WebSphere JMS activation specifications for required queues. Under Resources > JMS > JMS providers > Default messaging provider > Activation specifications, create one spec for each queue: DPEnactment, DPError, CuramDeadMessageQueue, WorkflowActivity, WorkflowEnactment, and WorkflowError. For each, set Name to <QueueName>, JNDI name to eis/<QueueName>AS, Destination Type to Queue, Destination JNDI name to jms/<QueueName>, Bus Name to CuramBus, and use the same Authentication Alias as the jdbc/curamdb data source. Save the master configuration."
+                  },
+                  {
+                    "title": "Configure the required topic activation specifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000046",
+                      "end_unit_id": "p000046",
+                      "start_page": 46,
+                      "end_page": 46
+                    },
+                    "summary": "Instructions for configuring the Curam cache invalidation topic activation specification in WebSphere. It adds a new activation spec named CuramCacheInvalidationTopic with JNDI name eis/CuramCacheInvalidationTopicAS, destination type Topic, destination JNDI name jms/CuramCacheInvalidationTopic, bus CuramBus, and the same authentication alias as the jdbc/curamdb data source. It also warns that durableSubscriptionHome must be blank and must be checked/cleared whenever this activation spec is updated, followed by saving, synchronizing nodes, and restarting application servers."
+                  }
+                ],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000046",
+                  "start_page": 41,
+                  "end_page": 46
+                },
+                "summary": "Covers WebSphere JMS setup for Cúram: create CuramQueueConnectionFactory and CuramTopicConnectionFactory on CuramBus, then use wsadmin to verify/set authDataAlias because console steps cannot configure security correctly. It also defines required JMS queues (DPEnactment, DPError, CuramDeadMessageQueue, WorkflowActivity, WorkflowEnactment, WorkflowError) with SIB_* destinations and exception routing, plus CuramCacheInvalidationTopic. Finally, it configures queue and topic activation specs (eis/*AS, CuramBus, jdbc/curamdb auth alias) and warns durableSubscriptionHome on the topic activation spec must stay blank and nodes/servers be synchronized/restarted."
+              },
+              {
+                "title": "Configure historical log files",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Explains how to configure a server’s historical JVM log retention in WebSphere Application Server by setting the Maximum Number of Historical Log Files to 30 for both System.out and System.err, then saving the configuration. Also begins post-configuration tasks, including creating required Service Integration Bus database tables using the SIB DDL Generator command with system, platform, schema, database, and user parameters, which outputs SQL to run on the target database."
+              },
+              {
+                "title": "Post configuration tasks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Post configuration tasks for WebSphere deployment. Covers configuring JVM historical log files to keep 30 entries each for System.out and System.err, saving changes to the master configuration, and creating required database tables for the Service Integration Bus. It explains using IBM’s SIB DDL Generator to produce SQL, with example command-line options for system, platform, schema, database, and user, then running the generated SQL on the target database."
+              }
+            ],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000047",
+              "start_page": 24,
+              "end_page": 47
+            },
+            "summary": "Manual IBM WebSphere Application Server setup guidance for Cúram. Covers Administrative Console use and scripting properties, creating DB2/Oracle data source login aliases and JDBC providers/data sources, configuring security (federated repositories, admin/application security, TLSv1.2), restarting and populating the user registry, setting JAAS login modules, server/JMS/SIB configuration, historical log retention, and generating SIB database tables. Open if you need step-by-step console settings, required ports, aliases, queues/topics, or post-install database scripts."
+          },
+          {
+            "title": "1.9 Application deployment",
+            "level": 2,
+            "children": [],
+            "node_id": "n000075",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "This section explains how to deploy a Cúram enterprise application on IBM WebSphere Application Server using the Administration Console. It covers installing a new EAR from the default build path, choosing Fast Path install options, mapping modules to servers or clusters, finishing installation, saving the master configuration, and setting the application’s Class loading and update detection property. It also notes the Timer Service database tables must be created beforehand and warns that aborted installs must be cancelled properly."
+          },
+          {
+            "title": "1.10 Network deployment",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating profiles",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Explains how to create WebSphere profiles for Cúram 8.1.2: create at least two profiles, one deployment manager and one or more application server (federated server) profiles, using the Profile Creation Wizard and enabling administrative security during creation. It also covers federating a node by starting the Deployment Manager and running addNode with the SOAP Connector host/port, and notes that node configuration is done in the Deployment Manager console and synchronized to federated servers."
+              },
+              {
+                "title": "Federating a node",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Explains how to federate an application server node into a WebSphere Network Deployment cell. It recommends creating separate profiles for the Deployment Manager and federated servers, enabling administrative security during profile creation, starting the Deployment Manager with `startServer dmgr`, and adding the node with `addNode <deploymgr host> <deploymgr port>` using the SOAP connector host/port. It also notes that node configuration is done in the Deployment Manager console and synchronized to federated servers, and that the Node Agent must be started."
+              },
+              {
+                "title": "Configuring a node",
+                "level": 3,
+                "children": [],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000051",
+                  "start_page": 50,
+                  "end_page": 51
+                },
+                "summary": "Explains how to configure a federated WebSphere node after federation. Covers starting the Node Agent, using the Deployment Manager Admin Console to start/stop servers, and forcing synchronization of master configuration to nodes. Also notes manual configuration differences, copying Registry.jar and CryptoConfig.jar for admin security, and checking BOOTSTRAP_ADDRESS/curam.server.port before building the EAR if the port is not 2809."
+              },
+              {
+                "title": "Deploying on the Node",
+                "level": 3,
+                "children": [],
+                "node_id": "n000080",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000054",
+                  "start_page": 52,
+                  "end_page": 54
+                },
+                "summary": "This section gives a brief deployment note: follow section 1.9 “Application deployment” to manually deploy applications on the required server, then manage them through the Deployment Manager Administration Console. The remaining pages are legal and publication notices, including usage permissions, warranty disclaimers, sample code terms, privacy policy, and trademark information."
+              }
+            ],
+            "node_id": "n000076",
+            "range": {
+              "start_unit_id": "p000049",
+              "end_unit_id": "p000054",
+              "start_page": 49,
+              "end_page": 54
+            },
+            "summary": "Covers WebSphere Network Deployment for Cúram 8.1.2: creating separate deployment manager and application server profiles, enabling administrative security, federating a node with `startServer dmgr` and `addNode <host> <port>`, and locating SOAP connector details. Describes node configuration through the Deployment Manager console, starting the Node Agent, synchronizing master configuration, and copying Registry.jar/CryptoConfig.jar for admin security. Notes BOOTSTRAP_ADDRESS/curam.server.port considerations before building the EAR, then briefly points to manual application deployment. Remaining pages are notices and legal text."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000054",
+          "start_page": 9,
+          "end_page": 54
+        },
+        "summary": "Guides deploying Cúram on IBM WebSphere Application Server: building application and web services EARs with SDEJ Ant targets, required WAS_HOME, and package contents; optional facade generation and split EAR packaging. Covers WebSphere configuration, security, startup/shutdown, deployment, JSP precompilation, and deployment verification. Also includes manual console-based setup and Network Deployment basics (profiles, federation, node sync, BOOTSTRAP_ADDRESS considerations). Open for step-by-step build, config, install, or clustered deployment instructions."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

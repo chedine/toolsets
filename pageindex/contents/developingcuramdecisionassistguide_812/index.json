@@ -1,0 +1,772 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "ddaac69c3caf1f3b",
+    "title": "Cúram 8.1.2 Decision Assist Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/DevelopingCuramDecisionAssistGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "ddaac69c3caf1f3bbf1a2b3396b423812831ec30f7684ffdbcd3ed473cff90dc",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:10:24+00:00",
+    "page_count": 44,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/DevelopingCuramDecisionAssistGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Decision Assist Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000044",
+      "start_page": 1,
+      "end_page": 44
+    },
+    "summary": "Opening/front matter for the Cúram 8.1.2 Decision Assist Developer Guide. It identifies the guide, edition scope (Cúram 8.1–8.1.2), prerequisites, and sample business scenarios used throughout (family risk, youth corrections, abuse, family services, partner maltreatment, asthma). It then outlines the main development/admin areas: DeterminationConfig, DeterminationPackage, Questionnaire, DecisionMatrix, Outcomes, TypicalPicture, Condition, ICDCode, and related widgets; assessment-side classes/widgets; integration with assessments, integrated cases, IEG, and case/participant data; batch processing including ICD code upload and processingDate behavior; and question-text localization via QUESTION, LOCALIZABLETEXT, and TEXTTRANSLATION with fallback to default text. The section also includes the table of contents plus legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice section directing readers to review the Notices on page 43 before using the information or product. Includes Merative US L.P. copyright years 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section is the start of a technical guide for developing with Cúram Decision Assist. It explains the module’s purpose, prerequisites, and sample business scenarios, then outlines core administration classes/widgets: DeterminationConfig, DeterminationPackage, Questionnaire, and DecisionMatrix. It describes key configuration concepts such as multi-source answers, stand-alone assessments, consolidation, change-of-circumstance processing, localization, and versioning, and lists the main business processes for each class. Useful for understanding how Decision Assist assessments, questionnaires, and decision matrices are configured and integrated."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers Decision Assist data structures and workflows. It explains the Decision Matrix XML format (questions, answers, outcomes, contradictions, deletions), including supported answer types and multilingual content. It then describes the Outcomes, QuestionnaireDecisionOutcomeMetadata, TypicalPicture, Condition, and ICDCode classes and their main business processes. The latter pages introduce determination-based assessments, decision viewing/comparison, the Evidence Comparison widget, its XML schema, and configuration options for linking answer sources."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers Decision Assist support classes and widgets. Describes DeterminationDelivery business processes for managing determinations, decisions, cancellations, change of circumstance, and status history; ThirdPartyRequest for collecting and recording answers from multiple sources; and QuestionAnswer for IEG questionnaire answers, consolidation, and view/save flows. Also documents UI widgets: Evidence Review (XML format for consolidating answers), Typical Picture Editor (XML for typical answers/min-max values), and Evidence Tab Container (tabbed questionnaire view with linkable answers and configuration)."
+          },
+          {
+            "title": "Edition — pages 35-42",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000042",
+              "start_page": 35,
+              "end_page": 42
+            },
+            "summary": "This section covers Decision Assist integration and localization. It explains how Decision Assist connects with Assessments, Integrated Cases, IEG questionnaires, and case/participant data to match determination packages by product, age, and gender, including validation and cloning restrictions. It also describes Decision Assist batch processing, especially ICD code upload parameters and processing date behavior. Finally, it details localization of question text using QUESTION, LOCALIZABLETEXT, and TEXTTRANSLATION tables, with fallback to default text when translations are absent."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000042",
+          "start_page": 5,
+          "end_page": 42
+        },
+        "summary": "Opening section for the Decision Assist technical guide. It introduces the module, prerequisites, and sample assessment scenarios, then outlines core administration classes/widgets: DeterminationConfig, DeterminationPackage, Questionnaire, DecisionMatrix, Outcomes, TypicalPicture, Condition, ICDCode, and related widgets. It covers assessment/decision workflows, IEG questionnaire integration, determination package matching by product/age/gender, batch ICD code upload, and question-text localization using QUESTION/LOCALIZABLETEXT/TEXTTRANSLATION with fallback to default text."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000044",
+              "end_unit_id": "p000044",
+              "start_page": 44,
+              "end_page": 44
+            },
+            "summary": "Legal notices and licensing information for the document and sample code. States that example names are fictitious, sample programs may be copied/modified/distributed under the Merative Client Agreement, and are provided “AS IS” without warranty or liability. Includes the Merative privacy policy URL and a list of trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000044",
+              "end_unit_id": "p000044",
+              "start_page": 44,
+              "end_page": 44
+            },
+            "summary": "Lists Merative and third-party trademark notices for the document, including Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Also notes that other company, product, and service names may be trademarks of others, and includes the copyright line © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000043",
+          "end_unit_id": "p000043",
+          "start_page": 43,
+          "end_page": 43
+        },
+        "summary": "Legal notice and permissions for using the publication. Covers personal and enterprise copying limits, preservation of proprietary notices, no derivative works or external distribution without consent, and compliance with export laws. States the material is provided “as-is” with no warranty, no license to patents, and no endorsement of third-party products or websites. Includes the Merative copyright line © 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the guide. Lists front matter plus Chapter 1, “Developing with Decision Assist,” covering overview, admin classes/widgets, assessment classes/widgets, integration, batch processes, and localization. Also shows technical details, customization, notices, privacy policy, and trademarks, with page references for each topic."
+      },
+      {
+        "title": "1 Developing with Decision Assist",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This prerequisite section says the Cúram Decision Assist Guide is required background before using the technical material. It introduces the document’s purpose: developing custom classes and widgets for Decision Assist, including questionnaires, answer consolidation, and decision matrices. It also previews the business examples used throughout the guide, such as family risk, youth corrections screening, abuse assessment, and family services assessment, each illustrating different decision-matrix outcomes."
+              },
+              {
+                "title": "Business Examples Used in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the business examples used throughout the Decision Assist guide: Sample Family Risk Assessment, Sample Division of Youth Corrections Screening, Sample Abuse Assessment, and Sample Family Services Assessment Form. Each example illustrates different decision matrix behavior, including cumulative scoring, single outcomes, and multiple outcomes mapped to service plans and plan items. Useful for understanding how the guide demonstrates Decision Assist functionality before diving into implementation details."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Overview of the Decision Assist developer guide. It explains that the section targets technical users implementing custom classes and widgets for Cúram Decision Assist, which supports questionnaires, answer consolidation, and decision matrices. It also notes the prerequisite background guide and introduces the four business examples used throughout: family risk assessment, youth corrections screening, abuse assessment, and family services assessment. These examples illustrate cumulative scoring, single-outcome, and multiple-outcome decision matrix behavior."
+          },
+          {
+            "title": "1.2 Decision Assist Administration Class and Widget Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "DeterminationConfig Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "Explains the DeterminationConfig class, which links Cúram Decision Assist to assessment functionality. It describes key configuration attributes: configuration type (medical/screening/needs), multi-source support, stand-alone one-to-one behavior, support for change-of-circumstance processing, automatic consolidation of multi-source answers, and start/end date parameters. It also notes locale-based name translations. The section lists the main business processes for reading, listing, and validating determination configurations, assessments, indicator details, name translations, and date indicators."
+              },
+              {
+                "title": "DeterminationPackage Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section describes the DeterminationPackage class in Cúram 8.1.2. It explains that a determination package bundles questionnaires and decision matrices for a determination configuration, with attributes such as creation date/time, creator, product, age, and gender used to match packages to clients. It also outlines business processes for reading/viewing package details, listing all packages for a configuration, and listing questionnaires associated with a package. The section then begins the Questionnaire class, noting questionnaires are maintained via Cúram IEG."
+              },
+              {
+                "title": "Questionnaire Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "The Questionnaire class covers maintaining questionnaires that can be linked to one or more determination packages and used to collect answers for decision matrices. It notes questionnaire entity attributes such as creation date/time and creator username, and states questionnaires are created and maintained through Cúram Intelligent Evidence Gathering (IEG). This section follows DeterminationPackage business processes and introduces the Questionnaire class’s purpose and integration context."
+              },
+              {
+                "title": "DecisionMatrix Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "The DecisionMatrix class section explains how decision matrix header data is maintained. It covers unique name, informational type options (medical, screening, needs), and scoring settings: cumulative score, multiple outcomes, and scoring by outcomes. It notes that the matrix type does not have to match the associated questionnaire or determination configuration, since no validation is enforced. Useful for understanding decision matrix configuration and scoring behavior."
+              },
+              {
+                "title": "Decision Matrix Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000015",
+                  "start_page": 14,
+                  "end_page": 15
+                },
+                "summary": "Describes the Decision Matrix widget used to edit decision matrices in Decision Assist. It presents a table of rows/questions and columns/outcomes, with subrows for answers and subcolumns with checkboxes to mark answer-to-outcome mappings. Supports booleans, code tables, numerals, strings, and contradictions between answers. Explains that the widget loads and saves the matrix as XML, including multilingual content, allowing users to add questions, answers, outcomes, and contradictions in one update."
+              },
+              {
+                "title": "Outcomes Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "The Outcomes class stores the results produced by decision matrices. A determination package can have multiple decision types and multiple outcomes when linked to more than one decision matrix. Outcome start and end dates are used only to filter which active outcomes are selectable while editing matrix data; once added, an outcome remains in the matrix even after its end date. Outcome names can be translated, and the user’s login locale determines which translation is displayed."
+              },
+              {
+                "title": "QuestionnaireDecisionOutcomeMetadata Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Defines the QuestionnaireDecisionOutcomeMetadata class, which stores presentation data for questionnaires such as labels like “mandatory” or “recommended” shown on assessment/determination pages. Notes that presentation data is informational only, not validated, and is read only for questionnaires tied to a determination package, outcome, and decision matrix. Lists related business processes: reading questionnaire presentation data, listing presentation data, reading all active outcomes, and reading questionnaire header details."
+              },
+              {
+                "title": "TypicalPicture Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section describes the TypicalPicture class, used in medical questionnaires to compare recorded answers with typical answers and observe differences. It lists its business processes: reading a typical picture, active outcomes, decision outcomes, decision outcome records, typical answer associations, and typical answers for a question. It also introduces the Condition class, which links conditions to determination configurations for medical assessments, supports locale-based name translations, and provides processes for listing related determination configurations and ICD code associations."
+              },
+              {
+                "title": "Condition Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section describes the Condition class in Cúram 8.1.2. It explains that conditions are used to associate medical conditions with Determination Configurations for medical assessments, and that localized name translations can be displayed based on the user’s locale. It also lists key business processes: finding conditions linked to a determination configuration, finding determination configurations linked to a condition, listing ICD codes for a condition, and viewing an ICD code-condition association."
+              },
+              {
+                "title": "ICDCode Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "The ICDCode class links ICD (International Classification of Diseases) codes to Conditions and supports locale-based name translations for logged-in users. It defines business processes to search ICD codes and details, list version details, read released/active version numbers, view a specific ICD code record, retrieve ICD text translations, and get the latest ICD code version. This section is useful for understanding how ICD code data and translations are managed and displayed in Decision Assist."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000019",
+              "start_page": 10,
+              "end_page": 19
+            },
+            "summary": "Overview of Decision Assist administration classes and widgets for configuring assessments. Covers DeterminationConfig (assessment linkage, multi-source, stand-alone, COC, consolidation, dates, translations, and related read/list/validate processes), DeterminationPackage and Questionnaire (packaging questions/rules, IEG-managed versions), DecisionMatrix and its XML widget (questions, answers, outcomes, contradictions, scoring, multilingual edits), Outcomes, presentation metadata, TypicalPicture, Condition, and ICDCode classes with locale-based translations and key business processes. Good entry point for understanding how assessments are configured end-to-end."
+          },
+          {
+            "title": "1.3 Determination Based Assessment Class and Widget Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "DAAssessment Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000021",
+                  "start_page": 20,
+                  "end_page": 21
+                },
+                "summary": "This section explains the DAAssessment class within determination-based assessments. It covers the assessment lifecycle statuses (in progress, canceled, completed), cloning behavior, and the link to decision assist administration. It lists the class’s main business processes, including viewing, completing, canceling, making decisions, checking decision/answer status, reading status history, listing participants, and COC-related view methods. Useful for understanding how assessments are created, progressed, completed, and copied, and what data each operation returns or updates."
+              },
+              {
+                "title": "Decisions Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "This section describes the Decisions class, which supports viewing and comparing decision information. It lists business processes for reading decision details, question/answer details, decision lists for comparison, comparison of two decisions, and decision history for determinations and assessments. It also explains the Evidence Comparison widget, used to compare questionnaire answers over time, including consolidated answers and changed questions. The section notes the widget requires a display-phase server interface using the EVIDENCE_COMPARISON_XML domain and XML conforming to the evidence-comparison.xsd schema."
+              },
+              {
+                "title": "Evidence Comparison Widget",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Evidence Comparison XML Format",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000023",
+                      "start_page": 22,
+                      "end_page": 23
+                    },
+                    "summary": "Describes the Evidence Comparison XML format used by the Evidence Comparison widget to compare questionnaire answers across two baselines. It explains that the widget needs XML conforming to the evidence-comparison.xsd schema in the CDEJ lib/curam/xml/schema folder. The section includes an example XML structure with EVIDENCE_COMPARISON, QUESTIONNAIRE, QUESTION, BASELINE1, and BASELINE2 elements, showing labels, IDs, highlight flags, answer values, display text, and link indicators."
+                  },
+                  {
+                    "title": "Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "This section explains how Evidence Comparison is configured via the CONFIG attribute on a UIM FIELD and matching entries in EvidenceComparisonConfig.xml. It describes the default configuration behavior when no UIM config is set, and shows how the XML controls link URLs by mapping parameter names to values stored in XML data. The excerpt also includes attribute tables for evidence comparison, questionnaire, question, and baseline elements, covering IDs, labels, highlight flags, types, subtypes, answer text, and display/link behavior."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000024",
+                  "start_page": 22,
+                  "end_page": 24
+                },
+                "summary": "Explains the Evidence Comparison widget, used to compare questionnaire answers across two baselines and show differences, including consolidated answers with view links. Describes required XML conforming to evidence-comparison.xsd and the XML structure/attributes for EVIDENCE_COMPARISON, QUESTIONNAIRE, QUESTION, and BASELINE elements (IDs, labels, highlight, type/subtype, answers, display text, link flags). Also covers configuration via UIM FIELD CONFIG and EvidenceComparisonConfig.xml to control default behavior and link URLs by mapping parameter names to XML data."
+              },
+              {
+                "title": "DeterminationDelivery Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000026",
+                  "start_page": 25,
+                  "end_page": 26
+                },
+                "summary": "Defines the DeterminationDelivery class for decision assist assessments. It explains how determination deliveries relate to assessments, including one-to-one vs multiple deliveries for change of circumstance, and highlights key attributes such as IDs, package version, status, created/effective dates. It also lists business processes covered by the class: canceling, completing, reading/viewing deliveries, checking decisions/answers, making decisions from matrices, retrieving status history, recording change of circumstance, and listing determinations."
+              },
+              {
+                "title": "ThirdPartyRequest Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Describes the ThirdPartyRequest class for gathering questionnaire answers from multiple sources. It explains that third-party answers are recorded through dedicated pages, not IEG scripts, though question aliases can reword questions for third parties. The section defines the underlying ThirdPartyRequest and ThirdPartyRequestQuestion entities and lists key business processes: view, create, send, cancel, and retrieve question/answer details in XML. It also notes request types (Customer, Third Party, Third Party Medical) and that sending only changes status to Sent."
+              },
+              {
+                "title": "QuestionAnswer Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000029",
+                  "start_page": 28,
+                  "end_page": 29
+                },
+                "summary": "The QuestionAnswer class describes how Cúram Decision Assist integrates with the IEG runtime editor to manage questionnaire answers and the View Questions and Answers pane. It defines key DeterminationAnswer attributes such as questionID, answer, thirdPartyInd, sourceID, and consolidationInd. The section lists business processes for viewing, saving, answering, consolidating, and reading answers/details for determinations and assessments, including XML-based consolidation and third-party answer handling."
+              },
+              {
+                "title": "Evidence Review Widget",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "XML Formats",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains the Evidence Review Widget XML format for consolidating answers from multiple sources. The widget is launched from Consolidate links in assessment/determination details when multi-source is true and auto-consolidate is false. It supports view and edit modes via EVIDENCE_REVIEW_EDITABLE. The section describes the EVIDENCE_REVIEW_XML domain, associated methods (ViewConsolidatedAnswers, ViewAnswersForConsolidation), and shows the schema-based XML structure with EVIDENCE_REVIEW, QUESTION, and ANSWERS/ANSWER elements, including attributes like QUESTION_ID, LABEL, CHOSEN_ANSWER_ID, and answer metadata."
+                  }
+                ],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Describes the Evidence Review Widget for consolidating answers from multiple sources in assessment/determination details via the Consolidate link, enabled only when multi-source is true and auto-consolidate is false. Explains its two methods: ViewConsolidatedAnswers for already selected answers (read-only) and ViewAnswersForConsolidation for unanswered items. The widget uses the EVIDENCE_REVIEW_XML domain and supports view/edit modes via EVIDENCE_REVIEW_EDITABLE. Includes the required XML schema/structure with EVIDENCE_REVIEW, QUESTION, ANSWERS, and ANSWER elements and key attributes like QUESTION_ID and CHOSEN_ANSWER_ID."
+              },
+              {
+                "title": "Typical Picture Editor",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Typical Picture XML Format",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Describes the XML format required by the Typical Picture Editor Widget. It must conform to the typical-picture-editor.xsd schema in the CDEJ lib\\curam\\xml\\schema folder. Shows an example <TYPICAL_PICTURE> with QUESTION elements using attributes such as QUESTION_ID, LABEL, TYPE, SUB_TYPE, VALUE, and optional MIN/MAX, plus the SHOW_MIN_MAX flag. Explains that TYPE can be NORMAL or CODETABLE and that SUB_TYPE meaning depends on TYPE. Also notes the widget submits a target field populated with XML like <TYPICAL_PICTURE_XML> containing question values."
+                  }
+                ],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000032",
+                  "start_page": 31,
+                  "end_page": 32
+                },
+                "summary": "Explains the Typical Picture Editor widget for questionnaires. It displays questionnaire name/version and editable “typical answer” values, including min/max for numeric data. The UIM FIELD must target an action-phase server interface using domain TYPICAL_PICTURE_EDITOR_XML. Describes the required XML schema (typical-picture-editor.xsd), including a TYPICAL_PICTURE root with SHOW_MIN_MAX and QUESTION elements with QUESTION_ID, LABEL, TYPE (NORMAL or CODETABLE), SUB_TYPE, VALUE, and optional MIN/MAX. Also notes submission populates a target field with TYPICAL_PICTURE_XML."
+              },
+              {
+                "title": "Evidence Tab Container Widget",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Evidence Tab Container XML Format",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Describes the Evidence Tab Container Widget XML format and how to structure its input. Explains that the widget renders tabs for questionnaires, each containing questions and answers, and requires a UIM FIELD target connection to an action phase server interface for the EVIDENCE_TAB_CONTAINER_XML domain. Gives the schema location (evidence-tab-container.xsd in the lib/curam/xml/schema folder) and a full example showing EVIDENCE_TAB_CONTAINER, QUESTIONNAIRE, QUESTION, and ANSWER elements with attributes like IDs, labels, selected, type/sub_type, value, and show-link."
+                  },
+                  {
+                    "title": "Configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains how to configure the Evidence Tab Container via the CONFIG attribute on a UIM FIELD. The EvidenceTabContainerConfig.xml must include a matching CONFIG section, with a default configuration used if none is specified. The section shows how configuration can change link URLs by defining parameter names in the XML and taking parameter values from the XML data. Includes a sample XML structure with a DEFAULT configuration and ANSWER_SOURCE_LINK settings for page and parameter mappings."
+                  }
+                ],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000034",
+                  "start_page": 33,
+                  "end_page": 34
+                },
+                "summary": "Describes the Evidence Tab Container Widget, which renders questionnaire tabs with questions and answers. It requires a UIM FIELD target connection to an action phase server interface for the EVIDENCE_TAB_CONTAINER_XML domain, using the evidence-tab-container.xsd schema. The section documents XML structure and key attributes for EVIDENCE_TAB_CONTAINER, QUESTIONNAIRE, QUESTION, and ANSWER, including selection, types, values, and show links. It also explains CONFIG-based setup via EvidenceTabContainerConfig.xml to control link URLs and parameter mappings, with a default configuration fallback."
+              }
+            ],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000034",
+              "start_page": 20,
+              "end_page": 34
+            },
+            "summary": "Overview of determination-based assessments in Cúram: links decision assist administration to case-based assessments, explains lifecycle/statuses (in progress, canceled, completed), cloning, completion/cancel rules, decision creation, status history, participants, and COC-related views. Also covers the Decisions class for viewing/comparing decision details and history, plus three widgets: Evidence Comparison, Evidence Review, Typical Picture Editor, and Evidence Tab Container. Includes their XML schemas/domains, configuration files, and key attributes for rendering questionnaires, consolidating answers, and comparing baselines."
+          },
+          {
+            "title": "1.4 Decision Assist Integration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Component Dependencies",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Cúram Decision Assist requires three components: Cúram Platform, Intelligent Evidence Gathering (IEG), and Cúram Data Store (CDS). Platform provides integration with Assessments; IEG is used to build Decision Assist questionnaire scripts; CDS supplies schemas, data store entities, and attributes used by those IEG scripts. This section helps identify the technical dependencies needed before working with Decision Assist integration."
+              },
+              {
+                "title": "Decision Assist Integration with Assessments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Cúram Decision Assist integrates with Assessments and Integrated Cases, extending assessment storage, pages, statuses, history, and actions. It supports Decision Assist-specific views, adding/removing determination configurations, cloning, canceling, making decisions, and completing assessments, with a restriction when the first configuration is standalone. A hook allows module-specific registration via CreateAssessment. It also links assessment configurations to products/cases through PDAssessmentConfiguration, enabling association management for integrated cases and sample benefit product assessments."
+              },
+              {
+                "title": "Decision Assist integration with Integrated Cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Describes how Cúram Decision Assist integrates with Integrated Cases and product deliveries. It explains that assessment configurations are linked to products via PDAssessmentConfiguration, can be associated/unassociated in system administration, and can be created from an Integrated Case using selectable case clients as primary client. It also contrasts this with Sample Benefit Product, where creating an assessment defaults the primary client to the product and is not selectable."
+              },
+              {
+                "title": "Questionnaire Integration with IEG",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Localization Support",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains localization support for Decision Assist questionnaires. IEG scripts can be translated into multiple languages, including question pages, questions, script text, legislation links, and help text. At runtime, TransactionInfo.getProgramLocale() determines the locale using the client URL locale first, then the Users table default locale, then an application API for external users. Useful if you need how questionnaire language selection and translated content are handled."
+                  }
+                ],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how Cúram Decision Assist integrates questionnaires with IEG. Covers creating and maintaining questionnaire sections, pages, clusters, questions, and aliases in the IEG editor, with data store entities defined in Data Store Editor. Questionnaires are tied to determination packages and answered through IEG runtime from the View Assessment Details page. Also describes localization support: translated question pages, questions, script text, legislation links, and help text, with locale chosen via URL, Users table default locale, or an application API."
+              },
+              {
+                "title": "Determination Package Integration with Case and Participant Information",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Process of Matching a Determination Package to a Client",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Explains how Cúram selects the best determination package for a client using case/participant data and the latest released package version for the effective date. Matching can be based on age, gender, and product, with rules differing for integrated cases versus product delivery cases. For integrated cases, only packages with blank Product are considered first; age/gender must align or an informational no-match message is returned. For product delivery cases, the Product attribute is matched to products where the client is primary."
+                  },
+                  {
+                    "title": "Determination Package Matching Rules",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000039",
+                      "start_page": 39,
+                      "end_page": 39
+                    },
+                    "summary": "Defines validation and matching rules for Determination Packages in Decision Assist. Only one package may exist with all attributes null, and only one with a given Product and no Gender/Age, or only one with Gender-only or Age-only. Multiple packages are allowed when Product+Age, Age-only, or all three criteria are set, provided age/gender/product combinations do not overlap. If no match is found, the system returns an informational message. Changing matching criteria prevents cloning affected determination-based assessments."
+                  }
+                ],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000039",
+                  "start_page": 37,
+                  "end_page": 39
+                },
+                "summary": "Explains how Decision Assist selects a determination package using case/participant data plus the latest released package version for the effective date. Matching depends on Product, Age, and Gender, with separate logic for integrated cases (prefer blank Product, then age/gender) and product delivery cases (match client primary products first). Also defines package validation rules: only one fully null package and unique single-attribute combinations; overlapping age/gender/product configurations are restricted. Changing matching criteria blocks cloning affected determination-based assessments."
+              }
+            ],
+            "node_id": "n000042",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000039",
+              "start_page": 35,
+              "end_page": 39
+            },
+            "summary": "Cúram Decision Assist integrates with Assessments, Integrated Cases, IEG, and case/participant data. It depends on Platform, IEG, and CDS. The section covers assessment extensions and actions (add/remove configurations, clone, cancel, make decision, complete), module hooks, and PDAssessmentConfiguration links to products/cases. It explains building questionnaires in IEG with CDS data, localization support, and determination package matching/validation rules based on product, age, and gender, including different matching logic for integrated cases vs product deliveries."
+          },
+          {
+            "title": "1.5 Decision Assist Batch Processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Batch Parameters and Processing Date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "This section explains batch processing in Decision Assist, focusing on the use of the optional `processingDate` parameter, which runs a job for a specified date or defaults to the system date. It details the `BatchUploadICDCodes` batch job for importing ICD code files into the `ICDCODE` and `ICDCODEVERSION` tables, including its input parameters and the class/method `ICDCodes.batchUploadICDCodes`. It also briefly introduces localization of questionnaire text from the `QUESTION` table."
+              },
+              {
+                "title": "BatchUploadICDCodes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Describes the BatchUploadICDCodes decision-assist batch process for bulk ICD code file uploads. It reads ICD classification files and populates the ICDCODE and ICDCODEVERSION tables. Inputs include classification, fileName, filePath, processingDate, versionNumber, and volume. The batch class/method is ICDCodes.batchUploadICDCodes. Also notes that many batch jobs can use a processingDate parameter, defaulting to system date if omitted."
+              }
+            ],
+            "node_id": "n000051",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Decision Assist batch processes are configurable in system administration. This section explains the common `processingDate` parameter, which runs a job for a specified date or defaults to the system date. It describes `BatchUploadICDCodes`, used to bulk import ICD code files into the `ICDCODE` and `ICDCODEVERSION` tables, with inputs such as classification, file name/path, processingDate, versionNumber, and volume. It also notes localization of questionnaire text from the `QUESTION` table."
+          },
+          {
+            "title": "1.6 Localization of Question Text",
+            "level": 2,
+            "children": [
+              {
+                "title": "Technical Details",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "Explains how question text is localized in Decision Assist. The QUESTION table’s NAMETEXTID links to LOCALIZABLETEXT and TEXTTRANSLATION, and question text can be stored/retrieved from TEXTTRANSLATION by locale. If no translated text is found when inserting or releasing a questionnaire, the QUESTION table text is used. Also describes how to make questions available in multiple locations by creating translation records, with an example TEXTTRANSLATION table showing locale-specific entries."
+              },
+              {
+                "title": "Customization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000044",
+                  "start_page": 41,
+                  "end_page": 44
+                },
+                "summary": "Explains how to customize Decision Assist question text for multiple locales. It links QUESTION.NAMETEXTID to LOCALIZABLETEXT/TEXTTRANSLATION via LOCALIZABLETEXTID, and shows that translated text stored in TEXTTRANSLATION is used when inserting a question or releasing a questionnaire; otherwise the QUESTION table text is used. Includes steps for making questions available in multiple locations and an example TEXTTRANSLATION table entry. Pages 43–44 are legal notices, copyright, privacy, and trademarks."
+              }
+            ],
+            "node_id": "n000054",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000044",
+              "start_page": 40,
+              "end_page": 44
+            },
+            "summary": "Explains how Decision Assist localizes question text. The QUESTION table’s NAMETEXTID links to LOCALIZABLETEXT/TEXTTRANSLATION, where locale-specific translations can be stored and retrieved. When inserting a question or releasing a questionnaire, translated text from TEXTTRANSLATION is used if present; otherwise the QUESTION table text is used. Includes steps for making questions available in multiple locations and a sample TEXTTRANSLATION record. The remaining pages are legal notices, copyright, privacy, and trademarks."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000044",
+          "start_page": 9,
+          "end_page": 44
+        },
+        "summary": "Technical guide for developing Cúram Decision Assist custom classes and widgets. Covers assessment concepts, example use cases, and end-to-end configuration: DeterminationConfig, DeterminationPackage, Questionnaire, DecisionMatrix, Outcomes, and related widgets. Explains integration with assessments, IEG, case/participant data, matching and validation rules, COC processing, batch jobs including ICD code upload, and localization of question text via QUESTION/LOCALIZABLETEXT/TEXTTRANSLATION. Also includes legal notices and trademarks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

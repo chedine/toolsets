@@ -1,0 +1,467 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "7f0a64dfb6bb43a4",
+    "title": "Cúram 8.1.2 Case Audits Developer's Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramCaseAuditsDevelopersGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "7f0a64dfb6bb43a42f4e8a7d7c5b2a338f2096f291055110f8e6c19e96c29d3a",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:08:35+00:00",
+    "page_count": 26,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramCaseAuditsDevelopersGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Case Audits Developer's Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000026",
+      "start_page": 1,
+      "end_page": 26
+    },
+    "summary": "This guide explains how to customize Cúram Case Audits for developers and architects. It covers registering a new sampling algorithm by defining a CT_SamplingStrategy entry, implementing the SamplingStrategy interface, and binding it with Guice. It describes dynamic selection queries, including custom UIM pages, use of the Case Audit Query Management API, and how audit coordinators can generate or manually select case lists. It also explains configuring selection queries, including the differences between dynamic and fixed queries, validation, publishing, and the security caution that fixed queries have no out-of-the-box front end. Finally, it introduces the Case Audits web service for importing external case IDs into audit data. Front matter includes notices, edition applicability to Cúram 8.1–8.1.2, and the table of contents.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note directing readers to review the Notices section before using the document or product; includes Merative US L.P. copyright years 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory “Edition” pages for the Case Audits guide. States this edition applies to Cúram 8.1, 8.1.1, and 8.1.2, with copyright/trademark notices and the table of contents. The surrounding guide covers: registering a new audit sampling algorithm via the SamplingStrategy interface and Guice bindings (example: “Every Nth Case”); using dynamic selection queries with UIM pages, custom structs, and the Case Audit Query Management API; and configuring/publishing selection queries."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section explains how to develop case audits using dynamic selection queries, including UIM pages for entering criteria, case counts, and algorithm parameters. It shows the façade flow to run the query, sample cases via a sampling strategy, and create case audit records. It also covers required structs, administrator setup of selection queries, and warns about indexing/deferred processing. Later pages describe dynamic vs fixed selection queries, validation/publishing, manual case selection, and the case audits web service for importing external case data."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000024",
+          "start_page": 5,
+          "end_page": 24
+        },
+        "summary": "Introductory “Edition” pages for the Case Audits guide. This edition applies to Cúram 8.1, 8.1.1, and 8.1.2, with copyright/trademark notices and the table of contents. The guide covers registering custom sampling algorithms via SamplingStrategy and Guice, using dynamic and fixed selection queries through UIM pages, the Case Audit Query Management API, validation/publishing, manual case selection, and a Case Audits web service for importing external case data."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "This section provides legal and copyright notices for the document’s sample data and programs, including “as is” warranty disclaimers and liability limitations. It points to Merative’s privacy policy URL and lists trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. Useful for users needing licensing, usage rights, privacy policy access, or trademark information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "States that sample names in the document are fictitious, and that licensed material is provided under the Merative Client Agreement. Includes copyright/license terms for sample programs, noting they may be copied, modified, and distributed for developing compatible applications, but are provided “AS IS” without warranty. Also links to Merative’s privacy policy and lists trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000025",
+          "end_unit_id": "p000025",
+          "start_page": 25,
+          "end_page": 25
+        },
+        "summary": "This notices section gives the legal terms for using the publication: personal and enterprise reproduction is allowed only if proprietary notices are preserved, while redistribution or derivative works outside those limits require Merative’s consent. It disclaims warranties, limits liability, reserves patent rights, and notes export-control compliance. It also states that non-Merative product information is unverified and external website links are for convenience only. Useful for users checking reuse permissions, legal restrictions, warranty disclaimers, or external reference notices."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Contents for the guide, listing front matter and section navigation. It shows the main chapter “Developing with Case Audits” and its subsections: registering a new algorithm, using and configuring dynamic/fixed selection queries, and the Case Audits web service. Also includes page references for overview, prerequisites, examples, validation/publishing, plus note, edition, notices, privacy policy, and trademarks. Useful as a table of contents rather than substantive content."
+      },
+      {
+        "title": "1 Developing with Case Audits",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for developing with Case Audits: readers should already know the Cúram Case Audits Guide and Google Guice. The section introduces the guide’s purpose—customizing the Case Audits component for auditing solutions—and outlines its main topics: registering new sampling algorithms, using dynamic selection queries, configuring selection queries, and leveraging a Case Audits web service for external case data."
+              },
+              {
+                "title": "Sections in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Overview of the guide’s contents for customizing Case Audits. It outlines four main sections: registering a new sampling algorithm via the SamplingStrategy interface and Guice bindings, using Dynamic Selection Queries to build audit case lists, configuring selection queries, and the Case Audits Web Service for using external case data. The page also states the guide is for developers and architects, with prerequisites of familiarity with the Cúram Case Audits Guide and Google Guice."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Overview of the Case Audits customization guide. It explains that the guide is for developers and architects who want to implement auditing solutions by customizing Case Audits. Prerequisites are familiarity with the Cúram Case Audits Guide and Google Guice. The section previews four topics: registering a new sampling algorithm, using dynamic selection queries to build audit case lists, configuring selection queries, and using the Case Audits Web Service for external case data."
+          },
+          {
+            "title": "1.2 Registering a New Algorithm",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Describes Cúram’s case audit sampling overview and how to create a custom sampling algorithm when the default starting-point/interval method is insufficient. Uses “Every Nth Case” as the example, where N is a coordinator-defined parameter. Covers the required steps: define the algorithm administratively in CT_SamplingStrategy.ctx, implement the SamplingStrategy interface (getRandomSample with masterList, sampleSize, and properties), and add a binding to the implementation."
+              },
+              {
+                "title": "Creating a New Algorithm",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Administratively Define the New Algorithm",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "This section explains how to add a custom case-audit sampling algorithm in Cúram when the built-in sample algorithm is insufficient. It uses “Every Nth Case” as the example, where every nth case is selected based on a coordinator-supplied parameter. It covers the administrative definition step: adding a new entry to CT_SamplingStrategy.ctx with a locale description and enabled status, and notes that the next steps are providing an implementation and binding it to the new algorithm."
+                  },
+                  {
+                    "title": "Provide an Implementation for the Algorithm",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000011",
+                      "start_page": 10,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to add a custom case-audit sampling algorithm in Cúram, using “Every Nth Case” as the example. It first says to define the algorithm administratively in CT_SamplingStrategy.ctx, then implement the algorithm by creating a class that implements the SamplingStrategy interface and its getRandomSample method. The method accepts masterList, sampleSize, and a properties map (including parameter n). The included Java example shows how the strategy selects every nth case while avoiding duplicates and looping through the list."
+                  },
+                  {
+                    "title": "Add a Binding to the New Algorithm Implementation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Shows how to wire the new sampling algorithm into Guice. It introduces a `Module` extending `AbstractModule` and a `MapBinder` that maps `SAMPLINGSTRATEGYEntry` values to `SamplingStrategy` implementations. The example registers `EVERYNTHCASE` and binds it to `EveryNthCase.class`, so the correct algorithm implementation is selected at runtime."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000012",
+                  "start_page": 10,
+                  "end_page": 12
+                },
+                "summary": "Explains how to add a custom case-audit sampling algorithm in Cúram when the default sample algorithm is unsuitable, using “Every Nth Case” as the example. Covers three steps: define the algorithm in CT_SamplingStrategy.ctx with an enabled locale description; implement SamplingStrategy.getRandomSample, which uses masterList, sampleSize, and properties like n; and bind the new SAMPLINGSTRATEGYEntry to its implementation with Guice MapBinder so it is selected at runtime."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000012",
+              "start_page": 9,
+              "end_page": 12
+            },
+            "summary": "Explains how to register a new case-audit sampling algorithm in Cúram when the default starting-point/interval method is unsuitable. Uses “Every Nth Case” as the example. Covers three required steps: add an enabled entry in CT_SamplingStrategy.ctx, implement the SamplingStrategy interface’s getRandomSample(masterList, sampleSize, properties) method, and bind the SAMPLINGSTRATEGYEntry to the implementation with Guice MapBinder so it is selected at runtime."
+          },
+          {
+            "title": "1.3 Utilizing Dynamic Selection Queries",
+            "level": 2,
+            "children": [
+              {
+                "title": "What is a Dynamic Selection Query?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Dynamic Selection Queries generate random case samples using selectable criteria entered by an audit coordinator through a UIM page. The case audit query management API runs these queries. The section explains that sample queries exist for standard case types, but custom queries can be created if needed. It warns that complex queries perform poorly and recommends standard application practices instead. It also outlines implementation needs: create matching UIM input screens for criteria and any algorithm parameters, such as case counts or other inputs."
+              },
+              {
+                "title": "Why use a Dynamic Selection Query?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Dynamic Selection Queries let audit coordinators generate random case samples using configurable selection criteria entered on a UIM page and executed through the case audit query management API. The section explains why to use them: four sample queries exist for standard case types, but custom queries can be created if needed. It also warns that complex queries perform poorly and should usually use standard application practices instead. The start of the implementation steps is included."
+              },
+              {
+                "title": "Implementing a Dynamic Selection Query",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains dynamic selection queries for case audits: they generate random case samples using user-entered criteria on a UIM page and are run through the case audit query management API. Notes that four sample queries exist for standard case types, but custom queries can be built if needed. Warns that complex queries perform poorly and should generally be avoided. Outlines implementation basics: create a matching UIM for criteria input and any additional screens needed for algorithm parameters or case count."
+              },
+              {
+                "title": "The Case Audit Query Management API",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Describes the Case Audit Query Management API, a public API for running dynamic selection queries used in case audit searches. It explains that a system administrator must create a Dynamic Selection Query containing the SQL and associated criteria, then link it to the case audit configuration. The key method, runDynamicQueryCaseSearch(selectionQueryID, parameterMap), retrieves the query, substitutes audit coordinator criteria into the SQL, executes it, and returns a list of CaseHeader records."
+              },
+              {
+                "title": "Example: Implementing a Dynamic Selection Query",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000021",
+                  "start_page": 15,
+                  "end_page": 21
+                },
+                "summary": "Shows a worked example for implementing a dynamic case-selection query in Cúram case audits. It walks through creating three UIM screens: entering selection criteria, choosing the number of cases, and configuring algorithm parameters. It then defines the required struct (`ExampleSelectionCriteria`) and a façade method `generateExampleCaseList` that runs the dynamic query via Case Audit Query Management, applies a sampling strategy, limits results by user input, and creates case audit records for each selected case."
+              },
+              {
+                "title": "Using Dynamic Selection Queries for Manual Case Selection",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Describes how dynamic selection queries can be used for manual case selection in case audit. A systems administrator must create a new UIM containing the selection criteria and a case list page, and its name must match the Manual Search page name in the Selection Query configuration. The audit coordinator can then manually select cases from the returned list using the Case Audit Query Management API. Also notes that selection queries must be created, validated, and published, and that dynamic queries present user-entered criteria to generate a case sample."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000021",
+              "start_page": 13,
+              "end_page": 21
+            },
+            "summary": "Explains how dynamic selection queries generate random case samples for case audits via a UIM page and the Case Audit Query Management API. Covers when to use them, noting four built-in sample queries exist but custom ones can be created, and warns that complex queries perform poorly. Describes implementation steps: build UIM screens for criteria/parameters, define a struct, create a façade method, and have the system administrator create, validate, publish, and associate the selection query. Includes API details and an end-to-end example using an “Every Nth Case” algorithm."
+          },
+          {
+            "title": "1.4 Configuring Selection Queries",
+            "level": 2,
+            "children": [
+              {
+                "title": "Dynamic Selection Queries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains dynamic selection queries for case audit selection. A systems administrator must create, validate, and publish a Selection Query with SQL and selection criteria; custom queries should have appropriate database indexing, and Deferred Processing may help for large result sets. Dynamic queries present a page of criteria for the audit coordinator to enter values and retrieve a case sample, allowing any logical combination of parameters. Also notes dynamic queries can support manual case selection via a new UIM whose name matches the Manual Search page name."
+              },
+              {
+                "title": "Fixed Selection Queries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains fixed selection queries for case audits: administrators define predefined SQL-based criteria (e.g., case status = open), and audit coordinators can reuse them without entering criteria. Warns there is no out-of-the-box front end, so customers must build one and handle security and SQL correctness. Also outlines the query-creation wizard: naming, query/object type, dynamic vs. fixed query type, SQL text, and adding criteria values, noting that fixed-query values are the actual run-time values."
+              },
+              {
+                "title": "Creating a Selection Query",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Adding Selection Criteria",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains how to add selection criteria when creating selection queries for case audits. It distinguishes fixed selection queries, which store predefined SQL criteria and require no audit coordinator input, from dynamic queries, where criteria are validated and used with a custom UIM. It outlines the two-step creation process, including naming, query type, page names for dynamic queries, and the SQL/WHERE-clause structure. It also warns that fixed selection queries have no out-of-the-box front end and require customer-built, secure UI handling."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains how to create selection queries for case audits. It covers the two-step wizard: enter basic details (name, object/query type, SQL) and then add selection criteria. It distinguishes dynamic queries, which require matching custom UIM page names and use criteria values for validation, from fixed queries, which store predefined SQL values and need no audit-coordinator input. Also notes that fixed selection queries have no out-of-the-box front end and require customer-built, secure UI handling."
+              },
+              {
+                "title": "Validating a Selection Query",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to validate a selection query after creation: the system checks that the SQL is valid and read-only, protecting database integrity by defaulting SELECT and INTO clauses. Notes that validation errors can be complex, so queries should follow the guidelines closely. Also situates validation within the workflow: queries must be published before administrators can associate them with a case audit configuration and use them in audit plans."
+              },
+              {
+                "title": "Publishing a Selection Query",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how a selection query is validated and published before use in case audits. Validation checks that the SQL is syntactically valid and read-only, with SELECT/INTO defaulted to reduce risk of data modification. Publishing makes the query available to administrators so it can be associated with a case audit configuration and then used by an audit coordinator in an audit plan. The section then begins introducing the Case Audits Web Service, which imports external case data for auditing."
+              }
+            ],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000023",
+              "start_page": 22,
+              "end_page": 23
+            },
+            "summary": "This section explains how to configure case audit selection queries, covering dynamic and fixed queries, the two-step creation wizard, and required selection criteria setup. It notes dynamic queries use custom UIM pages for coordinator-entered criteria and can support manual case selection, while fixed queries embed predefined SQL values and require a customer-built front end. It also covers validation and publishing requirements, plus cautions about SQL correctness, security, database indexing, and Deferred Processing for large result sets."
+          },
+          {
+            "title": "1.5 Case Audits Web Service",
+            "level": 2,
+            "children": [],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000026",
+              "start_page": 24,
+              "end_page": 26
+            },
+            "summary": "Describes the Case Audits Web Service, which lets external Web Service clients (including BIRT) submit a list of case IDs plus a dataset name for auditing. The service stores valid data in ExternalCaseAuditData and ExternalCaseAuditDataItem for later use in audit plans. If any submitted case does not exist, nothing is saved and an error is returned. The section also notes selection query validation/publishing steps for audit use."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000026",
+          "start_page": 9,
+          "end_page": 26
+        },
+        "summary": "Covers Case Audits customization for developers/architects. Explains how to add a new sampling algorithm by defining a CT_SamplingStrategy entry, implementing SamplingStrategy.getRandomSample, and binding it with Guice. Shows how dynamic selection queries use custom UIM pages, structs, facades, and the Case Audit Query Management API to build audit case lists. Describes configuring and validating dynamic vs fixed queries, including security cautions for fixed queries. Also introduces the Case Audits Web Service for importing external case IDs into audit data."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

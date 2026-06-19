@@ -1,0 +1,1321 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "8855f6df4b75e72b",
+    "title": "Cúram 8.1.2 Financials Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramFinancialsGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "8855f6df4b75e72b4cc42e78fc06eb3426b33d2e6f89075c8e1aeb7e3d4fa283",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:30:01+00:00",
+    "page_count": 74,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramFinancialsGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Financials Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000074",
+      "start_page": 1,
+      "end_page": 74
+    },
+    "summary": "Front matter and main overview for the Cúram 8.1.2 Financials Guide. It introduces Cúram financials as the system for processing payments, liabilities, and payments received for persons/employers, typically requiring a nominee. The section outlines the full guide scope: financial components, instruction line items, instructions, instruments/payslips, generating and maintaining payments and liabilities, deductions and adjustments, payment receipt allocation and suspense handling, batch processes, financial code tables, and customization/hook points. It also references ERP integration and related guides for adapter, integrated ERP operations, case management, and deductions. Includes legal notices, edition applicability (Cúram 8.1, 8.1.1, 8.1.2), copyright, privacy policy, and trademarks. Useful as a navigation entry point rather than a substantive procedure section.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section before using the document or the supported product. It also includes the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram Financials guide, applying to Cúram 8.1/8.1.1/8.1.2. Introduces the guide’s scope: processing payments, liabilities, and payments received; building blocks such as financial components, instruction line items, instructions, and instruments; and the main topics covered in later sections. Also notes ERP integration, case nominee and delivery patterns, cover period offsets/exclusion dates, payment groups, and roll-up rules for instruction line items. Useful as an overview index node rather than procedural content."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section explains core Cúram Financials processing: credits/debits, due date vs processed date, financial instruments vs payslips, and the batch sequence that generates payments and liabilities. It covers simulation of payments, creation/expiry of financial components, generation of instruction line items, financial instructions, instruments, and payslips, with a worked example for a weekly benefit. It also details deduction types (applied, un-applied, third party), tax adjustments, and how line items roll up and trace back to nominees."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section explains financial processing adjustments and maintenance in Cúram Financials. It covers tax adjustments, surcharge adjustments, and financial account adjustments, then walks through detailed payment-generation examples with deductions and taxes, including payment instructions, third-party payments, tax authority payments, instruments, and payslips. It also describes operational maintenance actions: capturing manual payments, canceling and reissuing payments, invalidating payments, approving suspended payments, reversing liabilities, and writing off liabilities. Useful for understanding how payments and liabilities are adjusted, corrected, or negated in the system."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers Cúram financials payment adjustment and instruction modeling. Topics include write-off instruction rollups, over/under payment reassessment and net-zero display setting, processing payments received from persons/employers or suspense accounts, allocating received payments to liabilities, liability over-allocation and reconciliation, refunding unallocated amounts, canceling refunds, and reversal behavior. Also summarizes rolled-up, related, and applied financial instruction line items for payment, liability, payment received, and reversal instructions, including deductions, taxes, ad hoc bonuses, surcharges, allocations, reverse allocations, and write-offs."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "This section explains financial instruction line items and how they roll up into instructions such as write-off, third-party payment, and adjustment instructions. It then introduces financial batch processing: submitting jobs to the queue, batch launcher behavior, business processing date, logs/reports, and the standard financials batch suite. It also details major batch processes including GenerateInstructionLineItems, GenerateInstruments, GeneratePayslips, LoadPaymentsReceived, IssueConcernPayments, and ExpirePayments, with their parameters, sequencing, and processing rules."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Covers core financial batch jobs and customization. Batch processes include payment instrument issuance, payment reconciliation, general ledger export, and liability case reconciliation, with their key parameters and behaviors. Introduces required financial code tables (RulesComponentType, FinComponentType, ProductComponentFCConv, ILIType, TranslateILIType) and ILI relationship types. Also explains financial customization points via application properties and Guice bindings, including hooks for cancellation, reassessment, reversal, deductions, third-party deduction ILIs, payment processing, payment instrument dates, and ILI regeneration."
+          },
+          {
+            "title": "Edition — pages 65-72",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000072",
+              "start_page": 65,
+              "end_page": 72
+            },
+            "summary": "Covers Cúram Financials customization points from pages 65–72: how to implement and bind hooks/events for instruction line item regeneration and post-insert processing, payment instrument post-insert/modify events, and the DynamicOffset interface. Also introduces assessment customization, including AssessmentEngineHooks and ReassessEligibilityHook methods (rate, halt payment processing, manipulate/roll up components, FC generation, reassessment controls). Ends with AssessmentEngineEvent listeners and their main lifecycle methods for post-reassessment, decision review, and payment/overpayment/underpayment correction processing."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000072",
+          "start_page": 5,
+          "end_page": 72
+        },
+        "summary": "Front matter and overview for the Cúram Financials guide (Cúram 8.1/8.1.1/8.1.2). It outlines the guide’s scope: payments, liabilities, payments received, financial components, instruction line items, instructions, instruments, batch processing, code tables, and customization points. It also introduces ERP integration, payment/nominee concepts, deductions, adjustments, reconciliation, and maintenance actions like cancel/reissue, reversal, write-off, and over/underpayment handling. Mostly an index-style entry point to later detailed sections."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000074",
+              "end_unit_id": "p000074",
+              "start_page": 74,
+              "end_page": 74
+            },
+            "summary": "This page contains document legal notices: sample data disclaimer, copyright license for sample programs, liability/warranty limitations, the Merative privacy policy URL, and trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It also states the copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000074",
+              "end_unit_id": "p000074",
+              "start_page": 74,
+              "end_page": 74
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands used in the document. Notes that sample names in examples are fictitious, sample code is provided “AS IS” under the Merative Client Agreement, and includes a privacy policy link. Identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general statement that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000073",
+          "end_unit_id": "p000073",
+          "start_page": 73,
+          "end_page": 73
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise copying is allowed only with proprietary notices preserved, but redistribution, derivative works, and external use require Merative consent. It disclaims warranties, limits rights to the content, notes export-control compliance, and states Merative may withdraw permission. Also covers patent notice, third-party product and website disclaimers, and the copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Financials guide. Lists major sections on understanding financials, generating and maintaining payments/liabilities, processing deductions and payments received, financial instruction types, batch processes, code tables, and customization points. Includes page references for subtopics like financial components, payment generation, reconciliation, and hooks, plus front matter (Note, Edition) and Notices/Privacy/Trademarks. Useful as a navigation index rather than substantive content."
+      },
+      {
+        "title": "1 Cúram Financials guide",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Understanding Cúram financials",
+            "level": 2,
+            "children": [
+              {
+                "title": "Payments, liabilities, and payments received",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces Cúram Financials and the basic financial units used to process organization payments and liabilities. Explains that a nominee is required, and that payments can be captured, invalidated, canceled, or reissued, while liabilities can be reversed or written off. Defines payments as funds issued to participants, liabilities as charges/invoices to participants, and payments received as money recorded against bills, entered manually or by batch, not generated by case processing."
+              },
+              {
+                "title": "Financial components",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains financial components as case-based schedules to pay or bill, generated when a primary client is eligible for a case component. Covers the main fields in a financial component: category (benefit payment or liability bill), case nominee, primary client, amount, delivery pattern, start/end dates, and scheduled due date. Includes a sample weekly check payment with a cover period and notes that reassessment processing also creates financial components for overpayments and underpayments."
+              },
+              {
+                "title": "Case nominee and preferred delivery pattern",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Cover period patterns and offsets",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how delivery patterns determine cover periods for payments or bills: in advance, in arrears, or once-off, with an example of weekly payments covering the following week. Describes two offset types: delivery method offset for processing/printing time and cover period offset for delivery timing. Notes that offsets can be combined and are added during financial component processing to calculate due dates, and may be set at product level or adjusted during case creation. Also mentions payment exclusion dates and nearest valid processing before a holiday."
+                  },
+                  {
+                    "title": "Payment exclusion dates for delivery methods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains payment exclusion dates for delivery methods. These are calendar days when the organization cannot make payments using a specific delivery method. If a prepayment requirement applies, financial processing is moved to the nearest valid processing date before the exclusion date. Example: if a Monday cash payment falls on a public holiday, the payment is processed on the previous valid day."
+                  }
+                ],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Explains how case nominees receive financial components through a preferred delivery pattern, which sets payment/bill frequency, delivery method, and cover period behavior. A nominee is usually the primary client, but can be another person/party; check requires a recorded address and EFT requires a bank account. Covers in advance, in arrears, and once-off patterns, plus delivery method and cover period offsets that combine to determine due dates and may be set at product or case level. Also describes payment exclusion dates and moving processing to the nearest valid date before holidays."
+              },
+              {
+                "title": "Financial instruction line items and financial instructions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Determining the roll-up of financial instruction line items",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains the rules for rolling multiple financial instruction line items into one financial instruction. It covers when items can be grouped by category, nominee, delivery method, currency, and processing timing/cover period. It also gives examples showing how payment groups can split roll-ups into separate payment instructions, and notes that instruction line items can be created outside case processing (for payments, manual payments, and write-offs)."
+                  },
+                  {
+                    "title": "Differentiating between the due date and processed date",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains the difference between due date and processed date in financial instructions. The due date is when a nominee is scheduled to receive a payment or invoice, calculated from the delivery pattern. The processed date is when the instruction is actually processed to meet that due date, considering financial processing deadlines and offsets. Includes an example where a Monday due date is missed because changes are processed on Wednesday, shifting payment to the following Monday. Also introduces financial instruments and payslips as records of actual payments and liabilities."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000014",
+                  "start_page": 13,
+                  "end_page": 14
+                },
+                "summary": "Explains financial instruction line items as the basic financial processing unit and how case financial components become recurring ILIs. Describes financial instructions as rolled-up views of one or more ILIs, including payments/liabilities consolidated by nominee and category. Covers payment groups for separating roll-ups by product/program, creation of instructions outside case processing (allocated payments, manual payments, write-offs), and the five roll-up conditions: same category, single nominee, same delivery method and currency, and same processing readiness/cover period timing."
+              },
+              {
+                "title": "Financial instruments and payslips",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains financial instruction line items as credits or debits that determine the net amount, and distinguishes due date from processed date in payment/invoice processing. It shows how delivery patterns set due dates and how processing cutoffs affect whether a payment can still be made on time. It also defines financial instruments as records of actual payments, liabilities, or receipts, and notes that payslips are physical records of related line items for record keeping."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000015",
+              "start_page": 9,
+              "end_page": 15
+            },
+            "summary": "Introduces Cúram financials as the system for processing payments, liabilities, and received payments for persons/employers, requiring a nominee. Explains the core building blocks: financial components, instruction line items, instructions, and instruments. Covers what payments, liabilities, and payments received are; how financial components are generated from case eligibility, reassessments, and delivery patterns; how nominees, cover periods, offsets, and exclusion dates affect due dates; how instruction line items roll up into instructions; and how due date differs from processed date."
+          },
+          {
+            "title": "1.2 Generating payments and liabilities",
+            "level": 2,
+            "children": [
+              {
+                "title": "Simulating payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section explains how Cúram Financials simulates payments before they are generated and issued, showing amounts due for a specific date or period and applying any deductions. It describes how simulations are built by rolling forward financial components created at case activation or reassessment, and how amount, cover period, and effective date are calculated. It also covers the history of simulated payments. Finally, it explains how financial components are created from eligibility/entitlement processing and when one-off, recurring, or reassessed components expire."
+              },
+              {
+                "title": "Creating and expiring financial components",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section explains how eligibility and entitlement processing creates financial components from eligible case components, including secondary components for deductions. It also describes when components expire: one-off components expire immediately after processing, recurring components stay live until their end date, and components can also expire on reassessment if the primary client becomes ineligible. It sits alongside payment simulation content, which shows how due payments and deductions are calculated before issuance."
+              },
+              {
+                "title": "Generating financial instruction line items",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains how financial components become financial instruction line items and then roll up into financial instructions. It covers batch processing and online payment generation, reassessment before processing, one-off versus recurring components, and adjustment of processed dates for delivery-method payment exclusion dates. It also describes how line items are combined only when category, nominee, delivery pattern, and currency match, and how payment groups prevent unwanted roll-up across programs. Includes an example of consolidating payments from multiple programs."
+              },
+              {
+                "title": "Generating financial instructions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Financial components are turned into financial instruction line items by the batch process or when payments are generated online. Reassessment is performed first to confirm eligibility and component validity. One-off components produce one line item; recurring components produce one each time they are processed. The system also adjusts processed dates to avoid delivery-method payment exclusion dates. Financial instructions for benefit payments and liabilities are then created by rolling up compatible line items sharing category, nominee, delivery pattern, and currency; payment groups can prevent undesired roll-up across programs."
+              },
+              {
+                "title": "Generating financial instruments and payslips",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains that financial instruments are created by the generate instruments batch process, which runs after generate instruction line items, and can export payment/billing details to external financial systems. Also covers payslip generation: run the generate payslips batch process after instruments are generated, and the payslip type depends on the recipient (for example, primary client or utility)."
+              },
+              {
+                "title": "Issuing payments online and to third parties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section explains how Cúram issues payments online and to third parties. It covers issuing single-case online payments without the financial batch suite, including use for emergency assistance and active cases only, plus coordination in integrated environments. It also describes third-party payment processing via the issue concern payments batch, using each participant’s preferred payment method, frequency, next payment date, currency, and exclusion dates. An example of quarterly EFT utility payments is included."
+              },
+              {
+                "title": "Examples of generating payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000021",
+                  "start_page": 20,
+                  "end_page": 21
+                },
+                "summary": "This section explains two payment scenarios: issuing payments online for active cases without the financial batch suite, and issuing third-party payments based on preferred method, frequency, next payment date, and exclusion dates. It also gives a step-by-step example of payment generation for John Smith, showing how a recurring $35 weekly benefit is converted into a financial component, instruction line item, payment instruction, and payment instrument across batch processes."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000021",
+              "start_page": 16,
+              "end_page": 21
+            },
+            "summary": "This section explains the full financial batch suite for active cases: determine delivery eligibility creates financial components, generate instruction line items converts them into line items, generate instruments rolls them into financial instructions and instruments, and generate payslips produces recipient payslips. It also covers online payment issuance, third-party payments by preferred method/frequency/exclusion dates, and a worked example of recurring weekly benefit processing. Relevant if you need how payments/liabilities are generated, rolled up, issued, or illustrated end to end."
+          },
+          {
+            "title": "1.3 Processing deductions and adjustments",
+            "level": 2,
+            "children": [
+              {
+                "title": "Deductions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Generating instruction line items for deductions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how deduction instruction line items are generated during the generate instruction line items batch process, after primary payment instructions. Secondary financial components are checked against system settings, available funds, deduction priority, and insufficient-funds rules to decide whether deductions are fully, partially, or not processed. Covers applied, unapplied, and third-party deductions, overlapping-deduction validation, and the two related line items created per deduction (debit to benefit plus liability/third party). Also notes the benefit payment is reduced by the processed deduction amount."
+                  },
+                  {
+                    "title": "Processing deductions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains how deductions are processed in Cúram Financials. It covers creating secondary financial components for case deductions, generating instruction line items for applied, unapplied, and third-party deductions, and handling them in the batch process after primary payments. It notes checks for sufficient funds, partial or skipped processing based on deduction settings, prioritization of deductions, and overlap validation. It also explains that two linked line items are created, with the benefit payment reduced by the deduction amount."
+                  }
+                ],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000023",
+                  "start_page": 22,
+                  "end_page": 23
+                },
+                "summary": "Explains how deductions are handled in Cúram Financials. Covers the three deduction types: applied, unapplied, and third-party, plus how they are created as secondary financial components after primary payments. Describes batch processing rules for generating deduction instruction line items, including sufficient-funds checks, partial or skipped processing, priority handling, and overlap validation. Notes that each processed deduction creates two related line items and reduces the benefit payment by the deduction amount."
+              },
+              {
+                "title": "Tax adjustments",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Generating instruction line items for a tax adjustment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how tax adjustments are turned into instruction line items during payment generation. If taxes apply to a benefit, the system creates two related line items: a debit against the benefit and a second line item to pay the tax authority. This happens in the generate instruction line items batch process or online payment generation. The relationship record preserves traceability back to the case nominee, including in bulk payments to a tax authority."
+                  },
+                  {
+                    "title": "Applying taxes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how tax adjustments are applied: one line item reduces the benefit payment, while the matching tax line item is later rolled up and paid to the tax authority via Issue Concern Payments. Also covers surcharge adjustments for overdue liabilities, including batch processing, product-level settings, timing, and fixed-rate surcharges. Ends with financial account adjustments, which use debit or credit entries to correct balances without issuing payments or liabilities."
+                  }
+                ],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This section explains how tax adjustments are applied to benefit payments. If product-level settings require it, a tax rate from rate table administration is applied during online payment generation or the generate instruction line items batch process. The system creates two related instruction line items: a debit against the benefit and a matching item to pay the tax authority. A relationship record preserves traceability back to the original case nominee, including when tax authority payments are bulked."
+              },
+              {
+                "title": "Surcharge adjustments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Describes surcharge adjustments for overdue liabilities. The generate instruments batch scans outstanding instruction line items, checks whether surcharge processing is enabled and due, then applies a fixed product-level surcharge rate to the unpaid amount and creates a surcharge instruction line item. Surcharge items for the same client are rolled up with other liability items when instruments are generated. Example: unpaid bills may be surcharged after one month at a configured rate such as 5%. Also briefly notes financial account adjustments as debit/credit entries used to balance a client account without issuing payments or liabilities."
+              },
+              {
+                "title": "Financial account adjustments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "This section explains how financial account adjustments balance a client’s account without issuing a payment or liability. It covers applying taxes, where one line item is rolled into the benefit payment and another is issued to the tax authority via batch processing. It also covers surcharge adjustments for overdue liabilities, including when surcharge processing runs, how charges are calculated, and that product-level settings control whether and when surcharges are applied."
+              },
+              {
+                "title": "Examples of payment generation with deductions and tax adjustments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000028",
+                  "start_page": 26,
+                  "end_page": 28
+                },
+                "summary": "Worked example of payment generation with deductions and tax adjustment. A weekly $35 benefit for John Smith also has a $5 third-party deduction and 10% tax adjustment, creating financial components and instruction line items for the benefit, the deduction, the tax deduction, and corresponding third-party/tax authority payments. The benefit payment instruction rolls up to $26.50 ($35 - $5 - $3.50), and related instruction statuses become processed. The section also covers batch processes for third-party/tax payments, payment instruments, and payslips, with notes about ERP-integrated environments."
+              },
+              {
+                "title": "Examples of liability with surcharge adjustments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000030",
+                  "start_page": 29,
+                  "end_page": 30
+                },
+                "summary": "This section gives an example of surcharge adjustment processing for liability service fees. It describes a $100 monthly liability for Midway Emporium, a 10% surcharge rate, and a one-month payment limit. It walks through creation of the recurring financial component, generation of a liability instruction line item and liability instrument for January, the roll-forward to February, and how the outstanding amount remains until allocation. It also notes ERP-integrated environments handle equivalent processing externally."
+              }
+            ],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000030",
+              "start_page": 22,
+              "end_page": 30
+            },
+            "summary": "Covers processing of deductions and adjustments in Cúram Financials. Explains applied, un-applied, and third-party deductions, secondary financial components, batch generation rules, insufficient-funds handling, priority, overlap validation, and traceable paired line items. Describes tax adjustments applied at payment generation via product settings and rate tables, creating debit/tax-authority line items. Also covers surcharge adjustments on overdue liabilities during generate instruments, and financial account adjustments used only to balance accounts without issuing payments or liabilities. Includes worked examples for benefit deductions/tax and liability surcharges."
+          },
+          {
+            "title": "1.4 Maintaining payments and liabilities",
+            "level": 2,
+            "children": [
+              {
+                "title": "Capturing manual payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how to capture a manual payment issued outside the system when the system is unavailable or an external agency pays a case nominee. The process recreates payment elements (payment instrument, instruction, rolled-up line items, deductions/taxes), can record a specific cover period for entitlement calculation, then processes the due payment to prevent duplicate payout. It compares the manual amount to the processed amount, creates any over/underpayment adjustment, and notifies the case owner."
+              },
+              {
+                "title": "Canceling and reissuing payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains how payments issued in error can be canceled at the payment instruction level, with instruction line items also canceled and a reversal instruction created for traceability. Covers common reasons for cancellation, such as lost checks, closed bank accounts, or incorrect instrument details. Describes reissuing canceled payments to the original or an alternative nominee using active delivery patterns, optionally with applied or unapplied deductions. Also notes when reissue with deduction should be used instead of invalidate/replacement payment to achieve a reduced payment."
+              },
+              {
+                "title": "Invalidating payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Payments issued to clients can be invalidated so they are no longer considered by processing, typically to enable replacement payments for incorrect amounts. A payment may be canceled and invalidated together, or canceled first and invalidated later if supporting information is pending. If invalidated, all associated components are also invalidated. The section contrasts invalidation with cancellation, and notes that integrated environments follow a different cancellation/reissuing process."
+              },
+              {
+                "title": "Approving suspended payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how suspended payments are handled when a delivery method has a maximum payment limit. Payments over the limit are automatically suspended pending investigation. An organization can approve the suspended payment to override the limit and allow issuance to the case nominee. Overpayments and underpayments are still created whether or not the suspension is approved, since they may relate to multiple payments and the suspension may be resolved later."
+              },
+              {
+                "title": "Reversing liabilities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains how liabilities can be reversed or written off. Reversals can apply to all or part of a liability instruction, including individual line items; the system negates amounts instead of deleting them, creates reversal line items for traceability, updates outstanding balances to zero for reversed items, and can release prior allocations for reuse. Write-offs also apply to all or part of a liability instruction, such as bankruptcy-related debt, create write-off line items, and reduce the outstanding amount. Notes integrated environments may behave differently."
+              },
+              {
+                "title": "Writing-off liabilities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains how liabilities can be written off in whole or in part so the nominee is no longer responsible for the written-off amount, with bankruptcy as an example. A write-off amount must be no greater than the liability’s outstanding amount. The system creates a write-off instruction line item for accountability and automatically allocates it to the liability instruction, reducing the outstanding balance accordingly."
+              },
+              {
+                "title": "Over and under payment processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Explains over/under payment processing during case reassessment. If new decisions overlap already processed payment or billing decisions and differ from them, Cúram creates financial data for the new decisions and compares it to actual processed instruction line items to calculate the payment discrepancy. Includes a worked example showing granular line-item differences across child benefit and max personal components, with a total over/under payment of -60.00. Notes that integrated environments handle liability write-off differently and refers to related technical and case management guides."
+              }
+            ],
+            "node_id": "n000044",
+            "range": {
+              "start_unit_id": "p000031",
+              "end_unit_id": "p000035",
+              "start_page": 31,
+              "end_page": 35
+            },
+            "summary": "Covers maintenance of payments and liabilities. Payment functions include capturing manual payments made outside the system, recreating payment elements, handling cover periods, preventing duplicate payout, and creating over/underpayment adjustments. It also explains canceling and reissuing payments, invalidating payments for replacement issuance, and approving suspended payments over delivery-method limits. Liability functions include reversing liabilities, which negates amounts and restores allocatable balances, and writing off liabilities, which reduces outstanding debt. Ends with over/underpayment processing during case reassessment and a worked example."
+          },
+          {
+            "title": "1.5 Processing and maintaining payments received",
+            "level": 2,
+            "children": [
+              {
+                "title": "Recording payments received",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains how payments received are processed and recorded in Cúram. Payments received are amounts paid to the organization to settle liabilities and are not case-generated; they may be entered manually or via batch, including EFT bulk imports. The section covers recording payments from a person or employer, which creates a payment received instrument, instruction, and instruction line item and adds the payment to their financials for allocation, and recording payments from unknown sources in a suspense account until identified."
+              },
+              {
+                "title": "Transferring payments received from a suspense account",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how payments held in a suspense account are transferred to a person’s or employer’s financials, changing status to “transferred” with a transfer date while preserving accountability. Describes allocating received payments to one or more outstanding liabilities, including limits based on payment and liability balances. Covers liability over allocation, where excess payment can be reserved as credit, later reconciled and applied by the Reconcile Case Account batch process, or left unavailable if over-allocation is not configured."
+              },
+              {
+                "title": "Allocating payments received",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how payments received are transferred from suspense to a person’s or employer’s financials, with payment status updated to “transferred” and a transfer date recorded. Describes allocating received funds across one or more outstanding liability instructions, with allocations limited by the payment amount and liability balance unless over-allocation is enabled. Covers liability over allocation, where excess payment can be reserved as credit, then later applied via the Reconcile Case Account batch process to other liabilities or cases."
+              },
+              {
+                "title": "Liability over allocation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how received payments move from suspense to a person/employer’s financials, where they can then be allocated to outstanding liabilities. Covers allocation rules, tracking of unallocated amounts, and the special case of liability over allocation: when enabled, payments exceeding a billed liability can be fully applied, with excess held as a reserved credit and later reconciled by the Reconcile Case Account batch process. If over allocation is not enabled, allocations cannot exceed the liability amount."
+              },
+              {
+                "title": "Refunding an unallocated amount",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Explains how an unallocated payment amount can be refunded to the payer using their preferred payment method. The refund updates the unallocated amount, creates a refund instruction line item, and links it back to the original payment. The section also introduces liability over-allocation: if enabled, excess payment beyond the billed liability is held as reserved credit for later reconciliation and possible allocation to other liabilities; if disabled, allocations cannot exceed the liability total."
+              },
+              {
+                "title": "Canceling a refund",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "This section explains how to cancel an issued refund of an unallocated amount and how the system preserves traceability by creating a replacement transaction with the canceled amount. It also covers canceling a received payment, including reversing the original payment instruction, canceling any related allocations, and handling refunded amounts by creating an overpayment or payment correction case—or canceling the replacement transaction if the refund was already canceled."
+              },
+              {
+                "title": "Canceling payments received",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "This section explains how to cancel received payments in Cúram Financials. It covers when a refund of an unallocated amount can be canceled, how canceling a refund creates a replacement transaction rather than updating the original unallocated amount, and how canceling a payment received generates a reversal instruction. It also notes that any related allocations and refunds must be reversed, including creation of liability instruction line items or an overpayment/payment correction case, depending on configuration."
+              }
+            ],
+            "node_id": "n000052",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000038",
+              "start_page": 36,
+              "end_page": 38
+            },
+            "summary": "Explains how Cúram records payments received from persons, employers, unknown sources, or EFT batch imports, and how these payments are transferred from suspense to financials, allocated to outstanding liabilities, refunded if unallocated, and handled when liability over-allocation is enabled. Covers created payment/instruction records, transfer status and date, allocation limits, reserved credit, and Reconcile Case Account batch processing. Also notes configuration for zero-difference net scenarios and that ERP systems may handle these processes in integrated environments."
+          },
+          {
+            "title": "1.6 Financial instruction types",
+            "level": 2,
+            "children": [
+              {
+                "title": "Payment instruction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Describes the payment financial instruction type in Cúram 8.1.2. It explains that payment instructions bundle eligible benefit payments with rolled-up deductions, bonuses, taxes, and underpayments. A table lists the line items that can be rolled up into a payment instruction: benefit, deduction, ad hoc bonus, tax, and under payment, along with the processes that create them. It also covers related reversal line items created when a payment instruction is canceled, including reversals for deductions and taxes."
+              },
+              {
+                "title": "Liability instruction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "This section explains the liability financial instruction type: bills issued to eligible clients are rolled up with surcharges and any over/under payments. It lists the instruction line items that can be rolled into a liability instruction (liability ILI/service fee, surcharge ILI, over/under billing ILI) and those applied to it (allocated payment received ILI, overallocation ILI). It also notes which processes create or apply each ILI, including liability generation, surcharge, reassessment, and payment allocation/reconciliation."
+              },
+              {
+                "title": "Payment received instruction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000042",
+                  "start_page": 42,
+                  "end_page": 42
+                },
+                "summary": "Explains the payment received instruction, which generates a credit financial instruction from payments received from anonymous sources, the client, or on the client’s behalf. It lists rolled-up line items: unallocated payment received, allocated payment received, deduction payment, and refund amounts, with their originating processes. Also notes that applied instruction line items are described in a following table. Useful for understanding how received payments are represented, allocated, refunded, and rolled up in financial instructions."
+              },
+              {
+                "title": "Reversal instruction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000044",
+                  "start_page": 43,
+                  "end_page": 44
+                },
+                "summary": "This section explains the reversal instruction type, which negates all or part of an existing financial instruction. It distinguishes reversals as credits for liabilities and payment cancellations, and debits for payment received cancellations. It describes rolled-up, related, and applied instruction line items, including reversal ILIs, benefit ILIs, additional payment-related ILIs, liability ILIs, over/under billing, payment received ILIs, reverse allocation ILIs, and write-off ILIs. It is useful for understanding how reversals affect allocations and outstanding amounts."
+              },
+              {
+                "title": "Write-off instruction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Explains the write-off instruction as a credit transaction that reverses all or part of an existing liability instruction or reversed payment received instruction. Describes which financial instruction line items roll up into a write-off instruction, including write-off liability and write-off reversed allocated payment received line items. Also lists related line items that can be linked to a write-off instruction, such as liability ILIs and reverse allocation ILIs, and the processes that create them. Begins introducing third-party payment instructions for third-party or tax deductions."
+              },
+              {
+                "title": "Third-party payment instruction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Explains financial instruction relationships for write-off and third-party payment instructions. A write-off instruction reverses all or part of an existing liability or reversed payment received instruction, with rolled-up write-off line items and related liability or reverse-allocation line items. Also defines a third-party payment instruction as a payment issued to a third party for benefit-related third-party deductions or tax deductions, and notes that the following table describes the line item rolled into it."
+              },
+              {
+                "title": "Adjustment instruction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "Adjustment instruction corrects a client’s financial account. It is created from an Adjustment ILI, which represents the adjustment amount and whether it is a credit or debit, and is produced by the Create adjustment process. The surrounding section also introduces financial batch processes and how batch jobs are submitted to the queue via the System Administrator application, including optional parameters and confirmation/cancel behavior."
+              }
+            ],
+            "node_id": "n000060",
+            "range": {
+              "start_unit_id": "p000039",
+              "end_unit_id": "p000045",
+              "start_page": 39,
+              "end_page": 45
+            },
+            "summary": "This section defines Cúram financial instruction types and how instruction line items are rolled up, related, or applied. It covers payment instructions (benefits plus deductions, bonuses, taxes, underpayments and payment reversals), liability instructions (bills plus surcharges, over/under billing, allocations, write-offs, reversals), payment received instructions (unallocated/allocated receipts, deduction payments, refunds, cancellations), reversal instructions, write-off instructions, and third-party payment instructions. It explains the processes that create each ILI and how reversals, cancellations, and allocations affect balances."
+          },
+          {
+            "title": "1.7 Financial batch processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Submitting to the batch queue",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "Explains how to submit financial batch processes to the batch queue in the System Administrator application. The user selects Execute for a batch process, enters any required parameters on the Execute Batch Process page, and clicks Execute to queue it; if no parameters are needed, the user confirms execution and may cancel instead. On submission, BatchProcRequest is populated, and BatchParamValue is populated only when parameters are provided."
+              },
+              {
+                "title": "Running the batch launcher",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "This section explains how batch processes are queued and executed by the batch launcher in the Server Development Environment (SDEJ), including automatic startup and shutdown of the stand-alone keyserver and the option for batch process streaming. It also gives the command-line syntax for running a batch program from EJBServer. Finally, it introduces the financials batch suite and states that four batch processes must be run in sequence to create financial records, starting with DetermineProductDeliveryEligibility."
+              },
+              {
+                "title": "Running a batch program from the command line",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "This section explains how to run batch programs from the command line via the batch launcher in the Server Development Environment (SDEJ). It notes that queued processes must be submitted in execution order, that the launcher starts and stops the stand-alone keyserver automatically, and that batch process streaming can run multiple instances in parallel. It also gives the `build runbatch` command syntax and introduces the financials batch suite, which requires running four batch processes in sequence to create financial records."
+              },
+              {
+                "title": "Financials batch suite",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Explains batch process ordering and how the batch launcher works in the Cúram SDEJ, including starting/stopping the standalone keyserver and support for batch streaming. Shows the command-line syntax for running a batch program from the EJBServer project directory. Introduces the Financials batch suite, stating that financial records are created by running four batch processes in sequence, and details the first process, DetermineProductDeliveryEligibility, including its parameters, status transitions, and purpose."
+              },
+              {
+                "title": "Business processing date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Explains the optional business processing date parameter for batch jobs. It differs from the system date (“today”) and can be set via ProcessingDate to rerun jobs as if on an earlier date. If omitted, it defaults to the system date. Notes that getCurrentDate() returns the business processing date inside batch transactions, while getSystemDate() returns the real system date. Also mentions batch-job output such as logs, emails, and reports, with log files stored in EJBServer/buildlogs."
+              },
+              {
+                "title": "Output to logs, emails, and reports",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Explains batch process output and timing context. It notes that developers often include summary output like records processed and execution time, and that log files are written to the EJBServer/buildlogs directory. This section follows discussion of batch jobs, business processing date vs system date, and how batch execution can “spoof” dates via ProcessingDate."
+              },
+              {
+                "title": "GenerateInstructionLineItems",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "GenerateInstructionLineItems is a batch process that creates Instruction Line Items (ILIs) from financial components. It runs after DetermineProductDeliveryEligibility or after case activation, and its output is later rolled up by GenerateInstruments into payment/liability instructions or instruments. The section explains submission parameters: DeliveryMethod, InstanceID, ProcessingDate, ProcessingDateFrom/To, and ProductID. These are optional except InstanceID for batch streaming; missing dates default to system null. If DeliveryMethod or ProductID is omitted, all applicable FCs are processed."
+              },
+              {
+                "title": "GenerateInstruments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "GenerateInstruments is a batch process that finds unprocessed instruction line items (ILIs) with status UNP and processes them. The section also notes related parameters and behavior: delivery method rules for liability/payment/recoupment FCs, InstanceID requirement for batch streaming, ProcessingDate and date-range defaults, and ProductID handling. It describes a configurable application property, ENV_GENERATEINSTRUCTIONLINEITEMS_DONT_REASSESS_CASE, which can prevent CER cases from being reassessed before generating payments."
+              },
+              {
+                "title": "GeneratePayslips",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "GeneratePayslips is a batch process run immediately after GenerateInstruments to identify payslips pending issue and generate payslips sent to participants showing the breakdown of payments or bills at the Instruction Line Item (ILI) level. It covers three payslip types: client, case nominee, and participant."
+              },
+              {
+                "title": "LoadPaymentsReceived",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "LoadPaymentsReceived is a batch process that imports payment-received details from an external tab-delimited flat file into the system for persistent storage. It reads an input file when available, such as bank-supplied payment data, to record already received payments. The batch expects FilePath, FileName, and optional ProcessingDate; FilePath and FileName are mandatory. FilePath typically points to <Drive>:/Curam/svr/run, and FileName is the full input filename. If IBAN functionality is enabled, the file must also include IBAN and BIC values."
+              },
+              {
+                "title": "IssueConcernPayments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "IssueConcernPayments is a batch process that issues payments to due participants such as persons, employers, external parties, information providers, service suppliers, product providers, utilities, and representatives. It uses participant payment method and frequency plus next processing dates, often from the organization calendar, and may run daily. The process accepts optional parameters: ConcernTypeCode, MethodOfPayment, NextPaymentDateFrom/To, and ProcessingDate. If omitted, dates default to system null and all matching concern roles or delivery methods are processed."
+              },
+              {
+                "title": "ExpirePayments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000080",
+                "range": {
+                  "start_unit_id": "p000054",
+                  "end_unit_id": "p000054",
+                  "start_page": 54,
+                  "end_page": 54
+                },
+                "summary": "ExpirePayments is a batch process that expires uncashed payments, typically checks, after a specified number of days. It targets payment instruments with reconcilStatusCode ISS (issued) and requires DeliveryMethod, ExpiryPeriod (in days), and ProcessingDate parameters. The section explains how batch processing uses the business date and notes checks usually have a six-month lifespan. It is useful for understanding when and how issued payments are marked expired."
+              },
+              {
+                "title": "ProcessPaymentInstrumentTypes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "ProcessPaymentInstrumentTypes is the batch job that identifies payment instruments due for issue, writes their details to an output file, and updates their status to issued (ISS). It effectively issues payments, such as EFT files sent to a bank for transfer to participant accounts. Optional parameters are DeliveryMethodType and ProcessingDate; if no delivery method is provided, all types are processed. The section also briefly introduces payment reconciliation, which compares issued vs. paid amounts using FilePath, FileName, and ProcessingDate."
+              },
+              {
+                "title": "Payment reconciliation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "Payment reconciliation is a batch process that matches amounts intended to be paid to participants against amounts actually paid, and reports any discrepancies. It takes an input flat file from the paying institution (for example, a bank) containing received payment details, compares those payments with system-issued payments, and generates a report of differences. When run from the application queue, it requires FilePath and FileName, with ProcessingDate also used. FilePath is typically a directory such as `<Drive>:/Curam/svr/run`."
+              },
+              {
+                "title": "GeneralLedgerInterface",
+                "level": 3,
+                "children": [],
+                "node_id": "n000083",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000056",
+                  "start_page": 56,
+                  "end_page": 56
+                },
+                "summary": "GeneralLedgerInterface is a batch process that extracts financial transactions for a specified date or date range and exports them to a file for import into the general ledger. The output is at instruction line item level, covering credit and debit transactions. Key parameters include CreationDateSearchInd (True for creation-date search, False for effective-date search), DateFrom, DateTo, and ProcessingDate. Date parameters are optional and default to the system null date if not supplied."
+              },
+              {
+                "title": "ReconcileCaseAccount",
+                "level": 3,
+                "children": [],
+                "node_id": "n000084",
+                "range": {
+                  "start_unit_id": "p000057",
+                  "end_unit_id": "p000057",
+                  "start_page": 57,
+                  "end_page": 57
+                },
+                "summary": "ReconcileCaseAccount is a batch process for liability cases only. It reconciles both overbilling/overpayment and underbilling/underpayment cases, but not benefit overpayments or payment corrections. It balances a single case account by reallocating over-allocations within the same case, and any remaining money may be available for other cases but is not automatically allocated. The process uses the optional ProcessingDate business date and runs overpayment cases before underpayment cases."
+              }
+            ],
+            "node_id": "n000068",
+            "range": {
+              "start_unit_id": "p000046",
+              "end_unit_id": "p000057",
+              "start_page": 46,
+              "end_page": 57
+            },
+            "summary": "Explains Cúram financial batch processes for creating and maintaining instruction line items and financial instructions. Covers submitting jobs to the batch queue, queue ordering, batch launcher behavior, command-line execution, and the four-step financials batch suite. Describes the business processing date and batch outputs (logs, emails, reports). Details major financial batch jobs and key parameters: GenerateInstructionLineItems, GenerateInstruments, GeneratePayslips, IssueConcernPayments, ExpirePayments, ProcessPaymentInstrumentTypes, payment reconciliation, GeneralLedgerInterface, and ReconcileCaseAccount."
+          },
+          {
+            "title": "1.8 Financial code tables",
+            "level": 2,
+            "children": [
+              {
+                "title": "Financial code tables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000086",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000059",
+                  "start_page": 58,
+                  "end_page": 59
+                },
+                "summary": "Explains how the Financial Manager handles overpaid and underpaid liability case reconciliation, converting processed overpayments into unallocated payment records and creating adjustment line items for processed underpayments. Main focus is the financial code tables required to issue financials: RulesComponentType, FinComponentType, ProductComponentFCConv, ILIType, and TranslateILIType. Describes how these tables map custom rule component types to financial component types and instruction line item types, and notes that custom ILIs considered payments should map to ReassessmentAmount code AT1."
+              },
+              {
+                "title": "Instruction Line Items (ILI) relationship types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000087",
+                "range": {
+                  "start_unit_id": "p000060",
+                  "end_unit_id": "p000060",
+                  "start_page": 60,
+                  "end_page": 60
+                },
+                "summary": "This section explains Instruction Line Item (ILI) relationship types used by the financial manager to process related ILIs, such as deduction items and their corresponding payments. It notes that these relationships are stored on the instruction line item relation entity, which keeps the related ILI identifiers and relationship type. The section lists all supported types: REV, SUR, TAD, TAP, UTD, UTP, RPP, RPD, INT, LLB, LRP, CDI, CDP, and CAN."
+              }
+            ],
+            "node_id": "n000085",
+            "range": {
+              "start_unit_id": "p000058",
+              "end_unit_id": "p000060",
+              "start_page": 58,
+              "end_page": 60
+            },
+            "summary": "Explains how the Financial Manager reconciles overpaid and underpaid liability cases, converting processed overpayments into unallocated payment received records and creating adjustment line items for processed underpayments. Describes five code tables needed to issue financials: RulesComponentType, FinComponentType, ProductComponentFCConv, ILIType, and TranslateILIType, including mappings from rules components to financial components and from ILIs to reassessment amounts (payments to AT1, liabilities to AT6). Also lists internal ILI relationship types stored on the instruction line item relation entity, such as REV, SUR, TAD/TAP, UTD/UTP, RPP/RPD, INT, LLB/LRP, CDI/CDP, and CAN."
+          },
+          {
+            "title": "1.9 Financial customization points",
+            "level": 2,
+            "children": [
+              {
+                "title": "Financial hooks",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Deduction hooks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000062",
+                      "end_unit_id": "p000062",
+                      "start_page": 62,
+                      "end_page": 62
+                    },
+                    "summary": "This section describes FinancialHooks deduction customization points for standalone underpayments. It explains that by default, objectives tied to underpayment financial components on the original benefit case are not deductible. You can override this by implementing curam.core.impl.FinancialHooks.isComponentDeductible() to mark a standalone underpayment objective deductible, and curam.core.impl.FinancialHooks.deductFromStandaloneUnderpayment() to apply a case deduction to a standalone underpayment. It also notes that you must provide an implementation of the FinancialHooks class."
+                  },
+                  {
+                    "title": "Third-party deduction hooks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000091",
+                    "range": {
+                      "start_unit_id": "p000063",
+                      "end_unit_id": "p000063",
+                      "start_page": 63,
+                      "end_page": 63
+                    },
+                    "summary": "Shows how to customize financial and third-party deduction behavior. Includes a sample `FinancialHooks` subclass implementing `isComponentDeductible` and `deductFromStandaloneUnderpayment`, plus Guice binding to register the implementation. Also notes two extension points for third-party deduction instruction line items: `PreCreateThirdPartyDeductionILIs` and `PostCreateThirdPartyDeductionILIs`, used for custom processing before and after creation."
+                  },
+                  {
+                    "title": "Regenerate instruction line item hook",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000092",
+                    "range": {
+                      "start_unit_id": "p000064",
+                      "end_unit_id": "p000064",
+                      "start_page": 64,
+                      "end_page": 64
+                    },
+                    "summary": "Explains how to customize `curam.core.hook.impl.RegenerateInstructionLineItemHook` to stop specific instruction line items from being regenerated when a cancelled payment is reissued. Notes that, by default, all ILIs included in the original payment are regenerated, and this hook can exempt items such as third party deduction ILIs. Also shows the standard pattern for implementing and binding a hook class via Guice."
+                  },
+                  {
+                    "title": "Instruction line item post insert hook",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains the instruction line item post-insert hook in `curam.core.sl.event.impl.InstructionLineItemEvents`, which lets you add custom business processing after an instruction line item is inserted, such as updating custom entities. Includes a brief note to consult the related Javadoc and the Events section of the Persistence Cookbook."
+                  },
+                  {
+                    "title": "Payment instrument post insert and post modify hooks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000066",
+                      "end_unit_id": "p000067",
+                      "start_page": 66,
+                      "end_page": 67
+                    },
+                    "summary": "Explains how to use `PaymentInstrumentInsertModifyEvents` to add custom business logic after payment instrument insert and modify operations, such as updating custom entities. Shows how to implement a subclass, override hooks including `postInsert` and several `postmodify*` methods for amount/effective date, reconciliation status, invalidation, and status changes, then bind it with Guice. Also briefly references the related `InstructionLineItemEvents` example for post-insert hooks and points to Javadoc/Persistence Cookbook for details."
+                  },
+                  {
+                    "title": "Dynamic Offset hook",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000095",
+                    "range": {
+                      "start_unit_id": "p000068",
+                      "end_unit_id": "p000068",
+                      "start_page": 68,
+                      "end_page": 68
+                    },
+                    "summary": "Describes the `curam.core.impl.DynamicOffset` hook point, which lets customers calculate a positive or negative offset to the next processing date for financial components based on criteria such as a client’s social security number. Notes it can also be static if needed, and may be used to spread payments over a period. Provides guidance to implement `DynamicOffset` by overriding `determineOffsetValue(FCProcessingDtls)` and references related Javadoc/Persistence Cookbook materials."
+                  }
+                ],
+                "node_id": "n000089",
+                "range": {
+                  "start_unit_id": "p000062",
+                  "end_unit_id": "p000068",
+                  "start_page": 62,
+                  "end_page": 68
+                },
+                "summary": "Covers financial customization hooks: making standalone underpayment objectives deductible and applying deductions via `FinancialHooks`, plus third-party deduction create hooks (`PreCreateThirdPartyDeductionILIs`, `PostCreateThirdPartyDeductionILIs`). Also shows how to suppress regeneration of specific instruction line items with `RegenerateInstructionLineItemHook`, add post-insert business logic for instruction line items and payment instruments, and compute positive/negative processing-date offsets with `DynamicOffset`. Each topic includes implementation and Guice binding patterns."
+              },
+              {
+                "title": "Assessment customization points",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Assessment engine hooks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000097",
+                    "range": {
+                      "start_unit_id": "p000069",
+                      "end_unit_id": "p000070",
+                      "start_page": 69,
+                      "end_page": 70
+                    },
+                    "summary": "Describes assessment-related financial customization hooks in Cúram. Covers AssessmentEngineHooks and ReassessEligibilityHook, including getRate, haltPaymentProcessing, manipulateFinancialComponents, rollUpComponents, getFCDatesAndValues, reassessEligibility, stopFinancialProcessing, filterNewCaseDecisions, and listCaseDecisionsForRegenerateFinancials. Explains what each hook changes in assessment, payment, eligibility, decision filtering, and financial component generation. Notes Guice-based binding, per-product custom implementations for ReassessEligibilityHook, and that FCGenerationHook is optional, single-implementation, and must return a non-null valid/default value."
+                  },
+                  {
+                    "title": "Assessment engine events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000098",
+                    "range": {
+                      "start_unit_id": "p000071",
+                      "end_unit_id": "p000074",
+                      "start_page": 71,
+                      "end_page": 74
+                    },
+                    "summary": "Describes assessment engine customization events in Cúram Financials via `curam.core.sl.infrastructure.assessment.implAssessmentEngineEvent`. Lists key listener hooks and when they fire: before/after reassessment eligibility, after reassessment financial components, decision review/insertion, and after processing benefit/liability overpayments, underpayments, and payment corrections. Notes which events apply to classic vs CER-enabled products and that listeners can override methods for custom processing. The remainder of the pages are legal notices, copyright, privacy, and trademark information."
+                  }
+                ],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000069",
+                  "end_unit_id": "p000074",
+                  "start_page": 69,
+                  "end_page": 74
+                },
+                "summary": "Cúram Financials assessment customization points. Covers hook-based extensions in AssessmentEngineHooks and ReassessEligibilityHook for rates, payment halting, financial component manipulation/roll-up, FC date/value overrides, eligibility reassessment, stopping financial processing, filtering new decisions, and regenerating financials. Notes Guice binding, per-product custom implementations, and that FCGenerationHook is optional, single-implementation, and must return a non-null value. Also describes AssessmentEngineEvent listeners for pre/post reassessment, decision review/insert, and overpayment/underpayment/payment-correction processing, with classic vs CER applicability."
+              }
+            ],
+            "node_id": "n000088",
+            "range": {
+              "start_unit_id": "p000061",
+              "end_unit_id": "p000074",
+              "start_page": 61,
+              "end_page": 74
+            },
+            "summary": "Section 1.9 explains how to customize Cúram Financials via product-type-based alternative implementations and Guice bindings. It covers hooks for deduction handling on standalone underpayments, third-party deduction creation, suppressing regeneration of specific ILIs after cancelled payment reissue, and post-insert/post-modify logic for instruction line items and payment instruments. It also describes assessment customization hooks and events for reassessment, decision filtering, stopping financial processing, financial component regeneration, and post-processing of overpayments/underpayments/payment corrections, with classic vs CER applicability."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000074",
+          "start_page": 9,
+          "end_page": 74
+        },
+        "summary": "Overview of Cúram Financials: processes payments, liabilities, and payments received for persons/employers, requiring a nominee. Explains core concepts and lifecycle: financial components, instruction line items, instructions, instruments, delivery patterns, cover periods, offsets, exclusion dates, recurring/once-off processing, deductions, reassessments, and over/underpayments. Also covers maintaining and issuing payments/liabilities, payment receipt allocation and suspense handling, batch jobs, financial code tables, customization hooks/events, and ERP integration. Useful as the top-level entry point for how Cúram financials are structured and operated."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

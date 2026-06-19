@@ -1,0 +1,1282 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "04a981dd6fd9401a",
+    "title": "Cúram 8.1.2 REST API Accelerator Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/RESTFULAPIAccel_PDF.pdf",
+    "source_type": "pdf",
+    "sha256": "04a981dd6fd9401a4b19dccc1a1b094f72374c4342a7eb50b3905399bd87a9c9",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:22:47+00:00",
+    "page_count": 76,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/RESTFULAPIAccel_PDF.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 REST API Accelerator Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000076",
+      "start_page": 1,
+      "end_page": 76
+    },
+    "summary": "This section is the full Cúram 8.1.2 REST API Accelerator Guide. It introduces the REST API accelerator built on Cúram Platform 6.1, Outcome Management, and the Adult Social Care accelerator, and explains how to integrate an external mobile app via Cúram REST services. It covers the main personas (business analyst, Cúram developer, mobile app developer), architecture using IBM MobileFirst, accelerator overview, installation, requirements analysis, and creating custom REST APIs. It also includes appendix material with concrete API examples for retrieving case details and handling dynamic evidence, including practitioner certificates and nested diagnosis records, with create/update/delete flows and required child-first deletion ordering. The final pages contain Merative notices, licensing/permissions, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice page stating that users should read the Notices section before using the information or product. Includes copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter and early overview for the Cúram REST API accelerator. It states the edition applies to Cúram 8.1, 8.1.1, and 8.1.2, then introduces the accelerator’s purpose, personas, and architecture. It explains the MobileFirst-based mobile app to Cúram server REST flow, the Adult Social Care business scenario, and key REST API design decisions such as combining case/payment/eligibility data into one resource, nesting diagnosis under practitioner certificate, and reusing existing Social Program REST APIs."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers the Cúram REST API accelerator from implementation and deployment through mobile app integration and fit-gap analysis. It explains REST API design/modeling steps, resource configuration, testing, Tomcat deployment, and an example JSON response for Adult Social Care cases. It also describes the mobile app scenario and business requirements, then begins analyzing project gaps for practitioner certificate and person phone evidence, noting missing fields like inpatient indicator, facility name, and phone label/code table mismatches."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section explains how Cúram Analysis Documentation Tooling (CADT) supports fit-gap and impact analysis for pages, code tables, domains, messages, and workflows, using a phone-number example. It then outlines mobile app requirement decisions: choose hybrid vs native/web, keep only core features and most recent data, and follow platform UI guidelines. The section also introduces custom REST API design principles, resource/method conventions, example Adult Social Care endpoints, and sample JSON representations for case and practitioner certificate resources."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section explains how to analyze, model, implement, and configure Adult Social Care REST APIs in Cúram. It covers fit-gap analysis of existing/new APIs, JSON struct modeling in Rational Software Architect, facade operations for cases and certificates, mandatory fields, and implementation/build steps. It also details nested diagnosis evidence inside certificates, required helper structs/query parameters, file locations for implementation constants, and creating XML REST resource configuration mappings."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Cúram REST API accelerator details for Adult Social Care: REST resource configuration files, sample XML/properties, build/deploy steps, Swagger access, and testing via browser and unit tests. Shows example GET response for asc_cases and a Java HttpURLConnection test. Also covers IBM MobileFirst setup, installing the mobile accelerator and third-party libraries, deploying the mobile app, and walkthroughs for searching a client, editing a practitioner certificate, creating a diagnosis, and integrating GET/PUT REST calls via a MobileFirst adapter."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Cúram REST API accelerator guidance for Adult Social Care mobile integration. Covers building IBM MobileFirst HTTP adapters for custom GET and PUT requests, including endpoint paths, parameters, localhost:9080 settings, and required Referer header for write operations. Explains date-time ISO 8601 handling. Appendix details core APIs and logic for retrieving case, decision, and payment data, plus dynamic evidence for practitioner certificates and child diagnosis records: reading, sorting, limiting latest records, creating/updating certificates, and managing child evidence create/update/delete flows."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Explains how the Cúram REST API accelerator creates, updates, and deletes practitioner certificate evidence and nested diagnosis child evidence. Covers mapping resource fields into dynamic evidence structures, using EvidenceGenericSLFactory/EvidenceControllerFactory to create/modify/remove/apply changes, detecting diagnosis creates vs. updates vs. deletes by comparing child IDs to incoming lists, and deleting child diagnosis records before deleting the parent practitioner certificate to avoid errors. Includes sample code for evidence descriptors, parent-child relationships, and update checks."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000074",
+          "start_page": 5,
+          "end_page": 74
+        },
+        "summary": "Front matter and Chapter 1 for the Cúram REST API accelerator. It applies to Cúram 8.1, 8.1.1, and 8.1.2 and introduces the accelerator’s purpose, personas, and MobileFirst-based architecture linking a tablet app to Cúram REST services. It explains the Adult Social Care scenario, REST design choices, fit-gap analysis, mobile app requirements, and custom REST API development. The appendix details core APIs and dynamic evidence handling for practitioner certificates and nested diagnosis records, including create/update/delete flows and parent-child deletion ordering."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000076",
+              "end_unit_id": "p000076",
+              "start_page": 76,
+              "end_page": 76
+            },
+            "summary": "This section contains legal notices: sample data and program disclaimers, copyright/license terms for sample source code, Merative’s privacy policy link, and trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It notes the sample programs are provided “AS IS” without warranty and limits Merative liability."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000076",
+              "end_unit_id": "p000076",
+              "start_page": 76,
+              "end_page": 76
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands used in the document. States that example names are fictitious, sample programs are provided “AS IS” under the Merative Client Agreement, and may be copied/modified/distributed for API-conforming development. Includes Merative privacy policy link and identifies trademarks for IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus a 2012, 2024 copyright notice."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000075",
+          "end_unit_id": "p000075",
+          "start_page": 75,
+          "end_page": 75
+        },
+        "summary": "Merative publication notices and permissions: terms for personal and enterprise use, requiring proprietary notices to be preserved and restricting redistribution, derivatives, export, and other use without consent. States no additional rights are granted, Merative may withdraw permission, and the publications are provided “AS IS” without warranties. Also notes no patent license is implied, third-party product/site information is unendorsed and untested, and includes the copyright notice © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a Cúram REST API accelerator manual. Lists front matter (Note, Edition) and Chapter 1 sections covering REST API/mobile accelerator overview, personas, architecture, accelerator and Adult Social Care mobile app, installation, requirements analysis, creating a custom REST API, appendix API references, and notices/privacy/trademarks. Useful as a navigation index rather than substantive content."
+      },
+      {
+        "title": "1 Cúram REST API accelerator",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview of the REST API and mobile accelerators",
+            "level": 2,
+            "children": [
+              {
+                "title": "REST API accelerator personas",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the Cúram REST API accelerator and its purpose: demonstrating how to integrate an external mobile application with Cúram using the REST API infrastructure. It explains that the accelerator is a worked example for building REST APIs based on Adult Social Care mobile app requirements. It also defines the key personas involved—business analyst, Cúram developer, and mobile application developer—and notes that the documentation guides each persona through their tasks."
+              },
+              {
+                "title": "Architecture overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "This section gives an architecture overview of the Cúram REST API accelerator and its mobile app integration. It explains the roles of the Cúram developer and mobile application developer, then describes the flow from an IBM MobileFirst-based mobile app (HTML/CSS UI, JavaScript logic) through an HTTP adapter sending JSON/HTTP REST requests to the Cúram server, where the REST API and server-side components process the call."
+              },
+              {
+                "title": "Overview of the REST API accelerator",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "REST API accelerator business process",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000013",
+                      "start_page": 12,
+                      "end_page": 13
+                    },
+                    "summary": "Explains the REST API accelerator’s purpose: to teach how to build custom REST APIs, using the Adult Social Care accelerator as its base. It describes the business process where a caseworker uses a mobile app to search for clients, view profiles, and manage practitioner certificate and diagnosis evidence for an Adult Social Care case. It also outlines the main components involved: Cúram Platform, Cúram Outcome Management, and the Adult Social Care accelerator."
+                  },
+                  {
+                    "title": "REST API design decisions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains key REST API design choices for the Adult Social Care accelerator. It covers combining three initially separate APIs (case details, payment details, eligibility/entitlement) into one /asc_cases resource to balance granularity and simplicity. It also describes modeling diagnosis as nested within practitioner certificate because of their parent-child dynamic evidence relationship, with diagnosis operations handled through modifyCertificate. Finally, it notes reuse of three existing Social Program REST APIs that were assumed to meet the mobile app’s needs."
+                  },
+                  {
+                    "title": "REST API development process",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Process diagram",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000022",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Introductory section for the REST API accelerator’s development process. It explains that the diagram covers the full REST API creation lifecycle, from design through integration, and is meant as guidance for building custom REST APIs rather than a detailed methodology. It also references related REST API examples and the concept of nested resources, where nested resources should still represent complete business objects."
+                      },
+                      {
+                        "title": "REST API implementation overview",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000023",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000017",
+                          "start_page": 16,
+                          "end_page": 17
+                        },
+                        "summary": "Overview of the end-to-end process for creating a custom Cúram REST API, from design through integration. Covers deciding whether existing APIs are sufficient, performing fit-gap analysis, using TDD and unit tests to drive modeling and implementation, REST-specific modeling conventions, and a complex nested-resource example (modifyCertificate). Also explains resource configuration via ResourcesConfig.xml and RestConfig.properties, Swagger generation, and testing options with unit tests, Swagger tools, and the mobile app."
+                      }
+                    ],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000017",
+                      "start_page": 15,
+                      "end_page": 17
+                    },
+                    "summary": "Overview of the Cúram REST API development lifecycle, from design through integration, intended as guidance for building custom APIs. It covers reviewing existing APIs and fit-gap analysis, using TDD/unit tests to drive modeling and implementation, REST-specific modeling conventions, and a complex nested-resource example (modifyCertificate). It also explains resource configuration via ResourcesConfig.xml and RestConfig.properties, Swagger generation, and testing options with unit tests, Swagger-enabled tools, and the mobile app."
+                  }
+                ],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000017",
+                  "start_page": 12,
+                  "end_page": 17
+                },
+                "summary": "Introduces the REST API accelerator as a guide to building custom Cúram REST APIs, using the Adult Social Care accelerator and a mobile app integration example. Describes the business process, key platform components, and major design decisions: combining case/payment/eligibility data into one /asc_cases resource, nesting diagnosis under practitioner certificate via modifyCertificate, and reusing existing Social Program REST APIs. Also outlines the REST API development flow from design and fit-gap review through modeling, implementation, configuration, Swagger generation, and testing."
+              },
+              {
+                "title": "Overview of the Adult Social Care mobile application",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The Adult Social Care mobile application business scenario",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Describes the Adult Social Care mobile app business scenario built with IBM MobileFirst and REST APIs. It explains that the app is a basic hybrid tablet-focused demo, simulated in MobileFirst, with no device deployment or security integration. The scenario follows caseworker Jane, who remotely searches client James Smith, reviews address, contacts, case, payments, eligibility, and evidence, then updates practitioner certificate end dates and adds diagnosis evidence for an off-site case update."
+                  },
+                  {
+                    "title": "Adult Social Care mobile application example requirements",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "This section defines the Adult Social Care mobile app accelerator’s core requirements and design choices. Requirements include searching for an existing client, creating/retrieving/updating/deleting practitioner certificate and diagnosis evidence, viewing eligibility and entitlement for the active benefit case, and showing last and next benefit payments. It also explains four design decisions: use a hybrid app, combine client and case data on one Client Profile page, limit the app to core use-case content, and display only the most recent active evidence and determination results."
+                  },
+                  {
+                    "title": "Adult Social Care mobile application design decisions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "This section outlines Adult Social Care mobile app requirements and the resulting design choices for a Cúram REST API accelerator. The app supports client search, CRUD for practitioner certificate and diagnosis evidence, viewing eligibility/entitlement results, and viewing last/next benefit payments. Key design decisions were to use a hybrid app for rapid API testing, combine client and case data on one Client Profile page, limit the app to core use-case content, and show only the most recent active evidence and determination results."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000019",
+                  "start_page": 18,
+                  "end_page": 19
+                },
+                "summary": "This section introduces the Adult Social Care mobile app, a basic hybrid tablet-focused demo built in IBM MobileFirst to integrate with Cúram REST APIs via adapters. It is simulated only, with no device deployment or security integration. It describes the off-site caseworker scenario for Jane updating James Smith’s profile, evidence, and benefit information, then lists core requirements: client search, evidence CRUD, eligibility/entitlement, and payment viewing. It also explains the main design choices: hybrid app, combined client/case profile, limited core content, and only the latest active results."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000019",
+              "start_page": 9,
+              "end_page": 19
+            },
+            "summary": "Introduces the Cúram REST API accelerator as a worked example for building custom REST APIs and integrating an external mobile app with Cúram. Covers the key personas (business analyst, Cúram developer, mobile app developer), the MobileFirst-based architecture from UI to Cúram server, and the REST API development flow: design, fit-gap, modeling, implementation, configuration, Swagger generation, testing, and integration. Also outlines the Adult Social Care mobile app scenario, requirements, and design choices such as a hybrid tablet app, combined client/case profile, and showing only current active data."
+          },
+          {
+            "title": "1.2 Installing the REST API accelerator",
+            "level": 2,
+            "children": [
+              {
+                "title": "Installing prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section lists prerequisites for installing the Cúram REST API accelerator. It says to first install a Cúram Development Environment, then Cúram Platform, Cúram Outcome Management, Adult Social Care accelerator, and finally the REST API accelerator, following each installer’s release notes. It also outlines how to generate and run the Social Program REST APIs in the development environment: update environment scripts, set CATALINA_HOME for Tomcat deployment, run the “build rest” target from EJBServer, and start the application server and Tomcat from Eclipse."
+              },
+              {
+                "title": "Generating the Social Program REST APIs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains how to install the Cúram REST API accelerator and generate Social Program REST APIs in a development environment. It lists required setup steps (ADE, Java IDE, RSA Designer, Cúram Platform, Outcome Management, Adult Social Care accelerator) and then describes configuring `SetEnvironment.bat/.sh`, setting `CATALINA_HOME` for Tomcat deployment, running `build rest` from `EJBServer`, and starting the application server and Tomcat in Eclipse to view the Swagger document."
+              },
+              {
+                "title": "Testing a REST API for Adult Social Care",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000022",
+                  "start_page": 21,
+                  "end_page": 22
+                },
+                "summary": "Explains how to test the Cúram REST API accelerator for Adult Social Care. First verify deployment by opening http://localhost:9080/Rest/api/definitions to view Swagger documents. Then run an Adult Social Care caseworker scenario for James Smith, and confirm the asc_cases GET endpoint with concern_role_id=101&_limit=1 returns a JSON case record in the browser. Includes an example response showing case details, priority, integrated case type, eligibility decisions, and payment fields."
+              }
+            ],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000022",
+              "start_page": 20,
+              "end_page": 22
+            },
+            "summary": "Explains how to install the Cúram REST API accelerator and generate/test Social Program REST APIs in a development environment. It requires installing ADE, Java IDE, RSA Designer, Cúram Platform, Outcome Management, Adult Social Care accelerator, then the REST API accelerator, following each installer’s release notes. It also covers updating environment scripts, setting CATALINA_HOME, running the `build rest` target from `EJBServer`, starting application server and Tomcat, verifying deployment via `http://localhost:9080/Rest/api/definitions`, and testing `asc_cases` with a James Smith scenario."
+          },
+          {
+            "title": "1.3 Analyzing the requirements",
+            "level": 2,
+            "children": [
+              {
+                "title": "Completing a fit gap analysis scenario",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Fit gap analysis scenario",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section presents a fit gap analysis example for the Cúram REST API accelerator. It describes Fiona, a business analyst, comparing Adult Social Care default functionality with mobile app requirements, focusing on practitioner certificate evidence and the client’s home telephone number. It lists certificate data fields to be supported and notes that Fiona first reviews product documentation and accelerator overview/performance sections to understand default Cúram features, including how phone numbers are handled as person evidence."
+                  },
+                  {
+                    "title": "Analyzing the default functionality",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Reading product documentation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000036",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "This section explains how to use product documentation during fit gap analysis to understand Cúram default features and compare them with customer requirements. It notes that documentation includes business and technical materials for specific product versions, plus Redbooks and white papers, and that business analysis docs describe supported business processes. Example: Fiona uses documentation to learn how Cúram manages phone numbers as person evidence for a mobile app requirement."
+                      }
+                    ],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to analyze Cúram default functionality during fit gap analysis by consulting product documentation. The section says documentation includes business and technical materials for specific versions/editions, plus Redbooks and white papers, and that business analysis docs describe supported business processes. It uses Fiona’s scenario to show how documentation helps assess default features against requirements, including practitioner certificate evidence and how phone numbers are maintained as person evidence."
+                  },
+                  {
+                    "title": "Evaluating the default application scenario",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Complete the Adult Social Care application intake script",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000038",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "This section walks through evaluating the default Adult Social Care application intake script against project requirements. Fiona creates an application case with client, practitioner certificate, and diagnosis data, then checks practitioner certificate evidence and finds gaps: inpatient indicator and facility name are missing. It also reviews person phone evidence, noting the UI uses “Phone Number” instead of “Telephone” and lacks “Home” in the phone type table. The section concludes that person phone is a medium-fit requiring configuration."
+                      },
+                      {
+                        "title": "Examining the practitioner certificate evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Fiona reviews the default practitioner certificate evidence in the Adult Social Care application to check for gaps against project requirements. By opening the application case’s Evidence tab, she finds that the practitioner certificate does not capture the inpatient indicator or facility name. The section also contrasts this with person phone evidence analysis, noting a label mismatch (“Phone Number” vs “Telephone”) and a missing “Home” phone type, leading to a medium-fit assessment for that functionality."
+                      },
+                      {
+                        "title": "Examining person evidence",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Cúram Analysis Documentation Tooling (CADT)",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000041",
+                            "range": {
+                              "start_unit_id": "p000024",
+                              "end_unit_id": "p000024",
+                              "start_page": 24,
+                              "end_page": 24
+                            },
+                            "summary": "This section introduces Cúram Analysis Documentation Tooling (CADT), a downloadable tool technical users can run on a Cúram application to generate analysis documentation tailored to that application. It follows examples of evaluating default application scenarios and examining practitioner certificate and person phone evidence to identify functional gaps and assess fit. Open this section if you want the purpose of CADT and its role in supporting application analysis and gap discovery."
+                          },
+                          {
+                            "title": "Analyzing requirements using the Cúram Analysis Documentation Tooling (CADT)",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000042",
+                            "range": {
+                              "start_unit_id": "p000025",
+                              "end_unit_id": "p000025",
+                              "start_page": 25,
+                              "end_page": 25
+                            },
+                            "summary": "This section introduces CADT and how Cúram Analysis Documentation helps technical and business users perform fit gap and customization impact analysis across pages, tables, and related artifacts. It explains using search to trace a feature (the person phone example) from a page to its fields, domain definitions, and code tables. The walkthrough highlights identifying gaps such as inconsistent labels (“Phone” vs “Telephone”) and missing phone types (“home”). Useful for understanding how to analyze application metadata and requirements impact."
+                          }
+                        ],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000025",
+                          "start_page": 24,
+                          "end_page": 25
+                        },
+                        "summary": "This section shows Fiona examining person phone evidence in Adult Social Care to assess fit against project requirements. She opens the Person > Evidence page, reviews the New Phone Number modal, and notes two gaps: the label “Phone Number” vs required “Telephone,” and the missing “Home” option in the Phone Type code table. It also introduces CADT as a downloadable tool for generating application-specific analysis documentation used for fit-gap and customization impact analysis across pages, fields, domain definitions, code tables, and related artifacts."
+                      }
+                    ],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000025",
+                      "start_page": 24,
+                      "end_page": 25
+                    },
+                    "summary": "This section evaluates the default Adult Social Care scenario against project requirements. Fiona tests the application intake script, finding the practitioner certificate misses the inpatient indicator and facility name. She then reviews person phone evidence, noting a label mismatch (“Phone Number”/“Phone” vs “Telephone”) and that the Phone Type code table lacks “Home,” leading to a medium fit with configuration needed. It also introduces CADT, a downloadable tool for generating application-specific analysis documentation for fit-gap and customization impact analysis."
+                  }
+                ],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000025",
+                  "start_page": 23,
+                  "end_page": 25
+                },
+                "summary": "This section walks through a fit gap analysis for the Adult Social Care accelerator. Fiona compares project requirements for practitioner certificate evidence and a client’s home telephone number against default Cúram functionality. It shows how to review product documentation, test the application intake script, inspect evidence screens, and identify gaps such as missing inpatient indicator/facility name, inconsistent “Telephone” labeling, and no “Home” phone type. It also introduces CADT for generating analysis documentation to support fit-gap and customization impact analysis."
+              },
+              {
+                "title": "Defining the mobile application requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000028",
+                  "start_page": 26,
+                  "end_page": 28
+                },
+                "summary": "Guidance for defining Cúram mobile app requirements: choose between native, web, or hybrid based on project needs, weighing strengths and weaknesses such as device access, offline use, performance, discoverability, cost, and maintenance. Focus the app on quick access to client/case data by cutting non-core features, using only necessary and mostly recent information to protect performance. Identify user pain points and validate with real users. Follow Apple/Android UI guidelines to keep the mobile experience usable and consistent."
+              },
+              {
+                "title": "Analysis results for the mobile application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Summarizes four mobile app design decisions from the analysis: use a hybrid app for rapid testing and no iOS/Android dependencies; show both client and case information on one Client Profile page; include only core use-case content; and display only the most recent active evidence and determination results, with older data left to the main Adult Social Care app. It also introduces guidance for creating custom REST APIs, including design principles and conventions such as plural lowercase paths, snake_case parameters, consistent representations, and no HATEOAS/URI identifiers."
+              }
+            ],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000028",
+              "start_page": 23,
+              "end_page": 28
+            },
+            "summary": "Explains how to analyze mobile app requirements against default Cúram functionality using fit-gap analysis and CADT. The Fiona scenario checks practitioner certificate evidence and person phone details, revealing gaps like missing inpatient indicator/facility name, inconsistent “Phone Number” vs “Telephone” labeling, and no “Home” phone type. CADT helps inspect pages, fields, code tables, messages, and related impacts. The section also guides choosing native/web/hybrid mobile app types and narrowing the app to core, recent client/case data, validated user pain points, and platform UI guidelines."
+          },
+          {
+            "title": "1.4 Creating a custom REST API",
+            "level": 2,
+            "children": [
+              {
+                "title": "REST API designs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Social Program REST API design principles",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Nested resources",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Explains when to model data as nested REST resources versus root resources. Nested resources should still represent complete business objects and are useful when the data is only relevant within the parent, changes frequently, or would otherwise make the main representation too large. The section also contrasts collection vs member resources: collections return a `data` array, empty matches return 200 with empty data, and missing member resources return 4xx. Includes brief Social Program REST API basics and notes that REST operates on complete business-object representations."
+                      }
+                    ],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Defines core REST API design conventions for custom Social Program APIs: use plural lowercase resource names, snake_case for query parameters and resource fields, keep representations consistent across GET/PUT/POST, and avoid URI-form identifiers and HATEOAS. The section frames these as baseline principles for creating well-designed REST resources."
+                  },
+                  {
+                    "title": "Social Program REST API design basics",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Resource values for Adult Social Care",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000050",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "This section lists sample URL path resource values for the Adult Social Care mobile application REST APIs. It describes the `/asc_cases` collection resource for retrieving Adult Social Care case, payment, and decision details, including default sorting by registration date and the optional `_limit` query parameter. It also covers `/asc_cases/{case_id}/certificates` for practitioner certificates and related diagnoses, with similar sorting and `_limit` support. It notes `/asc_cases` uses an acronym and gives example request URLs."
+                      },
+                      {
+                        "title": "Methods defined for Adult Social Care",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000051",
+                        "range": {
+                          "start_unit_id": "p000032",
+                          "end_unit_id": "p000033",
+                          "start_page": 32,
+                          "end_page": 33
+                        },
+                        "summary": "This section lists the sample REST methods for Adult Social Care mobile APIs. It documents `/asc_cases` and certificate-related endpoints for retrieving case details, listing certificates, creating certificates, viewing a certificate with diagnoses, updating a certificate and diagnosis records via PUT, and deleting a certificate or diagnosis via DELETE. It also notes query parameters like `_limit` and `concern_role_id`, and explains that the collection certificates endpoint is provided for REST standard adherence but not used by the mobile app."
+                      },
+                      {
+                        "title": "JSON representation for Adult Social Care",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000034",
+                          "start_page": 34,
+                          "end_page": 34
+                        },
+                        "summary": "Shows a sample JSON representation for the Adult Social Care REST resource `/asc_cases`, used to design custom REST API payloads. The example full case-details response includes fields like concern/case IDs, dates, priority, integrated case type, decisions, and payment information, with nested coded values and arrays. It also introduces a second full JSON representation for practitioner certificate and diagnosis details, stored as parent/child dynamic evidence entities in the Adult Social Care accelerator."
+                      }
+                    ],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000034",
+                      "start_page": 30,
+                      "end_page": 34
+                    },
+                    "summary": "Introduces Social Program REST API basics for Cúram: resources are complete business objects identified by URI paths, acted on by methods, and represented as JSON. Explains collection vs member resources, nested resource design considerations, and contrasts REST with RPC. Provides Adult Social Care examples for resource paths, methods, and JSON payloads: `/asc_cases` for case, payment, and decision details; `/asc_cases/{case_id}/certificates` and certificate member resources for practitioner certificates and diagnoses. Notes default sorting by registration date, optional `_limit`, and key GET/POST/PUT/DELETE behavior."
+                  },
+                  {
+                    "title": "Analyzing the REST APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Analyzing existing REST APIs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000035",
+                          "end_unit_id": "p000035",
+                          "start_page": 35,
+                          "end_page": 35
+                        },
+                        "summary": "This section recommends reviewing existing Cúram REST APIs before building new ones. It stresses doing a gap analysis of both current REST APIs and Cúram functionality to confirm correct domain definitions for resource representations and to identify APIs that may already implement needed behavior. It notes that diagnosis data is modeled inside the certificate JSON object, so diagnosis CRUD operations are handled through the same `asc_cases/{case_id}/certificates/{certificate_id}` resource. It also points readers to the “Using existing Social Program REST APIs” documentation for the review process."
+                      },
+                      {
+                        "title": "Analyzing the new REST APIs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000055",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000036",
+                          "start_page": 36,
+                          "end_page": 36
+                        },
+                        "summary": "Explains how to identify existing Cúram APIs needed for new REST APIs. Notes that dynamic evidence API fit-gap analysis was difficult, so the relevant APIs are listed in the appendix and can be reused for custom dynamic evidence configurations. For case details, payment, and eligibility/entitlement, the Cúram Analysis Documentation Tooling (CADT) helps locate the page and Page Load Interface to find required APIs. Describes using TDD with upfront unit tests to validate fit-gap coverage, plus temporary handcrafted structs later replaced by modeled structs."
+                      }
+                    ],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000036",
+                      "start_page": 35,
+                      "end_page": 36
+                    },
+                    "summary": "Recommends doing a gap analysis before building REST APIs, reviewing both existing Cúram REST APIs and Cúram functionality to choose correct domain definitions and reuse any matching APIs. Notes that diagnosis data is embedded in the certificate JSON, so diagnosis CRUD uses the same `asc_cases/{case_id}/certificates/{certificate_id}` resource. For new APIs, it explains finding required Cúram APIs via CADT page/Page Load Interface details, using appendix-listed APIs for dynamic evidence, and validating fit-gap with TDD and temporary handcrafted structs later replaced by modeled structs."
+                  },
+                  {
+                    "title": "Modeling the REST APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "REST API class diagram",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000057",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000037",
+                          "start_page": 37,
+                          "end_page": 37
+                        },
+                        "summary": "This section introduces the REST API class diagram for the Adult Social Care REST API. It states that after completing the REST API design, IBM Rational Software Architect must be used to model the facade, operations, and structs. The section mainly points to the class diagram as the representation of the required REST API structures and operations."
+                      },
+                      {
+                        "title": "Modeling the JSON representation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000058",
+                        "range": {
+                          "start_unit_id": "p000038",
+                          "end_unit_id": "p000039",
+                          "start_page": 38,
+                          "end_page": 39
+                        },
+                        "summary": "This section explains how to model the Adult Social Care REST API JSON representation in IBM Rational Software Architect Designer. It defines required domain types and structs for resources including Case, CaseList, Decision, DecisionList, Payment, Certificate, and Diagnosis, with their key fields and domain mappings. It also specifies aggregation relationships and roles, notably CaseList→Case, Decision→Case, DecisionList→Decision, and Payment→Case, plus the rationale for directly nesting decisions to keep JSON shallow."
+                      },
+                      {
+                        "title": "Modeling the REST facade",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000059",
+                        "range": {
+                          "start_unit_id": "p000040",
+                          "end_unit_id": "p000041",
+                          "start_page": 40,
+                          "end_page": 41
+                        },
+                        "summary": "Defines the REST facade modeling for AdultSocialCareAPI. It instructs creating a REST-stereotyped facade with operations mapped to resource methods: readASCCases, createCertificate, readCertificate, modifyCertificate, and deleteCertificate. It also introduces supporting structs used for query/path parameters and outputs: CaseIdentifier, ConcernRoleIdentifier, and PractitionerCertificateKey, plus the Certificate-related structs. The section explains how each facade operation’s input/output structs correspond to GET/POST/PUT/DELETE endpoints for ASC cases and certificates."
+                      },
+                      {
+                        "title": "Modeling the mandatory properties",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000060",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "This section explains how to model mandatory properties in IBM Rational Software Architect Designer for the AdultSocialCareAPI REST design. It instructs setting mandatory field values for each operation so Swagger documentation can be generated correctly. Key mappings include: readASCCases requires concern_role_id; createCertificate requires case_id and several certificate fields; readCertificate and deleteCertificate require certificate_id; modifyCertificate requires date/signature/examination-related fields."
+                      }
+                    ],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000042",
+                      "start_page": 37,
+                      "end_page": 42
+                    },
+                    "summary": "This section explains how to model the Adult Social Care REST APIs in IBM Rational Software Architect Designer. It covers the REST class diagram, JSON struct modeling for cases, decisions, payments, certificates, and diagnoses, plus supporting identifier structs. It also defines the REST facade AdultSocialCareAPI with operations for reading cases and creating, reading, modifying, and deleting certificates, including resource-method mappings. Finally, it specifies mandatory input fields for each operation to support correct Swagger generation."
+                  },
+                  {
+                    "title": "Implementing the REST APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Generating the Cúram model",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000062",
+                        "range": {
+                          "start_unit_id": "p000043",
+                          "end_unit_id": "p000043",
+                          "start_page": 43,
+                          "end_page": 43
+                        },
+                        "summary": "This section explains how to generate the Cúram model after completing REST API modeling. It notes that generated build targets create code, tables, messages, and events but do not compile handcrafted code, so dummy implementations may be needed before compile.implemented. It also mentions the build database target, which inserts security identifiers for facade operations. A procedure is started: run build generated from %CURAM_DIR%\\EJBServer. The section also briefly discusses TDD-based implementation and that the certificate PUT API is the most complex due to nested diagnosis evidence resources."
+                      },
+                      {
+                        "title": "Implementation files for Adult Social Care",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000063",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "Lists implementation files for Adult Social Care REST APIs and where they live in the EJBServer source tree. It names AdultSocialCareAPI.java and ASCRESTConst.java, explains that ASCRESTConst holds constants for Practitioner Certificate and Diagnosis attributes, and notes the %CURAM_DIR% default path. It also introduces creating XML REST configuration files to map resource paths and methods to Cúram façade operations, after modeling and implementing the rest-stereotyped façade class."
+                      }
+                    ],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "Explains how to implement REST APIs after modeling: generate the Cúram model, then move logic from JUnit tests into API classes and update tests accordingly. Notes that build generated creates code, tables, messages, and events but not handcrafted code, so dummy implementations may be needed before compile.implemented; build database inserts security IDs for facade operations. Also highlights that the ASC certificates PUT endpoint is the most complex because it must handle nested diagnosis evidence resources."
+                  },
+                  {
+                    "title": "Configuring the resource configuration files",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Resource configurations specified for Adult Social Care",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000065",
+                        "range": {
+                          "start_unit_id": "p000045",
+                          "end_unit_id": "p000046",
+                          "start_page": 45,
+                          "end_page": 46
+                        },
+                        "summary": "Describes the Adult Social Care REST API resource configuration files and their location in the Cúram installation. Includes an XML example from ResourcesConfig.xml showing version v1 endpoints for asc_cases and related certificate resources, with GET/POST/PUT/DELETE methods mapped to AdultSocialCareAPI facade methods. Useful for understanding configured API paths, operations, and where to edit REST settings."
+                      }
+                    ],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000046",
+                      "start_page": 44,
+                      "end_page": 46
+                    },
+                    "summary": "Explains how to configure Cúram REST resource mapping files. It says the REST config XML must be created after modeling a façade with stereotype rest, and defines resource paths, HTTP verbs, façade operations, and optional settings like mime-type and cache-control. Gives the Adult Social Care example location in `%CURAM_DIR%\\EJBServer\\components\\AdultSocialCare\\rest\\config` and shows `ResourcesConfig.xml` with v1 paths for `asc_cases` and certificate resources mapped to `AdultSocialCareAPI` methods for GET/POST/PUT/DELETE."
+                  },
+                  {
+                    "title": "Building and testing REST APIs",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Generating the Social Program REST APIs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000067",
+                        "range": {
+                          "start_unit_id": "p000047",
+                          "end_unit_id": "p000047",
+                          "start_page": 47,
+                          "end_page": 47
+                        },
+                        "summary": "Explains how to generate and verify the Social Program REST APIs in the Cúram REST API accelerator. It covers updating SetEnvironment.bat/.sh, setting CATALINA_HOME for Tomcat deployment, running the build rest target from %CURAM_DIR%/EJBServer, starting the application server and Tomcat in Eclipse, and checking http://localhost:9080/Rest/api/definitions to view the Swagger documents for each API version."
+                      },
+                      {
+                        "title": "Testing a Social Program REST API",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Testing a REST API for Adult Social Care",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000069",
+                            "range": {
+                              "start_unit_id": "p000048",
+                              "end_unit_id": "p000048",
+                              "start_page": 48,
+                              "end_page": 48
+                            },
+                            "summary": "This section explains how to test the Adult Social Care Cúram REST API. It notes several testing approaches used for REST APIs, including unit testing, Swagger-enabled tools, and the mobile application. It then gives a simple verification procedure: create an Adult Social Care case for James Smith by running the caseworker scenario, and check the `asc_cases` GET endpoint in a browser at `http://localhost:9080/Rest/v1/asc_cases?concern_role_id=101&_limit=1` to confirm it returns JSON case details."
+                          },
+                          {
+                            "title": "Social Program REST API unit testing",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000070",
+                            "range": {
+                              "start_unit_id": "p000049",
+                              "end_unit_id": "p000049",
+                              "start_page": 49,
+                              "end_page": 49
+                            },
+                            "summary": "This section explains how to unit test Cúram Social Program REST APIs. It notes that REST resources are HTTP URL endpoints and can be tested in different ways, with JUnit recommended as a practical unit-testing approach. It also suggests using Jackson for JSON handling and Apache HTTP Client to simplify automated test development. The page includes an example JSON response showing social program case data, decisions, and payment details."
+                          }
+                        ],
+                        "node_id": "n000068",
+                        "range": {
+                          "start_unit_id": "p000048",
+                          "end_unit_id": "p000049",
+                          "start_page": 48,
+                          "end_page": 49
+                        },
+                        "summary": "This section introduces ways to test Cúram Social Program REST APIs, including unit testing, Swagger-enabled tools, and the mobile application. It gives a practical Adult Social Care verification procedure: create a case for James Smith, then call the `asc_cases` GET endpoint at `http://localhost:9080/Rest/v1/asc_cases?concern_role_id=101&_limit=1` to confirm JSON case data appears. It also recommends JUnit for REST API unit tests and suggests Jackson and Apache HTTP Client to simplify automated testing."
+                      }
+                    ],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000049",
+                      "start_page": 47,
+                      "end_page": 49
+                    },
+                    "summary": "Explains how to build and verify Cúram Social Program REST APIs after modeling facades and creating REST config. Steps include updating SetEnvironment scripts, setting CATALINA_HOME for Tomcat deployment, running `build rest` from `%CURAM_DIR%/EJBServer`, starting the app server/Tomcat in Eclipse, and checking `http://localhost:9080/Rest/api/definitions` for Swagger docs. Also covers testing options: unit tests, Swagger-enabled tools, and mobile app testing. Gives an Adult Social Care example using `asc_cases` and recommends JUnit, Jackson, and Apache HTTP Client for automation."
+                  },
+                  {
+                    "title": "Integrating with a mobile application",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Installing IBM MobileFirst development environment",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000072",
+                        "range": {
+                          "start_unit_id": "p000050",
+                          "end_unit_id": "p000050",
+                          "start_page": 50,
+                          "end_page": 50
+                        },
+                        "summary": "This section introduces integrating Social Program REST APIs with a mobile app using IBM MobileFirst. It notes that the Adult Social Care mobile application was built with IBM MobileFirst and connects to the Cúram server via adapters. It also begins installation guidance for the IBM MobileFirst development environment, requiring an existing Eclipse installation and a compatible version (Juno SR2, Kepler SR1/SR2, Luna SR1/SR2)."
+                      },
+                      {
+                        "title": "Installing the Adult Social Care mobile accelerator",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Installing third-party libraries",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000074",
+                            "range": {
+                              "start_unit_id": "p000052",
+                              "end_unit_id": "p000052",
+                              "start_page": 52,
+                              "end_page": 52
+                            },
+                            "summary": "This section explains how to install third-party libraries required for the Adult Social Care mobile application UI. It defines the %MOBILE_APPLICATION% path and lists the required library versions: jQuery UI 1.11.0 and Foundation 5.0. It then gives step-by-step download and copy instructions for installing jQuery UI and Foundation into the appropriate js/css and js/lib/css/lib directories under the mobile application common folder."
+                          }
+                        ],
+                        "node_id": "n000073",
+                        "range": {
+                          "start_unit_id": "p000051",
+                          "end_unit_id": "p000052",
+                          "start_page": 51,
+                          "end_page": 52
+                        },
+                        "summary": "Explains how to install the Adult Social Care mobile accelerator in Cúram and the required third-party UI libraries. It covers extracting the accelerator into %CURAM_DIR%/Mobile, importing ASCMobile into Eclipse, and defining %MOBILE_APPLICATION% for the app’s common folder. It then lists required library versions (jQuery UI 1.11.0 and Foundation 5.0) and gives copy steps to place jQuery UI and Foundation files into the appropriate js/css and js/lib/css/lib directories."
+                      },
+                      {
+                        "title": "Deploying the mobile application",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000075",
+                        "range": {
+                          "start_unit_id": "p000053",
+                          "end_unit_id": "p000053",
+                          "start_page": 53,
+                          "end_page": 53
+                        },
+                        "summary": "Explains how to deploy the Adult Social Care mobile app and adapters from IBM MobileFirst/Eclipse, then preview the app in the web simulator. It also introduces the caseworker scenario for using the mobile app end to end, including prerequisites and a sample client search workflow. Key detail: search for “James Smith” to open a client profile from the results."
+                      },
+                      {
+                        "title": "Performing the Adult Social Care mobile application caseworker scenario",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Searching for a client",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000077",
+                            "range": {
+                              "start_unit_id": "p000053",
+                              "end_unit_id": "p000053",
+                              "start_page": 53,
+                              "end_page": 53
+                            },
+                            "summary": "This section explains how to search for an already registered client in the Adult Social Care mobile app. It instructs users to enter the client’s full name on the landing page—example: James Smith—then open the client profile from the search results by clicking the person link. This node is useful if you need the basic client lookup flow in the IBM MobileFirst-based mobile application."
+                          },
+                          {
+                            "title": "Editing a practitioner certificate",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000078",
+                            "range": {
+                              "start_unit_id": "p000054",
+                              "end_unit_id": "p000054",
+                              "start_page": 54,
+                              "end_page": 54
+                            },
+                            "summary": "Covers how to edit a practitioner certificate evidence record in Cúram: open Client Profile, click Edit, update fields like Change Reason, Specified Certification To Date, and Comments, then save. Also explains creating a related diagnosis from Client Profile via New Diagnosis, with fields such as Received Date, Examination Date, and Diagnosis Type. The page then begins a new topic on integrating a mobile application with a Social Program REST API using an IBM MobileFirst adapter, including GET/PUT requests and date-time handling."
+                          },
+                          {
+                            "title": "Creating a diagnosis",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000079",
+                            "range": {
+                              "start_unit_id": "p000054",
+                              "end_unit_id": "p000054",
+                              "start_page": 54,
+                              "end_page": 54
+                            },
+                            "summary": "How to create a diagnosis linked to a practitioner certificate in Cúram. It explains the steps from the Client Profile window, then entering a New Diagnosis with required fields: Received Date, Examination Date, and Diagnosis Type (example: Cardiovascular disease), all typically set to the current date except the diagnosis code. It also notes you can verify the changes in the Adult Social Care eligibility worker workspace."
+                          }
+                        ],
+                        "node_id": "n000076",
+                        "range": {
+                          "start_unit_id": "p000053",
+                          "end_unit_id": "p000053",
+                          "start_page": 53,
+                          "end_page": 53
+                        },
+                        "summary": "Explains how to run the Adult Social Care mobile application caseworker demo after deployment in IBM MobileFirst, then begins the end-to-end workflow. In this section, the caseworker scenario starts with searching for an already registered client from the landing page by entering the client’s full name (example: James Smith) and opening the person link from search results to reach the Client Profile. Useful for the basic client lookup flow in the mobile app."
+                      },
+                      {
+                        "title": "Integrating the mobile application with a Social Program REST API",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Integrating a custom GET request with a mobile application",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000081",
+                            "range": {
+                              "start_unit_id": "p000055",
+                              "end_unit_id": "p000055",
+                              "start_page": 55,
+                              "end_page": 55
+                            },
+                            "summary": "This section explains how to integrate a custom Cúram REST GET request into an IBM MobileFirst mobile app. It walks through creating an HTTP adapter, adding a getEvidenceByCaseID procedure, implementing a JavaScript function that calls the Social Program REST API, configuring adapter connection settings for localhost:9080, and testing the adapter with a case_id parameter. Useful if you need step-by-step MobileFirst adapter setup for retrieving evidence by case ID."
+                          },
+                          {
+                            "title": "Integrating a custom PUT request with a mobile application",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000082",
+                            "range": {
+                              "start_unit_id": "p000056",
+                              "end_unit_id": "p000056",
+                              "start_page": 56,
+                              "end_page": 56
+                            },
+                            "summary": "Explains how to integrate a custom Cúram PUT REST request into an IBM MobileFirst mobile app using a MobileFirst HTTP adapter. It walks through creating the adapter, defining a `putEvidence` procedure, implementing a JavaScript `putEvidence` function that sends a PUT to `/Rest/v1/asc_cases/{case_id}/certificates/{certificate_id}`, and requiring a `Referer: curam://acceleratorApp` header. Also covers configuring the adapter to use localhost:9080 and testing it with sample `certificate_id` and `case_id` parameters."
+                          },
+                          {
+                            "title": "The Cúram date-time format",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000083",
+                            "range": {
+                              "start_unit_id": "p000057",
+                              "end_unit_id": "p000057",
+                              "start_page": 57,
+                              "end_page": 57
+                            },
+                            "summary": "Cúram date-time format uses ISO 8601, but the guide notes this may not suit UI display. Developers are expected to write their own formatting functions for date-time values when sending or retrieving requests."
+                          }
+                        ],
+                        "node_id": "n000080",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000056",
+                          "start_page": 54,
+                          "end_page": 56
+                        },
+                        "summary": "Explains how to integrate a Social Program REST API with an IBM MobileFirst app using HTTP adapters. Covers creating a GET adapter procedure to retrieve evidence by case_id and a PUT adapter procedure to update evidence using certificate_id and case_id. Includes the required localhost:9080 adapter configuration, testing via Call MobileFirst Adapter, and the Cúram-specific Referer header needed for PUT requests. Also notes that Cúram date-time values use ISO 8601 and may need custom UI formatting."
+                      }
+                    ],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000056",
+                      "start_page": 50,
+                      "end_page": 56
+                    },
+                    "summary": "Explains how to integrate Cúram Social Program REST APIs with an IBM MobileFirst mobile app. Covers setting up Eclipse/MobileFirst Studio, installing the Adult Social Care mobile accelerator, adding required jQuery UI 1.11.0 and Foundation 5.0 libraries, deploying and previewing the app, and running a caseworker demo (search client “James Smith”). Also includes MobileFirst HTTP adapter examples for GET and PUT requests to the Cúram server on localhost:9080, including the required Referer header for PUT."
+                  }
+                ],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000056",
+                  "start_page": 29,
+                  "end_page": 56
+                },
+                "summary": "This section outlines Cúram Social Program REST API design and mobile integration. It covers REST design principles (plural lowercase paths, snake_case, consistent representations, no URI-form IDs/HATEOAS), collection vs member resources, and when to use nested resources. It then gives Adult Social Care examples for `/asc_cases` and certificate resources, including methods, JSON structure, and query params like `_limit`. The final pages show MobileFirst setup and adapter examples for GET/PUT calls to Cúram, including the required Referer header for writes."
+              }
+            ],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000056",
+              "start_page": 29,
+              "end_page": 56
+            },
+            "summary": "Explains how to create custom Social Program REST APIs in Cúram and integrate them with a MobileFirst app. Covers REST design principles (plural lowercase paths, snake_case, consistent JSON, no HATEOAS), collection vs member resources, and when to use nested resources. Gives Adult Social Care examples for `/asc_cases`, certificates, methods (GET/POST/PUT/DELETE), JSON representations, and query params like `_limit`. Also includes MobileFirst setup, deployment, and adapter examples for GET/PUT calls, including the required Referer header for writes."
+          },
+          {
+            "title": "1.5 Appendix",
+            "level": 2,
+            "children": [
+              {
+                "title": "Retrieving the case details Cúram APIs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000085",
+                "range": {
+                  "start_unit_id": "p000057",
+                  "end_unit_id": "p000058",
+                  "start_page": 57,
+                  "end_page": 58
+                },
+                "summary": "Explains how the Adult Social Care REST API `/asc_cases` is built from existing Cúram APIs to retrieve case, decision, and payment details. Covers filtering person cases to Adult Social Care integrated cases and Incapability Benefit product deliveries, sorting by start date descending to get the latest case, and limiting results. Lists the key APIs used: read case details, list decision periods, simulate next payment, and read last payment. Also notes relevant attributes returned and example resource URLs."
+              },
+              {
+                "title": "Dynamic evidence Cúram APIs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Retrieving the parent-child evidence details",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000087",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000061",
+                      "start_page": 59,
+                      "end_page": 61
+                    },
+                    "summary": "Explains how the GET `/asc_cases/{case_id}/certificates/{certificate_id}` API retrieves a parent practitioner certificate and its child diagnosis evidence for the Adult Social Care mobile app. Covers required certificate and diagnosis fields, Cúram APIs for reading dynamic evidence, converting attributes to Cúram types, fetching non-dynamic metadata like receivedDate, changeReason, updatedBy/updatedOn, and using child evidence lookup to loop through and read associated diagnoses."
+                  },
+                  {
+                    "title": "Retrieving all the parent-child evidence details",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000062",
+                      "end_unit_id": "p000062",
+                      "start_page": 62,
+                      "end_page": 62
+                    },
+                    "summary": "This section explains how the `/asc_cases/{case_id}/certificates` GET API assembles parent-child evidence details for practitioner certificates and diagnoses. It shows converting dynamic evidence attributes to Cúram types, populating diagnosis fields from `readEvidenceDetails` (receivedDate, changeReason, versionNo, diagnosis_id), and retrieving change history to set `updatedBy` and `updatedOn`. It then adds the diagnosis details to the certificate returned in the REST response."
+                  },
+                  {
+                    "title": "Creating a practitioner certificate",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000063",
+                      "end_unit_id": "p000063",
+                      "start_page": 63,
+                      "end_page": 63
+                    },
+                    "summary": "Explains how to create a practitioner certificate via the `asc_cases/{case_id}/certificates` REST API POST resource. It notes that certificate details must first be mapped from the input to evidence details using `mapCertificateDetails(details)` and a `GenericSLDataDetails` object. This section is useful if you need the create flow for practitioner certificate evidence, especially the mapping step referenced from the evidence-detail mapping section."
+                  },
+                  {
+                    "title": "Updating a practitioner certificate",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Mapping the practitioner certificate evidence details",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000091",
+                        "range": {
+                          "start_unit_id": "p000066",
+                          "end_unit_id": "p000066",
+                          "start_page": 66,
+                          "end_page": 66
+                        },
+                        "summary": "Explains how to map practitioner certificate fields into evidence format before create/update, including setting key attributes, evidence ID/version, and building EvidenceDescriptorDetails and GenericSLDataDetails for modification requests. It also introduces handling nested diagnosis child evidence within the practitioner certificate resource, noting that diagnosis create/update/delete must be processed through the asc_cases/{case_id}/certificates/{certificate_id} PUT API, with logic needed to determine the intended action."
+                      },
+                      {
+                        "title": "Creating, updating, or deleting a child evidence record",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Mapping the diagnosis details",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000093",
+                            "range": {
+                              "start_unit_id": "p000071",
+                              "end_unit_id": "p000071",
+                              "start_page": 71,
+                              "end_page": 71
+                            },
+                            "summary": "Explains how to map diagnosis data into the required dynamic evidence format before creating or updating a record. Shows setting evidence type/effective date, populating diagnosis fields like name and examinationDate, and linking the diagnosis as child evidence to a practitioner certificate via parent evidence keys and descriptor details. Also notes that deleting a practitioner certificate must remove associated diagnosis evidence first; the REST DELETE flow handles child-record deletion before deleting the certificate to avoid errors."
+                          }
+                        ],
+                        "node_id": "n000092",
+                        "range": {
+                          "start_unit_id": "p000066",
+                          "end_unit_id": "p000070",
+                          "start_page": 66,
+                          "end_page": 70
+                        },
+                        "summary": "Explains how child diagnosis evidence under a practitioner certificate is created, deleted, or modified through the certificate PUT REST API. Describes checking incoming diagnosis IDs to decide whether to create new records, compare passed-in keys with existing child evidence to delete missing diagnoses, and read original child evidence to detect updates. Shows use of evidence mapping, EvidenceGenericSLFactory, createEvidence, removeEvidence/applyRemoval, and modifyDiagnosis after isUpdateRequired detects changes."
+                      }
+                    ],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000064",
+                      "end_unit_id": "p000070",
+                      "start_page": 64,
+                      "end_page": 70
+                    },
+                    "summary": "Explains how the practitioner certificate PUT API updates parent evidence and nested diagnosis child evidence. Covers mapping certificate fields to evidence format, setting evidence ID/version, building EvidenceDescriptorDetails and GenericSLDataDetails, then calling modifyEvidence. Also details child diagnosis handling: create when diagnosis_id is 0, delete diagnoses missing from the incoming list by comparing child keys, and modify existing diagnoses by reading original evidence, checking changes with isUpdateRequired, and calling modifyDiagnosis."
+                  },
+                  {
+                    "title": "Deleting a practitioner certificate",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000071",
+                      "end_unit_id": "p000076",
+                      "start_page": 71,
+                      "end_page": 76
+                    },
+                    "summary": "Explains how the `asc_cases/{case_id}/certificates` REST API deletes a practitioner certificate and its child diagnosis records. It notes that diagnosis evidence must be removed first to avoid errors, and the DELETE flow handles child deletion before parent deletion. The section shows Cúram APIs for retrieving child evidence, reading evidence descriptors, removing evidence, and applying removals. It includes separate steps/methods for removing child evidences and then deleting the practitioner certificate evidence record."
+                  }
+                ],
+                "node_id": "n000086",
+                "range": {
+                  "start_unit_id": "p000059",
+                  "end_unit_id": "p000076",
+                  "start_page": 59,
+                  "end_page": 76
+                },
+                "summary": "Cúram REST API accelerator guidance for Adult Social Care dynamic evidence CRUD on practitioner certificates and child diagnoses. Covers GET for a single certificate with child diagnosis details, list retrieval of all certificates with latest-record sorting and _limit handling, POST create, PUT update with diagnosis create/update/delete logic, and DELETE with child-first removal. Shows key Cúram APIs/factories for reading evidence, converting dynamic attributes, fetching descriptors/change history, mapping to GenericSLDataDetails, and applying evidence removals."
+              }
+            ],
+            "node_id": "n000084",
+            "range": {
+              "start_unit_id": "p000057",
+              "end_unit_id": "p000076",
+              "start_page": 57,
+              "end_page": 76
+            },
+            "summary": "Appendix listing Cúram APIs used by Adult Social Care mobile REST APIs. Covers `/asc_cases` case retrieval: filtering person cases to Adult Social Care integrated cases and Incapability Benefit product deliveries, sorting by start date descending, and using read case, list decision periods, simulate next payment, and read last payment APIs. Also details dynamic evidence CRUD for practitioner certificates and child diagnoses: read/list mappings, attribute conversion, parent-child traversal, update checks, and child-first delete/removal application. Includes resource URLs and copyright notices."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000076",
+          "start_page": 9,
+          "end_page": 76
+        },
+        "summary": "Introduces the Cúram REST API accelerator, built on Cúram Platform 6.1, Outcome Management, and the Adult Social Care accelerator, as a worked example for creating custom REST APIs and integrating an external mobile app. Covers personas, MobileFirst-to-Cúram architecture, design decisions for /asc_cases and nested dynamic evidence, and the overall development process. The section also includes later reference material on diagnosis/evidence mapping, child-first deletion of practitioner certificates, and end-of-document notices/licensing."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

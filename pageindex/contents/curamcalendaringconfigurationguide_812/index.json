@@ -1,0 +1,654 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "c363b7478d1178ab",
+    "title": "Cúram 8.1.2 Calendaring Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramCalendaringConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "c363b7478d1178ab0eb2174f8980213232918b232955d3434141c3cfe8ce546e",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:16:33+00:00",
+    "page_count": 18,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramCalendaringConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Calendaring Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000018",
+      "start_page": 1,
+      "end_page": 18
+    },
+    "summary": "Introductory guide to Cúram 8.1/8.1.1/8.1.2 calendaring configuration. It explains how administrators/developers configure meetings, meeting minutes, and calendar activities using application properties: emailing meeting requests, sender/reply mailbox settings, attendee and organizer conflict warnings, meeting minutes email delivery, meeting response batch behavior and invalid-message deletion, recurring activity occurrence limits, and the number of days calendar events display. It includes a property summary table and a developer appendix of calendaring customization events/hooks for meeting and meeting-minutes persistence and workflow processing (create/cancel/invite, issue/record/modify/delete minutes, decisions, notes, attendance). Front matter also includes notice, copyright, and usage terms, plus privacy and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note for the document. It tells readers to review the Notices section on page 17 before using the information or the supported product. Includes Merative US L.P. copyright information (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section introduces the calendaring configuration guide for Cúram 8.1/8.1.1/8.1.2. It covers configuring meetings, meeting minutes, calendar activities, and related application properties, including email delivery, sender/reply mailbox setup, conflict warnings, meeting response batch processing, recurring activity limits, and calendar display ranges. It also summarizes the available calendaring configuration properties and begins the appendix of calendaring events used for custom processing without changing OOTB code."
+          },
+          {
+            "title": "Edition — pages 15-16",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "This section lists calendaring event hooks for meeting and meeting-minutes business processes. It details persistence and workflow events for creating, canceling, inviting attendees, issuing/recording/modifying/deleting meeting minutes, and creating/updating decisions, notes, and attendance. Each table includes event name, primary and secondary data, and the action that raises it. Useful if you need custom processing points or integration triggers for Cúram meeting-related functionality."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000016",
+          "start_page": 5,
+          "end_page": 16
+        },
+        "summary": "Introductory calendaring guide for Cúram 8.1/8.1.1/8.1.2. Covers configuring meetings, meeting minutes, and calendar activities via application properties: sending meeting requests and minutes by email, sender/reply mailbox setup, conflict warnings, meeting response batch processing and invalid-message deletion, recurring activity limits, and calendar display range. Includes a property summary table and an appendix of customization events/hooks for meetings and meeting minutes (persistence and workflow events for create/cancel/invite, issue/record/modify/delete minutes, decisions, notes, and attendance)."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Contains legal and licensing notices for the document’s sample programs and trademarks. States that examples are fictitious, sample code is provided “AS IS” under the Merative Client Agreement, and Merative disclaims warranties and liability. Includes a pointer to the Merative privacy policy at https://www.merative.com/privacy and lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "This section lists trademark and copyright notices for the document. It states that example names and sample programs are fictitious or provided “AS IS” under the Merative Client Agreement, and includes a privacy policy link. It identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes that other names may be trademarks of their owners."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000017",
+          "start_page": 17,
+          "end_page": 17
+        },
+        "summary": "Merative’s notices and usage terms for the publication. It permits personal noncommercial reuse and limited internal enterprise use if proprietary notices are preserved, but forbids distribution, derivative works, or external use without consent. It disclaims all warranties, limits rights to the content, and warns about export-law compliance. The section also states that the document is provided “AS-IS,” mentions possible patent coverage, notes information about third-party products is unverified, and says external website links are for convenience only."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This Contents section lists the guide’s front matter and Chapter 1 on Configuring Calendaring. It shows subsections for Introduction, configuring meetings and minutes, configuring calendar activities, configuration options summary, and calendaring events summary, along with page references. It is useful for quickly locating topics such as meeting requests, sender/reply email setup, handling conflicts, meeting minutes, recurring activity limits, and calendar display settings."
+      },
+      {
+        "title": "1 Configuring Calendaring",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Calendaring configuration guide. It explains that the document covers application property–based configuration for calendar meetings, meeting minutes, and activities, plus an appendix of developer events for customizing standard calendaring behavior. The audience is administrators and developers familiar with code tables, application properties, and system security. It also notes the prerequisite of reading the Cúram Calendaring Business Guide and previews chapters on configuring meetings/minutes and calendar activities."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for administrators and developers configuring calendaring components. This guide covers calendar meetings, meeting minutes, and activity configuration via application properties, code tables, and system security. It also includes developer-oriented calendar events for customizing standard calendaring behavior. The guide should be used with the Cúram Calendaring Business Guide."
+              },
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for the calendaring configuration guide. It states the guide should be read alongside the Cúram Calendaring Business Guide. The section is aimed at administrators and developers configuring calendaring components, assuming familiarity with code tables, application properties, and system security. It introduces the guide’s scope: calendar meetings, meeting minutes, activity configuration, and developer events for customizing standard calendaring behavior."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introductory chapter for the calendaring configuration guide. It explains that the document covers application properties and events for configuring meetings, meeting minutes, and activity display in calendars. It identifies the audience as administrators and developers, notes prerequisites with the Cúram Calendaring Business Guide, and lists the main chapters: Configuring Meetings and Meeting Minutes and Configuring Calendar Activities."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Calendaring configuration guide. It covers application property–based configuration for calendar meetings, meeting minutes, and calendar activities, plus an appendix of developer events for customizing standard calendaring behavior. The intended audience is administrators and developers familiar with code tables, application properties, and system security. It should be read with the Cúram Calendaring Business Guide. The section also previews the guide’s main chapters: Configuring Meetings and Meeting Minutes and Configuring Calendar Activities."
+          },
+          {
+            "title": "1.2 Configuring Meetings and Minutes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the calendaring configuration guide, covering meetings, meeting minutes, and activity settings controlled via application properties. It explains that calendar events can be used to extend standard behavior and that an appendix documents these developer customization events. The intended audience is administrators and developers familiar with code tables, application properties, and system security. It also notes the prerequisite of reading the Cúram Calendaring Business Guide and outlines the guide’s chapters on meetings/minutes and calendar activities."
+              },
+              {
+                "title": "Issuing Meeting Requests to All Meeting Attendees",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how meeting requests are issued to attendees when a meeting is created or new attendees are added. The default property `curam.send.meeting.requests` is `YES`; setting it to `NO` stops email requests but still adds meetings to calendars. Covers required email address validation and user messages when addresses are missing. Also documents sender configuration for request emails (`curam.meeting.request.reply.name`, `.address`, `.host`) and the need to set up an email account for handling meeting request replies, with username, password, and storage folder."
+              },
+              {
+                "title": "Configuring Sender Information for Meeting Request Emails",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Sender Name",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Defines the sender name used in meeting request emails via the application property `curam.meeting.request.reply.name` (e.g., the agency name). This section sits within meeting request email configuration and is relevant if you need to set sender information, reply handling, or related meeting email properties."
+                  },
+                  {
+                    "title": "Sender Email Address",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how to configure meeting request emails in Cúram: sending requests to attendees by default, email behavior when addresses are missing or disabled, and the required sender details. It defines the sender name, sender email address, and sender host name via application properties, and notes there are no out-of-the-box defaults. It also states that a separate email account must be set up to receive meeting request replies, with a username, password, and response folder."
+                  },
+                  {
+                    "title": "Sender Host Name",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains meeting request email setup in Cúram: requests are sent by default to all attendees, with informational messages if attendees or organizers lack valid email addresses or if requests are disabled. Defines sender configuration properties for request emails: sender name, sender email address (also reply-to), and sender host name; no OOTB defaults, agency must configure them. Also notes that a separate email account for meeting request replies must be configured with username, password, and storage folder."
+                  }
+                ],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Configures sender details for meeting request emails in Cúram. The agency must set `curam.meeting.request.reply.name`, `.address`, and `.host` because no usable defaults exist. The sender address is also the reply-to address. It also requires a separate email account for meeting request replies, with a username, password, and response folder. This section sits alongside meeting request delivery behavior and is useful if you need to configure how invite emails and replies are sent and received."
+              },
+              {
+                "title": "Setting Up an Email Account for Meeting Request Replies",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Username",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Configures calendaring email reply handling and conflict notifications. Defines the username, password, and mail server folder used to access the email account that receives meeting request replies. Also controls whether informational warnings appear for meeting conflicts in invitee or organizer calendars, both defaulting to YES. Finally, it describes the setting for issuing meeting minutes to selected attendees, also default YES, with minutes emailed as a PDF including subject, location, date/time, related folder, and notes."
+                  },
+                  {
+                    "title": "Password",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Defines the calendaring application property `curam.meeting.request.reply.password`, which supplies the email account password used with the reply username to access meeting-request replies on the mail server. This section sits within calendaring configuration and also references related settings for reply username and reply folder, plus nearby options for conflict warnings and issuing meeting minutes."
+                  },
+                  {
+                    "title": "Folder on Mail Server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Configures meeting reply handling and conflict notifications for calendaring. Defines the mail account username/password and the mail server folder used to store meeting request responses. Also explains two warning properties that control informational messages when meetings conflict with attendees’ or the organizer’s calendars, both defaulting to YES. Finally, describes the setting for issuing meeting minutes to selected attendees by email, including default content and PDF attachment."
+                  }
+                ],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to set up the email account used to receive meeting request replies. It requires agency-specific configuration of a username, password, and mail-server folder for storing responses, with no OOTB defaults. This section is part of meeting-request email setup and is useful if you need to configure invitee reply handling."
+              },
+              {
+                "title": "Handling Meeting Conflicts",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "When Meeting Conflicts with Meetings in Invitee Calendars",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains calendaring properties for meeting conflict warnings. The key setting, `curam.meeting.warn.attendee.conflicts`, controls whether an informational appears when a meeting conflicts with an invitee’s calendar; default is YES, with message “This meeting conflicts with an existing meeting in %1s’s calendar.” It also notes the related organizer conflict warning property, and briefly mentions meeting request reply email settings and issuing meeting minutes by email/PDF."
+                  },
+                  {
+                    "title": "When Meeting Conflicts with Meetings in the Organizer's Calendar",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains the calendar conflict warning for meeting organizers. The application property curam.meeting.warn.organizer.conflicts controls whether an informational appears when a meeting conflicts with the organizer’s application calendar; default is YES. The message shown is “This meeting conflicts with an existing meeting in your calendar.” This section sits alongside related calendaring properties for meeting reply handling and attendee conflict warnings."
+                  }
+                ],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how the system warns organizers about meeting conflicts using informational messages. Covers two application properties: `curam.meeting.warn.attendee.conflicts` for conflicts with invitees’ calendars and `curam.meeting.warn.organizer.conflicts` for conflicts with the organizer’s calendar; both default to YES and show the stated warning text. Also appears alongside related meeting calendaring settings for reply email handling and issuing meeting minutes."
+              },
+              {
+                "title": "Issuing Meeting Minutes to Selected Meeting Attendees",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains the curam.meetingminutes.issue application property, which controls whether meeting minutes are emailed to selected attendees when issued. Default is YES. Notes that the email includes meeting subject, location, date/time, related social enterprise folder, and recorded notes, and that the minutes are attached as a PDF."
+              },
+              {
+                "title": "Displaying Meetings that can be associated with Meeting Minutes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Shows how meeting minutes can be linked to a previously held meeting. The system lists existing meetings, limited by the application property curam.meetingminutes.numPriorDaysToDisplayMeetings (default 30 days), which controls how far back meetings appear for selection. The excerpt also notes related minute-email behavior and introduces the meeting response batch, which processes email replies with iCalendar attachments to update attendee status (accept, decline, tentative), and can delete processed or invalid messages."
+              },
+              {
+                "title": "Meeting Response Batch",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "How the Batch Works",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Describes the meeting response batch, which checks a mail server for invitation responses and updates calendar attendee status from iCalendar attachments. Supported actions are Accept, Decline, and Tentative, with accepted/tentative meetings added to both the application calendar and the attendee’s email calendar, while declined meetings remain only in the application calendar. The batch must be scheduled and configured with mail server credentials and folder, and it deletes processed responses and optionally invalid messages."
+                  },
+                  {
+                    "title": "Configuring the Batch to Delete Invalid Messages",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains the `curam.meeting.response.delete.invalid.messages` application property, which controls whether the meeting response batch deletes invalid messages sent to the meeting response mailbox; default is `NO`. This page also begins the calendar activities configuration chapter, mentioning related properties for maximum recurring occurrences (`curam.calendar.maxnumberofoccurrences`, default 365) and how many days events/activities appear in calendars (`curam.calendar.noofdaysevents`, default 7), plus a summary table of calendar, meeting, and meeting minute properties."
+                  }
+                ],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Describes the Meeting Response Batch, which polls a configured mail server for meeting invitation responses in iCalendar email attachments and updates attendee status accordingly. Supported actions are Accept, Decline, and Tentative: accepted/tentative meetings are added to both the application calendar and the attendee’s email calendar, while declined meetings remain only in the application calendar. The batch must be scheduled and configured with mail server credentials and folder, and it deletes processed responses and can optionally delete invalid messages."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000012",
+              "start_page": 9,
+              "end_page": 12
+            },
+            "summary": "Covers configuration of meetings and minutes: sending meeting requests by default (`curam.send.meeting.requests=YES`), required sender/reply email settings, and setting up the reply mailbox. Explains conflict warnings for attendee and organizer calendars, emailing meeting minutes (`curam.meetingminutes.issue=YES`) with PDF attachment, and limiting selectable prior meetings via `curam.meetingminutes.numPriorDaysToDisplayMeetings` (default 30 days). Also describes the meeting response batch, which polls mail for iCalendar replies and updates attendee status (accept/decline/tentative)."
+          },
+          {
+            "title": "1.3 Configuring Calendar Activities",
+            "level": 2,
+            "children": [
+              {
+                "title": "Objective",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This chapter’s objective is to explain configuration options for calendar activities and related calendaring behavior. It covers application properties for limiting recurring activity occurrences (`curam.calendar.maxnumberofoccurrences`, default 365) and controlling how far ahead events and activities appear in calendars (`curam.calendar.noofdaysevents`, default 7 days). It also references a property for deleting invalid meeting response messages (`curam.meeting.response.delete.invalid.messages`, default NO) and summarizes the main calendar, meeting, and meeting minute properties."
+              },
+              {
+                "title": "Setting the Maximum Number of Occurrences for a Recurring Activity",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to configure the maximum number of occurrences for a recurring calendar activity using the `curam.calendar.maxnumberofoccurrences` application property, with default value 365. This section is part of calendar activity configuration and is useful for understanding recurring activity limits in the calendar display settings."
+              },
+              {
+                "title": "Setting the Number of Days that Events and Activities will Appear in the Calendar",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how to configure how long product delivery and integrated case events/activities are shown in the calendar using the `curam.calendar.noofdaysevents` application property. The default is 7 days, meaning items with a start date between today and seven days ahead are displayed. It appears within a broader calendaring configuration chapter that also references related properties such as maximum recurring activity occurrences."
+              }
+            ],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "This section explains calendar activity display settings. It covers configuring the maximum occurrences for a recurring activity with `curam.calendar.maxnumberofoccurrences` (default 365) and how far ahead product delivery and integrated case events/activities appear in the calendar with `curam.calendar.noofdaysevents` (default 7 days). It also notes the related meeting response batch property `curam.meeting.response.delete.invalid.messages` (default NO) and leads into a summary of calendar, meeting, and meeting minute application properties."
+          },
+          {
+            "title": "1.4 Calendaring Configuration Options Summary",
+            "level": 2,
+            "children": [
+              {
+                "title": "Application Properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section lists calendaring application properties and their effects. It covers the batch setting for deleting invalid meeting response messages (default NO), the maximum number of occurrences allowed for a recurring activity (`curam.calendar.maxnumberofoccurrences`, default 365), and how many days events/activities appear in calendars from the current date (`curam.calendar.noofdaysevents`, default 7). It also includes a summary table of the main calendar, meeting, and meeting minute properties."
+              }
+            ],
+            "node_id": "n000038",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "Summary of calendar configuration properties for activities and meeting responses. It explains the batch setting curam.meeting.response.delete.invalid.messages, which controls whether invalid meeting response messages are deleted from the mailbox (default NO), plus curam.calendar.maxnumberofoccurrences for the maximum recurring activity instances (default 365) and curam.calendar.noofdaysevents for how many days events/activities appear from the current date (default 7). It also includes a summary table of main calendar, meeting, and meeting minute properties."
+          },
+          {
+            "title": "1.5 Calendaring Events Summary",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Introduces Cúram calendaring customization for meetings. It lists meeting-related application properties for email request/response handling and conflict warnings, including sender name/address, mail server credentials, response folder, and options to delete invalid messages or warn on attendee/organizer conflicts. It also explains the event mechanism used to extend OOTB behavior without changing core code, where components raise events and registered listeners perform custom processing. The section then begins the meetings events summary for persistence and workflow customization."
+              },
+              {
+                "title": "Meetings Events",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Persistence Events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Defines configurable persistence and workflow events for calendaring. Covers meeting events such as pre/post create and cancel meeting, attendee email validation, and invite attendee, including primary/secondary data and source business process. Also lists workflow events for meetings: NEW_MEETING, CANCELLED_MEETING, and INVITE_ADDITIONAL_ATTENDEES. Adds meeting minutes events, including issue minutes plus post events for record, modify, delete, and create meeting decisions. Useful for custom processing tied to standard meeting and minutes actions."
+                  },
+                  {
+                    "title": "Workflow Events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section lists workflow events for meeting-related business processes in the calendaring application. It shows event names, related processes, and triggering actions for meetings, including Meeting.NEW_MEETING, Meeting.CANCELLED_MEETING, and Meeting.INVITE_ADDITIONAL_ATTENDEES. It also introduces meeting minutes persistence events and related custom-processing hooks in the surrounding content, indicating this area documents event-based integration points for meetings and minutes."
+                  }
+                ],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Overview of calendar meeting customization events. Explains that events enable loosely coupled custom processing without changing OOTB code, via listeners registered to component-raised events. This node introduces meeting-related persistence and workflow events used by standard calendaring functionality, and is a gateway to details on meeting and meeting minutes actions. Useful if you need custom hooks for meeting creation, cancellation, attendee handling, or minutes-related processing."
+              },
+              {
+                "title": "Meeting Minutes Events",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Persistence Events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section lists configurable persistence and workflow events for the calendaring application’s meeting and meeting-minutes processes. It covers events for creating, canceling, validating attendee emails, inviting attendees, and meeting minutes actions such as issuing, recording, modifying, deleting, and creating decision records. For each event, the table shows primary data, secondary data, and the business process that raises it, including workflow constants like Meeting.NEW_MEETING, Meeting.CANCELLED_MEETING, and Meeting.INVITE_ADDITIONAL_ATTENDEES."
+                  },
+                  {
+                    "title": "Workflow Events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000018",
+                      "start_page": 16,
+                      "end_page": 18
+                    },
+                    "summary": "Lists workflow events for meeting minutes business processes in the application. The table maps event names to primary data and raised-from actions, including ISSUE_MINUTES, RECORD_MINUTES, MODIFY_MINUTES, DELETE_MINUTES, CREATE_DECISIONS, UPDATE_DECISIONS, CREATE_NOTES, UPDATE_NOTES, CREATE_ATTENDANCE, and UPDATE_ATTENDANCE. The rest of the pages are legal notices, copyright/license terms, privacy policy, and trademarks."
+                  }
+                ],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000018",
+                  "start_page": 15,
+                  "end_page": 18
+                },
+                "summary": "Summarizes configurable calendaring events for meetings and meeting minutes. Covers persistence and workflow events for create/cancel meeting, attendee email validation/invitation, and meeting minutes actions such as issue, record, modify, delete, decisions, notes, and attendance. Tables map each event to primary/secondary data and the business action that raises it, including constants like Meeting.NEW_MEETING and MEETINGMINUTES.ISSUE_MINUTES. Remaining pages are legal notices, copyright/license terms, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000040",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000018",
+              "start_page": 14,
+              "end_page": 18
+            },
+            "summary": "Cúram calendaring customization reference for meetings and meeting minutes. It lists meeting email/response application properties (sender name/address, mail server host, username/password, response folder, deleting invalid messages, conflict warnings) and explains the event/listener mechanism for extending OOTB behavior without core code changes. It summarizes persistence and workflow events for meeting create/cancel, attendee email validation/invitation, and meeting minutes actions such as issue/record/modify/delete, decisions, notes, and attendance. The remaining pages are notices, copyright, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000018",
+          "start_page": 9,
+          "end_page": 18
+        },
+        "summary": "Configures Cúram calendaring via application properties and extensibility events. Covers meeting request emailing (`curam.send.meeting.requests`), sender/reply mailbox setup, conflict warnings, meeting minutes emailing (`curam.meetingminutes.issue`), prior-meeting lookup limit, meeting response batch processing, recurring activity limits (`curam.calendar.maxnumberofoccurrences`), and how far events appear (`curam.calendar.noofdaysevents`). Also includes a property summary table and developer-facing persistence/workflow events for meetings and meeting minutes, plus notices/copyright on later pages."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

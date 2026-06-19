@@ -1,0 +1,1132 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "cc2852ee71024ade",
+    "title": "Cúram 8.1.2 Cúram Incremental Modernization and Transformation (IMT) Web Services Cookbook",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramIMTGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "cc2852ee71024ade52bc8007b9d31f52ff0b9b02d76df7bb1ed82bd632912ada",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:33:24+00:00",
+    "page_count": 40,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramIMTGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram Incremental Modernization and Transformation (IMT) Web Services Cookbook",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000040",
+      "start_page": 1,
+      "end_page": 40
+    },
+    "summary": "Front matter and reference guide for Cúram 8.1–8.1.2 IMT Web Services. It targets developers and explains the purpose, audience, and prerequisites, then documents the available XML web services: Register Person, Claim Intake, Evidence Maintenance, Verification, Determination, and Triage. The service chapters include incoming/response parameter mappings, required and optional fields, internal struct mappings, and example XML messages/errors. Useful if you need field-level API details for creating people and cases, managing/activating evidence, verification checks, eligibility determination, or triage decisions. The section also contains Merative legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note stating that readers should review the Notices section before using the product and this information. Includes copyright attribution to Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section is the front matter and opening of the “Cúram Incremental Modernization and Transformation Web Services Cookbook” for Cúram 8.1, 8.1.1, and 8.1.2. It introduces the guide’s purpose, audience, prerequisites, and available web services. The main content begins the Register Person service, explaining its role, minimum and optional incoming parameters, data mappings, and response parameter (clientID). Useful for seeing the guide scope and the detailed API field mappings for person registration."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Pages 15–24 cover Cúram web service examples and schemas for Register Person response fields, Claim Intake, and Evidence Maintenance. Claim Intake creates a Product Delivery case using required inputs like clientID, productID, providerID, providerLocation, deliveryPattern, receivedDate, and currency, returning caseID and clientID. Evidence Maintenance includes Create Evidence, Read Evidence, and Activate Evidence/ActivateForUsers, with support for lists, dataObjects mappings, case/evidence identifiers, effective dates, and response fields such as evidenceDescriptorID and activated."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers evidence activation web services and verification services in Cúram. Includes ActivateChanges and ActivateAllChanges request/response parameters, option A/B input requirements, and example/error responses. Introduces verification concepts, then details VerificationResult (returns status for an evidenceDescriptorID) and VerificationCheck (checks a case for outstanding “Not verified” evidence, returning verificationRequired and evidenceDescriptorID). Ends with the start of Determination, explaining it applies business rules to intake data for eligibility decisions and requires configured rules, a participant, a case, and evidence."
+          },
+          {
+            "title": "Edition — pages 35-38",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "This section documents two web services: Determination and Triage. Determination requires caseID, fromDate, and toDate, using them to submit a case for approval and possibly adjust certification dates; it returns caseID and a submitted boolean, with example request/response/error messages. Triage describes an initial, solution-specific eligibility review that is not a full test and depends on configured rules, existing evidence, and a registered participant. It takes caseID and triageType and returns caseID, qualified, and amount."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000038",
+          "start_page": 5,
+          "end_page": 38
+        },
+        "summary": "Front matter and main reference chapter for the Cúram Incremental Modernization and Transformation Web Services Cookbook (Cúram 8.1–8.1.2). It states the guide’s purpose, audience, prerequisites, and available services, then documents Register Person, Claim Intake, Evidence Maintenance, Verification, Determination, and Triage. Each service section gives XML input/output parameter mappings, required/optional fields, and example responses/errors. Useful if you need API field-level details for person registration, case intake, evidence activation, verification checks, eligibility determination, or triage."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "This page contains legal notices: sample data and names are fictitious, sample source programs are provided under Merative Client Agreement and may be copied/modified/distributed for API-conforming development, but are untested and provided “AS IS” without warranty or liability. It also points to Merative’s privacy policy at https://www.merative.com/privacy and lists trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Lists trademark and copyright notices for Merative documentation. States that sample names in examples are fictitious, sample programs may be copied/modified/distributed under the Merative Client Agreement, and are provided “AS IS” without warranty. Includes the privacy policy URL. Identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a note that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000039",
+          "start_page": 39,
+          "end_page": 39
+        },
+        "summary": "Legal notice and usage terms for Merative publications: personal/noncommercial and internal enterprise copying is allowed only if proprietary notices are preserved, but redistribution, derivative works, or external use need express consent. It disclaims warranties, limits rights, notes export-law compliance, and states Merative may withdraw permission. Also covers patents, third-party product/source accuracy and non-endorsement of external websites, and includes copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Incremental Modernization and Transformation Web Services Cookbook. Lists front matter and chapter 1 topics: Introduction (purpose, audience, prerequisites, chapters), Register Person, Claim Intake, Evidence Maintenance (create/read/activate evidence), Verification, Determination, and Triage, each with incoming parameters and response sections. Also includes notices, privacy policy, and trademarks. Useful for navigating to specific service documentation or reference sections."
+      },
+      {
+        "title": "1 Cúram Incremental Modernization and Transformation Web Services Cookbook",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the Cúram Incremental Modernization and Transformation Web Services Cookbook as a developer reference for Cúram web services. It explains that the guide documents required input and response parameters and provides XML request/response examples. It also lists the available services: Register Person, Claim Intake, Evidence Maintenance, Verification, Determination, and Triage. The audience is developers working with Cúram Web Services, and it assumes prior experience with the application functionality."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for developers working on Cúram Web Services. This section states that the cookbook provides required input/response parameters and XML message examples for available services: Register Person, Claim Intake, Evidence Maintenance, Verification, Determination, and Triage. It also notes the guide is a reference handbook for developers and assumes prior experience developing related application functionality."
+              },
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Readers should already have experience developing the relevant Cúram application functionality before using this guide. This prerequisite is for developers working with Cúram Web Services, which expose internal Cúram capabilities to external systems and document required input/response parameters and XML examples for services such as Register Person and Claim Intake."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the Cúram Incremental Modernization and Transformation Web Services Cookbook. It explains that the guide provides required input/response parameters and XML examples for available web services: Register Person, Claim Intake, Evidence Maintenance, Verification, Determination, and Triage. It also states the guide’s purpose, intended audience (developers), prerequisite experience, and begins listing chapter topics, including Register Person and Claim Intake."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduction to the Cúram Incremental Modernization and Transformation Web Services Cookbook. It explains that the guide is a developer reference for Cúram Web Services, documenting required input/response parameters and XML request/response examples. It lists the available services: Register Person, Claim Intake, Evidence Maintenance, Verification, Determination, and Triage. The intended audience is developers, and it assumes prior experience with the relevant Cúram application functionality. It also begins the guide’s chapter list with Register Person and Claim Intake."
+          },
+          {
+            "title": "1.2 Register Person",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Register Person Service",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Describes the Register Person service, which creates a person record in Cúram and can register multiple clients in one web service call for better performance. It stores person details for later use by services such as Claim Intake and Determination. The section notes that mandatory data must be provided or exception handling is required, and lists minimum incoming parameters mapped to `core.facade.PersonRegistrationDetails` (first name, surname, sex, date of birth, registration date)."
+              },
+              {
+                "title": "Incoming Parameters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Minimum Requirements",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000021",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "This section lists incoming request parameters for a Cúram web service registration intake. It maps intake elements to parameters and schema types, and provides parameter descriptions, domains, and formats. Core fields include firstForeName, surname, sex, dateOfBirth, registrationDate, currentMaritalStatus, nationality, birthCountry, and addressData fields such as addressLayoutType and addressLine1. It also lists optional address-related parameters (addressLine2–5, city, county) with their mapped parameter names and types."
+                      }
+                    ],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "This section defines the minimum required incoming parameters for the Register Person web service. It explains that Register Person creates a person record in Cúram for later use by other services such as Claim Intake and Determination. The core fields mapped into core.facade.PersonRegistrationDetails are firstname/firstForeName, surname, gender/sex, dateOfBirth, and dateOfRegistration/registrationDate, with their schema types. It is useful for identifying mandatory inputs and understanding the service’s role in person registration."
+                  },
+                  {
+                    "title": "Optional Incoming Parameters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000013",
+                      "start_page": 11,
+                      "end_page": 13
+                    },
+                    "summary": "Lists optional incoming parameters for the web services intake mapping, showing how intake elements map to parameter names and schema types. Covers address, mailing address, contact, identity, communication exception, residency, citizenship, payment, and personal preference fields. Includes types such as codetablecode, string, boolean, date, int32/int16, long, clientIdentifier, and frequencyPattern. Useful as a reference for supported optional request fields and their exact parameter mappings."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000013",
+                  "start_page": 10,
+                  "end_page": 13
+                },
+                "summary": "Defines the Register Person service incoming parameters. Explains that the service creates person records for later use by Claim Intake, Determination, and related processes, and can register multiple clients in one call. Covers mandatory fields mapped to core.facade.PersonRegistrationDetails: first name, surname, gender, date of birth, and registration date. Also lists optional request mappings for address, mailing address, contact details, identity, communication exceptions, residency, citizenship, payment, and preference data, with schema types and parameter names."
+              },
+              {
+                "title": "Response Message",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Response Parameters",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Response Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Describes the response parameters for the Register Person web service. It documents the optional `id` attribute, which echoes identification from inbound details to help match request and response person registration data, and `clientID`, which uses the `CONCERN_ROLE_ID` domain and represents the related client identifier. The section also references example XML response and error response figures for Register Person."
+                      }
+                    ],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Defines the Register Person web service response parameters in `core.facade.PersonRegistrationResult`. It includes `clientID` as a long mapped to the `clientID` response element, representing the related client identifier in the `CONCERN_ROLE_ID` domain. The section also sits alongside the inbound example figure for Register Person and is part of the response message documentation."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section documents the Register Person response message. It identifies the internal struct `core.facade.PersonRegistrationResult` and lists its response parameter mapping: `clientID` is a `long` mapped to the `clientID` response element. The parameter represents the related client identifier in the `CONCERN_ROLE_ID` domain."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000014",
+              "start_page": 10,
+              "end_page": 14
+            },
+            "summary": "Defines the Register Person web service for creating person records in Cúram, including batch registration of multiple clients in one call for performance. It explains that stored person data can be reused by later processes like Claim Intake and Determination, and that mandatory fields must be supplied or exceptions handled. The section lists incoming parameter mappings for `core.facade.PersonRegistrationDetails`, covering required identity fields plus optional address, contact, residency, citizenship, payment, and preference data. It also documents the response `core.facade.PersonRegistrationResult` with `clientID`."
+          },
+          {
+            "title": "1.3 Claim Intake",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Claim Intake Service",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Describes the Claim Intake Service, which gathers data to create a product delivery case in Cúram for later evidence storage and business services. It maps to the Create Product Delivery process and does not cover Integrated Case or Service Plan creation. Notes required preconfigured product/provider data and an already registered primary client. Lists minimum incoming parameters for `CreateCaseDetails`, including `clientID`, `productID`, `providerID`, `providerLocation`, `deliveryPattern`, `receivedDate`, and `currency`, with their types/domains."
+              },
+              {
+                "title": "Incoming Parameters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Minimum Requirements",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000030",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Defines the incoming parameters for the Claim Intake Service, which creates a product delivery case in Cúram. It maps required intake fields to the internal `core.facade.CreateCaseDetails` structure and lists minimum inputs such as `clientID`, `productID`, `providerID`, `providerLocation`, `deliveryPattern`, `receivedDate`, and `currency`. The section also gives parameter domains, types, and notes that the client must already be registered and product/provider configuration must exist."
+                      }
+                    ],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section defines the minimum incoming parameters required by the Claim Intake Service to create a product delivery case in Cúram. It maps intake fields to `core.facade.CreateCaseDetails` and lists required values such as `clientID`, `productID`, `providerID`, `providerLocation`, `deliveryPattern`, `receivedDate`, and `currency`, including their domains/types. It also notes prerequisites: the client must already be registered, and product/provider configuration must exist before use."
+                  },
+                  {
+                    "title": "Optional Incoming Parameters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section lists optional incoming parameters for an inbound Claim Intake web service. It maps intake elements objective and caseStartDate to parameters objectiveCode (bt:string) and caseStartDate (bt:date), and shows an inbound XML example. It also defines response messages and parameters returned in core.facade.CreatedCaseIDKey, including caseID and clientID (both long), with caseID described as the identifier of the created Product Delivery."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Claim Intake Service incoming parameters for creating a Product Delivery case in Cúram. It requires mapped minimum inputs for `core.facade.CreateCaseDetails`: `clientID`, `productID`, `providerID`, `providerLocation`, `deliveryPattern`, `receivedDate`, and `currency`, with specified schema types/domains. The section also states prerequisites: the client must already be registered, and product/provider configuration must exist before use."
+              },
+              {
+                "title": "Response Messages",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Response Parameters",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Response Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000034",
+                        "range": {
+                          "start_unit_id": "p000017",
+                          "end_unit_id": "p000017",
+                          "start_page": 17,
+                          "end_page": 17
+                        },
+                        "summary": "This section defines response parameters for the inbound Claim Intake web service. It states that response values are held in `core.facade.CreatedCaseIDKey` and maps `caseID` and `clientID` to `long` response elements. The parameter descriptions table explains `caseID` as the case identifier of the created Product Delivery case. Useful for understanding the output structure and meaning of returned IDs."
+                      }
+                    ],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Defines response outputs for the inbound Claim Intake web service. The response parameters are held in internal struct `core.facade.CreatedCaseIDKey` and include `caseID` and `clientID`, both mapped to `long` elements. The parameter description states `caseID` is the identifier of the created Product Delivery case. Useful for understanding the service’s return structure and returned ID values."
+                  }
+                ],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Describes the Claim Intake web service response structure. The response parameters are defined in internal struct `core.facade.CreatedCaseIDKey` and map to two `long` fields: `caseID` and `clientID`. `caseID` is the identifier of the created Product Delivery case. Useful for understanding what IDs are returned by the service and the shape of the response message."
+              }
+            ],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000017",
+              "start_page": 15,
+              "end_page": 17
+            },
+            "summary": "Claim Intake describes the Cúram web service for creating a Product Delivery case, not Integrated Case or Service Plan. It requires preexisting product/provider configuration and a registered primary client. The section lists minimum incoming fields for `core.facade.CreateCaseDetails`: `clientID`, `productID`, `providerID`, `providerLocation`, `deliveryPattern`, `receivedDate`, and `currency`, plus optional `objective` and `caseStartDate`. It also defines the response struct `core.facade.CreatedCaseIDKey`, returning `caseID` and `clientID`, with `caseID` as the new Product Delivery case identifier."
+          },
+          {
+            "title": "1.4 Evidence Maintenance",
+            "level": 2,
+            "children": [
+              {
+                "title": "Evidence Maintenance Service",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section introduces the Evidence Maintenance Service, which manages evidence data used to determine entitlement for benefits and services. It notes that this evidence is required by other Cúram entitlement services such as Triage and Determination. The service is intentionally simple: approvals are assumed to be handled beforehand by the calling system, and evidence relationships and hierarchies are also managed externally. The section begins the “Creating Evidence” topic."
+              },
+              {
+                "title": "Creating Evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Incoming Parameters",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Describes the incoming parameters for the Create Evidence web service, which follows the generic Insert Evidence pattern and can insert multiple evidence records in one call. It notes that created evidence is activated immediately, but may remain in-edit if verification is required. The section defines the internal struct used for mapping and lists required inputs: caseID, evidenceType, receivedDate, effectiveDate, and dataObjects. It also explains the dataObjects XML structure and parameter domains/formats, including caseID as a long and dates in ddMMyyyy format."
+                      },
+                      {
+                        "title": "Optional Incoming Parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "Defines optional inbound parameters for evidence services, including an additional `participantID` intake element mapped to the `participantID` parameter with schema type `sem:participantIdentifier`. Also introduces the next topic, “Reading Evidence,” explaining that Read Evidence follows the generic View Evidence pattern, can retrieve one or multiple evidence records in a single call, and uses minimum-requirement parameters to populate `Cúram.core.sl.infrastructure.struct.EIEvidenceKey`."
+                      }
+                    ],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Defines the Create Evidence service’s incoming parameters. It follows the generic Insert Evidence pattern, can insert multiple evidence records in one call, and activates evidence immediately unless verification leaves it in edit status for later Activate Evidence processing. The section specifies the internal struct EvidenceDescriptionInsertDtls, required inputs caseID, evidenceType, receivedDate, effectiveDate, and dataObjects, and explains the dataObjects XML mapping plus parameter domains and formats (caseID as long; dates in ddMMyyyy)."
+                  }
+                ],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000019",
+                  "start_page": 18,
+                  "end_page": 19
+                },
+                "summary": "Create Evidence describes the Evidence Maintenance service for creating case evidence records. It follows the generic Insert Evidence pattern, supports multiple evidence records in one call, and activates evidence immediately after creation unless verification fails, leaving records in edit status for later Activate Evidence. The section defines the EvidenceDescriptionInsertDtls input structure, required parameters caseID, evidenceType, receivedDate, effectiveDate, and dataObjects, plus the dataObjects XML mapping and parameter domains/formats (caseID as long; dates in ddMMyyyy)."
+              },
+              {
+                "title": "Reading Evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Incoming Parameters",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "This section defines the incoming parameters for the Read Evidence web service. It covers three request parameters: evidenceID (long, evidence identification), evidenceType (codetable evidenceType), and evidenceDescriptorID (long, evidence descriptor identification). It also shows minimum intake mappings for Option A and Option B, plus response parameters: caseID (long), evidenceType (string), and evidenceDescriptorID (long). Includes an example inbound Read Evidence XML message."
+                      }
+                    ],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Defines the Read Evidence service’s incoming parameters and how they map into the internal EIEvidenceKey struct. It describes the generic View Evidence pattern, noting the service can retrieve one or multiple evidence records in a single call. The section references minimum requirement tables for parameter population and includes an inbound example XML message."
+                  },
+                  {
+                    "title": "Response Message",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Response Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000045",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000023",
+                          "start_page": 22,
+                          "end_page": 23
+                        },
+                        "summary": "Defines the Read Evidence response parameters and their XML/data-object mapping. Covers response fields caseID, evidenceType, evidenceDescriptorID, and effectiveDate, including their domains, types, and date format (ddMMyyyy). Also explains the dataObjects element and dataItem structure used in responses, with supported value types such as string, int, Date, DateTime, Money, and FrequencyPattern. Includes example response and error response XML figures for Read Evidence."
+                      }
+                    ],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000023",
+                      "start_page": 21,
+                      "end_page": 23
+                    },
+                    "summary": "Describes the Read Evidence response message format. Covers response parameters caseID, evidenceType, evidenceDescriptorID, effectiveDate, and the dataObjects element. Explains the dataItem XML structure, field name/value usage, and supported value types including string, int, short, double, float, long, Date, DateTime, Money, and FrequencyPattern. Includes parameter domains, meanings, and date formats (ddMMyyyy; DateTime ddMMyyyy hh:mm:ss), plus example response and error response XML figures."
+                  }
+                ],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000023",
+                  "start_page": 20,
+                  "end_page": 23
+                },
+                "summary": "Explains the Read Evidence web service. Covers incoming parameters, showing how evidenceID/evidenceType or evidenceDescriptorID populate the internal EIEvidenceKey and that multiple evidence records can be retrieved in one call. Describes response fields caseID, evidenceType, evidenceDescriptorID, effectiveDate, and the dataObjects/dataItem XML structure. Lists supported dataItem value types (string, int, short, double, float, long, Date, DateTime, Money, FrequencyPattern) and date formats ddMMyyyy and ddMMyyyy hh:mm:ss, with response and error XML examples."
+              },
+              {
+                "title": "Activating Evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "ActivateForUsers",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "This section defines the incoming parameter for the ActivateForUsers evidence service. It maps the intake element caseID to the CaseKey struct and requires the case identifier of the related case, typed as long (schema: sem:caseIdentifier / domain CASE_ID). It also notes the service can activate a list of evidence descriptor IDs, and includes an inbound XML example reference plus response mapping details elsewhere on the page."
+                      },
+                      {
+                        "title": "Response Message",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000049",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Describes the Activate Evidence service response for the ActivateForUsers message. The response message contains two elements: caseID (long) and activated (boolean). This section sits within the evidence activation flow, where the service applies changes to case evidence and can activate multiple evidence descriptor IDs. Useful if you need the output schema for evidence activation or confirmation of whether activation succeeded."
+                      },
+                      {
+                        "title": "Response Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000050",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "This section describes the response parameters for the ActivateForUsers web service. It lists caseID (mapped to CASE_ID, a long identifying the case whose evidence records are activated) and activated (a boolean indicating whether activation succeeded or failed). It also references example XML responses and error responses for ActivateForUsers, then begins the next topic, ActivateChanges, with incoming parameters for an internal evidence description structure."
+                      }
+                    ],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Defines the ActivateForUsers evidence service, which follows the generic Apply Changes pattern for case evidence and can activate one or more evidence descriptor IDs. The incoming parameter is caseID, mapped into the internal CaseKey struct and typed as sem:caseIdentifier/domain CASE_ID (long), identifying the related case. It also shows an inbound XML example. The response message returns caseID (long) and activated (boolean), indicating whether activation succeeded."
+                  },
+                  {
+                    "title": "ActivateChanges",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000026",
+                          "start_page": 25,
+                          "end_page": 26
+                        },
+                        "summary": "ActivateChanges incoming parameters for populating EvidenceEvidenceDescriptionInsertDtls. Two valid input options are defined: Option A requires caseID, evidenceID, and evidenceType; Option B requires caseID and evidenceDescriptorID. The section includes minimum parameter requirement tables, schema types, and parameter descriptions. Key fields: caseID (case identifier), evidenceID (evidence record identifier), evidenceType (codetable EvidenceType), and evidenceDescriptorID (evidence descriptor identifier)."
+                      },
+                      {
+                        "title": "Response Message",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000053",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "Defines the ActivateChanges response message for inbound web services. It maps three response elements—caseID (long), evidenceDescriptorID (long), and activated (boolean)—and explains each: case identifier, evidence descriptor identifier, and a success/failure flag for the activation attempt. Includes a response example figure."
+                      },
+                      {
+                        "title": "Response Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section defines the ActivateChanges response parameters and their meanings. It maps the response elements caseID, evidenceDescriptorID, and activated to their types (long, long, boolean) and describes each: the related case identifier, the evidence descriptor identifier, and a success/failure flag for the activation attempt. It includes the response message table and a response example figure."
+                      }
+                    ],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000027",
+                      "start_page": 25,
+                      "end_page": 27
+                    },
+                    "summary": "Defines the ActivateChanges web service request/response. Incoming parameters support two valid input patterns: Option A uses caseID, evidenceID, and evidenceType; Option B uses caseID and evidenceDescriptorID. These populate EvidenceEvidenceDescriptionInsertDtls, with schema types and parameter descriptions provided. The response returns caseID, evidenceDescriptorID, and activated, where activated is a boolean success/failure flag. Includes example inbound XML for both options and a response example."
+                  },
+                  {
+                    "title": "ActivateAllChanges",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000056",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "This section defines the incoming parameters for the ActivateAllChanges operation. It lists the minimum required parameter mapping, showing the intake element caseID mapped to the caseID parameter with schema type sem:caseIdentifier. It also describes caseID as a CASE_ID domain value identifying the case whose evidence is being activated, with type long. An inbound XML example for ActivateAllChanges is included."
+                      },
+                      {
+                        "title": "Response Message",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000057",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "Defines the ActivateAllChanges web service response message. It maps response elements caseID (long) and activated (boolean) and explains their meanings: caseID is the case identifier whose evidence records were activated, and activated indicates success or failure of the activation attempt. The section also includes example response XML and an error response example."
+                      },
+                      {
+                        "title": "Response Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000058",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "This section defines the ActivateAllChanges response parameters and their meanings. It maps the response fields caseID (long, CASE_ID) and activated (boolean) and explains that caseID identifies the case whose evidence records were activated, while activated indicates whether the activation attempt succeeded or failed. It also includes example response XML and error response figures."
+                      }
+                    ],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000029",
+                      "start_page": 28,
+                      "end_page": 29
+                    },
+                    "summary": "ActivateAllChanges defines the web service’s input and output for activating all evidence changes for a case. It accepts a single inbound caseID parameter (sem:caseIdentifier / long) identifying the target case, with an example request XML. The response returns caseID (long) and activated (boolean), where caseID identifies the case processed and activated indicates success or failure. The section also includes response and error XML examples."
+                  }
+                ],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000029",
+                  "start_page": 24,
+                  "end_page": 29
+                },
+                "summary": "Defines the Activate Evidence service, a generic Apply Changes pattern for case evidence. Covers three operations: ActivateForUsers (activate one or more evidence descriptor IDs using caseID), ActivateChanges (activate a single evidence change via either caseID + evidenceID + evidenceType or caseID + evidenceDescriptorID), and ActivateAllChanges (activate all evidence changes for a case using caseID only). For each, it documents inbound parameter mappings, schema/domain types, and response fields caseID and activated, with examples and error responses."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000029",
+              "start_page": 18,
+              "end_page": 29
+            },
+            "summary": "Cúram Evidence Maintenance covers simple evidence services used to support entitlement decisions. It explains that approvals, relationships, and hierarchies are handled externally. The section includes Create Evidence (insert one or many records, auto-activate unless verification fails), Read Evidence (retrieve by evidenceID/evidenceType or evidenceDescriptorID, with structured dataObjects output and supported value types), and Activate Evidence (activate one or many pending changes via ActivateForUsers, ActivateChanges, or ActivateAllChanges). Each service includes XML mappings, required parameters, domains, and response/error examples."
+          },
+          {
+            "title": "1.5 Verification",
+            "level": 2,
+            "children": [
+              {
+                "title": "Verifying Evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains how to verify evidence in Cúram SEM using two web services: Verification Result and Verification Check. Verification Result returns the current status of one or more evidence records, while Verification Check identifies outstanding verifications on a case to prevent payment delivery. Notes prerequisites: verification must be added to an integrated case, the Verification administration component must be installed, requirements defined, and evidence present. Also includes steps to view verification status in the Cúram UI."
+              },
+              {
+                "title": "Verification Result",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Incoming Parameters",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000063",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "Defines the incoming parameters for the VerificationResult web service, which returns the current verification status for a list of evidence records. It maps input into EvidenceDescriptorKey, specifically the evidenceDescriptorID parameter (domain EVIDENCE_DESCRIPTOR_ID, type long) derived from evidenceDescriptorD. Also notes the response structure EvidenceVerificationDetails, with response elements evidenceDescriptorID (long) and verificationStatus (boolean), and includes a minimum requirements table plus an inbound XML example reference."
+                      }
+                    ],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Defines the incoming parameters for the VerificationResult web service, which returns the current verification status for one or more evidence records. The request populates the EvidenceDescriptorKey struct using evidenceDescriptorID (from intake element evidenceDescriptorD, schema type bt:evidenceDescriptorIdentifier), a long in domain EVIDENCE_DESCRIPTOR_ID. Also notes the response struct EvidenceVerificationDetails, with response fields evidenceDescriptorID (long) and verificationStatus (boolean), plus minimum requirements and an inbound XML example reference."
+                  },
+                  {
+                    "title": "Response Message",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Response Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000065",
+                        "range": {
+                          "start_unit_id": "p000032",
+                          "end_unit_id": "p000032",
+                          "start_page": 32,
+                          "end_page": 32
+                        },
+                        "summary": "This section lists response parameters for a verification result service. It defines two fields: evidenceDescriptorID, a long identifier for the evidence record, and verificationStatus, a codetable value from EvidenceStatus showing the evidence’s verification status. It also introduces the Verification Check incoming parameters, describing the service as returning outstanding evidence records for a given case and noting that inputs populate the EvidenceDescriptorKey structure, with minimum requirements beginning with caseID mapped to bt:caseIdentifier."
+                      }
+                    ],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "This section defines the VerificationResult response message structure. It states that response parameters are contained in Cúram.verification.sl.infrastructure.struct.EvidenceVerificationDetails and lists two response elements: evidenceDescriptorID (long) and verificationStatus (boolean). It also ties the response to a service that returns the current verification status for a list of evidence records."
+                  }
+                ],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000031",
+                  "start_page": 30,
+                  "end_page": 31
+                },
+                "summary": "Explains the Verification Result web service for evidence verification. It returns the current verification status for one or more evidence records, using incoming parameter evidenceDescriptorID (mapped from evidenceDescriptorD, type bt:evidenceDescriptorIdentifier, domain EVIDENCE_DESCRIPTOR_ID, long) to populate EvidenceDescriptorKey. The response is contained in EvidenceVerificationDetails and includes evidenceDescriptorID (long) and verificationStatus (boolean). Also contrasts Verification Result with Verification Check and references an inbound XML example and minimum requirements."
+              },
+              {
+                "title": "Verification Check",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Incoming Parameters",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Incoming Parameter Descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000068",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "Defines the inbound VerificationCheck parameter and response schema. The incoming request takes caseID (CASE_ID long), identifying the case whose evidence and current verification status will be queried. The response is contained in verification.sl.infrastructure.struct.EvidenceVerificationDetails and maps caseID, verificationRequired (boolean indicating whether any evidence is still “Not verified”), and evidenceDescriptorID (long). Includes parameter/element tables and an inbound example reference."
+                      }
+                    ],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Defines the Verification Check service’s incoming parameters. It explains that the service returns outstanding evidence records for a case and that the request populates EvidenceDescriptorKey. The only inbound parameter shown is caseID, mapped to bt:caseIdentifier / CASE_ID long, identifying the case whose evidence and verification status are queried. Also included are nearby response parameter descriptions for evidenceDescriptorID and verificationStatus, plus a response example reference."
+                  },
+                  {
+                    "title": "Response Message",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Response parameter descriptions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000070",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "Describes the VerificationCheck response payload in `verification.sl.infrastructure.struct.EvidenceVerificationDetails`. Lists response elements and parameter meanings: `caseID` (long, case identifier), `verificationRequired` (boolean, indicates whether any evidence records still have outstanding verification/not verified), and `evidenceDescriptorID` (long). Useful for understanding the returned verification status for a case and how response fields map to the XML struct."
+                      }
+                    ],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Defines the VerificationCheck response message for `verification.sl.infrastructure.struct.EvidenceVerificationDetails`. It lists response elements `caseID` (long case identifier), `verificationRequired` (boolean indicating whether any evidence on the case still has outstanding/not verified status), and `evidenceDescriptorID` (long). Includes table mapping parameters to XML response fields and brief descriptions of the returned verification status for a case."
+                  }
+                ],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000033",
+                  "start_page": 32,
+                  "end_page": 33
+                },
+                "summary": "Verification Check describes the service for querying a case’s outstanding evidence verification status. The inbound request uses caseID (bt:caseIdentifier / CASE_ID long) to populate EvidenceDescriptorKey and returns evidence records for that case. The response is an EvidenceVerificationDetails struct containing caseID, verificationRequired (boolean indicating whether any evidence is still not verified), and evidenceDescriptorID. The section includes parameter mapping tables, descriptions, and inbound/response XML examples."
+              }
+            ],
+            "node_id": "n000059",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000033",
+              "start_page": 30,
+              "end_page": 33
+            },
+            "summary": "Section 1.5 explains Cúram SEM evidence verification and the two related web services. Verification Result returns the current verification status for one or more evidence records; it takes evidenceDescriptorID and returns EvidenceVerificationDetails with evidenceDescriptorID and verificationStatus. Verification Check checks a case for outstanding verifications that would block payment delivery; it takes caseID and returns caseID, verificationRequired, and evidenceDescriptorID. The section also notes prerequisites, UI steps to view verification status, and XML/parameter mapping examples."
+          },
+          {
+            "title": "1.6 Determination",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Determination Service",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "The Determination Service applies intake data to enterprise- and program-specific rules to create eligibility decisions. It is a full eligibility test requiring configuration data, an existing participant, an existing case, and all relevant evidence in Cúram. It can use Register Person, Claim Intake, and Evidence maintenance services to prepare these prerequisites. Determination stores resulting decisions in Cúram, but only the “submitted for approval verification” outcome is returned to the caller."
+              },
+              {
+                "title": "Incoming Parameters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Incoming Parameter Descriptions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Describes incoming parameters for a Determination request. The request must include caseID to identify the case for approval, and fromDate/toDate to check and possibly update certification date values. Includes mapping tables showing intake elements to schema parameters and parameter descriptions: caseID (CASE_ID, long), fromDate and toDate (CÚRAM_DATE, ddMMyyyy). Also notes the response message parameters: caseID (long) and submitted (boolean)."
+                  }
+                ],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Defines incoming request parameters for a Determination service. The request must include caseID to identify the case for approval/submission, plus fromDate and toDate to assess whether certification dates fall outside the requested period and should be updated. Includes parameter mapping and data types: caseID as bt:caseIdentifier / long, fromDate and toDate as bt:date with CÚRAM_DATE format ddMMyyyy. Also lists response parameters: caseID and submitted (boolean)."
+              },
+              {
+                "title": "Response Message",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Response Parameter Descriptions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "This section defines the response parameters for the Determination message. It lists `caseID` (domain/attribute `CASE_ID`) as the case identifier for the submitted approval case, typed as long, and `submitted` as a boolean indicator of whether the determination was submitted for approval. It also references example XML response and error response figures for Determination."
+                  }
+                ],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Defines the Determination response message. It lists response parameters `caseID` (type long, case identifier) and `submitted` (boolean indicating whether the determination was submitted for approval). The surrounding section also describes incoming Determination parameters `caseID`, `fromDate`, and `toDate`, their mappings, and date format expectations, with an inbound XML example and related error example references."
+              }
+            ],
+            "node_id": "n000071",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000035",
+              "start_page": 34,
+              "end_page": 35
+            },
+            "summary": "Determination is a full eligibility-testing service that applies intake data to enterprise- and program-specific rules to create eligibility decisions. It requires product configuration, an existing participant and case, and all relevant evidence in Cúram; Register Person, Claim Intake, and Evidence maintenance services may be used to prepare these inputs. Decisions are stored in Cúram, but only the submitted-for-approval verification is returned. The section also defines Determination request parameters caseID, fromDate, and toDate, including date format mapping, and the response fields caseID and submitted."
+          },
+          {
+            "title": "1.7 Triage",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Triage Service",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Describes the Triage Service, which performs an initial, indicative review of limited client information to estimate likely need or benefit from a program. It is not a full eligibility test and must be tailored per solution via a solution-specific ruleset. The section lists prerequisites: the ruleset must exist, required evidence must be present, and the participant must be registered. It also documents the incoming parameters for CaseIDandTriageTypeKey and the TriageResult response structure."
+              },
+              {
+                "title": "Incoming Parameters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Incoming Parameter descriptions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Describes the Triage Service’s incoming parameters. It explains that the request populates `Cúram.core.sl.struct.CaseIDandTriageTypeKey` with two required inputs: `caseID` (`CASE_ID`, the evidence descriptor identifier, type long) and `triageType` (`TRIAGE_TYPE_CODE`, a code table value indicating the triage operation, codetable `triageType`). Also notes the service’s context: triage is an indicative, not final, eligibility/routing step."
+                  }
+                ],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Defines the Triage Service’s incoming parameters. The request populates `Cúram.core.sl.struct.CaseIDandTriageTypeKey` with two required values: `caseID` (`CASE_ID`, the evidence descriptor identifier, type long) and `triageType` (`TRIAGE_TYPE_CODE`, codetable `triageType`, indicating the triage operation). This sits in the broader context that triage is an initial, indicative routing/eligibility step, not a final determination."
+              },
+              {
+                "title": "Response Message",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Response Parameter Descriptions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000040",
+                      "start_page": 38,
+                      "end_page": 40
+                    },
+                    "summary": "Defines response parameter mappings for a triage payment response. It lists three parameters: caseID mapped to CASE_ID (case identifier, long), qualified mapped to a boolean flag indicating whether the case qualified for payment through triage, and amount mapped to CÚRAM_MONEY (payment amount due, double). The remaining pages are legal notices, copyright, privacy policy, trademarks, and sample-code/license terms."
+                  }
+                ],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000040",
+                  "start_page": 37,
+                  "end_page": 40
+                },
+                "summary": "Describes the Triage Service response message for `core.sl.struct.TriageResult`. It maps three response parameters: `caseID` (CASE_ID, long), `qualified` (boolean indicating whether the case qualified for payment via triage), and `amount` (CÚRAM_MONEY, double payment amount). The remainder of the section is Merative legal/usage notices, copyright license terms, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000077",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000040",
+              "start_page": 36,
+              "end_page": 40
+            },
+            "summary": "1.7 Triage describes the Triage Service, an initial indicative review that uses limited client information to estimate likely need or benefit from a program. It is not a full eligibility test and must be tailored per solution via a ruleset. The section lists prerequisites: the ruleset must exist, required evidence must be present, and the participant must be registered. It defines incoming `CaseIDandTriageTypeKey` parameters (`caseID`, `triageType`) and the `TriageResult` response (`caseID`, `qualified`, `amount`), then ends with Merative notices, license, privacy, and trademarks."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000040",
+          "start_page": 9,
+          "end_page": 40
+        },
+        "summary": "Overview of the Cúram Incremental Modernization and Transformation Web Services Cookbook. It targets developers and documents XML request/response parameters and examples for six services: Register Person, Claim Intake, Evidence Maintenance, Verification, Determination, and Triage. It explains service purpose, prerequisites, and mappings to internal structs, including key inputs and outputs for creating people, cases, evidence, eligibility decisions, and triage results. The section also includes Merative notices, license terms, privacy policy, and trademarks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

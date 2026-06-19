@@ -1,0 +1,1737 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "151333bbfcffa902",
+    "title": "Cúram 8.1.2 Batch Process Reference Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/BatchProcesses_812.pdf",
+    "source_type": "pdf",
+    "sha256": "151333bbfcffa9025a05a789565bfd26378854a295f2f0b8c54b3dee5f187e16",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T03:48:44+00:00",
+    "page_count": 68,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/BatchProcesses_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Batch Process Reference Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000068",
+      "start_page": 1,
+      "end_page": 68
+    },
+    "summary": "Reference guide for Cúram 8.1.2 batch processing. It lists the default batch jobs available in Cúram 8.1/8.1.1/8.1.2 and explains the common `processingDate` parameter, batch streaming, and Batch Process Instance ID usage for concurrent runs. The section covers core processes such as MeetingManagement, eligibility/reassessment, communication and closure-related jobs, provider management, decision assist, financial processing, funded program management, purges, import/export, and milestone delivery scans. Individual entries typically include purpose, class/method, parameters, defaults, dependencies, and execution notes, including ordering constraints like running TransferInstructionLineItems immediately after GenerateInstructionLineItems. Also includes front-matter legal notices, privacy policy, and trademarks, with the main substantive content spanning pages 9–66.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice section stating that users should read the Notices information before using the product or this document. Includes Merative copyright information for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter and the start of the Batch process reference. It lists the edition (Cúram 8.1, 8.1.1, 8.1.2), copyright/trademark notices, the contents page, and the opening overview of batch processes. The section explains default batch jobs, the common `processingDate` parameter, and introduces core batch processes such as MeetingManagement, ProductDeliveryFinalClosure, EvaluateCertificationGracePeriod, DetermineProductDeliveryEligibility and its stream, ReassessOutstandingCases, and CER/rate-table propagation and reassessment processes."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Pages 15–24 list Cúram batch process reference entries across several modules: reassessment/translator processing, Dependency Manager batch suite and tooling, financial processing (instruction line items, instruments, concern payments, payslips, payment export/reconciliation, expiry), case account reconciliation, and workflow task deadline/restart handling. For each batch it gives purpose, key parameters, streaming/multi-instance behavior, class/method names, and ordering notes. Useful if you need exact batch names, inputs, execution dependencies, or implementation entry points."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section catalogs Cúram batch processes and their purposes, with class/method names, parameters, dependencies, and scheduling notes. It covers wait list expiry/review, payment receipt loading, calendar export, general ledger export, and multiple Provider Management jobs such as roster creation, SALI processing, paper rosters, service delivery start, notifications, CPM liability activation, placement evidence, reservation expiry, payslip generation, roster reminders, payment correction activation, and taxonomy import. It ends with the start of Decision Assist batch processes."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section documents Cúram batch processing, especially financial batch jobs. It explains queue submission, batch launcher behavior, command-line execution, batch streaming, and the business processing date versus system date. It outlines the financial batch sequence for creating financial records: DetermineProductDeliveryEligibility, GenerateInstructionLineItems, GenerateInstruments, and GeneratePayslips. It then details key processes including loading payments received, issuing concern payments, expiring payments, processing payment instrument types, and payment reconciliation, with their main parameters, statuses, file inputs/outputs, and a CER reassessment customization setting."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Batch process reference for multiple Cúram jobs, mainly around finance reconciliation, citizen workspace cleanup, roster generation, fund fiscal year status, ICD upload, user export, dynamic evidence extraction, discrepancy checking, and meeting response handling. Includes each process’s purpose, key parameters/defaults, processing order/dependencies, offline requirements for purge jobs, and class/method names. Useful if you need operational details for batch jobs or to locate a specific process and its inputs."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "This section covers Cúram batch processes 1.19–1.27, including PDMIdentifyCases, ProcessDefinitionImportDirectory/File, ProcessRenewalData, ProcessSALI, Purge Non-Referenced Old Data, RedetermineTranslator, and milestone delivery scan batches. It gives each process’s purpose, class/method, parameters, defaults, and execution notes. Key details include renewal/data-matching handling, roster and translator updates, irreversible purge behavior with customization hooks, and streaming/instance-ID usage for milestone start/end date scans."
+          },
+          {
+            "title": "Edition — pages 65-66",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000066",
+              "start_page": 65,
+              "end_page": 66
+            },
+            "summary": "This section documents several batch processes and their purpose, class/method names, parameters, and processing steps. It covers StartEffectiveOutcomePlanActions, StartEffectiveServiceDeliveries, TransferInstructionLineItems, and WorkParticipationBatchProcess, plus notes on batch streaming and instance identifiers. Key details include how StartEffectiveServiceDeliveries activates eligible service deliveries, and how TransferInstructionLineItems moves unprocessed financial instruction line items to an ERP system and should run after Generate Instruction Line Items."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000066",
+          "start_page": 5,
+          "end_page": 66
+        },
+        "summary": "Batch process reference for Cúram 8.1/8.1.1/8.1.2 covering default jobs, the optional `processingDate` parameter, and batch streaming/instance IDs. It documents core processes such as MeetingManagement, eligibility/reassessment, provider management, decision assist, financial processing, purges, data import/export, and milestone delivery scans. Each entry gives purpose, class/method, parameters, defaults, dependencies, and execution notes. Useful for locating specific batch jobs, their inputs, and ordering requirements like running TransferInstructionLineItems after Generate Instruction Line Items."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000068",
+              "end_unit_id": "p000068",
+              "start_page": 68,
+              "end_page": 68
+            },
+            "summary": "Legal notices for the document: sample data and names are fictitious; sample programs may be copied, modified, and distributed under the Merative Client Agreement, but are provided “AS IS” without warranty or liability. Includes a link to the Merative privacy policy. Also lists trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus copyright years 2012 and 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000068",
+              "end_unit_id": "p000068",
+              "start_page": 68,
+              "end_page": 68
+            },
+            "summary": "This section lists legal notices: fictitious example names, copyright/license terms for sample source programs, a warranty/liability disclaimer, the Merative privacy policy link, and trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. It is mainly reference/legal information for branding and usage rights."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000067",
+          "end_unit_id": "p000067",
+          "start_page": 67,
+          "end_page": 67
+        },
+        "summary": "Legal notice and usage terms for the publication. Covers personal and enterprise reproduction rights, restrictions on distribution/derivative works, and preservation of proprietary notices. States no implied licenses beyond those granted, Merative may withdraw permission, and export laws apply. Includes an as-is/no-warranty disclaimer, patent notice, third-party product and website disclaimers, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 manual. Lists front matter and the “Batch process reference” section, including core batch processes, Provider Management, Decision Assist, Financial, Funded Program Management, and many individual batch jobs (for example, roster, payment, purge, import/export, and scan processes) with page numbers. Useful as an index/navigation node rather than substantive content."
+      },
+      {
+        "title": "1 Batch process reference",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Core batch processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Batch Parameters and Processing Date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains the optional `processingDate` parameter used by many batch jobs to set the effective run date (defaults to `getCurrentDate()`, i.e., the current system date). Notes that some jobs may use it differently. The excerpt then introduces the `MeetingManagement` batch process, which checks a configured email inbox for meeting response messages and updates attendee response data. It outlines the processing steps and required environment properties for email connection."
+              },
+              {
+                "title": "Cúram Processing",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "MeetingManagement",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "MeetingManagement is a batch process that reads meeting response emails from a configured inbox and updates meeting attendee response records. It connects using the ENV_MEETING_REQUEST_REPLY_USERNAME, ENV_MEETING_REQUEST_REPLY_PASSWORD, and ENV_MEETING_REQUEST_REPLY_HOST environment properties, then opens the mail folder and processes all response messages. Messages must include a text/calendar body part compliant with RFC 2445 and containing a UID. Successful responses are removed from the inbox after processing."
+                  },
+                  {
+                    "title": "Case Management",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "GenerateCommunications",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000020",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "Describes the Case Management batch process GenerateCommunications, which generates pending case communications such as case approval notices. An environment variable can route communications to pending status instead of automatic processing. It is intended to run nightly, but running less often only delays processing; running more than once daily has no effect. No parameters are required. The batch process class/method is curam.core.intf.GenerateCommunications.generateAllCommunications."
+                      },
+                      {
+                        "title": "ProductDeliveryFinalClosure",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000021",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "Defines the ProductDeliveryFinalClosure batch process for case management. It closes cases in pending closure once the closure grace period has expired. The process is intended to run nightly, but running it less often only delays closure; running it more than once per day has no effect. It takes no parameters. The associated class/method is curam.core.intf.CloseCasesPendingClosure.closeCasesPendingClosure."
+                      },
+                      {
+                        "title": "EvaluateCertificationGracePeriod",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000022",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "Batch process that sets cases to pending closure after they have been out of certification beyond the certification grace period. Intended to run nightly; running less often may delay pending closure, while running more than once a day has no effect. It takes no parameters."
+                      },
+                      {
+                        "title": "DetermineProductDeliveryEligibility",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000023",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Describes the DetermineProductDeliveryEligibility batch process for newly approved cases. It records eligibility decisions: ineligible cases are set to pending closure, eligible cases to active, and errors suspend the case and notify the owner. Intended to run nightly, but can be run less or more often. Parameters include Product ID and Batch Process Instance ID. Also documents the related streaming batch process, which supports concurrent execution only with Determine Product Eligibility and uses the instance ID."
+                      },
+                      {
+                        "title": "DetermineProductDeliveryEligibilityStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000024",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Describes the streaming companion batch process for Determine Product Eligibility. It supports concurrent execution of the main eligibility process, potentially across multiple machines, to improve database throughput. Can only be run with Determine Product Eligibility. It takes a Batch Process Instance ID parameter to allow multiple instances of the same batch process to run simultaneously; without it, only one instance can run. Batch process class/method: curam.core.intf.DetermineProductDeliveryEligibilityStream (stream support for determine product delivery eligibility)."
+                      },
+                      {
+                        "title": "ReassessOutstandingCases",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Describes the ReassessOutstandingCases batch process. It reads all records in the ScheduleReassessment entity and reassesses each case sequentially. ScheduleReassessment is used only in batch mode; deferred mode reassessment does not use it. The process has one optional parameter, processingDate, which sets the effective date for the run; otherwise getCurrentDate() uses the current system date. Includes the batch process class/method: curam.core.intf.ReassessOutstandingCases.reassess."
+                      },
+                      {
+                        "title": "FullPropagationToRuleObjects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000026",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Describes the FullPropagationToRuleObjects batch process, which fully propagates rate table database data to CER rule objects. It should be run when stored rule objects may no longer match their source rate table data, such as after updates made outside the application’s APIs or when incremental propagation was bypassed. For small numbers of changes, the online administration “Apply Changes” action is usually preferred."
+                      },
+                      {
+                        "title": "RateCreateInitialRuleObjects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000027",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "Defines the RateCreateInitialRuleObjects batch process for creating initial CER rule objects from rate table entries loaded outside application APIs. It applies to a specified rateTableType parameter, or all rate tables if blank, and is used when rate table data has been populated externally. The section also gives the batch process class/method in the rate infrastructure package and points to the Propagating Non Cúram Data for Cúram Express Rules guide for more detail."
+                      },
+                      {
+                        "title": "CREOLEBulkCaseChunkReassessmentByProduct",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000028",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "Describes the CREOLEBulkCaseChunkReassessmentByProduct batch process, which performs full reassessment of many “Active” CER cases for a specified product type. If case determinations change, the new result is stored and the prior one superseded. It is intended for large-scale CER changes such as rule set, product configuration, data configuration, or rate table updates, especially when forcing reassessment by product rather than relying on Dependency Manager ordering. Notes that broad use may trigger unnecessary reassessments and may warrant a more targeted custom batch process."
+                      },
+                      {
+                        "title": "CREOLEBulkCaseChunkReassessmentStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000029",
+                        "range": {
+                          "start_unit_id": "p000014",
+                          "end_unit_id": "p000014",
+                          "start_page": 14,
+                          "end_page": 14
+                        },
+                        "summary": "Describes the CREOLEBulkCaseChunkReassessmentStream batch process, which supports streaming for the CREOLE Bulk Case Chunk Reassessment By Product process. It can only run with that parent process and uses Batch Process Instance ID to coordinate concurrent instances; multiple stream processes can be linked to one parent instance. The section also notes batch parameters such as Product ID for processing a single product or all cases if omitted, and includes the related ApplyProductReassessmentStrategy logic for checking whether product delivery cases’ reassessment support changed."
+                      },
+                      {
+                        "title": "ApplyProductReassessmentStrategy",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000030",
+                        "range": {
+                          "start_unit_id": "p000014",
+                          "end_unit_id": "p000014",
+                          "start_page": 14,
+                          "end_page": 14
+                        },
+                        "summary": "Describes the ApplyProductReassessmentStrategy batch process, which checks each product delivery case for a product to determine whether reassessment support has changed due to a change in the product’s reassessment strategy. The section also explains batch parameters such as Product ID and Batch Process Instance ID, notes that omitting Product ID processes all cases, and identifies the related batch class/method and streaming relationship with CREOLE Bulk Case Chunk Reassessment By Product and its stream process."
+                      },
+                      {
+                        "title": "Redetermine Translator",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000031",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Batch process for automatic “redetermine translator” updates when a user’s language skill changes and many cases may be affected. It scans open cases owned by the specified user, compares each case participant’s preferred language with the user’s language skill, and updates the translator required indicator if needed. Includes batch classes/methods RedetermineTranslator.process and RedetermineTranslatorStream.process. Parameters: Instance Identifier, Processing Date, and User Name (case owner to assess)."
+                      }
+                    ],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000015",
+                      "start_page": 10,
+                      "end_page": 15
+                    },
+                    "summary": "Case Management batch processes for case lifecycle, eligibility, reassessment, CER rule propagation, and translator updates. Covers nightly jobs for generating pending communications, closing cases after grace periods, and moving approved cases to active/pending closure. Includes streaming support and Batch Process Instance ID coordination for concurrent eligibility/reassessment runs. Documents reassessment of outstanding cases, full propagation and initial creation of rule objects from rate tables, bulk CER case reassessment by product, reassessment strategy changes, and redetermine translator processing for affected open cases."
+                  },
+                  {
+                    "title": "Dependency Manager",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "SubmitPrecedentChangeSet",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000033",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Starts the Dependency Manager batch suite. `SubmitPrecedentChangeSet` is a lightweight single-stream batch that submits the currently open precedent change set and creates a new open one to capture later precedent changes for batch processing. Its batch class/method is `curam.dependency.intf.SubmitPrecedentChangeSet.process`. The section also situates it among the other Dependency Manager batch processes, especially `PerformBatchRecalculationsFromPrecedentChangeSet` and `CompletePrecedentChangeSet`, and mentions Ant-based tooling for running the suite in the correct order."
+                      },
+                      {
+                        "title": "PerformBatchRecalculationsFromPrecedentChangeSet",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000034",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Describes the Dependency Manager batch suite step PerformBatchRecalculationsFromPrecedentChangeSet. This heavyweight, multiple-stream batch identifies dependents affected by a submitted precedent change set and recalculates them. It must be run once for each dependent type registered with Dependency Manager. Also lists its batch process classes/methods for the chunker and stream components, within the broader sequence between SubmitPrecedentChangeSet and CompletePrecedentChangeSet."
+                      },
+                      {
+                        "title": "CompletePrecedentChangeSet",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000035",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "End point of the Dependency Manager batch suite. Describes a lightweight single-stream batch process that completes the currently-submitted batch precedent change set. Specifies the batch process class and method as curam.dependency.intf.CompletePrecedentChangeSet.process. Includes surrounding context on the Dependency Manager batch suite and tooling, but this section is specifically about the final completion step."
+                      },
+                      {
+                        "title": "Dependency Manager Batch Tooling",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000036",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000017",
+                          "start_page": 16,
+                          "end_page": 17
+                        },
+                        "summary": "Describes Dependency Manager batch processes and tooling. It explains three batch steps: SubmitPrecedentChangeSet (starts the suite and opens a new precedent change set), PerformBatchRecalculationsFromPrecedentChangeSet (multistream recalculation of affected dependents, run once per dependent type), and CompletePrecedentChangeSet (ends the suite). It then documents Ant-based tooling to generate a system-specific batch script and run the suite in the correct order, including prerequisites, thread-count properties, output files, and logs."
+                      }
+                    ],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000017",
+                      "start_page": 16,
+                      "end_page": 17
+                    },
+                    "summary": "Explains the Dependency Manager batch suite and its Ant-based tooling. It covers the three ordered batch steps: SubmitPrecedentChangeSet (starts the suite and opens a new precedent change set), PerformBatchRecalculationsFromPrecedentChangeSet (heavyweight multistream recalculation of affected dependents, run once per dependent type), and CompletePrecedentChangeSet (finishes the submitted set). Also documents prerequisites, generating a system-specific Ant script, configurable thread counts per dependent type, and running the suite with logs/output files."
+                  },
+                  {
+                    "title": "Financial",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "GenerateInstructionLineItems",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000038",
+                        "range": {
+                          "start_unit_id": "p000018",
+                          "end_unit_id": "p000018",
+                          "start_page": 18,
+                          "end_page": 18
+                        },
+                        "summary": "Describes the GenerateInstructionLineItems financial batch process and its streaming support. It creates instruction line items for financial components due for processing, using Date From/To, delivery method, and optional batch instance ID parameters. The process retrieves eligible components, checks the financial calendar, groups by case, reassesses eligibility, calculates amount/cover period, creates line items, rolls forward processing dates, and expires components when appropriate. Notes the class/method name and that it should complete before GenerateInstruments."
+                      },
+                      {
+                        "title": "GenerateInstructionLineItemsStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000018",
+                          "end_unit_id": "p000018",
+                          "start_page": 18,
+                          "end_page": 18
+                        },
+                        "summary": "Provides the streaming companion for Generate Instruction Line Items, allowing concurrent execution of that batch process across machines to improve database utilization. It can only be used with the main GenerateInstructionLineItems process. Useful for understanding batch processing scalability and execution setup, especially when planning parallel runs before GenerateInstruments."
+                      },
+                      {
+                        "title": "GenerateInstruments",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "GenerateInstruments is a batch process that identifies due Instruction Line Items, rolls them up into Instructions, and creates an Instrument where appropriate. It supports concurrent runs via the Batch Process Instance ID; without one, only a single instance can run. Its class/method is curam.core.intf.GenerateInstruments.processInstructionLineItemsDue. It should run after GenerateInstructionLineItems and before IssueConcernPayments. The section also notes GenerateInstrumentsStream, which supports streaming and can only be used with GenerateInstruments."
+                      },
+                      {
+                        "title": "GenerateInstrumentsStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Provides streaming support for the Generate Instruments batch process. It exists only to be run alongside GenerateInstruments, enabling concurrent execution across instances or machines. The surrounding section also states GenerateInstruments identifies due instruction line items, rolls them into instructions, and creates instruments where appropriate, using a Batch Process Instance ID to allow multiple concurrent runs."
+                      },
+                      {
+                        "title": "IssueConcernPayments",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "IssueConcernPayments is a batch process for issuing concern payments. It finds Utility, Service Supplier, or Product Provider concerns due for payment within a Date From/Date To range, gathers outstanding payment instructions into one payment instrument, and updates the next payment date. Optional parameters filter by Method Of Payment and Concern Type; if omitted, all methods or all three concern types are processed. Class/method: curam.core.intf.IssueConcernPayments.issueConcernTypePayment. It should run after GenerateInstruments and before GeneratePayslips."
+                      },
+                      {
+                        "title": "GeneratePayslips",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "GeneratePayslips is a sample batch process that finds unissued payslips, gathers data for readable output, and marks payslips as Issued. It produces output files, currently one per recipient type, but this is not the definitive implementation and may be customized. It takes no parameters and is implemented by curam.core.intf.GeneratePayslips.generateNewPayslips. The section also briefly mentions related batch processes: LoadServiceSupplierReturns and ProcessPaymentInstrumentTypes, including their parameters and class/method names."
+                      },
+                      {
+                        "title": "LoadServiceSupplierReturns",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000044",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Loads service supplier returns from an input file. The batch process takes a required File Name parameter pointing to the directory containing the input file. The implementing class and method are curam.core.intf.LoadServiceSupplierReturns.loadSupplierReturns."
+                      },
+                      {
+                        "title": "ProcessPaymentInstrumentTypes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000045",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Describes the ProcessPaymentInstrumentTypes batch process: it finds payments not yet issued, gathers payment data, outputs it to a file for external system interfacing, and updates payment status to issued. It accepts an optional Delivery Method parameter to filter unissued payments; if omitted, all payment methods are processed. The batch class/method is curam.core.intf.ProcessPaymentInstrumentTypes.processPmtInstrumentType."
+                      },
+                      {
+                        "title": "ExpirePayments",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000046",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "ExpirePayments is a sample batch process for payment processing systems, run only for un-issued payments. It expires payment instruments whose effective date is on or before current date minus the expiry period, optionally filtered by delivery method, and logs expired records for financial institutions. Parameters: Expiry Period and optional Delivery Method. Class/method: `curam.core.intf.ExpirePayments.expirePaymentInstrument`. The section also briefly introduces related batch processes PaymentReconciliation and ReconcileCaseAccount."
+                      },
+                      {
+                        "title": "PaymentReconciliation.",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000047",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "This section documents the PaymentReconciliation batch process, which reconciles an account by comparing expected payments with actual payments and generates a report of discrepancies. It takes File Path and File Name parameters, and processes the specified payment file from that location. The section also briefly includes related batch processes: ExpirePayments, which marks eligible payment instruments as expired, and ReconcileCaseAccount, which reconciles liability cases with underpayments or overpayments."
+                      },
+                      {
+                        "title": "ReconcileCaseAccount",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "ReconcileCaseAccount is a batch process with no parameters that reconciles liability cases where underpayments or overpayments have been applied. It processes all applicable cases to ensure case accounts are aligned with payment adjustments."
+                      }
+                    ],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000022",
+                      "start_page": 18,
+                      "end_page": 22
+                    },
+                    "summary": "Financial batch-process reference covering GenerateInstructionLineItems and its stream, GenerateInstruments and its stream, IssueConcernPayments, GeneratePayslips, LoadServiceSupplierReturns, ProcessPaymentInstrumentTypes, ExpirePayments, PaymentReconciliation, and ReconcileCaseAccount. It explains each process’s purpose, key inputs, output/status updates, class/method names, and execution order dependencies: GenerateInstructionLineItems before GenerateInstruments, GenerateInstruments before IssueConcernPayments, and IssueConcernPayments before GeneratePayslips. Also notes streaming supports concurrent runs via Batch Process Instance ID."
+                  },
+                  {
+                    "title": "Workflow",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "ScanTaskDeadlines",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000050",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Describes the ScanTaskDeadlines batch process and its relation to ProcessTaskDeadlines/ProcessTaskDeadlinesStream. It scans for overdue workflow tasks, invokes any configured deadline handler, otherwise completes the activity if marked complete, removes processed deadlines, persists Context_Deadline data, and writes task history for expired task deadlines. It takes no parameters. The class/method is curam.core.facade.intf.ScanTaskDeadlines.scanDeadlines. Notes that command-line execution requires batch.username for a valid privileged user."
+                      },
+                      {
+                        "title": "ProcessTaskDeadlines",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000051",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Describes the ProcessTaskDeadlines batch process and its Java entry point, curam.core.facade.intf.ProcessTaskDeadlines.process. It scans overdue tasks with past due dates, invokes any configured deadline handler, or completes the related workflow activity if the complete flag is true. It removes processed deadlines, persists Context_Deadline data, and writes task history for expired tasks. The process takes no parameters. This section is useful for workflow deadline handling and batch process implementation details."
+                      },
+                      {
+                        "title": "ProcessTaskDeadlinesStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Describes ProcessTaskDeadlinesStream, a streaming batch process used only with ProcessTaskDeadlines to enable concurrent execution across instances/machines. It requires a Batch Process Instance ID to link stream processes to the correct task-deadlines instance; without one, only one instance can run. Also notes the batch class/method curam.core.facade.intf.ProcessTaskDeadlinesStream.process. The page then begins adjacent batch process docs for RestartTask and ExpireWaitListEntry."
+                      },
+                      {
+                        "title": "RestartTask",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000053",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "RestartTask batch process. It finds tasks with status Deferred whose restart date/time is past the current time, sets them to Open, and resets the restart date/time to the zero date/time. It takes no parameters. The implementation class/method is curam.core.facade.intf.RestartTask.restart."
+                      },
+                      {
+                        "title": "ExpireWaitListEntry",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Describes batch processes related to task deadlines and wait-list expiry. Covers ProcessTaskDeadlinesStream, which supports streaming/concurrent execution of ProcessTaskDeadlines using a Batch Process Instance ID and requires a matching instance ID to run alongside the main process; and RestartTask, which reopens deferred tasks whose restart time has passed and resets the restart time. The ExpireWaitListEntry section begins by explaining that client wait-list entries can have an expiry date set by user or system and this process expires them."
+                      },
+                      {
+                        "title": "WaitListReview",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000055",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Describes the WaitListReview batch process, which raises the workflow event WAITLIST.WAITLISTENTRYSELECTEDFORREVIEW to create review tasks for eligible wait list entries due for review. Entries are eligible when their review date is on or before the batch date, or when no review date exists and one is derived from expiry date minus the configured status review reminder period (curam.waitlist.statusreviewreminderperiod). Notes required JMS batch launcher settings for task generation and that the process runs daily. Includes the class/method curam.core.sl.intf.WaitListReview.processWaitListEntriesDueForReview."
+                      }
+                    ],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000024",
+                      "start_page": 23,
+                      "end_page": 24
+                    },
+                    "summary": "Workflow batch processes for task deadlines and wait lists: ScanTaskDeadlines and ProcessTaskDeadlines both find overdue workflow tasks, invoke deadline handlers or complete activities, remove processed deadlines, persist Context_Deadline data, and write task history for expired tasks; both take no parameters and require batch.username on command line. ProcessTaskDeadlinesStream supports concurrent streaming for ProcessTaskDeadlines via a matching Batch Process Instance ID. RestartTask reopens Deferred tasks whose restart time has passed. ExpireWaitListEntry begins wait-list expiry handling."
+                  }
+                ],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000024",
+                  "start_page": 9,
+                  "end_page": 24
+                },
+                "summary": "Core batch-process reference for Cúram Processing. Covers MeetingManagement (reads meeting response emails from a configured inbox using ENV_MEETING_REQUEST_REPLY_* settings, updates attendee responses, removes processed mail), case management jobs (communications, closure, eligibility, reassessment, CER rule propagation and bulk reassessment), financial jobs (instruction/instrument generation, concern payments, payslips, supplier returns, payment types, expiry, reconciliation), and workflow jobs (task deadlines, restart deferred tasks, wait-list expiry). Includes parameters, class/method names, and streaming/concurrent Batch Process Instance ID support."
+              },
+              {
+                "title": "Input Interfaces",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "LoadPaymentsReceived",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "LoadPaymentsReceived is a batch input interface for importing payment records from PaymentReceivedFile.txt. It validates each record, posts payments to a concern’s account when identified, otherwise to a suspense account, and maintains control totals checked against the file’s ending control record. If totals do not match, all processing is rolled back. Parameters are File Path and File Name for the input file location and name."
+                  }
+                ],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Input Interfaces describes the batch input process LoadPaymentsReceived. It imports payment records from PaymentReceivedFile.txt, validates each record, posts payments to a concern’s account when identified or to a suspense account otherwise, and checks running control totals against the file’s ending control record. If totals do not match, all processing is rolled back. Parameters are File Path and File Name."
+              },
+              {
+                "title": "Output Interfaces",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Calendar Export",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Defines the Calendar Export batch process, which gathers calendar activities and exports them to a vCalendar output file for import into an external calendar. It requires either User Name, Organization ID, or both Start Date and End Date; for date-range exports, both dates are mandatory. Parameters include export file path, user, organization, and date range. The batch process class/method is curam.core.intf.CalendarExport.exportActivityDetails."
+                  },
+                  {
+                    "title": "Generate Ledger Interface",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Generates a ledger export file by gathering financial transactions for a specified date or date range and exporting Instruction Line Item details for import into the General Ledger. Parameters include Date From and Date To; Date From is mandatory and causes an error if null."
+                  }
+                ],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "This section describes output interfaces batch processes for exporting data to external systems. Calendar Export gathers calendar activities and writes them to a vCalendar file; it requires either a user name, an organization ID, or both start and end dates for a date-range export. Generate Ledger Interface exports financial transactions as Instruction Line Item details for General Ledger import, using Date From and Date To parameters; Date From is mandatory and causes an error if omitted."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000026",
+              "start_page": 9,
+              "end_page": 26
+            },
+            "summary": "Core batch-process reference for Cúram. Covers general `processingDate` behavior, email-based MeetingManagement, case-management jobs (generate communications, closure, certification grace, eligibility, reassessment, CER rule propagation, bulk reassessment), financial jobs (expiry, reconciliation), workflow deadline handling and task restart, wait-list expiry/review, input loading of payments received, and output exports for calendar and general ledger. Includes parameters, no-parameter jobs, class/method names, and streaming support via Batch Process Instance ID for concurrent runs."
+          },
+          {
+            "title": "1.2 Provider Management batch processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "CreateRosters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "CreateRosters is a Provider Management batch process that generates rosters for service offerings. It checks active service offerings, determines whether service is required, sets the roster date range from the configured generation frequency, and creates or updates rosters based on provider offerings and existing date ranges. The batch class/method is CreateRosters.process. It must be run before ProcessSALI so SALIs use the latest rosters. The section also introduces the parameters used to run the batch process."
+              },
+              {
+                "title": "Process Service Authorization Line Item",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "ProcessSALI is a batch process that creates service authorization line items and adds them to the correct rosters. It generates line items for matching service authorizations on the processing date, derives the retrieval range from the service offering and date, then places items into rosters created by CreateRosters. It should run immediately after CreateRosters to use the latest rosters. The process uses class/method ProcessSALI.process and accepts optional Batch Processing Date plus Service Offering ID."
+              },
+              {
+                "title": "GenerateRostersWithDate",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Describes the batch process GenerateRostersWithDate, which creates attendance rosters and roster line items for a specified processing date when provider service authorizations exist. It generates rosters for authorized clients and open/in-progress authorization line items, extends existing open roster entries when needed, and skips creation if a roster already exists within the calculated frequency period. Includes the class/method name and a Processing Date parameter. Also briefly introduces IssuePaperRosters, which generates blank paper rosters for eligible provider offerings and raises events on creation."
+              },
+              {
+                "title": "IssuePaperRosters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "This section describes two batch processes for roster management. GenerateRostersWithDate creates attendance rosters and roster line items for provider services with service authorizations, based on a processing date, and skips creation if a roster already exists in the frequency period. IssuePaperRosters checks provider offerings and generates blank paper rosters when required, using configured roster frequency and processing date; it also raises events to support automated roster issuance. Includes class/method names and parameter details."
+              },
+              {
+                "title": "StartEffectiveServiceDeliveries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "StartEffectiveServiceDeliveries is a CPM batch process that finds service delivery records in “Not Started” state whose cover period start date is effective as of the current date, then updates them to “In Progress” and sets the service start date for the cover period. It has no input parameters and is invoked by `StartEffectiveServiceDeliveries.startEffectiveServiceDeliveries`. This section sits within the batch processes chapter, which notes that batch jobs are generally configurable and may run in any order unless otherwise specified."
+              },
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Introduction to CPM batch processes in Provider Management. Explains that batch jobs are configurable in System Administration and usually can run in any order. Notes common use of a processingDate parameter (defaults to system date/current date). Lists examples including IssuePaperRostersStream (batch streaming to distribute load), StartEffectiveServiceDeliveries (moves eligible “Not Started” service deliveries to “In Progress” and updates start date), and RosterSubmissionDue (raises a roster-not-submitted-after-due-date event)."
+              },
+              {
+                "title": "Batch Parameters and Processing Date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Many batch jobs accept a processingDate parameter, which sets the date the job runs for (from getCurrentDate()); if omitted, the system date is used and this parameter is often not listed in job descriptions. The section also notes that IssuePaperRostersStream uses batch streaming to distribute IssuePaperRosters processing load. It introduces StartEffectiveServiceDeliveries, which finds service deliveries in Not Started state whose cover period start date is effective as of the current date, updates them to In Progress, and sets the service start date."
+              },
+              {
+                "title": "RosterSubmissionDue",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Defines batch-process parameter conventions and introduces CPM/Provider Management batch jobs. Notes that many jobs use a processingDate parameter, which defaults to the system date/current date if not supplied, and batch jobs can generally run in any order. The RosterSubmissionDue process raises the event ROSTER.ROSTER_NOT_SUBMITTED_AFTER_DUE_DATE on the day after the roster is due. Also includes adjacent batch process descriptions such as IssuePaperRostersStream and StartEffectiveServiceDeliveries."
+              },
+              {
+                "title": "ProcessContractRenewalNotifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Batch job that raises workflow events to notify users before contract expiry. It triggers `ContractNotificationEvent.RENEWPROVIDERCONTRACT` for provider contracts and `ContractNotificationEvent.RENEWPGCONTRACT` for provider group contracts when the contract end date is within the configurable `curam.contracts.renewal.noofdaysevents` threshold. Intended to run daily or on a schedule aligned to renewal dates. The batch class/method is `ProcessContractRenewalNotifications.processContractRenewalNotifications`."
+              },
+              {
+                "title": "ProcessLicenseRenewalNotifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Raises `LicenseNotificationEvent.RENEWLICENSE` to notify users before a license expires. It triggers when the current date is within the configured threshold of the license end date, using the administrator-defined `curam.license.renewal.noofdaysevents` property. Intended to run daily, or on a scheduled date-based cadence for agencies with regular license renewal cycles. The batch class/method is `ProcessLicenseRenewalNotifications.processLicenseRenewalNotifications`."
+              },
+              {
+                "title": "ActivateCPMLiabilityCases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Describes three CPM batch processes: ActivateCPMLiabilityCases activates liability cases from CPM financial processing by checking eligibility via ProductDeliveryActivationEligibility, typically before financial generation jobs. CreatePlacementEvidence creates evidence for eligible placements based on payment frequency/end date and should run before placement payment generation. ExpireReservation expires active reservations when grace-period-based expiry is reached, using provider or agency-level grace periods, and sends a notification; it runs daily with no parameters."
+              },
+              {
+                "title": "CreatePlacementEvidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Creates placement evidence for placements tied to services paid by placement data. It finds eligible placements, uses the placement payment frequency to calculate evidence periods, and respects placement end dates when they occur before the next payment date. Existing evidence is not duplicated; new evidence is added to the CPM Placement product delivery case, triggering reassessment. Must run before GenerateInstructionLineItem and GenerateInstruments for placement-based payments. Class/method: CreatePlacementEvidence.createPlacementEvidence."
+              },
+              {
+                "title": "ExpireReservation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Expires active reservations once their calculated expiry date passes. Expiry date is start date plus a provider-specific grace period, or the agency-level grace period if no provider setting exists (configured via curam.cpm.reservation.agencygraceperiod). When expired, a notification is sent to the case owner. Intended to run daily and takes no parameters."
+              },
+              {
+                "title": "GenerateCPMPayslips",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "This page describes several batch processes and their configuration, including GenerateCPMPayslips. It explains that GenerateCPMPayslips creates unissued pay slips (invoice-based, attendance-based, placement, and flat-rate contract) from the payslip table, and can use commit-count properties to control database commits. It also notes the batch should run after GenerateInstructionLineItem and GenerateInstruments. The page also briefly covers GenerateRosters and RosterSubmissionReminder, including their scheduling and system properties."
+              },
+              {
+                "title": "GenerateRosters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "GenerateRosters is a batch process that creates attendance rosters for providers with service authorizations and generates roster line items for authorized clients in the roster period. It runs on the provider’s configured roster generation frequency (for example, monthly on the 1st). The section identifies the class/method as GenerateRosters.generateRosters and points readers to the Provider Management Guide for roster attendance processing."
+              },
+              {
+                "title": "RosterSubmissionReminder",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Generates roster submission reminder notifications for providers, using XSL or XML templates for `RosterNotificationEvent.ROSTER_SUBMISSION_REMINDER`. It runs only when the “Roster Submission Reminder Required” indicator is true and sends reminders a configured number of days before the roster due date, but only if not already sent. The indicator is controlled by `curam.cpm.attendance.service.submissionreminderrequired`, and the reminder lead time by `curam.cpm.attendance.service.rostersubmissionreminderperiod`."
+              },
+              {
+                "title": "ActivateProviderPaymentCorrectionCases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Processes payment correction cases for CPM financial product deliveries (Invoice, Attendance, Contract, Placement) when rolled-up reassessment is not used. It retrieves all related payment correction cases, activates them via the paymentCorrection API, and should run daily before financial batch processes GenerateInstructionLineItem and GenerateInstruments. Class/method: ActivateProviderPaymentCorrectionCases.processPaymentCorrectionCases."
+              },
+              {
+                "title": "ImportTaxonomyData",
+                "level": 3,
+                "children": [],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Describes the ImportTaxonomyData batch process, which imports a taxonomy XML file into the system whenever a new or updated file is available. It validates imported taxonomy version numbers based on release date and country code, merges translations when the same taxonomy version exists in another language, and compares later versions to identify changes. Also notes the batch process class/method: ImportTaxonomyData.importTaxonomy."
+              }
+            ],
+            "node_id": "n000061",
+            "range": {
+              "start_unit_id": "p000027",
+              "end_unit_id": "p000033",
+              "start_page": 27,
+              "end_page": 33
+            },
+            "summary": "Provider Management batch processes overview. Covers roster-related jobs CreateRosters and ProcessSALI, which must run in that order so SALIs use the latest rosters; GenerateRostersWithDate and IssuePaperRosters for dated/paper roster creation; StartEffectiveServiceDeliveries for moving eligible “Not Started” service deliveries to “In Progress”; and RosterSubmissionDue/Reminder notifications. Also includes renewal alert jobs for contracts and licenses, plus financial/CPM jobs such as activating liability cases, creating placement evidence, expiring reservations, generating payslips, and generating rosters."
+          },
+          {
+            "title": "1.3 Decision Assist batch processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Batch Parameters and Processing Date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "This section explains that many batch jobs accept an optional processingDate parameter; if provided, the job runs for that date, otherwise it uses the system date. It then describes the BatchUploadICDCodes process for uploading ICD code files and populating the ICDCODE and ICDCODEVERSION tables, including its input parameters (classification, fileName, filePath, processingDate, versionNumber, volume) and the class/method ICDCodes.batchUploadICDCodes. It also introduces the Financial batch processes appendix and its prerequisites."
+              },
+              {
+                "title": "BatchUploadICDCodes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Defines the BatchUploadICDCodes batch process for uploading ICD code files into the ICDCODE and ICDCODEVERSION tables. It takes parameters classification, fileName, filePath, processingDate, versionNumber, and volume; processingDate defaults to the system date if omitted. The section also notes the batch process class/method: ICDCodes.batchUploadICDCodes, and transitions into the broader Financial batch processes overview."
+              }
+            ],
+            "node_id": "n000080",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Introductory note for Decision Assist batch processes. It says these batch jobs can usually be configured in system administration and, unless otherwise stated, may be run in any order. No specific Decision Assist batch definitions are detailed on this page; it mainly marks the start of the section listing Decision Assist batch functions."
+          },
+          {
+            "title": "1.4 Financial batch processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Submitting to the batch queue",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000085",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to submit a batch process to the queue through the System Administrator application using the Execute action, including parameter entry/confirmation and the BatchProcRequest/BatchParamValue records created. Notes that processes should be queued in execution order, especially for financials. Describes how the batch launcher picks up queued jobs, starts/stops the standalone keyserver, and supports batch streaming. Also gives the command-line runbatch syntax and begins the financials batch suite sequence."
+                  },
+                  {
+                    "title": "Running the batch launcher",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "This section explains how queued batch processes are executed by the batch launcher. It notes that the launcher is part of SDEJ, starts the standalone keyserver before running processes that may insert into the database, and stops it afterward. It also mentions batch process streaming for parallel instances and refers to the Batch Streaming Developers Guide. The section is useful for understanding execution flow after submission to the batch queue and the runtime environment used by batch processes."
+                  },
+                  {
+                    "title": "Running a batch program from the command line",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000087",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "This section explains how to run Cúram batch processes from the command line and via the batch queue. It covers submitting a process through the System Administrator application, entering optional parameters, and the BatchProcRequest/BatchParamValue entities created on submission. It also notes that processes must be queued in execution order, describes the batch launcher and stand-alone keyserver behavior, mentions batch process streaming, and gives the EJBServer `build runbatch` command format. It begins the financials batch suite sequence with `DetermineProductDeliveryEligibility`."
+                  },
+                  {
+                    "title": "Financials batch suite",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how batch processes are submitted to the queue in the System Administrator app, how the batch launcher runs them, and how to invoke a batch program from the command line. Notes that submitting financial-related processes must follow the required execution order. For the financials batch suite, it begins the sequence needed to create financial records and states that four batch processes must run in order, starting with DetermineProductDeliveryEligibility."
+                  },
+                  {
+                    "title": "Business processing date",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains the optional business processing date used by batch jobs, distinct from the system date. The ProcessingDate parameter can “spoof” the run date so reruns behave as if executed on that date; if omitted, it defaults to the system date. Technically, getCurrentDate() returns the business processing date within batch transactions, while getSystemDate() always returns today. The surrounding page also lists batch steps and their parameters, pre/post statuses, and processing summaries for cases, FCs, ILIs, instructions, instruments, and payslips."
+                  },
+                  {
+                    "title": "Output to logs, emails, and reports",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Explains batch process outputs: summary information can be written to logs in EJBServer/buildlogs, emailed to the configured “to” address if email settings were provided, and reports are stored alongside logs with a .dat extension. Also introduces GenerateInstructionLineItems, which creates Instruction Line Items from financial components based on processing dates and optional parameters (DeliveryMethod, InstanceID, ProcessingDate/From/To, ProductID), typically run after DetermineProductDeliveryEligibility and before GenerateInstruments."
+                  }
+                ],
+                "node_id": "n000084",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000037",
+                  "start_page": 35,
+                  "end_page": 37
+                },
+                "summary": "Introduces Financial Manager batch-process basics: submit jobs via System Administrator’s Execute action, with parameters optionally entered and BatchProcRequest/BatchParamValue records created. Jobs must be queued in execution order; the batch launcher (in SDEJ) starts/stops the standalone keyserver and supports batch streaming. Shows `build runbatch` command syntax from EJBServer. Lists the four financials batch jobs in sequence: DetermineProductDeliveryEligibility, GenerateInstructionLineItems, GenerateInstruments, and GeneratePayslips. Also explains the ProcessingDate business date and how it differs from system date."
+              },
+              {
+                "title": "GenerateInstructionLineItems",
+                "level": 3,
+                "children": [],
+                "node_id": "n000091",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000039",
+                  "start_page": 38,
+                  "end_page": 39
+                },
+                "summary": "Describes the GenerateInstructionLineItems batch process, which creates Instruction Line Items from financial components after DetermineProductDeliveryEligibility or after case activation, later rolled up by GenerateInstruments. Covers required/optional parameters (DeliveryMethod, InstanceID, ProcessingDate, ProcessingDateFrom/To, ProductID), defaulting behavior, and how different FC categories are processed by delivery method. Also explains a customization to prevent CER cases from being reassessed before generating payments via the ENV_GENERATEINSTRUCTIONLINEITEMS_DONT_REASSESS_CASE application property."
+              },
+              {
+                "title": "GenerateInstruments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000092",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "GenerateInstruments is a batch process run after GenerateInstructionLineItems to process unprocessed instruction line items (ILIs) with status UNP. It generates payment and liability instruments that produce payments and bills for participants. The section notes optional parameters InstanceID and ProcessingDate (InstanceID is required for batch streaming), and the processing order: product delivery, tax, applied deduction, repayment, and third-party deduction ILIs. It also briefly introduces GeneratePayslips, which follows and creates payslips showing payment/bill breakdowns."
+              },
+              {
+                "title": "GeneratePayslips",
+                "level": 3,
+                "children": [],
+                "node_id": "n000093",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "GeneratePayslips is a batch process run immediately after GenerateInstruments. It finds payslips pending issue and generates payslips sent to participants showing the breakdown of payments or bills at the Instruction Line Item (ILI) level. The section also lists payslip types, including Client and Case nominee, making it relevant for understanding how participant-facing payment documentation is produced after instruments are generated."
+              },
+              {
+                "title": "LoadPaymentsReceived",
+                "level": 3,
+                "children": [],
+                "node_id": "n000094",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "LoadPaymentsReceived is a batch process that imports externally provided payment-received records from a tab-delimited flat file into the system for persistent storage. It runs when a bank or similar source file becomes available and processes each record in the specified file. Required parameters are FilePath and FileName; ProcessingDate is also used as the business date. The input file is read from the given directory and filename. If IBAN functionality is enabled, the file must also include IBAN and BIC values."
+              },
+              {
+                "title": "IssueConcernPayments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000095",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000042",
+                  "start_page": 42,
+                  "end_page": 42
+                },
+                "summary": "Describes the IssueConcernPayments batch process, which issues payments to due persons, employers, external parties, information providers, service suppliers, product providers, utilities, and representatives. Explains that payment timing depends on next processing dates and organization calendar setup. Lists submission parameters: ConcernTypeCode, MethodOfPayment, NextPaymentDateFrom/To, and ProcessingDate. Details defaults, eligible participant types, and that invalid concern types do not fail the batch. Useful for understanding payment batch selection and processing rules."
+              },
+              {
+                "title": "ExpirePayments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "ExpirePayments is a batch process that expires issued payment instruments (reconcilStatusCode = ISS) after they have remained on the system for a configurable period. It is typically used for delivery methods like checks that were not cashed within their lifespan. The batch expects DeliveryMethod, ExpiryPeriod (days), and ProcessingDate (business date) parameters."
+              },
+              {
+                "title": "ProcessPaymentInstrumentTypes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "This section explains batch payment-processing jobs. It describes how processing dates are derived from NextPaymentDateFrom/To and when ProcessingDate (business date) should be used. It also covers ExpirePayments, which expires issued payments (typically checks) that remain uncashed for a configured number of days using DeliveryMethod, ExpiryPeriod, and ProcessingDate. The final line introduces ProcessPaymentInstrumentTypes, a batch job that processes payment instrument records due for issue and writes their details to an output file."
+              },
+              {
+                "title": "Payment reconciliation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Payment reconciliation is a batch process that compares amounts intended to be paid to participants with amounts actually paid, and reports discrepancies. It uses an input flat file from the paying institution (such as a bank) containing received payment details. Required parameters are FilePath and FileName, plus ProcessingDate; FilePath typically points to the input directory and FileName is the full file name. This section is useful for understanding how to run reconciliation and identify payment mismatches."
+              },
+              {
+                "title": "GeneralLedgerInterface",
+                "level": 3,
+                "children": [],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Describes the GeneralLedgerInterface batch process, which exports financial transactions for a specified date or date range to an output file for general ledger import. The file contains instruction line items at the lowest transaction granularity and is used to update a third-party general ledger. It explains required queue parameters: CreationDateSearchInd, DateFrom, DateTo, and ProcessingDate. CreationDateSearchInd selects creation-date vs effective-date search. DateFrom and DateTo default to null but cause batch failure if not supplied."
+              },
+              {
+                "title": "ReconcileCaseAccount",
+                "level": 3,
+                "children": [],
+                "node_id": "n000100",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "ReconcileCaseAccount is a batch process for liability cases only, handling both overbilling and underbilling. It does not apply to benefit overpayments or payment corrections. The process rebalances a single case account by reallocating overallocations within the same case and, if possible, making remaining money available for other cases manually. It runs using an optional ProcessingDate business date parameter, processes overpayment cases first, then underpayment cases, converting processed overpayments into unallocated payment received records or creating adjustment line items for underpayments."
+              }
+            ],
+            "node_id": "n000083",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000046",
+              "start_page": 35,
+              "end_page": 46
+            },
+            "summary": "Financial batch processes create and maintain instruction line items and related financial instructions. The section explains batch queue submission, the batch launcher, command-line execution, and the business ProcessingDate versus system date. It outlines the required sequence for financials: DetermineProductDeliveryEligibility, GenerateInstructionLineItems, GenerateInstruments, and GeneratePayslips. It also covers payment import, issue, expiry, payment instrument output, reconciliation, general ledger export, and ReconcileCaseAccount. Useful for understanding batch parameters, defaults, processing order, and output files."
+          },
+          {
+            "title": "1.5 Funded Program Management batch processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "ModifyFundFiscalYearStatus",
+                "level": 3,
+                "children": [],
+                "node_id": "n000102",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Batch process that sets all fund fiscal years to INACTIVE when their fiscal year end date is before the batch processing date. If no processing date is provided, it uses the current system date. It is intended to be run daily to keep fund fiscal year status accurate. Class/method: ModifyFundFiscalYearStatus.modifyFundFiscalYearStatus."
+              }
+            ],
+            "node_id": "n000101",
+            "range": {
+              "start_unit_id": "p000047",
+              "end_unit_id": "p000047",
+              "start_page": 47,
+              "end_page": 47
+            },
+            "summary": "Funded Program Management batch processes are listed here, with the note that they can usually be configured in system administration and, unless stated otherwise, run in any order. This section covers ModifyFundFiscalYearStatus, which inactivates fund fiscal years whose end date is before the processing date (or the current system date if none is provided) and is intended to run daily. It also introduces BatchUploadICDCodes, which uploads ICD code files into ICDCODE and ICDCODEVERSION and creates the version entry before parsing file content."
+          },
+          {
+            "title": "1.6 BatchUploadICDCodes",
+            "level": 2,
+            "children": [],
+            "node_id": "n000103",
+            "range": {
+              "start_unit_id": "p000047",
+              "end_unit_id": "p000047",
+              "start_page": 47,
+              "end_page": 47
+            },
+            "summary": "BatchUploadICDCodes describes a batch process for uploading ICD code files into the ICDCODE and ICDCODEVERSION tables. It first creates an ICD code version entry, then parses the file and stores the code data. The section gives the batch class/method (ICDCodes.batchUploadICDCodes) and parameters: classification, fileName, filePath, processingDate, versionNumber, and volume."
+          },
+          {
+            "title": "1.7 CitizenWorkspacePurgeNonReferencedDataProcess",
+            "level": 2,
+            "children": [],
+            "node_id": "n000104",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "Defines the CitizenWorkspacePurgeNonReferencedDataProcess batch job, which must run offline to delete client-unreachable workspace data for generated, standard, or linked users. It removes CitizenScriptInfos in OPEN or CANCELLED states, their associated IEG executions, and related data stores when not shared with other scripts. Also lists the process class/method: CitizenWorkspacePurgeNonReferencedDataProcess.process."
+          },
+          {
+            "title": "1.8 CitizenWorkspacePurgeNonReferencedMotivationsProcess",
+            "level": 2,
+            "children": [],
+            "node_id": "n000105",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "Describes the CitizenWorkspacePurgeNonReferencedMotivationsProcess batch job, which must run offline and removes client-inaccessible motivation data. It deletes STARTED or CANCELLED motivations unless linked to an IntakeApplication, plus related IEGExecutionState, MotivationResult, linked string records, and unreferenced data stores. Use this section for cleanup behavior, affected database records, and the process class/method `CitizenWorkspacePurgeNonReferencedMotivationsProcess.process`."
+          },
+          {
+            "title": "1.9 CitizenWorkspacePurgeOldDataProcess",
+            "level": 2,
+            "children": [],
+            "node_id": "n000106",
+            "range": {
+              "start_unit_id": "p000049",
+              "end_unit_id": "p000049",
+              "start_page": 49,
+              "end_page": 49
+            },
+            "summary": "Batch process that replaces CitizenPortalPurgeData with a more scalable offline purge. It deletes old CitizenScriptInfo records in SUBMITTED or CANCELLED states, associated IEG Execution State records, and related data stores not tied to an IntakeApplication. Main parameter is purgeDate (YYYYMMDD)."
+          },
+          {
+            "title": "1.10 CitizenWorkspacePurgeDataProcess",
+            "level": 2,
+            "children": [],
+            "node_id": "n000107",
+            "range": {
+              "start_unit_id": "p000049",
+              "end_unit_id": "p000049",
+              "start_page": 49,
+              "end_page": 49
+            },
+            "summary": "Offline batch process that purges Citizen Workspace transient data. It removes generated ExternalUser records, their CitizenScriptInfo and IEGExecutionState data, DataStore entities not tied to submitted applications, all PagePlayerState entries, and all TriageResult entries except those linked to submitted Life Events. Useful for understanding what transient user data can be fully deleted and the system-offline requirement."
+          },
+          {
+            "title": "1.11 CreateRosters",
+            "level": 2,
+            "children": [],
+            "node_id": "n000108",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000050",
+              "start_page": 50,
+              "end_page": 50
+            },
+            "summary": "CreateRosters is a batch process that generates or updates rosters for active service offerings. It checks whether service is required, sets roster date ranges from the service offering’s configured generation frequency, and creates or updates rosters based on provider offerings within the range. The process must run before ProcessSALI so SALIs use the latest rosters. It takes a Batch Processing Date parameter and uses CreateRostersStream for batch streaming/load distribution."
+          },
+          {
+            "title": "1.12 DiscrepancyBatchProcess",
+            "level": 2,
+            "children": [],
+            "node_id": "n000109",
+            "range": {
+              "start_unit_id": "p000051",
+              "end_unit_id": "p000051",
+              "start_page": 51,
+              "end_page": 51
+            },
+            "summary": "DiscrepancyBatchProcess is a batch job that compares scheduled vs. actual attended hours for cash assistance clients across all active outcome plans to determine whether participation requirements were met. This section contains only a brief functional description, with no parameters or implementation details."
+          },
+          {
+            "title": "1.13 DynamicEvidenceConfigurationExtractor",
+            "level": 2,
+            "children": [],
+            "node_id": "n000110",
+            "range": {
+              "start_unit_id": "p000051",
+              "end_unit_id": "p000051",
+              "start_page": 51,
+              "end_page": 51
+            },
+            "summary": "Describes the DynamicEvidenceConfigurationExtractor batch process, which extracts dynamic evidence configuration artifacts. The section lists its parameters and defaults, including output directories for codetable, component, data manager, and DMX files; filters for evidence type code prefix and evidence type extraction list; options to extract all configurations and specific links (case, integrated case, product); and key handling settings such as lower key and preserve range keys."
+          },
+          {
+            "title": "1.14 ExportUsersToLDIF",
+            "level": 2,
+            "children": [],
+            "node_id": "n000111",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "Exports active internal users from Cúram to an LDIF file for import into an LDAP server. The batch job searches the USERS table for active users, writes user details to LDIF, and should be run while the system is offline. It performs a flat user listing only; organization structure is not included. Class/method: ExportUsersToLDIF.export. Parameters: file name, file path, and processing date."
+          },
+          {
+            "title": "1.15 GenerateRostersWithDate",
+            "level": 2,
+            "children": [],
+            "node_id": "n000112",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "GenerateRostersWithDate is a Cúram batch process that generates attendance rosters and roster line items for provider services with existing service authorizations, up to a specified date. It creates a roster for each authorized provider service and adds a roster line item for every client authorized in the service authorization line item for the roster period. Useful if you need date-based roster generation details for provider services."
+          },
+          {
+            "title": "1.16 IssuePaperRosters",
+            "level": 2,
+            "children": [],
+            "node_id": "n000113",
+            "range": {
+              "start_unit_id": "p000053",
+              "end_unit_id": "p000053",
+              "start_page": 53,
+              "end_page": 53
+            },
+            "summary": "IssuePaperRosters is a batch process that issues blank paper rosters for provider service offerings when a paper roster is required. It checks each provider offering, generates rosters based on the configured roster generation frequency and batch processing date, and raises events to support automated issuance. The process is implemented by IssuePaperRosters.process and can be distributed via IssuePaperRostersStream."
+          },
+          {
+            "title": "1.17 MeetingManagement",
+            "level": 2,
+            "children": [],
+            "node_id": "n000114",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "Processes meeting reply emails and updates attendee response data. MeetingManagement connects to a configured email account using ENV_MEETING_REQUEST_REPLY_USERNAME, ENV_MEETING_REQUEST_REPLY_PASSWORD, and ENV_MEETING_REQUEST_REPLY_HOST, opens the mail folder, and handles all meeting response messages. It requires a text/calendar body part compliant with RFC 2445 and a UID matching a Cúram activity; invalid response methods or processing errors raise exceptions. Class/method: MeetingManagement.processMeetingResponses."
+          },
+          {
+            "title": "1.18 ModifyFundFiscalYearStatus",
+            "level": 2,
+            "children": [],
+            "node_id": "n000115",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "Batch process that sets fund fiscal years to Inactive when their end date is before the batch processing date. If no processing date is provided, it uses the current system date. It is intended to run daily to keep fiscal year statuses accurate. The process checks the batch date, finds active fund fiscal years ending before that date, and updates their business status to INACTIVE. Class/method: ModifyFundFiscalYearStatus.modifyFundFiscalYearStatus."
+          },
+          {
+            "title": "1.19 PDMIdentifyCases",
+            "level": 2,
+            "children": [],
+            "node_id": "n000116",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000055",
+              "start_page": 55,
+              "end_page": 55
+            },
+            "summary": "Batch process `curam.hcr.pdm.sl.intf.PDMIdentifyCases.process` supports annual renewal and notice generation by ensuring projected eligibility and notice generation consider all HCR cases. For non-annual renewal periodic data matching, inserting evidence via `PDMEvidenceMaintanence` helps the case be picked up. Key parameters: mandatory `runID` from the periodic data matching run configuration, optional `instanceID` for batch stop/restart, and optional `processingDate` defaulting to the current date."
+          },
+          {
+            "title": "1.20 ProcessDefinitionImportDirectory",
+            "level": 2,
+            "children": [],
+            "node_id": "n000117",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000055",
+              "start_page": 55,
+              "end_page": 55
+            },
+            "summary": "This batch process imports process definitions from a specified directory. It accepts a full directory path for the definitions to import and an optional overwrite flag that, when true, replaces existing database process definitions with the imported ones. Use this section if you need the batch import purpose or its two parameters and default behavior."
+          },
+          {
+            "title": "1.21 ProcessDefinitionImportFile",
+            "level": 2,
+            "children": [],
+            "node_id": "n000118",
+            "range": {
+              "start_unit_id": "p000056",
+              "end_unit_id": "p000056",
+              "start_page": 56,
+              "end_page": 56
+            },
+            "summary": "Imports a process definition from a specified file. Key parameters are the full file path to the process definition and an optional flag to overwrite an existing process definition in the database. Useful if you need batch import behavior for process definitions or want to replace an existing one."
+          },
+          {
+            "title": "1.22 ProcessRenewalData",
+            "level": 2,
+            "children": [],
+            "node_id": "n000119",
+            "range": {
+              "start_unit_id": "p000056",
+              "end_unit_id": "p000056",
+              "start_page": 56,
+              "end_page": 56
+            },
+            "summary": "Batch process `curam.hcr.pdm.sl.intf.ProcessRenewalData.process` runs projected eligibility and notice generation for specified cases during periodic data matching or annual renewals. It handles cases with inserted evidence via PDMEvidenceMaintanence API and also annual renewal cases even when no evidence was received. Parameters: mandatory `runID` (periodic data matching run config), optional `instanceID` (default `BPN26006`), and optional `processingDate` (defaults to current date)."
+          },
+          {
+            "title": "1.23 Process Service Authorization Line Item",
+            "level": 2,
+            "children": [],
+            "node_id": "n000120",
+            "range": {
+              "start_unit_id": "p000056",
+              "end_unit_id": "p000056",
+              "start_page": 56,
+              "end_page": 56
+            },
+            "summary": "Describes the Process Service Authorization Line Item batch process (ProcessSALI), which processes service authorization line items to add them to rosters. It begins by generating all service authorization line items for each case participant role on the processing date, where a matching service authorization exists. Useful for understanding how service authorization line items are batch-processed and rostered."
+          },
+          {
+            "title": "1.24 Purge Non-Referenced Old Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000121",
+            "range": {
+              "start_unit_id": "p000057",
+              "end_unit_id": "p000059",
+              "start_page": 57,
+              "end_page": 59
+            },
+            "summary": "Configurable offline batch process that permanently purges old non-referenced records older than a specified purge date. It applies to all client types and can target records by scriptType and scriptStatus. The section lists purged entities (e.g., CitizenScriptInfo, Datastore Entity/role, LifeEvent, IEGExecutionState, TriageResult), command-line and UI execution steps, process results for different parameter combinations, and a generated report. It also notes customization hooks for pre- and post-purge processing."
+          },
+          {
+            "title": "1.25 Redetermine Translator",
+            "level": 2,
+            "children": [],
+            "node_id": "n000122",
+            "range": {
+              "start_unit_id": "p000060",
+              "end_unit_id": "p000060",
+              "start_page": 60,
+              "end_page": 60
+            },
+            "summary": "Batch process for automatic redetermination of translator requirements when a user’s language skill changes and affects many cases. It scans all open cases owned by the user, compares each participant’s preferred language to the user’s language skill, and updates the translator required indicator if needed. Documents `RedetermineTranslator.process` and `RedetermineTranslatorStream.process` plus parameters: Instance Identifier, Processing Date, and User Name. Notes that batch vs online execution is controlled by `curam.cases.maxnocases.onlineautotranslatordetermination`."
+          },
+          {
+            "title": "1.26 ScanMilestoneDeliveryStartDateBatch",
+            "level": 2,
+            "children": [
+              {
+                "title": "ScanMilestoneDeliveryStartDateBatchStream",
+                "level": 3,
+                "children": [],
+                "node_id": "n000124",
+                "range": {
+                  "start_unit_id": "p000062",
+                  "end_unit_id": "p000062",
+                  "start_page": 62,
+                  "end_page": 62
+                },
+                "summary": "Describes the ScanMilestoneDeliveryStartDateBatchStream process, which supports batch streaming for ScanMilestoneDeliveryStartDateBatch and must be used with that batch. Gives the implementation class/method curam.core.sl.impl.ScanMilestoneDeliveryStartDateBatchStream.process, explains the Batch Process Instance ID and Processing date parameters, and shows how stream processes are linked to a specific batch instance (same instance ID, no limit on streams per instance)."
+              }
+            ],
+            "node_id": "n000123",
+            "range": {
+              "start_unit_id": "p000060",
+              "end_unit_id": "p000062",
+              "start_page": 60,
+              "end_page": 62
+            },
+            "summary": "ScanMilestoneDeliveryStartDateBatch monitors milestone delivery expected start dates/status and raises a configured event if a delivery has not started. It supports optional notification-on-skip plus several tuning properties (chunk size, stream wait intervals, unprocessed chunk handling, dontrunstream). The batch runs with ScanMilestoneDeliveryStartDateBatchStream for concurrent streaming; both use the same batch process instance ID to link streams to a specific instance, with no limit on streams per instance. Class/method: curam.core.sl.impl.ScanMilestoneDeliveryStartDateBatch.process."
+          },
+          {
+            "title": "1.27 ScanMilestoneDeliveryEndDateBatch",
+            "level": 2,
+            "children": [
+              {
+                "title": "ScanMilestoneDeliveryEndDateBatchStream",
+                "level": 3,
+                "children": [],
+                "node_id": "n000126",
+                "range": {
+                  "start_unit_id": "p000064",
+                  "end_unit_id": "p000064",
+                  "start_page": 64,
+                  "end_page": 64
+                },
+                "summary": "Describes the ScanMilestoneDeliveryEndDateBatchStream, a batch-streaming process used with ScanMilestoneDeliveryEndDateBatch to scan milestone delivery end dates. It supports multiple concurrent streams on one or more computers to better use database capacity. The section identifies the class/method as curam.core.sl.impl.ScanMilestoneDeliveryEndDateBatch.process, lists key parameters such as Batch process instance ID and Processing date, and explains that the instance ID must match across streams to run multiple instances effectively."
+              }
+            ],
+            "node_id": "n000125",
+            "range": {
+              "start_unit_id": "p000063",
+              "end_unit_id": "p000064",
+              "start_page": 63,
+              "end_page": 64
+            },
+            "summary": "Explains how to run ScanMilestoneDeliveryEndDateBatch, which monitors milestone delivery expected end dates and statuses and raises a configured event when delivery is incomplete. Covers optional notification-on-skip and environment settings for chunking and retry behavior. The process is batch-streaming capable via ScanMilestoneDeliveryEndDateBatchStream for concurrent execution on one or more computers. Includes the class/method curam.core.sl.impl.ScanMilestoneDeliveryEndDateBatch.process and key parameters: Batch process instance ID and Processing date."
+          },
+          {
+            "title": "1.28 StartEffectiveOutcomePlanActions",
+            "level": 2,
+            "children": [],
+            "node_id": "n000127",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000065",
+              "start_page": 65,
+              "end_page": 65
+            },
+            "summary": "Batch process that starts Outcome Plan Actions which have not yet started and whose start date is in the past or whose end date is future-dated. It appears as section 1.28 and is described in one sentence only, with no parameters or additional processing details in the excerpt. Useful if you need the rules for automatically initiating effective actions."
+          },
+          {
+            "title": "1.29 StartEffectiveServiceDeliveries",
+            "level": 2,
+            "children": [],
+            "node_id": "n000128",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000065",
+              "start_page": 65,
+              "end_page": 65
+            },
+            "summary": "Batch process that checks “Not Started” service delivery records whose cover period start date is effective as of the current date. Qualifying records are started automatically: status changes to “In Progress” and the service start date for the cover period is updated. Processing steps include searching for all not-started service deliveries, processing those that qualify, and updating their status and start date. Class/method: StartEffectiveServiceDeliveries.startEffectiveServiceDeliveries. No input parameters."
+          },
+          {
+            "title": "1.30 TransferInstructionLineItems",
+            "level": 2,
+            "children": [],
+            "node_id": "n000129",
+            "range": {
+              "start_unit_id": "p000066",
+              "end_unit_id": "p000066",
+              "start_page": 66,
+              "end_page": 66
+            },
+            "summary": "Batch process that selects unprocessed financial instruction line items and transfers them to the configured ERP financial system. It rolls up unprocessed ILIs including payment, tax, utility, deduction, and surcharge ILIs for due liabilities, but excludes unapplied deduction ILIs. Each transferred ILI is marked “Transferred.” It should run immediately after Generate Instruction Line Items. Includes transferInstructionLineItemsDue and TransferInstructionLineItemsStream.process, with parameters for Instance Identifier and Processing Date; streamed runs may generate notifications on failed transfers."
+          },
+          {
+            "title": "1.31 WorkParticipationBatchProcess",
+            "level": 2,
+            "children": [],
+            "node_id": "n000130",
+            "range": {
+              "start_unit_id": "p000066",
+              "end_unit_id": "p000068",
+              "start_page": 66,
+              "end_page": 68
+            },
+            "summary": "WorkParticipationBatchProcess is a batch process that loads Business Intelligence tables for Income Support reports. This section provides only a brief description and contains no further processing steps, parameters, or implementation details in the excerpt. It may be useful if you need the batch name and its BI/reporting purpose."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000068",
+          "start_page": 9,
+          "end_page": 68
+        },
+        "summary": "Batch process reference for Cúram. Introduces default batch jobs and the `processingDate` convention (optional effective date, otherwise current system date). Covers core case-management jobs like MeetingManagement email response processing, communication generation, closure/grace-period jobs, eligibility/reassessment, CER propagation, and bulk reassessment. Also includes financial, provider, funded-program, and citizen-workspace purge processes, plus import/export and milestone scanning jobs. Many sections list parameters, class/method names, offline requirements, and batch streaming via Batch Process Instance ID for concurrent runs."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

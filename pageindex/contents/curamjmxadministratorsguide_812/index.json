@@ -1,0 +1,385 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "642b7d49d6456ea6",
+    "title": "Cúram 8.1.2 Cúram JMX Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramJMXAdministratorsGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "642b7d49d6456ea6af623644af0fe8a7b640b66662d0133e1da01173763c3b6f",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:48:31+00:00",
+    "page_count": 24,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramJMXAdministratorsGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram JMX Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000024",
+      "start_page": 1,
+      "end_page": 24
+    },
+    "summary": "Front matter and the main chapter for Cúram 8.1.2 JMX configuration. It explains how JMX provides runtime operational statistics and how administrators can enable and tune monitoring without code changes. Key topics include core properties for enabling JMX, configuring EJB/Web MBeans, per-user statistics, transaction tracing limits and URL filtering, download access controls, in-flight statistics with optional custom/file handlers, and timer-based statistics output. It also covers ways to access stats via third-party JMX tools, the Administration Application, or the JMX download endpoint, and describes default application instrumentation. The chapter catalogs available MBeans and their metrics for server/client/core, cache, end-user browser render timing, configuration, extension points, operational/run-and-record, web services, and CER/assessment engine stats. Includes the XML schema for aggregated transaction tracing plus standard notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice stating that before using the information and supported product, readers should review the Notices section on page 23. Includes Merative US L.P. copyright information for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory edition pages for Cúram 8.1/8.1.1/8.1.2, followed by the start of Chapter 1 on configuring JMX statistics. Covers what JMX monitoring enables, key configuration properties (monitoring, MBeans, per-user stats, transaction tracing, download access, in-flight stats, output timers), ways to access/download/reset statistics via the Administration Application or JMX timer, WebSphere role requirements, and the beginning of default application instrumentation, including CuramServerCoreStatsMBean metrics for BPO, SQL, and application exception statistics."
+          },
+          {
+            "title": "Edition — pages 15-22",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000022",
+              "start_page": 15,
+              "end_page": 22
+            },
+            "summary": "This section catalogs Cúram JMX statistics MBeans and their exposed metrics. It covers server/client core stats, cache stats, end-user browser render timing, configuration and extension-point stats, operational and run-and-record stats, web services outbound pool/call stats, and CER/assessment engine stats. It also explains when certain data is collected (in-flight, transaction tracing, end-user stats) and includes the XML schema for aggregated transaction tracing. Useful for navigating to specific MBean metrics, configuration parameters, or tracing format details."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000022",
+          "start_page": 5,
+          "end_page": 22
+        },
+        "summary": "Introductory pages for Cúram 8.1/8.1.1/8.1.2, then the full chapter on configuring JMX statistics. Covers what JMX monitoring provides, the main configuration properties (monitoring, configured MBeans, per-user stats, transaction tracing, download access, in-flight stats, output timer), and how to access/download/reset statistics. Also catalogs the exposed MBeans and their metrics for core server/client, cache, end-user browser render timing, configuration, extension points, operational/run-and-record, web services, and CER/assessment engine stats, plus the XML schema for aggregated transaction tracing."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Legal notices and licensing information for the document: sample data is fictitious, sample programs are provided under the Merative Client Agreement and may be copied/modified/distributed under specified API-related terms, but are provided “AS IS” without warranty or liability. Includes the Merative privacy policy link and a list of trademarks/registered trademarks (Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX) plus copyright notice."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section lists legal notices for sample data and code, including that examples use fictitious names and are provided “AS IS” under the Merative Client Agreement. It includes the Merative privacy policy link and a trademarks notice naming Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX as protected marks, plus a copyright statement for Merative US L.P. (2012, 2024)."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000023",
+          "start_page": 23,
+          "end_page": 23
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and commercial reproduction limits, preservation of proprietary notices, restrictions on derivative works and redistribution, and no implied rights beyond those stated. Includes export-law compliance, an AS-IS/no-warranty disclaimer, patent notice, third-party product/website disclaimers, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter and the main chapter “Configuring JMX statistics,” including configuration parameters, accessing JMX statistics via Administration Application or JMX timer, default application instrumentation, and the XML schema for aggregated transaction tracing. Also shows the Notices section with privacy policy and trademarks. Helpful as a navigation index rather than substantive content."
+      },
+      {
+        "title": "1 Configuring JMX statistics",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuration parameters",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Lists the core Cúram JMX configuration properties and what they control: enabling monitoring, configuring MBeans for EJB/Web containers, per-user statistics filtering, transaction tracing settings (URL filter, max threads, purge/idle timing), downloading stats access, in-flight statistics collection and custom handlers, and JMX output/report timer options. Includes warnings about memory use and limiting transaction tracing to troubleshooting."
+          },
+          {
+            "title": "1.2 Accessing JMX statistics",
+            "level": 2,
+            "children": [
+              {
+                "title": "Using the Administration Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to access and manage JMX statistics through the Administration Application. Covers three access methods: third-party JMX monitoring tools, downloading a ZIP containing XML/XSL via /Curam/JMXStats.do, and using the JMX timer mechanism for online or batch applications. Notes that statistics are collected only for the specified application server, can be reset via /Curam/JMXStats.do?action=reset, and access is controlled by dynamic properties curam.jmx.download_statistics_allowed and curam.jmx.download_statistics_username."
+              },
+              {
+                "title": "Using the JMX timer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains the JMX timer as an alternative way to collect Cúram JMX statistics from online or batch environments. It periodically writes statistics to a file system location and can gather data from every server in an environment. The section notes the controlling application properties: curam.jmx.output_statistics_timer_enabled, curam.jmx.output_statistics_timer_period, and curam.jmx.output_statistics_timer_use_delta, and points readers to the JMX configuration details for more information."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000012",
+              "start_page": 12,
+              "end_page": 12
+            },
+            "summary": "Explains three ways to access JMX statistics: third-party JMX monitoring tools, downloading a ZIP of XML/XSL via /Curam/JMXStats.do, and using the JMX timer mechanism for online or batch applications. Notes that download access is limited to the specified application server, statistics can be reset with /Curam/JMXStats.do?action=reset, and access is controlled by curam.jmx.download_statistics_allowed and curam.jmx.download_statistics_username."
+          },
+          {
+            "title": "1.3 Default application instrumentation",
+            "level": 2,
+            "children": [
+              {
+                "title": "CuramServerCoreStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000015",
+                  "start_page": 14,
+                  "end_page": 15
+                },
+                "summary": "Describes the CuramServerCoreStatsMBean, which exposes core server-container statistics. It has one config parameter, curam.jmx.sql_statement_statistics_enabled, to enable SQL statement statistics. The MBean reports aggregated BPO method metrics, SQL execution metrics, application exception counts, query cache hits/misses, in-flight BPO/SQL invocation details via curam.jmx.in_flight_statistics_enabled, and aggregated transaction tracing via curam.jmx.transaction_tracing_enabled. Transaction tracing is XML-based and only captures within a JVM boundary, so full end-to-end tracing requires collocated client and server."
+              },
+              {
+                "title": "CuramClientCoreStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section documents the CuramClientCoreStatsMBean, which exposes client-container core statistics. It covers aggregated URL invocation metrics (username, URL, invocations, elapsed time stats, errors), in-flight URL invocation data when enabled (UUIDs, user, URL, timing, client IP/port), and aggregated transaction tracing data when enabled and optionally filtered by URL. It then begins CuramCacheStatsMBean, describing cache statistics for each global cache, including cache group, cache name, layer, size, and hits."
+              },
+              {
+                "title": "CuramCacheStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Describes the CuramCacheStatsMBean, which exposes core statistics for Cúram Cache. It reports per-global-cache metrics including cache group, cache name, cache layer (memory, disk, etc.), current size, and hit count. Useful for monitoring cache structure and basic performance/usage."
+              },
+              {
+                "title": "CuramEndUserStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Defines the CuramEndUserStatsMBean, which exposes end-user browser render-time statistics per URL (optionally with widget IDs). It reports invocations and three render metrics: time from HTML head to body, body to Dojo load completion, and Dojo load completion to the last widget finishing. The section also notes that enabling end-user statistics can affect application performance and introduces the configuration parameters that control this collection."
+              },
+              {
+                "title": "CuramConfigurationStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "CuramConfigurationStatsMBean exposes application configuration parameter statistics, including each parameter’s name, type, current value, and access count. This section sits among related JMX MBeans, including end-user statistics, extension point execution statistics, operational stats, and run-and-record stats, and helps identify what configuration metrics are available for monitoring via JMX."
+              },
+              {
+                "title": "ExtensionPointsStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "ExtensionPointsStatsMBean exposes execution statistics for instrumented application extension points, including extension point name, invocation count, error count, average elapsed time, min/max elapsed time, and standard deviation. The surrounding page also lists adjacent JMX MBeans for configuration stats, operational stats, and run-and-record stats, but this section specifically focuses on extension point performance and failure metrics."
+              },
+              {
+                "title": "OperationalStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "OperationalStatsMBean provides operational JMX information. It exposes MBean statistics for last reset time, last download time, and application start-up time. This section is useful if you need runtime lifecycle or JMX statistics about when metrics were reset, downloaded, or when the application started."
+              },
+              {
+                "title": "RunAndRecordStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "RunAndRecordStatsMBean provides statistics for code instrumented with CuramJMXUtil.runAndRecord. This section is a brief MBean description in the JMX statistics documentation, indicating it exposes runtime metrics for tracked execution paths."
+              },
+              {
+                "title": "CuramWebServicesOutboundPoolStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Defines the CuramWebServicesOutboundPoolStatsMBean, which exposes connection-pool metrics for external web services. It reports the service key, number of active connections, and total pool size. This section sits within JMX statistics documentation and is useful if you need monitoring details for outbound web service connection pools."
+              },
+              {
+                "title": "CuramWebServicesOutboundStats",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Defines JMX MBean statistics for outbound web service calls. CuramWebServicesOutboundStats exposes metrics for an external web service target: invocations, average elapsed time, standard deviation, min/max elapsed time, and error count. The surrounding page also describes related outbound pool stats and assessment engine stats, indicating this section is part of a broader JMX statistics configuration reference."
+              },
+              {
+                "title": "AssessmentEngineStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Describes JMX statistics MBeans, including a generic assessment engine stats MBean. Covers the metrics exposed for monitored targets: invocations, average elapsed time, standard deviation, min/max elapsed time, and errors. Also notes related outbound web service MBeans for connection pool and call statistics. For AssessmentEngineStatsMBean specifically, it exposes core CER Assessment Engine statistics and reassessment group timing information banded into ranges."
+              },
+              {
+                "title": "CEREngineStatsMBean",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "CEREngineStatsMBean defines the core JMX statistics for the CER Engine. This section sits among reassessment aggregation stats and dependency management stats, covering common counts and timings for reassessment queueing/execution steps, dependency storage/outdating, and related recalculation activity. It is useful if you need CER engine performance metrics or need to inspect statistics for dependency handling and case recalculation processes."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000019",
+              "start_page": 13,
+              "end_page": 19
+            },
+            "summary": "This section introduces default JMX application instrumentation and the MBeans that expose built-in statistics. It covers server/client core stats (BPO methods, SQL, URLs, in-flight activity, transaction tracing), cache statistics, end-user browser render timing, configuration access stats, extension point execution stats, operational lifecycle stats, run-and-record stats, outbound web service pool/call stats, and assessment/CER engine stats. It also notes relevant enablement/configuration parameters and that some tracing/statistics are limited by JVM boundary or per-user filters."
+          },
+          {
+            "title": "1.4 XML Schema for Aggregated Transaction Tracing",
+            "level": 2,
+            "children": [],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000024",
+              "start_page": 20,
+              "end_page": 24
+            },
+            "summary": "Defines the XML schema for aggregated transaction tracing. It describes a CURAM_TRANSACTION_TRACE document containing THREAD elements, each with nested C elements and attributes for component/method identifiers and timing/count data (C, M, EA, EMN, EMX, CT, plus thread ID). The section appears after brief JMX statistics context and is followed by legal notices. Useful if you need the structure of transaction trace aggregation output or its XML element/attribute hierarchy."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000024",
+          "start_page": 9,
+          "end_page": 24
+        },
+        "summary": "Explains Cúram JMX statistics configuration and use. Covers core properties for enabling monitoring, configuring EJB/Web MBeans, per-user filtering, transaction tracing limits and URL filtering, download access control, in-flight statistics/custom handlers, and timer-based report output for online and batch jobs. Describes three access methods: third-party JMX tools, downloading ZIP/XML/XSL via /Curam/JMXStats.do, and timer-generated reports. Also documents default application instrumentation and the XML schema for aggregated transaction tracing."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

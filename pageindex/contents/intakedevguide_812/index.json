@@ -1,0 +1,692 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "e8b39c4cf82738a1",
+    "title": "Cúram 8.1.2 Intake Developer's Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/IntakeDevGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "e8b39c4cf82738a1558b96d615d5ff83ed6ccc681bd8d927300f4d3d2f6d6040",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T22:52:22+00:00",
+    "page_count": 36,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/IntakeDevGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Intake Developer's Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000036",
+      "start_page": 1,
+      "end_page": 36
+    },
+    "summary": "Front matter and Chapter 1 of the Cúram 8.1.2 Intake Developer’s Guide. It introduces Intake development and explains the required intake process XML plus supporting configurations for triage, screenings, eligibility checks, PCR rule sets, and authorization rule sets. The chapter covers how to define triage and screening in XML, including rule-set attributes, urgent alerts, and recommendations for services/programs. It also describes check-eligibility configuration, PCR rule attributes and localized property text, and authorization rule sets for selecting programs and clients during application-case authorization. Additional topics include the intake process XML structure, a hook for activating evidence not normally brokered during authorization, and intake environment properties such as Google Maps defaults. The section also includes notices, copyright, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note directing readers to review the Notices section before using the document or supported product. Includes Merative US L.P. copyright notice (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section is the edition/front-matter for Cúram Intake documentation. It states the guide applies to Cúram 8.1, 8.1.1, and 8.1.2, then gives the table of contents for “Developing with Intake.” It previews key topics: introduction, triage and screening definitions, check eligibility, PCR rule sets, authorization rule sets, intake process XML, evidence activation behavior, and intake environment variables, plus notices, privacy policy, and trademarks."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section lists configuration steps and DMX entries needed to set up the Common Intake/Financial Assistance screening flow in Cúram. It specifies creating CommonIntakeProcess.xml and populating DMX files for intake process, configuration, role assignment, IEG script info, Creole rule set, datastore schemas, and schema translations. It also enumerates multiple resource records (images, PDFs, properties files) with IDs and file paths under CommonIntake/data/initial, covering screening/application UI text, rules, and global/application configuration."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers Intake configuration and extension points: copying required resource/XSD/XML files for screening, defining CER outputs for urgent alerts and recommended programs, and marking programs as internal or external in the intake XML. Also explains configuring Check Eligibility rule sets and results display pages, building PCR rule sets with mandatory attributes and localized property files, and setting up authorization rule sets for program and client selection. Includes an intake process XML example, evidence activation hooks, and intake environment variables such as Google Maps defaults."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000034",
+          "start_page": 5,
+          "end_page": 34
+        },
+        "summary": "Front matter for Cúram Intake “Developing with Intake” (8.1/8.1.1/8.1.2). It introduces intake, triage, screening, eligibility checks, PCR rule sets, authorization rule sets, intake process XML, evidence activation hooks, and environment properties. The section explains that Intake requires an intake process XML plus configured rule sets, and it includes examples for triage/screening setup, check-eligibility display rules, PCR mandatory attributes and localized properties, authorization client/program selection rules, and Google Maps default intake properties."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "This section contains legal notices for the document: sample data disclaimers, copyright/license terms for sample programs, a link to Merative’s privacy policy, and a list of third-party trademarks. It notes that sample programs are provided “as is” without warranty and that Merative is not liable for damages from their use."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "States that all example names in the document are fictitious, and that sample programs are provided under the Merative Client Agreement with an “AS IS” disclaimer and no warranty or liability. Includes a privacy policy link. Lists trademark notices for Merative, IBM, Adobe/PostScript, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes other names may be trademarks. Copyright © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000035",
+          "end_unit_id": "p000035",
+          "start_page": 35,
+          "end_page": 35
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and enterprise reproduction permissions, preservation of proprietary notices, and prohibition on derivative works or external redistribution without consent. States no additional rights are granted; Merative may withdraw permission and export laws apply. Includes broad “AS IS” / no-warranty disclaimer, patent notice, and non-Merative product/website disclaimer. Ends with copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the manual. It lists front matter (Note, Edition) and Chapter 1, “Developing with Intake,” with subsections on triage, screenings, eligibility checks, PCR rule sets, authorization rule sets, intake process XML definition, evidence activation during authorization, and intake environment variables. Page ranges for each topic are included, making this a navigation-only section rather than substantive content."
+      },
+      {
+        "title": "1 Developing with Intake",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This overview introduces Cúram Intake development, explaining that intake processes are defined in an XML process definition document. It covers the main supported intake processes—Application, Triage, and Screening—and notes key configuration items such as eligibility check rule set/strategy, results page, PCR rule set, and application authorization rules. It is meant for architects and developers configuring custom Intake solutions and points readers to separate documentation for application configuration, triage, and screening details."
+              },
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Overview of the Cúram Intake development process, focused on required XML and rule-set configurations for intake. It explains that intake supports application, triage, and screening, and highlights key setup items such as triage/screening definitions, eligibility check rule set and strategy, results page, PCR rule set, and application authorization rule sets. It is aimed at architects and developers configuring custom Intake solutions."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for architects and developers configuring a custom Cúram Intake solution. This section introduces the Intake development guide and explains that Intake supports application, triage, and screening processes for collecting client data. It notes required configuration elements such as the intake process definition XML, triage and screening definitions, eligibility check settings, PCR rule sets, and application authorization rules. It also frames the guide’s purpose: overviewing key development and configuration elements for Intake, including triage basics."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces Cúram Intake development and the XML-based intake process definition required to configure it. Explains that Intake supports three processes—Application, Triage, and Screening—and that triage and screening definitions are set in the process XML. Notes key application-case configuration items: eligibility check rule set, eligibility check strategy, results page, PCR rule set, and application authorization rule sets. Aimed at architects and developers configuring custom Intake solutions, and points to separate guides for application, triage, and screening details."
+          },
+          {
+            "title": "1.2 Defining triage",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Introduces triage in Intake: a case worker asks core questions to quickly assess a client’s needs and generate suitable services, providers, and programs. Explains how to configure a triage definition in the intake XML by adding an `IndividualConfiguration` (only one allowed) and a `Triage` child under `IntakeProcess`. Lists key triage attributes: `DataStore`, `RuleSet`, `RuleSetClass`, `ScriptName`, `ScriptType`, and `ScriptVersion`, which control the IEG script and CER rule processing."
+              },
+              {
+                "title": "Setting up a Triage Definition",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to configure triage in an intake XML definition. You must add or locate a single IndividualConfiguration under IntakeProcess, then add a Triage element under it. The section defines triage as a process for gathering a client’s needs and generating suitable service/program recommendations. It lists key Triage attributes: DataStore, RuleSet, RuleSetClass, ScriptName, ScriptType, and ScriptVersion, which connect the IEG script and CER rules used in triage."
+              },
+              {
+                "title": "Adding Urgent Alerts to the Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to configure CER rule outputs for triage: urgent alerts via an `alertMessages` list of `AlertMessage` rule classes, services via a `services` list of `AbstractService` subclasses, and programs via a `programs` list of `AbstractProgram` subclasses, all shown on the Triage Result page. It then introduces screening definitions, describing screening as guided questions used to assess potential program eligibility, and outlines the XML setup steps for adding `IndividualConfiguration` and `Screening` elements in the intake process definition."
+              },
+              {
+                "title": "Recommending Services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to recommend services from a CER rule set: the triage rule class must define a services attribute containing a list of AbstractService subclasses, and each calculated service appears on the Triage Result page. The section also briefly precedes related guidance for urgent alerts and recommended programs, then transitions into screening setup and its XML configuration structure."
+              },
+              {
+                "title": "Recommending Programs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how the triage CER rule set recommends programs: define a `programs` attribute on the triage rule class, containing a list of `AbstractProgram` subclasses, which then display as recommended programs on the Triage Result page. Also briefly introduces screening setup for determining potential program eligibility from guided questions, including the XML structure (`IndividualConfiguration` and `Screening`) used to define screenings."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Defines triage in Cúram Intake as a caseworker process for asking core questions to quickly assess a client’s needs and produce suitable services, providers, and programs. Explains how to configure triage in the intake process XML: add a single `IndividualConfiguration` under `IntakeProcess`, then a `Triage` element under it. Lists the main triage attributes—`DataStore`, `RuleSet`, `RuleSetClass`, `ScriptName`, `ScriptType`, and `ScriptVersion`—which connect the IEG script and CER rule set used to generate recommendations."
+          },
+          {
+            "title": "1.3 Defining screenings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Introduces screening setup in Cúram intake process definitions. It explains that screening uses guided questions to determine potential eligibility for one or more programs by running eligibility rules against client responses. The section also outlines XML configuration steps: add an `IndividualConfiguration` element under `IntakeProcess`, then one or more `Screening` elements under it, where screening-specific attributes define the process."
+              },
+              {
+                "title": "Setting up a Screening Definition",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Setting up a Screening Definition — pages 12-21",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000021",
+                      "start_page": 12,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how to define a Screening in an intake XML: add an IndividualConfiguration under IntakeProcess, then one or more Screening elements with attributes such as Type, DataStore, RuleSet, RuleSetClass, ScriptName, ScriptVersion, and DisplayStatus. Describes ProgramType child elements for internal/external availability and gives an example Screening XML. Also lists required DMX/configuration files for a sample financial assistance screening setup, including intake process, role assignment, IEG script, CREOLE rule set, data store schema, and related resource entries."
+                  },
+                  {
+                    "title": "Setting up a Screening Definition — pages 22-25",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000025",
+                      "start_page": 22,
+                      "end_page": 25
+                    },
+                    "summary": "This section lists screening-definition and intake configuration resources for Cúram 8.1.2, mainly RS_PROP entries mapped to .properties files. It includes FinancialAssistanceApplicationScreening and FinancialAssistanceInternalScreening resources, CIIntakeProcess global configuration, and application configuration text resources for Rights and Responsibilities, Authorization Information, and Department Policy. Useful if you need the specific resource names, IDs, or file paths used to set up screening-related intake behavior."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000025",
+                  "start_page": 12,
+                  "end_page": 25
+                },
+                "summary": "Explains how to define screenings in an intake XML: add a single IndividualConfiguration under IntakeProcess, then one or more Screening elements with attributes like Type, DataStore, RuleSet, RuleSetClass, ScriptName, ScriptVersion, and DisplayStatus. It also defines ProgramType children to mark programs as internal or external, shows an example FinancialAssistance screening XML, and lists the supporting DMX/configuration resources needed for a sample setup, including intake process, role assignment, IEG script, rule set, data store schema, and RS_PROP text resources."
+              },
+              {
+                "title": "Adding urgent alerts to the rule set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Explains how to add urgent alerts in a CER rule set for screening: the rule class must include an alertMessages attribute of type list of AlertMessage rule classes, and each calculated AlertMessage appears as an urgent alert on the Triage Result page. The section follows setup instructions for copying Screening, XSD, process XML, and rule set files into CommonIntake folders, and also notes that program recommendations use a programs attribute in the screening rule class."
+              },
+              {
+                "title": "Recommending programs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Specifying whether Programs are Available Internally or Externally",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how screening results can mark each recommended program as internal or external in the intake XML definition. For each supported program, add a ProgramType child under Screening. The ProgramType must use a code table entry from ProgramType (e.g., medical assistance) and is mandatory. An Availability attribute sets whether the program is available “internal” (show application link) or “external” (show referral link)."
+                  }
+                ],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000027",
+                  "start_page": 26,
+                  "end_page": 27
+                },
+                "summary": "Explains how screening rule-set outputs become recommended programs on the result page, via a programs attribute listing AbstractProgram subclasses. Also shows how to mark supported programs as internal or external in the intake XML: add a ProgramType child under Screening for each program, using a mandatory ProgramType code-table entry and an Availability value of internal or external to control whether the user sees an application or referral link."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000027",
+              "start_page": 12,
+              "end_page": 27
+            },
+            "summary": "Defines how to configure screenings in Cúram intake XML. A screening uses guided questions and CER rules to assess potential eligibility and produce recommended programs, services, and urgent alerts. Key setup: add one `IndividualConfiguration` under `IntakeProcess`, then one or more `Screening` elements with attributes such as `Type`, `DataStore`, `RuleSet`, `RuleSetClass`, `ScriptName`, `ScriptVersion`, and `DisplayStatus`. Program availability is controlled with `ProgramType` children marked `internal` or `external`. Also includes sample DMX/CLob resources for a FinancialAssistance screening."
+          },
+          {
+            "title": "1.4 Configuring Check Eligibility",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Introduces the “Check Eligibility” process for application cases, which runs a rule set to determine program eligibility and displays a decision on the Eligibility Checks tab. Explains the three configuration options on the application case: Eligibility Check Rule Set, Eligibility Check Strategy (All, Programs Applied for Only, User Choice), and Results Display Page. Also notes that the rule set must include a rule class for each eligible program, extending AbstractApplicationCaseProgram, with class names matching the program type reference."
+              },
+              {
+                "title": "Configuring an Application Case for Eligibility Checks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to configure application cases for eligibility checks in Cúram. Covers the three case-level options: Eligibility Check Rule Set (required to expose the action and tab), Eligibility Check Strategy (All, Programs Applied for Only, User Choice), and Results Display Page (dynamic UIM page for showing results). Also notes that the rule set must include a rule class for each checkable program, each extending AbstractApplicationCaseProgram and matching the program type reference."
+              },
+              {
+                "title": "Configuring the Eligibility Check Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to configure the Eligibility Check Rule Set for application cases. The rule set must include one rule class per eligible program, each extending AbstractApplicationCaseProgram in the ApplicationCaseCheckEligibilityRulesInterface rule set. Each rule class name must match the program type reference (for example, ProgramOne). Also notes that the application case eligibility check behavior depends on rule set, strategy, and results display page settings, and that omitting the rule set hides the Check Eligibility action and Eligibility Checks tab."
+              },
+              {
+                "title": "Configuring the Results Display Page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains how to configure the results display page for eligibility checks. The page should call ApplicationCaseCheckEligibility.viewCheckEligibilityDisplayRules, passing appCaseEligibilityResultID, and use the returned displayXML to render explanation data in a dynamic UIM page. It notes that rule-set attributes needing explanation must be marked with <Display/> and retrieved via extended path expressions, which always begin with DecisionDetails. Includes an example mapping the Income display attribute."
+              }
+            ],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "Explains how to configure application case check-eligibility in Cúram. The process runs a rule set to determine program eligibility and shows results on the Eligibility Checks tab. Key settings are Eligibility Check Rule Set (required to expose the Check Eligibility action/tab), Eligibility Check Strategy (All, Programs Applied for Only, User Choice), and Results Display Page (dynamic UIM page for displaying results). The rule set must include one rule class per checkable program, each extending AbstractApplicationCaseProgram and matching the program type reference."
+          },
+          {
+            "title": "1.5 Configuring a PCR Rule Set",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains how to configure eligibility result display for Intake rule sets. It shows that rule classes must populate entitlement and decision rule attributes, and that any explanation data requires <Display/> annotations. The results page should call ApplicationCaseCheckEligibility.viewCheckEligibilityDisplayRules with appCaseEligibilityResultID, which returns displayXML for use in a dynamic UIM page. It also shows how to retrieve displayed fields via EXTENDED_PATH, starting with DecisionDetails, and introduces the next topic: configuring a PCR rule set."
+              },
+              {
+                "title": "Configuring a PCR Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains how to configure a PCR rule set in Cúram. A PCR rule set must inherit from PCRRuleSet and contain a rule class extending AbstractPCR, created with the CER editor, to produce PCR results for workers. The rule set must implement six abstract attributes, with description inherited from the root class. Lists mandatory rule attributes such as caseID, description, priorityRate, priorityReason, and complexityRate, and notes that rules may have weightings contributing to the overall PCR calculation, rating, and classification."
+              },
+              {
+                "title": "Mandatory Rule Attributes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "This section explains mandatory attributes for PCR rule sets in Cúram 8.1.2. It says each PCR rule set must inherit from PCRRuleSet and implement the required abstract attributes, with description inherited from the root rule class. The table lists key mandatory rule attributes and their purposes: caseID (case identifier), description and priorityReason (property-file text references), priorityRate (calculated ranking for response timeline), and complexityRate (calculated ranking for resource needs)."
+              },
+              {
+                "title": "Specifying Rule Set Properties Text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how to define localized text for rule set properties. It describes rule attributes like complexityReason and riskReason as string references to entries in a properties file, and riskRate as a calculated number attribute. The section shows creating a localized `.properties` file (for example, `PCRSample.properties`), adding text entries used by rule class attributes, referencing them via `ResourceMessage` in XML, and registering the properties file in the Administration Application’s Dynamic UIM resource store."
+              }
+            ],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000031",
+              "start_page": 29,
+              "end_page": 31
+            },
+            "summary": "Explains how to configure a Cúram PCR rule set for case priority, complexity, and risk ratings. A PCR rule set must inherit from PCRRuleSet, include a rule class extending AbstractPCR created in the CER editor, and implement six abstract attributes; description comes from the root class. Covers mandatory attributes such as caseID, priorityRate/Reason, complexityRate/Reason, and riskRate/Reason, plus rule weightings. Also shows how to localize rule text with a properties file and register it in Dynamic UIM resource store."
+          },
+          {
+            "title": "1.6 Configuring Authorization Rule Sets",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Introduces configuration of authorization rule sets in Cúram 8.1.2. It explains the two default Intake rule sets: ApplicationAuthorisationInterfaceRuleSet for deciding which programs are authorized, and ClientSelectionInterfaceRuleSet for selecting clients added to a product delivery. It also describes how application authorization rules must extend AbstractApplicationCase and implement the programs attribute, with a basic example of authorizing all pending programs tied to an application case."
+              },
+              {
+                "title": "Intake Rule Sets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section introduces the two default Intake authorization rule sets: ApplicationAuthorisationInterfaceRuleSet and ClientSelectionInterfaceRuleSet. It explains how application-level authorization determines which programs to authorize, and how client selection determines which clients are added to the product delivery. It also describes the required rule class for application authorization, which must extend AbstractApplicationCase, including the programs attribute and its structure. A basic implementation example is given, such as selecting all pending programs associated with the application case."
+              },
+              {
+                "title": "Determining the Programs to be Authorized",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section explains configuring authorization rule sets for Intake. It highlights the two default rule sets, ApplicationAuthorisationInterfaceRuleSet and ClientSelectionInterfaceRuleSet, and focuses on determining which programs are authorized at the application case level. It specifies that custom application authorization rules must extend ApplicationAuthorisationInterfaceRuleSet.AbstractApplicationCase and implement the programs attribute. It also notes that program authorization may include optional product delivery clients, and introduces client selection strategy as the next topic."
+              },
+              {
+                "title": "Writing the Authorize Application Rule Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains how to configure Intake authorization rule sets, focusing on the application authorization path. It identifies the two default rule sets, especially ApplicationAuthorisationInterfaceRuleSet, and says custom application authorization must extend AbstractApplicationCase. The required inherited attribute is programs, a list of Program objects representing programs to authorize. It notes Program.primaryClient defaults to null and additionalClients to an empty list, and gives an example implementation: selecting all pending programs associated with the application case."
+              },
+              {
+                "title": "Determining the Clients to be Added to the Product Delivery",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains the Intake authorization rule sets, especially how to determine clients added to a product delivery. It introduces the two default rule sets, ApplicationAuthorisationInterfaceRuleSet and ClientSelectionInterfaceRuleSet, and notes that program authorization uses rules to select programs and clients. It also describes the abstract application authorization rule class, its programs attribute, and that primaryClient defaults to null while additionalClients defaults to an empty list."
+              },
+              {
+                "title": "Writing the Client Selection Rule Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Defines the client selection rule class for Intake. The rules strategy uses the ClientSelectionInterfaceRuleSet rule set, and custom client selection logic must extend ClientSelectionInterfaceRuleSet.AbstractClients. The only inherited attribute described is primaryClient, a Client object representing the primary client for the product delivery created by authorization. The page also begins an appendix section on Intake Process XML Definition and shows a sample XML structure with GlobalConfiguration and IndividualConfiguration entries for Triage and Screening."
+              }
+            ],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000032",
+              "end_unit_id": "p000032",
+              "start_page": 32,
+              "end_page": 32
+            },
+            "summary": "This section explains how to configure Intake authorization rule sets in Cúram 8.1.2. It introduces the two default rule sets, ApplicationAuthorisationInterfaceRuleSet and ClientSelectionInterfaceRuleSet, for choosing which programs are authorized and which clients are added to a product delivery. It details application-level authorization via ApplicationAuthorisationInterfaceRuleSet.AbstractApplicationCase, which must implement the programs attribute (a list of Program objects). Program.primaryClient defaults to null and additionalClients to an empty list; a simple example authorizes all pending programs on an application case."
+          },
+          {
+            "title": "1.7 Intake Process XML Definition",
+            "level": 2,
+            "children": [
+              {
+                "title": "Intake Process XML Definition",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Provides a high-level XML example for defining an IntakeProcess. Shows the overall structure with GlobalConfiguration and IndividualConfiguration, plus sample Triage and Screening elements and their key attributes: DataStore, RuleSet, RuleSetClass, ScriptName, ScriptType, ScriptVersion, and type. Also includes nested DisplayStatus entries under Screening. Useful for understanding how intake process XML is organized and how screening/triage components are configured."
+              }
+            ],
+            "node_id": "n000046",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000033",
+              "start_page": 33,
+              "end_page": 33
+            },
+            "summary": "Provides a high-level XML example for defining an IntakeProcess. Shows the top-level structure with GlobalConfiguration and IndividualConfiguration, and illustrates how Triage and Screening elements are configured using attributes such as DataStore, RuleSet, RuleSetClass, ScriptName, ScriptType, ScriptVersion, and type. Also includes nested DisplayStatus entries under Screening. Useful for understanding the overall intake process XML layout and screening/triage configuration details."
+          },
+          {
+            "title": "1.8 Ability to allow activation of evidence which would not otherwise be activated as part of the application case authorization process.",
+            "level": 2,
+            "children": [],
+            "node_id": "n000048",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Describes a customization option for application case authorization: evidence is normally activated only if configured for brokering to a target case, but this can be extended so other evidence types are also activated. Specifies using `curam.commonintake.evidencebroker.impl.CIREvidenceActivationHooks` and overriding `getEvidenceTypesFromOtherSources()` to supply additional evidence types for activation."
+          },
+          {
+            "title": "1.9 Intake Environment Variables",
+            "level": 2,
+            "children": [
+              {
+                "title": "Application Properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000036",
+                  "start_page": 34,
+                  "end_page": 36
+                },
+                "summary": "This section covers Intake application properties and their administration via Cúram System Administration. It includes environment variables such as Google Maps defaults for the Service Provider screen, including initial zoom level and default center latitude. The excerpt also notes a customization hook for activating evidence during application case authorization, allowing additional evidence types to be activated via CIREvidenceActivationHooks. The remaining pages are legal notices, copyright, privacy, and trademark information."
+              }
+            ],
+            "node_id": "n000049",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000036",
+              "start_page": 34,
+              "end_page": 36
+            },
+            "summary": "Intake application properties administered via Cúram System Administration, including environment variables for the Service Provider Google Maps display: default zoom level (11) and default center latitude (-89.40570831298828). It also references the customization hook for evidence activation during application case authorization via CIREvidenceActivationHooks. The remaining pages are legal notices, copyright/license, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000036",
+          "start_page": 9,
+          "end_page": 36
+        },
+        "summary": "Overview of Cúram Intake development. Explains the XML intake process definition and the required configurations for Application, Triage, Screening, eligibility checking, PCR rule sets, and authorization rule sets. Gives XML setup details for triage and screenings, including key attributes, recommended services/programs, and urgent alerts. Covers application-case check eligibility, PCR priority/complexity/risk rules, authorization client/program selection, an example intake XML structure, evidence activation customization, and intake environment variables. Includes appendix/legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

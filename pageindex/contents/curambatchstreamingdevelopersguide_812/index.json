@@ -1,0 +1,533 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "afd82616f14dc81a",
+    "title": "Cúram 8.1.2 Batch Streaming Developers Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramBatchStreamingDevelopersGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "afd82616f14dc81ad2e70571945eb000a72200330a04b989145a8d8361ff9518",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T03:41:14+00:00",
+    "page_count": 24,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramBatchStreamingDevelopersGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Batch Streaming Developers Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000024",
+      "start_page": 1,
+      "end_page": 24
+    },
+    "summary": "Introductory section for the Cúram 8.1.2 Batch Streaming Developers Guide. It explains the streamed batch model: a chunker identifies independent processing units, groups them into chunks, and stream processes handle each chunk, with restartable processing and reporting afterward. The guide motivates streaming for large volumes and parallelization, and highlights built-in benefits such as commit-per-chunk, automatic skipping/retry handling for errored records, generic logging/reporting, and restartability. It also covers how to design streamed batches by identifying safe processing units and dependencies, including indirect units, extra processing, and batch summary information. Implementation topics include chunker/stream entry points, class/UML structure, processing single records and skipped cases, encoding/decoding chunk results, sending batch reports, and global stream configuration EnvVars. Advanced topics address running multiple chunkers or instances and using composite keys. Front matter and legal notices are included.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note is a preface reminding readers to review the Notices section before using the information or the supported product. It also shows the copyright attribution for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory and implementation guidance for Cúram streamed batch programs. Explains what streamed batching is, why to use it (commit-per-chunk processing, automatic skipping of errored records, logging/reporting, restartability), and when volume or processing structure justifies it. Covers design choices for processing units, dependencies, indirect units, composite keys, sub-division, multiple batch programs, and batch summary reporting. Also notes extra processing, warns against manual transaction management, and begins implementation guidance with UML modeling, required BatchMain/BatchStream classes, and wrapper patterns."
+          },
+          {
+            "title": "Edition — pages 15-22",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000022",
+              "start_page": 15,
+              "end_page": 22
+            },
+            "summary": "Explains how to implement Cúram streamed batch programs, including chunker and stream wrapper patterns, entry-point setup, extracting processing-unit IDs, configuring chunk size/start key/wait settings, extra processing, per-record processing, skipped-case handling, and encoding/decoding chunk summary data. Also covers sending batch reports, global EnvVar stream settings, running multiple chunkers/streams in one instance, running multiple instances via instanceID, and using composite keys with tab-delimited encoding constraints."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000022",
+          "start_page": 5,
+          "end_page": 22
+        },
+        "summary": "Guidance for designing and implementing Cúram streamed batch programs. Explains the streaming model (chunker plus stream processes), benefits such as commit-per-chunk, automatic skip/retry of errored records, built-in logging/reporting, and restartability, and when streaming is justified by volume or structure. Covers identifying processing units and dependencies, indirect units, composite keys, extra processing, and batch summaries. Also details class/UML structure, chunker/stream entry points, record and skipped-case handling, summary encoding/decoding, report sending, global stream EnvVars, multiple instances, and composite-key encoding constraints."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section covers legal notices: fictitious sample data disclaimer, sample code copyright/license terms, warranty/liability limits, a link to Merative’s privacy policy, trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX, and the copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section lists trademark notices and legal attributions for names used in the document. It identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks, and notes that other company, product, and service names may also be trademarks. It also includes privacy policy and copyright/license notices stating the sample programs are provided “as is” under Merative terms."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000023",
+          "start_page": 23,
+          "end_page": 23
+        },
+        "summary": "This notices section sets the terms for using the publication: personal or enterprise reuse is allowed only if proprietary notices are preserved, but redistribution, derivative works, and external commercial use require Merative consent. It disclaims warranties, limits liability, notes export-law compliance, and states no patent license is granted. It also says non-Merative product info comes from external sources, links are for convenience only, and includes the copyright notice © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition) and Chapter 1, “Developing streamed batch programs,” with subsections on overview, why to develop them, design, implementation, and advanced topics. The chapter covers batch summary information, extra processing, chunker entry points, skipped cases, batch reports, configuration options, and multiple-process/instance behavior. Also includes notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Developing streamed batch programs",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for developing streamed batch programs: this guide assumes familiarity with the Cúram Batch Performance Mechanisms Guide, which covers general batch performance management and streaming. The section sits within an overview of streamed batch processing, where work is split into independent processing units, chunked by a “chunker” process, and handled by stream processes. Open this node if you need the background reference required before designing streamed batch programs."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces streamed batch programs and their purpose: splitting batch work into independent processing units that can run on separate machines. Explains the execution model: a chunker identifies units, groups them into fixed-size chunks, and stream processes handle one chunk at a time before the chunker summarizes results. Notes the guide is for developers of streamed batch programs and assumes familiarity with the Cúram Batch Performance Mechanisms Guide for general batch performance and streaming background."
+          },
+          {
+            "title": "1.2 Why Develop Streamed Batch Programs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Built-in features",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains why to develop streamed batch programs and highlights built-in batch streaming infrastructure features. It describes streamed processing as dividing work into independent units, chunking them into predefined sizes, and processing them on separate machines via stream processes, with a chunker coordinating and summarizing results. This section is useful for understanding the purpose, basic execution model, and what the infrastructure provides so these capabilities do not need to be implemented directly in the batch program."
+              },
+              {
+                "title": "Batch Volumes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains when and why to stream batch programs based on expected record volume, noting that single-threaded processing may not fit within time limits. Recommends using streaming broadly, even with in-process defaults, because production volumes are hard to predict. Notes some processes must remain serial in a single transaction, but parameters or multiple batch programs can sometimes split serial requirements while still parallelizing parts. Introduces the next design step: identifying the smallest safe processing unit to avoid overlap."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains why streamed batch programs are worth considering even without a specific mandate. It highlights built-in batch streaming infrastructure that already handles common needs: dividing work into independent units, chunking them into fixed sizes, running chunks on separate machines via stream processes, and summarizing results through a chunker. This section helps decide whether streaming is appropriate and clarifies that these capabilities usually do not need to be built into the batch program itself."
+          },
+          {
+            "title": "1.3 Designing Streamed Batch Programs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Identify the Processing Unit",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Understanding Processing Unit Dependencies",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to identify processing unit dependencies when designing streamed batch work. Covers serial dependencies that must run in order and may require all-or-nothing transaction handling, plus “fan out” dependencies where one item generates more work. Notes two handling options: process fan-outs immediately or defer them to later batch stages. Introduces common subdivision approaches: indirect units (group by related entity), composite keys (not directly supported here), and subdividing processing space into larger sub-units before deriving units, often via multiple batch programs."
+                  },
+                  {
+                    "title": "Multiple Batch Programs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains when and why to split processing into multiple batch programs, mainly to simplify complex or large batch work and optimize each task. Describes two approaches: independent batch programs, which can run concurrently if processing is independent, and a single batch program using parameters, which is not directly supported for concurrent runs because of shared program keys. Also covers adding meaningful batch summary information for operators, beyond generic chunk counts, with a recommendation to keep reports concise and limited to key categorizations."
+                  }
+                ],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "Explains how to identify the smallest safe processing unit for streamed batch work so parallel streams do not overlap. Covers common dependency patterns: serial dependencies that may need ordered or all-or-nothing processing, and fan-out dependencies that either run immediately or are deferred to later batch stages. Describes common subdivision approaches: indirect units grouped by related entity, composite keys (not directly supported), and first splitting processing space into larger sub-units, often via multiple batch programs."
+              },
+              {
+                "title": "Providing Meaningful Information using the Batch Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains when to split processing into multiple batch programs: for large workloads or separate processing spaces, use either independent batch programs or a single parameterized batch program. Notes independent programs can run concurrently if processing is independent; parameterized instances generally cannot share the same program key concurrently. Also describes using the batch summary to provide operator-facing reporting beyond generic chunk counts, including business-artifact counts and limited categorization, ideally no more than ten categories."
+              },
+              {
+                "title": "Identifying any Required Extra Processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains “extra processing” in streamed batch programs: it runs after chunking completes, but before the chunker starts its own stream, and executes in a single database transaction. Because it can delay processing, if five years of expected data would take more than a few minutes, a separate batch program is recommended instead. The section then begins implementation guidance and warns that transaction management calls are not supported anywhere in streamed batch program code, specifically begin(), commit(), and rollback()."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000012",
+              "start_page": 10,
+              "end_page": 12
+            },
+            "summary": "Explains how to design streamed batch programs by choosing a safe processing unit that avoids overlap and handles dependencies. Covers serial vs fan-out dependencies, and common subdivision methods: indirect units, unsupported composite keys, and splitting processing space via multiple batch programs. Describes when to use multiple batch programs or parameterized runs, including concurrency limits. Also shows how to use batch summary reporting to give operators meaningful counts and limited categorization beyond generic chunk metrics."
+          },
+          {
+            "title": "1.4 Implementing Streamed Batch Programs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Before you start",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section gives an important prerequisite for implementing streamed batch programs: do not use transaction management calls anywhere in the streamed batch code. Because the batch streaming infrastructure uses the database to coordinate between streams and the chunker, it must control transactions itself. The prohibited methods are TransactionInfo.begin(), commit(), and rollback()."
+              },
+              {
+                "title": "Modeling and Class structure",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000015",
+                  "start_page": 14,
+                  "end_page": 15
+                },
+                "summary": "Explains how to model streamed batch programs so Cúram generates the correct classes and batch-launcher metadata. A UML class must define one <<batch>> method per executable; streamed batches need both chunker and stream executables, plus implementations of BatchMain and BatchStream. Recommends placing required interface methods directly in the modeled classes. Because generated impl classes hide interfaces, wrapper classes are needed to expose them and delegate calls, with examples for chunker and stream wrappers."
+              },
+              {
+                "title": "Chunker Entry-point",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Extracting Processing Units IDs for the Chunker",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how the chunker entry point initializes and runs: set the start time, assign an instance ID, extract processing-unit IDs, configure batch main parameters, then call `batchStreamHelper.runChunkMain`. For this section, IDs must be passed as a `BatchProcessingIDList`, typically populated from modeled entity operations or custom logic. It notes that heavier ID-selection logic runs in the chunker thread, so allowing streams to filter unneeded cases may be more efficient, and that composite keys are possible if needed."
+                  },
+                  {
+                    "title": "Configuring the Chunker",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to configure a streamed batch chunker via `ChunkMainParameters`: `chunkSize`, `dontRunStream`, `startChunkKey`, and `unProcessedChunkReadWait`, noting which are typically exposed as environment variables and why. Also describes “extra processing” run once per batch in the chunker transaction using `doExtraProcessing`, how the batch stream entry point sets `instanceID` and calls `runStream`, and that per-record work occurs in `processRecord`."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Describes the chunker entry-point sequence: start timing with `batchStreamHelper.setStartTime()`, set a batch process `instanceID`, extract processing-unit IDs, configure chunker parameters, then invoke `batchStreamHelper.runChunkMain()`. IDs must be provided as a `BatchProcessingIDList`, typically from modeled entity operations or code, with optional complex selection logic but caution that this runs in the chunker thread. Notes that streams can filter unneeded records more efficiently and that composite keys are supported if needed."
+              },
+              {
+                "title": "Extra Processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Describes “extra processing” in a streamed batch program: work that belongs to the batch job but isn’t tied to any single chunk, executed once by the chunker in a single transaction, so size must be managed carefully. It is implemented in doExtraProcessing, which receives BatchProcessStreamKey and batchProcessParameters and returns a BatchProcessingResult with encoded summary data. The section also notes chunker configuration parameters, how the batch stream entry point sets instanceID and starts runStream, and that processRecord handles single-record processing."
+              },
+              {
+                "title": "Setting the Batch Stream Entry Point",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how the batch stream entry method starts processing: set `instanceID` to match the chunker, then call `batchStreamHelper.runStream` to launch the stream. It notes this method usually returns immediately so the process exits, but can be looped to start another stream in the same process after completion. This section sits alongside chunker configuration and extra processing details and is useful for understanding the stream startup flow and process lifecycle."
+              },
+              {
+                "title": "Processing a Single Record ID",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Describes the stream entry point and per-record processing for a chunked batch program. It explains that `process` must set the matching `instanceID` and call `batchStreamHelper.runStream`, usually then exiting. The core work happens in `processRecord`, which receives `BatchProcessingID` and `batchProcessParameters`. The surrounding page also covers chunker configuration (`chunkSize`, `dontRunStream`, `startChunkKey`, `unProcessedChunkReadWait`) and optional extra processing via `doExtraProcessing`, useful context for how single-record processing fits into the overall streamed batch flow."
+              },
+              {
+                "title": "Processing Skipped Cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how batch streaming handles skipped records. `processSkippedCases` runs once per chunk with a `BatchProcessingSkippedRecordList` so the stream can perform follow-up actions like notifications, but must note that records may be reprocessed later. It also warns that notifications should not assume the issue is permanent. The section continues into encoding chunk summary data via `getChunkResult`, including skipped-count handling and using a developer-chosen string format (often tab-delimited) consistent with decoding."
+              },
+              {
+                "title": "Encoding Batch Summary Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how `getChunkResult` encodes per-chunk batch summary data at the end of each processed chunk. The method receives the skipped-chunk count, while other totals should be stored in stream instance variables. Since the result is a single String, developers must choose an encoding scheme, typically tab-delimited, and ensure the field order and meaning match the corresponding decoding logic. Includes guidance on handling skipped records and distinguishing technical errors from business/data errors."
+              },
+              {
+                "title": "Decoding Batch Summary Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how batch summary information is decoded in the chunker, typically via a reusable `decodeProcessChunkResult` method shared with send-report processing. The decoding must match the stream’s field order and encoding used during batch summary encoding. Also notes related report generation: `sendBatchReport` receives batch details and processed/unprocessed chunk lists, and commonly includes counts, summary totals, runtime, and uses `CuramBatch` to email and save the report."
+              },
+              {
+                "title": "Sending a Batch Report",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how to implement batch report generation in the chunker’s sendBatchReport method. It describes required inputs (InstanceID, BatchProcessDtls, processed and unprocessed chunk details), typical report contents such as processed/skipped chunk counts, totals, and runtime, and notes that distribution can be via file, email, notification, or task. It also shows using curam.core.impl.CuramBatch to build an email message, set subject and output file ID, record start/end times, and send the report."
+              },
+              {
+                "title": "Global Batch StreamConfiguration Options",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Lists global EnvVar-based options affecting all streamed batch programs: `curam.batch.streams.batchprocessreadwaitinterval`, `chunkkeyreadwaitinterval`, `scanforunprocessedchunkswaitinterval` (all default 1000 ms), and `curam.trace.batchprogress` (default false, logging off). Notes these are handled by the batch streaming infrastructure, not specific implementations. Also begins advanced topics on running multiple chunker/stream instances in one process, warning about isolation and `instanceID` coordination to avoid contention and duplicate processing."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000019",
+              "start_page": 13,
+              "end_page": 19
+            },
+            "summary": "Explains how to implement streamed batch programs in Cúram: no transaction-management calls are allowed because the infrastructure controls DB transactions. Covers UML/modeling requirements for chunker and stream classes, BatchMain/BatchStream wrappers, chunker and stream entry-point flow, processing unit ID extraction, chunk configuration, extra processing, per-record and skipped-record handling, chunk-result encoding/decoding, and sending batch reports (often via CuramBatch). Also notes global stream configuration EnvVars and advanced multi-instance considerations."
+          },
+          {
+            "title": "1.5 Advanced Topics",
+            "level": 2,
+            "children": [
+              {
+                "title": "Running Multiple Chunker Processes in a Single Instance",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section explains how a single batch program instance can run multiple chunkers/streams sequentially because `runChunkMain` and `runStream` return after completion. It warns to isolate each process carefully, ideally by using separate classes per chunker/stream to avoid residual state. It also covers running multiple instances of the same batch program by varying `instanceID`, but cautions that the instance IDs must align with distinct processing units or contention and cross-locking can occur."
+              },
+              {
+                "title": "Running Multiple Instances of the Same Batch Program",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains how to run multiple instances of the same batch/chunker program by setting the instanceID programmatically, typically from a parameter. The stream instance(s) must use matching instanceIDs because the ID pairs chunkers and streams. It warns that this is technically possible but risky: the instanceID must also ensure each chunker picks distinct processing units, or different streams may process the same unit simultaneously, causing contention or cross-locking."
+              },
+              {
+                "title": "Using Composite Keys to Identify Processing Units",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000024",
+                  "start_page": 21,
+                  "end_page": 24
+                },
+                "summary": "Explains how to identify processing units with composite keys in streamed batch programs. Composite keys are not directly supported, but can be used if their encoding avoids tab characters, since the batch streaming infrastructure concatenates chunk IDs with tabs. If tabs appear in the encoded key, elements will be split and passed separately to processRecord. The processRecord implementation must also decode the BatchProcessingID back into the composite key’s sub-elements."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000024",
+              "start_page": 20,
+              "end_page": 24
+            },
+            "summary": "Advanced topics for streamed batch programs: multiple chunker/stream processes can be run sequentially in one instance because `runChunkMain` and `runStream` return when complete, but each process should be isolated (ideally separate classes) to avoid leftover state. Multiple instances of the same batch program can be run by varying `instanceID`, which must also match between chunker and stream and still select distinct processing units to avoid contention/cross-locking. Composite keys are possible if their encoding avoids tabs and `processRecord` decodes the `BatchProcessingID`."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000024",
+          "start_page": 9,
+          "end_page": 24
+        },
+        "summary": "Explains how to design and implement streamed batch programs in Cúram. Covers when streaming is useful, built-in benefits like chunk commits, error skipping, restartability, and generic reporting, plus how to choose safe processing units and handle dependencies. Describes implementation requirements for chunker/stream classes, chunk result encoding/decoding, and batch reporting. Also notes global stream EnvVars and advanced cases like running multiple chunkers/instances and using composite keys. Useful for deciding whether your batch work can be parallelized and how to build it correctly."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

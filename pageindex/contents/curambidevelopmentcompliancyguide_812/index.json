@@ -1,0 +1,640 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "3dfa3a7048f3f1b6",
+    "title": "Cúram 8.1.2 Business Intelligence Development Compliancy Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramBIDevelopmentCompliancyGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "3dfa3a7048f3f1b6d4580f4f7d9e8b5f07d195e8a75eed8afc7baf0da5835877",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:12:37+00:00",
+    "page_count": 24,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramBIDevelopmentCompliancyGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Business Intelligence Development Compliancy Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000024",
+      "start_page": 1,
+      "end_page": 24
+    },
+    "summary": "Overview of Cúram 8.1.2 BI development compliancy guidance for 8.1/8.1.1/8.1.2. It explains how to set up BI projects under source control, tag artifacts by application version, and use file comparisons during upgrades. It documents the client/server and Reporting directory structures and emphasizes that default BI artifacts should not be modified in place; custom work should go into custom files/components using project-specific prefixes and numeric IDs. The guide covers recommended extension points for entities/DDL, initial/demo data, ETL metadata, scripts, Java, and build extensions, plus API rules distinguishing internal vs external APIs. It also lists discouraged practices such as direct entity/ETL/BIRT/schema edits, adding data to default entities, overriding ETL processes, and depending on sample/demo artifacts. Front matter includes note, notices, privacy policy, and trademarks/legal terms.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note stating that before using the information and the supported product, readers should review the Notices section on page 23. It also shows the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introduces Cúram 8.1/8.1.1/8.1.2 edition info and the guide’s compliance rules for Business Intelligence and analytics customization. Covers starting new projects, directory structure for client/server and BI reporting artifacts, source control/tagging, and the distinction between internal vs external APIs. Explains that direct modification of default BI artifacts is prohibited or discouraged, and recommends creating custom files/processes for entities, initial/demo data, ETL metadata, scripts, Java code, and build extensions."
+          },
+          {
+            "title": "Edition — pages 15-22",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000022",
+              "start_page": 15,
+              "end_page": 22
+            },
+            "summary": "Guidance for compliant Business Intelligence development. Covers avoiding naming collisions with project-specific prefixes, using numeric IDs for custom initial/demo data, not modifying application files in place, not depending on sample/demo or internal APIs, and reflecting production/test changes back to development. Summarizes BI component compliance details, supported customization points, build-tool constraints, and discouraged extension mechanisms such as direct entity changes, ETL overrides, and modifying BIRT or schema metadata. Includes recommended custom-code structure for DDL, initial data, ETL, and metadata in custom components."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000022",
+          "start_page": 5,
+          "end_page": 22
+        },
+        "summary": "Guidance for compliant Cúram BI/analytics development in 8.1/8.1.1/8.1.2. Covers project setup, source control/tagging, client/server and Reporting directory structure, and the rule that default BI artifacts should not be modified in place. Recommends creating custom files for entities, initial/demo data, ETL metadata, scripts, Java, and build extensions; using project-specific prefixes and numeric IDs; avoiding sample/demo and internal APIs; and reflecting runtime changes back to dev. Also details build-tool constraints and discouraged extensions like direct entity/ETL/BIRT/schema changes."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section is a legal/administrative notice covering sample data disclaimers, copyright license terms for sample programs, the Merative privacy policy link, and trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It states that sample programs are provided “AS IS” without warranty and limits liability for their use."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section provides legal notices: fictional-name disclaimer, sample code copyright license and “AS IS” warranty disclaimer, privacy policy link, and trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others. It is useful if you need licensing terms, trademark ownership, or publication/legal information."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000023",
+          "start_page": 23,
+          "end_page": 23
+        },
+        "summary": "Legal notice and permissions for using the publication. Covers personal and enterprise use limits, preservation of proprietary notices, and prohibition on derivative works or external distribution without Merative consent. States no additional rights are granted, permissions may be withdrawn, and export laws must be followed. Includes strong “AS IS”/no warranty disclaimer, no patent license, and notes on third-party product/site references and liability."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter (Note, Edition, Notices, Privacy policy, Trademarks) and Chapter 1, “Developing Compliantly with Business Intelligence and Analytics,” with subsections on starting a new project, source control, changing source artifacts, source code/APIs, recommended and discouraged extension mechanisms, avoiding server compliancy issues, and component compliance details. Useful for navigating to relevant compliance and customization guidance."
+      },
+      {
+        "title": "1 Developing Compliantly with Business Intelligence and Analytics",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Starting a new project",
+            "level": 2,
+            "children": [
+              {
+                "title": "Review the client and server development directory structure",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Business Intelligence: Development Directory Structure",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000012",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Describes the Business Intelligence development directory structure under the Reporting directory. It explains that the components/custom folder is the recommended area for project-specific artifacts, while other component subdirectories contain product-delivered BI artifacts. Lists the major development folders for data_manager, ddl, etl, configtest, CuramBIWarehouse, jar, run, orcl, sample, and source, including subfolders such as staging, central, datamarts, oracle, db2, and initialdata/demodata. Notes that using custom is a convention, not an enforced rule."
+                  }
+                ],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000010",
+                  "start_page": 9,
+                  "end_page": 10
+                },
+                "summary": "Explains where client/server development artifacts live: webclient and EJBServer, each with a components/custom area for project-specific files, while other components contain delivered product artifacts. Notes custom is a convention, not mandatory, and EJBServer\\components\\custom\\model includes starter model files. Also covers BI artifacts in Reporting/components/custom and lists major BI development folders (data_manager, ddl, etl, configtest, CuramBIWarehouse, jar, run, orcl, sample, source) with subfolders like staging, central, datamarts, oracle, db2, initialdata, and demodata."
+              },
+              {
+                "title": "Source Code Control",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Use source code control for the development directory structure and tag all artifacts with the application version so file comparisons can identify added or changed files during upgrades. The section also warns that default Business Intelligence artifacts must not be modified because service packs or emergency patches may overwrite them. New customer-specific source files should be created separately: database entities in components\\custom\\DDL, initial/demo data in components\\custom\\data_manager, and BI metadata/ETL code in components\\custom\\ETL for IBM Infosphere Warehouse or Oracle Warehouse Builder."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Explains how to start a Cúram project with upgrade-safe development practices: put development artifacts under source control, tag them with the application version, and use comparisons to identify added/changed files during upgrades. Describes the client/server directory layout: webclient and EJBServer, each with a components\\custom area for project-specific files, while other components are delivered product artifacts. Also covers BI artifacts under Reporting\\components\\custom and lists major BI subfolders for DDL, data, ETL, staging, datamarts, warehouse, scripts, and sample/source content."
+          },
+          {
+            "title": "1.2 Business Intelligence: Changing Source Artifacts",
+            "level": 2,
+            "children": [
+              {
+                "title": "Write Source Code for Database Entities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Place all new customer-specific database entities in new source files under the DDL subdirectory of components\\custom. The section also reinforces source code control for all development artifacts, tagging by application version, and using file comparison reports for upgrades. It warns that default Business Intelligence artifacts must not be customized because service packs or emergency patches may overwrite them. Related guidance covers placing new initial/demo data in components\\custom\\data_manager and new BI metadata in components\\custom\\ETL."
+              },
+              {
+                "title": "Write Source Code for Initial and Demo Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Create new customer-specific initial and demo data in separate source files under the data_manager subdirectory of components\\custom. The section also emphasizes source code control for all development artifacts, tagging them by application version so file comparison tools can identify changes during upgrades. It reiterates that default Business Intelligence artifacts must not be modified because service packs or emergency patches may overwrite them."
+              },
+              {
+                "title": "Writing Source Code for IBM®Infosphere™ Warehouse and Oracle Warehouse Builder",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains source code control and safe modification practices for business intelligence artifacts. Recommends placing development directories under version control, tagging artifacts by application version, and using file comparisons during upgrades. Prohibits direct customer modification of default BI artifacts because service packs or emergency patches may overwrite them. Directs new customer-specific database entities to components\\custom\\DDL, initial/demo data to components\\custom\\data_manager, and IBM Infosphere Warehouse or Oracle Warehouse Builder metadata to components\\custom\\ETL."
+              },
+              {
+                "title": "New Build Environment Commands",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section notes that default Apache Ant build scripts in the scripts directory should not be modified directly; instead, use custom Ant scripts and Ant inheritance. It then explains Cúram source code/API usage: APIs are annotated as INTERNAL or EXTERNAL, with EXTERNAL being the supported customer-facing API. Java functionality is shipped as prebuilt JARs, with Javadoc and some sample source as the primary documentation. It also describes where to find JARs, sample source, and API docs, and warns that internal/restricted APIs are unsupported."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "Explains how to customize Business Intelligence artifacts safely: keep the development directory under source control, tag artifacts by application version, and use file comparison tools during upgrades. Default BI files must not be modified because service packs or emergency patches may overwrite them. New customer-specific database entities go in components\\custom\\DDL, initial/demo data in components\\custom\\data_manager, and IBM Infosphere Warehouse/Oracle Warehouse Builder metadata in components\\custom\\ETL."
+          },
+          {
+            "title": "1.3 Source Code and APIs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Internal APIs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains Cúram’s API classification and usage rules. Internal APIs are marked @Accesslevel(INTERNAL), may trigger Eclipse access restriction warnings, are not for customer use, and can change without notice. External APIs are marked @Accesslevel(EXTERNAL), are supported for customer code, and are documented in component Javadoc at components\\<component>\\doc\\api.zip. The section also notes that only documented operations should be referenced, and unsupported needs should be raised to Cúram Support for a possible extension or new API."
+              },
+              {
+                "title": "External APIs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "External APIs are the supported customer-facing Java APIs, marked with `@Accesslevel(EXTERNAL)`, and can be called directly from custom code. Javadoc for each component is provided in `components\\<component name>\\doc\\api.zip`; only documented operations should be used, or Eclipse may warn or restrict access. These APIs may evolve but remain backward compatible. If needed functionality is not available through External APIs or supported extension points, users should contact Cúram Support for a potential new API or customization mechanism."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000012",
+              "start_page": 12,
+              "end_page": 12
+            },
+            "summary": "This section explains Cúram’s API rules and source-code packaging. APIs are classified as Internal (@Accesslevel(INTERNAL), not for customer use, may change without notice, and may trigger Eclipse access-restriction warnings) or External (@Accesslevel(EXTERNAL), supported for customer code, documented per component in components\\<component>\\doc\\api.zip). Only documented operations should be used. It also notes that Cúram Java functionality is delivered as pre-built JARs with Javadoc and some sample source, and unsupported needs should be raised to Cúram Support for possible extension or new APIs."
+          },
+          {
+            "title": "1.4 Business Intelligence: Recommended Extension Mechanisms",
+            "level": 2,
+            "children": [
+              {
+                "title": "Initial Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains supported customization rules for BI “Initial Data.” Direct modification of default initial data is discouraged because service packs or emergency patches may overwrite changes. Customers may only override description fields and the default Warehouse language (BI.BILOCALE) in new files within the custom component. It also contrasts demo data and DDL customization guidance, noting that custom data should be created in customer-specific entities/views rather than altering defaults."
+              },
+              {
+                "title": "Demo Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Direct customer modification of demo data is discouraged because demo data is shipped as sample content and may be overwritten by updates. Instead, create custom demo data in new files within the custom component. This section sits within broader BI customization guidance, alongside recommendations for initial data and DDL objects, emphasizing supported extension mechanisms to preserve compatibility with service packs and emergency patches."
+              },
+              {
+                "title": "Entities (DDL)",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains supported customization for BI entities and other DDL objects. It discourages modifying default BI artifacts, initial/demo data, and default entities/views directly because service packs or patches may overwrite them. Instead, customers should add new files in the custom component, create customer-specific entities or views, and wrap BI maintenance operations in atomic processes. It allows new sequences or changing min/max values, adding data items to new entities, and updating certain initial data descriptions and warehouse locale defaults."
+              },
+              {
+                "title": "ETL Metadata",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Direct modification of BI ETL metadata is discouraged. Customers should not extend or override default ETL processing; instead, model custom ETL metadata and either wrap existing ETL processes or build new functionality. The section warns that direct overrides can be unsafe because data usage may not be fully visible and upgrades may break."
+              },
+              {
+                "title": "Other Scripts - Run and Grant Scripts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Recommends against directly modifying files in the run directory. Customers should create their own custom run and grant scripts instead: custom grant scripts may override defaults, and custom run scripts may extend or override default entries. The section sits alongside related guidance discouraging direct modification of Java and build environment files, favoring custom implementations or extensions to avoid upgrade problems."
+              },
+              {
+                "title": "Java Code",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Direct customer modification of Java code is discouraged. Instead, customers should create their own Java processes by wrapping existing Java logic or implementing new functionality. The section notes that direct Java changes can cause upgrade problems, and recommends custom extensions rather than overriding delivered code."
+              },
+              {
+                "title": "Build Environment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Direct modification of the build environment is discouraged. Instead, customers should create custom build extensions by wrapping existing build commands or implementing new processes. Apache Ant inheritance mechanisms can be used to extend or customize the build environment. Direct changes may cause upgrade problems."
+              }
+            ],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000014",
+              "start_page": 13,
+              "end_page": 14
+            },
+            "summary": "Guidance for BI customization and extension. It discourages direct modification of default BI artifacts because service packs/emergency patches may overwrite changes. Supported mechanisms include custom files in the custom component for initial data (description fields and BI.BILOCALE only), demo data, DDL objects (new sequences, customer-specific entities/views, keys, functions/procedures), ETL metadata, run/grant scripts, Java code, and the build environment. Emphasis is on wrapping existing processes or adding new custom implementations to preserve upgrade compatibility."
+          },
+          {
+            "title": "1.5 Avoiding common server compliancy issues",
+            "level": 2,
+            "children": [
+              {
+                "title": "Use project-specific prefixes in custom artifact names",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Business Intelligence: Examples of Project-specific Prefixes in Artifact Names",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to avoid naming collisions in Business Intelligence artifacts by using consistent, project-specific prefixes for all custom names. Gives examples such as custom ETL processes and custom data items, noting some artifact types have multiple identifiers. Also advises using numeric identifiers for custom initial/demo data from defined database ranges (for example, primary keys) so customer data does not clash with delivered BI initial or demo data."
+                  }
+                ],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Advises using a consistent, short project-specific prefix for all custom artifact names to avoid upgrade-time naming collisions with future Merative-delivered artifacts. Notes this applies to many identifier types (file names, XML IDs, Java class names, database identifiers) and may not apply when overriding default artifacts. Highlights examples such as database fields, code table items, entity classes, and other artifacts with multiple identifiers or shared namespaces."
+              },
+              {
+                "title": "Business Intelligence: Use Numeric Identifiers in Custom Initial and Demo Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains how to avoid identifier collisions in custom Business Intelligence initial and demo data. It notes that BI includes predefined initial data in BI schemas and demo data in a separate demo mart schema, and that customer-added initial/demo data should use identifiers from the defined database ranges (for example, primary keys). It is useful for understanding naming and key-allocation practices when extending BI data."
+              },
+              {
+                "title": "Avoid directly modifying application files in place",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Business Intelligence: Exceptions for In-Place Modifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Defines a narrow set of Business Intelligence files that may be modified in place: `BIBootstrap.properties`, `BIApplication.properties`, `.classpath`, `.project`, and BIBuildTools `.classpath/.project`. Emphasizes that most application files must not be edited directly because upgrades, fix packs, and iFixes can overwrite them and break compatibility. Also warns never to depend on sample/demo artifacts; BI sample/demo items are identified in the Data Dictionary, including default demo data, Cognos content, and Infosphere Warehouse control flows."
+                  }
+                ],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Warns not to edit application files in place because fix packs, iFixes, and upgrades may overwrite changes and break compatibility. Lists narrow BI exceptions that may be modified in place: `BIBootstrap.properties`, `BIApplication.properties`, `.classpath`, `.project`, and BIBuildTools `.classpath/.project`. Also says never depend on sample/demo artifacts, since they can change without notice; BI sample/demo items are identified in the Data Dictionary, including default demo data, Cognos content, and Infosphere Warehouse control flows."
+              },
+              {
+                "title": "Never create dependencies on sample or demo artifacts",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Business Intelligence Sample or Demo Artifacts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains Business Intelligence development restrictions: avoid modifying application files in place except for a few listed configuration files, because upgrades may overwrite changes. Also warns never to depend on sample/demo artifacts in custom code, since they can change without notice and may be identified by names, packages, or paths containing Internal, Sample, or Demo. For BI specifically, the Data Dictionary lists sample/demo objects; examples include default demo data, IBM Cognos content, and IBM InfoSphere Warehouse control flows."
+                  }
+                ],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Do not build custom code or references on sample/demo artifacts, as they may change without notice. Artifacts are sometimes identifiable by names, package names, or file paths containing Internal, Sample, or Demo. For Business Intelligence, the Data Dictionary lists sample/demo objects, including default demo data, IBM Cognos content, and IBM InfoSphere Warehouse control flows. This section also reiterates that application files should not generally be modified in place, except for a small set of BI configuration/project files."
+              },
+              {
+                "title": "Business Intelligence: Reflecting Runtime Changes Back to Development System",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Guidance for Business Intelligence customization and build compliance. It says any artifact-type changes made in production or test must be reflected back to development. Custom code should not depend on internal APIs; external classes are allowed, internal classes are discouraged, and access-restricted classes must not be referenced. It also explains that only licensed components contribute to BI builds, build scripts should not be edited directly, custom Ant inheritance should be used, and bundled drivers/tools must match supported prerequisites and database versions."
+              },
+              {
+                "title": "Do not Create Dependencies on Internal APIs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Custom code should not depend on internal APIs because they may change without notice in later product versions. The section also says to reflect any production or test artifact-type changes back into development. It outlines Business Intelligence component compliance: external classes may be referenced, internal classes are discouraged in new code, and access-restricted classes are unsupported for customization. It also notes build/script constraints, licensable components, and supported replacement of database drivers under the BI and Analytics prerequisites."
+              }
+            ],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000017",
+              "start_page": 15,
+              "end_page": 17
+            },
+            "summary": "Guidelines for avoiding server compliance problems in BI/Analytics development. Covers using short project-specific prefixes to prevent naming collisions across artifacts and identifiers, including database fields, code table items, entity classes, and transaction-scoped IDs; taking custom initial/demo data IDs from defined database ranges; avoiding in-place modification of application files except a few BI config/project exceptions; and never depending on sample/demo artifacts, which may change without notice and are listed in the Data Dictionary."
+          },
+          {
+            "title": "1.6 Business Intelligence: Component Compliance Details",
+            "level": 2,
+            "children": [],
+            "node_id": "n000040",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Business Intelligence component compliance rules for customization: external classes may be referenced; internal classes are only supported in existing code and discouraged for new code; access-restricted classes must not be referenced. Production/test artifact changes must be reflected back to development. BI build files are copied into temporary build folders, and only licensed components listed in BIApplication.properties contribute to builds. Javadoc identifies customization points and external APIs; Ant scripts must not be edited directly; build changes should use custom Ant scripts and inheritance; bundled drivers may be replaced only with supported versions."
+          },
+          {
+            "title": "1.7 Business Intelligence: Discouraged Extension Mechanisms",
+            "level": 2,
+            "children": [
+              {
+                "title": "Entities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "This section explains discouraged BI extension practices in 6.0.5 and later. For entities, adding new data items to default entities is discouraged; instead, create customer-specific entities or views and update reports/BI objects to use them. Changing entity attributes to Not Allow Null or adding required attributes without defaults is also discouraged; contact Support for exceptions. It also introduces related ETL guidance: do not directly modify or copy-paste default ETL processes; create unique custom ETL processes instead."
+              },
+              {
+                "title": "ETL Code Extensions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "ETL code extensions are now discouraged in several common forms. Do not directly modify default ETL processes or override them by copy/paste, as this can affect BI Warehouse data integrity and critical paths. For custom processing, create a new ETL process with unique physical and canonical names. The section also notes that adding new data items by extending default entities and then loading them via modified ETL is discouraged; instead use new customer-specific entities or views."
+              },
+              {
+                "title": "DDL and Initial Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section explains that direct modification of default BI/ETL/BIRT artifacts is discouraged because fix packs and patches may overwrite them. It recommends creating custom extensions in separate files/components, especially for new data items, entities, or attributes, and keeping default ETL/processing intact. It also introduces how to structure custom code for warehouse/data mart customization, starting with DDL changes by adding ALTER/CREATE/DROP statements to custom `DropAppTables.sql` and `CreateAppTables.sql` files for Oracle, including staging, warehouse, and datamart folders."
+              },
+              {
+                "title": "BIRT Reports",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section says direct modification of default BIRT report content is discouraged because service packs and emergency patches may overwrite it and make custom changes hard to reapply. It advises keeping customizations in separate files or custom components instead of altering delivered artifacts. The page also introduces related guidance on structuring custom code, including DDL changes for custom entities in the warehouse/datamart."
+              },
+              {
+                "title": "How to Structure Custom Code",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000024",
+                  "start_page": 20,
+                  "end_page": 24
+                },
+                "summary": "Explains how to structure custom code for BI/warehouse changes so default artifacts remain untouched and upgrade-safe. Recommends creating new ETL processes for new data items, adding custom metadata in separate files, and placing DDL/initial data/ETL control entries in custom component folders. Includes an Oracle example for adding a custom entity, with notes on staging, warehouse, datamart, and custom Warehouse Builder metadata objects. Also notes that direct modification of BIRT content is discouraged."
+              }
+            ],
+            "node_id": "n000041",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000024",
+              "start_page": 19,
+              "end_page": 24
+            },
+            "summary": "This section says several BI extension patterns are now discouraged in 6.0.5+: adding data to default entities, making entity attributes required/no-null without defaults, directly modifying or copy-pasting default ETL, and editing default BIRT content or BI schema metadata. It recommends using customer-specific entities/views, new unique ETL processes, and separate custom files/components so fix packs and patches do not overwrite changes. It also outlines how to structure custom code for Oracle warehouse/datamart customization, including custom DDL, initial data, ETL control entries, and custom Warehouse Builder metadata."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000024",
+          "start_page": 9,
+          "end_page": 24
+        },
+        "summary": "Guidelines for compliant BI/Analytics development in Cúram. Covers upgrade-safe project setup under source control, tagging artifacts by app version, and using comparisons during upgrades. Explains directory layout for webclient, EJBServer, and Reporting/components/custom, with BI subfolders for DDL, data, ETL, staging, datamarts, warehouse, scripts, and sample/source content. Describes supported extension mechanisms, API rules (internal vs external), and discouraged practices such as modifying default BI files, direct ETL/BIRT edits, and adding data to default entities."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

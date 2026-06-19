@@ -1,0 +1,652 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "bdd07259a954347c",
+    "title": "Cúram 8.1.2 Using the Data Mapping Engine Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/DevelopingDataMappingEngine_812.pdf",
+    "source_type": "pdf",
+    "sha256": "bdd07259a954347cbe323b13632e570a66f8c05eaeae86a528311bd934a5c473",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:12:12+00:00",
+    "page_count": 40,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/DevelopingDataMappingEngine_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Using the Data Mapping Engine Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000040",
+      "start_page": 1,
+      "end_page": 40
+    },
+    "summary": "Introductory guide to the Cúram 8.1.2 Data Mapping Engine. Explains how intake/screening data is stored in the datastore and mapped to evidence entities, PDF application forms, and third-party participants. Covers the data mapping environment and development workflow, logical maps, and how to write mapping specifications/configurations for static evidence, PDFs, and dynamic evidence. Also includes PDF form configuration, XML schema references for mapping specs/configs, and troubleshooting guidance with error logging. The final sections list APROCER001–042 error codes and show how to enable more detailed logging, plus advice on handling validation with minimal/defaulted intake values. Front matter includes notices, edition, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section on page 39 before using the information or the supported product. It also includes Merative US L.P. copyright dates (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This edition notice applies to Cúram 8.1, 8.1.1, and 8.1.2, with Merative copyright/trademark information. The excerpt then begins chapter 1, introducing the Data Mapping Engine: mapping datastore data to evidence entities or PDF application forms using the data mapping editor/XML. It covers the mapping environment, development process, datastore structure, creating logical maps, and the basics of writing mapping specifications, including conditions, code table value mapping, and mapping to multiple target entities."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers Data Mapping Engine patterns for creating target entities and mapping datastore relationships into PDFs/evidence. Topics include one parent to many child entities, following associations, and mapping attributes from related entities. Explains evidence application builder configuration, including caseParticipantDetails handling, alternate aggregated participant structs, and defaulting third-party values. Introduces target entity IDs to distinguish multiple mappings. For PDF application builder, documents field naming conventions, sections, append fields, repeated sections, code table descriptions, check boxes, radio buttons, and choice combos."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers Cúram Data Mapping Engine guidance for PDF and dynamic evidence mappings. Includes configuring PDF application forms for intake, then writing mapping specs/configs for dynamic evidence, including simple mappings and parent-child relationships. Explains metadata requirements, evidence versioning, ev-type-code usage, and create-participant definitions for generating participants and addresses from mapped data. Provides XML examples for HouseholdMember, Adoption/AdoptionPayment, Student/SchoolRepresentative, and MedicalInsurance-related participants, and ends by introducing the XML schemas used for mapping specifications/configurations."
+          },
+          {
+            "title": "Edition — pages 35-38",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "Cúram Data Mapping Engine reference covering XSD schemas for mapping specifications and mapping configurations, including key types/elements for target entities, conditions, attributes, participants, addresses, and evidence fields. Also includes troubleshooting guidance: enable detailed logging with curam.workspaceservices.application.processing.logging.on=TRUE, review application error codes APROCER001–APROCER042, and note that APROCER001–500 are reserved for internal use while APROCER501–999 are available for custom processing. Ends with guidance on handling validation issues by using minimal validations and default/temporary values during intake."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000038",
+          "start_page": 5,
+          "end_page": 38
+        },
+        "summary": "Edition notice for Cúram 8.1/8.1.1/8.1.2, followed by a full overview of the Data Mapping Engine. Covers mapping datastore data to evidence entities or PDF application forms, the data mapping environment and development process, logical maps, writing mapping specs/configs for static and dynamic evidence, PDF form configuration, third-party participant creation, XML schema references, and troubleshooting/error logging. Includes APROCER001–042 error codes, logging enablement, and guidance for handling validation with minimal/defaulted intake values."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "This section contains legal notices: fictitious examples disclaimer, sample program copyright license and warranty/liability limits, a link to Merative’s privacy policy, and a list of trademarks and copyrights for Merative and third-party products. It’s useful if you need licensing terms, privacy policy reference, or trademark information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Lists trademark and copyright notices for the document. Covers Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX marks, plus a note that other names may be trademarks of others. Also includes a privacy policy link, sample-program copyright/license terms, and liability disclaimers stating examples are provided “as is.”"
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000039",
+          "start_page": 39,
+          "end_page": 39
+        },
+        "summary": "Merative publication notices covering reuse permissions and restrictions for personal and commercial use, requiring preservation of proprietary notices and prohibiting derivatives or redistribution outside allowed terms without consent. States no other rights are granted, permissions may be withdrawn, and export laws must be followed. Includes strong “as-is” warranty disclaimers, no patent license, and notes that third-party product information is unverified and external websites are not endorsed. Also lists copyright notice for Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the “Developing with the Data Mapping Engine” chapter. It lists sections on data mapping overview, writing mapping specifications and configurations for static evidence/PDFs and dynamic evidence, configuring PDF application forms, mapping to third parties, data mapping schemas, and troubleshooting/error logging. Also includes front matter entries for Note, Edition, Privacy policy, and Trademarks."
+      },
+      {
+        "title": "1 Developing with the Data Mapping Engine",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Data mapping overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Data mapping environment and process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the Cúram data mapping engine and the data mapping environment. It explains that citizen data collected during intake and screening is stored in the datastore, then mapped into evidence entities or populated PDF application forms using mappings configured in the data mapping editor. It notes that mappings are saved in XML, supports both rapid evidence mapping and advanced/legacy mapping maintenance, and includes a diagram of the development process and interacting components."
+              },
+              {
+                "title": "How data is stored in the datastore",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "Explains how intake and screening data is stored in the datastore and why that matters for mapping. IEG scripts capture citizen information into a predefined schema, typically including household members and their relationships for a benefit application. The section links datastore structure to downstream mapping into case evidence or PDF application forms, which requires first identifying the desired output and understanding how source data is organized so logical maps can be created."
+              },
+              {
+                "title": "Creating logical maps",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how business analysts create logical maps to break datastore person data into case evidence entities, and how developers use these maps as requirements for mapping specifications/configurations. Notes that business rules can affect mapping output, such as creating separate disability evidence records for blindness and disability. Also introduces mapping specifications for static evidence and PDFs, describing source-to-target data mapping and showing a simple XML example that maps a Person datastore entity to a HouseholdMember evidence entity."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Overview of Cúram data mapping: citizen intake/screening data is stored in the datastore by IEG scripts, then mapped into case evidence entities or populated PDF application forms using the data mapping engine/editor. The section explains the data mapping environment, how mappings are defined in XML or the editor, and how the engine works with evidence/PDF builders. It also outlines the development process, emphasizing the need to understand datastore structure, desired output, and logical maps between source data and target evidence/forms."
+          },
+          {
+            "title": "1.2 Writing mapping specifications for static evidence and PDFs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Writing mapping specifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how business analysts create logical maps to break datastore information into case evidence entities and capture business rules that affect mapping. Introduces mapping specifications for static evidence and PDFs as XML definitions with source and target structures. Describes how the data mapping engine traverses application data and applies XML rules to transform datastore entities into evidence entities. Includes a simple example mapping a Person entity to a HouseholdMember evidence entity with attribute mappings."
+              },
+              {
+                "title": "Mapping condition expressions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to use `<condition>` in GUMBO map files to create target entities only when an expression is true. Shows a `Person.isPrimaryParticipant==true` example creating a `HeadOfHousehold`, and a second example mapping `Person.isBlind==\"ITYN4001\"` to a `Disability` target with a fixed `disabilityType` value. Notes that XML quotes must be escaped with `&quot;`. Includes context on conditional entity and attribute mapping syntax."
+              },
+              {
+                "title": "Mapping code table values",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to map datastore code table values to different target-model code table values using a `<map-code-table>` section with `<map-value>` entries. Also shows how to create multiple related target entities in one mapping, including parent/child evidence entities, with examples for a parent BusinessAsset and child Ownership. Notes this pattern preserves correct parent/child evidence relationships when Evidence Application Builder creates evidence."
+              },
+              {
+                "title": "Mapping to multiple target entities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to map to multiple target entities, especially parent/child groups of related evidence entities. Shows a sample `<target-entities>` block with a parent `BusinessAsset` entity mapped from source attributes and a child `Ownership` entity with a fixed `percentageOwned` value. Notes that this structure helps ensure Evidence Application Builder creates the correct parent/child evidence pattern. Also briefly introduces code table value mapping via `<map-code-table>` and `<map-value>` for translating source datastore values to target model values."
+              },
+              {
+                "title": "Matching one parent entity to several child entities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to map one parent entity to multiple child entities in the Data Mapping Engine. A single parent target entity is created once for the whole case, and each later execution creates additional child entities linked to that same parent. Shows XML target-entities example with a parent HholdMealsGroup and child MealGroupMember. Introduces a PDF-form mapping example and notes that fields have unique IDs (e.g., Job0.Name, Job0.Salary) and that datastore associations and matching patterns will be used next."
+              },
+              {
+                "title": "Matching patterns and following associations in the datastore",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000016",
+                  "start_page": 15,
+                  "end_page": 16
+                },
+                "summary": "Explains how the mapping engine matches parent and child entities while creating target entities, including one parent with many children. Shows a PDF form example where each Income within a Person maps to a Job target, with Job.Name taken from Person.firstName using `entity=\"Person\"` to follow the containment relationship. Introduces the idea that mappings can traverse associations/links in the datastore to populate fields from related entities."
+              },
+              {
+                "title": "Mapping household member data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to map household member data from CDS entities into a prefilled application form, focusing on the “How is this person related to you?” field. Shows sample mapping logic that conditionally processes the primary participant, follows the personID association, and maps Person.firstName to Name while mapping Relationship.relationshipType to RelType. Also introduces writing mapping configurations for static evidence and PDFs, describing mapping specifications as rules for transforming data into case evidence or completed application forms."
+              }
+            ],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000016",
+              "start_page": 12,
+              "end_page": 16
+            },
+            "summary": "Explains how to write GUMBO mapping specifications for static evidence and PDFs. Covers logical maps, source/target XML structure, and how the Data Mapping Engine traverses datastore entities and applies rules. Shows simple Person→HouseholdMember attribute mapping, conditional creation with `<condition>` and escaped quotes, code table translation with `<map-code-table>`, and creating parent/child target groups. Also introduces one-parent-many-children patterns and PDF form mapping that follows nested datastore associations using `entity=\"Person\"`."
+          },
+          {
+            "title": "1.3 Writing mapping configurations for static evidence and PDFs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Writing mapping configurations for the evidence application builder",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Handling caseParticipantDetails fields",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000020",
+                      "start_page": 19,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how the Data Mapping Engine handles `caseParticipantDetails` in evidence structs. By default, it auto-populates the field when it appears on an `EvidenceDetails` struct. For cases with multiple participants or third parties, it shows how to customize the Evidence Application Builder with a different `case-participant-relationship-name` and field aggregations. Examples cover an annuity owned by one participant and held by an institution, plus mapping and defaulting third-party name/address values such as `Unknown` and `curam.blankaddress`."
+                  },
+                  {
+                    "title": "Setting target entity identifiers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains why `<target-entity>` `id` attributes should be included in mapping configurations: they let the data mapping engine distinguish multiple mappings from the same source entity to the same target entity type, and are required when two conditions map to the same target. Uses a Person-to-Disability example showing blindness vs. unspecified disability. The section then introduces PDF application builder mapping, noting that PDF fields must follow naming/property conventions so Workspace Services can write data correctly."
+                  }
+                ],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000020",
+                  "start_page": 18,
+                  "end_page": 20
+                },
+                "summary": "Explains how to configure the evidence application builder’s mapping engine in two phases: first it creates an integrated case with members and relationships, then it creates evidence entities. Shows simple evidence configuration using base package naming conventions, then details how `caseParticipantDetails` is auto-populated on `EvidenceDetails` structs and how to customize alternate participant fields for third parties via `case-participant-class-name`, `case-participant-relationship-name`, and field aggregations. Also demonstrates mapping and defaulting third-party values like `Unknown` and `curam.blankaddress`."
+              },
+              {
+                "title": "Writing mapping configurations for the PDF application builder",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Grouping fields into sections",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains the basic convention of grouping PDF form fields into sections, usually matching form sections. Uses an XML application builder example with a section named “Applicant” containing text, radio button, and checkbox fields. Notes that the builder expects field names like “Applicant.Name” and “Applicant.Gender.” Also introduces standard text-field mapping and the special “append” type, where repeated writes concatenate values with a separator, e.g., combining first name, middle initial, and surname into one Name field."
+                  },
+                  {
+                    "title": "Filling text fields",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how PDF application builder maps fields within grouped sections and how to fill text fields. A section such as Applicant creates form field names like Applicant.Name and Applicant.SSN. Standard text fields use direct map-attribute assignments. The section’s Name field is marked type=\"append\", allowing multiple source attributes to write to the same text field cumulatively, separated by a specified append-separator (space), e.g., first name + middle initial + last name producing “Pat A Kayek.”"
+                  },
+                  {
+                    "title": "Filling repeated sections and code table descriptions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to populate repeated PDF form sections and translate code table values. Shows naming conventions for repeated household-member fields (e.g., OtherPerson0.Name) and a mapping section using type=\"multiple\" to repeat Person entries. Also notes codetable-class, which converts codes into localized descriptions such as Parent or Sibling instead of raw codes like RT1/RT3. Useful for handling repeated records, append fields, and readable code-table output in mapping XML."
+                  },
+                  {
+                    "title": "Check boxes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains PDF form field mappings for check boxes, radio buttons, and choice combos. Check boxes use `Yes` for checked and `No` for cleared; boolean values map automatically as True→`Yes`, False→`No`. Radio buttons are treated as one field with export values per option, illustrated with a gender example mapping code table values to `Applicant.Gender`. Choice combos are drop-down lists where the item text should match user-facing descriptions, shown with an AlienStatus example."
+                  },
+                  {
+                    "title": "Radio buttons",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how PDF radio buttons are modeled as a single field with one selectable item at a time, using export values to identify each option. Gives a Male/Female example mapping Cúram code table values SX1 and SX2 to a PDF field named Applicant.Gender, with mapping from Applicant.gender to Gender and a button-radio field configuration. Also introduces choice combos as drop-down lists where item text should clearly describe each choice."
+                  },
+                  {
+                    "title": "Choice combos",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains PDF form choice controls in Cúram. Covers check boxes, which map boolean values True/False to Yes/No and require that convention in the PDF; radio buttons, treated as one field with export values for each option and illustrated with a Gender code table example; and choice combos, which are drop-down lists where each item’s displayed text should match the code/table description, with an AlienStatus example."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000024",
+                  "start_page": 21,
+                  "end_page": 24
+                },
+                "summary": "Explains how the PDF application builder maps data into tailored PDF forms. Covers naming conventions for fields within sections (e.g. Applicant.Name, Applicant.Gender), standard text-field mapping, append fields that concatenate multiple values with a separator, repeated sections via type=\"multiple\", and codetable-class for localized code descriptions. Also describes check boxes (Yes/No, boolean auto-mapping), radio buttons with export values, and choice combos/drop-downs whose item text should match user-facing descriptions."
+              }
+            ],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000024",
+              "start_page": 17,
+              "end_page": 24
+            },
+            "summary": "Covers mapping configurations for static evidence and tailored PDF forms. For evidence, explains the two-phase builder process (create integrated case and then evidence entities), simple package-based setup, automatic population of `caseParticipantDetails`, custom third-party participant handling via `case-participant-class-name` and `case-participant-relationship-name`, and defaulting values like `Unknown` and `curam.blankaddress`. For PDFs, explains field naming by section, append fields, repeated sections, codetable localization, check boxes, radio buttons with export values, and choice combo/drop-down conventions."
+          },
+          {
+            "title": "1.4 Configuring PDF application forms",
+            "level": 2,
+            "children": [],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000025",
+              "start_page": 25,
+              "end_page": 25
+            },
+            "summary": "Explains how to configure PDF application forms for manual intake submission. It stresses using a real PDF form with fields, unique field names, and saving as AcroForm (not XFA) if using Acrobat Pro. It then outlines the workflow: upload the PDF form in Universal Access, associate it with an intake application type, create PDF form creation mappings for each program by uploading both the mapping configuration and specification files, and test the result by completing an intake and opening the generated PDF."
+          },
+          {
+            "title": "1.5 Writing mapping specifications and configurations for dynamic evidence",
+            "level": 2,
+            "children": [
+              {
+                "title": "Simple mapping specification and mapping configuration for dynamic evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Explains how to write mapping specifications and configurations for dynamic evidence, using HouseHoldMember as an example. It notes that dynamic evidence can have multiple versions over time, so mappings must target the currently effective evidence type version. The section emphasizes that attribute names in the mapping’s to field must exactly match DataAttribute names in the dynamic evidence metadata, and shows a simple XML map from datastore fields to dynamic evidence attributes."
+              },
+              {
+                "title": "Mapping parent-child dynamic evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000028",
+                  "start_page": 27,
+                  "end_page": 28
+                },
+                "summary": "Explains how to map dynamic evidence with parent-child relationships in the Data Mapping Engine. It shows an Adoption example where parent evidence includes related CaseParticipant fields and a child AdoptionPayment evidence has a mandatory parent relationship. The section provides sample metadata and a mapping specification that maps Adoption fields to a parent target entity and sets a fixed child amount value. It also notes that the `ev-type-code` identifies dynamic evidence and introduces `<def-create-participant>` and `<create-participant>` elements."
+              }
+            ],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000028",
+              "start_page": 26,
+              "end_page": 28
+            },
+            "summary": "Explains how to write Data Mapping Engine specs/configs for dynamic evidence. Covers the need to target the currently effective evidence type version, and that `map-attribute to` names must exactly match `DataAttribute` names in dynamic evidence metadata. Shows a simple HouseHoldMember mapping and `ev-type-code` configuration to distinguish dynamic from static evidence. Also introduces parent-child dynamic evidence mapping with an Adoption/AdoptionPayment example, including mandatory parent relationships, participant creation, and the new `<def-create-participant>` and `<create-participant>` elements."
+          },
+          {
+            "title": "1.6 Mapping to third parties",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating participants",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains how to create participants in Cúram mappings: first define reusable participant creation behavior with `<def-create-participant>` inside `<evidence-config>`, then invoke it from an `<entity>` using `<create-participant>`. Shows an example for a school representative with participant name and address fields, notes that referenced attributes must be String, and includes a sample mapping schema illustrating how evidence attributes (e.g., school name and address) can create a new participant and address."
+              },
+              {
+                "title": "Sample mapping schema for creating participants",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000032",
+                  "start_page": 30,
+                  "end_page": 32
+                },
+                "summary": "Explains how to configure participant creation in Cúram mapping: define reusable participant behavior with `<def-create-participant>` in `<evidence-config>`, then invoke it from `<create-participant>` inside `<entity>`. Provides a sample mapping schema showing how Education attributes map to a new Student participant and address, with a condition on `highestGrade`, plus additional examples for HouseholdMember, LivingArrange, MedicalInsurance, and Coverage entities. Useful for understanding participant/address creation mapping syntax and reuse via `refid`."
+              },
+              {
+                "title": "Sample mapping configuration for creating participants",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Provides an XML sample mapping configuration for the Data Mapping Engine to create participants. Shows multiple `<def-create-participant>` definitions for SchoolRepresentative, MedicalInsurancePolicyHolder, MedicalInsuranceGroup, and MedicalInsuranceProvider, mapping participant names and address fields from source attributes. Also shows entity mappings for HouseholdMember, HeadOfHousehold, Student, and MedicalInsurance, including create-participant references, case participant details, and roles such as SCH, MIPH, GPP, and MIP."
+              }
+            ],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000033",
+              "start_page": 29,
+              "end_page": 33
+            },
+            "summary": "Explains how to map evidence to third-party participants in Cúram. Introduces `<def-create-participant>` in `<evidence-config>` to define reusable participant/address creation behavior, and `<create-participant>` in `<entity>` to invoke it. Notes `dyn-evidence-primary-cpr-field-name` for dynamic evidence and that referenced attributes must be String. Includes examples for Adoption, Student/SchoolRepresentative, and MedicalInsurance participants (policy holder, group, provider), with roles like SCH, MIPH, GPP, and MIP, plus address field mapping and conditional mapping."
+          },
+          {
+            "title": "1.7 Data mapping schemas",
+            "level": 2,
+            "children": [
+              {
+                "title": "Schema for mapping specifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Defines the XML Schema for Data Mapping Engine mapping specifications. It introduces the `mp` namespace and core types/elements such as `TargetEntityRoleType` (`parent`/`child`), `AttachmentType` (`case`), `MapAttributeType`, `SetAttributeType`, `TargetEntityType`, `ConditionType`, and `MapEntityType`. The excerpt shows how mappings are structured with `map-attribute`, `set-attribute`, `condition`, and nested target/entity relationships, including attributes like `from`, `to`, `mapping-function`, `mapping-rule`, `name`, `type`, `attachment`, and `id`."
+              },
+              {
+                "title": "Schema for mapping configurations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Defines the XML Schema for mapping configurations in Cúram ApplicationBuilderConfig. It introduces complex types and elements for evidence fields, participant creation, participant names, and addresses, including attributes such as referenced-as, target-name, aggregation, refid, role, from, order, and type. It also defines EntityType and ParticipantCreatorDefinitionType, with optional and required attributes governing case participant relationships, EV types, target entities, and participant address/name mappings."
+              }
+            ],
+            "node_id": "n000043",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000036",
+              "start_page": 34,
+              "end_page": 36
+            },
+            "summary": "Defines the XML schemas for Data Mapping Engine artifacts. One schema covers mapping specifications in the `mp` namespace, including core types like target entities, attributes, conditions, roles (`parent`/`child`), and case attachment. The other covers mapping configurations in ApplicationBuilderConfig, including evidence fields, participant creation, participant names, addresses, entity definitions, and participant creator definitions with required/optional attributes for case participant and target-entity mapping."
+          },
+          {
+            "title": "1.8 Troubleshooting and error logging",
+            "level": 2,
+            "children": [
+              {
+                "title": "Handling validation issues in data mapping",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000040",
+                  "start_page": 38,
+                  "end_page": 40
+                },
+                "summary": "Explains how to handle validation issues in data mappings during intake and screening. The key guidance is to balance validating evidence for sensible insertion with avoiding unnecessary citizen questions. One recommended approach is to create evidence with minimal validation at intake, using defaulted or temporary values that can be corrected later. Pages 39–40 are legal notices, copyright, privacy, and trademark information, not substantive guidance."
+              }
+            ],
+            "node_id": "n000046",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000040",
+              "start_page": 37,
+              "end_page": 40
+            },
+            "summary": "Explains troubleshooting for Data Mapping Engine development: how to increase error-log detail by setting `curam.workspaceservices.application.processing.logging.on` to TRUE, and where to find mapping error messages. It lists default application error codes (APROCER001–APROCER042 shown) and notes that APROCER001–APROCER500 are reserved for internal use, while APROCER501–APROCER999 can be used in custom processing. Also gives guidance on validation issues during intake/screening: use minimal validation and temporary/default values for evidence to avoid unnecessary citizen questions."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000040",
+          "start_page": 9,
+          "end_page": 40
+        },
+        "summary": "This section explains how to develop with the Cúram Data Mapping Engine: how intake/screening data is stored in the datastore, how to design logical maps, and how to write mapping specifications and configurations for static evidence, PDFs, dynamic evidence, and third-party participants. It covers XML schema elements, PDF form setup, configuration workflow, and troubleshooting, including logging and APROCER error codes. Useful if you need to implement, edit, or debug datastore-to-evidence/PDF mappings."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

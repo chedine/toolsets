@@ -1,0 +1,148 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "09435b40398758ad",
+    "title": "Cúram 8.1.2 Getting Started Evidence Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/EvidenceIntro_812.pdf",
+    "source_type": "pdf",
+    "sha256": "09435b40398758adbe1973371dc88f60a2eab969096c470fd0753b9e09d89130",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:28:22+00:00",
+    "page_count": 14,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/EvidenceIntro_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Getting Started Evidence Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000014",
+      "start_page": 1,
+      "end_page": 14
+    },
+    "summary": "Front matter for the Cúram 8.1.2 Getting Started Evidence Guide. It includes a note to read the Notices section first, edition applicability for Cúram 8.1, 8.1.1, and 8.1.2, and the table of contents. The substantive content begins with Chapter 1, “Evidence,” which defines evidence as information used to determine client or household eligibility and outlines a getting-started guide for developers and administrators. Topics referenced include designing evidence, dynamic vs. static evidence, extracting dynamic evidence artefacts, person evidence, correction vs. succession, sharing and verifying evidence, maintenance, lifecycle, security administration, and creating dynamic evidence types. It also provides a brief introduction to the key business flow for evidence. The remaining pages are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the “Notices” section on page 13 before using the information or the supported product. It also includes the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000012",
+          "start_page": 5,
+          "end_page": 12
+        },
+        "summary": "Edition for the Cúram 8.1 evidence documentation. States this edition applies to Cúram 8.1, 8.1.1, and 8.1.2, with Merative copyright/trademark notices. Includes the table of contents pages leading into the Evidence chapter, but no substantive technical content beyond the edition applicability."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section covers legal notices for the document: fictitious example names, sample program copyright/license terms, warranty disclaimer, and liability limits. It also points to Merative’s privacy policy URL and lists trademarks for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others, with copyright attribution to Merative US L.P. (2012, 2024)."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section lists trademark and copyright notices for the document. It states that example names are fictitious, sample programs are provided “as is” under the Merative Client Agreement, and includes the Merative privacy policy link. It also identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000013",
+          "start_page": 13,
+          "end_page": 13
+        },
+        "summary": "This notices section gives the publication’s usage permissions and restrictions for personal and commercial copying, redistribution, and derivative works, requiring preservation of proprietary notices and Merative’s express consent for broader use. It also states no additional rights are granted, permissions may be withdrawn, and exports must comply with applicable laws. The text includes an as-is warranty disclaimer, limits liability, notes patents may apply, disclaims responsibility for non-Merative products and external sites, and lists the © Merative US L.P. 2012, 2024 notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter sections (Note, Edition), Chapter 1 “Evidence” with subsections “Getting started” and “Key business flow for evidence,” and closing legal sections (Notices, Privacy policy, Trademarks). Indicates page references and document edition Cúram 8.1.2."
+      },
+      {
+        "title": "1 Evidence",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Getting started",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introductory “getting started” section for Evidence. Defines evidence as information collected to determine client or household eligibility for a program/product and explains that rules use this evidence to assess component eligibility. Provides guidance for developers and administrators on where to go next, including designing evidence, dynamic vs static evidence, extracting dynamic evidence artefacts, person evidence, correction vs succession, sharing and verifying evidence, maintenance, dynamic evidence type versions, and creating dynamic evidence types."
+          },
+          {
+            "title": "1.2 Key business flow for evidence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000014",
+              "start_page": 10,
+              "end_page": 14
+            },
+            "summary": "Introduces the “Key business flow for evidence” section, explaining that the key business flow (KBF) provides context for individual parts of the evidence process. It points readers to a diagram of business flows and notes that specific flows, such as “Activate any in-edit evidence,” are linked to detailed descriptions. The remainder of the range shown is mostly page numbering and legal notices, not substantive content."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000014",
+          "start_page": 9,
+          "end_page": 14
+        },
+        "summary": "Introduces the Evidence section, defining evidence as information collected to determine client or household eligibility and used by product rules to assess component eligibility. The getting started part guides developers and administrators to related topics such as designing evidence, dynamic vs. static evidence, extracting dynamic evidence artefacts, person evidence, correction vs. succession, sharing and verifying evidence, maintenance, lifecycle, security, and creating dynamic evidence types. Also includes a brief overview of the key business flow for evidence; the rest is largely page numbering and legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "a9a35e249677ecbc",
+    "title": "Cúram 8.1.2 Deductions Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramDeductionsGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "a9a35e249677ecbc34435c3979acc01aec6618f1557067c2960f01d1ddfb9e9d",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:17:00+00:00",
+    "page_count": 26,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramDeductionsGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Deductions Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000026",
+      "start_page": 1,
+      "end_page": 26
+    },
+    "summary": "Overview of the Cúram 8.1.2 Deductions Guide. It explains how deductions reduce benefit payments to recover debts or pay third parties, and distinguishes applied, un-applied, and third-party deductions. It covers administration setup for deduction processing, including product limits (maximum deduction rate, minimum deduction amount, minimum payment amount), deduction type configuration, categories, fixed/variable amount limits, priorities, effective dates, and participant restrictions. It also describes managing deductions on a case: create, activate, deactivate, override limits, cancel, view statuses/history, and workflow events. Further topics include payment simulation and generation rules, how deductions are processed and skipped, and handling third-party payments when recipient accounts end, including cancel/regenerate behavior. The last pages are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section before using the product information or the product itself. It also includes Merative US L.P. copyright statements for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section introduces Cúram deductions and the three categories: applied, unapplied, and third-party. It explains how deductions reduce benefit payments, then details configuration of products and deduction types, including limits, default amounts, percentages, priorities, overlapping rules, participant types, and processing behavior. It also covers associating deduction types with products and maintaining deductions on cases, including creation workflow and category-specific requirements. Useful for understanding setup and case-level management of deductions."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Overview of Cúram deductions: how to define deductions (fixed or variable), choose deduction category (applied, un-applied, third party), assign them to nominees/components, set effective dates and priorities, and activate/deactivate them. Explains deduction status lifecycle, history tracking, workflow events, and summary settings by deduction type. Also covers simulating and generating payments with deductions, tax adjustment order, and maintenance of third-party payments, including notifications when a recipient account ends plus cancel/regenerate options."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000024",
+          "start_page": 5,
+          "end_page": 24
+        },
+        "summary": "This section gives the full overview of Cúram deductions. It explains the three deduction categories (applied, un-applied, third party), how deductions reduce benefit payments, and how to configure product limits, deduction types, priorities, effective dates, and category-based case creation. It also covers maintaining deductions on cases, status/history tracking, workflow events, payment simulation and generation rules, and handling third-party payments when recipient accounts end, including cancel/regenerate behavior."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "This section contains legal notices for the document: sample data disclaimer, sample code copyright/license terms, warranty/liability disclaimer, a link to the Merative privacy policy, and a list of trademarks and copyrights. It is useful for licensing, usage rights, and privacy reference."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "Lists trademark and copyright/legal notices for the document. States that sample names and programs are fictitious, sample code may be copied/modified/distributed under the Merative Client Agreement, and is provided “AS IS” without warranty. Includes Merative privacy policy link and trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a 2012, 2024 Merative copyright notice."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000025",
+          "end_unit_id": "p000025",
+          "start_page": 25,
+          "end_page": 25
+        },
+        "summary": "Legal notices and usage permissions for the publication. Covers personal and commercial reproduction rules, requirement to preserve proprietary notices, restrictions on distribution/derivative works, export-law compliance, and Merative’s right to withdraw permission. States the content is provided “AS-IS” without warranty, with no implied warranties or patent license. Includes disclaimers about non-Merative products and external websites, and ends with Merative copyright © 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Deductions guide. It lists front matter (Note, Edition) and Chapter 1 topics: deductions overview, deduction categories, configuring deductions (products, deduction types, associating types with products), maintaining deductions on a case (create, activate, deactivate, override maximum rate, cancel, view, statuses, workflow events), processing case deductions, and maintaining third-party payments. Also lists notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Cúram Deductions overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Deduction categories",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains the three Cúram deduction categories used to reduce benefit payments: applied, un-applied, and third-party. Applied deductions offset specific liabilities owed to the organization, including debts of the primary client or other household participants. Un-applied deductions are standalone amounts used for general recovery, such as recouping an emergency fund payment. Third-party deductions pay debts or charges owed to other participants or external recipients (for example utilities, housing, fines), and recipients are added as case participants; the system alerts when they end."
+          },
+          {
+            "title": "1.2 Configuring deductions",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring products for deductions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains how to configure benefit products for deduction processing. It covers three product-level financial controls: maximum deduction rate, minimum deduction amount, and minimum payment amount. These settings limit how much can be deducted from benefit payments, prevent deductions below a minimum value, and ensure recipients still receive at least a minimum payment after deductions. It also notes that the maximum deduction rate can be overridden on a case-by-case basis."
+              },
+              {
+                "title": "Configuring deduction types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Setting the deduction type name and category",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains how to configure a deduction type’s unique name and category. Deduction names are code table values and should reflect what the deduction pays (for example, tax or child support). It also describes the three categories—applied, un-applied, and third party—and notes that only deductions in the selected category can be created on a case, provided that category has been configured in deduction administration."
+                  },
+                  {
+                    "title": "Setting limits for deduction amounts",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Setting limits for fixed and variable deductions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000016",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "This section explains how to configure deduction types, including unique names, deduction categories, and limits for deduction amounts. It distinguishes fixed deductions (set dollar amounts) from variable deductions (percentage-based amounts) and describes how maximum and minimum settings constrain what users can enter or what can be calculated during payment processing. It also notes that only categories configured in deduction administration are available when creating deductions on a case."
+                      },
+                      {
+                        "title": "Setting the default amount for fixed deductions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000017",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Explains how to set default amounts for fixed deduction types. A default amount becomes the standard rate for that deduction type and auto-populates when a deduction is created on a case, reducing manual entry. The page also introduces percentage settings for variable deductions, including a maximum allowed percentage and a default percentage value, and describes prioritizing deduction types, where priorities control payment processing order and can be automatically re-sequenced or assigned the next available priority."
+                      },
+                      {
+                        "title": "Percentage settings for variable deductions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000018",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Describes percentage settings for variable deductions: one setting caps the maximum percentage that can be entered for a case deduction, and another sets the default percentage automatically populated when a deduction is created. Also explains how deduction type priorities are configured, automatically resequenced when new types are added, and optionally auto-assigned to the next available priority."
+                      }
+                    ],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains how to configure deduction types and apply amount limits. It covers unique deduction names, deduction categories, and the rule that only categories configured in deduction administration can be used on cases. It then describes maximum and minimum deduction amount settings for both fixed deductions (entered dollar amounts) and variable deductions (percentage-based amounts evaluated during payment processing). For fixed deductions, these limits constrain what users can enter; for variable deductions, they constrain the calculated payment amount."
+                  },
+                  {
+                    "title": "Prioritizing deduction types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains how deduction type priority controls the order deductions are processed when a payment is generated. Priorities are set by organizational importance, and when a new deduction type is created or updated, the system automatically resequences existing priorities to keep them consistent. It gives an example of priorities shifting when a new type is inserted at priority 1. It also notes an option to auto-assign the next available priority instead of entering one manually."
+                  },
+                  {
+                    "title": "Preventing overlapping deductions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to prevent overlapping deductions on a case: by default, same-type deductions can overlap, but configuration can block overlaps per product or globally for all products using a deduction, with validation shown on activation. Also covers configuring available participant types for applied and third-party deductions, actions when insufficient benefit remains to cover a deduction (including partial deductions), and associating deduction types with products so they can be created only on eligible benefit cases."
+                  },
+                  {
+                    "title": "Configuring participant types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how to configure which participant types can be selected when creating applied and third party deductions. Supported types include person, employer, external party, product provider, information provider, service supplier, and utility. It also notes that organizations can restrict these options to limit who can hold liabilities or receive deductions. The section sits alongside related deduction setup topics such as preventing overlapping deductions, configuring processing when funds are insufficient, and associating deduction types with products."
+                  },
+                  {
+                    "title": "Configuring processing for deduction types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains deduction-type processing setup. It covers configuring what happens when a deduction cannot be fully applied due to insufficient benefit funds, including preventing the deduction or allowing a partial amount. It also notes that deduction types must be associated with specific benefit products before they can be created on related cases, which controls where deductions are allowed."
+                  }
+                ],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "This section explains how to configure deduction types as case templates: assign a unique code-table name, choose a category (applied, un-applied, or third party), and ensure the category is configured in deduction administration before use on cases. It also covers amount controls for fixed and variable deductions, including maximum/minimum limits, default amounts, and percentage settings. Finally, it describes priority sequencing for processing deductions, automatic resequencing when priorities change, and auto-assigning the next available priority."
+              },
+              {
+                "title": "Associating a deduction type with a product",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains that a deduction type must be associated with a benefit product before it can be created on cases for that product, ensuring only approved deduction types are allowed on those benefit cases. Gives the example that an income support deduction type can be used on any income support product deliveries, while an unassociated deduction type cannot be created on cases based on that product."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000013",
+              "start_page": 10,
+              "end_page": 13
+            },
+            "summary": "Explains how to configure deductions in system administration so caseworkers can create them on cases. Covers product-level controls for benefit products: maximum deduction rate, minimum deduction amount, and minimum payment amount. Describes deduction types as templates, including unique names/code-table values, category selection, amount limits for fixed and variable deductions, default amounts, variable percentages, and priority sequencing/auto-assignment. Also covers preventing overlapping deductions, restricting participant types, handling insufficient funds, and associating deduction types with benefit products."
+          },
+          {
+            "title": "1.3 Maintaining deductions on a case",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating deductions on a case",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Selecting the deduction category",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how caseworkers choose a deduction category: applied, un-applied, or third party, and what each means. Covers entering deduction amounts as either fixed or variable, including default inheritance, min/max limits, and how fixed amounts are tied to a selected nominee. Also notes variable deductions are percentage-based and can be applied to a nominee or case component. Useful for understanding deduction setup and processing rules."
+                  },
+                  {
+                    "title": "Entering a fixed deduction amount",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to enter a fixed deduction amount for new deductions. Covers that the amount is a set value inherited from deduction type defaults, can be changed within configured min/max limits, and must be assigned to one nominee’s payment only. Notes the nominee can be the primary client or another nominated recipient, with an example showing deduction from a selected nominee’s benefit. Also contrasts fixed amounts with variable deduction rates, which are percentage-based and can be assigned to a nominee or case component."
+                  },
+                  {
+                    "title": "Entering a variable deduction rate",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000016",
+                      "start_page": 15,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to enter a variable deduction rate instead of a fixed amount. Variable deductions are percentage-based and can be assigned to a nominee, a case component, or left unassigned to apply across payments depending on case structure. The section covers how the percentage is inherited from deduction type setup, how deductions are calculated for components vs nominees, and examples showing how different assignment choices reduce payment amounts."
+                  },
+                  {
+                    "title": "Defining deduction time periods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Defines deduction time periods as the effective dates for a deduction: every deduction has a start and end date, and the start date cannot be after the related benefit case’s expected end date. Also explains deduction priority, including case-by-case changes, inheritance from deduction type, automatic resequencing of other deductions when priorities change, next-available priority assignment, and that tax adjustments are applied before deductions. Ends with a table summarizing deduction type settings for fixed/variable, assigned-to, and applied/un-applied combinations."
+                  },
+                  {
+                    "title": "Setting the deduction priority",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how deduction priority controls the order deductions are processed when payments are generated. Priority is set case by case, inherited from the deduction type, and changing it can automatically resequence other deductions and update duplicate priorities. Notes that lower priority increases risk of insufficient funds after earlier deductions. Also covers automatic assignment of the next available priority, the rule that two deductions cannot share a priority for nominee assignments, and that tax adjustments are applied before deductions."
+                  },
+                  {
+                    "title": "Summary of deduction settings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section summarizes deduction settings by type, including whether a deduction is fixed or variable and what it can be assigned to. It distinguishes Un-Applied vs Applied deductions: fixed deductions are limited to a single nominee, while variable deductions may be assigned to a single nominee, all nominees, a component, or neither. The section also follows discussion of deduction time periods and priority rules, including how priorities are inherited, auto-sequenced, and affected by tax adjustments."
+                  }
+                ],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000017",
+                  "start_page": 14,
+                  "end_page": 17
+                },
+                "summary": "Explains how to create case deductions: choose the category (un-applied, applied, or third party), enter a fixed amount or variable percentage, and define effective dates and priority. Fixed deductions use an inherited amount within min/max limits and must be tied to one nominee. Variable deductions can be assigned to a nominee, a component, all nominees, or neither, affecting how the percentage is distributed. Also covers priority sequencing, duplicate-priority handling, overlapping deduction rules, and tax adjustments being applied before deductions."
+              },
+              {
+                "title": "Activating a deduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains how deductions are managed after creation: activating them to create a financial schedule and start processing from the start date, deactivating them to stop future processing and prioritize other deductions, overriding a product’s maximum deduction rate when needed, and canceling deductions that have not yet been deducted. It also notes that future deductions should be prevented by changing the deduction end date."
+              },
+              {
+                "title": "Deactivating a deduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains that an activated deduction can be deactivated so it will no longer be processed when case payments are generated. Deactivation is useful when not all deductions can be processed due to insufficient benefit amount, allowing higher-priority deductions to continue. It also frames deactivation alongside related actions on deductions: activation creates the financial schedule, maximum deduction rates can be overridden, and deductions can be canceled only if they have not already been deducted."
+              },
+              {
+                "title": "Overriding the maximum deduction rate",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how to override a benefit product’s maximum deduction rate for a case, allowing deductions to exceed the system-defined percentage when needed. Gives an example where rent, gas, and electricity deductions would exceed the cap, but electricity is still allowed by agreement. The section sits among related deduction actions: activating deductions to create financial schedules, deactivating them to stop processing, and canceling them only if they have not already been deducted."
+              },
+              {
+                "title": "Canceling a deduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains deduction lifecycle actions: activating deductions to create a financial schedule and start processing from a chosen date; deactivating deductions to stop them from being processed; overriding a product’s maximum deduction rate when needed; and canceling deductions. It notes that deductions can be manually canceled unless already deducted from a benefit payment, and that to stop future deductions the end date must be changed to the case’s last payment date."
+              },
+              {
+                "title": "Viewing deductions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how to view deductions at case and person level. Case lists include applied, un-applied, third party, active, canceled, and past-period deductions, with fields like name, priority, amount, percentage, and status. A running history of related deduction transactions is available. Person lists show all deductions for the primary client across cases. Deduction detail views include common fields such as nominee, dates, action type, component, and business status, plus type-specific info for applied and third-party deductions. Deduction history tracks status and processing changes over time."
+              },
+              {
+                "title": "Deduction statuses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains deduction history and statuses. The system records each processing attempt in deduction history, including update date, status, and payment details if processed; it also shows related liability amounts. Describes five deduction statuses: in-active (created), active (activated), processed (successfully processed), skipped (insufficient benefit amount), and canceled (deleted). Also notes workflow events can be mapped to custom processes, including events for activating and deactivating deductions."
+              },
+              {
+                "title": "Deduction processes that raise workflow events",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains deduction history and status tracking, then introduces workflow events raised by deduction processes. Deduction history records every processing attempt, including skipped deductions, update date, status, and payment/liability details when applicable. It lists five statuses: in-active, active, processed, skipped, and canceled. The workflow section says organizations can map events to custom workflow logic; this page specifically covers events raised when a deduction is activated or deactivated."
+              }
+            ],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000020",
+              "start_page": 14,
+              "end_page": 20
+            },
+            "summary": "Explains how to maintain deductions on a case: create applied, un-applied, or third party deductions; enter fixed amounts or variable percentages; assign deductions to nominees or components; set effective dates and processing priority; and understand overlapping/duplicate-priority rules and tax adjustments. It also covers lifecycle actions: activate to create the financial schedule, deactivate to stop processing, override a product’s maximum deduction rate, cancel only if not yet deducted, and change the end date to stop future deductions. Includes viewing deductions, history, statuses, and workflow events."
+          },
+          {
+            "title": "1.4 Processing case deductions",
+            "level": 2,
+            "children": [],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000021",
+              "start_page": 21,
+              "end_page": 21
+            },
+            "summary": "Explains how case deductions are processed by simulating payments online before issue. The system rolls financial components forward to a selected date, calculates payment amount, cover period, and effective date, and applies active deductions and tax adjustments to show reducing and final payment amounts. Deductions may be skipped in simulation if deduction rates or amount conditions are not met. If no active deductions exist, only payments are shown. Also notes users can modify deductions or their order if the simulated result is not desired."
+          },
+          {
+            "title": "1.5 Maintaining third-party payments",
+            "level": 2,
+            "children": [],
+            "node_id": "n000040",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000026",
+              "start_page": 22,
+              "end_page": 26
+            },
+            "summary": "This section explains third-party payment maintenance in Cúram: how payments are generated from deductions when a case is activated, how deductions are calculated and validated, and how deduction history is recorded. It describes what happens when a participant account closes and they receive third-party payments, including workflow alerts to end deductions. It also covers canceling and regenerating third-party payments, reissuing canceled payments to the original third-party nominee. The remaining pages are legal notices and licensing text."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000026",
+          "start_page": 9,
+          "end_page": 26
+        },
+        "summary": "Overview of Cúram deductions: explains how benefit payments can be reduced to recover debts or pay third parties, and defines applied, un-applied, and third-party deductions. Covers administration setup (product limits, deduction types, categories, amounts, percentages, priorities, and participant restrictions), case maintenance and lifecycle actions, payment simulation and processing rules, and third-party payment handling when recipients close. Later pages are mostly workflow notes and legal/licensing notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

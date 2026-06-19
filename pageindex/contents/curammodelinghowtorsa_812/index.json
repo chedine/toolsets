@@ -1,0 +1,995 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "b8d3ef5e06ec689f",
+    "title": "Cúram 8.1.2 Working with the Cúram Model in IBM® Rational® Software Architect Designer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramModelingHowToRSA_812.pdf",
+    "source_type": "pdf",
+    "sha256": "b8d3ef5e06ec689f602cd4bb54d455314c12085eacd7c384f33a66e1e7038bc5",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T18:01:40+00:00",
+    "page_count": 28,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramModelingHowToRSA_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Working with the Cúram Model in IBM® Rational® Software Architect Designer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000028",
+      "start_page": 1,
+      "end_page": 28
+    },
+    "summary": "Front matter and Chapter 1 overview for the Cúram 8.1.2 guide on using IBM Rational Software Architect Designer to modify the Cúram model. Covers the Cúram profile/template, the four modeling views (Project Explorer, Properties, Diagram Editor, Model Editor), creating/opening/closing models, model fragments, UML maintenance, searching, specialized tabs/wizards, class diagrams, validation, and modeling Cúram elements such as domains, entities, structs, aggregates, process classes, and facade classes. Also includes project explorer context-menu actions by class type and broken-reference handling, including the qualified name map export/import workflow and fallback search/browse repair. The section also contains notices, privacy policy, and trademarks/legal terms.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Preliminary notice section advising readers to review the Notices on page 27 before using the information or the supported product. Includes Merative US L.P. copyright statements for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory edition/front-matter for the Cúram 8.1/8.1.1/8.1.2 guide, followed by the start of Chapter 1 on using Rational Software Architect Designer to modify the Cúram model. Covers the Cúram profile/template, modeling perspective views, the model editor and fragments, creating/opening/closing/navigating models, basic UML element maintenance, adding/modifying/deleting elements, creating relationships, and warnings about unsupported actions and broken reference handling."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers Rational Software Architect Designer tasks for editing the Cúram model: copying/moving classes, operations, and attributes; changing attribute order; searching models, references, and types; and using specialized tabs/wizards for foreign keys, secure fields, parameters, operations, entity operations, domains, diagrams, fragments, and validation. Also explains how to model core Cúram elements: domains, entities, structs, process classes, and facade classes, including adding attributes, operations, return types, and relationships. Ends with project explorer context menu options by class type."
+          },
+          {
+            "title": "Edition — pages 25-26",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000026",
+              "start_page": 25,
+              "end_page": 26
+            },
+            "summary": "Explains how Rational Software Architect Designer resolves broken model references in Cúram using element IDs and why upgrades can introduce broken links. Describes the extension that uses a previously exported Qualified Name Map to map old IDs to new qualified names and resolve references automatically. Includes the export workflow (File > Export > Curam > Qualified Name Map) and the preference setting to load the map (Window > Preferences > Curam > Qualified Name Map). Also notes where broken-reference errors appear and the manual search/browse fallback."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000026",
+          "start_page": 5,
+          "end_page": 26
+        },
+        "summary": "Introductory front matter for the Cúram 8.1/8.1.1/8.1.2 guide, then a full overview of using Rational Software Architect Designer to modify the Cúram model. Covers the Cúram profile/template, modeling views, model editor and fragments, creating/opening models, UML maintenance, searching, specialized wizards/tabs, and modeling domains, entities, structs, process, and facade classes. Also lists project explorer context-menu options by class type and explains broken-reference handling, including the Qualified Name Map export/import workflow and manual fallback."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "States that the Merative privacy policy is available at merative.com/privacy. The surrounding page is largely legal and licensing boilerplate, including sample code copyright/license terms, warranty disclaimer, and trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "This section lists legal notices and trademarks for the document, including Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. It also states that sample names in the document are fictitious, sample programs are provided “AS IS” under Merative client agreement terms, and references Merative’s privacy policy. Useful for readers needing licensing, copyright, trademark, or legal-use information."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000027",
+          "end_unit_id": "p000027",
+          "start_page": 27,
+          "end_page": 27
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and commercial reproduction limits, preservation of proprietary notices, restrictions on derivative works and redistribution, export-law compliance, and Merative’s right to withdraw permissions. Includes an “AS IS” no-warranty disclaimer, patent notice, third-party product/site disclaimers, and copyright information. Useful if you need licensing, reuse, warranty, or legal-use details."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a Cúram 8.1.2 manual on using Rational Software Architect Designer to modify the Cúram model. It lists Chapter 1 topics: integrating the Cúram model, modeling views, maintaining the model and UML elements, searching, specialized tabs/wizards, creating class diagrams and fragments, validation, modeling Cúram elements (domain definitions, entities, structs, aggregates, process/facade classes), project explorer context menu options, and broken reference resolution. Also includes Notes, Edition, Notices, Privacy Policy, and Trademarks."
+      },
+      {
+        "title": "1 Using the Rational® Software Architect Designer to modify the Cúram Model",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Integrating the Cúram model into Rational® Software Architect Designer",
+            "level": 2,
+            "children": [
+              {
+                "title": "The modeling views",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Project Explorer view",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000013",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains the Project Explorer view in Cúram modeling: it shows all related model elements, diagrams, and child elements in a navigable tree. Users can right-click selected items to access context menu actions. This section appears within an overview of the four Rational Software Architect Designer modeling views and how each supports UML/Cúram model development."
+                  },
+                  {
+                    "title": "Properties view",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "The Properties view lets users view and edit the selected model element’s properties, including general UML settings, stereotypes, relationships, and documentation. For Cúram modeling, it uses the General, Documentation, and Cúram tabs. General controls base UML attributes like name and visibility; Documentation manages element notes; Cúram contains stereotype-specific properties for the Cúram domain."
+                  },
+                  {
+                    "title": "Diagram editor",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "The Diagram editor is used to create, view, and edit diagrams in the Rational Software Architect Designer Modeling Perspective. It is split into a Diagram view and a Palette; the Palette includes a Cúram drawer with commonly used model elements for drag-and-drop. The Diagram view lets you see and modify model elements and their relationships, and a right-click context menu supports adding model classes."
+                  },
+                  {
+                    "title": "Model editor",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to use the Model Editor in Rational Software Architect Designer to view and edit a Cúram model or fragment. Covers opening a model, the purpose of the five tabs (Overview, Details, Diagrams, References, Fragments), and notes that Cúram profiles/model libraries are preconfigured and usually should not be changed. Also introduces model maintenance and creating models from templates, including the Cúram template and two ways to launch the Create Model wizard."
+                  }
+                ],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section introduces the four UML modeling views in Rational Software Architect Designer’s Modeling Perspective: Project Explorer, Properties, Diagram Editor, and Model Editor. It explains what each view is for, including navigating model elements, editing properties and documentation, creating/editing diagrams with the Cúram palette, and viewing a model’s configuration in tabbed form. It also highlights the Cúram-specific tabs in Properties (General, Documentation, Cúram) and notes the Project Explorer context menu and Diagram Editor drag-and-drop workflow."
+              },
+              {
+                "title": "Maintaining the model",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating the model",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to create a Cúram model in Rational Software Architect Designer using the Create Model wizard and the supplied Cúram template, which preconfigures model capabilities and supported menus/options. Also notes two ways to launch the wizard: right-click the model directory and choose Create Model, or use File > New > UML Model. The surrounding context introduces the Model Editor and its tabs (Overview, Details, Diagrams, References, Fragments), including fragment management and where profile/model library settings are viewed."
+                  },
+                  {
+                    "title": "Opening and closing the model",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to open and close a Cúram model in Rational Software Architect Designer’s Modeling perspective. Covers Project Explorer navigation, lazy loading behavior, forcing full load with Open All Sub-Fragments, and closing via Close/Close All. Also notes how to navigate packages/elements, load packages on expansion, and add model elements in the Diagram Editor. Includes a brief overview of UML element types used by Cúram (packages, classes, attributes, operations, parameters, relationships)."
+                  },
+                  {
+                    "title": "Navigating the model",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to navigate a Cúram model in the Project Explorer by expanding packages/elements, including lazy loading behavior and the option to open all sub-fragments. Also covers opening and closing models in Rational Software Architect Designer. Mentions that model elements can be added via the Diagram Editor, Model Palette, and Cúram Drawer, and briefly defines core UML elements used in Cúram: packages, classes, attributes, operations, parameters, and relationships."
+                  }
+                ],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to maintain a Cúram model in Rational Software Architect Designer, focusing on the Model Editor and model creation. It describes opening a model in the Model Editor, the five tabs (Overview, Details, Diagrams, References, Fragments), and how fragments are managed as separate physical files. It also covers creating a model with the Create Model wizard using the supplied Cúram template, which preconfigures capabilities and supported menus/options, and notes two ways to launch the wizard: from the model directory or via File > New > UML Model."
+              },
+              {
+                "title": "Maintaining UML model elements",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Viewing an element",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to view and inspect a model element in Rational Software Architect Designer. To view an element, open the Properties view, select the element in Project Explorer, and use its tabs; right-click menus also expose related actions and info. Expanding a modeling element loads its subfragments and changes its icon. The section also notes where to add elements (Project Explorer or Diagram view) and that modifying elements may require changes in both standard Properties tabs and the Cúram tab."
+                  },
+                  {
+                    "title": "Adding an element to the model",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to add model elements in Rational Software Architect Designer using either the Project Explorer right-click menu to add child elements, or the Diagram view/Palette and context menu. Also briefly covers viewing elements in Properties and how modifying elements works, including renaming via Project Explorer or Diagram view and deeper edits in Properties/Cúram tabs. Notes that some changes require updates in multiple tabs, such as return type or primitive type changes."
+                  },
+                  {
+                    "title": "Modifying an element",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how to modify a model element in Rational Software Architect Designer. It covers renaming elements from the Project Explorer or Diagram view, and making broader changes through the Properties view. It notes that Cúram-specific settings are handled on the Cúram tab, while some edits require coordinated changes across multiple tabs—for example, changing an operation return type or a domain primitive type."
+                  },
+                  {
+                    "title": "Creating a relationship between elements",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how to create relationships between model elements in Cúram using either the Project Explorer or Diagram view. In Project Explorer, you select an element, use the Properties view’s Relationships tab, choose source/target and relationship type, then set details like name and multiplicity in the General tab. In Diagram view, you drag arrowhead connector handles between elements to create the relationship. Also notes that unsupported actions trigger validation and that some RSA tabs are not supported for adding elements in the Cúram model."
+                  },
+                  {
+                    "title": "Removing an element from a model",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how to remove model elements in Cúram using Project Explorer or Diagram Editor. Right-click an element and choose Delete from Model; in the Diagram view you can delete only from the diagram or from the full model. Deleting from the model removes the element from the Project Explorer tree and makes it unavailable elsewhere. Notes that references use internal unique IDs, so recreating an element with the same name does not fix broken links; broken reference resolution is required."
+                  },
+                  {
+                    "title": "Copying and pasting classes, operations, and attributes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to copy, paste, cut, and move classes, operations, and attributes in Rational Software Architect Designer, including the restriction that operations and attributes can only be copied within the same class or between classes of the same type. Covers attribute ordering, why it matters for entity/struct index DDL, how to change sort order in Project Explorer preferences, and how to reorder attributes with Move up/Move down. Also introduces model searching via Model Search criteria and jumping to results from the Project Explorer."
+                  },
+                  {
+                    "title": "Changing attribute order",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how Rational Software Architect Designer handles attribute ordering. By default attributes display alphabetically, but ordering matters for entity and struct classes because generated DDL for indexes uses that order. Describes viewing order in the Attributes tab, changing Project Explorer sorting via Windows > Preferences > Views > Modeling > Project Explorer (e.g., from Stereotyped Type then Alphabetically to Storage Order), and manually reordering attributes with Move up/Move down on the Attributes tab."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000014",
+                  "start_page": 12,
+                  "end_page": 14
+                },
+                "summary": "Covers core UML model element maintenance in Cúram/Rational Software Architect Designer: how to view elements in Properties and Project Explorer, add elements via Project Explorer or Diagram/Palette, modify names and properties via Properties and Cúram tabs, create relationships from either Project Explorer or diagram connectors, and remove elements from the model or diagram. Notes that unsupported actions are reversed, some edits require coordinated changes across tabs, and deleting/recreating elements does not fix broken references because links use unique IDs."
+              },
+              {
+                "title": "Searching in Rational® Software Architect Designer",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Searching the model",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to search a Rational Software Architect model using the Model Search tab. You can open Search from the main menu, set criteria to narrow results, and view matches in a tab beside Properties. Double-clicking a result jumps Project Explorer to the selected element. This section also frames model search as a way to understand how an element relates to the rest of the model."
+                  },
+                  {
+                    "title": "Searching for references to an element",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to search for references to an element via the right-click Modeling References option, with scope choices such as enclosing model/package, workspace, or a custom working set, and how results open in Project Explorer. Also covers the Type Browser for finding element types during creation, including search scope and indexed search behavior. Includes specialized property tabs: Foreign Key tab for managing foreign key names/mappings, and Secure Field tab for defining Secure fields and SID names on facade-owned operations."
+                  },
+                  {
+                    "title": "Searching for elements using the type browser",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to search for model element references and how to use the Type Browser when creating elements that require a type or element reference. Notes that the browser can search by name or browse the model, with scope controlled by Modify Search Scope, and that searches use a persistent index so the complete model need not be opened (first search is slower). Also introduces specialized tabs/wizards, including the Foreign Key tab and Secure Field tab for editing mappings and secure fields."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Introduces searching in Rational Software Architect Designer. Covers using the main menu Search and Model Search tab to find elements with criteria-based filtering, view results beside Properties, and jump to elements in Project Explorer by double-clicking. The section frames model search as a way to understand how an element relates to the rest of the model."
+              },
+              {
+                "title": "Specialized tabs and wizards",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Foreign key tab",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Describes the Foreign Key tab in Properties view for a foreign key relationship. It lets you define and maintain the foreign key name and attribute mappings. The Name field updates the label on the General tab. A child/parent table shows mapping direction and is used to edit foreign key mappings stored on the General tab role fields. Rows use drop-downs to choose attributes, can be cleared to remove mappings, and reordered with Move Up/Move Down."
+                  },
+                  {
+                    "title": "Secure field tab",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains the Secure Field tab on a facade-owned operation’s Properties view. It is used to define and maintain Secure fields for a Facade class operation. The tab shows two columns, Field Name and Security Identifier (SID) Name. Field names are computed from the operation’s return type fields, while SID names can be entered, edited, or deleted. The table acts as a widget for editing the Secure_Fields property on the Cúram tab."
+                  },
+                  {
+                    "title": "Manage operation parameters wizard",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Covers several wizard UIs in Rational Software Architect Designer for Cúram modeling: Manage Operation Parameters wizard for adding, deleting, reordering, and editing operation parameters plus return type; Operation wizard, which adds an operation name to the same parameter/return-type layout; Entity Operation wizard for generating input/output structs from entity attributes with reuse checks and naming pattern; Domain Definition wizard for creating domain definitions and optional max size; and basic steps to create class diagrams in a package."
+                  },
+                  {
+                    "title": "Operation wizard",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section describes wizards in Rational Software Architect Designer for Cúram model changes: Manage Operation Parameters, Operation, Entity Operation, and Domain Definition. It covers creating and editing operation parameters, return types, operation names, entity-based input/output structs, and domain definitions (including optional max size for string/blob types). It also explains how to create class diagrams in a package via the Project Explorer and Diagram Editor."
+                  },
+                  {
+                    "title": "Entity operation wizard",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Describes wizard-based creation of Cúram model elements: Manage Operation Parameters for adding/reordering parameters and return types; Operation wizard for creating operations with a name plus the same parameter/return-type layout; Entity Operation wizard for generating standard/non-standard database operations and input/output struct classes from entity attributes, including reuse checks and naming pattern; Domain Definition wizard for defining domains and optional max size; and brief steps for creating class diagrams in a package."
+                  },
+                  {
+                    "title": "Domain definition wizard",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Describes the Domain Definition wizard for creating a domain definition and optional domain definition class. It lets you set the domain definition name, browse for the type, and optionally edit Max Size when the domain is based on SVR_STRING or SVR_BLOB to set the regular size value."
+                  }
+                ],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains specialized Properties view tabs for model maintenance. The Foreign Key tab lets you name a foreign key, edit child/parent attribute mappings, remove or reorder mappings, and updates the General tab representation. The Secure Field tab lets you manage Secure fields for facade-owned operations by mapping computed return-type fields to SID names. It’s a short UI-oriented reference for editing foreign keys and secure fields, useful if you need tab-level property editing rather than wizard workflows."
+              },
+              {
+                "title": "Creating class diagrams",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to create class diagrams in a package: right-click the package in Project Explorer, choose Add Diagram > Class Diagram, then drag elements into the Diagram Editor. The section appears alongside wizard-based model editing topics, including operation parameters, operations, entity operations, and domain definitions, with notes on parameter/return type editing, struct generation, and domain size settings."
+              },
+              {
+                "title": "Creating and absorbing fragments",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating fragments",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to create and manage model fragments in Cúram. Covers creating a controlled fragment from a package via Refactor > Create Fragment, saving it, and enabling “Update references to elements in new fragment” to avoid broken child references. Notes that fragment packages change icon after creation. Also describes absorbing a fragment or all sub-fragments back into the parent model, again updating references to preserve links, and briefly mentions model validation with warnings/errors shown in Console and Problems views."
+                  },
+                  {
+                    "title": "Absorbing fragments",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how Cúram model fragments are created, loaded, absorbed, and validated. Fragments are loaded only when opened or needed, and loading a fragment also loads its parent resource. Creation uses Refactor > Create Fragment with “Update references to elements in new fragment” enabled to avoid broken child links. Absorption uses Refactor > Absorb Fragment or Absorb All Sub-Fragments, with reference updates required to preserve links. Also notes model validation via right-click > Validate, with results shown in Console and Problems views."
+                  }
+                ],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how Cúram model fragments are created, loaded, absorbed, and validated. Fragments are opened only when needed, and loading one also loads its parent resource. Creation is via Refactor > Create Fragment on a package, with “Update references to elements in new fragment” enabled to avoid broken child links; the package icon changes afterward. Absorption is via Refactor > Absorb Fragment or Absorb All Sub-Fragments, again updating references to preserve links. Also covers model validation and where warnings/errors appear."
+              },
+              {
+                "title": "Validating a model",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains how to validate a model in Cúram by right-clicking the model and selecting Validate. It notes that validation results appear as a summary in the console panel, while warnings and errors are shown in the Problems view with descriptions and links to the relevant model locations."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000018",
+              "start_page": 9,
+              "end_page": 18
+            },
+            "summary": "Introduces how to use Rational Software Architect Designer to work with the Cúram model. Covers the Cúram profile/template, the four main modeling views, model creation/opening, navigating the model, maintaining UML elements, searching, specialized properties tabs and wizards, creating class diagrams, managing fragments, and validating models. Highlights Cúram-specific restrictions, lazy loading, and fragment/reference handling."
+          },
+          {
+            "title": "1.2 Modeling Cúram elements using Rational® Software Architect Designer",
+            "level": 2,
+            "children": [
+              {
+                "title": "Managing domain definitions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating a domain definition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "This section explains how to create and rename Cúram domain definitions in Rational Software Architect Designer. It describes domains as data types for attributes, based on primitive types or existing domains, and notes they may include validations such as uppercase, range checks, code tables, patterns, and custom rules. It gives step-by-step instructions for adding a domain via Project Explorer and the Create Domain Definition wizard, including a note on searching for base types like SVR_STRING."
+                  },
+                  {
+                    "title": "Renaming a domain definition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to rename a Cúram domain definition in Rational Software Architect Designer. It gives two methods: rename directly from the Project Explorer via right-click, or edit the name in the General tab of the Properties view. This section sits within broader guidance on managing domain definitions, including what domains are and how they are created."
+                  },
+                  {
+                    "title": "Modifying a domain definition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how to modify a domain definition in Cúram: use the Attributes tab in the Properties view, double-click the single attribute’s Type cell, and choose a new domain type from the Type browser. It also notes that renaming a domain definition requires renaming its single attribute to the same name, and that references to the domain are preserved. The page then introduces entity management, including what entities are, how to create them, add attributes, and add operations."
+                  }
+                ],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "This section explains what Cúram domain definitions are and how to manage them in Rational Software Architect Designer. It covers domains as attribute data types based on primitives or existing domains, with validations like uppercase, range, code tables, patterns, and custom rules. It describes creating domains via the Project Explorer and Create Domain Definition wizard, including searching for base types such as SVR_STRING. It also shows two ways to rename a domain definition: from the Project Explorer or the Properties view."
+              },
+              {
+                "title": "Managing entities",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating an entity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how to create and manage entities in Cúram. It defines entities as persistent application objects with attributes based on domains, primary keys, indexes, and foreign key relationships, plus CRUD-style stereotyped operations. It shows how to create an entity via the package context menu (Class > Entity), notes that required attributes and operations are added automatically, and outlines adding entity attributes through Add Attribute, choosing Key or Details, and using the Create Attribute Wizard."
+                  },
+                  {
+                    "title": "Adding an attribute to an entity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how to add an attribute to an entity in Cúram. It notes that entity attributes store data, that every entity needs at least one unique key attribute, and gives the basic workflow: right-click the entity, choose Add Attribute, select Key or Details, then name the attribute and choose its type in the Create Attribute Wizard."
+                  },
+                  {
+                    "title": "Adding an operation to an entity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how to add operations to an entity class in Cúram. It notes that entities support CRUD-style stereotyped methods with implied signatures, and that additional operations can be defined by explicitly specifying their signatures in the model, including complex SQL-based database queries if needed. The practical instruction given is to add operations through the entity’s right-click context menu."
+                  },
+                  {
+                    "title": "Adding a return type to an entity operation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains how to add or change a return type on an entity operation in Cúram. It notes that some operation stereotypes infer return types, while others require explicit modeling. If the return type is an entity, you must also set the Shadow Type; if it is a struct, no Shadow Type is used. It also briefly covers creating “ns” operations, including selecting stereotypes, parameters, return types, Shadow Type, and editing SQL, plus introduces structs as value objects used for operation arguments and returns."
+                  },
+                  {
+                    "title": "Adding an 'ns' operation to an entity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains how to add an “ns” operation to an entity for complex database operations. It covers selecting the operation stereotype, using the Create ‘ns’ Operation wizard to name the operation, define parameters, and set the return type, and notes that entity parameters or return types require a Shadow Type. It also shows how to add SQL by editing the SQL property on the Cúram tab."
+                  }
+                ],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Entities model persistent application data with domain-based attributes, primary keys, indexes, and foreign key relationships. The section explains that CRUD-style operations are implied by stereotypes, while additional operations can be defined by explicit signatures or SQL for complex queries. It gives the basic workflow for creating an entity from a package’s context menu and adding attributes via Add Attribute, including choosing Key or Details and using the Create Attribute Wizard."
+              },
+              {
+                "title": "Managing structs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating a struct",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how to create a struct in the Cúram model by right-clicking a package and choosing Struct. This section sits within guidance on managing structs, which are value objects used for method arguments and return types; their attributes are defined via domain definitions. Useful if you need the basic UI step for adding a struct or context on how structs are used in operations and entity modeling."
+                  },
+                  {
+                    "title": "Adding an attribute to a struct",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how to add an attribute to a struct in Cúram: select the struct in Project Explorer, choose Add Attribute > Default, then name the attribute and pick its type in the wizard. The section then begins introducing aggregate relationships between structs, including how to create one, use the Relationships and Cúram tabs, and set role name and multiplicities."
+                  }
+                ],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Explains what a struct is in the Cúram model: a value object used for method arguments and return types, with attributes defined by domain definitions. It also gives the basic UI step to create one by right-clicking a package and choosing Struct. Useful if you need the core purpose of structs and the navigation path for adding them."
+              },
+              {
+                "title": "Creating an aggregate relationship",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains how to create an aggregation relationship in Cúram. Aggregation models containment between two structs only; if the contained object is an entity, its Shadow Type must be selected. Steps cover choosing the containing struct, adding a relationship in the Relationships tab, selecting Aggregation, then naming the role and setting multiplicity. The container multiplicity must be 1, while the contained side can be 1 or 1..*. Also notes related relationship types and how to verify the diagram."
+              },
+              {
+                "title": "Managing process classes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Adding a process class to a package",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to add and configure a business process class in a package using Rational Software Architect Designer. Covers creating a process class, adding operations via the context menu, defining operation arguments as structs or domain types, and setting or changing return types. Also notes that if an argument or return type is an entity, a Shadow Type must be selected, and cleared if the type later no longer requires one."
+                  },
+                  {
+                    "title": "Adding operations to a process class",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to add operations to a Cúram process class in Rational Software Architect Designer. It covers creating a process class in a package, adding a default operation via the right-click menu, and using the wizard to name it, add parameters, and set the return type. It also describes managing operation arguments and return types, which must be structs or domain types, and notes that entity types require a Shadow Type setting that must be updated or cleared when the type changes."
+                  },
+                  {
+                    "title": "Adding an argument to a process operation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to add arguments to a process operation in Rational Software Architect Designer for Cúram. Process operation parameters must be structs or domain types; if an entity type is used, a Shadow Type must also be selected. The section also notes related context: adding process classes to packages, adding operations to process classes, and setting or changing an operation’s return type, including Shadow Type handling for entity return types."
+                  },
+                  {
+                    "title": "Adding a return type to a process operation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to add or change a process class operation’s return type in Rational Software Architect Designer. Return types for process operations must be struct or domain types and can be set during creation or later via the operation’s Properties page in the General tab using Set return type. If the chosen return type is an entity, a Shadow Type must also be selected on the Cúram tab; if the new type no longer needs one, Shadow_Type should be set to unspecified."
+                  }
+                ],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000023",
+                  "start_page": 22,
+                  "end_page": 23
+                },
+                "summary": "Explains how Cúram process classes model business functions as methods with struct or domain-type arguments and return values, while leaving implementation to the model. Covers creating a process class in a package, adding default operations, and managing operation parameters and return types through wizards and the Properties page. Notes that entity arguments or return types require a Shadow Type, and that Shadow_Type must be cleared if the type later no longer needs it."
+              },
+              {
+                "title": "Managing facade classes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating a facade class",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "This section explains what a facade class is in Cúram business process modeling and how to create one in a package. It covers adding operations to a facade class via the context menu, naming the operation, defining parameters and return type, and notes that arguments/return types are added the same way as for process classes. It also includes a project explorer context-menu reference table showing which attributes and operations are available for class types such as facade, webservice, wsinbound, process, and struct."
+                  },
+                  {
+                    "title": "Adding operations to a facade class",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "This section explains how to manage facade classes in Cúram: what a facade class is, how to create one in a package, and how to add operations via the right-click context menu. It also notes that facade operations can have arguments and return types added the same way as process operations. A table summarizes which attributes and operations are available for each class type in the project explorer, including facade, webservice, wsinbound, process, and struct."
+                  },
+                  {
+                    "title": "Adding arguments and a return type to facade operations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Facade operations can have arguments and return types added the same way as process operations. This section explains that facade classes expose business process functions to clients, how to create a facade class and add operations to it, and notes that operations are created through the right-click context menu. It also points readers to the earlier process-operation sections for details on adding arguments and return types."
+                  }
+                ],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains what a facade class is in Cúram business process modeling: a process class whose interface is visible to clients. Shows how to create one in a package via Add Class > Facade, add operations through the right-click context menu, and define operation names, parameters, and return types. Notes that arguments and return types are added the same way as for process classes. Also includes a project explorer context-menu table listing available attributes and operations for class types such as facade, webservice, wsinbound, process, and struct."
+              }
+            ],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000023",
+              "start_page": 19,
+              "end_page": 23
+            },
+            "summary": "Explains how to model core Cúram elements in Rational Software Architect Designer: domain definitions, entities, structs, aggregation relationships, and process classes. Covers what each element represents, how to create them in Project Explorer/context menus, and key modeling rules such as domain validations, entity keys/operations, struct attributes, aggregation between structs with multiplicity and Shadow Type handling, and process class operations with parameters and return types. Useful as a navigation entry for creating or editing these model elements."
+          },
+          {
+            "title": "1.3 Context menu options in the project explorer view",
+            "level": 2,
+            "children": [],
+            "node_id": "n000069",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section explains which attributes and operations can be added to model classes from the Project Explorer right-click context menu in Rational Software Architect Designer. It includes a table of context menu options by class type: audit_mappings, facade, webservice, wsinbound, process, and struct. Most classes have no addable attributes; operations vary by class, with default, wmdpactivity, qconnector, and batch available for several classes, while struct supports a default attribute only."
+          },
+          {
+            "title": "1.4 Resolving broken references",
+            "level": 2,
+            "children": [
+              {
+                "title": "Rational® Software Architect Designer changes in references",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "This section explains how Rational Software Architect Designer resolves references in Cúram models and why broken references can occur. It covers using element IDs to resolve references, the need to map old model IDs to current ones, and how product-stream upgrades or duplicate IDs can break customer model references. It also notes two ways broken references surface: when opening a model in RSA Designer (Problems View) and during command-line model extraction (missing type, attribute, parameter, or relationship errors)."
+              },
+              {
+                "title": "Extension to broken reference resolution",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Describes an added broken-reference repair flow for product upgrades in Rational Software Architect Designer. It uses a qualified name map exported from the previous model (File > Export > Curam > Qualified Name Map) and configured in Preferences > Curam > Qualified Name Map to resolve broken IDs by matching qualified names in the upgraded model. Also explains the runtime repair process: broken-reference dialog, automatic correction attempt, and fallback to Problems view with a right-click search/browse option if resolution fails."
+              },
+              {
+                "title": "Resource reference resolution process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000028",
+                  "start_page": 26,
+                  "end_page": 28
+                },
+                "summary": "Describes an extension to Rational-provided resource reference resolution for handling broken references after product upgrades. It uses a qualified-name map exported from the previous model in Rational Software Architect Designer (File > Export > Curam > Qualified Name Map), then configured via Preferences > Curam > Qualified Name Map. When a broken reference is detected, the tool attempts automatic repair; if it fails, the Problems view shows an error and offers a manual Search/Browse fallback."
+              }
+            ],
+            "node_id": "n000070",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000028",
+              "start_page": 25,
+              "end_page": 28
+            },
+            "summary": "Explains how broken references are resolved in Rational Software Architect Designer using element IDs and a map from previous model IDs to current ones. Notes why references break after product-stream upgrades or duplicate IDs, and that failures appear in Problems view when opening a model or as command-line extraction errors. Describes an upgrade-oriented repair extension using a Qualified Name Map exported from the old model and configured in Preferences, with automatic repair attempts and a manual Search/Browse fallback if resolution fails."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000028",
+          "start_page": 9,
+          "end_page": 28
+        },
+        "summary": "Explains how to use Rational Software Architect Designer to modify the Cúram model. Covers the Cúram profile/template, the four modeling views, creating/opening/closing/navigating models, lazy loading and fragments, UML element maintenance, adding/modifying elements, and Cúram-specific properties and validation. Also includes context-menu options for key class types and procedures for resolving broken references via qualified name maps, export/import settings, and manual search/browse fallback."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

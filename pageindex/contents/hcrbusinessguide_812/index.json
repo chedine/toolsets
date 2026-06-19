@@ -1,0 +1,2363 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "41490054212b7596",
+    "title": "Cúram 8.1.2 Health Care Reform Business Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/HCRBusinessGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "41490054212b75961ad3851461589ceb9e8350b5efdcc8ea14f91c2f95e0a99b",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:38:29+00:00",
+    "page_count": 122,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/HCRBusinessGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Health Care Reform Business Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000122",
+      "start_page": 1,
+      "end_page": 122
+    },
+    "summary": "Cúram 8.1.2 Health Care Reform Business Guide for Income Support for Medical Assistance. This node is the full manual, covering ACA/Exchange support, MAGI-based eligibility, citizen portal and caseworker intake, human services screening and applications, plan shopping/enrollment, appeals, change of circumstance, renewals and PDM, and deprecated monitoring reports. It also includes HCR program information with configurable rate tables for federal poverty levels and tax-filing thresholds, plus legal notices, privacy policy, and trademarks. Useful as the top-level navigation entry for core business flows and reference/configuration topics.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "A brief front-matter note directing readers to review the Notices section before using the product documentation. It also shows Merative US L.P. copyright information for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This edition page states the document applies to Cúram 8.1, 8.1.1, and 8.1.2, with Merative copyright/trademark notices. It also contains the table of contents for the manual, outlining major topics such as the HCR overview, key business flows, program information, notices, privacy policy, and trademarks, with chapter and subsection page references."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Overview of the Income Support for Medical Assistance (Health Care Reform) solution, covering ACA/Exchange concepts, eligibility and enrollment, plan selection, premium tax credits/cost-sharing reductions, Medicaid/CHIP/QHP and small employer exchange flows, and open/special enrollment rules. Explains application submission paths (online, navigator, caseworker), integration with plan management via iFrame/web services, and how enrollment details update results. Includes high-level business flow navigation, with key flows like Estimate Household Eligibility, Apply for Insurance Affordability Programs, and related case management."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Overview of Cúram 8.1.2 health care reform business flows. Covers the Citizen Account home page, configurable messages/outreach/navigation, Citizen Portal intake, and key application steps: selecting application type, creating/logging into an account, choosing filer type, selecting a navigator, capturing consent, and completing an online application. Also explains dynamic IEG-driven scripts, customizable motivations, multilingual portal support, account authentication, and the start of applicant/household details capture including tax relationship logic."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section describes the main application flow for Health Care Reform: household and income capture, dynamic questions, verification, program-specific screening, remote identity proofing, eligibility results, plan management, and enrollment. It explains how IRS/state income data is reused, how MAGI/GI/AGI are calculated, and how Medicaid/CHIP/Insurance Assistance rules affect which questions appear. It also covers configurable/customizable areas such as plan management integration, results-page actions, e-signature submission, PDFs, person match, and application case creation/evidence mapping."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers core business flows for Cúram Income Support for Medical Assistance: application case types, straight-through vs manual processing, process instance errors, and configurable mappings/verifications. Also describes client notifications and customizable communications. Includes navigator features (search/register/intake, portal login, geocoding/map settings) and caseworker intake, evidence maintenance, eligibility checks, outstanding verifications, and program/app-level authorization. Also mentions account transfer from FFM and customization via Admin, Provider Management, CER, and Data Mapping Engine."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Cúram Income Support for Medical Assistance business flows: authorizing applications creates or reuses integrated cases and product delivery cases via program group logic, with configurable reuse/reopen rules and bulk reassessment. It explains reasonable opportunity/inconsistency periods, verification waivers, milestones, and customizable timing. It covers client notifications and template types (XSL/Word), denial rules, and outbound account transfer to the FFM plus customizable mapping APIs/source code. It also details product delivery creation for Medicaid/CHIP/IA/UQHP/exemptions, certification period logic, and Eligibility Viewer features for timeline-based eligibility review."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "This section covers key business flows for Income Support Medical Assistance and Human Services Programs. It explains eligibility decision screens, key event indicators, retroactive Medicaid checks, and client communications/templates. It also describes the Universal Access screening journey: getting started, selecting programs, completing screening, viewing potential eligibility, and applying online. It lists major programs supported by screening and notes what can be configured/customized, including display rules, CER rules, screening types, and IEG scripts."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "This section describes the Cúram Income Support for Medical Assistance citizen flows and their configurability: Getting Started, application intake, plan browsing, citizen account home and tabs, and online appeals. It explains how users create accounts, authenticate, start or resume applications, withdraw or sign submissions, and view messages, outreach, activities, screenings, applications, enrollments, and contact info. It also covers customization via Universal Access, IEG scripts, display rules, page replacement, and plan-management integration, plus differences between Health Care Reform and Income Support intake, matching, and evidence sharing."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "This section outlines the main Health Care Reform change-of-circumstance flow for Income Support for Medical Assistance. It covers client self-service reporting in Citizen Account, consent for data retrieval, household updates, verification services, eligibility results, shopping/enrollment, signing/submitting changes, and mapping submitted data to integrated case evidence. It also describes adverse action, extended decisions, caseworker-reported changes, evidence management, and key customization points for IEG scripts, rules, UI, workflow, plan management integration, and evidence activation behavior."
+          },
+          {
+            "title": "Edition — pages 95-104",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000095",
+              "end_unit_id": "p000104",
+              "start_page": 95,
+              "end_page": 104
+            },
+            "summary": "This section covers core Insurance Affordability case flows: the Add a Member and Re-add a Member guided wizards, resolving outstanding verifications, applying evidence changes, program group logic and product case activation, and client communications. It then introduces annual renewals and periodic data matching (PDM), including polling external systems, mapping/storing external evidence, verification and projected eligibility using external data, notice generation, automatic processing after 30 days, and customization points for evidence handlers, rules, and notices."
+          },
+          {
+            "title": "Edition — pages 105-114",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000105",
+              "end_unit_id": "p000114",
+              "start_page": 105,
+              "end_page": 114
+            },
+            "summary": "This section covers two major flows in Income Support for Medical Assistance: periodic data matching (PDM) and annual renewals (AR). It explains how clients and caseworkers view updates/notices, contest or confirm external evidence, and how contested items trigger caseworker tasks and reassessment. It also describes annual renewal processing for QHP, Medicaid, and CHIP, including polling external systems, projected eligibility, notices, automatic completion after response intervals, and caseworker completion on behalf of clients. Customization/configuration points for messages, notices, evidence types, UIM, batch jobs, and advisors are highlighted."
+          },
+          {
+            "title": "Edition — pages 115-120",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000120",
+              "start_page": 115,
+              "end_page": 120
+            },
+            "summary": "This section covers Medicaid/CHIP annual renewals, including automatic renewal logic, polled evidence handling, certification periods, and custom batch jobs/APIs for cases that cannot renew automatically. It also describes deprecated monitoring reports for Income Support for Medical Assistance applications: report categories, intervention types, eligible program counts, and cautions about system load and limited customization. The section begins the HCR program information chapter, introducing rate tables used to maintain time-based rates and listing key tables for poverty levels and tax filing thresholds."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000120",
+          "start_page": 5,
+          "end_page": 120
+        },
+        "summary": "Edition for Cúram 8.1/8.1.1/8.1.2 with Merative notices and a full contents map. This section introduces the HCR/Income Support for Medical Assistance solution: ACA/Exchange overview, eligibility and enrollment, citizen and caseworker intake, human services screening, appeals, changes in circumstance, renewals/PDM, and deprecated monitoring reports. It also starts the Program Information chapter with HCR rate tables for poverty levels and tax filing thresholds. Useful as the manual’s roadmap and for locating core business flow and configuration topics."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000122",
+              "end_unit_id": "p000122",
+              "start_page": 122,
+              "end_page": 122
+            },
+            "summary": "This section contains legal and licensing notices, including that sample data names are fictitious, sample programs are provided “AS IS” under the Merative Client Agreement, and Merative disclaims warranties and liability. It also points to Merative’s privacy policy URL and lists trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, along with copyright information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000122",
+              "end_unit_id": "p000122",
+              "start_page": 122,
+              "end_page": 122
+            },
+            "summary": "Lists trademark and copyright notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, noting that other company/product names may be trademarks. Also includes a privacy policy link and a copyright/license disclaimer stating sample programs may be copied and modified under the Merative Client Agreement, but are provided “AS IS” without warranty."
+          }
+        ],
+        "node_id": "n000015",
+        "range": {
+          "start_unit_id": "p000121",
+          "end_unit_id": "p000121",
+          "start_page": 121,
+          "end_page": 121
+        },
+        "summary": "Legal notices governing use of the publication: personal and commercial reproduction are allowed only with preserved proprietary notices, but redistribution, derivative works, and external use require Merative’s consent. It disclaims all warranties, guarantees, and liability, notes possible patents, export-law restrictions, and that third-party product/site references are informational only. The section also states information is provided “as-is” and includes Merative copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000018",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 “Income Support for Medical Assistance (Health Care Reform)” guide. Lists major sections on program overview and ACA legislation, key business flows (household eligibility, insurance affordability applications, human services screening/applications, plan shopping, citizen account maintenance, appeals, change reporting, renewals, and deprecated application monitoring), plus program information such as HCR rate tables and notices/privacy/trademarks. Useful for navigating to specific workflows or reference material."
+      },
+      {
+        "title": "1 Overview of the Income Support for Medical Assistance (Health Care Reform)",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Income Support for Medical Assistance (Health Care Reform) summary",
+            "level": 2,
+            "children": [
+              {
+                "title": "Business Feature Summary",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000010",
+                  "start_page": 9,
+                  "end_page": 10
+                },
+                "summary": "Summarizes key business features of Cúram Income Support for Medical Assistance (HCR) under ACA/health care reform. Covers citizen self-service portal, streamlined MAGI-based eligibility for Medicaid, CHIP, insurance assistance, and optional state basic health programs, plus direct QHP shopping and enrollment. Notes enrollment period controls, exchange and FF-SHOP coordination, e-verifications, federal hub integration, and support for other human services programs. Also highlights role-based workspaces and state marketplace model support (SBM, partnership, FFM)."
+              },
+              {
+                "title": "Streamlined Application Process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Cúram’s streamlined application process uses a single online application script to assess eligibility for insurance affordability programs, reducing the effort of applying and screening for multiple programs. Built with IEG and controlled by the Rules Engine, it dynamically presents only needed questions based on responses. The process uses a simplified MAGI approach, avoiding resource tests and complex income calculations. Client-entered information is electronically verified against trusted external systems, improving accuracy, speeding decisions, and reducing the need for supporting documents."
+              },
+              {
+                "title": "Eligibility Results",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Describes the eligibility results page in Cúram Universal Access after application completion. It explains “reasonable compatibility” for verifying application data against trusted sources, handling outstanding verifications/Advisor Issues, and that results are provisional until documentation is provided. It also covers insurance assistance calculation, including benchmark plan premium lookup via a plan management web service, default benchmark values if unavailable, and use of an iFrame/enrollmentID to pass eligibility and household data into plan management for enrollment."
+              },
+              {
+                "title": "ACA Healthcare Programs and Other Provisions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains ACA healthcare coverage programs and eligibility rules based on household income vs. Federal Poverty Limit (FPL). Covers Medicaid for households below 133% FPL, CHIP for children in households under 200% FPL, optional State Basic Health Program for families up to 200% FPL, and Insurance Assistance for those between Medicaid/basic plan limits and 400% FPL. Notes that assistance comes as premium tax credits or cost-sharing reductions, and that ACA coverage may vary by household member category."
+              },
+              {
+                "title": "Plan Selection and Enrollment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000015",
+                  "start_page": 14,
+                  "end_page": 15
+                },
+                "summary": "Explains plan selection and enrollment integration in Cúram Income Support for Medical Assistance. Covers shopping/enrolling in Medicaid, CHIP, and Qualified Health Plans through a plan management vendor, including benchmark plan and APTC calculation inputs, navigator assister data, and default benchmark values if no vendor is available. Describes differing enrollment flows by program: Medicaid simplicity, CHIP payment details, and Insurance Assistance/QHP premiums, tax credits, cost-sharing reductions, and household contribution handling. Also notes iFrame-based enrollment, enrollmentID web service callbacks, and result-page updates with plan details."
+              },
+              {
+                "title": "Application Submission",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains how applications are submitted in Cúram: through plan selection/enrollment completion, direct submission from Eligibility Results, or by a caseworker on behalf of a client. All submissions follow the same Intake process to create an application case and manage ongoing interactions via integrated and product delivery cases. Also covers Small Employer Exchange employer/employee enrollment, Shop Only QHP purchases without assistance, eligibility determination for exchange shopping, and ACA context on minimum essential coverage and affordability rules."
+              },
+              {
+                "title": "Small Employer Exchange",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Describes the Small Employer Exchange flow: employers provide employee roster details, select offered plans, and set employer contribution amounts. Employees then choose among the offered plans to satisfy the individual mandate for minimum essential coverage through employer-sponsored insurance. This section sits alongside application submission and shop-only Exchange content, explaining how the small employer exchange supports coverage selection without full assistance processing."
+              },
+              {
+                "title": "Shop Only",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains “Shop Only” enrollment on the Exchange: citizens can shop directly for QHPs without applying for financial assistance, see full available programs, and pay unreduced premiums. Eligibility to buy through the Exchange is still required using a subset of assistance-application data. Rules assess affordability and, if needed, calculate advanced premium tax credits and cost-sharing reductions."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000015",
+              "start_page": 9,
+              "end_page": 15
+            },
+            "summary": "Overview of Cúram HCR/ACA support: citizen portal for managing accounts, applying for Medicaid, CHIP, insurance assistance, optional state basic health programs, shopping/enrolling in QHPs, and reporting changes. It streamlines MAGI-based eligibility with a single IEG-driven application, dynamic questions, e-verifications, and federal hub integration. Covers enrollment periods, exchange/FF-SHOP coordination, role-based workspaces, and SBM/FFM models. Also explains ACA program thresholds, exemptions, annual renewals, reasonable compatibility, provisional results, and plan management integration for benchmark pricing and enrollment."
+          },
+          {
+            "title": "1.2 Affordable Care Act legislation summary",
+            "level": 2,
+            "children": [
+              {
+                "title": "FFM Assessment versus Determination",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how FFM handles Medicaid/CHIP eligibility in two models: FFM Assessment States, where FFM screens eligibility and transfers the account for final state agency determination, and FFM Determination States, where the FFM’s decision is accepted by the state Medicaid agency. Notes this distinction matters for states using the federally facilitated or partnership marketplace and for account transfer UX. Also situates the topic within the Health Insurance Exchange and Qualified Health Plans, which are rated by actuarial value (bronze through platinum)."
+              },
+              {
+                "title": "The Health Insurance Exchange",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains the ACA Health Insurance Exchange as the online marketplace states must provide for access to affordable coverage and minimum essential coverage. It describes related eligibility options (Medicaid expansion to 133% FPL, basic health programs to 200% FPL, and premium assistance up to 400% FPL), employer contribution rules, and state flexibility. Also covers FFM assessment vs. determination states, account transfer to Medicaid/CHIP, and QHP comparison by actuarial value (bronze to platinum) and cost-sharing factors."
+              },
+              {
+                "title": "Small Employer Exchange",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains the Small Employer Exchange under the ACA. States must offer a small employer exchange alongside the individual exchange, with similar operation but different plan ranges and premium assistance. It covers the affordability test for employer-sponsored insurance, employee eligibility to waive unaffordable ESI and seek individual exchange assistance, and employer penalties for failing to provide affordable coverage. Also introduces exchange enrollment periods, including annual open enrollment, special enrollment, and the requirement to issue advance September notices to enrollees."
+              },
+              {
+                "title": "Enrollment Periods",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000020",
+                  "start_page": 18,
+                  "end_page": 20
+                },
+                "summary": "Explains exchange enrollment timing rules for health coverage. Covers annual open enrollment and special enrollment periods, including the required September advance notice, carrier planning implications, and that open enrollment selections take effect Jan. 1 and can be changed until the period ends. Describes automatic renewal if no change is made. Special enrollment allows plan changes within 60 days of a qualifying event, with effective dates generally based on the day of the month, and exceptions such as birth or adoption with immediate coverage."
+              }
+            ],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000020",
+              "start_page": 16,
+              "end_page": 20
+            },
+            "summary": "Summarizes ACA basics: minimum essential coverage and shared responsibility, Medicaid expansion to 133% FPL, optional basic health programs to 200% FPL, and premium assistance up to 400% FPL. Describes the Health Insurance Exchange as the state marketplace for comparing QHPs by actuarial value (bronze to platinum) and applying subsidies/cost-sharing reductions. Covers FFM assessment vs. determination states, small employer exchange rules, employer affordability/penalties, and exchange enrollment periods, including September notices, annual open enrollment, special enrollment, effective dates, and automatic renewal."
+          }
+        ],
+        "node_id": "n000019",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000020",
+          "start_page": 9,
+          "end_page": 20
+        },
+        "summary": "Overview of Cúram HCR support for ACA programs and exchange workflows. Describes the citizen portal, streamlined MAGI-based eligibility application, e-verifications, federal hub integration, role-based workspaces, renewals, reasonable compatibility, and provisional results. Covers Medicaid, CHIP, insurance assistance, optional basic health programs, QHP shopping/enrollment, FF-SHOP/small employer exchange, and state marketplace models (SBM, partnership, FFM). Also summarizes ACA basics: minimum essential coverage, Medicaid expansion, subsidies, employer affordability, exchange actuarial tiers, and open/special enrollment rules."
+      },
+      {
+        "title": "2 Key business flows of the Income Support for Medical Assistance (Health Care Reform)",
+        "level": 1,
+        "children": [
+          {
+            "title": "2.1 Estimate Your Household Eligibility",
+            "level": 2,
+            "children": [],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000023",
+              "start_page": 23,
+              "end_page": 23
+            },
+            "summary": "Describes the home-page household eligibility estimator for Income Support for Medical Assistance. Users enter only household size (adults/children) and income to get a simplified screening for MAGI-based insurance affordability programs and an estimate of Medicaid eligibility. Notes that eligibility rules may vary by state and can be customized by configuring the home page and CER rule set. This section is useful if you need the calculator workflow, screening logic, or customization options."
+          },
+          {
+            "title": "2.2 Apply for Insurance Affordability Programs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Citizen Account Home Page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000027",
+                  "start_page": 26,
+                  "end_page": 27
+                },
+                "summary": "Describes the Citizen Account home page as the authenticated client landing page for Cúram HCR. It lets clients create accounts, view/update information, submit and track applications, and access solution-specific links. The page has three main areas: Messages, Outreach, and the left navigation pane. It explains what each pane shows, including application acknowledgments, campaign/open enrollment information, and links to activities, enrollments, applications, screenings, contacts, appeals, and more. Also covers configurable/customizable page elements and notes linked-account requirements."
+              },
+              {
+                "title": "Citizen Portal Intake",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Select Application Type",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Apply for Assistance with health care",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "Describes the Citizen Portal intake flow for applying for health care assistance from the HCR home page. It explains that users can create an account, apply for assistance, and track applications, with English as the default portal language and other languages configurable. The “Apply for assistance with health care” process is a customizable motivation linked to an IEG script, data store schema, and display rules. It outlines the streamlined application structure: applicant details, household details, income, program-specific questions, and general questions."
+                      },
+                      {
+                        "title": "Apply to Purchase Healthcare Without Assistance",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "Explains the self-service flow for purchasing healthcare without assistance. A logged-in citizen uses an application script to enter a subset of eligibility data, meeting non-financial requirements such as state residency, citizenship/lawful presence, and not being incarcerated. Eligibility is determined per household member, then the user can shop and enroll in plans through the plan management system. Unlike assistance cases, there is no tax credit or cost-sharing reduction handling. It also notes that enrollment returns to Cúram and ongoing case management/intake can begin after enrollment."
+                      },
+                      {
+                        "title": "Apply for an Exemption from the Individual Responsibility Requirement",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "Explains how individuals can apply for an exemption from the individual shared responsibility requirement in the Health Care Reform exchange. It notes that people must have minimum essential coverage each month or qualify for an exemption, and that some exemptions are only available through the exchange. The section highlights that religious conscience and hardship exemptions must be applied for in the exchange, while other exemptions may be claimed either in the exchange or on a tax return."
+                      },
+                      {
+                        "title": "Apply for Employer Sponsored Coverage",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Describes the employer-sponsored coverage application for employees on a Small Employer Exchange (SHOP). Users must have or create an account, then complete an application script capturing employee and household information for possible enrollment. The application includes sections for self vs. family, other family members, employee details, and an optional household section. After completion, the employee’s details, including SSN, are sent to the plan management system to verify whether the person is on the employer roster."
+                      }
+                    ],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000030",
+                      "start_page": 28,
+                      "end_page": 30
+                    },
+                    "summary": "This section introduces the Citizen Portal intake home page and its four application motivations: apply for health care assistance, purchase coverage without assistance, request an individual responsibility exemption, and apply for employer-sponsored coverage. It explains that motivations are configurable in Universal Access and tied to an IEG script, data store schema, and display rules. It also summarizes the streamlined assistance application flow, the no-assistance purchase flow, exemption eligibility and categories, and the SHOP employer-sponsored coverage application process."
+                  },
+                  {
+                    "title": "Create an Account or Log into an Existing Account",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "This section explains the entry step for assistance applications: from the home page, clients choose either create an account or log into an existing one on the Universal Access Getting Started page. A citizen account is required for all assistance applications, including insurance affordability assistance, Straight to Shop/QHP purchase, employer-sponsored coverage, and exemptions from the individual mandate. After authentication, the user enters the application script and can save and exit an in-progress application."
+                  },
+                  {
+                    "title": "Select Application Filer",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Search for and Select a Navigator",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000046",
+                        "range": {
+                          "start_unit_id": "p000032",
+                          "end_unit_id": "p000032",
+                          "start_page": 32,
+                          "end_page": 32
+                        },
+                        "summary": "Explains how a client in the Citizen Portal can search for and select a navigator to help apply for an insurance affordability program. Clients can find navigators either by map search using an entered address or by reference number. The map search shows registered navigators in the local area. Useful for understanding navigator-assisted application workflows and portal support options."
+                      }
+                    ],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains the Getting Started page in the HRC IEG script and how an application filer is selected. It describes three filer types: self/family member, navigator, or authorized representative, including the navigator’s role and the representative’s ability to submit and resume applications. Also notes that organizations can customize IEG scripts in the Admin application. Includes Citizen Portal guidance for searching and selecting a navigator by map or reference number, with map results based on the entered address."
+                  },
+                  {
+                    "title": "Capture Consent for Data Retrieval",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains the consent page shown before an online application begins. Applicants must agree to let their information be used for e-verification and retrieval of details from agencies like DHS or the IRS. If consent is given, personal data such as SSN can be used to verify identity, citizenship, and related eligibility factors; otherwise a caseworker must manually verify information. Notes that the consent page is part of the IEG script and its text and elements can be customized in Admin."
+                  },
+                  {
+                    "title": "Complete an Online Application",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Applicant Details Section",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000049",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000034",
+                          "start_page": 34,
+                          "end_page": 34
+                        },
+                        "summary": "This section explains the Applicant Details Section of the application script. It covers collecting nonfinancial information for household individuals, including basic identifying data needed for eligibility, with rules that vary for applicants vs. non-applicants (for example, citizenship is only asked of applicants). It also notes validation that the primary contact must be an adult. The section sits within a dynamic, configurable online application that hides irrelevant questions and supports revisiting/editing via summary pages."
+                      },
+                      {
+                        "title": "Household Details Section",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000050",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000034",
+                          "start_page": 34,
+                          "end_page": 34
+                        },
+                        "summary": "This section explains how the Household Details step captures nonfinancial information for other household members, including demographics, contact details, relationships, and tax-related status. It describes the dynamic process for adding members, displaying the growing household picture, and determining whether each person is an applicant or non-applicant. It also outlines the tax filing sequence: identifying tax filers, married couples filing jointly, and dependents claimed by another filer. Useful for understanding household composition and eligibility inputs."
+                      },
+                      {
+                        "title": "Income Information Section",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000051",
+                        "range": {
+                          "start_unit_id": "p000035",
+                          "end_unit_id": "p000035",
+                          "start_page": 35,
+                          "end_page": 35
+                        },
+                        "summary": "This section explains how the application prepopulates and validates household income for Medicaid/CHIP coverage. It uses tax return data when available, checks household composition, AI/AN status, and income thresholds, and may instead pull current income from state systems. Applicants can attest that prior-year tax income matches projected coverage-year income, or review, remove, or manually add current income. It also supports income adjustments and projected annual income estimates, while hiding exact federal tax/SSA values for compliance and identity-proofing reasons."
+                      },
+                      {
+                        "title": "Program Specific Questions and Additional Questions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000036",
+                          "start_page": 36,
+                          "end_page": 36
+                        },
+                        "summary": "This section explains how, after income capture, the application collects remaining eligibility information through program-specific questions or questions asked of all applicants to screen for non-MAGI Medicaid. It describes how the system uses Cúram Express Rules to determine whether each household member should see Medicaid/CHIP questions, assuming verifications are resolved. It also notes that displayed retrieved income from the IRS can be customized by eligibility rules."
+                      }
+                    ],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000036",
+                      "start_page": 33,
+                      "end_page": 36
+                    },
+                    "summary": "Covers the main online application flow after consent: applicant details, household composition, income capture, and program/general questions. Explains dynamic IEG behavior that hides irrelevant questions, supports summary/review pages, and can be customized by state. Details how applicant and household member nonfinancial data, tax filing relationships, and age-based rules are collected; how tax return/current income data are prefilled, attested, or manually entered; and how MAGI/adjustments and Medicaid/CHIP-specific income rules affect eligibility screening."
+                  },
+                  {
+                    "title": "Remote Identity Proofing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "This section explains remote identity proofing and related verification in the Health Care Reform application. It describes how applicant data can be electronically checked against external systems via the federal hub, with results marked e-verified or verification outstanding. It distinguishes two verification levels: proofing the application filer’s identity and verifying application information used for eligibility decisions. It also notes this verification is required for assistance applications, but not for other application types such as exemptions or employer-sponsored coverage."
+                  },
+                  {
+                    "title": "Verification Data Services",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Describes Cúram’s verification data services for integrating with external state or third-party systems. It covers two verification stages: Remote Identity Proofing (RIDP) to verify application filers’ identities via external question/response services, and electronic verification of application data after consent, including SSN, citizenship, income, and other attested facts. It explains that accepted matches from the federal hub can count as e-verified, supports state-defined “reasonable compatibility,” and enables faster, real-time eligibility decisions with less caseworker follow-up."
+                  },
+                  {
+                    "title": "View Outstanding Verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000039",
+                      "start_page": 39,
+                      "end_page": 39
+                    },
+                    "summary": "Explains that at the end of the Health Care Reform IEG script, any verifications not electronically confirmed by the federal hub are displayed to the client before eligibility results. These outstanding items show what is delaying a complete determination, and any result is provisional until supporting documentation is provided to a caseworker. The display of outstanding verifications is implemented through custom code."
+                  },
+                  {
+                    "title": "View Eligibility Results",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000039",
+                      "start_page": 39,
+                      "end_page": 39
+                    },
+                    "summary": "After application completion, the system displays an eligibility results page for Health Care Reform programs using Universal Access. It shows household applicants, eligibility and enrollment summaries, and a main “Health Care Options” section for Medicaid, CHIP, or federal insurance assistance. Users can view detailed eligibility results and, if applicable, proceed to plan shopping and enrollment via a plan management system, then return to the results page. Online help explains terminology, and existing enrollments are retained in “My items.”"
+                  },
+                  {
+                    "title": "Apply for Other Programs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000040",
+                      "end_unit_id": "p000040",
+                      "start_page": 40,
+                      "end_page": 40
+                    },
+                    "summary": "This section explains how the eligibility results page lets clients apply for other programs beyond HCR/Medicaid. It covers “Other Government Services” and “Other Community Services,” including the “no wrong door” approach, triage-based community service maps, and the fact that community services are initially empty by default. It also describes how screened benefits appear in the “You might be eligible” section, how clients use Apply Online to start Income Support applications, and how returned application status updates are handled."
+                  },
+                  {
+                    "title": "Shop for and Enroll in Plans",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000042",
+                      "start_page": 41,
+                      "end_page": 42
+                    },
+                    "summary": "Describes how clients shop for and enroll in Medicaid, CHIP, and Qualified Health Plans through a vendor plan management system. Covers benchmark plan/tax credit calculation, data passed to vendor web services, use of an iFrame and enrollmentID, and post-enrollment return to the results page. Explains differences by program type (e.g., Medicaid simpler, CHIP and QHP require payment details) and how APTC/household contribution is handled. Notes customization via vendor-agnostic plan management API integration."
+                  },
+                  {
+                    "title": "Sign and Submit Application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "This section explains the “Sign and Submit Application” flow for health care reform applications. It covers how e-signatures, acceptances, and attestations are captured, how submission occurs either from plan selection/enrollment or the eligibility results page, and that submitted applications cannot be changed through the portal. It also notes downstream processing: Intake creates an application case, the authorized representative may be added as filer/correspondent, and a Citizen Account is created. Configuration options include the Sign & Submit link and submission-process behavior."
+                  },
+                  {
+                    "title": "Person Match",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Describes how the Person Match process for Common Intake can be configured or customized. It explains matching applicants to existing Cúram participants, skipping person match when the primary applicant is already known, and creating the application case with matched persons as participants or prospects. It also covers automatic case creation and mapping application data to evidence. Configuration includes the PersonMatch API, search criteria weights, and upper/lower score thresholds in Application – Person Match Settings."
+                  },
+                  {
+                    "title": "Application Case Creation and Evidence Mapping",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "This section explains how online application data can be copied into generated forms or a configurable PDF using program-specific mapping configurations. It also covers person match for linking applicants to existing Cúram participants, including automatic matching, skipping match when the primary applicant is already known, and creating application cases with prospects or registered persons. It details configurable match criteria weights, score thresholds, and where settings are managed. Finally, it notes that matched household information is automatically mapped to evidence on the new application case."
+                  },
+                  {
+                    "title": "Generate Communications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "Describes how online application data is mapped to evidence on an application case and used to generate communications. Covers application case types, straight-through processing vs. manual processing, and handling of process instance errors. Notes that from the Admin application’s Universal Access section, organizations can configure the application case and customize Cúram Data Mapping Engine mappings. Also states the product provides a basic set of communications to notify applicants or enrollees of eligibility-related outcomes."
+                  }
+                ],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000045",
+                  "start_page": 28,
+                  "end_page": 45
+                },
+                "summary": "Covers the Citizen Portal intake flow: choosing application type (assistance, no-assistance purchase, exemption, SHOP coverage), account creation/login, filer selection, consent for data retrieval, and the dynamic online application. Also describes remote identity proofing, outstanding verifications, eligibility results, applying for other programs, plan shopping/enrollment, sign and submit, person match, application case creation/evidence mapping, and communications generation. Includes key customization points in Universal Access/Admin, IEG scripts, plan management integration, and data mapping."
+              },
+              {
+                "title": "Navigators",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Search Navigator",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Describes the Citizen Account Navigator tab, where clients search for navigators to help with applications and see results on a map. Explains configuration options: registering navigators in Provider Management, enabling geocode storage with curam.miscapp.geocode.enabled, setting default map center coordinates, and configuring geocoding bias boundaries in Admin. Also covers navigator registration workflow: requests submitted via Navigator portal, processed by resource managers, approved providers receive email login credentials, and their offered services can be recorded."
+                  },
+                  {
+                    "title": "Navigator Registration and Intake",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Register as Navigator",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000066",
+                        "range": {
+                          "start_unit_id": "p000047",
+                          "end_unit_id": "p000047",
+                          "start_page": 47,
+                          "end_page": 47
+                        },
+                        "summary": "Explains how a client or external agency registers as a navigator through the Navigator portal and how the request is handled in Provider Management. Submission creates a task for resource managers, who review and approve the request to register the provider and record offered services. Approved navigators receive email login credentials and can then assist clients via the portal. Notes that the page is standard Cúram, customizable, and that geocoding/map display can be configured for navigator locations."
+                      },
+                      {
+                        "title": "Navigator Intake",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Log in to Account",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000068",
+                            "range": {
+                              "start_unit_id": "p000048",
+                              "end_unit_id": "p000048",
+                              "start_page": 48,
+                              "end_page": 48
+                            },
+                            "summary": "This section explains Navigator Intake and the start of the intake workflow. It covers logging into the Navigator Portal after approval, selecting a client to assist, and submitting or resuming an Insurance Assistance application on the client’s behalf. It also notes that navigator assistance records are retained and visible in the portal and client account. The section begins introducing caseworker intake, including the internal application process and searching for/registering an individual. It also mentions configurable/customizable login and list pages."
+                          },
+                          {
+                            "title": "Select Client to Assist",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000069",
+                            "range": {
+                              "start_unit_id": "p000048",
+                              "end_unit_id": "p000048",
+                              "start_page": 48,
+                              "end_page": 48
+                            },
+                            "summary": "Explains the Navigator Intake flow for selecting a client to assist from a list of clients who requested help, within the Navigator Portal. Notes that navigators can complete and submit Insurance Assistance applications on behalf of clients, and that submitted or resumed applications are tracked with records of assisted clients. Also states that the “View” page is a standard Cúram list page and can be customized."
+                          },
+                          {
+                            "title": "Submit Application for Client",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000070",
+                            "range": {
+                              "start_unit_id": "p000048",
+                              "end_unit_id": "p000048",
+                              "start_page": 48,
+                              "end_page": 48
+                            },
+                            "summary": "Explains the Navigator Intake workflow for submitting an Insurance Assistance application on a client’s behalf. Covers logging into the Navigator Portal, selecting a client to assist, completing or resuming saved applications, and what records are created when a navigator submits an application. Notes that the client can also view and resume the application in their own account. Includes customization notes that the login page and the View page are configurable. Also briefly transitions to caseworker intake and searching/registering an individual."
+                          }
+                        ],
+                        "node_id": "n000067",
+                        "range": {
+                          "start_unit_id": "p000048",
+                          "end_unit_id": "p000048",
+                          "start_page": 48,
+                          "end_page": 48
+                        },
+                        "summary": "Navigator Intake describes how approved navigators use the Navigator Portal to help clients find coverage options and complete or submit Insurance Assistance applications. It covers logging in, selecting a client who requested help, resuming saved applications, and the records created for assisted clients. It notes the client can also view and resume the application in their own account. The section also mentions configurable login and View pages, and briefly introduces caseworker intake plus searching for and registering an individual."
+                      }
+                    ],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "This section covers navigator registration and search/intake in the Health Care Reform workflow. It explains how clients can search for navigators in Citizen Account, including map display and geocoding configuration. It also describes registering a client or external agency as a navigator through Provider Management: requests create tasks for resource managers, who review and approve them, record offered services, and trigger email login credentials. The Navigator Registration and Navigator Intake pages are configurable Cúram pages, and the intake flow helps approved navigators assist clients with applications."
+                  }
+                ],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000047",
+                  "start_page": 46,
+                  "end_page": 47
+                },
+                "summary": "Explains what a navigator is and how clients use the Citizen Account Navigator tab to search for help on a map. Covers configuration for navigator display and geocoding (Provider Management registration, curam.miscapp.geocode.enabled, default map center, geocoding bias area). Also describes navigator registration through Provider Management/Navigator portal: requests are reviewed by resource managers, approved providers are registered, services can be recorded, and login credentials are emailed."
+              },
+              {
+                "title": "Caseworker intake",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Search For and Register an Individual",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Explains the first step of caseworker intake in Cúram Income Support for Medical Assistance: searching for an individual in the system, starting the intake process, and registering that person. This section is the entry point for understanding how workers find a client and initiate registration before proceeding with an internal application."
+                  },
+                  {
+                    "title": "Complete Internal Application for Assistance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Describes the caseworker-driven “Complete Internal Application for Assistance” flow in HCR. After person search and match, the worker creates an application using an Intelligent Evidence Gathering (IEG) script. The script requires client consent, prepopulates basic person data, omits citizen-facing staging/help text, and ends with rights and responsibilities text that must be communicated. When submitted, the application case is created and a PDF of entered data is attached for later viewing."
+                  },
+                  {
+                    "title": "Person Match",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000050",
+                      "start_page": 50,
+                      "end_page": 50
+                    },
+                    "summary": "Describes configurable person match for Common Intake applications. Cúram can match applicants to existing registered participants, skip matching when the primary applicant is already known, and create application cases with matched persons or prospects. The default PersonMatch API returns an empty list unless customers implement it. Matching uses configurable criteria weights and system-property thresholds to classify results as exact, possible, or no match; settings are in Application – Person Match Settings."
+                  },
+                  {
+                    "title": "Inbound Account Transfer from Federal Hub",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000051",
+                      "start_page": 50,
+                      "end_page": 51
+                    },
+                    "summary": "Explains the Inbound Account Transfer from the Federal Hub for FFM/state marketplace integrations. Describes how account data is transferred from the FFM to Cúram/SMA as an initial application or as a change-of-circumstance update, and outlines the initial application flow and state-model differences. Also covers customization points: APIs map transfer payloads to cases/evidence, extension points support custom mappings, and source code is delivered with Cúram Data Extractor."
+                  },
+                  {
+                    "title": "Insurance Affordability Application Case Creation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000052",
+                      "start_page": 52,
+                      "end_page": 52
+                    },
+                    "summary": "After an Insurance Assistance application is submitted, Cúram creates an internal Insurance Affordability application case, assigns it by default to the creating HCR caseworker, and adds the submitted form as a PDF attachment. The section explains that application cases support multiple case types (Insurance Affordability, Employer-sponsored, Unassisted, Exemptions, Account transfer change of circumstance), each with tailored evidence/verification rules. It also notes configurable PDF formatting, data mapping from online application to evidence, and ownership strategy settings."
+                  },
+                  {
+                    "title": "Maintain Evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000053",
+                      "end_unit_id": "p000053",
+                      "start_page": 53,
+                      "end_page": 53
+                    },
+                    "summary": "Describes maintaining evidence on an Insurance Affordability application case. Caseworkers use the Evidence tab to manage dynamic evidence types and two static types (Annual Tax Return, Absence). Organizations must copy the supplied dynamic evidence configurations and can create new ones. Also notes related casework flows: running eligibility checks using in-edit evidence, viewing eligibility results, and resolving outstanding verifications for evidence not auto-verified or self-attested."
+                  },
+                  {
+                    "title": "Check Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000078",
+                    "range": {
+                      "start_unit_id": "p000053",
+                      "end_unit_id": "p000053",
+                      "start_page": 53,
+                      "end_page": 53
+                    },
+                    "summary": "Describes the Insurance Affordability application case’s Check Eligibility step. A caseworker can run an eligibility check using evidence in edit on the case to determine current business-date eligibility for programs, with results added as new rows on the Eligibility Checks page and expandable by household member. The step is optional before authorization. Configuration is customizable via CER rulesets and requires an Eligibility Check Strategy in Admin; this uses the caseworker rule set, not the citizen portal one."
+                  },
+                  {
+                    "title": "Resolve Outstanding Verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000053",
+                      "end_unit_id": "p000053",
+                      "start_page": 53,
+                      "end_page": 53
+                    },
+                    "summary": "Explains how a caseworker resolves outstanding verifications on the Insurance Affordability application case. It notes that evidence not verified by an external system or accepted via client self-attestation must be manually verified. Useful for understanding the verification workflow and when manual caseworker action is required."
+                  },
+                  {
+                    "title": "Program Authorization",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Reasonable Opportunity Period/Inconsistency Period",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000081",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000055",
+                          "start_page": 55,
+                          "end_page": 55
+                        },
+                        "summary": "Explains federal “reasonable opportunity”/inconsistency period handling for applications with conflicting information. States have 90 days from the potential eligibility notification date (or case start date if no notice) to resolve inconsistencies while applicants can still receive benefits. Describes optional application verifications, mandatory integrated-case verifications, and automatic verification waivers to allow activation and product delivery during the period. Also covers case milestones that trigger overdue follow-up actions after 90 days, plus configurable batch/workflow/API infrastructure and customizable start date/lifetime rules."
+                      }
+                    ],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000054",
+                      "end_unit_id": "p000054",
+                      "start_page": 54,
+                      "end_page": 54
+                    },
+                    "summary": "Describes how program authorization completes an application case after verifications are resolved. Authorization can be configured at the application level or program level via Universal Access admin settings. Application-level strategy uses CER rules and can create or reuse an integrated case to host resulting product deliveries, copying required evidence and adding participants as needed. Program-level strategy authorizes individual programs on a multi-program application, with separate integrated cases for product delivery."
+                  },
+                  {
+                    "title": "Generate Communications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000055",
+                      "end_unit_id": "p000055",
+                      "start_page": 55,
+                      "end_page": 55
+                    },
+                    "summary": "This section explains how to generate communications in Income Support for Medical Assistance, mainly eligibility notifications to applicants or current enrollees. It appears alongside guidance on case/program authorization, integrated cases, and product delivery, but the key topic is the communication mechanism used to inform users of eligibility determinations. Open this section if you need details on built-in notification communications or how they relate to eligibility processing."
+                  },
+                  {
+                    "title": "Deny Application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000056",
+                      "end_unit_id": "p000056",
+                      "start_page": 56,
+                      "end_page": 56
+                    },
+                    "summary": "Explains when a caseworker can deny an Insurance Affordability application from the application case. The worker may deny each program individually, provided a valid denial reason is selected and optional comments added. The section also notes that eligibility communications vary depending on whether outstanding verifications remain, including straight-through approvals, temporary preliminary eligibility notices, and appeal instructions. It briefly describes configurable communication templates: XSL for pro forma communications and Microsoft Word templates for Word-based communications."
+                  },
+                  {
+                    "title": "Outbound Account Transfer to Federal Hub",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000084",
+                    "range": {
+                      "start_unit_id": "p000057",
+                      "end_unit_id": "p000057",
+                      "start_page": 57,
+                      "end_page": 57
+                    },
+                    "summary": "Explains outbound account transfer from the State Medicaid Agency (SMA) to the Federally Facilitated Marketplace (FFM) over the shared interface schema. Describes how trigger points depend on whether the transfer is a deferred response, using two application examples (FFM-to-SMA and SMA-to-FFM). Notes that outbound transfers may be sent after specific eligibility/ineligibility decisions, including some verification-related denials, but not procedural denials. Also highlights special rules for streamlined Medicaid/CHIP and unlawfully present applicants."
+                  }
+                ],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000057",
+                  "start_page": 48,
+                  "end_page": 57
+                },
+                "summary": "Caseworker intake covers the internal, caseworker-led application flow in Cúram Income Support for Medical Assistance. It explains how workers search for and register an individual, then complete an Insurance Assistance application using an IEG script with required client consent and rights/responsibilities text. It also covers person matching, inbound account transfers from the FFM, creation of an application case with PDF attachment, evidence maintenance, eligibility checks, verifications, program authorization, communications, denials, and outbound account transfers."
+              },
+              {
+                "title": "Ongoing Case Management",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Create Integrated Case",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Integration with Person Evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000087",
+                        "range": {
+                          "start_unit_id": "p000059",
+                          "end_unit_id": "p000059",
+                          "start_page": 59,
+                          "end_page": 59
+                        },
+                        "summary": "Explains how person evidence is integrated with Insurance Affordability and Income Support cases via the Participant Manager and evidence broker. Person/prospect data can be maintained as evidence for eligibility and entitlement, shared between intake, person, and ongoing cases, with users notified of incoming evidence to review. Organizations can configure which person evidence types are added to a case and whether updates are shared. PDC mode is on by default and cannot be turned off. Duplicate evidence is filtered, and case/person evidence can broker across open cases except back to the originating case."
+                      }
+                    ],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000058",
+                      "end_unit_id": "p000058",
+                      "start_page": 58,
+                      "end_page": 58
+                    },
+                    "summary": "After program authorization on an application case, an Insurance Affordability integrated case is created to support ongoing case management. It is used to resolve verifications, capture evidence updates, and manage multiple application cases for a household’s members. The section also notes configurable mappings in Common Intake: admins can set the ongoing integrated case type from the Application Cases and program home tabs, with Insurance Affordability integrated case configured by default."
+                  },
+                  {
+                    "title": "Evidence Brokering",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000060",
+                      "start_page": 59,
+                      "end_page": 60
+                    },
+                    "summary": "Explains evidence brokering for Insurance Affordability and Income Support integrated cases. Describes how person evidence is shared between application cases, integrated cases, the Participant Manager, and person/prospect records, including when incoming evidence is brokered and how duplicates are discarded. Notes that evidence configured as trusted source=Yes can flow across cases, with PDC on by default and not supported off. Includes a configuration table of supported source/target sharing paths and logical equivalent evidence mappings (for example, SSN Details ↔ Identifications) using sharing rules XML."
+                  },
+                  {
+                    "title": "Run Program Group Logic and Activate Product Delivery Cases",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000061",
+                      "end_unit_id": "p000062",
+                      "start_page": 61,
+                      "end_page": 62
+                    },
+                    "summary": "Explains how, after program authorization and integrated case creation, program group logic identifies eligible programs and people, then rules decide whether to create, reuse, or reopen product delivery cases within Insurance Affordability cases. Covers certification and eligibility timing for Insurance Assistance/UQHP, Streamlined Medicaid/CHIP, exemptions, and 15-day eligibility rules. Lists product delivery case types created for Income Support for Medical Assistance and notes closed cases with “Created in Error” are never reopened, with closure reasons configurable."
+                  },
+                  {
+                    "title": "Generate Communications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000063",
+                      "end_unit_id": "p000063",
+                      "start_page": 63,
+                      "end_page": 63
+                    },
+                    "summary": "Describes the program’s communication outputs for eligibility decisions. It explains that applicants or enrollees receive notices after successful straight-through determinations or when outstanding verifications require a preliminary, temporary eligibility notice. Communications cover household eligibility across Medicaid, CHIP, state basic health plan, employer-sponsored insurance, and exemptions, and include appeal instructions. It lists four notification types: eligibility decision for an application, eligibility decision from evidence change, preliminary determination with evidence inconsistencies, and preliminary determination for a change reported through evidence."
+                  },
+                  {
+                    "title": "Viewing Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000091",
+                    "range": {
+                      "start_unit_id": "p000064",
+                      "end_unit_id": "p000064",
+                      "start_page": 64,
+                      "end_page": 64
+                    },
+                    "summary": "Explains how to view eligibility after program group logic runs and product delivery cases become active. The Eligibility Viewer (EV) provides a consolidated timeline of program eligibility at the Integrated Case level and a person-level timeline across cases. It shows current-year eligibility with month highlighting, supports back/forward year navigation, list view, and clickable eligibility bars with start/end dates and split points when eligibility or entitlement changes. It also displays program-specific calculation details and highlights retroactive coverage periods."
+                  },
+                  {
+                    "title": "Viewing Product Delivery Decisions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000092",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "This section explains product delivery decision screens for insurance affordability programs. It shows how eligibility results are displayed for each household member, using Cúram Express Rules to control what appears based on rule outcomes. It covers summary, non-financial, and income decision views, including pass/fail eligibility, Streamlined Medicaid coverage categories, CHIP cost details, and Insurance Assistance benefit unit/support details. It also notes drill-down into member-level eligibility reasons."
+                  },
+                  {
+                    "title": "Check Retroactive Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000066",
+                      "end_unit_id": "p000066",
+                      "start_page": 66,
+                      "end_page": 66
+                    },
+                    "summary": "Explains how to run a Retroactive Medicaid eligibility check using evidence active on an Insurance Affordability integrated case. Supports Retroactive Medicaid for MAGI. If the client is eligible and a Streamlined Medicaid case exists, the certification start date is moved back to cover the retroactive three-month period; otherwise, a product delivery case is created for that period. This node is useful for understanding retroactive eligibility behavior and case outcomes, not general eligibility summaries."
+                  },
+                  {
+                    "title": "Generate Communications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000067",
+                      "end_unit_id": "p000067",
+                      "start_page": 67,
+                      "end_page": 67
+                    },
+                    "summary": "Describes Cúram Income Support for Medical Assistance communications for eligibility determinations. It explains that notices vary when outstanding verifications remain: clean straight-through cases generate a combined household eligibility notice, while unverified cases get a temporary eligibility notice listing unverified client-attested items, caseworker follow-up, and appeal instructions. Also notes four notification types are available. This section is useful if you need how eligibility decision notices are generated and what they include."
+                  },
+                  {
+                    "title": "Income Support Caseworker Role",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000095",
+                    "range": {
+                      "start_unit_id": "p000068",
+                      "end_unit_id": "p000068",
+                      "start_page": 68,
+                      "end_page": 68
+                    },
+                    "summary": "This section explains the Income Support Caseworker role, which lets one caseworker manage combined Insurance Affordability, Medicaid, Food Assistance, and Cash Assistance applications/cases in a single workspace. It describes that the IS Case Worker role combines the HCR Case Worker and IS Eligibility Worker roles. It also notes workspace customization options such as the home page, pods, application view, and pages. The page also lists related client notification types for eligibility decisions and preliminary determinations, plus template support for XSL and Microsoft Word communications."
+                  }
+                ],
+                "node_id": "n000085",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000068",
+                  "start_page": 58,
+                  "end_page": 68
+                },
+                "summary": "Covers ongoing case management after application authorization: creation/configuration of Insurance Affordability integrated cases, evidence brokering across application cases, integrated cases, Participant Manager, and Income Support, and rules for creating/reusing product delivery cases. Also includes eligibility viewing and decision screens, retroactive Medicaid checks, and generation of eligibility/preliminary notices. Useful for understanding how ongoing cases are managed, how evidence flows, how eligibility results are displayed, and what communications are produced."
+              }
+            ],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000068",
+              "start_page": 23,
+              "end_page": 68
+            },
+            "summary": "Explains the end-to-end Apply for Insurance Affordability Programs flow for clients, navigators, and caseworkers. Covers application types, account/login, filer selection, consent, online intake, identity proofing, verifications, eligibility results, plan shopping/enrollment, sign/submit, person match, case creation, evidence mapping, authorization, denials, communications, and ongoing case management after approval. Also notes PDF attachment creation and key configuration points in Universal Access, IEG scripts, CER rules, and communications templates."
+          },
+          {
+            "title": "2.3 Check Eligibility for Human Services Programs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Getting Started",
+                "level": 3,
+                "children": [],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000070",
+                  "end_unit_id": "p000070",
+                  "start_page": 70,
+                  "end_page": 70
+                },
+                "summary": "Explains the Universal Access “Getting Started” page shown when a client checks eligibility from the home page. It offers three paths: create an account, log in, or start screening without an account. Notes configurable elements, including account security and multifactor authentication via Admin > Universal Access > Authentication Factors. Also introduces the next step, Select Screening, where users choose basic or detailed household info for human services screening, and lists example programs such as Cash Assistance and Child Care Assistance."
+              },
+              {
+                "title": "Select Programs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000070",
+                  "end_unit_id": "p000071",
+                  "start_page": 70,
+                  "end_page": 71
+                },
+                "summary": "Explains the Select Programs/Select Screening step after login or guest screening, where clients choose between basic or more detailed household screening to determine possible eligibility. Lists the human services programs covered by screening, including cash assistance, child care, Early Head Start, emergency assistance, food assistance, Head Start, LIHEAP, medical assistance, school meals, summer meals, and WIC. Provides brief descriptions of each program’s purpose and target populations."
+              },
+              {
+                "title": "Complete Human Services Screening",
+                "level": 3,
+                "children": [],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000072",
+                  "end_unit_id": "p000072",
+                  "start_page": 72,
+                  "end_page": 72
+                },
+                "summary": "Explains Cúram Human Services Screening in Universal Access: clients can anonymously answer questions about household, benefits, income, expenses, and resources to assess potential eligibility for multiple programs. Accuracy depends on the detail entered, and additional household members can be added during screening. Administrators can configure screening types/programs and customize IEG scripts/help text. The results page shows potentially eligible and undetermined programs, and links may lead to an online application or external program information."
+              },
+              {
+                "title": "View Potential Eligibility Results",
+                "level": 3,
+                "children": [],
+                "node_id": "n000100",
+                "range": {
+                  "start_unit_id": "p000072",
+                  "end_unit_id": "p000072",
+                  "start_page": 72,
+                  "end_page": 72
+                },
+                "summary": "Describes the Potential Eligibility Results page in Universal Access. After human services screening, the system shows lists of potentially eligible programs and programs with undetermined eligibility. Users can click a program to either start an online application or go to an external program website, depending on configuration. Also notes that screening types/programs and IEG script help text can be customized."
+              },
+              {
+                "title": "Apply Online for Human Services Programs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000101",
+                "range": {
+                  "start_unit_id": "p000073",
+                  "end_unit_id": "p000073",
+                  "start_page": 73,
+                  "end_page": 73
+                },
+                "summary": "This section explains how screened clients can apply online for human services programs, especially Food Assistance, Medical Assistance, and Cash Assistance, from the “Your Next Step” page. It describes the Universal Access intake flow, how screening data is mapped into the Income Support application script, and that users can save, exit, and resume applications. It also covers configuration/customization options for screening types, related programs, and IEG scripts, including prepopulation and state-specific script changes."
+              }
+            ],
+            "node_id": "n000096",
+            "range": {
+              "start_unit_id": "p000069",
+              "end_unit_id": "p000072",
+              "start_page": 69,
+              "end_page": 72
+            },
+            "summary": "Explains the Universal Access human services eligibility flow: Getting Started lets clients create an account, log in, or screen anonymously; Select Programs lets them choose basic or detailed screening. It lists supported programs such as cash assistance, child care, food assistance, medical assistance, LIHEAP, Head Start, WIC, and more. The section also covers completing anonymous household screening, configurable screening types and IEG scripts, and viewing results that show potentially eligible or undetermined programs with links to online applications or external program sites."
+          },
+          {
+            "title": "2.4 Apply for Human Services Programs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Getting Started",
+                "level": 3,
+                "children": [],
+                "node_id": "n000103",
+                "range": {
+                  "start_unit_id": "p000075",
+                  "end_unit_id": "p000075",
+                  "start_page": 75,
+                  "end_page": 75
+                },
+                "summary": "Introduces the “Apply for Other Programs” flow in Cúram Income Support for Medical Assistance. The Getting Started page, built in Universal Access/Page Player, offers three paths: create an account, log in, or start screening without an account. It notes configurable elements, including account security and multifactor authentication via Admin > Universal Access > Authentication Factors. Also previews the next step, Select Application, where users begin the human services application form, and mentions organizations may remove the link if they only use HCR."
+              },
+              {
+                "title": "Select Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000104",
+                "range": {
+                  "start_unit_id": "p000075",
+                  "end_unit_id": "p000075",
+                  "start_page": 75,
+                  "end_page": 75
+                },
+                "summary": "Describes the “Select Application” step in the Income Support for Medical Assistance flow. After a client logs in/authenticates or starts without an account, they reach the first application script page and can choose to complete the human services application form. Notes its relationship to “Getting Started,” integration with Cúram Income Support and Medicaid/assistance case management, and that applications/programs can be configured in Universal Access. Also mentions a customization option to remove the “Apply for Other Programs” link for HCR-only organizations."
+              },
+              {
+                "title": "Complete Human Services Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000105",
+                "range": {
+                  "start_unit_id": "p000076",
+                  "end_unit_id": "p000076",
+                  "start_page": 76,
+                  "end_page": 76
+                },
+                "summary": "Explains the Complete Human Services Application flow: clients can apply online or by mail for programs like Food Assistance, Cash Assistance, and Medical Assistance, with online submission launching the Income Support IEG script. Covers save/resume, withdrawal, electronic signature, and return to the home page after intake. Notes that applications/programs and IEG scripts are configurable in Cúram Administration. Also describes differences between Health Care Reform and Income Support intake, including separate processing and Person Match vs. Client Merge handling."
+              },
+              {
+                "title": "Integration with Cúram Income Support Intake",
+                "level": 3,
+                "children": [],
+                "node_id": "n000106",
+                "range": {
+                  "start_unit_id": "p000076",
+                  "end_unit_id": "p000076",
+                  "start_page": 76,
+                  "end_page": 76
+                },
+                "summary": "Explains how Cúram Income Support intake fits with other human services applications and how Medical Assistance differs from other Income Support programs. It notes that Medical Assistance uses Cúram Intake application case functionality, while other Income Support applications use separate processes. Overlap occurs in matching applicants to existing people: Health Care Reform uses automated Person Match, whereas Income Support uses manual Client Merge. Also covers registration of new participants, creation of person evidence, and straight-through processing for manual intervention decisions."
+              }
+            ],
+            "node_id": "n000102",
+            "range": {
+              "start_unit_id": "p000073",
+              "end_unit_id": "p000076",
+              "start_page": 73,
+              "end_page": 76
+            },
+            "summary": "Explains the Apply for Human Services Programs flow in Cúram Income Support for Medical Assistance. Clients can start from screening results/home page, create an account, log in, or continue without one, then choose a program on Getting Started and Select Application. The flow launches the Income Support IEG application, supports save/resume, withdrawal, and electronic signature, and returns users to the home page when finished. Covers configuration in Universal Access/Admin, HCR-only landing page customization, and how Medical Assistance intake differs from other Income Support programs, including Person Match vs. Client Merge."
+          },
+          {
+            "title": "2.5 Check Cost of Health Plans",
+            "level": 2,
+            "children": [
+              {
+                "title": "Getting Started",
+                "level": 3,
+                "children": [],
+                "node_id": "n000108",
+                "range": {
+                  "start_unit_id": "p000079",
+                  "end_unit_id": "p000079",
+                  "start_page": 79,
+                  "end_page": 79
+                },
+                "summary": "Describes the Getting Started page in the Universal Access citizen portal. Users can create an account, log in, or start screening without an account. Notes configurable elements such as authentication factors and homepage motivations, including customizable IEG scripts. Also explains eligibility-related plan browsing: plans and premiums are pulled from the plan management system using limited rating factors (age, tobacco use, family size, geography), and clients cannot enroll directly from plan browsing."
+              },
+              {
+                "title": "Complete Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000079",
+                  "end_unit_id": "p000079",
+                  "start_page": 79,
+                  "end_page": 79
+                },
+                "summary": "This section explains the Complete Application flow for Health Care Reform: Getting Started, Browse Plans, and Submit Application. It describes how clients can create an account, log in, or start screening without an account; how authentication factors and page elements can be configured in Universal Access; and how an IDE/IEG script collects rating data like age, tobacco use, and ZIP code to display eligible plans and premiums from the plan management system. It also notes that clients cannot enroll directly and must apply for assistance through the Citizen Portal Intake process."
+              },
+              {
+                "title": "Browse Plans",
+                "level": 3,
+                "children": [],
+                "node_id": "n000110",
+                "range": {
+                  "start_unit_id": "p000079",
+                  "end_unit_id": "p000079",
+                  "start_page": 79,
+                  "end_page": 79
+                },
+                "summary": "Explains the Browse Plans step from eligibility results. Clients can view plans they’re eligible for, with monthly premiums calculated from plan management system data. It notes that only the plan list and premium are shown; enrollment cannot be completed in the plan management system. If a client wants a plan, they must apply for assistance through the Citizen Portal Intake process."
+              }
+            ],
+            "node_id": "n000107",
+            "range": {
+              "start_unit_id": "p000077",
+              "end_unit_id": "p000079",
+              "start_page": 77,
+              "end_page": 79
+            },
+            "summary": "Describes the Health Care Reform “Check Cost of Health Plans” flow in the citizen portal. Users can start from Getting Started by creating an account, logging in, or screening without an account; authentication and homepage motivations are configurable. An IDE/IEG script collects rating data (age, tobacco use, family size, geography/ZIP) to show eligible plans and premiums from a plan management system. Browse Plans shows plan lists and monthly premiums only; users cannot enroll there and must apply through the Citizen Portal Intake process."
+          },
+          {
+            "title": "2.6 Maintain Your Citizen Account",
+            "level": 2,
+            "children": [
+              {
+                "title": "Citizen Account Home Page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000112",
+                "range": {
+                  "start_unit_id": "p000081",
+                  "end_unit_id": "p000081",
+                  "start_page": 81,
+                  "end_page": 81
+                },
+                "summary": "Describes the Citizen Account home page for Cúram HCR as a central authenticated client hub for creating accounts, updating information, submitting insurance affordability applications, and tracking application/enrollment status. Explains its three main areas: Messages, Outreach, and left navigation. Covers what each pane shows, including application acknowledgments, targeted campaigns, and open enrollment timing. Notes users can view, resume, delete applications, and access Medicaid/MAGI Medicaid enrollment. Also summarizes configurable elements such as message text, message order, and campaigns displayed."
+              },
+              {
+                "title": "View Contact Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000113",
+                "range": {
+                  "start_unit_id": "p000082",
+                  "end_unit_id": "p000082",
+                  "start_page": 82,
+                  "end_page": 82
+                },
+                "summary": "Explains configurable Citizen Account tabs. The Contact Information tab shows caseworker phone, address, and email, and can be extended via application properties and an interface to add extra contact details (e.g., Twitter handle). Also notes that My Information and My Activities can be replaced with custom pages, and describes My Screening as listing in-progress and completed screenings, with options to continue, delete, start new eligibility screening, or review results."
+              },
+              {
+                "title": "Maintain My Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000114",
+                "range": {
+                  "start_unit_id": "p000082",
+                  "end_unit_id": "p000082",
+                  "start_page": 82,
+                  "end_page": 82
+                },
+                "summary": "Describes the Citizen Account’s “My Information” tab, which shows a high-level household summary including member details, living arrangement, and tax filing status. Clients can report a change of circumstance via the “Update My Information” link, which leads to a separate process. The section also notes that this page can be replaced with a custom page, useful for organizations wanting to tailor the citizen account experience."
+              },
+              {
+                "title": "Maintain Activities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000115",
+                "range": {
+                  "start_unit_id": "p000082",
+                  "end_unit_id": "p000082",
+                  "start_page": 82,
+                  "end_page": 82
+                },
+                "summary": "Describes the Citizen Account’s My Activities tab, which shows all scheduled client activities to help citizens attend them. Activities include actions, services, and referrals scheduled in Cúram, often as part of an outcome plan to support goals such as self-sufficiency. Notes that the My Activities page can be replaced with a custom page."
+              },
+              {
+                "title": "Maintain Screenings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000116",
+                "range": {
+                  "start_unit_id": "p000082",
+                  "end_unit_id": "p000082",
+                  "start_page": 82,
+                  "end_page": 82
+                },
+                "summary": "Describes the Citizen Account’s My Screening tab. It lists in-progress and completed screenings, lets a client continue or delete an in-progress screening, start a new eligibility screening, and view, review, or delete completed screenings and their results."
+              },
+              {
+                "title": "Maintain Applications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000117",
+                "range": {
+                  "start_unit_id": "p000083",
+                  "end_unit_id": "p000083",
+                  "start_page": 83,
+                  "end_page": 83
+                },
+                "summary": "Describes the Citizen Account’s My Applications tab for viewing and managing applications: resume, delete, withdraw, start new, review entered data, generate a PDF copy, and see rejected applications reflected. Access requires an authenticated client with a linked Citizen Self Service Account. Also covers customization: the page can be replaced, application setup is via Admin, and withdrawal reasons are configurable in Universal Access. The excerpt ends as it begins Maintain Enrollments, which lists enrolled programs and configurable enrollment periods."
+              },
+              {
+                "title": "Maintain Enrollments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000118",
+                "range": {
+                  "start_unit_id": "p000083",
+                  "end_unit_id": "p000083",
+                  "start_page": 83,
+                  "end_page": 83
+                },
+                "summary": "The Maintain Enrollments section describes the Citizen Account’s My Enrollments tab, which shows household program enrollments and plan details such as program name, enrolled members, coverage start/end dates. It applies to supported programs like QHP, CHIP, and Streamlined Medicaid, and is not applicable for FFM/FMP states. It also notes that the page can be customized, and administrators can configure open enrollment periods and dates."
+              }
+            ],
+            "node_id": "n000111",
+            "range": {
+              "start_unit_id": "p000080",
+              "end_unit_id": "p000083",
+              "start_page": 80,
+              "end_page": 83
+            },
+            "summary": "Explains the Citizen Account as the authenticated client hub for viewing and maintaining account information, applications, screenings, activities, contact details, and enrollments. Describes the home page layout (Messages, Outreach, left navigation), what clients can do in each tab, and how application/enrollment status is tracked. Also covers configurable/customizable elements such as message text/order, campaigns, contact details, screening setup, withdrawal reasons, open enrollment dates, and replacing standard pages with custom ones."
+          },
+          {
+            "title": "2.7 Create Online Appeal Requests",
+            "level": 2,
+            "children": [],
+            "node_id": "n000119",
+            "range": {
+              "start_unit_id": "p000084",
+              "end_unit_id": "p000084",
+              "start_page": 84,
+              "end_page": 84
+            },
+            "summary": "Explains how citizens can submit online appeal requests from the My Appeals tab in the Citizen Account if they are participants on a Cúram application or case. An IEG script collects the appeal purpose, initiator’s name, and electronic signature. Submission creates a task in an appeal request work queue and generates a PDF for caseworker reference. Caseworkers can acknowledge and continue the appeal or reject it, with status messages shown to all included citizens. Notes that appeal scripts, page presentation, and PDF XSL templates are configurable."
+          },
+          {
+            "title": "2.8 Changes In Circumstance Reporting",
+            "level": 2,
+            "children": [
+              {
+                "title": "Reporting Change of Circumstance by Client",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Log in to Citizen Account and Select to Record a Change of Circumstance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000122",
+                    "range": {
+                      "start_unit_id": "p000087",
+                      "end_unit_id": "p000087",
+                      "start_page": 87,
+                      "end_page": 87
+                    },
+                    "summary": "Explains how a client logs into the HCR Citizen Account to report a change of circumstance online. It covers authentication, access from the home page, viewing the My Information page with current read-only evidence, and using the Update My Information link to start a CoC. It notes the link appears only when no other changes are outstanding, and that only eligible changes can be reported online; corrections to already provided information are excluded and other changes must go to a caseworker."
+                  },
+                  {
+                    "title": "Capture Consent for Data Retrieval and Verification",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000123",
+                    "range": {
+                      "start_unit_id": "p000088",
+                      "end_unit_id": "p000088",
+                      "start_page": 88,
+                      "end_page": 88
+                    },
+                    "summary": "This section explains the consent page shown before the change-of-circumstance script starts. Applicants can authorize use of their information to verify identity or retrieve data from agencies such as DHS, SSA, and IRS via e-verification. If consent is granted, personal data like SSN may be used for automated verification; if denied, a case worker must manually verify application information. It also notes that this consent page is part of the Income Support for Medical Assistance IEG script and is typically customized by state/project requirements."
+                  },
+                  {
+                    "title": "Update Household Information",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000124",
+                    "range": {
+                      "start_unit_id": "p000089",
+                      "end_unit_id": "p000089",
+                      "start_page": 89,
+                      "end_page": 89
+                    },
+                    "summary": "Explains the “Update Household Information” flow after consent for data retrieval. The system shows a pre-populated household summary from the active insurance affordability case, letting the client add, modify, or end-date evidence. It uses the most recent active or in-edit evidence and dynamically asks follow-up questions based on changes, such as adding a household member. Also notes customization options for the IEG script/data schema, selecting the integrated case, and overriding verification processing for external e-verification systems."
+                  },
+                  {
+                    "title": "Verification Data Services",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000125",
+                    "range": {
+                      "start_unit_id": "p000089",
+                      "end_unit_id": "p000089",
+                      "start_page": 89,
+                      "end_page": 89
+                    },
+                    "summary": "Describes verification data services used after client consent to verify updated household information with external systems. It explains that PII such as SSN is sent through the federal hub to verify identity, citizenship, and other details, while unverified or non-electronically verified data is flagged for manual verification. Notes that organizations can override default verification processing and must customize integration with external systems for e-verification via Cúram integration points."
+                  },
+                  {
+                    "title": "View Outstanding Verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000126",
+                    "range": {
+                      "start_unit_id": "p000090",
+                      "end_unit_id": "p000090",
+                      "start_page": 90,
+                      "end_page": 90
+                    },
+                    "summary": "Explains the “View Outstanding Verifications” step in the change of circumstance script: unresolved federal hub verifications are listed to the citizen before results, so they know what delays determination. Describes configuration/customization via rule sets and Java code, including reasonable compatibility rules for income and other verification rules. Also covers running online eligibility and special enrollment rules for Citizen Portal, provisional results, and adverse action handling for Streamlined Medicaid/CHIP changes, including coverage end timing and notice requirements."
+                  },
+                  {
+                    "title": "Run Online Rules and Special Enrollment Rules",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000127",
+                    "range": {
+                      "start_unit_id": "p000090",
+                      "end_unit_id": "p000090",
+                      "start_page": 90,
+                      "end_page": 90
+                    },
+                    "summary": "This section explains how the Citizen Portal runs online eligibility and special enrollment rules and shows a provisional results page. It covers special enrollment for qualified health plans outside open enrollment, based on reported changes. It also defines adverse action for Streamlined Medicaid and CHIP changes, including moves to QHP, CHIP, or less beneficial Medicaid categories, and how it determines when existing coverage ends and notice is required."
+                  },
+                  {
+                    "title": "View Eligibility Results",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000128",
+                    "range": {
+                      "start_unit_id": "p000091",
+                      "end_unit_id": "p000091",
+                      "start_page": 91,
+                      "end_page": 91
+                    },
+                    "summary": "This section explains how Universal Access displays HCR eligibility results for a client household. It describes the eligibility results page layout, including the top panel with applicants, program eligibility, enrollment status, and My Items for processed enrollments. It also notes that online help is available for key terminology and that the page is divided into three main content sections."
+                  },
+                  {
+                    "title": "Shop For and Enroll in Plans",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000129",
+                    "range": {
+                      "start_unit_id": "p000092",
+                      "end_unit_id": "p000092",
+                      "start_page": 92,
+                      "end_page": 92
+                    },
+                    "summary": "Explains how eligible clients can shop for and enroll in health plans from the eligibility results page. Only clients eligible for IA or UQHP and meeting special enrollment criteria can proceed; pending verifications block shopping until resolved. Enrollment itself is handled by an external plan management system, after which the client returns to the results page with summary details. The page also surfaces other government/community services and can be customized via display rules, configurations, CER rule sets, and plan management API integration."
+                  },
+                  {
+                    "title": "Sign and Submit Change of Circumstance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000130",
+                    "range": {
+                      "start_unit_id": "p000093",
+                      "end_unit_id": "p000093",
+                      "start_page": 93,
+                      "end_page": 93
+                    },
+                    "summary": "Explains the Sign and Submit step for a change of circumstance in Insurance Assistance. The client confirms submitted information via a modal e-signature, can set or opt out of automatic coverage renewal, and submits changes to the integrated case as in-edit evidence. Evidence is then verified and, if configured and no outstanding verifications exist, auto-activated; otherwise a caseworker must resolve verifications and retry. Notes that eligible citizens have up to 60 days to complete plan enrollment and can resume later."
+                  },
+                  {
+                    "title": "Map In-Edit Evidence to Integrated Case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000131",
+                    "range": {
+                      "start_unit_id": "p000093",
+                      "end_unit_id": "p000093",
+                      "start_page": 93,
+                      "end_page": 93
+                    },
+                    "summary": "This section explains how change-of-circumstance evidence captured in the IEG script is mapped into the integrated case as in-edit evidence by default. It notes that the process uses Life Event infrastructure to update an ongoing Insurance Affordability case with client-supplied changes. The excerpt also covers sign-and-submit behavior, automatic/manual evidence verification, activation conditions, caseworker tasks when verification is outstanding, and the ability to resume plan enrollment within 60 days after an eligible submission."
+                  }
+                ],
+                "node_id": "n000121",
+                "range": {
+                  "start_unit_id": "p000087",
+                  "end_unit_id": "p000093",
+                  "start_page": 87,
+                  "end_page": 93
+                },
+                "summary": "Explains the end-to-end client change-of-circumstance flow in Citizen Account: login, My Information, consent for e-verification, updating household data, viewing outstanding verifications and provisional eligibility, shopping/enrolling in plans, and sign-and-submit. Covers how reported changes map to integrated case in-edit evidence, when evidence auto-activates or requires caseworker follow-up, adverse-action timing for Medicaid/CHIP changes, special enrollment rules, and the 60-day window to resume plan enrollment. Also highlights key customization points for scripts, rules, UI, and plan-management integration."
+              },
+              {
+                "title": "Reporting Change Circumstance by Caseworker",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "View Existing Integrated Case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000133",
+                    "range": {
+                      "start_unit_id": "p000094",
+                      "end_unit_id": "p000094",
+                      "start_page": 94,
+                      "end_page": 94
+                    },
+                    "summary": "Explains how a caseworker views an existing Insurance Affordability integrated case as the first step in reporting a client change of circumstances. The caseworker navigates to the client’s integrated case and records the change on the Evidence tab. It also points to related steps for recording evidence changes and using evidence management wizards to streamline updates."
+                  },
+                  {
+                    "title": "Record Evidence Changes",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Evidence Management Wizards",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000135",
+                        "range": {
+                          "start_unit_id": "p000094",
+                          "end_unit_id": "p000095",
+                          "start_page": 94,
+                          "end_page": 95
+                        },
+                        "summary": "Describes Evidence Management Wizards for simplifying caseworker change-of-circumstance recording. Explains that organizations can configure a guided UIM wizard plus logic to flag missing evidence, with the Add a Member wizard as the example. Covers when the wizard should not be used (active member or re-adding a returning member), how to access it, and its step-by-step flow: Participant Details, Personal Information, Relationships, Tax Information, Income, and Summary. Notes that additional evidence may still be required after completion."
+                      },
+                      {
+                        "title": "Re-adding a member to a case",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000136",
+                        "range": {
+                          "start_unit_id": "p000096",
+                          "end_unit_id": "p000096",
+                          "start_page": 96,
+                          "end_page": 96
+                        },
+                        "summary": "Describes the “Re-add a Member” guided change for ongoing cases. It uses a UIM wizard to re-add a household member and automatically create Application Details evidence to determine active status. Users can launch it from Guided Changes in the Tab Action menu or Evidence tab navigation. The wizard prompts for the returning participant and re-add date, limited to participants with no active Application Details evidence and motivation type Insurance Affordability. It is customizable and intended as an example solution; related text also notes the Add Member wizard and its configurable rules."
+                      }
+                    ],
+                    "node_id": "n000134",
+                    "range": {
+                      "start_unit_id": "p000094",
+                      "end_unit_id": "p000096",
+                      "start_page": 94,
+                      "end_page": 96
+                    },
+                    "summary": "Covers caseworker recording of evidence changes on an integrated case, either by manual updates/additions or via guided Evidence Management wizards. Explains the OOTB Add a Member wizard: when to use it, access points, step flow, generated action-required evidence, and customization of rules. Also introduces Re-add a Member for returning household members on ongoing cases, including its UIM wizard, automatic Application Details creation, access points, eligibility filters, and customization."
+                  },
+                  {
+                    "title": "Resolve Outstanding Verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000137",
+                    "range": {
+                      "start_unit_id": "p000097",
+                      "end_unit_id": "p000097",
+                      "start_page": 97,
+                      "end_page": 97
+                    },
+                    "summary": "This section explains how caseworkers resolve outstanding verifications in an integrated case. It notes that evidence not verified by an external system or accepted via client self-attestation must be manually verified, which pauses straight-through processing while the worker contacts the client. It also mentions that verifications are configured as optional to support federal reasonable opportunity/inconsistency periods, allowing program benefits to continue during that time."
+                  },
+                  {
+                    "title": "Apply Evidence Changes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000138",
+                    "range": {
+                      "start_unit_id": "p000098",
+                      "end_unit_id": "p000098",
+                      "start_page": 98,
+                      "end_page": 98
+                    },
+                    "summary": "This section explains how to apply evidence changes in Insurance Affordability integrated cases. After caseworkers add or change evidence, changes must be applied to activate new/updated evidence or remove evidence pending removal. It also covers customizable before/after evidence application processes, and program group logic triggered by evidence activation, which reassesses eligibility and may create, reuse, or reopen product delivery cases. It notes that closure reasons preventing reopening can be configured, including “Created in Error,” and that this logic applies only within Insurance Affordability integrated cases."
+                  },
+                  {
+                    "title": "Run Program Group Logic and Activate Product Cases if Required",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000139",
+                    "range": {
+                      "start_unit_id": "p000098",
+                      "end_unit_id": "p000098",
+                      "start_page": 98,
+                      "end_page": 98
+                    },
+                    "summary": "This section explains how Insurance Affordability integrated cases use evidence activation to trigger program group logic and reassessment. It covers applying evidence changes, activating new/updated evidence, and removing pending evidence. It also describes when program group logic creates, reuses, or reopens product delivery cases, including special handling for closed cases and the “Created in Error” closure reason. It notes that closure reasons preventing reopening are configurable and that program group logic rules can be customized to meet project needs."
+                  },
+                  {
+                    "title": "Special Enrollments",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000140",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "For APTC programs, changes in circumstances can trigger special enrollment outside open enrollment. The system runs special enrollment rules to enable an enrollment link for 60 days from the event’s effective date; at reassessment, caseworkers can manually enable shopping from an IC menu. The list of special enrollment reasons is configurable. The section also covers FFM account transfer behavior for changes of circumstance, including outbound/inbound transfers, default exceptions for Streamlined Medicaid/CHIP, and customizable API mapping/extension points."
+                  },
+                  {
+                    "title": "Outbound Account Transfer to Federal Hub",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000141",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "For FFM states, this section explains when changes of circumstance on an FFM-originated case must be sent back to the Federal Hub as an outbound account transfer. Transfers occur even without eligibility changes, except when everyone remains only Streamlined Medicaid/CHIP, with exceptions for newly eligible Non-MAGI Medicaid or certain non-MEC programs. It also notes that later FFM-reported changes can trigger an inbound transfer treated by FFM as a change of circumstances but as a new application by the organization."
+                  },
+                  {
+                    "title": "Generate Communications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000142",
+                    "range": {
+                      "start_unit_id": "p000100",
+                      "end_unit_id": "p000100",
+                      "start_page": 100,
+                      "end_page": 100
+                    },
+                    "summary": "This section describes default communications for Change of Circumstance processing in Cúram Income Support for Medical Assistance. It covers two client notifications: one for an eligibility decision resulting from a successful evidence change, and one for a preliminary eligibility determination when new evidence creates inconsistencies. It notes that communications are customizable by the organization."
+                  }
+                ],
+                "node_id": "n000132",
+                "range": {
+                  "start_unit_id": "p000094",
+                  "end_unit_id": "p000099",
+                  "start_page": 94,
+                  "end_page": 99
+                },
+                "summary": "Covers caseworker change-of-circumstance handling in Insurance Affordability integrated cases: viewing the case, recording and applying evidence changes, resolving outstanding verifications, and triggering program group logic/product case updates. Also includes guided evidence wizards (Add a Member, Re-add a Member), special enrollments, FFM outbound/inbound account transfers, coverage start-date configuration, and default client communications. Notes multiple customization points for workflow, rules, evidence mapping, closure reasons, and APIs."
+              }
+            ],
+            "node_id": "n000120",
+            "range": {
+              "start_unit_id": "p000084",
+              "end_unit_id": "p000099",
+              "start_page": 84,
+              "end_page": 99
+            },
+            "summary": "Explains how changes of circumstance are reported and processed in Cúram for Insurance Affordability cases. Covers citizen self-service and caseworker-driven flows, evidence capture and activation, verifications, program group reassessment, product case reuse/reopen rules, special enrollment, adverse-action timing, coverage start-date rules, and FFM outbound/inbound account transfers. Notes customization points for IEG scripts, My Information UI, verification rules, guided wizards (Add/Re-add Member), closure reasons, special enrollment reasons, and account-transfer APIs."
+          },
+          {
+            "title": "2.9 Annual renewals and periodic data matching",
+            "level": 2,
+            "children": [
+              {
+                "title": "Periodic Data Matching",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Poll External Systems (PDM)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000145",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000102",
+                      "start_page": 102,
+                      "end_page": 102
+                    },
+                    "summary": "Explains how periodic data matching (PDM) polls external systems and stores returned data as incoming, read-only external evidence on Insurance Affordability integrated cases. Notes organizations must determine timing, target cases/clients, and ensure client authorization. Cúram provides an API to add retrieved evidence and update process control tables; bulk external-system communication is not provided. Default evidence types include MEC, Death Status, Income, and Annual Tax Return, and organizations can configure new external evidence types. Also covers mapping external data into Cúram evidence tables via integration points."
+                  },
+                  {
+                    "title": "Map and Store External Evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000146",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000102",
+                      "start_page": 102,
+                      "end_page": 102
+                    },
+                    "summary": "This section explains how Cúram handles external evidence for Periodic Data Matching (PDM). It states that organizations must retrieve data from external systems, use the provided API to add it to cases, and map it to Cúram external evidence tables. Default evidence types include Minimum Essential Coverage, Death Status, Income, and Annual Tax Return; organizations may configure new external evidence types. PDM evidence is stored as incoming, read-only evidence on the Insurance Affordability integrated case and tied to the triggering match run."
+                  },
+                  {
+                    "title": "Identify Verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000147",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "This section explains how to identify and configure verifications using external evidence, including reasonable compatibility checks between client-attested income and trusted data sources. It warns that external evidence should not be referenced directly in eligibility/entitlement rules because it can trigger unwanted redeterminations and performance issues. It also describes projected eligibility: using external data from polling to simulate eligibility outcomes, notify clients via Citizen Account, and record results. Organizations can customize verification rules and extend projected eligibility with additional external evidence types."
+                  },
+                  {
+                    "title": "Determining Projected Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000148",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "Explains how projected eligibility is determined using external evidence from polling/policy data matching, rather than client-attested evidence, to simulate eligibility outcomes. Notes that only the latest polled evidence for the specific run is used, and equivalent client evidence is ignored (example: external Death Status replaces Application Details death info). Also states results are shown in Citizen Account/Citizen Portal and recorded on the case. Mentions organizations can customize projected eligibility to include additional external evidence types via evidence handlers."
+                  },
+                  {
+                    "title": "Automatically Process PDM after 30 Days",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000149",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "After projected eligibility, cases with no client response are automatically completed after a defined interval, defaulting to 30 days. The batch process updates cases using external evidence converters, and remaining unprocessed cases must be handled by a custom implementation. Organizations must also implement notice generation; Cúram provides no default notice, though sample code and APIs store notices as attachments. This section covers automatic PDM completion, external evidence conversion, and required customization for notices and exception handling."
+                  },
+                  {
+                    "title": "Generate Notice",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000150",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "This section explains that organizations must implement notice generation for the PDM process. Cúram provides no default notice, and batch processing fails without one. It notes that sample code and APIs can be used to generate and store notices as communications in the Attachments table. The section also links notice generation to client notification timing: clients have 30 days to respond to projected eligibility results before automatic processing or application of updates."
+                  },
+                  {
+                    "title": "View PDM Messages and Updates from Polled Data",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000151",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "Explains how PDM messages and polled-data updates work after eligibility projection. The client has 30 days to contest externally sourced information; a notification is sent and a Citizen Account message appears even if the polled data matches existing attested data. During the review period, updates can be confirmed by the client or caseworker, then are permanently applied to the integrated case after expiration. This section also sits alongside related PDM tasks such as automatic processing after 30 days and notice generation."
+                  },
+                  {
+                    "title": "Contest and Confirm PDM Information Received from External Sources",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000152",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "Explains how clients contest periodic data match (PDM) information in Citizen Account. Users see update messages on the home/My Updates pages, can view a projected eligibility notice, and may contest external evidence within 30 days. Contesting opens a modal to confirm the dispute and provide a reason, creates a caseworker task, and removes the update from the list. If no contest is filed, the evidence is automatically applied after the time limit. Also covers configurable messages, custom notices, and contestable evidence types."
+                  },
+                  {
+                    "title": "Process PDM Contestation by Caseworker",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "View PDM notice by caseworker",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000154",
+                        "range": {
+                          "start_unit_id": "p000106",
+                          "end_unit_id": "p000106",
+                          "start_page": 106,
+                          "end_page": 106
+                        },
+                        "summary": "Caseworkers can view PDM notices in the integrated case Communications section, including projected eligibility and evidence changes retrieved from external systems. The section notes that organizations must implement the notice/communication itself; Cúram provides no default notice, and batch processing fails if no notice is generated. It also mentions sample code, API-based notice generation, and storage in the Attachments table. Related nearby content covers viewing PDM on the integrated case and contesting PDM information on behalf of a citizen."
+                      },
+                      {
+                        "title": "View PDM on integrated case",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000155",
+                        "range": {
+                          "start_unit_id": "p000106",
+                          "end_unit_id": "p000106",
+                          "start_page": 106,
+                          "end_page": 106
+                        },
+                        "summary": "Explains how caseworkers view PDM data matches in an integrated Insurance Affordability case and what they can do with them. Covers viewing PDM notices in Communications, checking recent transactions, and contesting PDM information on behalf of a citizen. Also notes that contested records become “Caseworker contested,” comments are not shown on the client’s citizen account, and that UIM/customization determines page content while notices must be implemented by the organization."
+                      },
+                      {
+                        "title": "Contest and Confirm PDM Information on behalf of a citizen",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000156",
+                        "range": {
+                          "start_unit_id": "p000106",
+                          "end_unit_id": "p000106",
+                          "start_page": 106,
+                          "end_page": 106
+                        },
+                        "summary": "Explains how caseworkers can contest PDM information on behalf of a client from the Insurance Affordability integrated case. The caseworker can enter or edit the contest reason in Data Matches, and the record status changes to Caseworker contested. It notes that these caseworker-generated contests are marked separately and do not appear on the client’s citizen account. The page also sits in a broader PDM workflow covering caseworker resolution, notices, and configurable UIM/customization points."
+                      },
+                      {
+                        "title": "Perform reassessment",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000157",
+                        "range": {
+                          "start_unit_id": "p000107",
+                          "end_unit_id": "p000107",
+                          "start_page": 107,
+                          "end_page": 107
+                        },
+                        "summary": "When a caseworker activates evidence, the system triggers existing reassessment processing to create a new determination. This recalculates household eligibility on the Insurance Affordability integrated case and produces new eligibility decisions. The section also notes that program group logic runs when evidence changes are activated, and points to annual renewal processing for QHP, Medicaid, and CHIP, including the ACA requirement for annual QHP renewal."
+                      }
+                    ],
+                    "node_id": "n000153",
+                    "range": {
+                      "start_unit_id": "p000106",
+                      "end_unit_id": "p000106",
+                      "start_page": 106,
+                      "end_page": 106
+                    },
+                    "summary": "Explains how a caseworker handles a client’s PDM contestation: a task is created, the caseworker resolves outstanding verifications, updates evidence, and records the contest reason. Also covers configuration/customization of UIM pages and optional task flow. Includes viewing PDM notices in Communications and PDM data matches on the integrated case, noting notices must be implemented by the organization and batch processing fails if no notice is generated. Caseworker-entered contests are marked “Caseworker contested” and do not appear on the client’s citizen account."
+                  }
+                ],
+                "node_id": "n000144",
+                "range": {
+                  "start_unit_id": "p000101",
+                  "end_unit_id": "p000106",
+                  "start_page": 101,
+                  "end_page": 106
+                },
+                "summary": "Periodic Data Matching (PDM) covers how Cúram polls external sources, maps returned MEC/death/income/tax data to read-only evidence on Insurance Affordability cases, and uses it for verifications and projected eligibility. It explains that organizations must retrieve data, generate notices, configure contestable evidence types, and customize handlers/UIM as needed; Cúram provides APIs but no bulk polling or default notice. The section also describes client/caseworker review flows, 30-day contest periods, and automatic case processing after expiry."
+              },
+              {
+                "title": "Annual Renewals",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Annual renewals for Qualified Health Plans",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Poll External Systems (AR)",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000160",
+                        "range": {
+                          "start_unit_id": "p000109",
+                          "end_unit_id": "p000109",
+                          "start_page": 109,
+                          "end_page": 109
+                        },
+                        "summary": "Explains the annual renewal (AR) step where Cúram polls external systems to retrieve mandatory evidence for QHP renewals, mainly IRS and current income. Describes that the organization must decide timing, cases, clients, and authorization for polling. Polled data is stored as incoming, read-only “External System” evidence on the Insurance Affordability integrated case. The section also notes that this evidence is tied to the renewal run and used with active attested evidence to project eligibility."
+                      },
+                      {
+                        "title": "Map and Store External Evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000161",
+                        "range": {
+                          "start_unit_id": "p000110",
+                          "end_unit_id": "p000110",
+                          "start_page": 110,
+                          "end_page": 110
+                        },
+                        "summary": "This section explains how external evidence is handled for Annual Renewals: organizations must retrieve data from external systems and use Cúram’s API to add it to cases, since bulk system communication is not provided. It notes default support for Minimum Essential Coverage, Death Status, Income, and Annual Tax Return evidence, and that incoming tax return data is mapped by default handlers. It also covers mapping external data to evidence tables, using reasonable-compatibility verifications, and warns not to reference external evidence directly in eligibility rules because of redetermination and performance issues."
+                      },
+                      {
+                        "title": "Identify Verifications",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000162",
+                        "range": {
+                          "start_unit_id": "p000110",
+                          "end_unit_id": "p000110",
+                          "start_page": 110,
+                          "end_page": 110
+                        },
+                        "summary": "Explains how external evidence is mapped into Cúram and tied to verification rules for annual renewals and projected eligibility. It notes that organizations must retrieve external evidence and use Cúram’s API to add it, since bulk external-system communication is not provided. The section highlights “reasonable compatibility” verifications comparing client-attested income with external Annual Tax Return/Income Details evidence, warns not to reference external evidence directly in eligibility rules, and states that customization is needed for verification rule behavior."
+                      },
+                      {
+                        "title": "Determining Projected Eligibility (AR)",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000163",
+                        "range": {
+                          "start_unit_id": "p000110",
+                          "end_unit_id": "p000110",
+                          "start_page": 110,
+                          "end_page": 110
+                        },
+                        "summary": "Explains projected eligibility for Annual Renewals (AR): Cúram runs program group rules using active case data plus external source data to show the effect of applying that data. It notes organizations must retrieve external evidence themselves, use the API to add it to cases, and map external evidence into Cúram tables. Default evidence types include Minimum Essential Coverage, Death Status, Income, and Annual Tax Return. It also warns not to reference external evidence directly in eligibility rules and says reasonable compatibility verification rules are customizable."
+                      },
+                      {
+                        "title": "Automatically renew Medicaid or CHIP cases",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000164",
+                        "range": {
+                          "start_unit_id": "p000111",
+                          "end_unit_id": "p000111",
+                          "start_page": 111,
+                          "end_page": 111
+                        },
+                        "summary": "Explains automatic renewal of Medicaid or CHIP cases when all current benefit unit members remain eligible. Describes automatic processing after a defined response interval (default 30 days) for annual renewals and periodic data matching, including use of projected eligibility and polled external evidence. Notes that organizations can customize response days, evidence handlers, and external evidence types, but must build custom processing for cases that cannot be renewed or processed automatically."
+                      },
+                      {
+                        "title": "Automatic Processing After Defined Interval",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000165",
+                        "range": {
+                          "start_unit_id": "p000111",
+                          "end_unit_id": "p000111",
+                          "start_page": 111,
+                          "end_page": 111
+                        },
+                        "summary": "Explains automatic case processing after the client response period expires, mainly for periodic data matching and annual renewals. By default, the system runs an automatic completion batch about 30 days after projected eligibility and uses polled external evidence, converted to internal evidence, to redetermine eligibility/entitlement. For QHP annual renewal, if clients do not respond within the interval, polled evidence is applied automatically. Organizations can customize the response-day interval and must handle cases that cannot be processed automatically."
+                      },
+                      {
+                        "title": "Generate notice",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000166",
+                        "range": {
+                          "start_unit_id": "p000112",
+                          "end_unit_id": "p000112",
+                          "start_page": 112,
+                          "end_page": 112
+                        },
+                        "summary": "This section explains how to generate the required renewal/eligibility notice for annual renewal processing. It says organizations must implement a custom notice/communication because Cúram provides no default notice, and batch processing will fail if notice generation is not successful. It notes sample code and APIs for generating and storing notices in the Attachments table. It also covers client-facing annual renewal and My Updates messages, projected eligibility notices in Citizen Account PDF form, and what can be customized on renewal pages and evidence displays."
+                      },
+                      {
+                        "title": "View updates from polled data and annual renewal messages",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000167",
+                        "range": {
+                          "start_unit_id": "p000112",
+                          "end_unit_id": "p000112",
+                          "start_page": 112,
+                          "end_page": 112
+                        },
+                        "summary": "Explains how annual renewal and polled-data updates are shown to citizens. After eligibility projection, clients see annual renewal messages in Citizen Account and a My Updates page listing renewal data from data matches; annual tax return income is indicated without showing the amount. Projected eligibility notices are available as PDFs in Citizen Account. The section also notes configurable home-page messages, custom My Updates columns/evidence types, and custom projected eligibility notices via batch processes."
+                      },
+                      {
+                        "title": "Complete annual renewal for QHP",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000168",
+                        "range": {
+                          "start_unit_id": "p000113",
+                          "end_unit_id": "p000113",
+                          "start_page": 113,
+                          "end_page": 113
+                        },
+                        "summary": "Describes the annual renewal process for Qualified Health Plans (QHP) from the Citizen Account home page: citizens complete the renewal script, review retrieved external data, sign and submit, and the system maps results to the insurance affordability case, potentially auto-renews Medicaid/CHIP, and raises worker tasks. Notes differences between PDM and AR contesting of external information, open-enrollment shopping after submission, configurable response/expiry intervals, and batch-job customization for end-to-end processing. Also covers caseworker-assisted renewals and viewing/creating AR notices."
+                      },
+                      {
+                        "title": "Process annual renewals by caseworker",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "View AR notice",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000170",
+                            "range": {
+                              "start_unit_id": "p000113",
+                              "end_unit_id": "p000113",
+                              "start_page": 113,
+                              "end_page": 113
+                            },
+                            "summary": "Caseworkers can view AR notices in the Communications section of an Insurance Affordability integrated case. These notices show what was sent to the client, including projected eligibility and evidence changes retrieved from external systems. No sample notices are included. The section also notes customization options: the workspace/page containing Communications can be replaced with a custom page, and organizations must develop any required notices."
+                          },
+                          {
+                            "title": "View AR on integrated case",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000171",
+                            "range": {
+                              "start_unit_id": "p000114",
+                              "end_unit_id": "p000114",
+                              "start_page": 114,
+                              "end_page": 114
+                            },
+                            "summary": "Explains how caseworkers use the Integrated Case home page to view recent AR transactions, start/sign/submit/complete Insurance Assistance Renewals, and handle outstanding verifications before redetermination. Notes that the case home page and the Sign and Submit action can be customized, and required verifications are configurable. Also describes an advisor that flags client-attested income evidence needing reverification when external renewal data doesn’t match; advice appears on Integrated Case and Evidence Dashboard pages and can be implemented for other evidence types."
+                          },
+                          {
+                            "title": "Complete QHP renewal on behalf of a client",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000172",
+                            "range": {
+                              "start_unit_id": "p000114",
+                              "end_unit_id": "p000114",
+                              "start_page": 114,
+                              "end_page": 114
+                            },
+                            "summary": "Caseworkers can complete a QHP annual renewal on a client’s behalf in the caseworker app by using Sign and Submit Insurance Assistance Renewal, which stops the timer and records the client’s confirmation. They must update citizen-reported evidence, resolve required verifications, and later use Complete Insurance Assistance Renewal once outstanding items are finished so a redetermination can be generated. The section also notes configurable verifications and customization of the sign-and-submit action, plus an advisor that flags client-attested income evidence needing reverification after external polling."
+                          },
+                          {
+                            "title": "Informing a caseworker when client-attested annual renewal evidence needs reverification",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000173",
+                            "range": {
+                              "start_unit_id": "p000114",
+                              "end_unit_id": "p000114",
+                              "start_page": 114,
+                              "end_page": 114
+                            },
+                            "summary": "Explains how the advisor flags annual renewal income evidence for reverification when a caseworker signs and submits a client’s renewal and external polling creates potentially mismatched evidence. Advice appears on the Integrated Case home page and Evidence Dashboard, and the caseworker must confirm the client-attested evidence is reviewed and verified before the advice disappears. Also notes a sample advisor rule set for income evidence and that similar advice can be implemented for other evidence types."
+                          }
+                        ],
+                        "node_id": "n000169",
+                        "range": {
+                          "start_unit_id": "p000113",
+                          "end_unit_id": "p000114",
+                          "start_page": 113,
+                          "end_page": 114
+                        },
+                        "summary": "Explains how caseworkers process annual QHP renewals on behalf of clients: viewing AR notices and recent transactions on an integrated case, using Sign and Submit Insurance Assistance Renewal, resolving outstanding verifications, and completing the renewal so redetermination can be generated. Notes configurable/customizable case pages, verifications, and sign-and-submit action. Also describes an advisor that flags client-attested income evidence needing reverification when external renewal data mismatches, with advice shown on Integrated Case and Evidence Dashboard pages."
+                      }
+                    ],
+                    "node_id": "n000159",
+                    "range": {
+                      "start_unit_id": "p000109",
+                      "end_unit_id": "p000114",
+                      "start_page": 109,
+                      "end_page": 114
+                    },
+                    "summary": "Explains the QHP annual renewal flow: Cúram polls external systems for mandatory IRS/current income data, maps/stores it as read-only external evidence, uses it in projected eligibility, and applies reasonable-compatibility verifications. Covers automatic renewal after response deadlines, required custom notice generation, Citizen Account/My Updates messaging, and the client/caseworker paths to complete renewal and handle verifications. Also notes configurable batch jobs, response intervals, evidence handlers, and custom pages/communications."
+                  },
+                  {
+                    "title": "Annual Renewals for Medicaid and CHIP",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000174",
+                    "range": {
+                      "start_unit_id": "p000115",
+                      "end_unit_id": "p000115",
+                      "start_page": 115,
+                      "end_page": 115
+                    },
+                    "summary": "Explains annual renewal handling for Medicaid and CHIP cases. Renewal occurs 12 months after the eligibility start date, and successful renewal automatically creates a new product delivery case for the next 12-month certification period. It notes renewals should happen before other case actions, or no new product delivery is created after certification ends. The section also describes custom batch processing for polling external evidence, projected eligibility checks, automatic renewal when eligibility is unchanged, and handling cases that cannot be auto-renewed using PDMRunCaseControlManager and MedicaidProcessAnnualRenewals."
+                  }
+                ],
+                "node_id": "n000158",
+                "range": {
+                  "start_unit_id": "p000107",
+                  "end_unit_id": "p000115",
+                  "start_page": 107,
+                  "end_page": 115
+                },
+                "summary": "Annual renewals covers QHP, Medicaid, and CHIP renewal flows. It explains polling external systems for mandatory IRS/current income data, storing it as read-only external evidence, using it for projected eligibility and reasonable-compatibility checks, then generating required notices and Citizen Account/My Updates messages. It describes automatic renewal after the response window, client and caseworker renewal completion paths, verification handling, and configurable batch jobs/evidence handlers. Medicaid/CHIP renewals occur 12 months from eligibility start and create a new product delivery case only if renewed before certification ends."
+              }
+            ],
+            "node_id": "n000143",
+            "range": {
+              "start_unit_id": "p000100",
+              "end_unit_id": "p000115",
+              "start_page": 100,
+              "end_page": 115
+            },
+            "summary": "Cúram’s annual renewals and periodic data matching (PDM) section explains scheduled polling of external sources, mapping returned MEC/death/income/tax data into read-only external evidence, using it for verification and projected eligibility, and generating required notices/messages. It covers client and caseworker renewal flows, contestation, 30-day response windows, automatic processing after expiry, and custom batch jobs/handlers/UIM for implementation. It also details Medicaid/CHIP-specific annual renewals: 12-month cycles, automatic new product delivery creation only when renewed before certification ends, and handling cases that can’t auto-renew."
+          },
+          {
+            "title": "2.10 (deprecated) Monitoring Cúram Income Support for Medical Assistance Applications",
+            "level": 2,
+            "children": [],
+            "node_id": "n000175",
+            "range": {
+              "start_unit_id": "p000116",
+              "end_unit_id": "p000118",
+              "start_page": 116,
+              "end_page": 118
+            },
+            "summary": "Deprecated admin reports for monitoring Income Support for Medical Assistance intake processing. Describes how managers can use intake reports to see application counts by state, source, and intervention needed, plus active eligible programs by type. Covers Incoming Applications, Applications Received, Intervention Required, and Eligible programs, with default program abbreviations. Warns that refreshing reports can heavily load the system and disrupt intake processing. Notes limited customization, dependence on curam.intake.use.resilience, and that reports only track applications up to eligibility decision."
+          }
+        ],
+        "node_id": "n000034",
+        "range": {
+          "start_unit_id": "p000021",
+          "end_unit_id": "p000118",
+          "start_page": 21,
+          "end_page": 118
+        },
+        "summary": "Overview of the main Health Care Reform business flows for Income Support for Medical Assistance. It links the role-based flow map to detailed processes covering household eligibility screening, online/navigator/caseworker applications, human services program screening and application, plan cost checking, citizen account maintenance, appeals, change of circumstance, annual renewals/PDM, and deprecated intake monitoring. Includes key configuration/customization points (home page, motivations, IEG scripts, CER rules, PDFs, communications, account pages) and notes some flows may not apply in FFM states."
+      },
+      {
+        "title": "3 Program information",
+        "level": 1,
+        "children": [
+          {
+            "title": "3.1 HCR rate tables",
+            "level": 2,
+            "children": [],
+            "node_id": "n000177",
+            "range": {
+              "start_unit_id": "p000119",
+              "end_unit_id": "p000122",
+              "start_page": 119,
+              "end_page": 122
+            },
+            "summary": "Explains HCR rate tables used to maintain rates that change over time and apply during specific effective periods. Notes that rate tables are maintained independently for flexible product pricing. Lists the main HCR rate tables: Annual Federal Poverty Levels for Qualified Health Plan, Annual Federal Poverty Levels for Streamlined Medicaid and CHIP, Tax Filing Thresholds for Dependents, and Tax Filing Thresholds for Dependents for Gross Income. Pages 121–122 are mostly legal notices, copyrights, privacy, and trademarks."
+          }
+        ],
+        "node_id": "n000176",
+        "range": {
+          "start_unit_id": "p000119",
+          "end_unit_id": "p000122",
+          "start_page": 119,
+          "end_page": 122
+        },
+        "summary": "Introduces Health Care Reform (HCR) rate tables for managing time-effective rates used by products. Explains that rate tables are maintained independently for flexible pricing and lists the main tables: Annual Federal Poverty Levels for Qualified Health Plan, Annual Federal Poverty Levels for Streamlined Medicaid and CHIP, Tax Filing Thresholds for Dependents, and Tax Filing Thresholds for Dependents for Gross Income. The remaining pages are legal notices, copyright/license terms, privacy policy, and trademarks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

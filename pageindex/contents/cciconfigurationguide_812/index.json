@@ -1,0 +1,585 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "8cb56fc64da6c1d3",
+    "title": "Cúram 8.1.2 Common Intake Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CCIConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "8cb56fc64da6c1d3b9d762c6dad363915230bc45838896429ca93d7989f8d88b",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:26:09+00:00",
+    "page_count": 54,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CCIConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Common Intake Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000054",
+      "start_page": 1,
+      "end_page": 54
+    },
+    "summary": "This section is the Common Intake configuration guide for Cúram 8.1.2. It explains how intake behavior is defined in XML and stored in the IntakeProcessName and IntakeProcessConfiguration tables, then assigned to users/roles via application codes, including a required DefaultApp mapping. It covers configuring supported programs and their display descriptions, initial contact and intake summary behavior, cases view and quick search panels, workflow customization, generic PDF summary forms, triage and screening definitions, urgent alerts and program recommendations, and client application setup. It also details Universal Access integration, transfer/add-to-existing-case rules, case status changes after transfer or undo, TODO list context, and application quick search preview panels. The last part lists common intake application properties for registrars, search/transfer enablement, map defaults, milestone updates, and work-queue routing.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This section is a brief front-matter note directing readers to review the Notices section on page 53 before using the product or the information in the document. It also includes the Merative US L.P. copyright notice (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Covers Common Intake configuration for Cúram 8.1–8.1.2. Explains how intake processes are defined in XML and stored in database tables, assigned to user roles/app codes, and require a default “DefaultApp” mapping. Details configuring supported programs and descriptions, initial contact intake summary options, cases tab behavior (preview panels, case types/statuses, undisposed applications), and case quick search results. Also notes page customization tradeoffs for replacing shipped UIM pages."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers Common Intake configuration for undisposed applications and the intake workflow, including resilient vs non-resilient processing, evidence mapping, deferred evidence sharing, and post-mapping. Explains how to customize generic PDF summaries using either IntakeApplicationPDFTemplate.xsl or WSXSLTEMPLATEINST001.xsl, including header/logo properties and script/template limitations. Introduces triage setup in the intake XML, with CER rule sets for urgent alerts, service, and program recommendations. Also defines screening setup, program availability (internal/external), and screening status display via code tables."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Configuring Common Intake example setup for a Financial Assistance screening intake. Covers creating CommonIntakeProcess.xml and required DMX entries for intake process, configuration, role assignment, IEG script info, rule set, datastore schemas, and schema translation. Also lists resource records for images, PDFs, and properties files tied to the screening/application flow, including names, paths, IDs, and categories. Useful for implementation details and locating specific configuration files and resources."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Defines Common Intake configuration for application and screening setup. Covers copying required XML/XSD/clob files, configuring screening rule outputs (urgent alerts, recommended programs, internal/external availability), and setting ApplicationType details such as ApplicationScript, ProgramType, ProgramMapping, Milestone timers, IntakeApplicationType mapping from Universal Access, and workflow allocation targets. Also explains configuring application text resources for rights/responsibilities, authorization information, and department policy, plus transfer-to-existing-case settings by case type and status."
+          },
+          {
+            "title": "Edition — pages 45-52",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000052",
+              "start_page": 45,
+              "end_page": 52
+            },
+            "summary": "This section documents Common Intake XML configuration for application/case behavior: transfer-to-existing-case settings, case list filters and preview panels, add-to-existing-case rules, case status changes after transfer/undo transfer, TODO list context, and quick search preview/status settings. It also lists common intake application properties and defaults, including application search/transfer enablement, evidence registrar factories, address locale, Google Maps zoom/center, milestone transport date behavior, work queue assignment, and whether script-captured person/contact details update primary records."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000052",
+          "start_page": 5,
+          "end_page": 52
+        },
+        "summary": "Cúram 8.1–8.1.2 Common Intake configuration. Explains how intake behavior is defined in XML and stored in IntakeProcessName/Configuration tables, assigned to roles/application codes, with a required DefaultApp mapping. Covers supported programs and descriptions, initial contact/intake summary, case lists, preview panels, quick search, and page customization. Also details workflow customization, generic PDF summary templates, triage and screening rules, application type setup (UA integration, transfers, add-to-existing-case, status changes, TODO context), and key application properties such as search/transfer enablement, map defaults, evidence registrars, and work queue routing."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "This page is mostly legal notices: sample data/examples are fictitious, sample programs are provided “AS IS” without warranty, and Merative disclaims liability. It also points to the Merative privacy policy at https://www.merative.com/privacy and lists trademarks owned by Merative, IBM, Adobe, Oracle, Linux Foundation, Microsoft, and The Open Group."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party products. Notes that example names in the document are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and are provided “AS IS” without warranty. Includes the Merative privacy policy URL. Identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general statement that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000053",
+          "end_unit_id": "p000053",
+          "start_page": 53,
+          "end_page": 53
+        },
+        "summary": "Legal notices for use of the publication: personal or enterprise reproduction is allowed only with all proprietary notices preserved; redistribution, derivative works, and external commercial use require Merative consent. It disclaims warranties, limits rights and liability, notes export-control compliance, and states no patent license is granted. It also says information on non-Merative products and websites is from third parties and not endorsed. Includes Merative copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a Cúram 8.1.2 manual section on Common Intake. Lists front matter and Chapter 1 topics: configuring the intake process, intake workflow, triage, screenings, and client applications. Also includes subtopics such as program setup, initial contact, cases view, quick search, PDF summary forms, screening definitions and alerts, application processing, Universal Access integration, transfer/status rules, TODO list context, and application properties. Useful for locating specific setup and configuration procedures."
+      },
+      {
+        "title": "1 Configuring Common Intake",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring the intake process",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring programs for an intake process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to configure an intake process XML so the system can recognize supported programs. Covers adding a default intake process assignment for the `DefaultApp` application code, creating the `IntakeProcess` root and a single `GlobalConfiguration` child, then defining `ProgramType` elements for each supported program. Notes required `ProgramType` code table values, optional `ProgramTypeID` for Universal Access integration, and that each program needs a display description for user selection."
+              },
+              {
+                "title": "Configuring initial contact with the individual",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how initial contact works in Common Intake: a worker searches for or registers a person, then views the individual’s home page with intake summary and tabs for actions like triage, screening, and life events. Also covers how to configure the Intake Summary in the intake process XML by adding an IndividualConfiguration/IntakeSummary element and setting attributes such as ShowPendingApplicationCluster and ShowCurrentCluster to control which clusters appear on the home page."
+              },
+              {
+                "title": "Configuring the cases view for an individual",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000013",
+                  "start_page": 12,
+                  "end_page": 13
+                },
+                "summary": "Describes how to configure an individual’s Cases tab in Common Intake XML. Covers the required IntakeProcess > IndividualConfiguration > ShowExistingCase structure, plus configurable items: case preview panels by case type (PreviewPanel with caseType and Page), displayed case types (ShowCasesOfType), case statuses (ShowCasesOfStatus), and whether cases with undisposed applications appear (ShowCasesWithUndisposedApplication). Also notes that standard UIM customization can override the shipped page, but may block configurability and future Cúram updates."
+              },
+              {
+                "title": "Configuring the case quick search",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000015",
+                  "start_page": 14,
+                  "end_page": 15
+                },
+                "summary": "Describes how to configure intake process case quick search results in XML. Covers creating or locating ExistingCase under IntakeProcess and QuickSearch under ExistingCase, then adding PreviewPanel entries with caseType and client page attributes, ShowCasesOfType for case types, ShowCasesOfStatus for case statuses, and ShowCasesWithUndisposedApplication to control whether undisposed applications appear in results. Includes the relevant attribute tables and code-table-based values."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000015",
+              "start_page": 9,
+              "end_page": 15
+            },
+            "summary": "Explains how to configure the Common Intake process XML and assign it to users, including the required `IntakeProcess` root, `GlobalConfiguration`, `IndividualConfiguration`, `ExistingCase`, and default `DefaultApp` role assignment. Covers defining supported programs with `ProgramType` elements and display descriptions, configuring the intake summary clusters, and tuning an individual’s Cases tab and case quick search with preview panels, case types/statuses, and undisposed-application display settings."
+          },
+          {
+            "title": "1.2 Customizing the intake application workflow",
+            "level": 2,
+            "children": [
+              {
+                "title": "Customizing the generic PDF summary form for processed applications",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring the generic PDF summary template",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Customizing generic PDF summary forms based on the IntakeApplicationPDFTemplate.xsl template",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000021",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "This section explains how to customize generic PDF summary forms for online applications using the IntakeApplicationPDFTemplate.xsl template. It covers updating the PDF header text and logo via the IntakeApplicationPDFProps.properties app resource, and modifying the XSL template to control included summary information. It notes that the template uses the last visible summary page from an IEG script, and that scripts without summary pages must add one or use the older WSXSLTEMPLATEINST001.xsl template instead."
+                      },
+                      {
+                        "title": "Customizing generic PDF summary forms based on the WSXSLTEMPLATEINST001.xsl template",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000022",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Explains how to customize generic PDF summary forms based on the WSXSLTEMPLATEINST001.xsl template. It covers defining an application-schema-specific PDF properties file to rename or hide entities and attributes in the PDF, uploading that file to Application Resources in IEG, and locating the XSL resource “Intake Application” at /EJBServer/components/WorkspaceServices/data/initial/blob/WSXSLTEMPLATEINST001.xsl for template updates."
+                      }
+                    ],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000021",
+                      "start_page": 19,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how to configure and customize generic PDF summary forms for intake applications. Covers choosing between the newer IntakeApplicationPDFTemplate.xsl and the default WSXSLTEMPLATEINST001.xsl, uploading updated XSL templates through Communications > XSL Templates, and using app resources to change the PDF header text/logo. Notes that the newer template relies on the last visible IEG summary page and requires a summary page at the end of the script; otherwise use the older template. Also describes using application-schema PDF properties to rename or hide entities/attributes in WSXSLTEMPLATEINST001-based PDFs."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000021",
+                  "start_page": 19,
+                  "end_page": 21
+                },
+                "summary": "Explains how to customize generic PDF summary forms for intake applications. It covers choosing between the default WSXSLTEMPLATEINST001.xsl and the newer IntakeApplicationPDFTemplate.xsl, uploading updated XSL templates in Communications > XSL Templates, and editing app resources to change PDF header text/logo. The newer template uses the last visible IEG summary page and requires a summary page at the end of the script; otherwise the older template is needed. It also describes application-schema PDF properties to rename or hide entities/attributes in WSXSLTEMPLATEINST001-based PDFs."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000021",
+              "start_page": 16,
+              "end_page": 21
+            },
+            "summary": "This section outlines the intake application workflow and how it can be customized compliantly. It describes the main workflow activities, including PDF creation, legacy system processing, participant/case creation, evidence mapping, evidence correction, evidence sharing, and post-mapping actions. It also explains how to customize generic PDF summary forms for processed applications, including choosing between WSXSLTEMPLATEINST001.xsl and IntakeApplicationPDFTemplate.xsl, template upload steps, header/logo edits, script limitations, and schema property files for renaming or hiding PDF entities and attributes."
+          },
+          {
+            "title": "1.3 Defining triage",
+            "level": 2,
+            "children": [],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "Defines triage in Cúram intake: a caseworker asks core questions to quickly assess a client’s needs and produce recommended services, providers, and programs. Explains how to configure triage in the intake XML by adding a single IndividualConfiguration under IntakeProcess and a Triage element with attributes for datastore, CER ruleset/class, and IEG script details. Also notes how urgent alerts are emitted via an alertMessages attribute containing AlertMessage rule classes, which display on the Triage Result page."
+          },
+          {
+            "title": "1.4 Defining screenings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Setting up a Screening Definition",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Setting up a Screening Definition — pages 23-32",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000032",
+                      "start_page": 23,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how to define a Screening in Common Intake XML: add a single IndividualConfiguration under IntakeProcess, then one or more Screening elements with attributes like Type, DataStore, RuleSet, RuleSetClass, ScriptName, and ScriptVersion. Also covers ProgramType children for internal/external availability and DisplayStatus values controlling UI visibility. The section includes an example Screening XML and detailed setup steps for related DMX files and resources (intake process, script info, rule set, datastore schema/translation, and properties/images) used by a financial assistance screening."
+                  },
+                  {
+                    "title": "Setting up a Screening Definition — pages 33-36",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000036",
+                      "start_page": 33,
+                      "end_page": 36
+                    },
+                    "summary": "This section lists Appresource entries needed for a Screening Definition in Common Intake, including screening-related property resources and global/application configuration text files. It shows resource names, IDs, and the corresponding blob file locations under `CommonIntake/data/initial/blob/`. It also notes that related files must exist in the specified location and that certain files need copying to `CommonIntake/data/initial/clob`, including the screening IEG questionnaire script and XSD information."
+                  }
+                ],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000036",
+                  "start_page": 23,
+                  "end_page": 36
+                },
+                "summary": "Defines how to configure a Screening in Common Intake XML: add one IndividualConfiguration under IntakeProcess, then one or more Screening elements with Type, DataStore, RuleSet, RuleSetClass, ScriptName, and ScriptVersion. Covers ProgramType entries for internal/external program availability and DisplayStatus to control UI visibility. Also provides a sample screening XML and setup steps for required DMX/Appresource records, blob/clob file locations, and supporting resources such as the IEG questionnaire script, rule set, datastore schema/translation, properties, images, and XSDs."
+              },
+              {
+                "title": "Adding urgent alerts to the rule set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how to configure screening CER rule sets to surface urgent alerts and recommended programs, and how to mark program availability as internal or external in the intake XML. Urgent alerts come from a rule class attribute alertMessages containing AlertMessage items, which appear on the Triage Result page. Recommended programs come from a programs attribute containing AbstractProgram subclasses, shown on the screening result page. Also describes adding ProgramType elements under Screening with ProgramType and Availability (“internal”/“external”) attributes."
+              },
+              {
+                "title": "Recommending programs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how CER screening rules recommend programs. The screening rule class needs a programs attribute containing a list of AbstractProgram subclasses; each calculated program appears on the screening results page. Also covers configuring whether each ProgramType is internal or external in the intake process XML, using the ProgramType code table entry and an Availability value of internal or external, which controls whether users see an application link or an external referral link."
+              }
+            ],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000037",
+              "start_page": 23,
+              "end_page": 37
+            },
+            "summary": "Defines how to configure Common Intake screenings in XML: one IndividualConfiguration under IntakeProcess, then one or more Screening elements with Type, DataStore, RuleSet, RuleSetClass, ScriptName, and ScriptVersion. Covers ProgramType entries and DisplayStatus for UI visibility. Explains CER rule-set outputs: services/programs lists, urgent alerts via alertMessages, and recommended programs via programs. Includes internal vs external program availability and setup artifacts/files needed in DMX, clob/blob locations, scripts, XSDs, rule sets, and app resources."
+          },
+          {
+            "title": "1.5 Configuring client applications",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring the programs covered by an application type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000040",
+                  "start_page": 39,
+                  "end_page": 40
+                },
+                "summary": "This section explains how to configure which programs an application type covers in Common Intake. It covers setting ProgramType attributes under ApplicationType, including program type, reopen/resume timer behavior, max reopenings, and timer restart date. It then describes ProgramMapping settings for linking a program type to an integrated case type and specifying mapping XML/configuration files. Finally, it introduces adding a timer by creating a Milestone under ProgramType, based on milestone functionality."
+              },
+              {
+                "title": "Integrating the application with Universal Access",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "This section explains how to integrate Universal Access with Common Intake so applications received via Universal Access are automatically treated as Common Intake applications for caseworker processing. It describes the XML configuration steps: open the intake process configuration, find the relevant ApplicationType, add a single IntakeApplicationType child, and set its MappedType attribute to the primary key of the IntakeApplicationType record in Workspace Services. The section also notes related Milestone configuration behavior, including the Earliest Start Day field affecting timer duration."
+              },
+              {
+                "title": "Configuring workflows for application processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000042",
+                  "start_page": 42,
+                  "end_page": 42
+                },
+                "summary": "Explains how to configure Common Intake application-processing workflows in the intake XML. It covers the ApplicationType → Workflows structure, where only one Workflows element is allowed per ApplicationType, and defines workflow names for OnlineApplicationRecieved, WithdrawalRequest, ReadyForDetermination, and ReassignApplicationNotification. It also describes configuring AllocationTarget for the first three workflows, including the supported target item types (work queue or user)."
+              },
+              {
+                "title": "Configuring the texts associated with an application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "Explains how to configure application text shown before submission in Common Intake. Covers two required texts: rights and responsibilities, and authorization information. Both are stored as resource-store property files named using the intake process logical name and application type code, with a DisplayText property containing the message. The text may include HTML for formatting. The caseworker must confirm the text was communicated before continuing the application process."
+              },
+              {
+                "title": "Configuring cases to which the application can be transferred",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Explains how to configure which existing cases an application can be transferred to in the intake process XML. To enable this, add a TransferToExistingCase child under the relevant ApplicationType. Allowed target case types are configured with CaseType elements using the Type code-table attribute, and allowed target case statuses are configured with CaseStatus elements. This section is useful if you need to control transfer eligibility for applications by case type or case status."
+              },
+              {
+                "title": "Configuring the cases view for the application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Explains how to configure the application’s Cases tab in the intake XML. For a selected ApplicationType, add or locate ShowExistingCase to control the cases view, and optionally add PreviewPanel to define the client page used for case preview records. The section begins describing configurable case types shown in the list and follows prior status configuration content."
+              },
+              {
+                "title": "Configuring the cases to which the application can be added",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "Describes how to configure which existing cases an application can be added to in the intake process XML. It explains using AddToExistingCase under ApplicationType, and references related settings for displaying cases by type, status, and whether undisposed applications are shown via ShowExistingCase child elements and their attributes. Useful for configuring application-case eligibility and case list filtering."
+              },
+              {
+                "title": "Configuring the case status after the application has been transferred",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Explains how to configure case-related intake XML settings. It covers allowing an application to be added to specific case types via AddToCaseOfType under AddToExistingCase, and to specific case statuses via AddToCaseOfStatus, each using code table entries. It also describes how to set the case status after an application is transferred by adding CaseStatusAfterTransfer under ApplicationType with a status attribute from the case status code table."
+              },
+              {
+                "title": "Configuring the case status after undoing application transfer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Explains XML configuration for case statuses after undoing an application transfer in Cúram intake process configuration. To set it up, find the relevant ApplicationType element and add a CaseStatusAfterUndoTransfer child with a status attribute from the case status code table. Then add CaseType child elements to specify which case types are affected, each using a status attribute from the case type code table. The section also briefly references the related configuration for statuses after transfer."
+              },
+              {
+                "title": "Configuring the application TODO list context",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "Explains how to configure intake-process XML for application home-page behavior. Covers setting the TODO list context by adding TODOListAdviceContextKeyName under ApplicationType with a name attribute, then configuring application quick search by adding QuickSearch under ApplicationType. Also describes quick search preview panels via PreviewPanel elements under QuickSearch, each with a Page attribute specifying the client page to display."
+              },
+              {
+                "title": "Configuring the application quick search",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "Explains how to configure application quick search in the intake process XML. Under ApplicationType, create or locate a QuickSearch element to control quick search results. For each results preview panel, add a PreviewPanel child with a Page attribute naming the client page to display. The section also briefly references configuring the application TODO list context via TODOListAdviceContextKeyName under ApplicationType, with a name attribute for the context key."
+              }
+            ],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000038",
+              "end_unit_id": "p000049",
+              "start_page": 38,
+              "end_page": 49
+            },
+            "summary": "Covers XML configuration for client applications in Common Intake. Defines ApplicationConfiguration/ApplicationType setup, script selection, program coverage (ProgramType, ProgramMapping, timer milestones), Universal Access intake mapping, and application workflows/allocation targets. Also includes configurable pre-submission texts (rights/responsibilities, policy), transfer/add-to-existing-case rules, Cases tab display/preview settings, post-transfer and undo-transfer case statuses, TODO list context, and quick search preview panels. Useful if you need to configure how an application is captured, routed, displayed, transferred, or resumed."
+          },
+          {
+            "title": "1.6 Common intake application properties",
+            "level": 2,
+            "children": [],
+            "node_id": "n000042",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000054",
+              "start_page": 50,
+              "end_page": 54
+            },
+            "summary": "This section lists common intake application properties configured in system administration. It covers properties for product registrars, whether intake applications appear in banner search, application transfer enablement, default locale for prospect person address capture, Google Maps default zoom and center latitude, milestone transport start-date behavior, assignment of applications to work queues, and script-driven updates to person/contact details. It also briefly notes configuring application statuses for a preview panel above the property table."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000054",
+          "start_page": 9,
+          "end_page": 54
+        },
+        "summary": "Covers Common Intake setup via XML stored in the database: defining the root `IntakeProcess`, assigning intake processes to application codes/roles (including `DefaultApp`), and declaring supported programs plus their display descriptions. Also explains intake summary configuration, individual Cases tab behavior, case preview panels, case types/statuses, and quick search preview panels. Includes broader intake application workflow customization, triage and screening definitions, transfer/undo-transfer and TODO list settings, and common system properties for registration, search, transfer, maps, and script-driven updates."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

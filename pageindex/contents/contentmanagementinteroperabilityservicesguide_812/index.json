@@ -1,0 +1,348 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "83b2ad2bf1b2f4f1",
+    "title": "Cúram 8.1.2 Content Management Interoperability Services Integration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/ContentManagementInteroperabilityServicesGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "83b2ad2bf1b2f4f1fb695dc0babe0956bceea0623cd492e3df5323f316c70ef5",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:54:32+00:00",
+    "page_count": 28,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/ContentManagementInteroperabilityServicesGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Content Management Interoperability Services Integration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000028",
+      "start_page": 1,
+      "end_page": 28
+    },
+    "summary": "Front matter and opening chapter of the Cúram 8.1.2 CMIS Integration Guide. It introduces how Cúram integrates with a CMS/CMIS repository for document attachments, Microsoft Word communications, and pro forma communications. Key setup topics include registering a CMS target system, configuring the CMIS service and application properties, encrypted credentials, and the rule that exactly one CMIS target system service must exist. It also covers gradual migration from database storage, required metadata and default metadata, customization of metadata, directory structures and file-naming strategies, and single sign-on support via custom hooks and `curam.cms.sso.enable`. The section ends with CMIS validation/error messages for troubleshooting storage, retrieval, configuration, and connection problems, followed by notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice pages stating that users should read the Notices section before using the information or product. Includes Merative copyright information (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This front-matter and setup section covers the edition/version applicability (Cúram 8.1, 8.1.1, 8.1.2) and the start of the CMS integration guide. It explains how Cúram uses CMIS to store attachments, Word communications, and pro forma documents in a CMS, including registering a target system, required service settings, activation properties, metadata configuration, SSO, timeouts, and supported repository constraints. It also introduces gradual migration and notes that CMIS supports versionable document types only."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers Cúram CMS integration: attachments, Word/pro forma communications, and how files are stored/retrieved in CMS with Cúram security only. Explains CMIS metadata support, the 10 default metadata properties, CMS/application configuration, and how to add, modify, or derive custom metadata via explicit or transaction-scoped APIs and Guice hook points. Also details custom directory/file-naming strategies and single sign-on integration, including required extension classes and the `curam.cms.sso.enable` property."
+          },
+          {
+            "title": "Edition — pages 25-26",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000026",
+              "start_page": 25,
+              "end_page": 26
+            },
+            "summary": "This section covers CMS integration via CMIS, including cookie transmission, avoiding global CMS credentials, and custom cookie hooks. It then lists CMIS validation errors and when they appear: missing or invalid application properties and directory paths, unavailable or unconfigured CMS targets, multiple target systems, missing files during read/replace/update, metadata/configuration problems, and duplicate target system services. Useful for troubleshooting CMIS/CMS storage and retrieval issues in Cúram/Social Program Management."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000026",
+          "start_page": 5,
+          "end_page": 26
+        },
+        "summary": "Front matter for the CMS integration guide, applying to Cúram 8.1/8.1.1/8.1.2. Covers registering a CMS target system and configuring CMIS storage for attachments, Word and pro forma communications, including application properties, repository/path settings, timeouts, and the rule that exactly one CMIS target system service must exist. Also describes metadata support and customization, directory/file naming strategies, SSO cookie hooks and `curam.cms.sso.enable`, and a CMIS validation/error catalog for troubleshooting storage/retrieval issues."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "Provides the Merative privacy policy link (https://www.merative.com/privacy) and a legal notices section. It also includes copyright/license terms for sample programs, an “AS IS” warranty disclaimer, liability limits, and a list of trademarks for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "This section lists trademark notices and related legal attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, and states that other names may be trademarks of others. It also includes a privacy policy link, sample-program copyright/license terms, and a disclaimer that fictitious names used in examples are coincidental. Useful if you need licensing, trademark, or legal notice details for the document."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000027",
+          "end_unit_id": "p000027",
+          "start_page": 27,
+          "end_page": 27
+        },
+        "summary": "This notices section gives the publication use terms: personal and internal commercial copying is allowed only if proprietary notices are preserved, but distribution, display, or derivative works outside those limits need Merative’s consent. It also states no other rights are granted, Merative may withdraw permission, export laws apply, and the content is provided “AS-IS” without warranty. It includes patent and third-party product disclaimers, non-Merative website disclaimers, and the copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter and Chapter 1, “Integrating with a content management system (CMS),” including CMS configuration, integration, metadata, customization, single sign-on, and CMIS validation errors, with subsections such as registering/activating a CMS, gradual migration, document attachments, and metadata customization. Also includes notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Integrating with a content management system (CMS)",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring Cúram to use with a CMS",
+            "level": 2,
+            "children": [
+              {
+                "title": "Registering and adding a CMS to the target system",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000010",
+                  "start_page": 9,
+                  "end_page": 10
+                },
+                "summary": "Explains how to register a CMS as a target system so Cúram can store and retrieve documents such as attachments, Word communications, and pro forma documents. Covers prerequisite configuration steps, CMIS-based integration, and target system service settings: choose the CMIS binding/service name, set the repository URL extension, and optionally provide invoking user credentials unless single sign-on is used. Notes that the password is encrypted and not shown on later edits."
+              },
+              {
+                "title": "Activating a CMS",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Explains how to activate a CMS after adding the CMS service, via CMIS application properties. Covers key enablement settings for general CMS storage, attachments, pro forma communications, and metadata upload, plus required metadata setup. Also documents repository path and name, SSO enablement, and connection timeout settings. Notes that CMIS config is only valid with exactly one target system service, and that connection issues surface only when users access CMS functionality."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000012",
+              "start_page": 9,
+              "end_page": 12
+            },
+            "summary": "Explains how to configure Cúram to use a CMS as a document repository. Covers registering the CMS as a target system, then adding and configuring the CMIS service (service name/binding, URL extension, optional credentials, encrypted password, and one-service limitation). Also describes activating CMS use through application properties: enablement for general CMS storage, attachments, pro forma communications, metadata upload, repository path/name, SSO, and connection timeout. Notes that connection problems appear only when CMS functions are used."
+          },
+          {
+            "title": "1.2 Integrating a CMS with Cúram",
+            "level": 2,
+            "children": [
+              {
+                "title": "Gradual migration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains gradual CMIS migration for Cúram organizations storing files in the application database. CMIS can be enabled without an upfront content migration: existing database documents remain accessible, and content is moved to the CMS only when a document is created or edited, after which the database copy is removed. It warns not to disable CMIS once enabled. It also describes required updates to custom CMIS attachment integration points for read/modify logic, while noting custom pro forma communication integration points are unaffected."
+              },
+              {
+                "title": "Attachments and securing documents in a CMS",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how attachments and communications are stored and retrieved from a CMS rather than in the Cúram database. Describes versioning behavior for uploaded files and metadata updates, and notes that CMS version-controlled repositories retain superseded versions. Covers security: access is controlled only by existing Cúram mechanisms, while direct CMS access must be secured separately by customers. Also explains storage and retrieval for Microsoft Word communications and pro forma PDF communications, including that pro forma communications store no metadata except the document title."
+              },
+              {
+                "title": "Microsoft® Word and pro forma communications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how Cúram stores and secures attachments and communications in a CMS. It covers that attachment file content and metadata are stored in the CMS rather than the database, with updates creating superseding versions and CMS version history where supported. It also notes that access relies on existing Cúram security, with customers responsible for direct CMS access security. For Microsoft Word communications, the document is stored and versioned in the CMS. For pro forma communications, the generated PDF is stored when sent, and only the document title is retained as metadata."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000015",
+              "start_page": 13,
+              "end_page": 15
+            },
+            "summary": "Explains how to integrate Cúram with a CMS/CMIS: required CMS classes and metadata, restrictions (versionable documents only, no batch jobs, don’t change properties after go-live), and the need to update custom attachment integration points. Covers gradual migration from the application database to CMS without upfront migration, attachment storage/versioning and security, and how Microsoft Word and pro forma communications are stored and retrieved in the CMS."
+          },
+          {
+            "title": "1.3 Metadata",
+            "level": 2,
+            "children": [
+              {
+                "title": "Using the default metadata",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how default CMIS metadata is used when content management is enabled. It says the CMS schema must match the application schema, and that CMIS collects contextual info, derives available metadata, separates admin-enabled metadata from other context, can invoke a custom hook for extra metadata, and then updates the CMS. It also lists required CuramAttachment metadata fields and types, including caseReference, communicationDate, documentReceiptDate, documentType, documentTypeCode, participantDOB, participantFirstName, and participantLastName."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000018",
+              "start_page": 16,
+              "end_page": 18
+            },
+            "summary": "Explains CMIS metadata storage for Cúram attachments in the CMS. Default metadata is saved for all attachments when CMIS is enabled, with admin-controlled enable/disable per property, and metadata may be updated when attachment data changes. Describes how CMIS gathers context, derives metadata, calls a custom hook for extra properties, and syncs the CMS. Also lists required CuramAttachment CMS schema fields and types, including caseReference, communicationDate, documentReceiptDate, documentType, documentTypeCode, participantDOB, participantFirstName, and participantLastName."
+          },
+          {
+            "title": "1.4 Customization",
+            "level": 2,
+            "children": [
+              {
+                "title": "Customizing metadata",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000021",
+                  "start_page": 19,
+                  "end_page": 21
+                },
+                "summary": "Explains how to customize CMS metadata in Cúram. Covers configuring extra metadata properties on the CMS, then collecting and wiring them through a custom hook point. Describes two approaches: explicit metadata passing via `CMISAccessImpl.addItemToExplicitMetadata`, and transaction-scoped collection using a Guice-injected `CMSMetadataInterface`. Also shows how to derive custom metadata by extending `CMSMetadataClassCustomDefaultImpl` and binding it with Guice to `CMSMetadataClassType`. Notes custom property names should use a customer-specific prefix like `xyz_`."
+              },
+              {
+                "title": "Custom directory structures and file-naming strategies",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000023",
+                  "start_page": 22,
+                  "end_page": 23
+                },
+                "summary": "Explains how Cúram stores CMS files by default and how to customize directory/file naming. Default paths differ for Default, Attachment, and ProForma content under `curam.cms.curam.dir`, with CMISNamingType controlling placement. To customize naming, extend `CMISNamingDefaultImpl` (not `CMISNamingInterface`) and bind it via Guice to a CMISNamingType entry. `getFilePath` returns an ordered list of folders plus filename; the CMS API adds the root directory. Includes example attachment naming logic using date-based folders and filename handling."
+              },
+              {
+                "title": "Single sign-on",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains Cúram single sign-on (SSO) for CMIS: SSO lets authenticated users access multiple systems via shared security tokens. Implementing it requires custom development plus configuration updates. Organizations must extend `CMISAuthenticationProviderDefaultImpl`, implement `getHTTPHeaders` to add custom cookies/tokens, and bind the class with Guice. The section also introduces enabling SSO through the system administration property `curam.cms.sso.enable` and notes CMIS API behavior after it is turned on."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000024",
+              "start_page": 19,
+              "end_page": 24
+            },
+            "summary": "Customization covers three CMS extension areas: metadata, directory/file naming, and single sign-on. It explains two ways to add custom metadata: explicit passing via `CMISAccessImpl.addItemToExplicitMetadata` and transaction-scoped collection via Guice-injected `CMSMetadataInterface`, plus deriving metadata by extending `CMSMetadataClassCustomDefaultImpl`. It also shows customizing storage paths by extending `CMISNamingDefaultImpl` and binding by `CMISNamingType`. Finally, it describes CMIS SSO integration by extending `CMISAuthenticationProviderDefaultImpl`, adding HTTP headers/tokens, and enabling `curam.cms.sso.enable`."
+          },
+          {
+            "title": "1.5 CMIS validation error messages",
+            "level": 2,
+            "children": [],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000028",
+              "start_page": 25,
+              "end_page": 28
+            },
+            "summary": "Lists CMIS validation error messages shown when Cúram/Social Program Management interacts with a CMS. Covers common failure cases: generic CMIS exceptions, missing or malformed application properties, unavailable or misconfigured target systems, missing files, metadata problems, update/read/replace failures, and duplicate target system services. The section maps each message to when it appears, helping diagnose CMS integration and configuration issues."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000028",
+          "start_page": 9,
+          "end_page": 28
+        },
+        "summary": "Explains how to integrate Cúram with a CMS/CMIS repository for attachments, Microsoft Word communications, and pro forma documents. Covers registering a target system, configuring the CMIS service and application properties, and notes one-service-only, encrypted credentials, and connection issues appearing at use time. Describes supported CMS setup, required CuramDocument/CuramAttachment metadata, gradual migration from the database, and customization options for metadata, naming, and SSO. Also lists common CMIS validation errors for troubleshooting."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

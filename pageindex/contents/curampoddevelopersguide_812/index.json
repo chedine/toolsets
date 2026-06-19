@@ -1,0 +1,1179 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "d61a07a01d4ecacd",
+    "title": "Cúram 8.1.2 Pod Developers Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramPodDevelopersGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "d61a07a01d4ecacd91f4c059d83be47e66aa98b25cc8a6439bb9eef73db064ba",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T19:07:59+00:00",
+    "page_count": 40,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramPodDevelopersGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Pod Developers Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000040",
+      "start_page": 1,
+      "end_page": 40
+    },
+    "summary": "Introductory guide to developing Cúram SPM pods and pod pages. It explains the PodContainer-based UIM architecture, PodLoader responsibilities, pod/page configuration data, rendering and save flow, and prerequisites. The chapter walks through creating a host page, identifying/configuring a pod page, then building example pods: “Hello World,” a list pod, and pods with dropdown and custom text filters. It also covers adding new filter renderers, localization via text resources, and includes sample Java listings for MoviesDB and several PodLoader examples. The section is useful for developers implementing or customizing pods and related page behavior.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Preliminary note advising readers to review the Notices section on page 39 before using the document or the supported product. Includes copyright notice: © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Covers the document’s front matter and the start of “Developing pods” (pages 5–14). It states the guide applies to Cúram 8.1/8.1.1/8.1.2, then introduces SPM pods, prerequisites, and a technical overview of pods, pod pages, PodContainer, PodLoader, rendering, saving, configuration, dimensions, product pods, and user customization. It also walks through getting started: creating a PodContainer page, identifying it with Constant.properties, adding PAGECONFIG and USERPAGECONFIG records, testing the empty page, and beginning the “Hello World Pod” tutorial."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Explains how to develop Cúram pods: registering a PodType and PodLoaderBindings codetable entry, implementing a PodLoader with PodBuilder, adding the Pod to a Pod Container via the Administrator wizard, and viewing the default “NO CONTENT” placeholder. Then introduces building a list-based Pod using ListBuilder and RendererConfig, and adds a Pod filter using PodFilter, ChoiceBuilder, and ChoiceRenderer to create a genre dropdown with saved selections. Suitable if you need pod creation, list content, or filter setup examples."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers Pod development basics: adding filter labels and CSS classes, attaching filters to a Pod, and filtering movie lists by selected genre. Introduces creating a custom Pod filter renderer using a FieldBuilder, source/target path extensions, and a text input delegated to an existing renderer. Explains Pod localization via text resources and properties files for Pod titles, filter labels, and list column titles, including sharing one properties file across widgets. Ends with sample program listings for MoviesDB and Hello World/My Favorite Movies Pod loaders."
+          },
+          {
+            "title": "Edition — pages 35-38",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "Section covers Cúram pod development examples for a “My Favourite Movies” pod. It shows how to add and restore a genre dropdown filter, then extends it with a custom text-title filter renderer and a localized version using resource keys for pod title and filter labels. Includes Java code for PodBuilder, PodFilter, ChoiceBuilder, RendererConfig, and custom renderer logic for binding source/target paths. Useful for navigating pod filter customization, renderer implementation, and localization patterns."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000038",
+          "start_page": 5,
+          "end_page": 38
+        },
+        "summary": "Front matter and chapter 1, “Developing pods,” for Cúram 8.1/8.1.1/8.1.2. Introduces SPM pods, prerequisites, and a technical overview of pods, pod pages, PodContainer, PodLoader, database tables, rendering, and saving user settings. Covers getting started with a PodContainer page and the “Hello World Pod,” then building list pods, dropdown filters, custom filter renderers, and localization. Ends with sample Java listings for MoviesDB and My Favourite Movies pod loaders."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "This page contains legal notices: a privacy policy link, copyright/license terms for sample programs, warranty/liability disclaimers, and trademark acknowledgments for Merative and other vendors (IBM, Adobe, Oracle, Linux, Microsoft, UNIX). It notes that sample names are fictitious and that sample code may be copied, modified, and distributed under the Merative Client Agreement for API-related development."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party products. It identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX as trademarks or registered trademarks, and notes that other company, product, and service names may also be trademarks. Also includes a privacy policy link, sample-program copyright/license terms, and disclaimer that example names are fictitious."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000039",
+          "start_page": 39,
+          "end_page": 39
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and enterprise reproduction permissions, prohibition on derivative works/distribution outside allowed use, and preservation of proprietary notices. States no other rights are granted, Merative may withdraw permissions, export laws apply, and the content is provided “as-is” without warranties. Also notes possible patent coverage, disclaimers for non-Merative products and websites, and the copyright notice © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This contents section lists the manual’s front matter and Chapter 1, Developing pods, with subsections covering pod concepts, page setup, Hello World pod creation, list pods, pod filters, creating new filters, localization, and sample program listings. It also shows page references for Notices, Privacy policy, and Trademarks. Useful for quickly locating topics on pod development, filter customization, and localization examples."
+      },
+      {
+        "title": "1 Developing pods",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for developing SPM pods: users should know Java, XML, HTML, CSS, and the development environment; advanced material also assumes familiarity with the Cúram Widget Development Guide and rendering framework. The section introduces the pods guide as a cookbook for creating new Pods and Pod Pages, and points to related references for custom widget development and personal page configuration."
+              },
+              {
+                "title": "Further Reading",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces developing SPM pods and explains that pods are standard UIM pages using PodContainer.vim, PodContainer, and a required PodLoader. It describes the guide’s purpose, audience, prerequisites, and progression from basic pod creation to advanced widget-related scenarios. The “Further Reading” table points to the Cúram Custom Widget Development Guide and the Cúram Personal Page Configuration Guide. It also defines what a pod is and highlights pod-container features like repositioning, persistent settings, and optional user filters."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Overview of the pods guide for SPM developers. It explains that pods are standard UIM pages using PodContainer.vim, PodContainer, and a required PodLoader, and frames the guide as a cookbook from basic pod creation to advanced widget-related scenarios. It targets developers creating new Pods and Pod Pages. Prerequisites include Java, XML, HTML, CSS, and development-environment knowledge; advanced topics require the Cúram Widget Development Guide. Also points to custom widget and personal page configuration references and notes pod features like repositioning, persisted settings, and optional filters."
+          },
+          {
+            "title": "1.2 A Technical Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "What is a Pod?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Defines a Pod as a UI widget placed on a client page, similar to other data-display widgets but with extra behavior in a Pod-Container: repositioning, persistence of display/user settings, and optional user filters accessed via the title-bar pen icon. Also frames the guide as for developers creating SPM pods and Pod Pages, with prerequisites in Java, XML, HTML, CSS, and familiarity with the development environment and rendering framework."
+              },
+              {
+                "title": "What is a Pod page?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains what a Pod page is in Cúram 8.1.2: a standard UIM page containing a Pod-Container widget that displays, moves, filters, and persists user-specific Pod layouts. Describes the main artifacts involved—UIM Page, PodContainer, PodLoader—and the database tables used to configure and personalize Pod pages (PODTYPE, PODLOADERBINDINGS, PAGECONFIG, USERPAGECONFIG). Also outlines how the page loads Pods at display time via PodContainerManager and related configuration data."
+              },
+              {
+                "title": "How does it work?",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "UIM Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Describes the UIM Page implementation for Pod pages in Cúram 8.1.2. Explains that a standard UIM page must include PodContainer.vim, which provides the API for displaying Pods and saving user preferences. Covers the PodContainer’s role at display/save phases, how PodLoaders define each Pod, and the database tables involved: PODTYPE, PODLOADERBINDINGS, PAGECONFIG, and USERPAGECONFIG. Also outlines how the page loads Pods using PodContainerManager and these tables."
+                  },
+                  {
+                    "title": "PodContainer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains the PodContainer architecture for a UIM “Pod page.” The PodContainer widget manages which Pods appear, their placement, filters, and user-specific saved page configuration. It is used by adding PodContainer.vim to a UIM page and supports display-phase loadData() plus save APIs. The section outlines related components (UIM Page, PodLoader), and the database tables used to load/customize Pods: PODTYPE, PODLOADERBINDINGS, PAGECONFIG, and USERPAGECONFIG, with PodContainerManager resolving Pods and PodLoaders."
+                  },
+                  {
+                    "title": "PodLoader",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains that each Pod requires a PodLoader, which defines the Pod and its content. It places PodLoaders in the wider Pod page architecture: a UIM page includes PodContainer.vim, which manages display, user preferences, Pod movement, and filters. It also describes the loading flow: PodContainer.loadData() uses PodContainerManager to determine which Pods to show from PAGECONFIG and USERPAGECONFIG, then resolves the appropriate PodLoader via PODTYPE and PODLOADERBINDINGS. Includes the key database tables involved."
+                  },
+                  {
+                    "title": "Database Tables",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how Pod pages work in Cúram 8.1.2 and the UIM/PodContainer architecture used to display and save user preferences. Defines the PodContainer, PodLoader, and the display/loadData flow. The “Database Tables” subsection lists the main tables for managing Pods: PODTYPE, PODLOADERBINDINGS, PAGECONFIG, and USERPAGECONFIG, and notes how PAGECONFIG/USERPAGECONFIG and codetables drive page loading and PodLoader selection."
+                  },
+                  {
+                    "title": "Loading the Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how a Pod page loads in Cúram 8.1.2. A Pod page is a standard UIM page containing PodContainer.vim, which manages display, user preferences, pod placement, and filters. At display phase, loadData() runs on PodContainer, which uses PodContainerManager and the PAGECONFIG/USERPAGECONFIG tables to determine which pods to show. It then resolves each pod’s PodLoader via PODTYPE and PODLOADERBINDINGS. Also outlines the key artifacts and database tables involved in Pod page setup."
+                  },
+                  {
+                    "title": "Rendering the page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains how a Pod page is rendered and saved. Rendering starts with PodContainerRenderer, which creates the PodContainer widget and delegates to Pod renderers; renderers may further delegate using markers until all content is produced. It also describes saving layout and selection changes back to the database via PodContainer API, including save button and drag-and-drop actions. Additional topics cover Pod configuration through an administration wizard, dynamic Pod sizing, layout considerations, and available product Pods."
+                  },
+                  {
+                    "title": "Saving the Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how the page is saved in the action phase: the server interface writes user changes to Pod selection and container layout back to the database via the PodContainer API. Saving occurs through the customization console save button, a Pod filter save button, or automatically when a Pod is dragged and dropped. The surrounding page also mentions Pod configuration via an Administration wizard and notes that Pod dimensions are responsive to content and container columns."
+                  },
+                  {
+                    "title": "Configuring Pods",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Pod Dimensions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000027",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Pod dimensions are dynamic, not set directly by the Pod. Height is driven by the Pod’s content, while width is determined by the container’s equally sized columns and fills the assigned column width. The section notes that this flexibility supports Pod reuse across containers and warns that layout changes can distort some predefined Pods, which are often optimized for a 3-column layout."
+                      }
+                    ],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains how Pod pages are configured through an Administration wizard, which defines layout and content. It notes that Pod dimensions are not set directly: height grows with content, and width is determined by the container’s equally sized columns. It also warns that many predefined Pods are optimized for a 3-column layout, so alternative layouts may distort them."
+                  },
+                  {
+                    "title": "Product Pods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Describes product-provided Pods and how Pod pages work. It explains Pod loading via PodContainer/PodLoader, rendering through delegated renderers, and saving Pod selection/layout changes back to the database. It also covers configuration through an Administration wizard and notes that Pod height depends on content while width is controlled by the container’s column layout. A tip warns that many predefined Pods are optimized for a 3-column layout."
+                  },
+                  {
+                    "title": "User configuration of Pod Pages",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains how users can configure Pod pages. Each Pod page starts with preconfigured available and selected Pods, and users can customize the workspace by adding, removing, closing, moving, or filtering Pods. Changes are automatically saved and restored on reload. It also introduces developing new Pods, noting that organizations can create custom Pods and that a host page must include a Pod container (via PodContainer.vim) to manage adding, removing, moving, and updating Pods."
+                  },
+                  {
+                    "title": "Developing new Pods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to develop new Pods in Cúram 8.1.2. It notes that organizations can create custom Pods using the Pod framework, and that a Pod must first be hosted on a page with a Pod container. The section shows how to create a page mapped to an application section/tab and include `PodContainer.vim`, which enables adding, removing, moving, and updating Pods. It also briefly covers user customization of Pod pages and saving/restoring page configuration."
+                  }
+                ],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "Explains how a Pod page works in Cúram 8.1.2. A Pod page is a standard UIM page that includes PodContainer.vim, which manages Pod display, user preferences, movement, and filters. During display, PodContainer.loadData() uses PodContainerManager plus PAGECONFIG/USERPAGECONFIG to choose Pods, then PODTYPE/PODLOADERBINDINGS to resolve each PodLoader and create Pod data. The section also covers rendering via PodContainerRenderer, saving layout/selection changes, Admin wizard configuration, pod dimensions, and product-provided Pods."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Technical overview of Cúram pods and pod pages. Defines a Pod as a UI widget that gains repositioning, persisted user settings, and optional filters inside a PodContainer. Explains that a Pod page is a UIM page with PodContainer.vim, managed by PodContainer/PodContainerManager using PODTYPE, PODLOADERBINDINGS, PAGECONFIG, and USERPAGECONFIG to load PodLoader content and user-specific layouts. Also covers rendering delegation, save behavior, admin configuration, pod sizing rules, and notes on product-provided pods."
+          },
+          {
+            "title": "1.3 Getting Started",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating a page with a Pod container",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to create a page that hosts Pods using a Pod container. The page must be mapped to an application section and tab, then include PodContainer.vim in the UIM page definition. Shows a sample PAGE with a CONNECT from a constant page ID to pageID$pageID and the PodContainer include. Context notes that Pod pages are configurable by users and that new Pods can be built with the Pod framework."
+              },
+              {
+                "title": "Identifying a Pod page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to identify a Pod page by adding a Constant.properties entry that maps the UIM constant name to the page ID used by the server interface. Also describes the required database setup: create PAGECONFIG and USERPAGECONFIG records, then add DMX files and run the database build target. Includes an example PAGECONFIG DMX for pageID “MyPodContainer” with context, available pods, and 33/33/33 layout settings."
+              },
+              {
+                "title": "Configuring the database information about the page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to configure database records for a Pod page. The page needs two tables: PAGECONFIG for available Pods on the page and USERPAGECONFIG for user customizations. Instructs adding DMX files to the component and running the database build target. Includes an example PAGECONFIG DMX row using pageID MyPodContainer with page configuration for context, available pods, and a three-column 33/33/33 layout."
+              },
+              {
+                "title": "Testing the page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to test the empty Pod page: build and launch the app, log in, and open the new Pod Page. The page appears empty because no Pods are assigned, and the customization console also shows only action buttons for the same reason. Describes the Customize console actions: Save stores user customizations, Reset deletes them and restores the page default, and Cancel clears selections and closes the console. Ends by introducing the next step: creating a simple “Hello World” Pod and adding it to the page."
+              }
+            ],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000013",
+              "start_page": 12,
+              "end_page": 13
+            },
+            "summary": "Introduces how to start developing Pods by first creating a host page with a PodContainer include and mapping it to an application section/tab. Explains how to identify the Pod page via Constant.properties, then configure required database records: PAGECONFIG for available Pods and layout, and USERPAGECONFIG for user customizations, loaded through DMX and a database build. Notes that Pod pages are user-customizable (add, remove, move, filter, reset) and that an empty page will initially show no Pods."
+          },
+          {
+            "title": "1.4 Hello World Pod",
+            "level": 2,
+            "children": [
+              {
+                "title": "Declaring a new Pod",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to declare a new Pod in Curam by adding a PodType codetable entry in `CT_PodType.ctx`, using the `PT` prefix for the value and a description for the Administration wizard. It also introduces PodLoader binding via `CT_PodLoaderBindings.ctx`, where the PodType value must match and the description holds the fully qualified PodLoader class name used to generate the Pod’s XML fragment."
+              },
+              {
+                "title": "Declaring a new PodLoader",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to declare a new PodLoader for a pod. The PodLoader is the Java class that generates the XML fragment used to populate the Pod. It is registered in the CT_PodLoaderBindings.ctx codetable, which binds a PodType to its loader. The binding’s value must exactly match the PodType value, and the description stores the PodLoader’s fully qualified Java class name."
+              },
+              {
+                "title": "Creating a Pod using a PodLoader",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains how to create a Pod using a PodLoader. It shows the required codetable setup for PodLoaderBindings, notes that ctgen and database targets must be run to generate and load the codetable values, and provides a sample Java PodLoader class. The example extends curam.cefwidgets.pods.pod.impl.PodLoader, implements createPod(Document, Map<String,Object>), builds a pod with PodBuilder.newPod(document, PODTYPE.HELLOWORLD), sets the title to “Hello World,” and returns the widget root node."
+              },
+              {
+                "title": "Adding a Pod to the Pod Container",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to add a Pod to a Pod Container using the Administrator application’s wizard: log in, go to Administration Workspace > User Interface > Personalized Pod Pages, edit the personal page, select the available Pod (e.g. “HelloWorld!”), and save through the remaining steps. Notes that after logging out and into the target application, the Pod appears in the customization console and can be enabled, causing it to load on the page (defaulting to the top-right corner)."
+              },
+              {
+                "title": "Viewing the Pod",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to view a newly added Pod in the application. After logging in and opening the Pod page, the page appears empty except for top-right buttons. Clicking Customize opens the customization console, where the Pod can be selected via checkbox and saved. After reload, the Pod appears on the page, defaulted to the top-right corner. This section mainly covers the end-user steps to confirm the Pod was successfully added and displayed."
+              },
+              {
+                "title": "Review",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This review summarizes the prior steps for creating a simple Pod: adding the new Pod to the PodType and PodLoaderBindings codetables, implementing a PodLoader with PodBuilder to create the Pod and set its title, using the Administrator wizard to add it to the PodContainer, and viewing it in customization-console. It also notes the “NO CONTENT” placeholder shown for empty Pods and introduces the next section on creating a Pod with a list using a movies example."
+              }
+            ],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000017",
+              "start_page": 14,
+              "end_page": 17
+            },
+            "summary": "Explains how to create and display a basic “Hello World” Pod in Cúram. It covers declaring a PodType in `CT_PodType.ctx`, binding it to a PodLoader in `CT_PodLoaderBindings.ctx` (matching code value, loader class in description), running `ctgen` and database targets, implementing a `PodLoader` that extends `curam.cefwidgets.pods.pod.impl.PodLoader` and builds a Pod with `PodBuilder.newPod(...)`, then adding the Pod through the Administrator wizard and verifying it in the customization console."
+          },
+          {
+            "title": "1.5 Creating a Pod with a list",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating a new list Pod",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Register new Pod",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains how to register a new Pod by adding codetable entries to CT_PodType and PodLoaderBindings, then binding it to a PodLoader. It shows an example PodType for “My Favourite Movies” (PT9002, java_identifier MYFAVMOVIES, enabled). The section continues the prior Pod setup workflow and prepares for creating a list-based Pod with actual content."
+                  },
+                  {
+                    "title": "Create a new PodLoader",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to create a custom PodLoader class in the loaders package, extending `PodLoader` and using `PodBuilder.newPod(document, PODTYPE.MYFAVMOVIES)` to construct a pod with the new PodType codetable value, set its title, and return its widget root node. It then instructs registering the pod in the Administrator application and verifying it appears on the Pod page. The section also introduces the next step: adding pod content via `addContent(...)` using a list widget for favorite movies."
+                  },
+                  {
+                    "title": "Create the list",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to add content to a pod by creating a list in the PodLoader. It introduces PodBuilder.addContent(...), says the list widget will generate an HTML table, and notes that you must first add a Java class providing the favorite movies data to an accessible package. It then instructs you to insert code in the PodLoader’s createPod method before the return statement to populate the pod with the movie list."
+                  }
+                ],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000019",
+                  "start_page": 18,
+                  "end_page": 19
+                },
+                "summary": "Explains how to create a list-based Pod with content. It registers a new PodType and PodLoader binding for “My Favourite Movies” (PT9002 / MYFAVMOVIES), then defines a custom `MyFavouriteMovies` PodLoader that builds the Pod with `PodBuilder.newPod(...)` and sets its title. It also says to add the Pod in Administrator and verify it appears. The final step introduces using `PodBuilder.addContent(...)` with a list widget to render favorite movies as an HTML table, requiring a supporting Java data class."
+              },
+              {
+                "title": "Deconstructing the code",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Constructing the list",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how a Pod’s content list is constructed with `ListBuilder`. It shows that the Pod delegates rendering to another widget, which generates XML for a `ListBodyRenderer` that later becomes HTML. The example creates a one-column list from movie titles, using `ListBuilder.createList(1, document)`, then adds rows and entries in a loop before attaching the list to the Pod with a `RendererConfig` style of `single-list`."
+                  },
+                  {
+                    "title": "Adding rows",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section shows how to populate a pod list by adding rows in a loop. It explains creating a `ListBuilder`, iterating through movies, calling `addRow()` for each item, and using `addEntry(col, row, content)` to place a movie title in a cell. It also notes that `addEntry` takes a 1-based column and row plus a Java object as content, and briefly introduces `addContent(...)` for inserting the completed list into a Pod with a renderer configuration."
+                  },
+                  {
+                    "title": "Creating content in the cells",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains how to populate a Pod’s table cells using `ListBuilder.addEntry(...)`. It shows that `addEntry` takes a 1-based column, 1-based row, and a Java object for cell content, and notes supported content types such as strings and localized objects. The example iterates through a movie list, adds rows, and inserts movie titles. It then briefly describes adding the completed list to a Pod with `addContent(...)`, including its node/document input and renderer configuration."
+                  },
+                  {
+                    "title": "Adding the list to a Pod",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how to insert a populated list into a Pod body using `addContent(...)`. It notes that the first argument can be a `org.w3c.Node` or a `WidgetDocumentBuilder` (converted internally to a node), and the second is a `RendererConfig` specifying the renderer configuration type and name. This section is the key step after creating rows and entries for the list, and links list building to Pod content rendering."
+                  }
+                ],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000021",
+                  "start_page": 20,
+                  "end_page": 21
+                },
+                "summary": "Explains how a Pod’s body content is built from a separate widget list. `ListBuilder` creates a 1-column list tied to the document, rows are added in a loop, and `addEntry(col, row, content)` fills cells with movie titles. The completed list is inserted into the Pod with `addContent(...)`, using a `RendererConfig` such as `STYLE, \"single-list\"`. Also notes that the Pod delegates content rendering to `ListBodyRenderer`, which turns the list XML into HTML."
+              }
+            ],
+            "node_id": "n000043",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000021",
+              "start_page": 18,
+              "end_page": 21
+            },
+            "summary": "Explains how to create a Pod containing a list of content. It registers a new PodType and PodLoader binding for “My Favourite Movies” (PT9002 / MYFAVMOVIES), implements a custom `MyFavouriteMovies` PodLoader with `PodBuilder.newPod(...)` and a title, then adds the Pod in Administrator. It then builds a 1-column `ListBuilder`, adds movie rows with `addEntry(...)`, and inserts the list into the Pod via `addContent(...)` using a `RendererConfig` style such as `\"single-list\"`."
+          },
+          {
+            "title": "1.6 Adding a Pod filter",
+            "level": 2,
+            "children": [
+              {
+                "title": "What is a Pod filter?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "This section introduces Pod filters and explains their purpose: letting users refine Pod content, such as choosing a time period to redraw a chart. It then describes filter types and the ChoiceRenderer, which acts as a generic renderer and delegates to specific renderers based on the ChoiceBuilder displayType. It also lists existing filter renderers in a table, including checkbox, radiobutton, and dropdown options with their type/displayType combinations."
+              },
+              {
+                "title": "Types of filter",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains Pod filters and how they let users refine Pod content, using time-period selection as an example. Introduces the ChoiceRenderer as a generic dispatcher for filter renderers and says it selects a specific renderer based on the ChoiceBuilder displayType. Lists the available filter types in Table 7: Checkbox (CT, multiple), Radiobutton (CT, single), Radiobutton (non-CT, db-single), and Dropdown (CT, single, dropdown), with their corresponding renderer classes."
+              },
+              {
+                "title": "Adding a Drop Down Filter",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Creating the Pod Filter",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to add a drop-down filter to a Pod, using a movies example filtered by genre. Shows replacing the PodLoader’s createPod method, compiling and running to see the filter icon, then opening the filter, choosing a genre, saving, and reloading to display only matching movies. Introduces PodBuilder.addFilter(...) with a PodFilter built from an id, document, and RendererConfig mapped to CT_CHOICE/ChoiceRenderer. Begins describing how to add filter options and selections (“choices”)."
+                  },
+                  {
+                    "title": "Creating the options",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains how to add options to a Pod filter after creating the filter framework. It defines “choices” as the filter’s options plus any selected subset, and introduces using the ChoiceRenderer to build a drop-down selection UI. It follows the earlier steps for creating a genre filter in the My Favourite Movies Pod and prepares for populating the filter with selectable values."
+                  },
+                  {
+                    "title": "Creating the selections",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how to build a genre dropdown’s selections with ChoiceBuilder. Shows creating a HashMap of id/value pairs for genres, initializing ChoiceBuilder, retrieving saved filter selections for the MYFAVMOVIES genre via getPodFilterById, converting the returned Node to an ArrayList, defaulting to “all” if empty, and adding the selected value. Also notes setting the ChoiceRenderer display type to “listdropdown” for a non-codetable dropdown."
+                  },
+                  {
+                    "title": "Setting the type of filter",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how to set the filter display type when building a genre dropdown with ChoiceBuilder/ChoiceRenderer. After creating the choices map and restoring the saved selection from PodLoader/PodFilter, the code sets the display type to \"listdropdown\" because the dropdown is not based on a codetable. Useful if you need to configure a list-based filter renderer and understand how selected values are reloaded and applied."
+                  },
+                  {
+                    "title": "Adding a label and CSS styling",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how to add a label and CSS styling to a PodFilter by calling addFilterLabel() and addCSSClasses(), noting labels are localized via properties keys. Shows adding the filter to a Pod with PodFilter.addFilter(...), then filtering Pod content based on the selected value, with saved filter state persisting across reloads and restoring the displayed filter. Also notes that PodBuilder, PodFilter, and ChoiceBuilder avoid custom renderers, and leads into creating new Pod filters with custom renderers."
+                  },
+                  {
+                    "title": "Add the Filter to the Pod",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Shows how to add a PodFilter to a Pod after configuring its label and CSS classes. Explains that filter labels are localized keys, with the key used if no property exists. Demonstrates adding the filter via `moviesPod.addFilter(genreFilter)`, then using the selected filter value to conditionally include rows in the Pod content. Notes that the filter value is saved and restored across reloads, and previews the next section on creating custom Pod filter renderers."
+                  },
+                  {
+                    "title": "Filtering your Pod",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how to complete Pod filtering after adding a PodFilter: optionally set a localized label with addFilterLabel(...) and CSS classes with addCSSClasses(...), then attach the filter to the Pod via addFilter(...). Shows filtering logic for the movies example, including handling “all” and persisting the selected filter value across reloads. Notes that PodBuilder, PodFilter, and ChoiceBuilder avoid custom renderers, and introduces the next topic: creating new Pod filters/renderers for custom filter types."
+                  }
+                ],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000024",
+                  "start_page": 23,
+                  "end_page": 24
+                },
+                "summary": "Explains how to add a drop-down filter to a Pod using the My Favourite Movies example. Shows creating a PodFilter with id `\"genre\"` and a `RendererConfig` mapped to `CT_CHOICE`/`ChoiceRenderer`, building genre options with `ChoiceBuilder` from a `HashMap`, restoring saved selections via `getPodFilterById(...)`, defaulting to `\"all\"` if none are saved, and setting the display type to `\"listdropdown\"`. Also notes the filter appears as a pen icon, can be saved/reloaded, and filters Pod content by the selected genre."
+              }
+            ],
+            "node_id": "n000053",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000024",
+              "start_page": 22,
+              "end_page": 24
+            },
+            "summary": "Explains how to add a Pod filter to a movies Pod. Introduces Pod filters as optional controls for refining Pod content, and summarizes filter renderer types via the generic ChoiceRenderer, which dispatches based on ChoiceBuilder displayType. Shows adding a genre dropdown filter with PodBuilder.addFilter(PodFilter), configured with CT_CHOICE/ChoiceRenderer. Demonstrates building genre choices from a HashMap, restoring saved selections with getPodFilterById(...) and PodFilter.convertSelectionsNodeToArrayList(...), defaulting to “all,” and setting display type to “listdropdown” for a non-codetable dropdown."
+          },
+          {
+            "title": "1.7 Creating new Pod filters",
+            "level": 2,
+            "children": [
+              {
+                "title": "Create a Pod filter Renderer",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Preparing to delegate",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section introduces creating a Pod filter renderer for a simple movie-title text filter. It defines core terms like Renderer, Marshaller, Source Path, and Target Path, then outlines the implementation steps: create the Pod filter renderer, map paths, create the text box, configure the renderer, update the movies PodLoader, and create a PodFilter. It begins the renderer code by using a FieldBuilder to delegate input-box rendering to an existing renderer and store the settings passed to it."
+                  },
+                  {
+                    "title": "Setting a source path",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to extend a field’s source path to read filter text from a Document Node named `text-filter`, using the binding’s source path and `extendPath()`. Also shows how to extend the target path so the value is handled by the Pod-Container’s marshaller, using the format `choice/<podID>/<filterID>/selected-options`. Notes that renderer IDs are `podID/filterID` and that target paths are split into steps for marshalling."
+                  },
+                  {
+                    "title": "Setting a target path",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to build a filter’s target path for Pod form values. The code extends the existing target path with `choice/<podId>/<filterId>/selected-options` using `field.getBinding().getTargetPath().extendPath(...)`, then sets it on the field builder. It notes this format is required so the Pod-Container’s Marshaller processes the form item value, and that the renderer’s `getID()` returns the podID/filterID pair used in the path."
+                  },
+                  {
+                    "title": "Creating the input field",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "This section explains how to create the input field for a Pod text filter. It shows that the renderer delegates field creation to the existing TextRenderer by setting the field builder domain to TEXT_NODE and rendering the component into a DocumentFragment. It also covers the required style configuration in StylesConfig.xml to register a PodTextFilterRenderer, and notes that the filter must then be started in the PodLoader so its saved value can be used to filter the movie list."
+                  }
+                ],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000027",
+                  "start_page": 26,
+                  "end_page": 27
+                },
+                "summary": "Explains how to build a PodTextFilterRenderer for a movie-title text filter. It defines Renderer, Marshaller, Source Path, and Target Path, then shows delegating input-box rendering via a FieldBuilder. The renderer extends the source path to `text-filter` and the target path to `choice/<podID>/<filterID>/selected-options` so the Pod-Container marshaller processes the value. Also notes the renderer ID format `podID/filterID`, and that the filter is later wired into StylesConfig.xml and the PodLoader."
+              },
+              {
+                "title": "Create a configuration for the Pod filter Renderer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to configure a custom Pod filter renderer in `StylesConfig.xml` by adding a `sc:style` named `pod-text-filter` that plugs in `sample.PodTextFilterRenderer` as `component-renderer`. Notes that this style is used by `PodLoader` to activate the new text filter renderer, and that the client build target must be run to include the configuration. Also frames the preceding context about Pod filter step semantics and rendering the input field via `TextRenderer`."
+              },
+              {
+                "title": "Create a new PodFilter in the PodLoader",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to finish a new PodFilter in the PodLoader after building the renderer and style config. It says to start the filter in `createPod(...)` and use the saved value to filter the Movies list. The section shows the updated code that creates a text filter and adds it to the Pod."
+              }
+            ],
+            "node_id": "n000064",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000028",
+              "start_page": 25,
+              "end_page": 28
+            },
+            "summary": "Explains how to create a custom Pod filter renderer for a movie-title text filter. It covers renderer basics, using a FieldBuilder to delegate input-box rendering, extending the source path to `text-filter`, and extending the target path to `choice/<podID>/<filterID>/selected-options` so the Pod-Container marshaller handles the value. It also shows adding a `pod-text-filter` style in `StylesConfig.xml` for `sample.PodTextFilterRenderer`, then wiring the new filter into `PodLoader` and using the saved value to filter Movies."
+          },
+          {
+            "title": "1.8 Localization in Pods",
+            "level": 2,
+            "children": [
+              {
+                "title": "The textresource property",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains the Pod renderer “textresource” attribute for localization. A renderer can read a resource property file name from the pod XML, use `ClientPaths` to locate it, and retrieve values by extending the path with a property key. Shows example XML and `.properties` entries, notes locale-specific files are used when available, and says property files must be on the client classpath, typically in an `i18n` folder."
+              },
+              {
+                "title": "Setting the text resource",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "This section explains how Pod renderers use Builder classes with a setTextResource(String) method to load localized values from a properties file via the renderer’s textresource attribute. It introduces localization of the “My Favorite Movies” Pod, showing how to create an i18n properties file (for example, MyFavouriteMovies.properties with pod.title=My Top Movies) and update PodBuilder code to reference that resource and use the property key for the Pod title."
+              },
+              {
+                "title": "Localizing the My Favorite Movies Pod",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Localizing the Pod",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Explains how Pods localize text using renderer builder APIs and a properties file referenced by `setTextResource(String)`. Introduces the idea that renderers read localized values from a `textresource` property, then shows a simple example for the “My Favorite Movies” Pod: create `MyFavouriteMovies.properties` under `sample/i18n` with `pod.title=My Top Movies`, and update `MyFavouriteMovies.java` to call `moviesPod.setTextResource(\"sample.i18n.MyFavouriteMovies\")` and `moviesPod.setTitle(\"pod.title\")`."
+                  },
+                  {
+                    "title": "Localizing the filter",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "This section explains how to localize Pod filter labels and list column titles using properties files. It shows that the Pod filter inherits the Pod’s resource file, so labels can be set with property keys such as `pod.filter.title.label` and `pod.filter.genre.label`. It also demonstrates localizing a movie list via `MoviesList.properties` and `setTextResource()`. Finally, it recommends sharing one properties file across related Pod widgets to reduce maintenance."
+                  },
+                  {
+                    "title": "Localizing the movie list",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000078",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Shows how to localize the movie list in a Cúram Pod using properties files. It introduces a new MoviesList.properties resource, adds it to the i18n folder, publishes it, and sets the list’s text resource and column title via property keys. The section also explains that Pod widgets can share one properties file for maintainability, so the MyFavouriteMovies.properties file can be reused for the list instead of creating separate resources for each widget."
+                  },
+                  {
+                    "title": "Sharing properties files",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains why Pods should share one properties file across aggregated widgets instead of maintaining one file per widget. Uses the MyFavouriteMovies example to show reusing the Pod’s properties file for list column titles, giving a single resource for all Pod-related labels and titles. Highlights that this approach is simpler to maintain and supports localized Pod content such as titles, filter labels, and list columns."
+                  }
+                ],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000032",
+                  "start_page": 31,
+                  "end_page": 32
+                },
+                "summary": "Shows how to localize a Cúram Pod and its child widgets using properties files and `setTextResource(String)`. It demonstrates localizing the Pod title with `MyFavouriteMovies.properties` and `moviesPod.setTitle(\"pod.title\")`, then localizing filter labels via inherited Pod resources. It also localizes a movie list with column-title keys, and recommends sharing one properties file across related Pod widgets to simplify maintenance."
+              }
+            ],
+            "node_id": "n000072",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000032",
+              "start_page": 29,
+              "end_page": 32
+            },
+            "summary": "Explains how Pods support localization via a renderer `textresource` attribute pointing to a client-classpath properties file, resolved with `ClientPaths` and locale-specific variants when present. Shows how builders use `setTextResource(String)` and property keys instead of hardcoded strings. Demonstrates localizing the “My Favorite Movies” Pod title, filter labels, and list column titles using `.properties` files in an `i18n` folder, and recommends sharing one properties file across related Pod widgets for easier maintenance."
+          },
+          {
+            "title": "1.9 Sample program listings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Sample: The movies DB: A Java class serving our favorite movies",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Provides the sample Java helper class `MoviesDB` for the “My favorite movies” pod. It is a simple read-only in-memory database using a `TreeMap<Integer, Movie>` with hardcoded movie entries. The class exposes `getAllMovies()` and `getMovieById(Integer)` and defines an inner `Movie` class with fields such as id, title, genre, year, director, lead role, and oscars. Useful as the data source for the example listings in this pod."
+              },
+              {
+                "title": "Sample: Hello World Pod-Loader",
+                "level": 3,
+                "children": [],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Shows two Java Pod-Loader examples for Cúram 8.1.2. The first is a minimal `HelloWorld` class extending `PodLoader`, creating a `HELLOWORLD` pod with title “Hello World” and returning its root node. The second `My favorite movies` example builds a `MYFAVMOVIES` pod, uses `MoviesDB` to fetch movies, creates a `ListBuilder` list, populates rows from the collection, applies a `single-list` renderer, and returns the pod widget root node."
+              },
+              {
+                "title": "Sample: My favorite movies Pod-Loader",
+                "level": 3,
+                "children": [],
+                "node_id": "n000083",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Shows a Pod-Loader example that builds a “My Favourite Movies” pod. It creates a pod with `PODTYPE.MYFAVMOVIES`, fetches movies from `MoviesDB`, iterates through them, and populates a one-column `ListBuilder` with movie titles. The list is styled with `RendererConfigType.STYLE` using `single-list`, then added to the pod and returned as the widget root node. Useful for understanding how to build and render a list-based pod."
+              },
+              {
+                "title": "Sample: My Favourite Movies Pod-Loader for Pod filter",
+                "level": 3,
+                "children": [],
+                "node_id": "n000084",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Shows a Java `createPod` example for a “My Favourite Movies” pod with a genre dropdown filter. It builds a `PodFilter`, defines genre choices, restores the last saved selection, defaults to “all,” and applies the filter label/CSS. The code then loads movies from `MoviesDB`, lists only movies matching the selected genre, and renders the pod content with a `single-list` style. Useful for understanding pod filters, choice widgets, and filtered content rendering."
+              },
+              {
+                "title": "Sample: PodTextFilterRenderer for new Pod filter example",
+                "level": 3,
+                "children": [],
+                "node_id": "n000085",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Shows Java sample code for `PodTextFilterRenderer`, an `AbstractComponentRenderer` that builds a text input for creating new Pod filters. It copies a field component, rewrites the source path to `text-filter`, rewrites the target path to `choice/<fieldID>/selected-options`, sets the domain to `TEXT_NODE`, and renders the component into a document fragment. Useful as a concrete renderer example for Pod filter UI customization."
+              },
+              {
+                "title": "Sample: My Favorite Movies Pod-Loader for new Pod filter",
+                "level": 3,
+                "children": [],
+                "node_id": "n000086",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Shows the `createPod` implementation for a “My Favourite Movies” pod with a new pod filter setup. It builds a title text filter and a genre dropdown filter, restores saved filter selections from the document, supplies defaults when missing, and adds labels/CSS classes. Includes use of `PodBuilder`, `PodFilter`, `RendererConfig`, `ChoiceBuilder`, and a genre map (`all`, horror, drama, romance, comedy, action). Useful for understanding how pod filters are created, populated, and persisted."
+              },
+              {
+                "title": "Sample: My Favourite Movies Pod-Loader for localization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000087",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000040",
+                  "start_page": 38,
+                  "end_page": 40
+                },
+                "summary": "Java sample code for a “My Favourite Movies” pod loader focused on localization and filter setup. It creates a PodBuilder with localized text resources and title keys, then configures a text filter for movie title and a dropdown/domain filter for genre with saved selections, labels, and CSS classes. The excerpt shows how to restore filter state from document nodes and build choice widgets. Pages 39–40 are Merative legal notices, sample-code usage permissions, trademarks, privacy policy, and warranty disclaimers."
+              }
+            ],
+            "node_id": "n000080",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000040",
+              "start_page": 33,
+              "end_page": 40
+            },
+            "summary": "Section 1.9 provides sample listings for the “My favorite movies” pod: a `MoviesDB` helper with hardcoded movie data, a basic `HelloWorld` pod loader, a movies list pod loader, and variants adding a genre filter, a custom text filter renderer, and localization support. It shows how to build pods with `PodBuilder`, `PodFilter`, `ChoiceBuilder`, `ListBuilder`, and renderers, including restoring saved filter state. Pages 39–40 contain Merative notices, sample-code permissions, trademarks, privacy policy, and warranty disclaimers."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000040",
+          "start_page": 9,
+          "end_page": 40
+        },
+        "summary": "Introductory guide to developing Cúram SPM pods and pod pages. Explains the PodContainer-based UIM architecture, PodLoader role, supporting codetables/database tables, rendering and save flow, administration setup, pod sizing, and user customization. Covers prerequisites and points to related widget/personal page guides. The “getting started” path shows creating a host page and configuring PAGECONFIG/USERPAGECONFIG. Later examples walk through a Hello World pod, list content, filters, custom filter renderers, and localization, followed by sample code listings and legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

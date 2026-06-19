@@ -1,0 +1,1787 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "98ce6af610a5c23e",
+    "title": "Cúram 8.1.2 Income Support Business Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/IncomeSupportBusGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "98ce6af610a5c23e0c15ab284b40c21a7d86430d237d49f9478bd1e0ddbe1818",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:57:30+00:00",
+    "page_count": 108,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/IncomeSupportBusGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Income Support Business Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000108",
+      "start_page": 1,
+      "end_page": 108
+    },
+    "summary": "Front matter and legal pages for the Cúram 8.1.2 Income Support Business Guide, covering the product scope, overview, contents, and notices through page 108. The guide explains Income Support for food, cash, and medical assistance, including intake, eligibility determination, benefit calculation, online citizen applications, shared evidence, and key business flows. It also highlights program rules for SNAP-like food assistance, TANF-style cash assistance, and Medicaid/CHIP support, plus configuration topics such as eligibility start dates, certification periods, expedited verification, Eligibility Viewer, primary client settings, concurrent eligibility detection, evidence wizard customization, and MAGI/non-MAGI cascading eligibility hooks. The remaining pages are legal notices, permissions, warranty disclaimers, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section on page 107 before using the product information. It is a short preface/legal notice for the document, with copyright attribution to Merative US L.P. for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section is the front matter and overview for Cúram Income Support. It identifies the applicable product versions (8.1, 8.1.1, 8.1.2) and then introduces the solution’s scope: intake, eligibility determination, and benefit calculation for food, cash, and medical assistance. It explains the main program types, core eligibility factors, and the key business flows covered later, including online screening, application, caseworker intake, eligibility determination, authorization, and change of circumstance. It also begins configuration guidance for the citizen portal screening flow."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section overviews Cúram Income Support and Universal Access workflows for human services screening and online application. It covers supported programs (Head Start, LIHEAP, Medical Assistance, school and summer meals, WIC), screening for potential eligibility, viewing results, and applying online. It also explains configurable items such as screening types, IEG scripts, authentication, application/program setup, work queues, routing, submission text, PDF mapping, participant search, client matching, and case creation/transfer."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Overview of Cúram Income Support for food, cash, and traditional medical assistance on integrated cases. Covers application handling, evidence capture and categories, advisor tips/reminders, verification and waivers, program requests/withdrawals, eligibility determination and results categories, business and display rules, eligibility start dates, readiness for determination routing, and the first steps of authorization (activating evidence and selecting assistance units). Also notes configurable/admin-customizable aspects throughout."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Cúram Income Support overview of authorization and eligibility management for Cash, Food, Medical Assistance, and CHIP. Covers program recommendation, authorizing/denying/declining results, concurrent eligibility validations, primary client assignment, product delivery creation/activation, assistance/financial/member groups, eligibility viewer timelines and key events, financial payment generation, communications templates, and change-of-circumstance processing for household composition changes. Includes configurable items such as program ordering, decision dates, primary client rules, viewer display, and eligibility-change rules."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers change-of-circumstance handling in Cúram Income Support: configurable program-specific evidence, Evidence Management wizards, Add Member and Re-add a Member guided flows, and how evidence updates trigger completion. Also explains alignment of evidence and how household changes can require closing/reauthorizing product delivery cases when the primary client changes, with separate procedures for Food/Cash Assistance and Medical Assistance. Ends with program information for Food Assistance, including expedited service rules, intake questions, and separate CER rule sets for online vs integrated case eligibility."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "This section covers Food Assistance configuration and eligibility rules in Cúram. It explains expedited food assistance timers, indicators, verifications, and customizable CER rules. It details ABAWD policy: who qualifies, work requirements, clocks, waivers, time limits, regain eligibility, and the Time Limits summary page. It also describes eligibility display tabs (Non-Financial, Resources, Income, Work Eligibility, Compliance, Decision Comparison) and concurrent eligibility detection, including domestic violence exceptions and differences between Check Eligibility and Reassessment."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "This section overviews Income Support rules, eligibility, and display configuration. It explains Cash Assistance federal time limits (60 months), work eligibility, concurrent eligibility detection, and how results are shown on the Cash Assistance display tabs (household, resources, income, compliance, work eligibility, comparison). It also introduces CER-based program rules, display rules, and rate/decision tables, including customizable rates and resource/income treatment. Open this node for guidance on eligibility logic, result presentation, and configurable rule/rate structures."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "Pages 75–84 list Income Support rate tables and configuration topics. The rate tables cover many CER/FS limits and deductions for Food Assistance, Cash Assistance, Long Term Care, and related medical programs (e.g., shelter, resource, income, SSI, work allowance, FPL, Medicaid/medical limits). The section then explains eligibility start date options, future authorization months, certification-period configuration/customization, expedited verification waivers, and Eligibility Viewer setup, including product data retrievers and look-back/look-forward period settings."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "This section explains Income Support configuration for primary client selection and display, plus concurrent eligibility detection. It covers Food Assistance, Cash Assistance, and Medical Assistance authorization rules; related application properties and hook points; and UI settings that hide or show primary client/role references on case list, integrated case, person, context panel, and search pages. It also describes concurrent eligibility detection start-date properties for Food and Cash Assistance, and hook point customization via InStateBenefitDataDAO, including required fields and rules behavior."
+          },
+          {
+            "title": "Edition — pages 95-104",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000095",
+              "end_unit_id": "p000104",
+              "start_page": 95,
+              "end_page": 104
+            },
+            "summary": "This section covers concurrent eligibility/dual eligibility configuration and reporting, including how InStateBenefitData is filtered, when precedents are created, and how getDualEligibilityGroupName controls product grouping and reassessment aggregation. It explains batch reporting options and parameters for Dual Eligibility Report and Stream, plus how to extend dual detection for custom products via DualDetectionCalculator. It also details the Food Assistance domestic violence exception with FADualDetectionCalculator, and ends with customization of the Re-add a Member guided changes wizard and default evidence/post-processing hooks."
+          },
+          {
+            "title": "Edition — pages 105-106",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000105",
+              "end_unit_id": "p000106",
+              "start_page": 105,
+              "end_page": 106
+            },
+            "summary": "Describes how Cúram customizes cascading eligibility between non-MAGI Medicaid and MAGI Medicaid using the NonMagiMedicaid table and case group decisions. Explains default behavior where non-MAGI eligibility overrides MAGI, with examples of automatic MAGI adjustment. Details the hook point CREOLECustomCaseGroupsMaintainer for writing eligible decisions to custom tables or changing persisted products, plus extension/replacement options and override methods such as useExpectedEndDateForOpenEndedCases and shouldPersist."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000106",
+          "start_page": 5,
+          "end_page": 106
+        },
+        "summary": "Front matter for Cúram Income Support (8.1, 8.1.1, 8.1.2). It introduces the product’s scope: intake, eligibility determination, benefit calculation, and online citizen portal support for food, cash, and medical assistance. The section also outlines the main business flows, program-specific eligibility factors, and configuration areas such as eligibility start dates, certification periods, expedited food verification, Eligibility Viewer, primary client settings, concurrent eligibility detection, evidence wizard customization, and non-MAGI/MAGI cascading eligibility hooks."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000108",
+              "end_unit_id": "p000108",
+              "start_page": 108,
+              "end_page": 108
+            },
+            "summary": "Merative’s legal notice page covering sample data and code disclaimers, copyright license terms for copying and using sample programs, and warranty/liability limitations. It also points to the Merative privacy policy URL and lists trademark ownership notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. Includes copyright dates 2012 and 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000108",
+              "end_unit_id": "p000108",
+              "start_page": 108,
+              "end_page": 108
+            },
+            "summary": "States that all example names in the document are fictitious and that sample programs may be copied, modified, and distributed under the Merative Client Agreement, but are provided “AS IS” without warranty or liability. Includes the Merative privacy policy link. Lists trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, UNIX, and notes other names may be trademarks of others. Copyright: © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000107",
+          "end_unit_id": "p000107",
+          "start_page": 107,
+          "end_page": 107
+        },
+        "summary": "Merative publication notice and permissions. Covers personal and enterprise use rights for reproducing the publications, restrictions on redistribution and derivative works, preservation of proprietary notices, and limits on export/re-export. States no other rights are granted; Merative may withdraw permission. Includes strong “AS IS” warranty disclaimer, liability limits, patent notice, non-Merative product/site disclaimer, and © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000017",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document, listing front matter and Chapter 1 topics for Cúram Income Support. It maps sections on overview, key business flows (eligibility checks, application, intake, eligibility determination and authorization, changes of circumstance), program information for food and cash assistance, and configuration topics (eligibility dates, certification periods, verification, Eligibility Viewer, primary client settings, concurrent eligibility, evidence management, cascading eligibility). Also includes notices, privacy policy, and trademarks, with page references."
+      },
+      {
+        "title": "1 Cúram Income Support overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview of Cúram Income Support",
+            "level": 2,
+            "children": [
+              {
+                "title": "Programs overview",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Food assistance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Describes Cúram Income Support programs for Food Assistance and Cash Assistance. Food Assistance helps low-income people buy food via vouchers or EBT and evaluates eligibility using non-financial, assistance unit, program, and financial rules. Cash Assistance provides temporary cash aid and work opportunities to needy families, with goals of employment and self-sufficiency, 60-month lifetime limits for adults, and requirements such as employment search, paternity establishment, and minor-parent living arrangements. Eligibility also uses non-financial and assistance unit rules."
+                  },
+                  {
+                    "title": "Cash assistance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Cúram Income Support Cash Assistance provides temporary cash aid and work opportunities for needy families, aiming for self-sufficiency through job training, education, and work activities. Adults are generally limited to 60 months of lifetime benefits and must attempt to find employment. Unmarried minor parents must live with a responsible adult or guardian unless good cause exists, and paternity must be established. Benefits are typically paid monthly. Eligibility is based on non-financial rules (citizenship, SSN, residency) and assistance unit rules (household composition and head of household)."
+                  },
+                  {
+                    "title": "Medical assistance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section describes Cúram Income Support for Medical Assistance, which supports eligibility and enrollment for health coverage programs for low-income individuals and families, including Medicaid and CHIP. It explains how agencies share evidence and business processes to determine eligibility across multiple programs, including ACA-related streamlined eligibility. It also notes key eligibility rule types: non-financial rules, assistance unit determination, income rules for MAGI or traditional Medicaid households, and resource rules where applicable. CHIP is covered as a related concept."
+                  },
+                  {
+                    "title": "Children's Health Insurance Program (traditional)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Traditional CHIP is described as a medical assistance program for families who earn too much for Medical Assistance but cannot afford private insurance for children. It covers a full range of child health services. The section explains that, although MAGI rules are used first and most CHIP determinations occur there, traditional CHIP remains part of the eligibility cascade for some cases. Eligibility is determined from evidence and business rules using both financial and non-financial factors."
+                  }
+                ],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000011",
+                  "start_page": 9,
+                  "end_page": 11
+                },
+                "summary": "Overview of Cúram Income Support, which provides intake, eligibility determination, and benefit calculation for food, cash, and medical assistance programs. It explains shared evidence/rules-based eligibility processing across programs and a citizen portal. Food Assistance covers SNAP-like food support via vouchers/EBT with non-financial, assistance unit, program, and financial rules. Cash Assistance covers temporary TANF-style aid with work/self-sufficiency goals, 60-month adult lifetime limits, and related eligibility rules. Medical Assistance covers MAGI and traditional Medicaid/CHIP with ACA-related streamlined eligibility."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Overview of Cúram Income Support: a rules-based system for intake, eligibility determination, benefit calculation, payment, and ongoing change management for food, cash, and medical assistance programs. It supports shared evidence/business processes, a citizen portal, and prepackaged, configurable eligibility rules. Food Assistance covers SNAP-like benefits with non-financial, assistance unit, program, and financial rules. Cash Assistance covers TANF-style temporary aid with work/self-sufficiency goals, 60-month adult lifetime limits, and eligibility rules. Medical Assistance covers MAGI and traditional Medicaid/CHIP, including ACA-streamlined eligibility."
+          },
+          {
+            "title": "1.2 Key business flows of Cúram Income Support and Cúram Income Support for Medical Assistance",
+            "level": 2,
+            "children": [
+              {
+                "title": "Checking eligibility online for human services programs",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Getting Started",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains the “Getting Started” page in Cúram Income Support’s Citizen Portal for eligibility screening. When users choose to check other programs, they can create an account, log in, or start screening without an account. The page is a configurable Universal Access Page Player page, with user data secured under the account. It also notes that multifactor authentication can be enabled and configured from Admin > Universal Access > Authentication Factors."
+                  },
+                  {
+                    "title": "Select Programs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains the “Select Screening” step after login or guest start, where clients choose a basic or detailed human services screening. The section defines human services screening and lists the programs covered: Cash Assistance, Child Care Assistance, Early Head Start, Emergency Assistance, and Food Assistance. It briefly describes each program’s purpose, such as temporary cash aid, child care support for working families, early childhood services, emergency rent/utility help, and food benefits via vouchers or EBT."
+                  },
+                  {
+                    "title": "Complete Human Services Screening",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Describes complete human services screening in Cúram Income Support: clients can anonymously check potential eligibility for multiple programs using questions about the client, home, benefits, income, expenses, and resources. Results help clients decide whether to pursue assistance, though accuracy depends on the detail and correctness of entered information. Notes that available programs and screening types are organization-configurable, and IEG script help text can be customized."
+                  },
+                  {
+                    "title": "View Potential Eligibility Results",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Universal Access displays screening results for human services programs, listing potentially eligible programs and programs where eligibility may not be determined. Clients can click a program to start an online application or go to an external information site, depending on configuration. The page supports customizable display rules and “More Info” links, including CER-based screening rule sets. It also notes that after viewing results, clients may apply online or by mail; online apply is enabled for Food, Medical, and Cash Assistance through Income Support integration."
+                  },
+                  {
+                    "title": "Apply Online for Human Services Programs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how clients move from potential eligibility results to applying for human services programs online or by print/mail. The “Your Next Step” page shows programs available for online application, and Apply Online is enabled through Income Support for Food Assistance, Medical Assistance, and Cash Assistance. Online application starts the intake flow by taking the client to the program selection screen and Human Services Application Form within Universal Access."
+                  }
+                ],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000016",
+                  "start_page": 13,
+                  "end_page": 16
+                },
+                "summary": "Explains Cúram Income Support’s online human services eligibility flow: Getting Started account/login/guest options, Select Screening for basic or detailed screening, completing anonymous household-based screening, viewing potential eligibility results, and applying online or by mail. Covers supported programs such as Cash Assistance, Child Care Assistance, Early Head Start, Emergency Assistance, Food Assistance, Head Start, LIHEAP, Medical Assistance, School Meals, Summer Meals, and WIC. Notes configurable screening types, results display rules, IEG script help text, multifactor authentication, and online apply integration."
+              },
+              {
+                "title": "Applying for human services programs online",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Getting Started",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains the Universal Access “Getting Started” flow for clients checking eligibility or starting a human services application. It covers the three entry options on the home page, configurable authentication factors, and how users proceed to Select Application and complete the Human Services Application form. It also notes configurable programs/applications, support for saving, resuming, withdrawing, and electronically signing applications, and that state-specific scripts may need customization."
+                  },
+                  {
+                    "title": "Select Application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "After a client logs in or chooses to start without an account, they reach the Select Application page, where they can begin the human services application form. The section explains that applications and programs are configurable in Universal Access via the administration application. It sits within the broader application flow that supports online application intake for programs such as Food Assistance, Cash Assistance, and Medical Assistance."
+                  },
+                  {
+                    "title": "Complete Human Services Application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains the Complete Human Services Application flow in Universal Access. It covers how clients get from Getting Started to Select Application, then into the Human Services Application Form for programs like Food, Cash, and Medical Assistance. It notes configurable items such as authentication factors, applications/programs setup, and state-specific script customization. It also mentions account creation, login, starting without an account, saving/resuming in-progress applications, withdrawing submitted applications, and electronic signature requirements."
+                  }
+                ],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000018",
+                  "start_page": 17,
+                  "end_page": 18
+                },
+                "summary": "This section describes the online human services application flow in Universal Access: Getting Started, Select Application, and the Human Services Application Form. Clients can create an account, log in, or start without one; authenticated users can save, exit, resume, or withdraw applications. It covers configurable authentication factors, applications/programs setup, and state-specific script customization. It also notes online application for programs such as Food, Cash, and Medical Assistance, and electronic signature requirements."
+              },
+              {
+                "title": "Caseworker intake",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Application methods",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Income Support roles",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000038",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "This section explains Cúram Income Support caseworker roles, focusing on the Intake Worker and Eligibility Worker. It describes the Intake Worker’s main duties: interviewing clients, collecting and recording personal and financial data, managing verifications, and checking whether a client already exists in agency records. It also notes default home page elements for this role, including Find Client, My Appointment, Quick Links, My Items of Interest, and Assigned Applications. Useful for understanding who handles application intake and client record matching."
+                      }
+                    ],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section describes application submission methods in Cúram Income Support: clients can apply via Citizen Portal, phone, paper, or in person, with submitted applications becoming the official record. It explains configuration options for Common Intake (CCI), Universal Access (UA), and Citizen Portal, including default scripts and support for one or multiple application types. It also outlines the main application data captured and introduces the primary caseworker roles, especially the Intake Worker, who interviews clients, records data, manages verifications, and matches clients to existing records."
+                  },
+                  {
+                    "title": "Identifying the client",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how a caseworker identifies a client at intake by searching the system to see whether the person is already registered or new. Covers minimal-criteria person search across persons and prospect persons, reviewing matches, and registering as either a prospect person or fully registered client. Notes that full registration can wait until required data is available, and that registration creates participant roles and prevents duplicate records. Also mentions configurable participant search settings in the administration application."
+                  },
+                  {
+                    "title": "Selecting programs for application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how Cúram Income Support Common Intake is configured so caseworkers can select one or more programs for an application, including Food Assistance, Cash Assistance, Medical Assistance, CHIP, and retroactive medical. Covers customization of Intake XML, application types, and associated programs. Also describes how applications are received and routed by channel or program type to work queues, how online applications appear in the Online Applications pod, and how the application script can be saved, quit, or submitted early after the first page."
+                  },
+                  {
+                    "title": "Registering application or selecting application from work queue",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how Cúram Common Intake handles registering or selecting an application from a work queue. Covers selecting configured programs for an Income Support application type, including Food Assistance, Cash Assistance, Medical Assistance, CHIP, and retroactive medical. Describes online applications routing to the Online Application Received Work Queue and showing due-status counts in the Online Applications pod, while phone, paper, or in-person applications are created through an application script. Also notes configurable application types, programs, and work queues, including routing by channel or program mix."
+                  },
+                  {
+                    "title": "Completing application script",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "This section explains how to complete an Income Support application script for food assistance, cash assistance, or traditional medical assistance. It covers the information collected (personal details, benefits, employment, income, resources, expenses) and notes that applications can be saved, quit, or submitted at any point—even after only the first page, which includes Expedited Food Assistance questions. It also briefly describes configurable program types, intake XML, and work queues for routing applications by channel or program type."
+                  },
+                  {
+                    "title": "Signing and submitting application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains what happens when an application is submitted in Cúram Income Support. It covers displaying client rights and responsibilities, requiring the caseworker to communicate them, and preventing further edits after submission. It also describes creation of the Integrated Case, automatic person registration, claimant designation, and PDF generation. Configuration options include the submit process, transfer targets, and the text shown on submit (Rights and Responsibilities, Authorization Information, Department Policy). It also notes PDF mapping depends on program-specific mapping configurations."
+                  },
+                  {
+                    "title": "Merging clients",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how intake workers merge client records when processing food, cash, or traditional medical assistance applications. It describes Client Match processing: searching for possible matches among already registered people, deciding whether a prospect is an existing person or a new registration, and merging prospect details into the matched registered person so evidence is linked correctly. Also notes that a message informs the intake worker about new records. This is useful for understanding manual client matching and record consolidation during application intake."
+                  },
+                  {
+                    "title": "Routing submitted application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how submitted food, cash, or traditional medical assistance applications are routed and handled. By default, online submissions go to the online applications received work queue, where intake workers can view, assign, and monitor them by due status. Routing can be configured to send applications to a queue, user, or group based on organizational policy, and submitted applications generate notifications and tasks. Also notes that organizations can customize caseworker workflow subscriptions and routing workflows."
+                  },
+                  {
+                    "title": "Creating an integrated case for an application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "This section introduces case setup for applications and notes that organizations can configure how different application situations are handled. It emphasizes the intake worker’s three main options for establishing a case for food assistance, cash assistance, traditional medical assistance, CHIP, and retroactive medical assistance applications. It also connects to related processes such as client matching/merging and application routing, indicating this page is an overview node for integrated case creation workflows."
+                  },
+                  {
+                    "title": "Conducting interview and maintaining evidence",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Using evidence tips and reminders",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000026",
+                          "end_unit_id": "p000026",
+                          "start_page": 26,
+                          "end_page": 26
+                        },
+                        "summary": "This section explains the advisor/evidence tips feature in Income Support. It describes evidence categories (household, expenses, resources, income), how caseworkers view/update/remove evidence, and that some non-case evidence is captured on the Person tab. It also covers configurable/custom evidence and how the CER-based advisor gives context-sensitive tips, next-step prompts, issues, and reminders during intake and evidence capture, with links to related areas and review in the Evidence Workspace or Smart Panel."
+                      }
+                    ],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000026",
+                      "start_page": 25,
+                      "end_page": 26
+                    },
+                    "summary": "Explains how caseworkers conduct client interviews and maintain evidence for food, cash, and traditional medical assistance applications. Covers interview timing, use of Cúram Evidence Management after application submission, and the four evidence categories: household, expenses, resources, and income. Notes that caseworkers can view, edit, remove, or apply evidence changes, and that some eligibility data is recorded on the Person tab. Also describes the CER-based advisor that gives context-sensitive tips, next-step prompts, issues, and reminders during intake and evidence capture."
+                  },
+                  {
+                    "title": "Recording verifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "This section explains recording verifications in Cúram Income Support. It defines verification as checking client evidence through documents or verbal confirmation, and describes how the Verification Engine manages program-specific and common verifications. It covers outstanding verifications, Advisor Issues, provisional determinations, and marking items as Verified after supporting documentation is received. It also notes that verification configurations can be viewed, updated, extended, and modified in the administration application, including default rules that may allow authorization but block product delivery activation."
+                  },
+                  {
+                    "title": "Managing program requests",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "This section explains how caseworkers manage program requests after an application is submitted: adding additional programs, handling withdrawals, and processing citizen-portal withdrawal requests through the Withdraw Request Created work queue. It also introduces program-specific timers for application processing and notes that missing verifications can lead to automatic denial. The excerpt includes configurable verification waivers for expedited food assistance, and says the work queue can be customized."
+                  },
+                  {
+                    "title": "Managing timeframes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how Common Intake manages application time limits using Cúram Milestones. Timers are automatically added when food assistance, cash assistance, or traditional medical assistance applications are submitted, with configured periods of 30 days for Food Assistance, 45 days for Traditional Medical Assistance, and 30 days for Cash Assistance, plus timers for non-MAGI CHIP and Expedited Food Assistance. Also notes that missing required verification can lead to automatic denial, and that verification waivers can bypass mandatory verification for a set period, especially for expedited food assistance."
+                  }
+                ],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000028",
+                  "start_page": 19,
+                  "end_page": 28
+                },
+                "summary": "Overview of intake caseworker workflow in Cúram Income Support for food, cash, and traditional medical assistance. Covers application submission channels (Citizen Portal, phone, paper, in person), client identification and registration, selecting programs and creating/selecting applications, completing and submitting the script, merging clients, routing submitted applications, creating an integrated case, interviewing and maintaining evidence, recording verifications, managing additional program requests, and processing timeframes/timers. Includes configurable options for application types, work queues, search settings, evidence, verification rules, and expedited verification waivers."
+              },
+              {
+                "title": "Determining eligibility",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Initiating check eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how a caseworker initiates eligibility checks on an application or integrated case. On applications, all prospect clients must be registered, and the worker selects evidence (active only or active and in-edit) before running checks. The results show configured programs, eligibility date, and whether requested by the household. Results are grouped as Ongoing or Retroactive, with categories Eligible/Ineligible/Future Eligibility for most programs and Eligible/Ineligible for Retroactive Medical Assistance. For integrated cases, the worker also enters a start date and duration in months."
+                  },
+                  {
+                    "title": "Executing rules",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000032",
+                      "start_page": 31,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how Income Support executes eligibility rules after a caseworker runs Check Eligibility for food, cash, medical, CHIP, or retroactive Medicaid. It describes the program recommendation process, how results appear as Eligible, Ineligible, or Future Eligibility, and that eligibility can be rerun with updated evidence. Also covers high-level decision output, configurable business rule groups, preconfigured display rules, and CER-based implementation using rate and decision tables."
+                  },
+                  {
+                    "title": "Setting status to Ready for Determination",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how an application is marked Ready for Determination after intake review. Setting this status creates an “Application Ready for Determination” task routed to the eligibility worker’s work queue, with notification sent in Income Support. By default, Common Intake leaves the application with the current assignee, but organizations can configure routing to keep it with the same worker or send it to a specific caseworker. Notes that some organizations may not need a separate ready-for-determination queue."
+                  }
+                ],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000032",
+                  "start_page": 29,
+                  "end_page": 32
+                },
+                "summary": "Explains eligibility determination for Income Support applications and integrated cases. Covers initiating Check Eligibility, including required registration, evidence selection, start date/duration for integrated cases, and result groupings: Ongoing or Retroactive, with Eligible, Ineligible, and Future Eligibility categories. Describes the program recommendation/rules execution process, how results can be rerun after evidence changes, and the high-level decision display. Also notes configurable business rule groups, display rules, rates, and CER-based implementation for food, cash, medical, CHIP, and retroactive Medicaid."
+              },
+              {
+                "title": "Authorizing eligibility",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Activating evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains that before authorizing food, cash, or traditional medical assistance, in-edit evidence must be activated, typically from the evidence dashboard. The intake worker may activate evidence before setting the application to “Ready for Determination.” Also introduces the next review step: the eligibility worker confirms or selects assistance units after receiving the application from the Work Queue and may rerun eligibility if updates were made."
+                  },
+                  {
+                    "title": "Confirming or selecting assistance units",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains the eligibility worker’s step for reviewing a ready-for-determination application and confirming the most appropriate assistance units for authorization. After notification via the Application Ready for Determination Work Queue, the worker reviews application details, makes any needed updates, and may rerun eligibility if evidence or data changed. This section follows activation of in-edit evidence before authorizing food, cash, or traditional medical assistance."
+                  },
+                  {
+                    "title": "Authorizing product deliveries",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Concurrent eligibility and authorizing product delivery cases for Food and Cash Assistance",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000060",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000036",
+                          "start_page": 36,
+                          "end_page": 36
+                        },
+                        "summary": "Explains how concurrent eligibility affects authorization of Food Assistance and Cash Assistance product delivery cases. It covers validation rules that block authorization when applicants are active members of another same-type product delivery, required caseworker actions, and exceptions for Food Assistance involving domestic violence victims. It also notes that overlapping eligibility is not allowed in multiple cases within the same month, mentions configurable detection for both programs, and describes primary client rules for product delivery cases, including Cash Assistance allowing a different primary client than the integrated case."
+                      },
+                      {
+                        "title": "Primary client and authorizing product delivery cases",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000061",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000037",
+                          "start_page": 36,
+                          "end_page": 37
+                        },
+                        "summary": "This section explains how integrated case participants can be set as the primary client on product delivery cases. For Cash and Food Assistance, the primary client is determined from current Head of Household evidence at authorization and cannot later be changed through this method. For Medical Assistance, the caseworker can choose the primary client from household members, including retroactive coverage. It also notes configurable behavior for determining primary client and points to related handling when the primary client leaves the household."
+                      }
+                    ],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000037",
+                      "start_page": 35,
+                      "end_page": 37
+                    },
+                    "summary": "Explains how to authorize product delivery cases from eligibility results using program recommendation. Covers authorization, decline, and deny actions, and notes configurable program ordering and eligibility dates. Describes concurrent eligibility validation for Food and Cash Assistance, including blocking authorization when applicants are active in another same-type case, with exceptions for Food Assistance domestic violence victims and same-month overlap rules. Also explains primary client assignment: Food/Cash use current Head of Household evidence, Medical Assistance lets the caseworker choose a household member, with related configuration and household-leaving handling."
+                  },
+                  {
+                    "title": "Product delivery logic",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Explains Income Support product delivery logic for a single integrated case managing food, cash, and medical assistance. Covers how authorization strategy recommendations determine eligibility, create or reuse product deliveries, and automatically dispose of applications when results are complete or absent. Notes rules preventing duplicate authorization across same program/time period, with special Medical Assistance exceptions. Also describes configuration in Cúram Common Intake and how approved product deliveries are activated online or by batch, triggering certification eligibility and population of Assistance, Member, and Financial groups."
+                  },
+                  {
+                    "title": "Activating product deliveries",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000038",
+                      "start_page": 38,
+                      "end_page": 38
+                    },
+                    "summary": "Explains how product deliveries are activated after an AU is authorized and the delivery reaches approved status. Activation can occur through batch processing or manually via an eligibility worker using Actions > Activate Online. It finalizes food assistance, cash assistance, and traditional medical assistance deliveries, determines eligibility over the certification period (default 12 months), and populates the Assistance, Member, and Financial groups. Also notes case updates when a primary client leaves the household and that approved product deliveries are required for clients to receive assistance."
+                  },
+                  {
+                    "title": "Setting certification period",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Creating the assistance group",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000065",
+                        "range": {
+                          "start_unit_id": "p000040",
+                          "end_unit_id": "p000040",
+                          "start_page": 40,
+                          "end_page": 40
+                        },
+                        "summary": "Explains how the assistance (benefit) group is determined by program eligibility rules and can change over time as household members are added/removed or eligibility changes. Notes that people may appear multiple times if they leave and later re-enter eligibility. The only exception allowing caseworker additions is traditional CHIP, and only for recently eligible CHIP children such as those who declined coverage, became newly eligible, or are newborns. Also introduces the related financial group and who can be included."
+                      },
+                      {
+                        "title": "Creating the financial group",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000066",
+                        "range": {
+                          "start_unit_id": "p000040",
+                          "end_unit_id": "p000040",
+                          "start_page": 40,
+                          "end_page": 40
+                        },
+                        "summary": "Defines the financial group used in eligibility determination: the individuals whose income and resources are counted or deemed for the assistance group’s eligibility. Financial group members may be household members or certain non-household participants with roles such as Alien Sponsor (individual), Alien Sponsor Spouse, or Unborn Child. The group is set by program eligibility rules and can change over time as participants are added/removed or become eligible/ineligible, potentially creating a new financial group on re-evaluation."
+                      },
+                      {
+                        "title": "Creating the member group",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000067",
+                        "range": {
+                          "start_unit_id": "p000041",
+                          "end_unit_id": "p000041",
+                          "start_page": 41,
+                          "end_page": 41
+                        },
+                        "summary": "Explains how member groups are created and maintained for Income Support product deliveries. It defines the member group as household members included in eligibility rules, notes which programs allow caseworker add/remove actions, and states that adding or removing members triggers automatic reassessment. Also describes the Eligibility Viewer on Integrated Case and Person tabs, including timeline/list views, year navigation, eligibility bars, and extra eligibility details such as dates, case reference, assistance unit, and benefit amount."
+                      }
+                    ],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000040",
+                      "start_page": 39,
+                      "end_page": 40
+                    },
+                    "summary": "Explains certification period setup for Income Support: certification start and end dates are configurable by program, with default periods and options for aligning start dates to future eligibility, especially for Food/Cash Assistance and Medical Assistance. Describes how product delivery authorization/activation creates case groups and how eligibility rule re-evaluation can create new assistance, financial, or member groups, with prior members retained with end dates. Also defines the assistance group and financial group, including CHIP’s limited caseworker add-member exception and which participants can count in the financial group."
+                  },
+                  {
+                    "title": "Viewing eligibility on the Integrated Case and Person tabs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000042",
+                      "start_page": 41,
+                      "end_page": 42
+                    },
+                    "summary": "Explains the Eligibility Viewer on the Integrated Case and Person tabs, which shows a timeline of program eligibility across a case or across cases for an individual. Covers current-year display, month navigation, list/timeline views, eligibility bars, splits when eligibility/entitlement changes, and drill-down details such as start/end dates, units, income, benefit amounts, and medical coverage data. Also notes key event icons for evidence/rule changes, examples of displayed exceptions like domestic violence and expedited Food Assistance, and configurable product types/rules."
+                  },
+                  {
+                    "title": "Generating financials",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "This section explains how to generate financials after a product delivery is authorized and activated. It covers issuing payments from the Financials tab, the resulting processed status and payment items (benefit amount, coverage period, credit, and any debit from claims), and the option to simulate payments to review deductions before issuance. It also briefly notes related topics on generating communications and recording change of circumstance."
+                  },
+                  {
+                    "title": "Generating communications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "This section explains that Income Support has no default communications, but Common Intake can be configured to send eligibility notifications. It describes customizable communication templates: XSL for pro forma communications and Microsoft Word for Word-based communications, each managed differently. The surrounding page also mentions generating financials for authorized/activated product deliveries, including issuing payments and simulated payments, and introduces change-of-circumstance processing for affected benefit programs."
+                  }
+                ],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000042",
+                  "start_page": 33,
+                  "end_page": 42
+                },
+                "summary": "Explains the eligibility worker’s authorization workflow for Income Support after an application is marked Ready for Determination: activate in-edit evidence, confirm or select assistance units, authorize/deny/decline product deliveries, and review concurrent eligibility rules and primary client selection. Also covers certification period setup, including configurable start/end dates and future-eligibility alignment, plus creation of assistance, financial, and member groups. Includes eligibility viewer timelines on Integrated Case/Person tabs with bars, splits, key events, and detailed program data."
+              },
+              {
+                "title": "Recording Change of Circumstance",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Change of Circumstance evidence",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "This section explains that change-of-circumstance processing is triggered when program-defined household composition evidence is entered or updated and applied. It lists the evidence types by program for Cash Assistance, Food Assistance, Medical Assistance (traditional), and CHIP, including items such as Household Member, Domestic Relationship, Head of Household, Death, Absence, and Deprivation. It also notes that a household member’s date of death must be end-dated before the change can be triggered."
+                  },
+                  {
+                    "title": "Managing applicants",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000046",
+                      "end_unit_id": "p000046",
+                      "start_page": 46,
+                      "end_page": 46
+                    },
+                    "summary": "This section explains how caseworkers manage applicant changes of circumstance in Cúram, either by manually creating/updating evidence or using the Evidence Management wizard. It notes that the wizard speeds identification of required evidence and includes a Guided Changes page on the Evidence tab. It also says the default Add Member wizard can be customized, along with its Guided Changes rules, and warns it is not for active household members or re-adding returning members to an ongoing case."
+                  },
+                  {
+                    "title": "Evidence management wizards",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000046",
+                      "end_unit_id": "p000047",
+                      "start_page": 46,
+                      "end_page": 47
+                    },
+                    "summary": "Explains Evidence Management wizards for handling change-of-circumstance evidence in Cúram. Caseworkers can process updates manually or through a guided wizard that reduces effort and helps identify missing evidence. The default/sample Add a Member wizard is configurable, with customizable rules and UI implementation. It should not be used to re-add active or returning household members; those cases require Re-add a Member. The section outlines how to launch the wizard, its steps, and how submitted changes move through Action Required, Previously Completed, and Complete statuses."
+                  },
+                  {
+                    "title": "Re-adding a member to a case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Describes the guided “Re-add a Member” process for returning household members on an ongoing case. It can be launched from Guided Changes in the Tab Action menu or Evidence tab. The UIM wizard lets users pick the participant and re-entry date, confirm, and optionally re-add another participant. The system then creates Household Member evidence in In-Edit status and routes the user to Active Evidence for review. Includes default field population rules copied from the most recent end-dated household member evidence."
+                  },
+                  {
+                    "title": "Alignment of evidence",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Alignment algorithm",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000077",
+                        "range": {
+                          "start_unit_id": "p000049",
+                          "end_unit_id": "p000049",
+                          "start_page": 49,
+                          "end_page": 49
+                        },
+                        "summary": "Explains evidence alignment in Cúram Income Support. Reported household changes can affect monthly allotment and eligibility; if evidence is configured to align, decisions reflect the aligned date rather than the reported change date, typically on reassessment of an ongoing case. Describes the alignment algorithm for income and resource evidence in Cash Assistance, Food Assistance, Medical Assistance, and CHIP. Start-date rules are introduced: align to household member start date if earlier/equal, do not align before product delivery activation, otherwise align to the next month’s start."
+                      }
+                    ],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Explains how evidence alignment affects monthly eligibility and benefit decisions in Cúram Income Support. If configured, reported changes are aligned to a later effective date, so decisions reflect the aligned month rather than the reported change date; this applies only on reassessment of an ongoing case. Describes alignment rules for income and resource evidence in Cash Assistance, Food Assistance, Medical Assistance, and CHIP, including start-date logic tied to household member start dates and product delivery activation."
+                  },
+                  {
+                    "title": "Evidence Brokering",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000078",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000050",
+                      "start_page": 50,
+                      "end_page": 50
+                    },
+                    "summary": "Explains Evidence Brokering in Cúram Income Support: evidence can be shared across cases and between a case and person/prospect person records to reduce duplicate data entry. Notes default configuration limitations, common shared evidence such as PDC Addresses, Absence, and State Residency, and that brokering is enabled for specific Income Support and Insurance Affordability case types. Also mentions administration customization, plus guidance for when a primary client leaves a household and the cash/food PD case must be updated or closed and recreated."
+                  },
+                  {
+                    "title": "Managing a PD case where the primary client leaves the household (Cash or Food Assistance)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000051",
+                      "start_page": 50,
+                      "end_page": 51
+                    },
+                    "summary": "Explains how to handle Cash or Food Assistance when the primary client leaves the household: close the existing product delivery case, end-date the former client’s head-of-household and household member evidence, add a new head-of-household for the replacement, then run eligibility and authorize a new case starting the next day. Notes the integrated case must be configured to use Food/Cash Assistance Head of Household evidence to determine the primary client, and applies similarly when the head of household changes due to death."
+                  },
+                  {
+                    "title": "Managing a PD case where the primary client leaves the household (Medical Assistance)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000052",
+                      "start_page": 52,
+                      "end_page": 52
+                    },
+                    "summary": "Explains how to manage a Medical Assistance PD case when the primary client leaves the household. If the former primary client is no longer a household member, the caseworker must update case information, typically by closing the existing Medical Assistance product delivery case and authorizing a new one with the correct primary client. The new case should start the day after the closed case. Uses an example where the husband leaves the household and the wife becomes the new primary client."
+                  }
+                ],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000052",
+                  "start_page": 43,
+                  "end_page": 52
+                },
+                "summary": "Covers how change-of-circumstance processing works for existing product deliveries when household composition changes. It triggers on applying updated evidence and can update eligibility, product delivery decisions, and group composition. Lists program-specific evidence that causes processing for Cash Assistance, Food Assistance, traditional Medical Assistance, and CHIP, including a death end-date requirement. Also introduces manual vs guided Evidence Management wizards for managing applicant changes, the Add Member wizard’s steps and limits, evidence alignment rules, Evidence Brokering, and procedures for when the primary client leaves the household for Cash/Food or Medical Assistance."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000052",
+              "start_page": 12,
+              "end_page": 52
+            },
+            "summary": "Overview of key business flows for Cúram Income Support and Income Support for Medical Assistance. It introduces guided flows for online eligibility screening and online application, caseworker intake, eligibility determination, authorization, and change-of-circumstance processing. Covers supported programs (cash, food, medical, CHIP, child care, Head Start, LIHEAP, WIC, meals, emergency assistance), configurable screening/application scripts and authentication, program recommendation/rules, evidence alignment and brokering, and handling primary-client changes in product delivery cases."
+          },
+          {
+            "title": "1.3 Program Information",
+            "level": 2,
+            "children": [
+              {
+                "title": "Food assistance details",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Expedited food assistance",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Expedited rules and evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000084",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000054",
+                          "start_page": 54,
+                          "end_page": 54
+                        },
+                        "summary": "Explains expedited food assistance in Cúram Income Support Food Assistance. Covers special processing for eligible households, requiring first benefit issuance within 7 calendar days of application receipt, with eligibility based on low/no income, excess shelter costs, or destitute seasonal farm work. Describes five intake questions used before evidence exists, and notes these do not map to evidence but appear on the PDF. Also distinguishes separate CER rule sets for expedited online applications and integrated case eligibility, using different data sources but producing the same results."
+                      },
+                      {
+                        "title": "Expedited timers and indicators",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000085",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000055",
+                          "start_page": 55,
+                          "end_page": 55
+                        },
+                        "summary": "This section explains how expedited Food Assistance is handled through timers and indicators. It describes the green expedited icon shown on application, eligibility checks, and integrated case screens when rules pass, and a 30-day milestone timer with a 7-day deadline for expedited cases. It also notes that if evidence changes, the deadline can revert to 30 days or back to 7 days. The section briefly covers configurable Food Assistance milestones and expedited verification waivers/postponements."
+                      },
+                      {
+                        "title": "Expedited verifications",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000086",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000055",
+                          "start_page": 55,
+                          "end_page": 55
+                        },
+                        "summary": "Explains expedited food assistance verification handling. Mandatory verifications can be waived or postponed for a configured period when expedited eligibility applies, allowing evidence to be activated even without entering verification details. The section notes that a verification entry is still required when a verification’s mandatory indicator is configured. It also states that verification rules can be customized to support the household’s eligibility for Expedited Food Assistance for the month of application."
+                      }
+                    ],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000054",
+                      "end_unit_id": "p000055",
+                      "start_page": 54,
+                      "end_page": 55
+                    },
+                    "summary": "Explains expedited Food Assistance processing in Cúram Income Support: eligible households receive special handling for the application month, with the first benefit due within 7 calendar days. Covers eligibility triggers (low/no income/resources, high shelter costs, destitute seasonal farm work), the five intake questions used before evidence exists, separate CER rule sets for online vs integrated case determinations, and configurable expedited timers/green indicators. Also describes postponed/waived verifications and milestone settings for expedited cases."
+                  },
+                  {
+                    "title": "Able-Bodied Adults Without Dependents",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "ABAWD clocks",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000088",
+                        "range": {
+                          "start_unit_id": "p000057",
+                          "end_unit_id": "p000057",
+                          "start_page": 57,
+                          "end_page": 57
+                        },
+                        "summary": "Explains ABAWD time-limit configuration and rules. Only statewide fixed clocks are enabled by default, with shared start/stop dates across all ABAWD members; individualized fixed clocks are optional. Lists the default statewide clock periods and notes only one clock is needed per period. Also covers ABAWD work requirements (80 hours/month, calculated from employment evidence), regain eligibility after three countable months, a one-time three-month extension in a 36-month period, and exemption criteria beginning with inadequate transportation."
+                      },
+                      {
+                        "title": "ABAWD work requirements",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000089",
+                        "range": {
+                          "start_unit_id": "p000057",
+                          "end_unit_id": "p000057",
+                          "start_page": 57,
+                          "end_page": 57
+                        },
+                        "summary": "Explains ABAWD work requirements and clocks in Cúram Income Support. Covers statewide fixed clocks (default) vs. optional individualized fixed clocks, configured clock periods, and how ABAWD work hours are calculated from employment evidence. Describes the 80 hours per calendar month rule, examples of converting weekly hours to monthly hours, and how the Working Hours dynamic evidence uses start/end dates. Also covers regaining eligibility after three countable months, the once-per-36-month three-month extension, and ABAWD exemptions such as inadequate transportation."
+                      },
+                      {
+                        "title": "Regain eligibility and three additional months",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000090",
+                        "range": {
+                          "start_unit_id": "p000057",
+                          "end_unit_id": "p000057",
+                          "start_page": 57,
+                          "end_page": 57
+                        },
+                        "summary": "Explains ABAWD time-limit rules for regaining food assistance eligibility and the extra three-month extension. After using three countable months, a member can regain eligibility by meeting the 80-hours-in-30-days work requirement or by becoming ABAWD exempt; eligibility starts on the date that requirement is met. Once regained, the member may receive up to three additional months if work requirements later stop being met. This extension can be used only once every 36 months and runs to completion once started."
+                      },
+                      {
+                        "title": "ABAWD exemption",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000091",
+                        "range": {
+                          "start_unit_id": "p000057",
+                          "end_unit_id": "p000057",
+                          "start_page": 57,
+                          "end_page": 57
+                        },
+                        "summary": "Explains ABAWD time-limit rules for Cúram Income Support: statewide fixed clocks are the default, with optional individualized clocks. Describes how ABAWD work requirements are calculated from employment hours evidence to reach 80 hours per month, including differences between employment working hours and working hours dynamic evidence. Covers regaining eligibility after three countable months and the one-time three-month extension in a 36-month period. Begins the ABAWD exemption rules, stating exemptions apply for reasons such as inadequate transportation."
+                      },
+                      {
+                        "title": "ABAWD time limit",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000092",
+                        "range": {
+                          "start_unit_id": "p000058",
+                          "end_unit_id": "p000058",
+                          "start_page": 58,
+                          "end_page": 58
+                        },
+                        "summary": "Explains ABAWD time limit handling for food assistance. Defines when an Able-Bodied Adults Without Dependents individual is meeting the time limit: receiving three countable months, meeting the work requirement, having an exemption, or receiving three additional months. Describes the Time Limits summary and detail pages, including fields shown and updates on activation/reassessment. Covers ABAWD waivers at the state level during high unemployment, when time limit rules are bypassed. Lists evidence used for ABAWD determinations, including countable assistance history and 80-hour working requirements."
+                      },
+                      {
+                        "title": "Time Limits summary page",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000093",
+                        "range": {
+                          "start_unit_id": "p000058",
+                          "end_unit_id": "p000058",
+                          "start_page": 58,
+                          "end_page": 58
+                        },
+                        "summary": "Explains ABAWD time limits and how the Time Limits summary page works after Food Assistance authorization/activation. The page shows 36-month period summaries and detail fields for months received in-state/other states, exemptions, regain eligibility, and additional three-month extensions, and updates on reassessment. Also covers ABAWD waivers at the state level, which suspend time-limit rules during approved waiver periods, and the evidence used for ABAWD determinations, including countable assistance history and working hours."
+                      },
+                      {
+                        "title": "ABAWD waivers",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000094",
+                        "range": {
+                          "start_unit_id": "p000058",
+                          "end_unit_id": "p000058",
+                          "start_page": 58,
+                          "end_page": 58
+                        },
+                        "summary": "Explains ABAWD waivers for food assistance. A state may receive a statewide waiver from ABAWD eligibility rules when unemployment is high and the waiver is on the federal approved list, typically for one year. During a waiver period, only ABAWD determination rules run; ABAWD time limit requirements like countable months and additional months do not apply, and eligible individuals still receive benefits. Also references the Time Limits summary page and the evidence used for ABAWD determinations, including countable assistance history and working hours."
+                      },
+                      {
+                        "title": "ABAWD rules and display rules",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000095",
+                        "range": {
+                          "start_unit_id": "p000058",
+                          "end_unit_id": "p000058",
+                          "start_page": 58,
+                          "end_page": 58
+                        },
+                        "summary": "Explains ABAWD eligibility and display behavior. It defines when an Able-Bodied Adult Without Dependents is meeting the time limit: receiving three countable months, meeting the work requirement, having an exemption, or receiving three additional months. Describes the Time Limits summary page and its detailed fields after Food Assistance activation. Covers ABAWD waivers at the state level, which suspend time-limit rules during approved waiver periods. Lists evidence used in ABAWD determinations: countable assistance history and 80-hour monthly working hours based on employment evidence."
+                      }
+                    ],
+                    "node_id": "n000087",
+                    "range": {
+                      "start_unit_id": "p000056",
+                      "end_unit_id": "p000058",
+                      "start_page": 56,
+                      "end_page": 58
+                    },
+                    "summary": "Explains ABAWD Food Assistance eligibility and time-limit rules. Defines who is an ABAWD (age 18–49, no children under 18 in household, fit for work, not pregnant, not on SSI, not otherwise exempt) and notes non-ABAWDs are excluded. Covers configurable ABAWD processing, statewide fixed clocks by default, optional individualized clocks, and three default clock periods. Describes 80 hours/month work rules, regain eligibility after three countable months, one 3-month extension per 36 months, exemptions (inadequate transportation, homelessness, health issues), waivers during high unemployment, and Time Limits page display/evidence."
+                  },
+                  {
+                    "title": "Work requirements",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000096",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000059",
+                      "start_page": 59,
+                      "end_page": 59
+                    },
+                    "summary": "This section explains how Cash Assistance and Food Assistance determine work requirements and Work Eligible status, including when a household member must have Work Registration or a Non-Participation Reason. It also covers ABAWD configuration: turning rules on via a system property, using Working Hours evidence, handling exemptions, waivers, clocks, and eligibility decision display details. Useful for understanding configurable work requirement logic and customization points in CER and code tables."
+                  }
+                ],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000054",
+                  "end_unit_id": "p000059",
+                  "start_page": 54,
+                  "end_page": 59
+                },
+                "summary": "Covers Food Assistance tools for expedited processing, verification waivers, and ABAWD/work requirements. Explains expedited eligibility triggers, the 7-day first-benefit deadline, intake questions, separate online vs integrated CER rule sets, timers/icons, and postponed mandatory verifications. Describes ABAWD criteria, 80-hours/month work rule, 3 countable months in 36, regain eligibility, 3-month extension, exemptions, waivers, clocks, Time Limits display, and evidence used. Also notes general work-eligible logic and configurable CER/code-table settings."
+              },
+              {
+                "title": "Food Assistance display rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000060",
+                  "end_unit_id": "p000061",
+                  "start_page": 60,
+                  "end_page": 61
+                },
+                "summary": "Explains how Food Assistance decision results are displayed across tabs. Covers the Context panel, Summary tab differences for eligible vs. ineligible units, Household tab details including composition, financial unit, disqualified/non-household/ineligible members, domestic violence exception, and ABAWD display rules. Also describes Non-Financial tab outputs, expandable details for residency/citizenship/SSN/concurrent benefits, Resource summaries at household and member level, Income summaries and breakdowns, and Work Eligibility information for all household members."
+              },
+              {
+                "title": "Detecting concurrent eligibility for Food Assistance",
+                "level": 3,
+                "children": [],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000062",
+                  "end_unit_id": "p000064",
+                  "start_page": 62,
+                  "end_page": 64
+                },
+                "summary": "Explains Food Assistance concurrent eligibility rules and detection. Overlapping eligibility in multiple same-type product delivery cases in the same calendar month is generally not allowed, except for a domestic violence exception. Describes how ineligible members are treated as non-household members for calculations, how duplicates and open-ended certifications are handled, and how caseworkers can see concurrent eligibility in the Eligibility Viewer. Also contrasts Check Eligibility vs Reassessment behavior and notes configurable start dates for detection to prevent overpayments."
+              },
+              {
+                "title": "Cash assistance details",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Federal Time Limit",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000100",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains the Cash Assistance Federal Time Limit rule. Federally funded Cash Assistance is limited to 60 lifetime months for adults and minor parents who are heads of household; children are exempt. The system checks each applicable household member, counts assistance months including out-of-state months, and makes the entire assistance unit ineligible if the limit is reached unless an exemption or extension applies. Valid exemptions stop months from counting, and extensions can allow benefits beyond 60 months."
+                  },
+                  {
+                    "title": "Work requirements",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000101",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "This section explains Cash Assistance work requirements. It says eligibility rules for Cash Assistance and Food Assistance automatically determine whether a household member is “Work Eligible.” It also sits within the broader Cash Assistance tools discussion, alongside the federal 60-month time limit, exemptions, and extensions. Open this node if you need how work requirement eligibility is determined or how it relates to Cash Assistance/Food Assistance eligibility."
+                  }
+                ],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000065",
+                  "end_unit_id": "p000065",
+                  "start_page": 65,
+                  "end_page": 65
+                },
+                "summary": "This section covers Cash Assistance program tools: the federal 60-month lifetime limit and work requirement eligibility. It explains that federally funded Cash Assistance is limited to 60 months for adults and minor parents who are heads of household; children are exempt. The system counts applicable months, including out-of-state months, and if the limit is reached without an exemption or extension, the entire assistance unit becomes ineligible. It also notes that eligibility rules automatically determine whether a member is work eligible for Cash Assistance and Food Assistance."
+              },
+              {
+                "title": "Cash Assistance display rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000102",
+                "range": {
+                  "start_unit_id": "p000066",
+                  "end_unit_id": "p000067",
+                  "start_page": 66,
+                  "end_page": 67
+                },
+                "summary": "Describes the Cash Assistance decision results display and what appears on each tab. Covers the Context panel, Summary, Household, Dependent Child, Non Financials, Resources, and Income tabs, including what eligibility data, member outcomes, resource/income totals, and expandable details are shown for eligible and ineligible households. Also notes that work-eligible rules and non-participation reason codes can be customized in CER."
+              },
+              {
+                "title": "Detecting concurrent eligibility for Cash Assistance",
+                "level": 3,
+                "children": [],
+                "node_id": "n000103",
+                "range": {
+                  "start_unit_id": "p000068",
+                  "end_unit_id": "p000069",
+                  "start_page": 68,
+                  "end_page": 69
+                },
+                "summary": "Explains how Cash Assistance concurrent eligibility is detected and handled. Overlapping eligibility is not allowed across multiple product delivery cases in the same calendar month; affected members are ineligible for that month and treated as non-household members for financial calculations and household size. Covers open-ended participation, duplicate-person handling, viewing concurrent eligibility in eligibility displays, and differences between Check Eligibility and Reassessment, including integrated case “what-if” behavior."
+              },
+              {
+                "title": "Income Support rules and rates",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Program Rules overview",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000105",
+                    "range": {
+                      "start_unit_id": "p000071",
+                      "end_unit_id": "p000071",
+                      "start_page": 71,
+                      "end_page": 71
+                    },
+                    "summary": "Explains how Income Support eligibility rules are executed in Cúram Express Rules for cash assistance, food assistance, CHIP, medical assistance, and optional state programs. Describes that rules operate on recorded evidence, are organized into program rule sets with business views in folders, and run during eligibility checks and reassessments. Outlines the common rules structure: household determination, non-financial eligibility (citizenship/alien status, SSN, state residency), and financial eligibility (income, deductions, expenses, resources)."
+                  },
+                  {
+                    "title": "Income Support rules structure",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000106",
+                    "range": {
+                      "start_unit_id": "p000071",
+                      "end_unit_id": "p000071",
+                      "start_page": 71,
+                      "end_page": 71
+                    },
+                    "summary": "This section outlines the core Income Support rules structure used for cash, food, and traditional medical assistance eligibility. It explains that Cúram Express Rules (CER) runs state-configurable program rules against recorded evidence during eligibility checks and reassessments. It also describes the common rule hierarchy: household determination, non-financial eligibility (citizenship/alien status, SSN, state residency), and financial eligibility (income, deductions, expenses, resources). Useful for understanding how eligibility and entitlement rules are organized and assigned to products."
+                  },
+                  {
+                    "title": "Display rules",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000107",
+                    "range": {
+                      "start_unit_id": "p000072",
+                      "end_unit_id": "p000072",
+                      "start_page": 72,
+                      "end_page": 72
+                    },
+                    "summary": "Explains how display rules present eligibility decision results to caseworkers and clients after application processing. Notes that Cúram Express Rules (CERs) generate output shown in an easy-to-read, logically organized format, with business analysts defining which information appears. Describes common display rule structure across assistance products, including summary tabs for household, non-financials, resources, income, compliance, work eligibility, and decision comparison. Says each program has at least one display rule set, accessible from decisions and the rules editor, and can be customized by organizations."
+                  },
+                  {
+                    "title": "Rate tables and decision tables",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000108",
+                    "range": {
+                      "start_unit_id": "p000073",
+                      "end_unit_id": "p000079",
+                      "start_page": 73,
+                      "end_page": 79
+                    },
+                    "summary": "Explains how Income Support uses CER rate tables and CER decision tables: rates store periodically changing values (for example, poverty limits) in the administration app, while decision tables classify income/resource types as countable or allowable. Notes what can be customized: organizations confirm rates and countable types; projects may add/customize rate and decision tables. The bulk of the section is a catalog of IS rate tables across Food Assistance, Cash Assistance, Long Term Care, and medical programs, with descriptions of what each table configures."
+                  },
+                  {
+                    "title": "Eligibility start date",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000109",
+                    "range": {
+                      "start_unit_id": "p000080",
+                      "end_unit_id": "p000080",
+                      "start_page": 80,
+                      "end_page": 80
+                    },
+                    "summary": "Explains how eligibility start dates are determined and configured. Default start date is the application submitted date, with alternatives such as eligibility determination date or first of month, varying by program. Covers configuration via the eligibility start date type in the creole program recommendation product. Also describes future authorization limits for Food Assistance, Cash Assistance, and traditional Medical Assistance: by default, decisions can be authorized up to two months ahead, controlled by environment variable curam.isproduct.checkeligibility.futureauthorizationmonths."
+                  },
+                  {
+                    "title": "Future authorization months",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000110",
+                    "range": {
+                      "start_unit_id": "p000080",
+                      "end_unit_id": "p000080",
+                      "start_page": 80,
+                      "end_page": 80
+                    },
+                    "summary": "This section explains how far into the future caseworkers can authorize eligible decisions. By default, Food Assistance, Cash Assistance, and traditional Medical Assistance can be authorized up to 2 months after the application date, using environment variable `curam.isproduct.checkeligibility.futureauthorizationmonths`. It notes organizations can change this value, and gives an example showing how a December application can be authorized for December or January by default, or February if set to 3. It also distinguishes eligible decisions from Future-category decisions, which cannot be authorized."
+                  }
+                ],
+                "node_id": "n000104",
+                "range": {
+                  "start_unit_id": "p000070",
+                  "end_unit_id": "p000080",
+                  "start_page": 70,
+                  "end_page": 80
+                },
+                "summary": "Cúram Income Support rules for cash, food, and traditional medical assistance are defined in CER, with results shown through display rules. The section explains common rules structure (household, non-financial, financial eligibility), how display rules present decisions, and how rates and decision tables store configurable values and countable/allowable rules. It includes a long catalog of IS rate tables across Food Assistance, Cash Assistance, Long Term Care, and medical programs. It also covers eligibility start date options and the future-authorization limit for eligible decisions."
+              }
+            ],
+            "node_id": "n000081",
+            "range": {
+              "start_unit_id": "p000053",
+              "end_unit_id": "p000080",
+              "start_page": 53,
+              "end_page": 80
+            },
+            "summary": "Introduces Income Support program settings for food, cash, and traditional medical assistance. Covers expedited Food Assistance rules, timers, verification waivers, and ABAWD work/time-limit processing; explains display rules and concurrent eligibility behavior for Food and Cash Assistance; and lists configurable CER rate tables used across IS programs. Also describes eligibility start-date options and limits on authorizing future-effective eligible decisions."
+          },
+          {
+            "title": "1.4 Configuring Income Support",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring the eligibility start date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000112",
+                "range": {
+                  "start_unit_id": "p000081",
+                  "end_unit_id": "p000081",
+                  "start_page": 81,
+                  "end_page": 81
+                },
+                "summary": "Explains how to configure the eligibility start date for food assistance, cash assistance, and traditional medical assistance. By default, eligibility starts on the application date, but it can be changed to the program request date, first day of the application month, or retroactive period start date via CREOLEPROGRECPRODUCT.ELIGIBILITYSTARTDATETYPE and CT_ProgramRecommendationEligibilityDate.ctx values. Also notes strategy classes used for each option and that traditional medical assistance uses a program-level default. Includes certification period settings, including the curam.isproduct.certification.futureeligibility environment variable for using future eligibility dates."
+              },
+              {
+                "title": "Setting certification periods",
+                "level": 3,
+                "children": [],
+                "node_id": "n000113",
+                "range": {
+                  "start_unit_id": "p000081",
+                  "end_unit_id": "p000081",
+                  "start_page": 81,
+                  "end_page": 81
+                },
+                "summary": "Explains how to configure certification periods in Income Support. Certification start and end dates can be customized, especially for Food and Cash Assistance. By default, certification periods are created using the application date. To instead use the future eligibility start date, set the environment variable `curam.isproduct.certification.futureeligibility` with one or more related program types, separated by commas. Useful if you need to align certification periods with future eligibility rules."
+              },
+              {
+                "title": "Configuring expedited food assistance verifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000114",
+                "range": {
+                  "start_unit_id": "p000082",
+                  "end_unit_id": "p000082",
+                  "start_page": 82,
+                  "end_page": 82
+                },
+                "summary": "Explains how to configure expedited Food Assistance verifications by bypassing mandatory verification requirements for a limited period. To enable this, implement the Curam.verification.sl.infrastructure.impl.EvidenceVerificationWaiver interface and bind it with Google Guice MapBinder. If a waiver exists, evidence can be activated even when verifications are mandatory and no verification items exist. Notes that product rules must be updated to account for waivers in Eligibility and Entitlement, including CER-based propagation where applicable."
+              },
+              {
+                "title": "Configuring the Eligibility Viewer",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring a product for the Eligibility Viewer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000116",
+                    "range": {
+                      "start_unit_id": "p000083",
+                      "end_unit_id": "p000083",
+                      "start_page": 83,
+                      "end_page": 83
+                    },
+                    "summary": "Explains how to configure a product for the Eligibility Viewer in Cúram Income Support. The viewer already displays products in the CREOLEINCOMESUPPORT integrated case, and administrators can add or replace a product implementation or change its display color. Product display is driven by PRODUCTNAME code table values, while colors are based on PRODUCTTYPE. Notes that each product has a data retrieval class and that custom bindings must be performant and scalable."
+                  },
+                  {
+                    "title": "Configuring look back and look forward periods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000117",
+                    "range": {
+                      "start_unit_id": "p000084",
+                      "end_unit_id": "p000084",
+                      "start_page": 84,
+                      "end_page": 84
+                    },
+                    "summary": "This section explains how to configure the Eligibility Viewer’s look back and look forward periods by updating TimelineCalendar.properties. By default, Income Support data retrieval looks one year back and one year forward from the displayed year to improve performance. Administrators can change num.years.to.look.forward and num.years.to.look.back to control what data is returned and shown. The note says these settings also affect Health Care Reform products."
+                  }
+                ],
+                "node_id": "n000115",
+                "range": {
+                  "start_unit_id": "p000083",
+                  "end_unit_id": "p000084",
+                  "start_page": 83,
+                  "end_page": 84
+                },
+                "summary": "This section explains how to configure the Eligibility Viewer in Cúram Income Support. It covers adding or replacing product implementations, changing product colors, and adjusting look back/look forward limits. Products shown in the CREOLEINCOMESUPPORT integrated case are driven by PRODUCTNAME and PRODUCTTYPE settings, with custom data retrieval classes implemented via EligibilityProductDataRetriever and Guice bindings. Color changes use TimelineCalendar.properties. The viewer defaults to one year back/forward for performance, and these period settings also affect Health Care Reform products."
+              },
+              {
+                "title": "Configuring the primary client on product delivery authorization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000118",
+                "range": {
+                  "start_unit_id": "p000085",
+                  "end_unit_id": "p000086",
+                  "start_page": 85,
+                  "end_page": 86
+                },
+                "summary": "Explains how the primary client is chosen when authorizing product delivery cases for Food Assistance and Cash Assistance. By default, both use current head-of-household evidence via configurable application properties (`primaryclient.usehoh.fa.productdelivery` and `.ca.`), with the integrated case primary client used if disabled. Notes the primary client cannot be changed after set. Also describes optional hook points, enabled via Guice, to assign another eligible household participant as primary client, with cautions about dependencies and case-participant restrictions."
+              },
+              {
+                "title": "Configuring primary client display settings for Income Support",
+                "level": 3,
+                "children": [],
+                "node_id": "n000119",
+                "range": {
+                  "start_unit_id": "p000087",
+                  "end_unit_id": "p000090",
+                  "start_page": 87,
+                  "end_page": 90
+                },
+                "summary": "This section explains how to configure Income Support primary client display and selection behavior via application properties and hook points. It covers Medical Assistance manual primary client selection during authorization, and multiple display settings for case list pages, integrated case home pages, context panels, application pages, integrated case pages, and person pages. Key defaults are noted (often False or True), along with effects such as hiding the Primary Client label, showing Clients columns, and displaying roles like primary client, member, spouse, or head of household."
+              },
+              {
+                "title": "Configuring concurrent eligibility detection",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring concurrent eligibility detection for Food Assistance and Cash Assistance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000121",
+                    "range": {
+                      "start_unit_id": "p000091",
+                      "end_unit_id": "p000092",
+                      "start_page": 91,
+                      "end_page": 92
+                    },
+                    "summary": "Explains how to configure concurrent eligibility detection for Food Assistance and Cash Assistance. Overlapping eligibility in multiple product delivery cases of the same type within the same calendar month is treated as in-state concurrent eligibility and is not permitted. Administrators can set application properties to define the start date from which eligibility rules check for concurrency, avoiding retroactive detection during reassessments. Uses curam.isproduct.foodassistance.dualdetection.start and curam.isproduct.cashassistance.dualdetection.start, both defaulting to 20170101 (YYYYMMDD)."
+                  },
+                  {
+                    "title": "Enabling the concurrent eligibility hook point",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000122",
+                    "range": {
+                      "start_unit_id": "p000093",
+                      "end_unit_id": "p000095",
+                      "start_page": 93,
+                      "end_page": 95
+                    },
+                    "summary": "Explains how to enable and customize the concurrent eligibility hook point for cross-product overlap checks. Organizations can inject `InStateBenefitDataDAO` via Guice and implement `getByConcernAndProductType` and `getDualEligibilityGroupName`. It describes the `InStateBenefitData` fields, how records are filtered before rules run, when precedents are created, handling of ongoing end dates, and use cases such as preventing overlap across product types or supporting parallel reassessment without circular dependencies."
+                  },
+                  {
+                    "title": "Monitoring concurrent eligibility",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Batch processes and reporting for concurrent eligibility",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000124",
+                        "range": {
+                          "start_unit_id": "p000096",
+                          "end_unit_id": "p000097",
+                          "start_page": 96,
+                          "end_page": 97
+                        },
+                        "summary": "Explains monitoring and batch reporting for concurrent (dual) eligibility. Covers report functions for Food/Cash Assistance and custom products, including the Dual Eligibility Report and Dual Eligibility Report Stream batch processes. Describes what the reports count and detail (cases, products, individuals, owners, eligibility periods), and notes Food Assistance domestic violence cases. Also lists concurrent eligibility batch properties and how streamed processing splits work into independent chunks."
+                      },
+                      {
+                        "title": "Dual Eligibility Report parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000125",
+                        "range": {
+                          "start_unit_id": "p000098",
+                          "end_unit_id": "p000098",
+                          "start_page": 98,
+                          "end_page": 98
+                        },
+                        "summary": "This section describes the Dual Eligibility Report batch parameters used to identify concurrent eligibility in Food Assistance and Cash Assistance. It lists six parameters: csvFormat, DualDetectionStartDate, includeAllOverlapEligibility, instanceID, processingDate, and productTypeCode. It also notes that administrators must run the report twice with different includeAllOverlapEligibility values to detect concurrent eligibility and domestic violence exceptions. The page also includes related wait-interval and chunk-processing settings for the report batch program."
+                      },
+                      {
+                        "title": "Running the Dual Eligibility Report by using batch infrastructure",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000126",
+                        "range": {
+                          "start_unit_id": "p000099",
+                          "end_unit_id": "p000099",
+                          "start_page": 99,
+                          "end_page": 99
+                        },
+                        "summary": "Explains how administrators run the Dual Eligibility Report via batch infrastructure to detect existing dual eligibility in integrated cases. Covers key parameters such as DualDetectionStartDate, includeAllOverlapEligibility, instanceID, processingDate, and mandatory productTypeCode, including defaults and supported values. The report uses the same dual detection logic as the online approach (DualDetectionCalculator and InStateBenefitDataDAO), runs on open integrated cases of PRODUCTCATEGORY.CREOLEINCOMESUPPORT (PC4000), and can be customized by implementing the batch report interface."
+                      },
+                      {
+                        "title": "Dual Eligibility Report Stream parameters",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000127",
+                        "range": {
+                          "start_unit_id": "p000100",
+                          "end_unit_id": "p000100",
+                          "start_page": 100,
+                          "end_page": 100
+                        },
+                        "summary": "Describes the Dual Eligibility Report Stream batch parameters for detecting concurrent eligibility in Food Assistance and Cash Assistance. It explains that the stream can run in parallel and on separate machines, and that it takes two optional parameters: instanceID (required when using batch streaming architecture) and processingDate (defaults to system date in YYYYMMDD format, typically using the business date). Also notes the report can be used for custom products supported by InStateBenefitDataDAO and references the DualDetectionCalculator implementation."
+                      },
+                      {
+                        "title": "Running the batch report for a custom product",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000128",
+                        "range": {
+                          "start_unit_id": "p000100",
+                          "end_unit_id": "p000101",
+                          "start_page": 100,
+                          "end_page": 101
+                        },
+                        "summary": "Explains how administrators run the Dual Eligibility batch report for custom products supported by InStateBenefitDataDAO. It says organizations must implement the abstract DualDetectionCalculator to supply the concrete dual timeline logic, and shows a Cash Assistance example of creating the rule object, setting batch-specific parameters, and returning the isDualDetectedTimeline result. Also notes the report can be run in streamed batch mode with instanceID and processingDate parameters."
+                      }
+                    ],
+                    "node_id": "n000123",
+                    "range": {
+                      "start_unit_id": "p000096",
+                      "end_unit_id": "p000101",
+                      "start_page": 96,
+                      "end_page": 101
+                    },
+                    "summary": "Explains how administrators monitor concurrent eligibility via batch reports. Covers the Dual Eligibility Report and Dual Eligibility Report Stream for Food/Cash Assistance and custom products, including what they count (selected cases, detected overlaps, affected products/individuals/owners, eligibility periods) and the report parameters. Notes the report may be run twice to distinguish overlap and domestic violence exceptions. Also describes streamed processing, batch properties, support for open integrated PC4000 cases, and custom-product implementation via DualDetectionCalculator/InStateBenefitDataDAO."
+                  },
+                  {
+                    "title": "Key rule classes for concurrent eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000129",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000102",
+                      "start_page": 102,
+                      "end_page": 102
+                    },
+                    "summary": "Explains how concurrent eligibility is handled by two rule classes: DualDetectionCalculator and FADualDetectionCalculator. It notes the implementation must be bound to the product type code, then describes dual eligibility as overlapping eligibility in the same month for the same product type. DualDetectionCalculator is an abstract base used for Cash and Food Assistance, with concrete rule sets in CashAssistanceRuleSet.xml and FoodAssistanceRuleSet.xml. FADualDetectionCalculator is the Food Assistance exception class, especially for domestic violence/living arrangement exemptions."
+                  }
+                ],
+                "node_id": "n000120",
+                "range": {
+                  "start_unit_id": "p000091",
+                  "end_unit_id": "p000102",
+                  "start_page": 91,
+                  "end_page": 102
+                },
+                "summary": "Explains how concurrent eligibility (“dual eligibility”) is configured and monitored for Food Assistance and Cash Assistance. Covers start-date application properties to avoid retroactive detection, a Guice-enabled hook point for custom cross-product overlap data, and how InStateBenefitData records are filtered and used to create precedents. Describes batch monitoring via Dual Eligibility Report and Stream, key parameters, custom-product support, and the core rule classes DualDetectionCalculator and FADualDetectionCalculator, including Food Assistance domestic violence exemptions."
+              },
+              {
+                "title": "Customizing evidence management wizards",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Customizing the Re-add a Member function",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Customizing default evidence attributes and post-function processing",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000132",
+                        "range": {
+                          "start_unit_id": "p000104",
+                          "end_unit_id": "p000104",
+                          "start_page": 104,
+                          "end_page": 104
+                        },
+                        "summary": "Explains how to customize the guided “Re-add a Member” process for household evidence. It identifies two extension points in `ISReAddHouseholdMember`: `getHouseholdMemberDtls` for setting default evidence attribute values during creation, and `postReAddHouseholdMember` for post-processing after successful re-add. Shows a sample subclass of `DefaultISReAddHouseholdMember` that reuses OOTB behavior, adds custom attribute assignment, and performs extra evidence updates. Also notes the required Guice binding to replace the default implementation with the custom one."
+                      }
+                    ],
+                    "node_id": "n000131",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000104",
+                      "start_page": 103,
+                      "end_page": 104
+                    },
+                    "summary": "Describes how to customize the guided Re-add a Member function for household evidence. Two extension points in `ISReAddHouseholdMember` are highlighted: `getHouseholdMemberDtls` for setting default evidence values during creation, and `postReAddHouseholdMember` for post-processing after successful re-add. Shows extending `DefaultISReAddHouseholdMember`, reusing OOTB behavior, adding custom attribute logic and extra evidence updates, and binding the custom class with Guice to replace the default implementation."
+                  }
+                ],
+                "node_id": "n000130",
+                "range": {
+                  "start_unit_id": "p000103",
+                  "end_unit_id": "p000104",
+                  "start_page": 103,
+                  "end_page": 104
+                },
+                "summary": "Explains how to customize evidence management wizards, specifically the Re-add a Member guided function for household evidence. Identifies two extension points in `ISReAddHouseholdMember`: `getHouseholdMemberDtls` for setting default evidence values during creation, and `postReAddHouseholdMember` for post-processing after re-adding a member. Shows extending `DefaultISReAddHouseholdMember`, reusing OOTB behavior, adding custom attribute logic or extra evidence updates, and binding the custom class with Guice to replace the default implementation."
+              },
+              {
+                "title": "Customizing cascading eligibility between non-MAGI Medicaid and MAGI Medicaid programs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000133",
+                "range": {
+                  "start_unit_id": "p000105",
+                  "end_unit_id": "p000108",
+                  "start_page": 105,
+                  "end_page": 108
+                },
+                "summary": "Explains how Cúram cascades eligibility between non-MAGI Medicaid and MAGI Medicaid using the NonMagiMedicaid table and case group data. Describes default behavior where non-MAGI eligibility overrides MAGI, with examples of automatic ineligibility/reenablement when ABD overlaps Streamlined Medicaid. Details how to enable and customize the cascading eligibility hook point via CREOLECustomCaseGroupsMaintainer, including extending or replacing the default implementation and overriding methods like useExpectedEndDateForOpenEndedCases and shouldPersist to control persistence and end-date handling."
+              }
+            ],
+            "node_id": "n000111",
+            "range": {
+              "start_unit_id": "p000081",
+              "end_unit_id": "p000108",
+              "start_page": 81,
+              "end_page": 108
+            },
+            "summary": "Configuring Income Support covers key customization points for food assistance, cash assistance, and traditional medical assistance: eligibility start dates, certification periods, expedited verification waivers, Eligibility Viewer product/color/period settings, primary client selection and display behavior, concurrent eligibility detection, evidence wizard customization, and cascading eligibility between non-MAGI and MAGI Medicaid. It emphasizes application properties, code-table values, strategy classes, and Guice hook points used to replace or extend default behavior."
+          }
+        ],
+        "node_id": "n000018",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000108",
+          "start_page": 9,
+          "end_page": 108
+        },
+        "summary": "Overview of Cúram Income Support, a rules-based system for intake, eligibility determination, benefit calculation, payment, and change management for food, cash, and medical assistance. It covers integrated shared evidence/business processes, a citizen portal, and prepackaged configurable eligibility rules. Describes SNAP-like Food Assistance, TANF-style Cash Assistance with 60-month adult limits and work requirements, and Medical Assistance for MAGI/traditional Medicaid and CHIP under ACA-streamlined eligibility. Also introduces key business flows and configuration/customization topics for eligibility, screening, evidence, and cascading Medicaid decisions."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

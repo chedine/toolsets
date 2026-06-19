@@ -1,0 +1,386 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "ba24bb74730c76ea",
+    "title": "Cúram 8.1.2 Address Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramAddressGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "ba24bb74730c76eac332321da104212659bc41b6e7fbbc73519e4586b5302231",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:10:32+00:00",
+    "page_count": 16,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramAddressGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Address Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000016",
+      "start_page": 1,
+      "end_page": 16
+    },
+    "summary": "Overview of the Cúram 8.1.2 Address Guide and its legal front matter. The guide explains how participant addresses are used in registration, duplicate checking, participant search, contacts, communications, and payments/invoices. It covers primary vs secondary addresses, address types (postal, web, email), which participant types must have postal addresses, and how addresses are created, viewed, modified, canceled, and kept with history in Participant Manager. It also includes geocoding/mapping support (Google Maps APIs and related configuration properties) and configurable address formats via curam-config.xml. The front matter includes the note to read Notices, edition info for Cúram 8.1/8.1.1/8.1.2, table of contents, privacy policy, trademarks, and detailed Merative usage/legal notices.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section on page 15 before using the document or the supported product. It also includes copyright information for Merative US L.P. covering 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000014",
+          "start_page": 5,
+          "end_page": 14
+        },
+        "summary": "This section is the Edition page for Cúram 8.1, 8.1.1, and 8.1.2, with copyright/trademark notices and front-matter content. It also shows the table of contents and beginning of the “Cúram Address Guide,” covering address usage for participant registration, search, communication, payments/invoices, address types, maintenance, mapping/geocoding support, canceling addresses, and configurable address formats. Useful if you need the guide’s scope or the address-management overview."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Merative’s legal notice covering sample data and programs, copyright license, warranty/liability disclaimers, privacy policy link, trademarks, and copyright attribution. It states example names are fictitious, sample programs may be copied/modified/distributed for compatible development use, are provided “AS IS,” and Merative disclaims liability. It also lists Merative and third-party trademarks and provides the privacy policy URL."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Lists trademark and copyright notices for Merative documentation. Covers fictitious sample data disclaimer, sample program licensing and “AS IS” warranty terms, a link to Merative’s privacy policy, and trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. Also notes other names may be trademarks of their owners and includes copyright years 2012 and 2024."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000015",
+          "end_unit_id": "p000015",
+          "start_page": 15,
+          "end_page": 15
+        },
+        "summary": "Merative notices governing use of the publication: personal and enterprise reproduction is allowed only if proprietary notices are kept, but redistribution, derivative works, and external commercial use require permission. It disclaims warranties, liability, and guarantees; the content is provided “AS IS.” It also states export-law compliance, no patent license is granted, third-party product/web claims are unverified and not endorsed, and includes copyright attribution © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Address Guide. Lists the main chapter “Using Addresses” with subsections on primary addresses, registration, searching, contacts, communication, and payments/invoices; address types (postal, web, email); and maintaining addresses, including date ranges, entry, viewing, modification, mapping support, cancellation, and configuration. Also includes front matter and legal items such as note, edition, notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Cúram Address Guide",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Using Addresses",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Primary Address",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains what a participant’s primary address is and why address data matters across the application. Covers uses in registration, communications, payments/invoices, contacts, and participant search. States that the first address entered becomes the primary address, only one primary address is allowed per type (postal, web, email), and this does not apply to organization locations. Also notes registration rules: a primary address is required, duplicates can be checked using address, and default types vary by participant type."
+              },
+              {
+                "title": "Using Address as Part of Participant Registration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how address data is used during participant registration and elsewhere in the application. Addresses help confirm a person is not already registered, prevent duplicate records, and are required to complete registration with a primary address. For prospect persons without an address, an “Address Unavailable” placeholder is used. It also notes default primary address types: private for persons and prospect persons, business for all other participant types, with types changeable after registration."
+              },
+              {
+                "title": "Using Address to Search for Participants",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how Cúram uses participant addresses in search and communications. Users can search registered participants by primary postal or business address, typically via a pop-up participant search window when entering details or recording communications. It also covers using address details to add a contact, with manual entry required for unregistered contacts. For communications, caseworkers choose from recorded participant addresses, but active communication exceptions block use of restricted address types or methods."
+              },
+              {
+                "title": "Using Address to add a Contact for a Participant",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how address details are used to add a participant contact. If the contact is already registered, users can search for them by address; employers and prospect employers are searched by business address. If the contact is not registered, the address must be entered manually. This section sits alongside other address-based actions such as searching for participants and choosing addresses for communications."
+              },
+              {
+                "title": "Using Address to Communicate with a Participant",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how participant address data is used for communication in Cúram. It notes which address types can be recorded for person, employer, and prospect employer participants, and that communication addresses can be selected from a participant’s stored addresses when sending or recording correspondence such as email, Word, and pro forma. It also covers searching participants by address in pop-up search windows and warns that communication exceptions can block use of certain address types or methods. Unregistered parties require manual address entry."
+              },
+              {
+                "title": "Using Address to Issue Payments and Invoices",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how address data is used to direct organization-issued payments and bills, which go to a nominee’s primary address unless a different recorded destination is specified; old-address payment history is retained. Also introduces participant address types: postal, email, and web. Covers primary vs secondary addresses, mandatory postal address rules, and address subtypes (postal: 6 kinds; web: 8 kinds; email: 2 kinds), plus notes that organizations, sub-units, bank branches, and locations can maintain some address records."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Explains how participant addresses are used across Cúram: as the first/primary address, for registration, duplicate checking, communications, payments/invoices, contact entry, and participant search. Registration requires a primary address; prospect persons may use “Address Unavailable,” and default primary types are private for persons/prospects and business for others. Only one primary postal/web/email address is allowed, not for organization locations. Search and communications use stored primary addresses, while unregistered contacts/parties require manual entry; communication exceptions can block certain address methods."
+          },
+          {
+            "title": "1.2 Address Types",
+            "level": 2,
+            "children": [
+              {
+                "title": "Postal Addresses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Postal addresses are required for case correspondence, bills, and payments. The section explains that all participants except representatives, prospect persons, and prospect employers must have a recorded postal address, with only one primary address allowed among multiple addresses. It identifies six postal address types: rented, registered, private, mail, business, and institutional. It also notes that bank branches and organizational locations can maintain postal addresses in the Administration application."
+              },
+              {
+                "title": "Web Addresses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains address handling in Cúram, including how address records determine where payments and invoices are sent and how primary vs. secondary addresses work. Describes the three participant address types: postal, web, and email. For web addresses, it defines a web address as a URL, notes that participants are not required to have one, and says participants can store multiple web addresses with one primary. Lists eight web address types: general services, insurance, education, employment, health, financial, personal, and private."
+              },
+              {
+                "title": "Email Addresses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains what email addresses are and how they’re used in the system. Notes that participants are not required to have an email address, but email is used for communicating with participants. Participants may store multiple email addresses, with only one primary, and the organization and its sub-units can also maintain email addresses. Two email address types are defined: business and personal."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "This section introduces the three participant address types in Cúram: postal, web, and email. It explains that participants can store multiple addresses of each type with one primary address, and secondary addresses are allowed. Postal addresses are mandatory for most participants and are used for correspondence, bills, and payments; six postal types are listed, and bank branches and organizational locations can also hold postal addresses. Web and email addresses are optional, with their own type lists and organizational support for email."
+          },
+          {
+            "title": "1.3 Maintaining Addresses",
+            "level": 2,
+            "children": [
+              {
+                "title": "Address To and From Dates",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains address validity dates in Cúram participant management. “From” and “to” dates apply to all address types, with the from date defaulting to the registration day unless overridden and the to date marking when an address stops being valid. Useful for tracking address history. The section also notes that participant addresses can be created, viewed, and updated; primary postal, web, email, and nominee addresses have specific rules for assignment and replacement, and modified nominee addresses affect future payments and bills."
+              },
+              {
+                "title": "Entering Addresses for Participants",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how participant addresses are created, viewed, and updated in Cúram. Covers address types (postal, web, email, nominee), default address behavior at registration, primary address rules, and use of from/to dates for validity and history. Notes that addresses added within a case become part of participant details and that old addresses, payments, and bills are retained for history. Also introduces where addresses and address lists are viewed and maintained in the participant manager."
+              },
+              {
+                "title": "Viewing Addresses and Address Lists",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how participant addresses are created, viewed, and updated in Cúram. Covers address history, from/to dates, default primary address behavior, and how postal, web, email, and nominee addresses are maintained. Notes that the primary postal address appears on the participant manager home page, while other address types are managed in separate participant manager sections via the navigation sidebar. Useful for understanding where to view address lists and how primary addresses and address changes are handled."
+              },
+              {
+                "title": "Modifying Addresses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how participant addresses are modified in Cúram. Users with proper security can edit addresses from Participant Manager, with full history retained. Primary addresses cannot simply have the primary flag removed; a new primary must be created or an existing secondary promoted, which overrides the old primary. Also covers applying new or updated PDC Addresses across multiple case participants, and notes support for storing geocodes (longitude/latitude) for mapping via Google Maps when enabled."
+              },
+              {
+                "title": "Support for Mapping of Addresses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains support for storing and using participant address geocodes. It notes that longitude and latitude can be captured during address insert and modify operations, enabling mapping features such as Google Maps. To retrieve and store geocodes, the property `curam.miscapp.geocode.enabled` must be set to true. It also states that Cúram can display geocoded addresses on Google Maps using either the standard Google Maps API or Google Maps for Business API, depending on usage needs."
+              },
+              {
+                "title": "Canceling Addresses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how participant addresses can be canceled from the view address details page. Canceled addresses are kept for reference, cannot be removed or renewed, and the primary address cannot be canceled (but can be replaced by a new primary address). The section also begins address configuration details, including customizable address formats defined in curam-config.xml for different locales."
+              },
+              {
+                "title": "Configuring Addresses",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Address Formats",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000016",
+                      "start_page": 14,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to configure participant address formats in curam-config.xml, including support for U.S., U.K., Canadian, Japanese, Chinese, Taiwanese, and South Korean layouts. Notes that addresses are stored as a single string and field labels vary by implementation (for example, apartment/suite number vs. address line 1 vs. postal code). Also includes guidance on Google Maps/geocoding API key properties for address-related features, plus document notices and licensing pages."
+                  }
+                ],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000016",
+                  "start_page": 14,
+                  "end_page": 16
+                },
+                "summary": "Explains how to configure participant address formats in curam-config.xml. Addresses are stored as a single string, but the UI can present different labeled fields and layouts for U.S., U.K., Canadian, Japanese, Chinese, Taiwanese, and South Korean addresses. Also notes Google Maps/geocoding settings, including API key, Business API client ID/key, and that enabling geocoding uses Google Geocoding API V3. The remainder is document notices, licensing, privacy, and trademarks."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000016",
+              "start_page": 12,
+              "end_page": 16
+            },
+            "summary": "Explains how participant addresses are created, viewed, updated, canceled, and configured in Cúram. Covers address types (postal, web, email, nominee), primary address rules, from/to validity dates, address history retention, and where addresses appear in Participant Manager. Notes that case-entered addresses become part of person details, nominee address changes affect future payments/bills, geocoding can store latitude/longitude when enabled, and address formats are customizable in curam-config.xml. Also includes Google Maps API settings and cancellation behavior."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000016",
+          "start_page": 9,
+          "end_page": 16
+        },
+        "summary": "Cúram Address Guide covers how participant addresses are used for registration, duplicate checking, search, contacts, communications, and payments/invoices. It defines address types (postal, web, email), primary vs secondary addresses, and which participant types require postal addresses. It explains maintaining addresses in Participant Manager: create, view, update, cancel, date validity, history, nominee addresses, geocoding/Google Maps support, and configurable address formats."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

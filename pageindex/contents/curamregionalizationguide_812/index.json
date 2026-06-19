@@ -1,0 +1,466 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "433097a536d985a3",
+    "title": "Cúram 8.1.2 Regionalization Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramRegionalizationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "433097a536d985a34715733269a5c7fb26a1ae154e9fd5145dbd8ad5ff417eff",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T19:17:32+00:00",
+    "page_count": 22,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramRegionalizationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Regionalization Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000022",
+      "start_page": 1,
+      "end_page": 22
+    },
+    "summary": "Front matter and Chapter 1 of the Cúram 8.1.2 Regionalization Guide. Explains how to configure regional/locale defaults for en, en_US, and en_GB, including currency, date/time formats and separators, address layout, server locale, DMX locale, and Rules Editor locale. Identifies the main files and settings locations: Application.prx, ApplicationConfiguration.properties, bootstrap.properties, environment variables, i18n resource files, project properties, and codetable files. Includes detailed settings reference tables and notes on precedence and single-default requirements for locale-related code tables (currency, nationality, country, address layout, language, locale). Ends with legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Short introductory note telling readers to review the Notices section on page 21 before using the information or product. Includes Merative US L.P. copyright dates (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition and front matter for the Cúram 8.1/8.1.1/8.1.2 regional support guide, followed by the start of Chapter 1 on configuring locale settings. Covers how to customize default locale, currency, date/time, address, and regional behavior for en, en_US, and en_GB. Identifies key files and settings: Application.prx, code tables, ApplicationConfiguration.properties, environment variables, bootstrap.properties, and i18n/calendar resource files, including specific property names and example values. Also explains DMX locale behavior and override precedence."
+          },
+          {
+            "title": "Edition — pages 15-20",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000020",
+              "start_page": 15,
+              "end_page": 20
+            },
+            "summary": "Section on regional support configuration. Covers overrideable locale/resource files for calendar strings, frequency pattern selector labels, and Gantt chart currency symbols under \\webclient\\JavaSource\\curam\\omega3\\i18n. Also documents application properties in \\EJBServer\\project\\properties\\Application.prx, including default locale, base currency, date format, address locale, and Rules Editor locale. The rest explains codetable defaults in \\EJBServer\\components\\core\\codetable for currency, nationality, country, address layout type, codetable language, language, and available locales, with guidance to set a single default entry."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000020",
+          "start_page": 5,
+          "end_page": 20
+        },
+        "summary": "Front matter and Chapter 1 of the Cúram regional support guide. Explains how to configure locale defaults for en, en_US, and en_GB, including currency, date/time, address, and DMX locale behavior. Identifies key files and properties: Application.prx, ApplicationConfiguration.properties, bootstrap.properties, environment variables, i18n resource files, and codetable defaults. Also covers overrideable calendar, frequency selector, and Gantt chart locale resources, plus precedence rules and single-default requirements for locale-related code tables."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "Contains legal notices: sample data and fictitious names disclaimer, copyright/license terms for sample programs (copy/modify/distribute with restrictions and “AS IS” warranty disclaimer), a link to Merative’s privacy policy, trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others, plus copyright © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "Lists trademark notices and legal attributions for Merative and third-party brands, including IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Also includes general disclaimer language about fictitious example names, sample programs provided “AS IS,” a privacy policy link, and copyright/licensing information. Useful for checking legal notices and brand usage rather than product functionality."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000021",
+          "end_unit_id": "p000021",
+          "start_page": 21,
+          "end_page": 21
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise reproduction is allowed only with preserved notices; distribution, display, or derivative works outside those limits need Merative consent. Includes no additional licenses, export-law compliance, “AS IS” warranty disclaimer, patent notice, third-party product/source disclaimer, and non-Merative website disclaimer. Ends with © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter (Note, Edition) and Chapter 1, “Developing for Regional Support,” including configuring regional settings and a settings reference. It names specific configuration areas such as Application.prx, code tables, ApplicationConfiguration.properties, environment variables, bootstrap.properties, i18n and project properties, plus notices, privacy policy, and trademarks, with page locations."
+      },
+      {
+        "title": "1 Developing for Regional Support",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring Regional Settings",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Application.prx file",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how to configure regional settings for a Cúram application in the Development Environment, focusing on locale defaults such as currency, date/time standards, and address formats. Defines a locale as a language plus optional region (for example en_GB or de_DE). Points to EJBServer/project/properties/Application.prx as the file where locale-specific properties are updated. Includes example settings tables for en and en_US, covering default locale, base currency, currency symbol and placement, default date format, and address data locale."
+              },
+              {
+                "title": "Code Table Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains locale-specific code table setup in Cúram 8.1.2. It first lists default configuration values for en_GB (locale, currency GBP, £ symbol, date format, address locale). It then instructs updating code table files under EJBServer\\components\\core\\codetable for the implemented locale. Specific settings are given for en and en_US, including making USD, NT5, US, US address layout, and en the default values in their respective code tables."
+              },
+              {
+                "title": "ApplicationConfiguration.properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Describes locale configuration for regional support, including updates to code table defaults and ApplicationConfiguration.properties. For en, en_US, and en_GB it specifies dateformat and dateseparator values, with en_GB using d M yyyy and /, and notes Java SimpleDateFormat syntax. Also lists required locale environment variables: SERVER_LOCALE_LIST and LOCALE_LIST for each locale."
+              },
+              {
+                "title": "Environment Variables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Defines locale environment variable settings for regional support. The key variables are SERVER_LOCALE_LIST and LOCALE_LIST, with values shown for en, en_US, and en_GB. SERVER_LOCALE_LIST orders supported locales as en, en_US, en_GB for en/en_US, and en_GB, en_US, en for en_GB. LOCALE_LIST is set to the active locale only (en, en_US, or en_GB). This section is useful if you need locale configuration details for runtime environment setup."
+              },
+              {
+                "title": "bootstrap.properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains the bootstrap.properties file in EJBServer\\project\\properties and lists server-side locale/date/time settings. It shows locale-specific values for curam.environment.default.dateformat, curam.environment.default.dateseparator, and curam.DMX.locale for en, en_US, and en_GB, and notes that date patterns use Java SimpleDateFormat syntax. It also summarizes settings for overriding default date and time separators/formats and setting the database locale."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Explains how to configure regional support in Cúram for en, en_US, and en_GB. Covers locale-specific defaults in EJBServer/project/properties/Application.prx (currency, symbol, date format, address locale), required code table defaults in EJBServer/components/core/codetable, ApplicationConfiguration.properties dateformat/dateseparator values, and runtime environment variables SERVER_LOCALE_LIST and LOCALE_LIST. Useful if you need to set up or change regional locale behavior, currency/date/address conventions, and locale ordering for deployment."
+          },
+          {
+            "title": "1.2 Settings Reference",
+            "level": 2,
+            "children": [
+              {
+                "title": "Bootstrap properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Describes the bootstrap.properties file in EJBServer/project/properties and the server-side settings it controls. Covers regional/date-time configuration such as default date separator, date format, time separator, and time format, plus curam.DMX.locale for database locale. Includes example values for en, en_US, and en_GB, with notes that date formats use Java SimpleDateFormat syntax. Useful for understanding and changing application startup, locale, and formatting defaults."
+              },
+              {
+                "title": "Application Configuration properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains application configuration properties used by the Cúram platform. It covers the DMX locale setting (curam.DMX.locale), which controls the locale used when importing Data Manager XML data, can be set in Bootstrap.properties or as a system variable, and defaults to en if unset. It also describes ApplicationConfiguration.properties, which stores application server settings such as date separator and date format, including where the file is located and that these values override defaults."
+              },
+              {
+                "title": "I18n.properties files",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Client Development Environment by using Java (CDEJ) Resources",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains CDEJ resource localization files in `webclient/JavaSource/curam/omega3/i18n`. It identifies `CDEJ_Resources_<locale>.properties` as the source for application-wide locale-specific strings such as error icons/ALT text, menu and navigation text, address element labels, date/calendar selector strings, application icons, calendar validation formats, and UI tooltips. It also documents override settings like `curam.validation.calendar.dateTimeFormat` and `dateFormat`, plus `Calendar_<locale>.properties` overrides for calendar display patterns (day, week, month views)."
+                  },
+                  {
+                    "title": "CDEJ Calendar Strings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains how to customize locale-specific calendar strings in CDEJ. It identifies the Calendar_<locale>.properties file as the place to override application-wide calendar display values and lists key settings such as DayView.DateBar.DatePattern, WeekView.DateBar.DatePattern, MonthView.DateBar.DatePattern, and WeekView.DatePattern. Each setting overrides default date display patterns for day, week, and month views. Useful if you need to change calendar formatting or locate the relevant properties file in webclient/JavaSource/curam/omega3/i18n."
+                  },
+                  {
+                    "title": "Frequency Pattern Selector",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Describes the `FrequencyPatternSelector_<locale>.properties` file used by the Frequency Pattern Selector widget. It mainly contains override string values, especially labels and text displayed by the widget. The file is located under `\\webclient\\JavaSource\\curam\\omega3\\i18n`. This section is useful if you need to customize or localize the widget’s displayed strings."
+                  },
+                  {
+                    "title": "Gantt Chart Currency Symbol",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains the locale-specific GanttChart_<locale>.properties file used to override the currency symbol displayed in Gantt charts. Notes its location under \\webclient\\JavaSource\\curam\\omega3\\i18n and gives sample values such as € or $."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000015",
+                  "start_page": 14,
+                  "end_page": 15
+                },
+                "summary": "This section lists locale-specific `.properties` files in `webclient/JavaSource/curam/omega3/i18n` used for regional support. It covers `CDEJ_Resources_<locale>.properties` for app-wide strings, icons, tooltips, date/time validation and menu/navigation text; `Calendar_<locale>.properties` for calendar date display patterns and day-name formats; `FrequencyPatternSelector_<locale>.properties` for widget labels; and `GanttChart_<locale>.properties` for currency symbols. It includes key override settings and filenames for each file."
+              },
+              {
+                "title": "Project Properties",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Application Properties (.PRX)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Describes the Application.prx application properties file in \\EJBServer\\project\\properties, used when running an application. Lists its path and filename, then documents key settings and defaults: server locale (curam.environment.default.locale, en_GB), base currency (curam.financial.basecurrency, EUR), default server message date format (curam.miscapp.defaultdateformat, Date_mdy_ext), default address locale (curam.address.addressDataLocaleForDefaultAddresses, en_GB), and Rules Editor default locale (curam.rules.default.locale, en_GB)."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains the Project Properties area for updating application settings in `\\EJBServer\\project\\properties`, focusing on the `Application.prx` file used when running an application. It identifies the file path and lists key default properties: server locale (`en_GB`), base currency (`EUR`), server message date format (`Date_mdy_ext`), default address locale (`en_GB`), and Rules Editor default locale (`en_GB`)."
+              },
+              {
+                "title": "Code Tables",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Default Currency",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to override the default currency in regional support code tables. The CT_Currency.ctx file under `\\EJBServer\\components\\core\\codetable` contains currency options with one marked default. To change it, set the chosen currency’s `default` attribute from `false` to `true` and ensure no other currency is also defaulted. Includes a table with the path, filename, and sample XML value. Also briefly introduces similar default-setting behavior for nationality and country files."
+                  },
+                  {
+                    "title": "Default Nationality",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to override the default nationality codetable value in `EJBServer\\components\\core\\codetable`. The `CT_Nationality.ctx` file contains nationality options with one default nationality; change the desired code’s `default=\"false\"` to `default=\"true\"` and ensure no other nationality is defaulted. Includes a sample code entry (`value=\"NT2\"`) and parallels similar instructions for currency and country defaults."
+                  },
+                  {
+                    "title": "Default Country",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to set the default country in the Regional Support code tables. The CT_Country.ctx file in \\EJBServer\\components\\core\\codetable contains available country options and one default country. To change it, set the chosen country’s default attribute from \"false\" to \"true\" and ensure no other country is marked \"true\". This section is part of the broader code table overrides for regional defaults, alongside currency and nationality."
+                  },
+                  {
+                    "title": "Default Address Layout Type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to configure the default address layout type via the CT_addressLayoutType.ctx codetable file. The file lists available country address layout options and contains a single default value. To change the default, set the desired country layout’s default attribute from false to true and ensure no other layout is marked true. Includes the file path (\\EJBServer\\components\\core\\codetable), filename, and a sample default code entry (UK)."
+                  },
+                  {
+                    "title": "Codetable Language",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to configure the default codetable language in Cúram by editing `CT_CodetableLanguage.ctx` under `\\EJBServer\\components\\core\\codetable`. The file lists available codetable languages and supports a single default value. To change it, set the desired language’s `default` attribute to `true`; if the target language is missing, add it and ensure no other language remains defaulted. Includes a sample entry with `value=\"en_GB\"`."
+                  },
+                  {
+                    "title": "Language",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "This section explains how to configure regional language support via codetable files. It describes CT_Language.ctx for selectable languages and CT_Locale.ctx for available locales, each with a single default value. To change the active language/locale, edit the relevant entry so default=\"true\"; if the desired value is missing, add it and ensure no other entries are defaulted. It also gives the file paths, filenames, and sample XML values for both tables."
+                  },
+                  {
+                    "title": "Available Locales",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000022",
+                      "start_page": 19,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how to configure available locales in Cúram using the CT_Locale.ctx codetable file. The file contains selectable locale values and one default; to change the default, set the desired locale entry’s default attribute to true and ensure only one locale is defaulted. If the needed locale is missing, add it. Includes path \\EJBServer\\components\\core\\codetable, filename CT_Locale.ctx, and a sample value like en_GB."
+                  }
+                ],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000022",
+                  "start_page": 17,
+                  "end_page": 22
+                },
+                "summary": "This section explains how to override regional support code table defaults in `\\EJBServer\\components\\core\\codetable`. It covers setting a single default by changing `default=\"false\"` to `default=\"true\"` and ensuring no other entry is defaulted for currency (`CT_Currency.ctx`), nationality (`CT_Nationality.ctx`), country (`CT_Country.ctx`), address layout type (`CT_addressLayoutType.ctx`), codetable language (`CT_CodetableLanguage.ctx`), language (`CT_Language.ctx`), and available locales (`CT_Locale.ctx`). Each topic includes file paths, filenames, and sample XML values."
+              }
+            ],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000022",
+              "start_page": 12,
+              "end_page": 22
+            },
+            "summary": "Reference for regional support settings in Cúram. Covers Bootstrap.properties server-side defaults (date/time separators and formats, DMX locale), ApplicationConfiguration.properties date display settings, locale-specific i18n files under webclient/JavaSource/curam/omega3/i18n, and Application.prx properties such as default server locale, base currency, server message date format, address locale, and Rules Editor locale. Also explains codetable overrides in EJBServer/components/core/codetable for default currency, nationality, country, address layout, language, and available locales."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000022",
+          "start_page": 9,
+          "end_page": 22
+        },
+        "summary": "Explains how to configure and reference Cúram regional support settings. Covers locale defaults for en, en_US, and en_GB across Application.prx, code tables, ApplicationConfiguration.properties, bootstrap.properties, i18n property files, and environment variables. Includes server locale, base currency, date/time formats and separators, address locale, DMX locale, Rules Editor locale, and default currency/nationality/country/address layout/language/locale code table values. Useful when changing locale behavior, formatting, or deployment defaults."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

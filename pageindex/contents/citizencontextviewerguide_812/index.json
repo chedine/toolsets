@@ -1,0 +1,215 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "4de042f6e3afef55",
+    "title": "Cúram 8.1.2 Citizen Context Viewer Overview Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CitizenContextViewerGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "4de042f6e3afef553f29406b63a8bb17380d1f0e9e4b68657207d229e1218a17",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:45:46+00:00",
+    "page_count": 14,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CitizenContextViewerGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Citizen Context Viewer Overview Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000014",
+      "start_page": 1,
+      "end_page": 14
+    },
+    "summary": "Front matter for the Cúram 8.1.2 Citizen Context Viewer Overview Guide, covering edition, contents, legal notices, privacy policy, and trademarks. The substantive guide explains the Citizen Context Viewer (CCV) as a pop-up, tree-based, client-centered view that consolidates client, family, community, dealings, case, and multidisciplinary team information across agencies. It describes CCV architecture and components, including care and protection, communities, family, dealings, and MDT views; customization of displayed data and components; viewing family-member information; and security controls based on case, service plan, client sensitivity, and team-member sensitivity. Useful for understanding CCV purpose, navigation, configuration, and access rules.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note for the document. It tells readers to review the Notices section on page 13 before using the information or the product it supports. Includes Merative US L.P. copyright statements for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000012",
+          "start_page": 5,
+          "end_page": 12
+        },
+        "summary": "This edition applies to Cúram 8.1, 8.1.1, and 8.1.2. It includes Merative copyright and trademark notices and the table of contents. It also begins the Cúram Citizen Context Viewer documentation, covering the CCV’s purpose, architecture, components, customization options, family-member viewing, and security model."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section provides legal notices for the document: examples and sample code are fictitious and offered “as is” without warranty or liability; the Merative privacy policy is available online; and a list of trademark acknowledgments covers Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "States that example names and data in the document are fictitious and that sample programs may be copied, modified, and distributed under the Merative Client Agreement, but are provided “AS IS” without warranty or liability. Includes the Merative privacy policy link. Lists trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes other names may be trademarks of others."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000013",
+          "start_page": 13,
+          "end_page": 13
+        },
+        "summary": "Legal and usage notices for the publication: terms for personal and enterprise copying/use, restrictions on redistribution and derivative works, and reservation of rights. It states no additional licenses are granted; Merative may withdraw permission; export-law compliance is required. The publication is provided “as-is” without warranty, with no guarantee of content accuracy. It also notes possible patent coverage and that references to non-Merative products and websites are informational only and not endorsements."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Citizen Context Viewer guide. Lists front matter (Note, Edition), Chapter 1 on CCV overview, including business architecture, holistic client view, components, customization, the CCV itself, family member information viewing, and user security. Also lists notices, privacy policy, and trademarks, with page references."
+      },
+      {
+        "title": "1 Cúram Citizen Context Viewer overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Citizen Context Viewer business architecture",
+            "level": 2,
+            "children": [
+              {
+                "title": "Holistic view of clients in a central location",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "The Citizen Context Viewer (CCV) provides a single, holistic view of client information in one central, pop-up location. It integrates with participants, cases, social enterprise folders, outcome plans, and multidisciplinary teams, giving caseworkers quick access to cases, family members, services, contacts, and related agencies. It reduces the need for prior application knowledge and supports easy comparison across family members, which can aid early intervention and pattern detection across services."
+              },
+              {
+                "title": "CCV Components",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Describes the Cúram Citizen Context Viewer (CCV), a pop-up tree view showing a client’s image and personal details, plus grouped information about cases, communities, family, dealings, and multidisciplinary teams. Summarizes each CCV component: care and protection programs with status/reference details, communities tied to benefits, family relationships, agency interactions/payments, and team members supporting the client. Also notes its use for identifying patterns and intervening early in cases such as dependency cycles or child welfare/juvenile justice transitions."
+              },
+              {
+                "title": "CCV customization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains CCV customization options in Cúram Citizen Context Viewer. It describes dynamic configuration of CCV components and client information shown, including filtering cases by status, changing displayed client data, adding components like employment or financial history, and defining case communities. It also notes CCV opens in its own window, is security-trimmed to the user’s permissions, and supports navigating between clients and family members, including drag-and-drop and context-menu access."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Explains the Citizen Context Viewer (CCV) business architecture: a pop-up, tree-based, client-centered view that integrates participants, cases, social enterprise folders, outcome plans, and multidisciplinary teams. It gives caseworkers a single place to review a client’s cases, family members, benefits, contacts, communities, and team members without needing deep application knowledge. The section highlights CCV’s value for comparing family members, spotting patterns across services, and supporting early intervention."
+          },
+          {
+            "title": "1.2 The Citizen Context Viewer",
+            "level": 2,
+            "children": [
+              {
+                "title": "Viewing client information for family members",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how the Citizen Context Viewer (CCV) lets users view client information for family members. Users can either drag a family member onto the first CCV panel to refresh the view for that person, or open a new CCV via right-click or the overflow menu’s View Citizen Context option. Useful for understanding CCV navigation and how family member records are accessed."
+              },
+              {
+                "title": "User security and the CCV",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000014",
+                  "start_page": 12,
+                  "end_page": 14
+                },
+                "summary": "Explains CCV user security controls: existing security settings limit who can view client information. Case data uses case security, service plans use template security, and client data uses sensitivity security. Users must also have the required security functions to view CCV components. Social enterprise collaboration members can be filtered by sensitivity level, and CCV shows total record counts even when some records are hidden by access restrictions."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000014",
+              "start_page": 11,
+              "end_page": 14
+            },
+            "summary": "The Citizen Context Viewer (CCV) opens in its own window and is linked to the user’s application session. It lets users view client details, navigate to other clients, and support casework such as call center inquiries and outcome plans. This section explains how to view family member information by dragging a member into the first panel or opening a new CCV from the right-click or overflow “View Citizen Context” option. It also covers CCV security: case, service plan, and client sensitivity controls, plus sensitivity filtering for collaboration members."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000014",
+          "start_page": 9,
+          "end_page": 14
+        },
+        "summary": "Introduces the Citizen Context Viewer (CCV) as a pop-up, tree-based, client-centered view that summarizes client information across cases, family members, communities, dealings, and multidisciplinary teams. Explains how CCV helps caseworkers quickly review benefits, contacts, team members, and family patterns without deep navigation, supporting comparison across siblings and early intervention. Also covers customization of displayed components and the CCV session model, client switching, and main security controls for case, service plan, client sensitivity, and team-member sensitivity."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

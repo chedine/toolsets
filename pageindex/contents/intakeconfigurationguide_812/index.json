@@ -1,0 +1,1139 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "cc43e486d64ccc01",
+    "title": "Cúram 8.1.2 Intake Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/IntakeConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "cc43e486d64ccc01151642d57987f1bf968060c0250ca40c490e035f8d1acd40",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T22:50:29+00:00",
+    "page_count": 32,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/IntakeConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Intake Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000032",
+      "start_page": 1,
+      "end_page": 32
+    },
+    "summary": "Front matter and the main intake configuration chapter for Cúram 8.1.2. It includes a notice to read the legal notices first, edition info for Cúram 8.1/8.1.1/8.1.2, and the full table of contents. The substantive content configures Cúram Intake triage/screening: application case types, home pages, eligibility check rulesets/strategies, ownership and evidence-issue ownership, resilience flow, display options, Ready for Determination, direct creation, related cases, add-client behavior, PCR, program association/evidence types, internal application forms, submission/client registration rules, and program evidence mappings/reuse of product delivery cases. It also covers person search and match configuration: criteria, weights, thresholds, maximum hits, and related system properties, plus legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note telling readers to review the Notices section before using the information or product. Includes copyright attribution to Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition page for Cúram 8.1/8.1.1/8.1.2, followed by the table of contents. The section begins the Intake configuration guide and outlines major topics: application cases, programs, internal application forms, person search/match, and notices. It then introduces detailed Intake settings such as eligibility checks, ownership and evidence-issue handling, resilience flow, display options, direct creation, primary ID behavior, related cases, authorization strategies and case types, notification workflows, appeal processing, and workflow triggers for case creation, withdrawal, and straight-through processing."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers intake administration setup: application case workflow defaults, ready-for-determination workflow, associating programs and evidence, and PCR configuration (rulesets, workflows, execution points, and rating ranges). It then details program setup, including intake and case processing systems, integrated case strategy, client selection, product delivery settings, authorization notifications, timers, multiple applications, and program evidence types. It also includes a customization point for reusing product delivery cases and begins internal application form configuration with naming and IEG script/schema setup."
+          },
+          {
+            "title": "Edition — pages 25-30",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000030",
+              "start_page": 25,
+              "end_page": 30
+            },
+            "summary": "Covers intake configuration for internal application forms and related person matching settings. Explains required Finish/Quit page values for application and submission scripts, required IEG schema attributes, and how to prepopulate person data via a custom `ApplicationFormPrepopulationStrategy` bound in Guice. Also describes submission scripts, submit-on-completion behavior, client registration as prospect/person, associating programs and evidence mappings, and configuring person search and match criteria, weights, thresholds, and maximum hits."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000030",
+          "start_page": 5,
+          "end_page": 30
+        },
+        "summary": "Configures Cúram Intake (pages 5–30) for application cases, programs, internal application forms, and person search/match. Covers case type setup, eligibility checks, ownership and evidence-issue assignment, resilience flow, display options, ready-for-determination, direct creation, workflow triggers, and PCR. Also explains program association, evidence mappings, product delivery case reuse, internal form scripts/schema, submission rules, client registration, and a custom prepopulation strategy. Ends with person search/match criteria, weights, thresholds, max hits, and related system properties."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000032",
+              "end_unit_id": "p000032",
+              "start_page": 32,
+              "end_page": 32
+            },
+            "summary": "This section contains legal notices: fictitious-name disclaimer for examples, copyright/license terms for sample programs, warranty/liability limits, a link to the Merative privacy policy, and a list of trademarks and ownership notices. It is mainly reference material for usage rights and branding."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000032",
+              "end_unit_id": "p000032",
+              "start_page": 32,
+              "end_page": 32
+            },
+            "summary": "Lists trademark and licensing notices for the document. It states that example names are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and the samples are provided “AS IS” without warranty. It also links to Merative’s privacy policy and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, with a copyright notice for Merative US L.P. (2012, 2024)."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000031",
+          "end_unit_id": "p000031",
+          "start_page": 31,
+          "end_page": 31
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise reproduction is allowed only with proprietary notices preserved, while distribution outside those limits and derivative works require Merative consent. It disclaims warranties, liabilities, and patent licenses; notes export-law compliance; and states non-Merative product/site references are informational only. Includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Configuring Intake chapter and front matter. Lists sections on configuring application cases, programs, internal application forms, and person search/match, with subtopics such as evidence types, PCR, program evidence types, application and submission scripts, client registration, and system properties. Also includes Notes, Edition, Privacy policy, Trademarks, and copyright pages. Useful as an index node rather than substantive content."
+      },
+      {
+        "title": "1 Configuring Intake",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring Application Cases",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces configuring Cúram Intake triage and screening processes, especially application cases in Universal Access administration. Covers the four main setup areas: defining application case types, associating programs, adding evidence types, and configuring Priority/Complexity/Risk (PCR). Also notes options to set a custom home page and enable eligibility checks using a CER ruleset to return eligibility and entitlement decisions."
+              },
+              {
+                "title": "Configuring Application Case Types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining a Home Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Explains how to configure Cúram Intake application cases in Universal Access, including application case types, program associations, evidence types, and PCR settings. This section also notes that an application case type can override the default home page by specifying a custom home page. It briefly introduces eligibility check processing, where administrators can enable eligibility checks and select a CER ruleset to determine program eligibility and entitlement."
+                  },
+                  {
+                    "title": "Defining Eligibility Check Processing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Explains how to configure application case types in Cúram Intake, including naming/reference, optional home page override, and eligibility check processing. The eligibility check feature can be enabled for a case type, giving workers the option to check program eligibility on an application case. An administrator must provide a CER ruleset that produces the eligibility decision and, when applicable, entitlement results."
+                  },
+                  {
+                    "title": "Assigning an Ownership Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "This section explains how to configure ownership strategies for application cases. It covers assigning cases differently for internal versus online applications, including options to assign to a user, organization unit, position, or work queue, and for internal cases, to the current user. It also notes the fallback system property for default owner. The excerpt also introduces evidence issues ownership strategy, task creation for issues owners, and a resolution home page to route users to evidence-related pages."
+                  },
+                  {
+                    "title": "Evidence Issues Ownership Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Configures an ownership strategy for evidence validation issues in application cases. If evidence issues exist, the case can be assigned to a specified organization unit, position, user, or work queue, and a task is created for that owner to resolve them. Applies to both internal and online applications. Also mentions an optional Resolution Home Page to send users from the task directly to relevant evidence pages, and references resilience flow support for working through validation/verification issues."
+                  },
+                  {
+                    "title": "Use Resilience System Property",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Describes the Use Resilience system property, which controls whether an application case follows a resilience flow so a case worker can resolve evidence validation and verification issues before proceeding. This section appears alongside related configuration topics for eligibility checks, ownership strategies, evidence-issue ownership, and a resolution home page, helping administrators understand how application cases are routed and presented during intake and issue handling."
+                  },
+                  {
+                    "title": "Configuring Display Options",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Evidence Dashboard",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000020",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "This section explains application case display options in Cúram Intake, especially the Evidence Dashboard setting. If enabled, workers can access the Evidence Dashboard view on the Evidence tab; if disabled, it is hidden. It also describes related intake configuration options on the same page, including Ready for Determination, Direct Creation, primary alternate ID handling for SSN, and whether Closed cases appear in the Related Cases list."
+                      },
+                      {
+                        "title": "Ready for Determination",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000021",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Explains intake configuration options for application cases, especially the optional “Ready for Determination” status. If enabled, workers must manually move a case from Open to Ready for Determination before authorization, and a workflow may run; if disabled, cases go directly from Open to Closed. Also covers Evidence Dashboard visibility, Direct Creation, treatment of SSN as primary alternate ID, and whether Related Cases shows closed cases."
+                      },
+                      {
+                        "title": "Direct Creation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000022",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Explains the Direct Creation option for intake application cases. When enabled, internal workers can create an application case directly with only minimum required information; when disabled, direct creation is not available and cases must be created via an application form. This section sits among other intake display/configuration settings such as Evidence Dashboard, Ready for Determination, primary identifier handling, and related cases list behavior."
+                      },
+                      {
+                        "title": "Primary Identifier System Property",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000023",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "This section explains the system property “Treat SSN as Primary Alternate ID” in Cúram Intake. It controls whether a client’s SSN is used as the primary alternate ID during intake; if disabled, the system generates a primary alternate ID and stores the SSN as a secondary alternate ID."
+                      },
+                      {
+                        "title": "Related Cases List System Property",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000024",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Explains the Related Cases list on an application case and the system property Display Closed Related Cases, which controls whether closed participant cases appear in the list. Useful for administrators configuring intake display behavior and case visibility."
+                      },
+                      {
+                        "title": "Add Client System Property",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Configures application-case intake behavior. The Client Selection Component Name system property controls whether Add Client appears on the application case; set to Common Intake to show it, or HCR to hide it. The section also introduces program authorization setup: choosing Application vs Program authorization strategy, defining an authorization CER ruleset when using Application, and selecting an integrated case strategy for successful authorization, including creating a new integrated case or reusing an existing exact client match."
+                      }
+                    ],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Overview of display options for application cases in Cúram Intake. Covers Evidence Dashboard visibility on the Evidence tab, the optional Ready for Determination status and its workflow/transition behavior, Direct Creation for creating cases with minimum information, the Treat SSN as Primary Alternate ID system property, and the Display Closed Related Cases setting controlling whether closed cases appear in the Related Cases list. Useful for administrators configuring what workers can see and do on application cases."
+                  },
+                  {
+                    "title": "Defining the Program Authorization Strategy",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Authorization Strategy",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000027",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "This section explains how Cúram Intake configures application authorization. It covers the Authorization Strategy choice between Application and Program, where Application authorizes all programs together and requires an authorization CER ruleset, while Program authorizes each program separately. It also introduces the Integrated Case Strategy, describing how authorization can create a new integrated case or reuse an existing exact client match, with application evidence copied to the integrated case."
+                      },
+                      {
+                        "title": "Authorization Ruleset",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000028",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Explains application-level authorization configuration for Cúram Intake. If the authorization strategy is Application, an authorization CER ruleset must be defined to determine which programs and clients are eligible for authorization. Also notes the related integrated case strategy, which controls whether authorization creates a new integrated case or uses an existing one, and how case participants/evidence are copied. Useful for understanding how application authorization is configured and what the authorization ruleset must do."
+                      },
+                      {
+                        "title": "Integrated Case Strategy",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000029",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Explains configuration for application case authorization, including when Add Client is shown via the Client Selection Component Name property, application vs program authorization strategy, and the authorization ruleset requirement for application-level authorization. Focuses on the Integrated Case Strategy, which determines whether successful authorization creates a new integrated case or uses an existing one with matching clients, and notes that application evidence may be copied to the integrated case."
+                      },
+                      {
+                        "title": "Integrated Case Type",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000030",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "Defines how administrators configure the Integrated Case type used after successful program authorization. The selected type is created or reused according to the earlier integrated case strategy, with behavior for exact-client match or any-client match cases. If no matching case exists, a new integrated case is created; in some modes users may choose an existing case or create a new one. Notes that product delivery cases, if required, are configured at the program level. Also introduces related outcome plan strategy configuration."
+                      },
+                      {
+                        "title": "Outcome Plan Strategy",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000031",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "Defines how the system chooses a new or existing outcome plan when program authorization succeeds. It explains that a new plan adds all application clients as participants, while an existing plan adds any additional clients and receives copied evidence needed on the plan. Configuration options are New, Existing (Exact Client Match), Existing (Exact Client Match) or New, and Existing (Any Client Match) or New, with selection rules based on matching clients and available existing plans."
+                      },
+                      {
+                        "title": "Application Level Authorization Notification System Properties",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000032",
+                        "range": {
+                          "start_unit_id": "p000014",
+                          "end_unit_id": "p000014",
+                          "start_page": 14,
+                          "end_page": 14
+                        },
+                        "summary": "This section describes configurable application-level authorization notification properties in Cúram Intake, including whether notifications are enabled and the workflows used for successful authorization, unsuccessful authorization, and deferred-process failures. It also explains the “Appeal All Programs” setting, which controls which program statuses can be appealed, and introduces workflow configuration options for application case creation, withdrawal requests, and straight-through processing."
+                      }
+                    ],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000013",
+                      "start_page": 12,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how Cúram Intake configures application/program authorization. Administrators choose Application (authorize all applied-for programs together) or Program (authorize each separately). For Application authorization, an authorization CER ruleset is required to determine eligible programs and clients. It also covers Integrated Case Strategy and Type: successful authorization can create or reuse an integrated case based on client matching, add participants, and copy needed evidence. It briefly introduces Outcome Plan Strategy and notes product delivery cases are configured at the program level."
+                  },
+                  {
+                    "title": "Specifying Program Appeal Processing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains the Appeal All Programs indicator, which controls which program statuses may be appealed. If set to Yes, programs with denied, approved, or pending status can be appealed; if set to No, only denied programs can be appealed. The surrounding content also covers authorization notification system properties and configurable workflow processes for application case handling."
+                  },
+                  {
+                    "title": "Specifying Workflow Processes",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Application Case Created",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000035",
+                        "range": {
+                          "start_unit_id": "p000014",
+                          "end_unit_id": "p000014",
+                          "start_page": 14,
+                          "end_page": 14
+                        },
+                        "summary": "This section explains configuration options for application case processing. It covers the “Outcome Plan Type” used to create an integrated case after successful program authorization, system properties for authorization notifications (enabled flag plus success, unsuccessful, and deferred-failure workflows), appeal rules via the “Appeal All Programs” indicator, and workflow processes that can be invoked during application case creation, including Application Case Created, Withdrawal Request, and Straight Through processing."
+                      },
+                      {
+                        "title": "Withdrawal Request",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000036",
+                        "range": {
+                          "start_unit_id": "p000014",
+                          "end_unit_id": "p000014",
+                          "start_page": 14,
+                          "end_page": 14
+                        },
+                        "summary": "This section describes configurable workflow and notification settings for Cúram application authorization. It covers outcome plan type selection, authorization notification system properties (enabled flag, success/failure workflows, deferred-process failure workflow), appeal eligibility by program status, and workflow processes that can be invoked during application handling. It specifically defines the Withdrawal Request workflow, triggered by an online citizen request to withdraw an application for a particular program, and also mentions related workflows such as Application Case Created and Straight Through processing."
+                      },
+                      {
+                        "title": "Straight Through",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000037",
+                        "range": {
+                          "start_unit_id": "p000014",
+                          "end_unit_id": "p000014",
+                          "start_page": 14,
+                          "end_page": 14
+                        },
+                        "summary": "Defines the “Straight Through” workflow setting. The administrator can configure a workflow to drive straight-through processing from application case creation through creation of an ongoing case and closure of the application case. If configured, this workflow is invoked when the application case is created as part of the authorization process."
+                      },
+                      {
+                        "title": "Ready for Determination",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000038",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "This section explains “Ready for Determination” workflow setup for an application case. It states that administrators can configure a workflow to run when an application case reaches Ready for Determination, but only if that status is enabled. It also covers associating application cases with programs, including viewing linked programs, and associating evidence types with an application case for authorization, evidence brokering, and pre-authorization sharing."
+                      }
+                    ],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains configurable workflow processes for application case handling. It covers the Outcome Plan Type for selecting the integrated case created after successful authorization, authorization notification system properties (enabled flag and success, unsuccessful, and deferred-failure workflows), and appeal rules via the Appeal All Programs indicator. It also describes workflows that can be invoked during application processing: Application Case Created, Withdrawal Request for online withdrawal requests, Straight Through processing, and the related workflow configuration context."
+                  }
+                ],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000014",
+                  "start_page": 9,
+                  "end_page": 14
+                },
+                "summary": "Configures Cúram Intake application case types in Universal Access. Covers naming/reference, optional custom home page, eligibility check processing with CER ruleset and check strategy, ownership strategies for internal vs online cases, evidence-issue ownership and resolution home page, resilience flow system property, display options (Evidence Dashboard, Ready for Determination, Direct Creation, SSN/related cases/add client), program authorization strategy plus integrated/outcome plan case handling, authorization notifications, appeal rules, and workflow processes for case creation, withdrawal, and straight-through processing."
+              },
+              {
+                "title": "Associating Application Cases with Programs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how administrators associate application cases with programs during program configuration. It notes that a program must have an intake processing system, and if no case processing system is defined the system cannot respond to an application submission for that program. The section also outlines related configuration such as enabling Ready for Determination workflows and ties into evidence association and brokering for application cases."
+              },
+              {
+                "title": "Associating Evidence Types with an Application Case",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how administrators associate evidence types with an application case. It notes that evidence may be required to authorize programs linked to the case, and that both dynamic and non-dynamic evidence types can be configured with category, sort order, and preferred flags. Associating evidence automatically enables evidence brokering, but additional brokering must be configured for integrated cases, product deliveries, and Person/Prospect Person. It also covers enabling evidence for pre-authorization sharing."
+              },
+              {
+                "title": "Configuring PCR for an Application Case",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining a PCR Ruleset",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Describes how to configure a PCR ruleset for an application case. A PCR configuration can use manual assessment or a ruleset, must have a name plus start/end dates, and configurations cannot overlap. If a ruleset is used, it must be defined per Intake Developer Guide and is always invoked on case creation, with optional execution points for recalculation: user-invoked, evidence updated, new client, client removal, client match, new program application, and program withdrawal. Also notes optional PCR workflow selection."
+                  },
+                  {
+                    "title": "Defining a PCR Workflow",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to define a PCR configuration for an application case: enter a configuration name with start and end dates, with no overlapping configurations. It describes selecting either manual PCR assessment or a PCR ruleset, and optionally associating a workflow that must be categorized as PCR. Also outlines PCR execution points that can automatically invoke a ruleset, including application case creation, user invocation, evidence updates, client add/removal/match, program application, and program withdrawal."
+                  },
+                  {
+                    "title": "Specifying PCR Execution Points",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section lists PCR ruleset execution points for application cases. It explains that these optional triggers apply only when a PCR ruleset is configured, while ruleset invocation on application case creation is always automatic. Available recalculation events include user-invoked run, evidence updates, new client, client removal, client match, new program application, and program withdrawal. It helps decide when PCR values are recalculated during the case lifecycle."
+                  },
+                  {
+                    "title": "Configuring PCR Range Mappings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to configure PCR range mappings so the ruleset can assign PCR ratings to application cases. Administrators define numeric ranges for Priority, Complexity, and Risk (for example, High 70–100, Medium 30–69, Low 0–29), which the PCR ruleset uses after eligibility checks and program authorization. Also introduces program configuration in UA/Cúram Intake, including creating new programs, required name/reference fields, and the main aspects of program setup."
+                  }
+                ],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains how to configure PCR assessments for an application case. It covers choosing manual assessment or a PCR ruleset, naming the configuration, setting start/end dates, and avoiding overlapping configurations. If a ruleset is used, it must follow Intake Developer Guide rules and is always run on application case creation, with optional recalculation triggers for user invocation, evidence changes, client add/remove/match, and program add/withdrawal. It also notes that an optional workflow can be linked, but only if categorized as PCR."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000016",
+              "start_page": 9,
+              "end_page": 16
+            },
+            "summary": "Explains how to configure Cúram Intake application cases in Universal Access. Covers defining application case types, optional home page and eligibility check processing via CER ruleset and strategy, ownership and evidence-issue handling, resilience flow, display options, direct creation, related cases, add client, program authorization at application or program level with integrated/outcome plan strategies, authorization notifications, appeal rules, workflows, program association prerequisites, evidence type association and brokering, and PCR setup with ruleset, workflow, dates, and execution points."
+          },
+          {
+            "title": "1.2 Configuring Programs",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Introduces UA program configuration. Explains that programs can be defined and then associated with online/internal applications and application cases, processed in Cúram Intake or Universal Access. Notes key configuration areas: program display/system processing info, application settings (including whether multiple applications are allowed), and program-specific evidence types. Also describes creating a new program, requiring a name and reference; the name appears to citizens/internal users, while the reference is used in code."
+              },
+              {
+                "title": "Configuring a New Program",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining a Name and Reference",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section explains that when creating a new program, both a name and a reference are required. The name is shown to citizens in UA and to internal users, while the reference is used in code. It sits within the program configuration process, which includes defining display/system information, application settings, and evidence types."
+                  },
+                  {
+                    "title": "Defining an Intake Processing System",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains how to configure a program’s intake processing system in Cúram. It covers choosing Cúram or a remote system, requiring an application case type when Cúram intake is used, and how coverage-type programs are restricted from direct citizen application or manual worker addition. It also notes the Reopen action setting and related workflow. The excerpt further introduces case processing system selection and the integrated case strategy used to determine whether a new or existing integrated case hosts product deliveries after authorization."
+                  },
+                  {
+                    "title": "Defining Case Processing Details",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to configure each program’s case processing system. Choose Cúram or a pre-configured remote system; Cúram is used when eligibility is managed in Cúram and enables additional program-level authorization options. If Cúram is selected, an integrated case strategy must be defined to decide whether authorization creates a new or existing integrated case for product deliveries and case participants. This section is useful for understanding program processing setup, authorization behavior, and integrated case creation."
+                  },
+                  {
+                    "title": "Defining the Integrated Case Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Defines how the system chooses the integrated case used after successful program authorization. It determines whether a new or existing integrated case is created, and that integrated case hosts any resulting product deliveries. If a new integrated case is created, all application case clients are added as case participants. If an existing integrated case is used, additional clients are added to that case. This section is relevant for configuring authorization outcomes and case participation behavior."
+                  },
+                  {
+                    "title": "Specifying the Integrated Case Type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to specify the integrated case type used when a program is successfully authorized. Describes integrated case strategy options: always create new, use existing case with exact client match, allow exact match or new, or allow any client match or new. Notes that application case clients become participants and required evidence is copied to the integrated case. Also introduces outcome plan strategy setup and its options, including new and existing exact client match behavior."
+                  },
+                  {
+                    "title": "Defining the Outcome Plan Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to configure the outcome plan strategy used during successful program authorization. A new outcome plan can always be created, or an existing one can be reused if it has an exact client match. If multiple matches exist, the worker selects one; if none match, a new plan is created. When an existing plan is used, additional application clients are added and required evidence from the application case is copied over."
+                  },
+                  {
+                    "title": "Specifying a Client Selection Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains configuration for program authorization behavior. It describes client selection strategies for product delivery creation: All Clients, Rules, or User Selection, including how primary and member clients are assigned and that Rules requires a ruleset. It also covers selecting the Product Delivery Type from active products, and notes this applies to both program and application authorization. The section begins to describe the “Submit Product Delivery Automatically” indicator for automatic approval submission."
+                  },
+                  {
+                    "title": "Specifying a Client Selection Ruleset",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains configuration for authorization behavior: how to choose an existing or new outcome plan based on exact or any client match, how to set the outcome plan type, and how client selection works when creating product delivery cases. It details three client selection strategies: All Clients, Rules, and User Selection, and states that a client selection ruleset is required when using Rules. It also covers selecting a product delivery type and optionally submitting the created product delivery automatically for approval."
+                  },
+                  {
+                    "title": "Specifying a Product Delivery Type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Defines how a product delivery is configured for program/application authorization. The Product Delivery Type selects the active product used to make payments to clients, and may be created during either program or application authorization. It must be paired with a Client Selection Strategy: All Clients, Rules, or User Selection, with Rules requiring a ruleset. The section also notes outcome plan type selection and whether the created product delivery is automatically submitted for approval."
+                  },
+                  {
+                    "title": "Submitting a Product Delivery Automatically",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains configuration for program authorization that creates product deliveries and/or integrated cases. It covers outcome plan selection behavior (existing exact client match or any client match, otherwise create new), client selection strategies for adding application clients to the product delivery (All Clients, Rules, User Selection), required rulesets when using Rules, and selecting a Product Delivery Type from active products. It also introduces the Submit Product Delivery indicator, which controls whether the created product delivery is automatically submitted for approval."
+                  },
+                  {
+                    "title": "Program Level Authorization Notification System Properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section describes configurable program-level authorization notifications and application timers. It lists system properties for enabling authorization notifications and setting workflows for successful authorization, unsuccessful authorization, and deferred-process failure. It also explains timer configuration for program applications, including duration, start date, business vs. calendar days, warning periods, and timer extension/approval. Use it if you need details on how authorization outcomes trigger notifications or how processing deadlines are defined."
+                  },
+                  {
+                    "title": "Configuring Timers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains how to configure application timers for programs in Cúram Intake. It covers timer duration, whether timing is based on business or calendar days, and the start date choice (application date or program addition date). It also notes related options such as warning periods, timer extension, and approval, and gives an example of an agency requiring authorization within 30 business days."
+                  },
+                  {
+                    "title": "Configuring Multiple Applications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains the Multiple Applications indicator for a program. If true, clients may have more than one pending application for the same program; if false, caseworkers cannot submit another internal application or add the program to an application case while one is already pending. Notes that the setting can also affect online applications if enabled by the organization, with further details in the Universal Access Configuration Guide."
+                  }
+                ],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000022",
+                  "start_page": 17,
+                  "end_page": 22
+                },
+                "summary": "Covers configuring a new program in Cúram Intake: defining the required name/reference, selecting intake and case processing systems, and setting whether the program is a coverage type and can be reopened. Explains program-level authorization setup, including integrated case strategy/type, outcome plan strategy/type, client selection strategy/ruleset, product delivery type, and automatic submission. Also includes authorization notification system properties, application timer settings, and the Multiple Applications indicator."
+              },
+              {
+                "title": "Defining Program Evidence Types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section explains how to define evidence types for a program so a specific program can be authorized faster than others on the same application. Only the evidence needed for that program is used and copied to ongoing cases, allowing benefits to start while other evidence is still gathered. It also covers reusing an existing product delivery case during authorization via the `ProductDeliveryReuseStrategy.getProductDelivery` customization point, noting reuse is only possible for a child of the integrated case."
+              },
+              {
+                "title": "Reusing a Product Delivery Case",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains how to reuse an existing product delivery case during application authorization instead of creating a new one. Reuse is enabled via the `curam.commonintake.authorisation.impl.ProductDeliveryReuseStrategy.getProductDelivery` customization point. It notes that only child product delivery cases of the integrated case involved in authorization are reusable; otherwise a new case is created. The section includes a sample implementation of `ProductDeliveryReuseStrategy` and says the implementation must be bound in a Guice module."
+              }
+            ],
+            "node_id": "n000046",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000023",
+              "start_page": 17,
+              "end_page": 23
+            },
+            "summary": "Explains how to configure UA programs: define a program name/reference, select intake and case processing systems, set coverage/reopen options, and configure program-level authorization (integrated case/outcome plan strategies and types, client selection, product delivery, automatic submission, notifications). Also covers application timers, multiple applications, and associating program evidence types to speed authorization. Ends with how to reuse an existing product delivery case via the ProductDeliveryReuseStrategy customization point, limited to child product delivery cases and bound in Guice."
+          },
+          {
+            "title": "1.3 Configuring Internal Application Forms",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Introduces configuration of internal application forms in Cúram Intake UA administration. Explains that workers can create application cases using an IEG script, and outlines four key setup areas: application information, the script and datastore schema used to collect/store answers, and the programs the application applies to. Also notes that administrators must name the form; if multiple forms exist, the name appears for worker selection. Describes creating empty script/schema templates from the Question Script and Schema fields and editing them via the IEG Editor and Datastore Editor."
+              },
+              {
+                "title": "Defining a Name",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "The administrator must give each internal application form a name. This name appears to workers when multiple forms are available, helping them choose the correct one. The section sits within configuring internal application forms, alongside related setup for the IEG question script and datastore schema used by the application process."
+              },
+              {
+                "title": "Configuring an Application Script",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Specifying Finish and Quit Pages for an Internal Application Form",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how to configure IEG internal application forms: set the Finish Page to `CommonIntake_finishInternalIntakeScript` and the Quit Page to `CommonIntake_quitInternalIntakeScript`. Lists required schema attributes for internal forms, including `localID` on Person (`IEG_INT64`), optional `filingDate` on Application (`IEG_DATE`), and optional `methodOfApplication` using the `MethodOfApplication` code table. Also describes prepopulating person data and extending it via `ApplicationFormPrepopulationStrategy.prepopulateFrom`."
+                  },
+                  {
+                    "title": "Required IEG Attributes for Internal Application Forms",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains IEG setup for internal application forms. Specifies the Finish Page and Quit Page values required in the IEG Editor: CommonIntake_finishInternalIntakeScript and CommonIntake_quitInternalIntakeScript. Lists schema attributes that must or may be added: localID on Person as IEG_INT64; optional filingDate on Application as IEG_DATE; optional methodOfApplication on Application using the MethodOfApplication code table domain. Also notes that person data is prepopulated at startup and can be extended via the ApplicationFormPrepopulationStrategy.prepopulateFrom customization point."
+                  },
+                  {
+                    "title": "Prepopulating Person Information",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how internal application forms prepopulate person data in the IEG data store when a script starts, including default fields like first name, last name, date of birth, and address. Notes that extra person attributes can be added by implementing the `curam.commonintake.facade.impl.ApplicationFormPrepopulationStrategy.prepopulateFrom` customization point, with a required implementation of `ApplicationFormPrepopulationStrategy`. Includes nearby internal form configuration requirements for Finish/Quit pages and schema attributes such as `localID`, `filingDate`, and `methodOfApplication`."
+                  }
+                ],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000025",
+                  "start_page": 24,
+                  "end_page": 25
+                },
+                "summary": "Explains how to configure an internal application script in Cúram Intake. An application needs a Question Script and Schema, which generate editable IEG Editor and Datastore Editor templates. For internal forms, set Finish Page to `CommonIntake_finishInternalIntakeScript` and Quit Page to `CommonIntake_quitInternalIntakeScript`. The schema must include `localID` on Person (`IEG_INT64`); optional `filingDate` (`IEG_DATE`) and `methodOfApplication` (code table `MethodOfApplication`) on Application. Person data is prepopulated at script start and can be extended via `ApplicationFormPrepopulationStrategy.prepopulateFrom`."
+              },
+              {
+                "title": "Configuring a Submission Script",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Specifying Finish and Quit Pages for Submission Scripts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Explains how to configure submission scripts for internal application forms and how to implement and bind a custom `ApplicationFormPrepopulationStrategy`. The key requirement is that any submission script used for an internal application form must have Finish and Quit pages specified in the IEG Editor. These fields must be set to the required values when defining the script. Useful for understanding internal application submission configuration, prepopulation customization, and script editor setup."
+                  }
+                ],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Explains how to configure a submission script for an internal application form. A submission script (IEG) can capture extra information beyond the main application, and when saved, the system creates an empty submission script and schema that can be edited from the Application tab via the IEG Editor and Datastore Editor. Also notes that any internal-application submission script must have Finish and Quit pages specified in the IEG Editor, and shows how to implement and bind a custom `ApplicationFormPrepopulationStrategy`."
+              },
+              {
+                "title": "Specifying When an Application Script Can Be Submitted",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains when an internal application script can be submitted: either only after completion if the completion-only indicator is enabled, or anytime after minimum mandatory information is captured if not. Also notes related intake configuration topics on this page, including client registration rules and how programs are associated with application forms, with ordering used only when multiple programs are linked."
+              },
+              {
+                "title": "Configuring Client Registration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how the Client Registration setting controls whether additional clients on an internal application form are registered as prospects or persons. It is consulted only when Person Search and Match is configured and no match is found, or when search/match is not configured; it is not used for single-client submissions or applications created directly. If unset, the system falls back to the Register as Prospect Person property. Also notes that internal application forms must be associated with programs, which can be ordered for display and selection."
+              },
+              {
+                "title": "Associating Programs with Application Forms",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining Mappings for a Program",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how application form data is mapped to an application case’s evidence tables for a specific program. Mappings are configured either with a Cúram Evidence mapping configuration or the Cúram Data Mapping Editor, and a program must have a mapping configuration for evidence entities to be created and populated during internal application submission."
+                  }
+                ],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "This section explains how to associate configured programs with an internal application form so workers can submit applications for those programs. Programs can be assigned a display order, which matters only when multiple programs are linked: the worker sees them in that order and chooses which to proceed with. If only one program is associated, the system selects it automatically."
+              }
+            ],
+            "node_id": "n000064",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000027",
+              "start_page": 24,
+              "end_page": 27
+            },
+            "summary": "Explains how to configure internal application forms in Cúram Intake UA: naming the form; defining the IEG question script and datastore schema; required finish/quit pages; required schema attributes such as Person.localID and optional Application fields filingDate and methodOfApplication; prepopulating person data via ApplicationFormPrepopulationStrategy; setting up optional submission scripts with their own finish/quit pages; when a form can be submitted; client registration behavior; and associating one or more programs, with ordering only affecting multi-program selection."
+          },
+          {
+            "title": "1.4 Configuring Person Search and Match",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "This section introduces person search and match configuration in Cúram. It explains that the system can search for and match applicants to registered persons during application case creation, but the default PersonMatch API returns no results unless customized. It covers how search criteria and weights are defined in Participant administration, how thresholds in System Administration determine conclusive/inconclusive matches, and how unmatched clients are registered as a prospect or person based on a system property."
+              },
+              {
+                "title": "Defining Person Search Match Criteria",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining a Weight for a Search Criterion",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how administrators assign weights to person search criteria and why: weights reflect each criterion’s importance in matching clients and contribute to the overall match score. Example weights are given for First Name, Last Name, and Date of Birth. The section also ties weights to conclusive, inconclusive, and no-match outcomes via configured thresholds, and notes related person search settings such as enabling search, maximum hits, and whether unmatched clients are registered as prospects or persons."
+                  }
+                ],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Defines the person search criteria used to find and match application clients to registered persons. Notes that criteria are configured in Participant administration and that organizations choose which criteria to use and assign weights based on importance in match scoring. Explains that these weighted criteria, together with system thresholds, determine whether a result is conclusive, inconclusive, or no match. Also situates this within person search and match setup, which can auto-search, match, or register clients during application processing."
+              },
+              {
+                "title": "Person Search and Match System Properties",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Setting Inconclusive Match Thresholds",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Defines the Person Match inconclusive threshold settings. Two system properties control outcomes: the Upper Inconclusive threshold and Lower Inconclusive threshold. Scores above the upper threshold are Conclusive Matches; scores between the lower and upper thresholds are Inconclusive Matches; scores below the lower threshold are No Match. This section sits within person search and match configuration and is useful for understanding how match scores are interpreted."
+                  },
+                  {
+                    "title": "Setting the Maximum Number of Search Hits",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Defines the system property Person Match Maximum Hits, which sets the maximum number of person-match search results returned. This section sits within Person Search and Match configuration, alongside weights and inconclusive match thresholds, and is relevant for controlling search result limits in matching workflows."
+                  },
+                  {
+                    "title": "Indicating Whether Clients are Registered as Prospects or Persons",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000084",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000032",
+                      "start_page": 29,
+                      "end_page": 32
+                    },
+                    "summary": "Explains the Register as Prospect Person system property, which controls whether clients on an application are registered as prospects or persons. It applies when additional clients are added on an internal application form and Client Registration is not set on online/internal applications. It is used only when Person Search and Match finds no match, or when Person Search and Match is not configured. Not used for single-client internal applications or application cases created directly from a person/prospect."
+                  }
+                ],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000032",
+                  "start_page": 29,
+                  "end_page": 32
+                },
+                "summary": "Defines person search and match configuration properties. Covers weight-based matching scores and the thresholds that classify results: above Upper Inconclusive = Conclusive Match, between Lower and Upper = Inconclusive Match, below Lower = No Match. Also describes Person Match Maximum Hits for limiting returned search results. Explains Register as Prospect Person, which controls whether unmatched clients on internal applications are registered as prospects or persons when Person Search and Match is configured or absent, with exceptions for single-client internal applications and cases created directly from a person/prospect."
+              }
+            ],
+            "node_id": "n000077",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000032",
+              "start_page": 28,
+              "end_page": 32
+            },
+            "summary": "Explains how Cúram configures person search and match during application case creation. Covers the default PersonMatch API returning no results unless customized, defining search criteria and weights in Participant administration, and using System Administration thresholds to classify matches as conclusive, inconclusive, or no match. Also describes the Person Match Maximum Hits limit and the Register as Prospect Person property, which controls whether unmatched clients are registered as prospects or persons, with noted exceptions for certain internal applications."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000032",
+          "start_page": 9,
+          "end_page": 32
+        },
+        "summary": "Configures Cúram Intake triage/screening. Covers application case setup: case types, home/eligibility-check pages, CER eligibility rulesets and strategies, ownership and evidence-issue ownership, resilience flow, display options, direct creation, related cases, add-client behavior, application-level vs program-level authorization, and PCR setup. Also points to program configuration, internal application forms, and person search/match. Most of the section is setup guidance for intake administrators, with detailed system properties and strategy options."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

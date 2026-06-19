@@ -1,0 +1,677 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "fb20da2942dc8b1e",
+    "title": "Cúram 8.1.2 System Administration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/SystemAdministrationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "fb20da2942dc8b1ed9e26d9a742875e7e91a007bdae60854e79c1e7a2be91be2",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:42:08+00:00",
+    "page_count": 48,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/SystemAdministrationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 System Administration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000048",
+      "start_page": 1,
+      "end_page": 48
+    },
+    "summary": "Front matter for the Cúram 8.1.2 System Administration Guide, covering pages 1–48. It includes the title page, a note to read Notices first, edition info for Cúram 8.1/8.1.1/8.1.2, the table of contents, Chapter 1 “Configuring the system,” and the Notices/Privacy policy/Trademarks pages. The chapter introduces system administration and covers configuring the Rich Text Editor to filter corrupted note content, application properties, code tables, configurable validations, text translations and locale mappings, autorecovery, contact logs, notes, participant nicknames, localizable display rules, case audit selection queries, communication templates, batch processes, security, Business Intelligence reports/viewer, target systems, content management interoperability, Microsoft Word templates, and FILE_EDIT integration for Chrome/Edge. It also includes Word Integration Assistant installation, environment variables/registry settings, and troubleshooting scripts. Notices cover reproduction/use terms, export and warranty disclaimers, patent notice, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note directing readers to review the Notices section before using the product or this information. Includes copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram 8.1/8.1.1/8.1.2 manual, including edition/copyright notices, table of contents, and the start of Chapter 1, “Configuring the system.” Covers system administration topics such as filtering corrupted rich text notes, application properties, code tables/localization, configurable validations and how to identify/disable them, plus related references to validation documentation and unique validation references."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers system configuration topics in Cúram 8.1.2: validation reference display, text translations, language/locale mappings, autorecovery settings and restart requirements, contact log and note editing properties, participant nicknames, display rules, communication templates (Word and XSL), batch process setup/execution/error codes, and security basics. It is a broad administration overview with many configurable properties, procedures, and defaults, useful for finding how to enable or tune platform features."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section covers system configuration topics: security hierarchy and user security profiles (FIDs, SIDs, security groups, cache refresh, and online security logging), target system setup and service URLs/password handling, content management interoperability settings and attachment metadata, and creating Microsoft Word templates with custom document properties plus server code to populate them. It is useful for readers working on security administration, integrations, or document/template configuration."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Explains Microsoft Word FILE_EDIT/Word Integration support and setup. Covers how template doc properties are populated from server-returned name/value pairs, then details Chrome/Edge native messaging requirements, Word Integration Assistant installation on Windows, prerequisites, MSI install/uninstall options, environment variables, registry keys, logging, and post-install steps. Ends with troubleshooting scripts that verify Word, browser, extension, native messaging, and registry configuration."
+          },
+          {
+            "title": "Edition — pages 45-46",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000046",
+              "start_page": 45,
+              "end_page": 46
+            },
+            "summary": "Describes PowerShell scripts related to Cúram File Edit Native Messaging Bridge setup for Microsoft Edge. `checkWordExtensionInstalledForEdge.ps1` checks whether the extension is installed and enabled for at least one Edge profile for the current user by inspecting the Edge user data directory; it also calls `curamHelperFunctions.ps1`. The helper script provides shared functions used by both the Edge and Chrome extension-check scripts."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000046",
+          "start_page": 5,
+          "end_page": 46
+        },
+        "summary": "Front matter and Chapter 1 of the Cúram 8.1/8.1.1/8.1.2 system configuration manual. Covers application properties, code tables, configurable validations, text translations, locale mappings, autorecovery, contact logs/notes, participant nicknames, display rules, communication templates, batch processes, security, BI reports, target systems, content management interoperability, and Microsoft Word FILE_EDIT setup. Also includes Word Integration Assistant installation, environment variables, registry keys, uninstall options, and troubleshooting scripts for Chrome/Edge native messaging."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "This section contains legal notices: sample data disclaimer, copyright license for sample source code, warranty/liability limits, Merative privacy policy link, trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus the copyright notice."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "States that example names in the document are fictitious, and that sample programs may be copied, modified, and distributed under the Merative Client Agreement for API-conforming development. Includes a privacy policy link. Lists trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes other names may be trademarks. Also includes the copyright notice © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000047",
+          "end_unit_id": "p000047",
+          "start_page": 47,
+          "end_page": 47
+        },
+        "summary": "Legal notices and usage terms for the publications: personal and enterprise reproduction is allowed only if proprietary notices are preserved, with no derivative works or external distribution without Merative consent. Covers rights limits, export compliance, warranty/liability disclaimers, patent notice, and third-party/non-Merative website disclaimers. Ends with copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the manual. It lists front matter (Note, Edition), then Chapter 1 “Configuring the system” with subsections on the Rich Text Editor, application properties, code tables, validations, translations, locale mappings, autorecovery, contact logs, notes, participant nicknames, display rules, audit queries, communication templates, batch processes, security, Business Intelligence, target systems, content management interoperability, Microsoft Word templates, the FILE_EDIT widget in Chrome/Edge, and Word Integration Assistant installation/troubleshooting. It also includes Notices, Privacy policy, and Trademarks."
+      },
+      {
+        "title": "1 Configuring the system",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring the Rich Text Editor to filter corrupted content",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains how to configure the Rich Text Editor to filter corrupted note content in the Cúram database. It describes using the NoteFilterHook.preFilterNoteContent hook to remove emojis or extended characters that can corrupt or display badly in notes. The hook is used for display only, via the default NoteFilterHookImpl implementation, and applies to note-reading methods such as UserAccess#getNote1, ParticipantNote#read1, ContactLog#determineNoteText, and NoteImpl#getNotesText. Enables the hook through Guice dependency injection."
+          },
+          {
+            "title": "1.2 Configuring the application",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring application properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains how to configure application properties in the runtime application without redeploying. It covers browsing and filtering properties by locale and category, the distinction between Application and Infrastructure categories, and adding properties with locale, current value, default value, and category. It also describes property descriptions as multilingual entries containing locale, display name, and description, with one description per locale."
+              },
+              {
+                "title": "Configuring code tables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how code tables support drop-down fields by storing selectable codes, descriptions, and language settings, reducing database space and enabling localization. Describes default code table items, adding named code tables, ordering items, marking items selectable, and setting locales. Notes that changes to code tables and items only appear in application drop-downs after publishing or server reboot."
+              },
+              {
+                "title": "Working with configurable validations",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Enabling and disabling configurable validations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how administrators enable or disable configurable validations in the system administration application. It describes how validations are uniquely identified by a validation reference, how to search for exact matches, and that only configurable validations can be maintained. It also notes that disabled validations still run during system processing. Finally, it explains how to use the HTML Validation Messages documentation to identify which validations are configurable and to find their references and messages."
+                  },
+                  {
+                    "title": "Using the validations messages documentation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000014",
+                      "start_page": 13,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how agencies can search for, enable/disable, and review configurable validations in system administration. Describes how unique validation references are formed and used for exact-match searching. Shows how to use the Validation Messages HTML documentation to identify which validations are configurable, where to find it in the installer, and how to navigate Facades A-Z, Screens A-Z, and Configurable Messages indexes. Also covers cross-referencing message references to unique IDs and what to do when a validation is not configurable."
+                  },
+                  {
+                    "title": "Enabling the display of the unique validation reference",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to show a unique validation reference beside validation messages by enabling the application property `curam.validationmanager.displayreference.enabled`. The reference helps identify configurable validations for later enable/disable actions, though some non–validation-manager validations will still show no reference. This page also briefly introduces nearby configuration topics: text translations, language/locale mappings, and autorecovery."
+                  }
+                ],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000014",
+                  "start_page": 12,
+                  "end_page": 14
+                },
+                "summary": "Explains how agencies find, enable, and disable configurable validations in system administration using exact-match unique validation references. It describes how references are formed, how disabled validations still execute during processing, and how to use the Validation Messages HTML documentation to identify configurable validations, their references, and message text. It also covers the Facades A-Z, Screens A-Z, and Configurable Messages indexes, and how to cross-reference message references to unique IDs when multiple matches exist."
+              },
+              {
+                "title": "Configuring text translations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to configure text translations in multi-locale Cúram environments so administration-defined text fields display in the user’s locale, using language type plus translated text. Also notes related system configuration topics on this page: enabling unique validation references via the application property curam.validationmanager.displayreference.enabled, language/locale mappings for UI and communications, and autorecovery to restore interrupted caseworker sessions and open modal data."
+              },
+              {
+                "title": "Configuring language and locale mappings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to configure language and locale mappings to customize the UI language and support locale-sensitive operations such as pro forma communications. Notes that each language maps to a single locale, and available languages for new mappings come from the system’s installed languages."
+              },
+              {
+                "title": "Configuring autorecovery",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000016",
+                  "start_page": 15,
+                  "end_page": 16
+                },
+                "summary": "Autorecovery is a global Cúram setting that restores a caseworker’s tab session and open modal with unsaved data after a system interruption. This section explains how to enable it via system properties, notes that a server restart is required, and recommends enabling during downtime. It documents the related properties: autorecovery enabled (default false), Curam Forms API support for modal forms, and the throttle interval between backup requests. It also gives the admin path to Property Administration."
+              },
+              {
+                "title": "Configuring contact logs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains system properties for configuring contact logs used by caseworkers to record investigation or incident follow-ups. Covers enabling the Contact Subject field, allowing editable contact narratives, and setting the editable period length in hours. Notes that after enabling narrative editing, existing narratives within the edit window are only editable by their author until the period ends, after which anyone can append. Also lists the max number of contacts shown in the contact log."
+              },
+              {
+                "title": "Configuring notes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains how to configure note behavior in Cúram using application properties. It covers merge notes, note history display order, and editable note text. A key point is that enabling editable notes also affects who can edit notes within a configured time period; afterward, only appends are allowed. It includes the property names, defaults, and descriptions, plus brief admin steps for changing a property through System Configurations > Property Administration and publishing the change."
+              },
+              {
+                "title": "Configuring participant nicknames for search",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how to configure participant nickname search by defining a nickname thesaurus for individuals. Nicknames such as “Jimmy” or “Jamie” can be associated with names like “James” and then used as search criteria for person and prospect person searches. Notes that the default nickname search setting is controlled through administration property settings, and refers readers to the Participant Guide for searching by nickname."
+              },
+              {
+                "title": "Configuring localizable display rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how to enable writing of localizable display rules so translatable display-rule messages can be rendered in different locales when retrieved for display. Notes that this feature is disabled by default and must be explicitly enabled by an organization."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000019",
+              "start_page": 10,
+              "end_page": 19
+            },
+            "summary": "Covers runtime application configuration: application properties, code tables, configurable validations, text translations, language/locale mappings, autorecovery, contact logs, notes, nickname search, and localizable display rules. Explains that many settings can be changed at runtime via Property Administration and published; some require server restart if static. Details property metadata, code table localization and hierarchies, how to find/enable/disable configurable validations via unique references, and note/contact narrative edit windows, autorecovery recovery behavior, and locale-sensitive UI/communications support."
+          },
+          {
+            "title": "1.3 Configuring case audit selection queries",
+            "level": 2,
+            "children": [],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "Explains how case audit selection queries are used to generate random case lists for audits. Defines selection queries as SQL plus validation criteria, and distinguishes dynamic queries (audit coordinator chooses one or more criteria, e.g. status, start date, gender) from fixed queries (criteria are embedded, reusable, no coordinator input, e.g. open males aged 18–35). Points to the Case Audits Guide and Developer’s Guide for more detail."
+          },
+          {
+            "title": "1.4 Configuring communication templates",
+            "level": 2,
+            "children": [],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000021",
+              "end_unit_id": "p000022",
+              "start_page": 21,
+              "end_page": 22
+            },
+            "summary": "This section explains how to configure communication templates in Cúram. It covers two template types: Microsoft Word and XSL. It describes uploading templates, required metadata (name/description, document ID, locale), and how caseworkers select templates by participant locale. It also notes that Word templates can include fields for auto-populated client data, while XSL templates are used for pro forma documents and support checkout/check-in and version control. Finally, it explains assigning templates to specific case or participant types."
+          },
+          {
+            "title": "1.5 Configuring batch processes",
+            "level": 2,
+            "children": [],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000023",
+              "start_page": 23,
+              "end_page": 23
+            },
+            "summary": "Explains how to configure and use batch processes: assign a batch stereotype to a process to generate an SQL executable, then have an administrator add it as a batch process with a name, description, and type (reporting or archiving). Describes organizing batch processes into named groups for easier access, and submitting batches with required or optional parameters and defaults. Notes that batch requests run via the batch launcher and that execution order can matter, with some batches dependent on others."
+          },
+          {
+            "title": "1.6 Configuring security",
+            "level": 2,
+            "children": [
+              {
+                "title": "Securing application elements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000025",
+                  "start_page": 24,
+                  "end_page": 25
+                },
+                "summary": "Explains how application security is configured through security identifiers (SIDs) that protect functions, fields, organization units, locations, case audits, and programs. Covers functional SIDs/FIDs for securing server functions and business processes, field SIDs for individual data fields, and how system administrators add these identifiers to the security hierarchy and security groups. Notes that security changes take effect when published."
+              },
+              {
+                "title": "User security profiles",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "This section explains how Cúram user security profiles are built from hierarchical SIDs to control access for internal and external users. It covers identifying organizational roles and user skill levels, organizing security groups and security identifiers, and using roles to authorize access to secured application elements. It also describes the security cache, how it improves authorization performance, when it refreshes, and which changes require a refresh."
+              },
+              {
+                "title": "Online security process logging",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000028",
+                  "start_page": 27,
+                  "end_page": 28
+                },
+                "summary": "Explains how to enable online security process logging by setting `curam.online.data.based.security.logging` to TRUE (default FALSE), causing security diagnostics to be written to the server log. Defines the `SECURITY_DIAG` log format and fields such as operation name, user, concern role, case/location IDs, security check type, cache details, and permission status, with codes for cache and security-permission outcomes. Includes sample log messages and interpretations for concern, note, case security, and case creation checks."
+              }
+            ],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000028",
+              "start_page": 24,
+              "end_page": 28
+            },
+            "summary": "Explains Cúram security configuration: authentication vs. authorization, and how secured application elements are assigned SIDs/FIDs. Covers securing functions, fields, organization units, locations, case audits, and programs; organizing related identifiers into security groups; and publishing changes for them to take effect. Describes building user security profiles from roles, managing access for internal/external users, and using the security cache with refresh rules. Also shows how to enable and interpret online security process logging via `curam.online.data.based.security.logging`."
+          },
+          {
+            "title": "1.7 Configuring Business Intelligence",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring Business Intelligence reports",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "This section explains BI reporting configuration in the system. It describes BI features such as embedded analytics, dashboards, and formatted reports, and notes that custom reports are built with BIRT Report Designer and rendered at runtime by BIRT Report Engine. It says sample reports exist, but development is needed before deployment to the BI content directory. It also lists configurable BIRT report options: report name, report file name, report category, and report servlet."
+              },
+              {
+                "title": "Configuring the Business Intelligence Report Viewer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Describes how to configure the BIRT Business Intelligence report viewer used in the runtime application. Covers viewer options such as viewer name, servlet, report name parameter, URL context, and root server path, plus notes on report/frame parameters, scrolling, borders, and adding default parameters recognized by BIRT. Also introduces target system configuration in system administration, explaining source vs. target systems and how multiple installations can communicate, such as sharing evidence via the Evidence Broker."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000029",
+              "start_page": 29,
+              "end_page": 29
+            },
+            "summary": "This section introduces Business Intelligence in the system: embedded analytics, interactive dashboards, and formatted reports for different user roles. It explains that custom BI reports are created with BIRT Report Designer and rendered at runtime by BIRT Report Engine, with sample reports requiring development and deployment to the BI content directory. It also previews configurable BIRT report options such as report name, file path, category, and servlet, and notes the section on configuring the BI report viewer and related runtime settings."
+          },
+          {
+            "title": "1.8 Configuring a target system",
+            "level": 2,
+            "children": [],
+            "node_id": "n000038",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000030",
+              "start_page": 30,
+              "end_page": 30
+            },
+            "summary": "Explains how to configure target systems in the system administration application. Defines source systems versus target systems for inter-system communication. Notes that an organization may have multiple installations that interact through supported services. Gives an example of two separate application instances sharing evidence data via the Evidence Broker to improve efficiency."
+          },
+          {
+            "title": "1.9 Content management interoperability services configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Enabling integration with a content management system",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "This section explains how to enable application integration with a content management system. It says documents for attachments and communications can be stored in and retrieved from the CMS, along with document metadata such as type. Integration is controlled by application properties under Application - Content Management settings. It also points to the Content Management Interoperability Services Integration Guide for more detail."
+              },
+              {
+                "title": "Configuring metadata for attachments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains how attachment document metadata is configured when attachments are stored in the content management system. It covers the CMS enablement properties, which attachment types are affected, and how metadata varies by context (for example, case vs participant). It also notes that metadata updates depend on context, default metadata elements can be individually enabled/disabled, changes only apply to future or updated attachments, and display names/descriptions support multilingual customization."
+              }
+            ],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000031",
+              "end_unit_id": "p000032",
+              "start_page": 31,
+              "end_page": 32
+            },
+            "summary": "This section explains how to configure content management system integration for the application. It covers enabling CMS storage via application properties under Application - Content Management, including separate controls for attachments and Pro Forma communications. It also describes attachment metadata configuration: which metadata can be stored, how it varies by context (for example, case or participant), when metadata updates apply, and how default elements can be enabled/disabled. Multilingual display names and descriptions are supported."
+          },
+          {
+            "title": "1.10 Inserting fields into a Microsoft® Word template",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating a Microsoft Word template",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how to create a Microsoft Word template for communications by inserting placeholder fields that later get replaced with correspondent-specific data. It notes that the template is created in local Microsoft Word, independent of the application, and that server code can populate the variables when a user creates a communication from the template. It also warns that the actual correspondent data becomes part of the final communication text, not the variables themselves."
+              },
+              {
+                "title": "Writing server code to populate communication data",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Sample Microsoft Word template content",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains how to build a Microsoft Word communication template using custom document properties and fields. It lists fields such as AddressLine1, AddressLine2, AddressLine3, personName, and userName, and describes inserting DocProperty fields via Insert > Quick Parts > Field. It also notes that the template body is saved as a standard Word document and later populated by server code with variable data returned as a BLOB name-value object when a communication is opened."
+                  },
+                  {
+                    "title": "Sample code to return data to populate a Microsoft Word communication and the structure of the returned object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Shows how a Microsoft Word communication template is populated with correspondent-specific data using custom document properties. Explains that template body stays constant while fields like AddressLine1, personName, and userName vary. Includes sample Java/JDOM code that builds a BLOB-style returned object as binary name-value pairs, with FIELD elements containing NAME and VALUE attributes (for example, personName = “James Smith”, AddressLine1 = “1074, Park Terrace”). Useful for understanding the output structure and field-mapping approach."
+                  }
+                ],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000035",
+                  "start_page": 34,
+                  "end_page": 35
+                },
+                "summary": "Explains how server code populates a Microsoft Word communication template. The template uses custom document properties (AddressLine1, AddressLine2, AddressLine3, personName, userName) inserted via Word’s Insert > Quick Parts > Field > DocProperty. The template body is constant, while variable correspondent data is returned when the communication opens as a BLOB containing binary name-value pairs. Sample JDOM code shows FIELD elements with NAME and VALUE attributes, mapping template fields to values like “James Smith” and “1074, Park Terrace.”"
+              }
+            ],
+            "node_id": "n000042",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000035",
+              "start_page": 33,
+              "end_page": 35
+            },
+            "summary": "Explains how to build a Microsoft Word communication template with placeholder fields and how server code supplies correspondent-specific values at runtime. The template is created locally in Word using custom document properties (AddressLine1, AddressLine2, AddressLine3, personName, userName) inserted via Insert > Quick Parts > Field > DocProperty. When a communication is created, the template body stays constant while placeholders are replaced by data returned from the server as a BLOB of name-value pairs, with sample JDOM code shown."
+          },
+          {
+            "title": "1.11 Configuring the FILE_EDIT widget with Google Chrome and Microsoft™ Edge",
+            "level": 2,
+            "children": [
+              {
+                "title": "Installing the Word Integration Assistant",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000042",
+                  "start_page": 38,
+                  "end_page": 42
+                },
+                "summary": "Explains how to install, uninstall, and troubleshoot the Cúram Word Integration Assistant for editing Microsoft Word documents via FILE_EDIT in Chrome/Edge on Windows. Covers prerequisites (JRE 1.8+, Word 14+, browser/native messaging checks, no Roaming User Profile), per-user vs per-machine installs, silent vs full UI MSI commands, config options like INSTALLDIR and WORD_BRIDGE_JAVA_HOME, installed files/folders, environment variables, registry keys, required post-install restart/browser close, and mustGather.bat for rechecking prerequisites."
+              },
+              {
+                "title": "Troubleshooting scripts for the Word Integration Assistant",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000048",
+                  "start_page": 43,
+                  "end_page": 48
+                },
+                "summary": "Explains how to troubleshoot the Word Integration Assistant after installation using batch and PowerShell scripts in WORD_BRIDGE_INSTALL_DIR/utils. Covers mustGather.bat for running prerequisite checks and reports, plus checks for Word, Java home, Chrome/Edge installation, browser extension enablement, native messaging host policy/block list, registry key/hostmanifest.json, and stopping hung native messaging host processes. Notes PowerShell must be installed and enabled. Also includes licensing, copyright, privacy policy, and trademark notices."
+              }
+            ],
+            "node_id": "n000047",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000048",
+              "start_page": 36,
+              "end_page": 48
+            },
+            "summary": "Explains how to configure FILE_EDIT for Microsoft Word in Chrome and Edge using the Word Integration Assistant on Windows client machines. Covers supported browser versions (104+), required browser extension and native messaging host, installation from CDEJ, per-user vs per-machine MSI install options, prerequisites (JRE 1.8+, Word 14+, no Roaming User Profile), configurable INSTALLDIR and WORD_BRIDGE_JAVA_HOME, installed files/environment/registry details, and post-install restart/close-browser needs. Also includes troubleshooting scripts in utils/mustGather.bat and related checks, plus notices."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000048",
+          "start_page": 9,
+          "end_page": 48
+        },
+        "summary": "Overview of system configuration topics for Cúram: runtime application properties and code tables (including localization, publishing, static vs dynamic values), configurable validations, language/locale mappings, and content/narrative settings. It also covers configuring security, batch processes, case audit selection queries, communication templates, BI reports/viewer options, target systems, CMS integration, and the Rich Text Editor hook for filtering corrupted note content. The section ends with Word/FILE_EDIT integration setup for Chrome/Edge and troubleshooting scripts."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

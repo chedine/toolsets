@@ -2,8 +2,21 @@ const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
+const docExport = require('./docExport');
 
 function activate(context) {
+  const wrap = (fn) => async (uri) => {
+    try { await fn(uri); }
+    catch (e) {
+      console.error('[md-presenter]', e);
+      vscode.window.showErrorMessage(`md-presenter: ${e && e.message ? e.message : e}`);
+    }
+  };
+  context.subscriptions.push(
+    vscode.commands.registerCommand('mdPresenter.toHtml', wrap(docExport.toHtml)),
+    vscode.commands.registerCommand('mdPresenter.toPdf',  wrap(docExport.toPdf)),
+  );
+
   const disposable = vscode.commands.registerCommand('mdPresenter.present', async (uri) => {
     let filePath;
     if (uri && uri.fsPath) {

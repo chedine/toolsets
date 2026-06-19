@@ -1,0 +1,1116 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "f8c18e9b568d711c",
+    "title": "Cúram 8.1.2 How to Build a Product Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/HowToBuildAProductCookbook_812.pdf",
+    "source_type": "pdf",
+    "sha256": "f8c18e9b568d711cc51658891599a079621b933329a5cc0d734e6cb024e2387c",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:50:50+00:00",
+    "page_count": 40,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/HowToBuildAProductCookbook_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 How to Build a Product Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000040",
+      "start_page": 1,
+      "end_page": 40
+    },
+    "summary": "Front matter and opening section for the Cúram 8.1.2 “How to Build a Product” guide. It introduces the guide’s purpose for designers/developers and explains building products through examples around eligibility, entitlement, and explanation. Key topics include defining product requirements, evidence capture, rules/calculations, results display, security, testing, and performance. It also covers a simple product walkthrough, configuring the product in the Administration Workspace, decision details rules and dynamic UIM display pages, and a deprecated key decision factors feature. The section includes related documentation references, a detailed table of contents, and legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice for the document/product. It tells readers to review the “Notices” section on page 39 before using the information or the supported product, and includes the copyright notice © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram product-building guide. It identifies the edition as applying to Cúram 8.1, 8.1.1, and 8.1.2, then begins the contents and chapter 1, “How to Build a Product.” The section introduces the guide’s purpose and audience, then outlines core product-design topics: defining purpose and recipients, rules/calculations, evidence capture, conveying results, and security considerations. It also signals later coverage of simple products, decision details rules, and deprecated key decision factors."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section explains how to build a simple product in Cúram: evidence sharing and security, testing rules/results, and configuring rule object data. It defines the simple product requirements, evidence attributes (start/end dates, eligible indicator, amount), and how to create and publish the evidence type. It also covers extending rule classes (DefaultProduct, ActiveSuccessionSet, DefaultCase, DefaultObjectiveType), deriving eligibility/entitlement timelines, configuring the ActiveSuccessionSet converter, and setting up the product in the Administration Workspace, including case categories and home pages."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers configuring a new product in Cúram, including eligible participant types, rules sets, display categories, product periods, eligibility settings, delivery/reassessment processing, and evidence type associations. Explains testing rule classes, coverage, logging, and determination results. Introduces building decision details rules: extending default rule sets, defining display attributes/subscreens, mapping data with rule object propagators, building dynamic UIM pages with XPath, associating decision details to product periods, and testing display output. Includes sample XML display data and currency/domain rendering notes."
+          },
+          {
+            "title": "Edition — pages 35-38",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "Explains how to build display rule classes for product decision details, using a main category class, list item class, and subscreen class to show family income data and drill down by person. Also notes that display rules can include evidence-based data not directly used in eligibility, such as sanction recommendations. Introduces deprecated key decision factors: what they are, when useful, how to define keyDataTimelines via a custom rule set, and how timelines vs. key events are displayed and assigned to a product period."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000038",
+          "start_page": 5,
+          "end_page": 38
+        },
+        "summary": "Front matter for the Cúram product-building guide, applicable to Cúram 8.1, 8.1.1, and 8.1.2. It introduces the guide’s purpose, audience, and related documentation, then covers how to build a product: defining requirements, evidence, rules, results, security, and testing. It includes a simple product walkthrough (evidence entity, rule classes, administration workspace setup), configuring product periods and decision details rules, plus sample display data and rule classes. It ends with deprecated key decision factors and how they were defined, associated, and tested."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "This section is mostly legal notices: a privacy policy link to Merative’s website, copyright/license terms for sample programs, warranty/liability disclaimers, and trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It also notes that example names in the document are fictitious and that the licensed program is provided under the Merative Client Agreement."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands, plus a privacy policy link. It states Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademark ownership/usage, and notes other names may be trademarks of others. Also includes a general disclaimer that sample programs are provided “AS IS” with no warranty and limited permission to copy/modify/distribute for compatible application development."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000039",
+          "start_page": 39,
+          "end_page": 39
+        },
+        "summary": "This notices section states the reproduction and distribution terms for the publication: personal use is allowed with proprietary notices preserved; commercial use is limited to internal enterprise use; derivative works and external distribution require Merative’s consent. It disclaims warranties, rights, and liability; warns about export-law compliance; and notes Merative may withdraw permission. It also says non-Merative product information is unverified, external websites are not endorsed, and the publications are provided “AS IS.”"
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This is the table of contents for the Cúram 8.1.2 guide section on building products. It lists major topics such as product requirements, security, testing, a simple product walkthrough, product configuration in the Administration Workspace, decision details rules, and a deprecated key decision factors section. Useful for navigating to implementation, configuration, and testing guidance for product development."
+      },
+      {
+        "title": "1 How to Build a Product",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Related Reading",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the guide’s purpose: a holistic, example-driven overview of building products on the Cúram Platform for designers and developers. It explains that the guide covers product design concepts and eligibility/entitlement processing, while deferring low-level details to other documentation. It also lists related reading for deeper coverage: Integrated Case Management Guide and Configuration Guide, Cúram Participant Guide, and Cúram Person and Prospect Person Evidence Developers Guide."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the guide’s purpose: a holistic, example-driven overview of building products on the Cúram Platform for designers and developers. It explains that the guide uses progressively complex examples to cover product design and eligibility/entitlement processing, while omitting some low-level details and pointing readers to other docs. Also lists related reading for deeper coverage: Integrated Case Management Guide, Integrated Case Management Configuration Guide, Cúram Participant Guide, and Cúram Person and Prospect Person Evidence Developers Guide."
+          },
+          {
+            "title": "1.2 Before You Start",
+            "level": 2,
+            "children": [
+              {
+                "title": "Defining Product Requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains how to define product requirements by identifying the product’s purpose, recipients, and decision logic. It emphasizes the “three Es” needed across a case lifecycle: Eligibility, Entitlement, and Explanation. It also notes that requirements must capture the rules and recipient information used to determine benefits, and that decisions must be explainable. An income-assistance example shows the need to identify family members, family needs, and the amount of assistance required, highlighting the complexity of family-based products and changing circumstances."
+              },
+              {
+                "title": "What Purpose Does the Product Serve?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains that product requirements should start with the product’s purpose, recipients, and how benefits/services are delivered. It outlines the “three Es” needed over the case lifetime: Eligibility, Entitlement, and Explanation. Using income assistance as an example, it shows that a product may need to identify family members, assess family needs, and calculate required assistance. It also stresses that recipient definition can be complex because products often serve families with varying needs, disabilities, children, and changing household relationships."
+              },
+              {
+                "title": "Who Are the Recipients of the Product?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Recipients are not always just the eligible individual; they may be families or other groups whose needs vary over time. The section stresses that product design must consider whose needs are being met, including factors like children, disability, and changing household relationships such as a wage earner leaving. It frames recipient definition as part of broader product requirements alongside purpose, eligibility, entitlement, and explanation."
+              },
+              {
+                "title": "What Rules (and Calculations) Are Required to Achieve the Purpose?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how Cúram Express Rules support eligibility and entitlement decisions through question-and-answer based rule design. Covers three rule types: Determination Rules, Decision Display Rules, and Key Decision Factor Rules, with different design approaches for each. Describes how effective rule design groups related questions and uses answers in downstream calculations. Also outlines where input data comes from—system tables, case evidence, and rate tables—and notes that rule object propagators link real-world data to rules, with out-of-the-box support for evidence types and rate tables."
+              },
+              {
+                "title": "What Information Needs to be Captured for these Rules and How?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains how rules should capture underlying real-world data for eligibility, entitlement, decision display, and key decision factor rules. It notes that rules are built as linked questions, with answers often feeding other calculations, and that basic data may come from existing system tables, case evidence, or rate tables. It also introduces dynamic evidence for defining evidence and rule object propagators for connecting evidence types and rate tables to Cúram Express Rules."
+              },
+              {
+                "title": "Capturing the Evidence That Feeds Into the Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section says most rule data comes from evidence, which can be captured at the Integrated Case or Product level, and refers readers to the Evidence Guide for details. It also introduces why results must be conveyed: agencies need to show how eligibility and entitlement decisions were made, what information was used, and how calculations were derived, especially across a case’s lifetime. It notes the key decision factors feature is deprecated and that security considerations are covered only at a high level here."
+              },
+              {
+                "title": "What Results Need to Be Conveyed and How?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains what decision results should convey to users: eligibility/ineligibility reasons, information used in determinations, and entitlement calculation details. Emphasizes showing the “big picture” across a case’s lifetime, including changing circumstances and projected future milestones such as ages that affect benefits. Notes that key decision factors are deprecated, and that calculations can appear on decision details pages. Also briefly introduces security as an important but separately covered product concern."
+              },
+              {
+                "title": "Securing the Product",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "High-level security considerations for building a product. Emphasizes that security is important for managing sensitive, privacy-protected data, but detailed security guidance is out of scope. Points readers to the Server Developer’s Guide and System Administration Guide. This section serves as an introduction to security topics to consider before implementing a product."
+              },
+              {
+                "title": "How Will Sensitive Data Be Protected?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how sensitive data is secured in Cúram products: identify data that appears in evidence, rules, decision details, and key decision factors, then apply page-, entity-, or attribute-level security. Notes security must protect both visibility and maintenance of data. Describes product security for controlling who can reconfigure products, access evidence at product or integrated case level, and approve product deliveries; when multiple products apply, the most liberal security settings are used. Product approvals must be configured for approval security to work."
+              },
+              {
+                "title": "What Impact Do Product Changes Have on Existing Cases?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how product changes can affect many existing cases and why security matters for product maintenance. Describes securing product configuration changes with a product security identifier, and how evidence access is governed at the product or integrated case level, with the most liberal security applied when evidence spans multiple products. Also covers optional approval security for high-cost products, where only users with the approve-rights security identifier can activate cases, assuming product approvals are configured."
+              },
+              {
+                "title": "Should Only Certain Users Approve Product Deliveries?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains product approval security for high-cost products. A product security identifier can be assigned to product approve rights so only users with that role security can approve cases for activation. Notes that product approvals must be configured first, and refers readers to the Integrated Case Management Guide for setup details."
+              },
+              {
+                "title": "Will Evidence Be Shared across Products?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how evidence can be shared at the integrated case level across products, or across agencies via the Evidence Broker, and notes the added security complexity. Describes centralized evidence security in the Evidence API, including product-level checks, integrated-case product lists, and maintenance-rights validation. Then shifts to testing the product: recommends testing throughout development, covers CER Rules Editor validation, rules coverage, unit and integration testing, and checking eligibility/entitlement results through product delivery and manual testing."
+              },
+              {
+                "title": "Testing the Product",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section gives a high-level overview of product testing. It recommends testing throughout development and covers key areas: validating CER rules structure with the Rules Editor, using unit tests and the rules coverage tool to measure rule execution, and performing integration testing on grouped rules and outputs. It also highlights testing results by verifying expected eligibility and entitlement outcomes, typically by creating a product delivery and testing manually."
+              },
+              {
+                "title": "Testing Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section covers testing a product’s rules and results. It explains that the CER Rules Editor validates rule structure, nesting, logical flow, and conflicting expressions. It also describes CER’s rules coverage tool, which measures how much of a ruleset is exercised by unit tests. The section emphasizes writing unit tests for individual rules and higher-level integration tests for groups of rules, using demonstration data to verify outputs. It also introduces testing eligibility and entitlement results by creating a product delivery and performing manual testing."
+              },
+              {
+                "title": "Testing Results",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains testing considerations for building a product, focusing on evidence sharing security, rule validation, and result verification. It describes how evidence can be shared at the integrated case, product, or agency level, with security checks enforced by the Evidence API and Evidence Broker. It recommends testing throughout development, using the CER Rules Editor to validate rule structure, unit tests and rules coverage for execution percentages, and integration tests for grouped rules. It also notes that a practical results check is creating a product delivery and performing manual validation of eligibility and entitlement outcomes."
+              },
+              {
+                "title": "Testing Rule Object Data Configurations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains how to test rule object data configurations in eligibility processing. By default, configuration errors such as missing tables or evidence types are logged as warnings, but behavior can be changed with the ENV_RULEOBJECTPROPAGATION_CONFIGURATION_ERROR_LEVEL setting: Error rolls back processing, Warn logs and continues, Ignore suppresses reporting. It also notes that some entity operations cannot reliably identify precedent changes, so warnings may require manual reassessment of affected cases."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000015",
+              "start_page": 10,
+              "end_page": 15
+            },
+            "summary": "Introductory guidance for building a product. It says to define requirements first: product purpose, recipients, eligibility/entitlement rules, and explanation of decisions across the case lifecycle (“three Es”). It highlights complex family-based recipients, evidence and rule object propagators, and how results should show calculations and changing circumstances. It then gives high-level security considerations: protect sensitive data at page/entity/attribute levels, control product maintenance and approvals, and handle shared evidence carefully. Finally, it outlines testing: validate CER rules, use unit/integration tests, and verify eligibility/entitlement results manually."
+          },
+          {
+            "title": "1.3 Building a Simple Product",
+            "level": 2,
+            "children": [
+              {
+                "title": "Simple Product Requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains the basic requirements for a simple product in product design. The product’s purpose is to determine when a claimant is eligible during the case lifetime and how much they are entitled to receive in those eligible periods. It identifies core questions (who the claimant is, case start/end dates, eligibility periods, and entitlement amounts), the needed inputs (claimant status, case details, eligibility and entitlement information), and the outputs (eligible/ineligible periods and payment amounts). Also introduces the principle of reusing existing components."
+              },
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Defines the simple product’s goal: determine when a claimant is eligible during a case lifetime and the monetary entitlement during eligible periods. It lists the core questions the rules must answer (who the claimant is, case start/end dates, eligibility periods, and entitlement amounts), the needed inputs (claimant status, case details, eligibility and entitlement information), and the outputs to convey (eligible/ineligible periods and payment amount). Useful as an overview of basic product requirements and design scope."
+              },
+              {
+                "title": "Rules Required to Achieve Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Defines the basic rules needed for a simple product whose purpose is to determine claimant eligibility periods and the monetary entitlement during those periods. It identifies the core questions: who the claimant is, the case start/end dates, when eligibility applies, and what amount is payable. It also lists required inputs (claimant status, case details, eligibility and entitlement information) and the outputs to convey: eligible/ineligible periods across the case lifetime and the entitlement amount during eligible periods."
+              },
+              {
+                "title": "Information Required by these Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section identifies the data needed to implement the simple product rules: claimant information (e.g., whether alive), case details (case ID and start/end dates), eligibility period information, and entitlement amount information during eligible periods. It follows the basic product questions of who the claimant is, the case timeframe, when the claimant is eligible, and what they are entitled to receive. Useful for understanding the inputs required before designing eligibility and entitlement logic."
+              },
+              {
+                "title": "Results to Be Conveyed",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section explains the outputs of a simple product: the case-level eligible and ineligible periods across the lifetime of the case, plus the entitlement amount during eligible periods. It follows the earlier requirements, identifying the claimant, case dates, eligibility periods, and entitlement amounts as the core information needed. This node is useful if you want a basic example of product design output and the results a product must convey."
+              },
+              {
+                "title": "Essential to Product Building - Use What You Already Have",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains the basic requirements for a simple product: identify the claimant, case start/end dates, eligibility periods, and entitlement amounts during those periods. It lists the information needed to support these rules (claimant status, case data, eligibility and entitlement facts) and the outputs to convey: eligible/ineligible periods and monetary entitlement across the case lifetime. Also introduces the idea that product design should use existing capabilities, with rules for eligibility/entitlement and explanation as the main tasks."
+              },
+              {
+                "title": "Creating a Simple Product Evidence Entity",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Defines a simple product evidence entity for eligibility and entitlement tracking. It explains that the data is temporal and lists the key attributes: startDate, endDate, eligibleInd (true/false eligibility flag), and amount, which must be nonzero when eligible and can vary over time. It also begins the admin setup steps for creating the evidence type, starting with Dynamic Evidence > New and entering mandatory fields like Evidence Type, Logical Name, Effective From, and Security Group."
+              },
+              {
+                "title": "How to Create the Simple Product Evidence Type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains how to create the Simple Product Evidence Type in the Admin Application. It introduces the need for a basic evidence entity to capture eligibility/entitlement data and lists key attributes such as startDate, endDate, eligibleInd, and amount, with temporal changes over time. It then begins the setup steps for Dynamic Evidence, including using the New button and entering required fields: Evidence Type, Logical Name, Effective From, and Security Group."
+              },
+              {
+                "title": "Linking the Simple Product Evidence Type to Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how a newly created and published Simple Product evidence type is linked to rules: publishing adds an EvidenceType code, creates a corresponding data rule set, and configures case evidence records to populate generated data rule class instances. Also introduces core eligibility/entitlement rule infrastructure, including ProductEligibilityEntitlementRuleSet, DefaultProductEligibilityEntitlementRuleSet, and ActiveSuccessionSet for temporal rules. Notes that DefaultProduct should usually be extended for CREOLE products rather than the lower-level rule classes."
+              },
+              {
+                "title": "Using and Extending Rule Classes Included with the Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000020",
+                  "start_page": 19,
+                  "end_page": 20
+                },
+                "summary": "Describes the core rule classes used by Cúram eligibility/entitlement products and how to extend them safely. It explains that ProductEligibilityEntitlementRuleSet is the interface between engine Java code and product rules, while DefaultProductEligibilityEntitlementRuleSet provides recommended base implementations. Key classes covered are DefaultProduct, ActiveSuccessionSet, DefaultCase, CaseParticipantRole, and Person, with notes on what each does and which are not used by the simple product. Includes guidance on extending default classes and using succession date tags."
+              },
+              {
+                "title": "Extending the DefaultProduct Rule Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "This section explains how to extend the DefaultProduct rule class for a product that includes entitlement amounts. It says you must define at least one objective type and one objective tag type; in the example, SimpleObjectiveType and DailyObjectiveTagType are added. DailyObjectiveTagType requires tagTypeID, name, pattern, and valueType (RTT3, Money). It also describes extending ActiveSuccessionSet to match Simple Product Evidence with startDate, endDate, and eligibleInd boolean timeline attributes used to derive eligibility periods."
+              },
+              {
+                "title": "Extending the ActiveSuccessionSet Rule Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "This section explains how to extend the ActiveSuccessionSet rule class so it matches Simple Product Evidence. It adds three required attributes: startDate and endDate for the evidence period, and eligibleInd, a Boolean timeline used with those dates to derive the claimant’s eligibility period. The page also situates this within product setup, noting that entitlement products need objective and objective tag types, such as a SimpleObjectiveType and DailyObjectiveTagType, to support financial schedules."
+              },
+              {
+                "title": "Extending the DefaultCase Rule Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains how to extend the DefaultCase rule class for a simple product. DefaultCase must derive the isEligibleTimeline to determine eligible periods over a legislative period using active evidence startDate, endDate, and eligibleInd values. It notes that isEntitledTimeline is also needed in the DefaultObjectiveType class to define entitlement conditions. The section describes succession set periods for timeline-based eligibility/entitlement and references external guidance for constructing timeline operations."
+              },
+              {
+                "title": "Deriving the Eligibility and Entitlement Timelines",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains how to derive eligibility and entitlement timelines for a simple product case. The DefaultCase rule class is extended to build an isEligibleTimeline from active simple product evidence using startDate, endDate, and eligibleInd, producing succession set periods over the product’s lifetime. It also notes that DefaultObjectiveType must be extended in the DefaultProductEligibilityEntitlementRuleSet to define the objective and provide an isEntitledTimeline. Mentions SuccessionSetPopulation annotations for evidence lifetime and that timeline operation construction details are outside this document."
+              },
+              {
+                "title": "Configuring Rule Object Converters Included with the Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains how to configure rule object converters for the simple product in CER. It says XML data configurations link rules to required data, and summarizes the included converters: Entity for persons and case participants, ActiveSuccessionSet for simple evidence timeline data, and ProductDelivery for CER-based product delivery cases. It then introduces configuring ActiveSuccessionSet specifically, noting it needs XML to access Simple Product Evidence and showing an example propagator configuration for the SimpleProductEligibilityEntitlementRuleSet."
+              },
+              {
+                "title": "Configuring the ActiveSuccessionSet Rule Object Converter",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains how to configure the ActiveSuccessionSet rule object converter for the simple product. It notes that this converter retrieves timeline-aware rule objects and populates them with matching evidence data, and requires an XML data configuration to access Simple Product Evidence. The example configuration uses propagator type ROPT2005, evidence type ET99901, and the SimpleProductEligibilityEntitlementRuleSet ruleset. Includes brief context on rule object converters in the application and mentions that ActiveSuccessionSet must be configured for the new simple evidence type."
+              },
+              {
+                "title": "Configuring the Product in the Administration Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains basic administration-workspace setup for a simple product. Covers creating products with the dynamic product wizard, requiring a unique name, eligible participant types, and linked integrated case categories. Notes that a default eligibility/entitlement rule set is auto-created and can be renamed within naming standards. Describes associating integrated case categories via the wizard or actions menu to control case creation, with a note that standalone product deliveries need no category. Also introduces product and integrated case home pages, which default if not explicitly specified."
+              },
+              {
+                "title": "Creating the Product",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to create a product in Cúram’s dynamic product wizard: set a unique product name, choose eligible participant types, and associate integrated case categories. Notes that a default eligibility/entitlement rule set is auto-created and can be renamed within schema rules. Also covers why integrated case categories matter for filtering case creation, including the standalone product exception. Introduces product and integrated case home pages, which can fall back to defaults if not specified."
+              },
+              {
+                "title": "Associating Integrated Case Categories",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to associate integrated case categories to a simple product in the dynamic product wizard or from the product home page. These associations act as filters during case creation, determining the integrated case type and which product delivery case types can be created. The section stresses choosing the correct category so product delivery cases can be created in the right integrated case type. It also notes standalone product deliveries do not require an integrated case category."
+              },
+              {
+                "title": "Defining the Product Home Pages",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This section explains product home page configuration for a new product. It identifies two home page types: the integrated case home page and the product delivery case home page. Because integrated cases and products can be created dynamically without explicit page references, both use default pages supplied with the application when no home page is specified. This is relevant if you need to understand or override the default UI pages used for product and integrated case navigation."
+              },
+              {
+                "title": "Defining the Eligible Participant Types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how to define eligible participant types for a new product. For the simple product, only person is eligible. Also outlines related product configuration: rule sets for display categories, product periods, and eligibility/entitlement rules; automatic creation and deferred publication of default rule sets and a product period for benefit products via the dynamic product wizard. Mentions display categories for decision details pages, with the basic CREOLE display page sufficient for a simple product."
+              },
+              {
+                "title": "Rules Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how to configure rule-related settings for a newly created product via the Rule Sets tab. Covers display categories for case determination pages, product periods and their associated rule classes, and eligibility/entitlement determination settings. Notes that a default eligibility and entitlement rule set is automatically created for benefit products, along with a default product period that is published in a deferred process after the dynamic product wizard completes. Also mentions the basic CREOLE display page for simple products and that key decision factors are deprecated."
+              },
+              {
+                "title": "Defining Display Categories",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how display categories configure decision details for Product Delivery cases, including both the category and page used to show rule outputs. Gives an example category (“Household Income”) and notes that at least one category is required for details to display. For simple products, the basic CREOLE category/page (CREOLEDisplayRules_basicCaseDisplay) is sufficient and lists eligible objectives."
+              },
+              {
+                "title": "Defining Product Periods and Associated Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "This section explains product periods and their rule configuration. It says a product may have multiple periods, each defining rule settings for that duration. For benefit products created with the dynamic product wizard, a default product period is automatically inserted, using specified product structure and eligibility/entitlement rule classes. It also notes that a default eligibility and entitlement rule set and product period are created and published via a deferred process when the wizard completes. The key decision factors feature is deprecated."
+              },
+              {
+                "title": "Defining Eligibility Determination Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "This section explains eligibility determination settings for a benefit product. It notes that the default product period’s eligibility and entitlement rule set is created by the dynamic product wizard but remains in edit mode and must be updated before use. It describes the roles of the product structure class, eligibility and entitlement rule class, optional key decision factor and decision details rule sets, and four key settings: Allow Open Ended Cases, Decision Summary Display Strategy, Determination Comparison Strategy, and Reassessment Strategy, with the simple product’s default choices."
+              },
+              {
+                "title": "Configuring Financial and Reassessment Processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to configure financial and reassessment processing for a product: define a default delivery pattern so financial schedules can be created, and set how over/underpayments are handled during reassessment, including rolled-up versus payment-correction cases. Notes that evidence types can be associated at either the product or integrated case level, with the sample using integrated case association. Also introduces testing the product by generating CER rule test classes and enabling rule set coverage logging via a Bootstrap.properties setting to produce HTML coverage reports."
+              },
+              {
+                "title": "Associating Evidence Types with the Product or Integrated Case",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to associate dynamic evidence types to either the integrated case or the product, depending on where evidence is managed; the sample product uses the integrated case level via the Evidence Types tab on the integrated case type home page. Also covers configuring financial and reassessment processing: default delivery patterns, case-level delivery patterns, and handling over/underpayments via rolled-up or payment-correction cases. Briefly introduces testing the product, including generating CER test classes and enabling rule set coverage logging."
+              },
+              {
+                "title": "Testing the Product",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "High-level guidance for testing the simple product’s rules, rule object data configurations, and determination results. It explains how to generate CER rule test classes using `build creole.generate.test.classes` after extracting the rule set from the database, and notes that generated classes are placed in a specified location. It also covers rule set coverage tracking via a configurable HTML report and the `curam.creole.coverage.logfile` property, which logs expression evaluation coverage until the file is deleted."
+              },
+              {
+                "title": "Creating Test Classes for Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to test CER rules for the simple product. It says generated test classes can be created from an extracted rule set using the command `build creole.generate.test.classes`, and notes they are written to a specific output location. It also introduces rule set coverage tracking: configure `curam.creole.coverage.logfile` in `Bootstrap.properties` to log expression coverage during tests or online use, then generate an HTML coverage report and clear data by deleting the log file."
+              },
+              {
+                "title": "Testing Rule Set Coverage Along the Way",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to test rule set coverage during CER rule testing. It notes that a rule set coverage tool can generate an HTML report showing test coverage, and that coverage data is captured by setting the `curam.creole.coverage.logfile` environment property in `Bootstrap.properties` to a file path. Coverage lines are appended whenever expressions are calculated, and deleting the file clears collected coverage data."
+              },
+              {
+                "title": "Use Logging to Test Rule Object Data Configurations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to test rule object data configurations before publishing a product using the curam.trace.ruleobjectpropagation environment variable to log database writes, converter interest in writes, and values set on CER rule attributes. Also notes basic determination-result testing: creating cases, capturing/activating evidence, running manual eligibility checks, activating the product delivery case, and verifying eligibility/entitlement determinations. Introduces the next topic: building decision details rules, with references to the out-of-the-box simple decision summary pages and rule set locations."
+              },
+              {
+                "title": "Testing the Determination Results",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how to test determination results by verifying eligibility and entitlement match activated evidence. Key checks include creating an integrated case and product delivery case, capturing and activating simple evidence, using manual eligibility check to simulate case determination, activating the product delivery case, and confirming the resulting determination reflects the evidence. Also notes the out-of-the-box decision details pages and rulesets used later for building simple product decision detail rules, with file locations for the sample UI and ruleset."
+              }
+            ],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000027",
+              "start_page": 16,
+              "end_page": 27
+            },
+            "summary": "Walkthrough of building a simple Cúram product, from requirements to configuration and testing. Covers the product’s purpose (determine claimant eligibility periods and entitlement amounts), needed inputs/outputs, and reusing existing rule classes and evidence. Describes creating a temporal evidence type with start/end dates, eligibility flag, and amount; linking it to rules; configuring product structure, periods, display categories, financial/reassessment settings, and evidence associations. Also outlines testing rules, coverage, and determination results. Useful for product-design basics and simple product setup."
+          },
+          {
+            "title": "1.4 Building Decision Details Rules",
+            "level": 2,
+            "children": [
+              {
+                "title": "Basic Steps to Follow in Designing Decision Details Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains the basic workflow for designing decision details rules in product building. It covers identifying display rule categories, planning dynamic UIM screenflows, assigning business object IDs, creating entry-point and subscreen rule classes, annotating displayable attributes, implementing derivations, mapping business object data via rule object propagators, and writing UIM pages. Also defines the main display categories: eligibility, entitled objectives, and objective tags, noting that out-of-the-box summary and subscreen pages support these core details."
+              },
+              {
+                "title": "Defining The Display Category",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains how to define display categories for decision-details rules and what to show on product summary screens. It outlines required setup: identify display rule categories, design screenflows and business object IDs, create entry-point and subscreen rule classes, annotate displayable attributes, implement derivations, map data via propagators, and build dynamic UIM pages. It also states the key basic outputs for case workers: client eligibility, entitled objectives, and objective tags, typically shown via the out-of-the-box summary display rules screen and subscreens."
+              },
+              {
+                "title": "Defining The Display Page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "This section explains how to define a summary display page for decision details. It says the page should show whether the client is eligible and, if eligible, the objectives and associated tags in a subscreen. It then outlines how to identify inputs for display rules and extend the decision details rule set using DefaultProductDecisionDetailsRuleSet.DefaultCase and DefaultCaseSubscreenDisplay. It also notes the key attribute isEligibleTimeline, mapped from the eligibility/entitlement rule set and annotated for display."
+              },
+              {
+                "title": "Identifying the Input for the Display Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains how to identify the inputs needed by display rules for a decision summary page. It says the summary screen should show client eligibility plus eligible objectives/tags from a subscreen, and that these inputs typically come from the eligibility and entitlement rule set. The section introduces extending DefaultProductDecisionDetailsRuleSet with SimpleProductDecisionDetails and DefaultCaseSubscreenDisplay with SimpleProductObjectiveTimelineSubscreen, and notes a key attribute, isEligibleTimeline, on AbstractSimpleProductDecisionDetails with a Display annotation."
+              },
+              {
+                "title": "Extending the Decision Details Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains how to extend the decision details rule set for a product summary display. The section says the summary page should show client eligibility plus eligible objectives and tags in a subscreen. It specifies creating a class extending `DefaultProductDecisionDetailsRuleSet.DefaultCase` for the main display and `DefaultCaseSubscreenDisplay` for the subscreen. It also highlights a required attribute, `isEligibleTimeline`, on `AbstractSimpleProductDecisionDetails`, which references the eligibility/entitlement rule set and needs a `Display` annotation."
+              },
+              {
+                "title": "Mapping Business Object Data to Decision Details Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how business object data is mapped into decision display rules using rule object propagators. It notes that out-of-the-box propagators already populate data for simple decision display rules. The section also introduces dynamic UIM page setup and the generic facades used to retrieve display data: CaseDetermination.viewDecisionDisplayRulesCategoryXML and CaseDetermination.viewDecisionDisplayRuleCategorySubscreenXML, with inputs such as determinationID, date, and categoryRef. It includes attributes like displayObjectiveTimelines, displayObjectiveTimelineSubscreens, businessObjectID, and displayTagTimelines."
+              },
+              {
+                "title": "Building & Configuring Dynamic UIM Pages",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000032",
+                  "start_page": 31,
+                  "end_page": 32
+                },
+                "summary": "Explains how to build and configure dynamic UIM pages for display rules. It identifies the two generic facades used to fetch XML for decision display pages and subscreens, their required inputs (determinationID, date, categoryRef, and businessObjectID for subscreens), and stresses that categoryRef must match the ruleset configuration. It also shows how XML data is consumed via XPath in UIM snippets and notes that deeper rule-class hierarchies create more complex XML and XPath handling."
+              },
+              {
+                "title": "Associating Decision Details Rules to the Product Period",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how to associate decision details rules to a product period in a product’s Rule Sets tab: open the rule set in edit mode, go to Product Periods, expand the period, and use Associate Decision Details Rule. Notes that at least one display category must be defined first, including the Basic category for the out-of-the-box SimpleDevelopmentProductDecisionDetailsRuleSet.BasicCase. Also covers testing decision details rules via case activation or check eligibility and mentions additional sample decision details pages."
+              },
+              {
+                "title": "Testing Decision Details Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how to test decision details rules pages by making determinations on a product delivery via case activation or check eligibility. Emphasizes that page layout and data presentation should be validated, and dynamic UIM pages may need adjustment for readability. Notes that this chapter’s summary page is basic and introduces additional, more realistic samples for building decision details pages. Also points readers to the Cúram Express Rules Reference Manual for ruleset testing and coverage details."
+              },
+              {
+                "title": "Additional Samples for Creating Decision Details Pages",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "This section introduces additional, more realistic sample decision details pages beyond the basic summary page used in the chapter. It follows guidance on associating decision details rules to a product period and testing those rules via case activation or check eligibility, with a note that page layout may require UIM adjustments for readability."
+              },
+              {
+                "title": "Display Data Samples",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Shows example XML display data for an Income category result, including family total income and member income entries, plus a second example for a specific business object/subscreen type. Also explains CURAM_AMOUNT currency rendering: the framework adds currency symbols automatically for that domain, while freeform text requires manually localizing symbol/placement in properties files with examples for English and French."
+              },
+              {
+                "title": "Main Category Display Class Sample",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Defines a sample main category display class, `IncomeCategory`, for a product’s main screen. It shows a family’s total income and lists family members with their income details. The example highlights display annotations such as `Display`, `DisplaySubscreen`, and the `CURAM_MONEY` domain, plus list-typed attributes referencing rule classes like `CaseParticipantClass` and `CaseParticipantFullIncomeClass`. Also begins a standard rule class example used by the display class, with attributes such as `concernRoleID` and total income."
+              },
+              {
+                "title": "Sample of Standard Rule Class Used by the Main Display Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Shows example rule classes for a main display category and its supporting list item class. The main class `IncomeCategory` extends `DefaultCase` and uses `DefaultProductDecisionDetailsRuleSet`, with display attributes for family total income, a family member list, and a subscreen list of full income details. The sample standard rule class `CaseParticipantClass` is used in the list and stores a family member’s `concernRoleID`, name, and total income."
+              },
+              {
+                "title": "Subscreen Rule Class Sample",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains a subscreen rule class sample for an expandable list on a main category page. The class holds income records for a selected family member, using the person’s concernRoleID as businessObjectID. At runtime, the selected person’s concernRoleID is passed to the UIM, which queries by attributeName (example: familyMemberFullIncomeList) plus standard parameters like determinationID, category, and date. Includes a sample XML class definition extending DefaultCaseSubscreenDisplay and DefaultProductDecisionDetailsRuleSet."
+              },
+              {
+                "title": "Example of Display Rules Derived From Evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "This section explains that display rules can include evidence not directly used for eligibility/entitlement, such as sanction recommendations and their reasons. It then introduces deprecated “key decision factors,” describing them as optional, graphically presented data points that help caseworkers understand what influenced a determination (for example, income, medical conditions, or life events). It notes they are especially useful in complex products with lots of evidence, and outlines how to create them using a custom KeyDecisionFactor rule set extending DefaultProductKeyDataRuleSet.DefaultCase and deriving keyDataTimelines."
+              }
+            ],
+            "node_id": "n000064",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000036",
+              "start_page": 28,
+              "end_page": 36
+            },
+            "summary": "Explains how to build decision details rules for product summary pages. It covers defining display categories, designing screenflows and business object IDs, creating entry-point and subscreen rule classes, annotating display attributes, deriving data, using rule object propagators, and building dynamic UIM pages. It describes the basic summary output: client eligibility, entitled objectives, and objective tags, and shows how to extend `DefaultProductDecisionDetailsRuleSet`, map XML data, associate rules to product periods, test pages, and use sample income display/subscreen classes."
+          },
+          {
+            "title": "1.5 (deprecated) Key Decision Factors",
+            "level": 2,
+            "children": [
+              {
+                "title": "(deprecated) Creating Key Decision Factor Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "This deprecated section explains how to add key decision factor information to determinations by creating a custom KeyDecisionFactor ruleset. It says the ruleset should extend DefaultProductKeyDataRuleSet.DefaultCase and derive the keyDataTimelines attribute, which assembles the data shown on screen. keyDataTimelines returns a list of AbstractKeyDataTimeline classes, each representing a category that may implement timeline, keyEvents, or both. It also frames key decision factors as optional but useful for complex products with many evidence changes."
+              },
+              {
+                "title": "(deprecated) Associating Key Decision Factor Rules to the Product Period",
+                "level": 3,
+                "children": [],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Explains that key decision factor rules can be assigned to a product period via the Rule Sets configuration tab, similar to decision details rules. Notes the two key decision factor display types: event attributes shown as “<event> on <date>” and timeline attributes shown as change histories like “Changed from <old> to <new> on <date>.” Also mentions that if timeline attributes are reused from eligibility/entitlement rules, existing CER rule tests may already apply."
+              },
+              {
+                "title": "(deprecated) Testing Key Decision Factor Rules",
+                "level": 3,
+                "children": [],
+                "node_id": "n000083",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000040",
+                  "start_page": 38,
+                  "end_page": 40
+                },
+                "summary": "Explains deprecated testing for key decision factor rules in Cúram. It notes that if key decision factor rules reuse timeline attributes from eligibility/entitlement timelines, tests may already exist, and CER rule testing uses the framework described earlier in the guide. Also includes nearby deprecated guidance on associating key decision factor rules to a product period, plus standard Merative notices, copyright, privacy policy, and trademarks on the following pages."
+              }
+            ],
+            "node_id": "n000080",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000040",
+              "start_page": 37,
+              "end_page": 40
+            },
+            "summary": "Deprecated section explaining key decision factors in Cúram product rules. It defines key decision factors as optional data that helps caseworkers understand eligibility/entitlement results, especially for complex products with many evidence changes. It shows how to create a custom KeyDecisionFactor ruleset extending DefaultProductKeyDataRuleSet.DefaultCase and deriving keyDataTimelines, which returns AbstractKeyDataTimeline categories using timeline and/or keyEvents. It also covers the two display formats and how to assign and test these rules at the product period level."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000040",
+          "start_page": 9,
+          "end_page": 40
+        },
+        "summary": "Section 1 introduces how to build a Cúram product through example-driven guidance. It frames product design around the “three Es” (Eligibility, Entitlement, Explanation), covering requirements, recipients, rules/calculations, evidence capture, security, testing, and performance. It includes a simple product walkthrough, decision details rules for summary pages, and deprecated key decision factors. The section also points to related guides on case management, evidence, participant concepts, CER, and client/web development for deeper detail."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

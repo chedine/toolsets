@@ -1,0 +1,374 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "21a1ed382e8791bc",
+    "title": "Cúram 8.1.2 Communications Overview Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramCommunicationsGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "21a1ed382e8791bc017cff67128b2fb63d5b49cf1c3dd7a3781bdce949b3355f",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:10:51+00:00",
+    "page_count": 18,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramCommunicationsGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Communications Overview Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000018",
+      "start_page": 1,
+      "end_page": 18
+    },
+    "summary": "Overview of Cúram 8.1.2 communications. Explains how communications are incoming or outgoing, tied to a case or participant, and always linked to a correspondent whose contact details may be auto-retrieved or created as a representative role. Describes how case communications appear on case and correspondent lists, while participant communications stay on the participant’s list, plus how client interactions aggregate communications, payments, and calls. Covers communication exceptions that block disallowed contact methods. Introduces four communication types: recorded, email, pro forma, and Microsoft Word. Recorded communications capture outside-system interactions and can integrate attachments with a CMS. Email communications require valid addresses and can be drafted before sending. Pro forma communications use XSL templates, support batch generation, template versioning for reprints, and CMS storage. Word communications are manually editable from Word templates, but become fixed after sending. Also notes template filtering by participant/case and product/person type, and restricted characters for Word template data.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note directing readers to review the Notices section on page 17 before using the information or product. Includes Merative US L.P. copyright dates (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section states the edition applicability for Cúram 8.1, 8.1.1, and 8.1.2, then introduces the communications framework. It outlines general communication features, correspondents, case vs participant communication display rules, client interactions, and communication exceptions. It summarizes four communication categories: recorded, email, pro forma, and Microsoft Word. It also explains communication templates, including XSL templates for automated pro forma generation and Microsoft Word templates for manual, customizable communications, plus notes on content management system integration and template versioning."
+          },
+          {
+            "title": "Edition — pages 15-16",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "Explains how Microsoft Word templates are used to create communications with variable data, how template data becomes part of the saved communication, and the differences from XSL templates. Covers maintenance requirements, editing limits after a Word communication is sent, and restrictions on variable content characters. Also describes template filtering: Word templates are limited to participant or case associations, while XSL templates can be filtered by participant/product types, including person-only templates."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000016",
+          "start_page": 5,
+          "end_page": 16
+        },
+        "summary": "Introduces the Cúram communications overview for 8.1/8.1.1/8.1.2. Covers general communication features: correspondents, case vs participant display rules, client interactions, and communication exceptions. Describes four communication categories: recorded, email, pro forma, and Microsoft Word. Explains communication templates, including XSL templates for automated pro forma generation with versioning, and Word templates for manual, editable communications with variable data. Also notes CMS integration, post-send editing limits, restricted template data characters, and template filtering by participant/case and product/person type."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Provides legal notices for the document: sample data and program examples are fictitious, sample code is offered “AS IS” without warranty, and Merative disclaims liability. Includes the Merative privacy policy URL, plus trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, along with copyright attribution to Merative US L.P. (2012, 2024)."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Lists trademark and copyright notices for the document. States that sample names, companies, and products are fictitious; sample programs may be copied, modified, and distributed under the Merative Client Agreement but are provided “AS IS” without warranty. Includes the Merative privacy policy link. Identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes that other names may be trademarks of others."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000017",
+          "start_page": 17,
+          "end_page": 17
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise reproduction is allowed only with proprietary notices preserved; redistribution, derivative works, and use outside allowed terms need Merative consent. It disclaims all warranties, limits rights to the content, and notes export-law compliance. The section also states Merative makes no guarantee about accuracy or third-party products/websites, and includes patent, trademark, privacy-policy, and copyright notices (Merative US L.P. 2012, 2024)."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition) and section 1, “Cúram communications overview,” with subsections on general communication features, communication categories, and communication templates. Topics include correspondents, case and participant communication information, client interactions, communication exceptions, recorded/email/pro forma/Word communications, XSL and Word templates, generating pro forma communications, creating Word communications from templates, and filtering templates. Also includes notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Cúram communications overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 General communication features",
+            "level": 2,
+            "children": [
+              {
+                "title": "Correspondents",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Defines “correspondents” in Cúram communications: the individuals or businesses contacted by the organization, such as clients, employers, agents, and public representatives. Explains that correspondents can be selected from existing participants or added as new ones, with the system auto-retrieving mailing address, phone number, or email depending on communication type. New correspondents create a representative participant role. Also clarifies how communications relate to cases vs. participants and where they appear in communication lists."
+              },
+              {
+                "title": "Case and participant communication information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains Cúram communications basics for cases and participants. Covers communication types (recorded, email, pro forma, Word), incoming vs. outgoing exchanges, free-form or template-based messages, and how correspondents are selected or created. Describes how contact details are auto-retrieved for registered correspondents and how a new representative participant role is created for new correspondents. Also clarifies that case communications appear on case-related lists, while participant communications appear only on that participant’s communications list, even if sent to someone else."
+              },
+              {
+                "title": "Client interactions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains client interactions and communication handling. It says all client interactions are stored to give a full overview of a participant’s contact history, including communications, payments, and call-center phone calls. It also covers communication exceptions, which block specific contact methods for a participant. The section introduces communication categories—recorded, email, pro forma, and Microsoft Word—and notes that recorded communications capture details of interactions handled outside the system, such as scanned forms received by the organization."
+              },
+              {
+                "title": "Communication exceptions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Communication exceptions define communication methods that must not be used to contact a participant. If a correspondent has an active exception, that method is unavailable when creating a communication; for example, a hardcopy exception blocks hardcopy communications."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces Cúram communications basics: exchanges can be incoming or outgoing, and support recorded, email, pro forma, and Microsoft Word formats, either free-form or template-based. Explains that every communication has a correspondent and is tied to a case or participant. Correspondents may be existing participants or new ones, with contact details auto-retrieved by communication type and a new representative participant role created if needed. Also clarifies where case vs. participant communications appear in communication lists and notes communication exceptions restrict allowed contact methods."
+          },
+          {
+            "title": "1.2 Communication categories",
+            "level": 2,
+            "children": [
+              {
+                "title": "Recorded communications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Recorded communications are used to log details of communications handled outside the system, typically incoming communications received by the organization. The section also explains that case communications appear on both the case’s communication list and the correspondent’s communication lists to aid searching, that all client interactions are stored for a fuller contact history, and that communication exceptions can block certain contact methods. It also distinguishes recorded communications from email, pro forma, and Microsoft Word communications."
+              },
+              {
+                "title": "Email communications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Email communications in Cúram are used to send emails to individuals or businesses. To issue an email, the sender and recipient must have valid email addresses, and the subject and body text are required. Email communications always use the email method and cannot be sent if the recipient has an email communication exception. Emails can also be saved as drafts and sent later."
+              },
+              {
+                "title": "Pro forma communications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Pro forma communications are standardized messages generated from XSL stylesheet templates and are often used for bulk, batch-processed communications tied to business processes. They usually require no user editing because they combine standard text with variables populated from existing data at creation time. An example is registration acknowledgment letters for all persons registered within a defined period."
+              },
+              {
+                "title": "Microsoft® Word communications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains Microsoft Word communications in Cúram. It says Word communications are based on templates created and maintained in Microsoft Word, and templates are associated with either participants or cases. When creating a communication for a participant, the available templates are filtered to participant-linked ones. The application integrates with Microsoft Word by opening and closing it automatically. It also notes that these communications are not issued to participants with communication exceptions that block mail."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000012",
+              "start_page": 10,
+              "end_page": 12
+            },
+            "summary": "This section classifies Cúram communications into four categories: recorded, email, pro forma, and Microsoft Word. It explains that recorded communications log interactions outside the system and appear on both case and correspondent communication lists for searchability. Email communications require valid sender/recipient addresses and subject/body text, and are blocked by email exceptions. Pro forma communications are template-based, usually batch-generated hardcopy sent with merged data. Microsoft Word communications use Word templates linked to participants or cases and are blocked by mail exceptions."
+          },
+          {
+            "title": "1.3 Communication templates",
+            "level": 2,
+            "children": [
+              {
+                "title": "XSL templates",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains XSL templates for communications. It says XSL templates are stylesheets used to automatically generate bulk pro forma communications, often in batch processing. Templates contain standard text shared across generated communications and can include variables for existing data such as correspondent name, address, case number, and identifiers like SSN or NINO. The data is stored separately from the template. This node is useful if you need how automated communication generation works and what kinds of fields XSL templates can populate."
+              },
+              {
+                "title": "Generating pro forma communications",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Template versions for reprinting",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains how pro forma communications are reprinted using template versions to guarantee the exact same output each time, even if the template has changed. It describes version assignment on first print, reuse of that version for later reprints, and how XSL template changes create new versions. It also notes optional CMS storage/retrieval of generated PDFs. The section contrasts XSL-based pro forma generation with Microsoft Word templates, which are manually created and editable by business users."
+                  }
+                ],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains how pro forma communications are generated from XSL templates: variables are filled with server data, merged into XML, then converted to PDF for download or printing. It emphasizes that XSL-based communications are system-generated and not editable by business users. It also covers template versioning for reprints, ensuring the exact same output by reusing the original version even after template changes, and notes optional CMS storage/retrieval of generated PDFs. It briefly contrasts this with manually created, editable Microsoft Word templates."
+              },
+              {
+                "title": "Microsoft® Word templates",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Microsoft Word templates support creating multiple communications from the same template, but unlike XSL templates they are created manually. A business user can generate a communication from a Word template and then edit it before sending, such as adding details from a prior phone call. This section contrasts Word templates with automated pro forma generation and shows that Word-based communications are user-modifiable."
+              },
+              {
+                "title": "Creating Microsoft™ Word communications by using a template",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to create Microsoft Word communications from templates. Word templates are used for mostly standard communications with variable data populated at generation time; the actual values are stored in the communication, and users can edit content while it is a draft but not after it is sent. Notes that template data must be alphanumeric only, with restricted characters causing display issues. Also describes template filtering: Word templates are associated with participants or cases, while XSL templates support more specific associations."
+              },
+              {
+                "title": "Filtering available templates",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000018",
+                  "start_page": 15,
+                  "end_page": 18
+                },
+                "summary": "Explains how template associations filter the list of available communication templates. Microsoft Word templates are limited to participant or case associations, so users creating a Word communication see only templates matching the selected participant/case context. XSL templates offer finer filtering, such as specific participant or product types; for example, a person-associated XSL template is only available when creating a pro forma for a person."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000018",
+              "start_page": 13,
+              "end_page": 18
+            },
+            "summary": "This section explains communication templates used to produce standardized communications. It contrasts XSL templates, which automatically generate pro forma communications from server data and template variables, with Microsoft Word templates, which are manually created and can be edited while in draft. It covers pro forma generation flow, template versioning for exact reprints, optional CMS storage of generated PDFs, Word template variable behavior and alphanumeric-data limits, and how template associations filter which templates users can select for participants or cases."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000018",
+          "start_page": 9,
+          "end_page": 18
+        },
+        "summary": "Overview of Cúram communications: communications can be incoming or outgoing, tied to a case or participant, and involve a correspondent whose contact details may be auto-retrieved or created as a new representative role. It explains how case vs participant communications appear in lists and how communication exceptions block methods. The section also introduces the four communication categories—recorded, email, pro forma, and Microsoft Word—and covers template-based generation, XSL vs Word templates, template versioning/reprinting, CMS integration, and template filtering by case/participant associations."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,1528 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "56e6f4dd558d96c8",
+    "title": "Cúram 8.1.2 Outcome Management Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/OutcomeManagementConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "56e6f4dd558d96c819f6d67a51e2b1280ed22ec1d1512ae0807a3a991958fd7c",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:10:44+00:00",
+    "page_count": 70,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/OutcomeManagementConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Outcome Management Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000070",
+      "start_page": 1,
+      "end_page": 70
+    },
+    "summary": "Front matter and chapter 1 of the Cúram 8.1.2 Outcome Management Configuration Guide. It explains how administrators configure Outcome Management assessments and outcome plans: assessment definitions, intervals, reassessment, approval checks, categories/classifications, roles, factors, case associations, security, and result display options (graphs, guidance, scores, priorities). It also covers outcome plan setup, including goals, objectives, types, activities, progress, recommendation conditions, system properties, and security. Later sections address dynamic products, CDA and CER assessment examples, and technical notes on CER rules execution, IEG datastore/schema requirements, and pre/post-populate hooks. The document is aimed at system administrators familiar with code tables, application properties, and security. The node also includes notices, copyright, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice stating that before using the product or information, the reader should review the “Notices” section on page 69. Includes Merative copyright information (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section covers the edition/front matter and the start of “Configuring Outcome Management.” It states the guide applies to Cúram 8.1, 8.1.1, and 8.1.2, then outlines the chapter contents. It introduces assessment definitions and outcome plans, explains the audience and prerequisites, and details how to configure assessment definitions: intervals, reassessment, graphs, guidance, result display, security, categories, and results page. It also explains CDA vs CER assessment configurations and when assessments are group-based or role-based."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers Outcome Management configuration for assessments: reassessment enablement, graph/list result display, graph type and color settings, priority/escalation handling, grouping results by category or classification, guidance text display, and security IDs. It also explains category and classification setup, code table item creation, classification priority/warning/hide settings, classification reordering, and assessment role configuration (mandatory, multiple clients, questions applicable, abbreviations, ordering). Useful for admin setup of assessment behavior, results presentation, and workflow controls."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers Outcome Management configuration for assessments and outcome plans. Topics include configuring factors, factor classifications and subdivisions, mapping CDA outcomes to factors, reordering factors, and recommending actions based on assessment results. It also explains associating assessment definitions with cases and outcome plans, including home page display and run-location settings. The section begins outcome plan setup, covering goals and objectives, and notes that outcome plans address needs identified during assessment."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section covers Outcome Management configuration for outcome plans. It explains outcome plan factors and classifications, outcome plan types, plan setup options (goals applicability, ownership strategy, multidisciplinary teams, user-created items, review frequency, visits, approval checks), goals/objectives/factors association, recommendations, compliancy and reschedule reasons for visits, printable document content, and case associations. It also introduces actions and keywords, including how actions can be recommended and configured. Useful if you need admin steps or configurable behavior for outcome planning."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "This section covers Outcome Management configuration for action properties (cost model, fixed cost, multi-client, client participation, responsibility, owner, security SIDs, availability checks), progress value setup, recommendation conditions, and outcome plan system properties. It also documents workspace settings, search weighting, batch processing of overdue actions, and outcome plan security. The later pages introduce using dynamic products with outcome management, including configuring evidence, rules, product delivery cases, and service offerings, plus a brief start on CDA assessments."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Procedural configuration guide for Outcome Management assessments on pages 55–64. Covers building a simple back-to-work example in both CDA and CER: create questionnaires, outcomes, code tables/domains, datastore schemas, IEG scripts, decision matrices or CER rules, assessment configurations, definitions, roles, factors, classifications, and outcome plans. Includes detailed step-by-step setup for mapping answers to outcomes and technical notes on rules execution, pre/post assessment events, and pluggable assessment engines."
+          },
+          {
+            "title": "Edition — pages 65-68",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000068",
+              "start_page": 65,
+              "end_page": 68
+            },
+            "summary": "This section explains Outcome Management rule execution and IEG datastore configuration. It describes how CER rules are created from IEG data via DataStoreRuleObjectCreator, how FactorList and factor scoring/classification work, and how results are stored in FactorResults. It also covers IEG schema requirements: root entity must be Application, role-based assessments use Person entities, group-based assessments use Group, and an optional Assessment entity can be auto-populated. Pre- and post-populate datastore event hooks are documented."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000068",
+          "start_page": 5,
+          "end_page": 68
+        },
+        "summary": "Front matter and the full “Configuring Outcome Management” chapter for Cúram 8.1–8.1.2. It covers assessment definitions and outcome plans, including assessment intervals, reassessment, result display, categories/classifications, roles, factors, case associations, approval checks, and security. It also explains outcome plan setup (goals, objectives, types, activities, progress, recommendations, system properties, security), dynamic products, and detailed CDA/CER assessment examples. The later pages include technical notes on rules execution, IEG datastore/schema requirements, and pre/post-populate hooks."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000070",
+              "end_unit_id": "p000070",
+              "start_page": 70,
+              "end_page": 70
+            },
+            "summary": "Contains legal and copyright notices for the document, including sample program usage rights, “AS IS” warranty disclaimer, and liability limitations. Points to Merative’s privacy policy at https://www.merative.com/privacy. Also lists trademark ownership for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus a copyright notice for Merative US L.P. (2012, 2024)."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000070",
+              "end_unit_id": "p000070",
+              "start_page": 70,
+              "end_page": 70
+            },
+            "summary": "States that sample names in the document are fictitious and that sample programs are provided by Merative under the Client Agreement, with a copyright license allowing copying, modification, and distribution for API-conforming development. Notes the samples are untested and provided “AS IS” without warranty. Includes the Merative privacy policy link and a trademarks notice listing Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX trademark attributions, plus a 2012, 2024 copyright notice."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000069",
+          "end_unit_id": "p000069",
+          "start_page": 69,
+          "end_page": 69
+        },
+        "summary": "Legal notices and publication-use terms for Merative documentation. Covers personal and enterprise copying permissions, required preservation of proprietary notices, and restrictions on redistribution, derivatives, export, and re-export. States Merative may withdraw permissions and that the publications and any referenced software are provided “AS IS” without warranties; no patent license is granted. Also disclaims responsibility for non-Merative products and external websites. Includes copyright notice: © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter and chapter 1, “Configuring Outcome Management,” with subsections on assessments, outcome plans, dynamic products, CDA assessments, and a CER assessment, plus additional technical information and notices. Useful as a navigation index to locate topics and page ranges, not substantive content."
+      },
+      {
+        "title": "1 Configuring Outcome Management",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring assessments",
+            "level": 2,
+            "children": [
+              {
+                "title": "Assessments overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces assessment configuration in Outcome Management. It explains that each assessment is defined administratively as an assessment definition template for individual assessments, and lists what can be configured: assessment categories, factors and factor classifications, client roles, additional factor classification settings, activity recommendations, and links between assessments and case types. It also frames the purpose of assessment and outcome planning configuration for identifying and managing client needs."
+              },
+              {
+                "title": "Configuring assessment definitions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Assessment definitions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how to configure an assessment definition in Cúram 8.1.2. An assessment definition is the template for individual assessments and controls both assessment behavior and how results are displayed. Key settings include interval/reassessment timing, approval checks, type/role/security options, and display settings such as graphs, guidance, grouping, scores, priorities, and classification text. Also notes the Results Page can override the default assessment results page, and that assessments may be run for groups or individual clients."
+                  },
+                  {
+                    "title": "Configuring an assessment definition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000012",
+                      "start_page": 10,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to configure an assessment definition template in Outcome Management and which settings control assessment behavior and result display. Covers creating a new definition and fields such as name, reference, start date, assessment interval, reassessment warning, assessment configuration, type, group name, role change allowed, and reassessment allowed. Also describes display options including graphs, graph type/by, priorities, guidance, grouping results by category, score display, and overriding the results page. Useful for admins setting up CDA/CER-based assessments."
+                  },
+                  {
+                    "title": "Associating CDA Or CER With An Assessment Definition",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how an assessment definition is linked to its result-derivation logic. It states that each assessment uses an IEG script plus either a Cúram Decision Assist (CDA) matrix or a Cúram Eligibility Rule set (CER), selected via the Assessment Configuration drop-down. It notes the choice depends on assessment complexity."
+                  },
+                  {
+                    "title": "Define whether assessment is group- or role-based",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Administrators can configure an assessment definition as group-based or role-based via the Type list. Group-based assessments ask questions for a client group (for example, a household) and require a group name; role-based assessments ask questions for defined roles, with optional role applicability. Some assessments mix both patterns, requiring separate display of group and individual-role results. The Reunification assessment is given as an example. Such combined-result assessments must use the AssessmentDelivery_viewCombinedResultsForInstance results page."
+                  },
+                  {
+                    "title": "Decide whether reassessment is allowed",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains when assessment reassessment is allowed and how it affects the assessment home page. If enabled, users can rerun the assessment for all factors or a subset; if disabled, reassessment is unavailable. Also introduces graph configuration decisions for assessment results: display as graph or list, and if graphed, choose radar or bar chart and whether the y-axis shows classifications or scores. Useful for determining result presentation and whether progress over time can be tracked."
+                  },
+                  {
+                    "title": "Graph Configurations",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Decide on how to display the assessment results",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000024",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Explains how to choose the assessment results display: use a graph or standard list on the assessment results/home pages. Graphs show client factors over time and can display scores or classifications on the y-axis; individual factor tabs can be graphed separately. Guidance notes that single-factor or non-reassessable assessments may be better as lists, while multi-factor or reassessable assessments suit graphs. If graphing, select either a radar graph or bar graph, and choose graph by classification or by score."
+                      },
+                      {
+                        "title": "Defining Whether To Graph By Classification Or Score",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Explains how assessment results can be graphed and how to choose the y-axis basis. Administrators can display results as a graph or list, and if graphed, choose radar or bar graph. This section specifically covers Graph by Classification vs Graph by Score: classifications appear on the y-axis when grouping by classification, while numeric score ranges appear when grouping by score. It also notes that classification order is configurable. Useful for deciding result display and graph setup for assessments."
+                      },
+                      {
+                        "title": "Defining The Type Of Graph",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000026",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "This section explains how to configure assessment graph display and priority selection. It covers choosing the graph type (radar or bar) via the Graph Type field, with options controlled by the AssessmentDefGraphType code table and editable at runtime. It also describes application properties for graph colors using RGB comma-delimited values, including defaults. Finally, it discusses whether assessment results can be escalated through priority selection, including showing priority checkboxes and hiding certain results from priority lists."
+                      },
+                      {
+                        "title": "Application properties for configuring colors in graphs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000027",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "This section explains application properties that control graph colors in assessment pages. It identifies two configurable RGB color properties: curam.assessmentplanning.graphRGBColors for assessment results/home page graphs, and curam.assessmentplanning.progressGraphRGBColor for progress graphs by factor. Values are comma-delimited RGB codes, with default color sets listed. The section also introduces related configuration topics for graph type selection and priority-based escalation of assessment results, including hiding certain results from priority selection."
+                      }
+                    ],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section explains how to configure assessment result graphs. It covers choosing graph vs standard list, noting graphs are better for multi-factor or reassessable assessments and lists may suit single-factor or non-reassessable ones. It also covers graphing by classification or by score, where classifications or score ranges appear on the y-axis, with configurable classification order. Finally, it mentions selecting the graph type, radar or bar, and related graph display settings."
+                  },
+                  {
+                    "title": "Decide whether escalation of assessment results is required",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains how to configure priority escalation for assessment results. It covers the “Priorities Applicable” setting, which shows checkboxes for each assessed factor so a caseworker can mark urgent results for escalation. It also notes that administrators can hide specific results from priority selection, or hide particular results for selected factors. Useful for deciding whether to open if you need configuration details for prioritizing assessment outcomes in the caseworker application."
+                  },
+                  {
+                    "title": "Grouping Results List by Category",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how assessment results can be grouped on the results page. With a single category, results can be grouped by category or by classification depending on the Group Results by Category indicator; without it, separate priority lists appear for each classification. If multiple categories exist, grouping is always by category and classification grouping is not used. The section then introduces guidance display decisions: whether to show help text on results/home pages, and whether the guidance cluster should open or close by default."
+                  },
+                  {
+                    "title": "Decide whether to display guidance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains whether assessment guidance/help text should be shown on the assessment results and home pages. Guidance supports caseworkers by describing actions to address identified needs, and can appear as a guidance tab or results-page cluster for factor classifications and/or sub divisions. If displayed, the cluster can be Open (expanded by default) or Closed (hidden until expanded). The choice depends mainly on how much guidance text exists. If guidance is enabled, the specific text to display for each classification/subdivision must also be documented."
+                  },
+                  {
+                    "title": "Count Same Score As One",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains the “Count Same Score As One” setting for assessments: when multiple clients have the same score for the same factor, it can count as one priority factor instead of one per client, allowing more distinct priorities within a maximum limit. Also introduces assessment security identifiers for create, approve/reject, view, and close actions, and describes configurable assessment approval checks that determine what percentage of submissions need manual review at the user, organization unit, or assessment definition level."
+                  },
+                  {
+                    "title": "Security Identifiers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains assessment security identifiers (SIDs) used to control access to actions. It lists SIDs for create, approve/reject, view, and close rights, each required in a user’s security profile to perform the corresponding operation. It also briefly introduces assessment approval checks, which can require a percentage of assessments to be manually reviewed, and notes these checks can be configured at the user, organization unit, or assessment definition level."
+                  }
+                ],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000017",
+                  "start_page": 10,
+                  "end_page": 17
+                },
+                "summary": "Explains how to configure an assessment definition template in Outcome Management. Covers creating a definition and key settings for timing, approval, security, and reassessment; linking the definition to CDA or CER logic; choosing group- or role-based behavior; and controlling results display with graphs, graph type/by score or classification, priorities, grouping by category, guidance, score visibility, labels, and count-same-score behavior. Also notes the optional results page override and combined-results page for mixed group/role assessments."
+              },
+              {
+                "title": "Configuring assessment approval checks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains how assessment approval checks control what percentage of submitted assessments require manual supervisor review versus automatic approval. It describes three configuration levels: by user, by organization unit, and by assessment definition. It also notes related assessment security identifiers for permissions such as create, approve/reject, view, and close, and briefly mentions the “Count Same Score As One” option for counting duplicate priority factors across clients."
+              },
+              {
+                "title": "Configuring categories",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Categories",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to configure assessment categories in Cúram outcome management. Categories are used to classify factors in an assessment and determine applicable classifications, with default examples Need and Barrier. An assessment can have one or more categories. Categories are defined in the AssessDefFactorType code table and can be added dynamically through System Configurations > Application Data > Code Tables, then published. Also notes that approval checks are evaluated first at the user level, then organization unit, then assessment level."
+                  },
+                  {
+                    "title": "Adding A New Category To The Category Code Table",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Configuring a new code table item",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000037",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Explains how to add a new item to an existing Cúram code table. Users with system administrator credentials navigate to System Configurations > Application Data > Code Tables, search for the target table, choose New Item, enter the item’s Name, Description, Item Name, and Technical ID (Code), then save and publish the code table. Useful for understanding how to create code table entries that become available in Cúram screens."
+                      }
+                    ],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to add a new category to the AssessDefFactorType code table. Categories are used to classify assessment factors and determine applicable assessment classifications; default categories are Need and Barrier. The process is the standard Cúram code table workflow: log in as system administrator, go to System Configurations > Application Data > Code Tables, search the table, choose New Item, fill in Name, Description, Item Name, and Technical ID (Code), save, and publish."
+                  },
+                  {
+                    "title": "Configuring a category",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to configure a category for assessment definitions: first add categories to the category code table, then associate them with an assessment definition so they can be used to categorize factors. Categories can be attached when creating the assessment definition or later via the Categories tab using Add Categories. Also introduces category classifications, which define severity/scale levels (for example, At Risk to Thriving) and, when linked to a category, apply automatically to all factors in that category."
+                  }
+                ],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how to configure assessment categories in Outcome Management. Categories classify assessment factors and determine applicable classifications; assessments can have one or more categories. The section notes default categories Need and Barrier, identifies the AssessDefFactorType code table, and describes adding new categories via System Configurations > Application Data > Code Tables, then publishing. It also covers attaching categories to assessment definitions and mentions approval checks are evaluated in order: user, organization unit, then assessment."
+              },
+              {
+                "title": "Configuring category classifications",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Classifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how to configure categories and category classifications for assessment definitions. It covers the two-step category setup: add categories to the category code table, then associate them with an assessment definition via the New Assessment Definition window or the Categories tab. It also defines classifications as severity/result levels for a category (for example, Need: At Risk, In Crisis, Stable, Thriving) and notes that classifications can be associated with categories so they apply to all factors in that category."
+                  },
+                  {
+                    "title": "Classification code table",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Configuring a new code table item",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "This section explains how to add a new item to an existing Cúram code table so it becomes available on screens. It covers the admin steps in System Configurations > Application Data > Code Tables, creating a New Item, entering the item name and technical ID (code), saving, and publishing the code table. It also introduces related classification setup, including associating classifications with predefined categories via the Categories tab."
+                      }
+                    ],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains how classifications are configured in Outcome Management. It describes that classifications are tied to the Classification Division Type code table and can be added dynamically by system administrators, then published so they appear in the Classification drop-down. It also covers adding new items to existing Cúram code tables via System Configurations > Application Data > Code Tables, including entering the item name and technical ID and publishing. Finally, it shows how to associate a classification with a predefined category through the assessment definitions Categories tab."
+                  },
+                  {
+                    "title": "Configuring the classification association with a category",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000022",
+                      "start_page": 21,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how to associate a classification with a pre-defined category in Assessment Definitions. Classifications come from the Classification Division Type code table, where new items can be added and published for use in the Classification drop-down. The New Category Classification form lets admins set the category, classification type, minimum and maximum priority limits, and optional initial and escalation warning days to support custom escalation processing."
+                  },
+                  {
+                    "title": "Re-ordering How Classifications are Displayed",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains how administrators can reorder classification display order in assessment results. The chosen order controls how classifications appear in lists and how they are plotted on the graph’s y-axis, shown from top to bottom after reordering. It also begins the next topic, configuring assessment roles, including assigning roles to an assessment definition, making roles mandatory, mapping questions to roles, ordering role processing, and optionally using role abbreviations in results."
+                  }
+                ],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000022",
+                  "start_page": 20,
+                  "end_page": 22
+                },
+                "summary": "Explains how to configure assessment categories and category classifications in Outcome Management. Categories are mandatory for factors: first add them to the category code table, then associate them with an assessment definition via the New Assessment Definition window or the Categories tab. Classifications define severity/result levels for a category, are stored in the Classification Division Type code table, and can be added via system administration and published. The section also covers linking a classification to a category and setting minimum/maximum priority plus warning/escalation days."
+              },
+              {
+                "title": "Configuring roles",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Assessment roles",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Defines assessment roles for outcome management. An assessment role is the part a client plays in an assessment (for example, Primary or Secondary Caregiver). Explains that every assessment definition must have at least one role, though multiple roles are allowed, roles can be filled by multiple clients, and a role can be mandatory. Also notes you must choose which questions apply to each role, set the processing order, and optionally define an abbreviation shown in results."
+                  },
+                  {
+                    "title": "Configuring an assessment role",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to configure assessment roles within an assessment definition. At least one role is required before an assessment can run, though multiple roles are allowed. Roles can represent client positions such as Primary or Secondary Caregiver, can be mandatory, and may allow multiple clients per role. The section covers choosing which questions apply to each role, setting the processing order of roles, and optionally defining an abbreviation to display in results. Procedure begins in the Roles tab by selecting New."
+                  },
+                  {
+                    "title": "Reordering an assessment role",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how to reorder assessment roles in Cúram. From the Roles tab, click Reorder to configure the order roles are processed in an assessment; the client list is then displayed according to each role’s configured order."
+                  },
+                  {
+                    "title": "Application property for configuring available case participant roles",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Describes the application property curam.assessmentplanning.applicableCaseParticipantRole, which controls which case participant role types from CT_CaseParticipantRoleType.ctx are shown to caseworkers when running an assessment from a case. Also introduces configuring factors for assessments, explaining that factors represent client needs or barriers, can be added from assessments, manually by caseworkers, or defined for specific circumstances, and may include guidance text to help users address issues."
+                  }
+                ],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000024",
+                  "start_page": 23,
+                  "end_page": 24
+                },
+                "summary": "Explains how to configure assessment roles in an assessment definition. A role represents a client’s part in the assessment (for example, Primary or Secondary Caregiver). At least one role is required, though multiple roles are allowed; roles can be mandatory and can apply to multiple clients. Administrators choose which questions apply to each role, set the processing order, and may define an abbreviation and reference. The section also covers reordering roles from the Roles tab and notes that group-based assessments do not use the Questions Applicable indicator."
+              },
+              {
+                "title": "Configuring factors",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Factors",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains what assessment factors are and how they are used in outcome management. A factor is a client circumstance of interest, typically classified as a need or a barrier, with examples such as substance abuse, mental health, and parenting skills. It notes that assessments can define unique factors, classifications, and thresholds, and that factors may be added to outcome plans from assessments, manually by caseworkers, or from user-defined circumstances. Also mentions configurable guidance text to help users address each factor."
+                  },
+                  {
+                    "title": "Configuring a factor",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "Explains how to configure a factor within an assessment definition in Cúram 8.1.2. Steps: open the assessment definition’s Factors tab, click New, and enter factor details in the New Factor window. Key fields include Name, Start Date, Category, Reference, and End Date. Emphasizes that a category is required before factors can be added, and that category determines which classifications are used during assessment. Includes examples of Need and Barrier categories for self-sufficiency assessments."
+                  },
+                  {
+                    "title": "Mapping CDA outcomes to factors",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Mapping Outcomes to Factors",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "Explains how assessment outcomes are mapped to factors. For CDA-based assessments, outcomes must be linked directly to factors, with the available outcomes depending on whether the matrix assigns outcomes per answer; non-scoring matrices require selecting an outcome from the assessment’s outcome list. Notes that CER rule sets do not use outcomes in this way. Also briefly covers reordering factor display and configuring factor classifications to give more granular severity/measurement levels."
+                      }
+                    ],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to map CDA decision-assist outcomes to assessment factors or factor classifications. The section gives the navigation path in Administration Workspace to open an assessment definition and select a factor from the Factors tab. It emphasizes that every CDA outcome must be linked to a factor/factor classification, helping determine how assessment results are interpreted and displayed."
+                  },
+                  {
+                    "title": "Reordering factors",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Administrators can reorder assessment factors to control the order they appear, including in results lists when an assessment is executed. This section sits between mapping CDA outcomes to factors and configuring factor classifications, which define finer-grained severity levels for factors."
+                  }
+                ],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000027",
+                  "start_page": 25,
+                  "end_page": 27
+                },
+                "summary": "This section explains how to configure assessment factors in Outcome Management. It defines factors as client circumstances used to assess needs or barriers, with examples like substance abuse and mental health, and notes that factors can be added to outcome plans from assessments or manually. It covers creating factors in an assessment definition, including required category, reference, threshold, merge, and planning-applicable settings, and explains that categories determine available classifications. It also describes mapping CDA outcomes to factors and reordering factors for display and result ordering."
+              },
+              {
+                "title": "Configuring factor classifications",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Factor classifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "This section explains how outcomes are mapped to assessment factors and how factor order can be rearranged in results. It also describes configuring factor classifications: classifications are severity/result levels for a factor category, automatically inherited when a factor category is set, with optional extra factor-level details. It distinguishes classifications, measurement indicators, and subdivisions used for finer-grained assessment scoring, and notes that CER rule sets do not require outcomes."
+                  },
+                  {
+                    "title": "Configuring a factor classification",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "This section explains how to configure factor classifications in Outcome Management. It covers setting minimum and maximum score ranges, hiding classifications from assessment results, and associating activities with classifications/subdivisions so caseworkers can receive recommendations. It also notes that classifications can include definitions, subdivisions, and guidance text. The procedure is outlined through the Assessment Definition’s Factors and Classification tabs, with editable fields for name, description, range, visibility, and definition."
+                  },
+                  {
+                    "title": "Classification subdivisions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how classification subdivisions refine a factor classification into smaller range segments for finer processing. Gives an income-factor example where an “In Crisis” range (-5 to 0) is split into multiple subdivisions with different meanings and risks. Includes steps to configure a subdivision in Assessment Definition > Factors > Classification by using Add Subdivision, and notes the key fields: name, minimum range value, and maximum range value."
+                  },
+                  {
+                    "title": "Configuring a classification subdivision",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how to configure classification subdivisions within a factor classification to create finer-grained ranges for more detailed processing. Subdivisions are added from the Factors tab in an assessment definition, then the Classification tab, using Add Subdivision. The Add Subdivision window requires a name plus minimum and maximum range values. Example shows splitting an “In Crisis” income classification into smaller ranges with different meanings, such as little/no income, limited budgeting skills, suicidal tendencies, or being a danger to self."
+                  },
+                  {
+                    "title": "Recommendations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "This section explains outcome plan recommendations: suggested activities, services, referrals, or actions tailored to a client’s assessed circumstances. It describes how recommendations appear in the activity workspace when configured assessments are run, and how they can be triggered either automatically for an outcome plan or linked to specific factor results/classifications. It also notes that recommendations can include a reason and can be configured at different granularity levels, such as a classification or a specific score value."
+                  },
+                  {
+                    "title": "Recommending an action for an assessment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "This section explains how to configure an action recommendation for an assessment factor. It lists the procedure in the assessment definition UI: open the Factors tab, select a factor, go to Recommendations, and use Recommend Action. It describes the fields used when creating the recommendation: name, description, action, recommendation type (advised or discretionary), reason, classifications, and program selection, then save."
+                  }
+                ],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000032",
+                  "start_page": 28,
+                  "end_page": 32
+                },
+                "summary": "Explains how to configure factor classifications in Assessment Definition. Covers setting minimum/maximum score ranges, hiding classifications from results, and adding definitions, guidance text, and activities. Describes classification subdivisions for finer-grained ranges within a classification, including how to add them and define their range values. Also explains outcome-plan recommendations: suggested services/actions/referrals tied to classifications or specific scores, with advised/discretionary types, reasons, and program selection, configured from the Factors and Recommendations tabs."
+              },
+              {
+                "title": "Configuring case associations with an assessment definition",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Assessments association with cases and outcome plans",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "This section explains how to associate assessment definitions with cases and outcome plans so specific assessments can be run from particular case types or within outcome plans. It covers two key settings: On Home Page, which shows assessment results on the case home page, and Assessment Available From, which controls where an assessment can be launched within an outcome plan. It also gives step-by-step instructions for adding a case association, showing it on the home page, and setting assessment availability."
+                  },
+                  {
+                    "title": "Associating an assessment definition with a case",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "This section explains how to associate an assessment definition with a case so the assessment can be run from that case type. It covers related settings: showing assessment results on the case home page and controlling where an assessment is available within an outcome plan. The procedure includes adding a case from the assessment definition’s Cases tab, enabling Show on Home Page, and editing assessment availability. It also introduces outcome plan configuration as the next topic."
+                  }
+                ],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "This section explains how to link an assessment definition to a case type so the assessment can be launched from that case. It describes two related options: Show on Home Page, which displays assessment results on the case home page, and Assessment Available From, which controls where the assessment can be run within an outcome plan. It includes steps to add a case association from the assessment definition’s Cases tab and configure these two settings."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000032",
+              "start_page": 9,
+              "end_page": 32
+            },
+            "summary": "Covers how to configure Outcome Management assessments, including assessment definitions as templates, categories, factors, factor classifications, roles, approval/security settings, result display options, and links to case types. Explains how assessments use CDA or CER logic, how reassessment timing and role changes work, and how to control graphs, scores, guidance, and priority display. Also includes mapping outcomes, setting classification ranges/subdivisions, hiding classifications, and configuring activity recommendations for specific classifications or scores."
+          },
+          {
+            "title": "1.2 Configuring outcome plans",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Introduces configuring outcome management by associating assessment definitions with cases so assessments can be run on specific case types. Explains two key settings: On Home Page controls whether assessment results appear on the case home page, and Assessment Available From controls where within an outcome plan an assessment can be launched. Includes steps for adding a case association, showing the assessment on the home page, and editing availability. Also notes the chapter will cover configuring outcome plans to manage needs identified during assessments."
+              },
+              {
+                "title": "Configuring goals",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring a goal",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Explains how to configure an outcome plan goal in Cúram 8.1.2. Goals are defined by an administrator and shared across outcome plan types, then added by a caseworker. The procedure is: open Administration Workspace > Shortcuts > Outcome Management > Goals > New, enter a localizable goal name, optional reference for code, and description, then save. The section also briefly introduces related outcome plan configuration areas and notes that objectives can be configured similarly."
+                  }
+                ],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains how to configure outcome plan goals in Cúram 8.1.2. Goals are defined by an administrator, shared across multiple outcome plan types, and later added by a caseworker. The procedure is to open Administration Workspace > Shortcuts > Outcome Management > Goals > New, then enter a localizable name, optional code reference, and localizable description, and save. The section also briefly introduces the main outcome plan configuration areas and notes that objectives can be configured similarly."
+              },
+              {
+                "title": "Configuring Objectives",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains how outcome plan objectives are configured in Cúram 8.1.2. Objectives are created by an administrator, shared across multiple outcome plan types, and then added or recommended for a plan by a worker. Each objective must have a specified name (for example, “Improve Basic Education” or “Stay Clean and Sober”), and may include a reference for use in code."
+              },
+              {
+                "title": "Configuring Outcome Plan Factors",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining Outcome Plan Factor Classifications",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "This section explains how to define classifications for outcome plan factors. It notes that these classifications represent the results a case worker can choose when recording a factor result, and unlike assessment factor classifications, they do not need a category. Classification values come from the Classification Division Type code table. It also covers setting Initial Warning Number of Days and Escalation Number of Days so notifications can be triggered for prioritized factors if they are not addressed appropriately."
+                  }
+                ],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "This section explains how to configure outcome plan factors that are not part of a larger assessment, such as externally completed GED assessments. It covers defining factor basics: category/classification only, optional reference, rating interval for reassessment, and whether the factor is planning-applicable. It also explains outcome plan factor classifications, which let case workers record results, do not require a category, come from the Classification Division Type code table, and can include initial warning and escalation days for prioritized-factor notifications."
+              },
+              {
+                "title": "Configuring Outcome Plan Types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring outcome plans",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Configuring an outcome plan",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000075",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000040",
+                          "start_page": 36,
+                          "end_page": 40
+                        },
+                        "summary": "This section explains how to configure outcome plans and outcome plan types in Outcome Management. It covers plan setup fields such as name, reference, home page, goals applicability, agreement approval checks, ownership strategy, multidisciplinary team settings, sharing/portal home page, and whether users can create actions, objectives, and factors. It also describes review settings (first review, frequency calculation, frequency) and visitation settings, including whether visits apply and acceptable duration for compliancy calculations."
+                      }
+                    ],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000040",
+                      "start_page": 36,
+                      "end_page": 40
+                    },
+                    "summary": "This section explains how to configure outcome plan types and plans in Outcome Management. It covers setup fields such as name, reference, home page, goal applicability, agreement approval checks, ownership strategy, multidisciplinary team type and sharing, portal home page, and whether users can create actions, objectives, and factors. It also describes review settings, including first review timing, frequency calculation, and review frequency. Finally, it covers visitation settings, including whether visits apply and the acceptable duration percentage used in visit compliancy calculations."
+                  },
+                  {
+                    "title": "Agreement Approval Checks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "Explains agreement approval checks for outcome plan agreements: they control what percentage of submitted agreements need manual case supervisor review versus automatic approval. Checks can be configured at the outcome plan, organization unit, or user level, with user-level rules taking precedence, then organization unit, then outcome plan. At user and organization unit levels, the check can apply to one specific outcome plan or all plans. Also transitions into multidisciplinary team configuration, including predefined vs ad hoc team types."
+                  },
+                  {
+                    "title": "Multidisciplinary Team Configuration",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Multidisciplinary Team Type",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000078",
+                        "range": {
+                          "start_unit_id": "p000041",
+                          "end_unit_id": "p000041",
+                          "start_page": 41,
+                          "end_page": 41
+                        },
+                        "summary": "This section explains the “Multidisciplinary Team Type” setting for outcome plans. Administrators can choose either “Predefined Team” or “Ad hoc” from the drop-down. Predefined Team requires case workers to select from teams configured in multidisciplinary team administration, while Ad hoc allows adding individual team members directly to the outcome plan. It’s a configuration option for assigning multidisciplinary teams to plans, with a pointer to the Social Enterprise Collaboration Configuration Guide for more detail."
+                      }
+                    ],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "This section explains how to configure multidisciplinary team support for an outcome plan. Administrators can enable a team type of either Predefined Team or Ad hoc. Predefined Team requires case workers to choose from teams set up in multidisciplinary team administration, while Ad hoc lets them add individual team members directly to the plan. It helps determine whether an outcome plan uses a fixed team structure or flexible member-level assignment, with a reference to the Collaboration Configuration Guide for setup details."
+                  },
+                  {
+                    "title": "Associating goals with an outcome plan",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Associating a goal",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000080",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "This section explains how to associate goals with an outcome plan type so caseworkers can add them as outcome plan or client goals. It gives the basic procedure: open the Goals tab, click Add, select goals, and save. It also briefly covers related configuration for associating objectives, factors, and recommendations, including conditional recommendations and invalidation when settings change. Finally, it mentions configuring compliancy levels and percentage ranges for visits in outcome plans."
+                      }
+                    ],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "This section explains how to configure an outcome plan type so caseworkers can use predefined goals, objectives, and factors. It includes the basic goal-association procedure (Goals tab > Add > select goals > Save), plus related setup for recommendations, including conditional display rules, invalidation when recommendation settings change, and a note that assessment-based recommendations are reserved for future use. It also covers configuring compliancy levels and percentage ranges for visits used during plan reviews."
+                  },
+                  {
+                    "title": "Associating Objectives",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000081",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "This section explains how to associate objectives with an outcome plan type so they become selectable when a caseworker adds objectives to a plan. It also briefly covers related configuration areas: associating goals and factors, defining recommended objectives and activities (including conditional display based on gender, age, rules, factor scores/classifications), and noting that recommendation changes are tracked for invalidation. It begins introducing compliancy levels and reschedule reasons for visits."
+                  },
+                  {
+                    "title": "Associating Factors",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "Explains how to configure outcome plan associations and related settings. Goals, objectives, and factors can be linked to an outcome plan type so caseworkers can select them when creating plan items. It also covers configuring recommendations for objectives and activities, including optional display conditions based on gender, age, rule sets, factor scores, or classifications, with update timestamps used to detect invalidated recommendations. The section begins configuring compliancy levels and reschedule reasons for visits, using percentage ranges to determine displayed compliancy levels during plan review."
+                  },
+                  {
+                    "title": "Configuring Recommendations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "This section explains how to configure outcome-plan recommendations. It covers associating goals, objectives, and factors with an outcome plan type so caseworkers can select them in planning. It also describes defining recommended objectives and activities, including optional conditions based on gender, age, rule sets, factor scores, or factor classifications, and notes that updates can invalidate prior recommendations. It briefly mentions configuring compliancy levels and percentage ranges for visits, which determine displayed compliancy during plan review."
+                  },
+                  {
+                    "title": "Configuring Compliancy Levels And Reschedule Reasons For Visits",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000084",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "This section explains how to configure visit compliancy levels for outcome plans, including assigning percentage ranges that determine which compliancy level is shown during plan review. It also indicates that administrators can associate reschedule reasons with visits when visits apply to an outcome plan. Useful for understanding outcome-plan visit configuration, especially compliancy thresholds and rescheduling setup."
+                  },
+                  {
+                    "title": "Configuring The Printable Document Content",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000085",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "Explains how to configure printable document content for outcome plans. Administrators can choose which items (for example, goals, objectives, assessments, activities) are available for case workers to include when generating a printable document, and can exclude irrelevant content for a plan type. Notes that customers may replace the out-of-the-box document with a custom version via a development hook. The section also briefly mentions associating integrated cases with outcome plans, configuring shared activities, and using keywords to tag objectives and activities for search."
+                  },
+                  {
+                    "title": "Associating Cases",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000043",
+                      "start_page": 43,
+                      "end_page": 43
+                    },
+                    "summary": "This section explains how integrated cases can be associated with outcome plans so administrators can control which case types can be used to create a plan. It also covers configuring activities that can be shared across plan types, and briefly references related setup for printable document content and keyword tagging for searching objectives and activities. Useful for understanding outcome plan configuration and case eligibility rules."
+                  }
+                ],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000042",
+                  "start_page": 36,
+                  "end_page": 42
+                },
+                "summary": "Covers configuring outcome plan types in Outcome Management: defining name, reference, home page, goal applicability, approval checks, ownership strategy, multidisciplinary team type/sharing, portal home page, create-action/objective/factor permissions, review timing/frequency, and visit applicability/acceptable duration. Also explains agreement approval checks precedence (user, org unit, outcome plan), predefined vs ad hoc multidisciplinary teams, associating goals/objectives/factors, recommendations with conditional display, and compliancy levels/reschedule reasons for visits. Useful for setup and navigation of outcome plan administration."
+              },
+              {
+                "title": "Configuring activities",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Actions",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Keywords",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000089",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000044",
+                          "start_page": 44,
+                          "end_page": 44
+                        },
+                        "summary": "This section explains keywords for tagging actions, activities, and objectives so users can find relevant items via search. Keywords can be associated with multiple items, but each keyword must be a single word with no spaces, and there is a maximum keywords-per-item limit. Examples show using keywords like “depression” and “anxiety” to surface an activity in search results. It also notes where keywords can be added to actions and other items, alongside brief context on configuring actions in the administration app."
+                      },
+                      {
+                        "title": "Configuring an action",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000090",
+                        "range": {
+                          "start_unit_id": "p000044",
+                          "end_unit_id": "p000045",
+                          "start_page": 44,
+                          "end_page": 45
+                        },
+                        "summary": "This section explains how to configure an Action in Outcome Management and what options are available. It defines an action as an activity added to a client’s outcome plan, either manually or as a system recommendation from an outcome plan or assessment factor. It covers setup steps in the administration workspace and key fields such as name, reference, cost model, fixed cost, multiple clients, client participation, responsibility, owner, security IDs, availability check exclusion, and description."
+                      },
+                      {
+                        "title": "Responsibility",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000091",
+                        "range": {
+                          "start_unit_id": "p000046",
+                          "end_unit_id": "p000046",
+                          "start_page": 46,
+                          "end_page": 46
+                        },
+                        "summary": "This section explains action “Responsibility” settings and security controls. It lists responsibility assignment options for plan actions: User Creating Action, Any Client, Client Selected, Any User, MDT member, and Either User or Client. It also describes security identifiers (SIDs) used to restrict operations on actions, including Create SID and Modify SID, which users must have in their security profile to create or modify the action."
+                      },
+                      {
+                        "title": "Security Identifiers",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000092",
+                        "range": {
+                          "start_unit_id": "p000046",
+                          "end_unit_id": "p000046",
+                          "start_page": 46,
+                          "end_page": 46
+                        },
+                        "summary": "This section explains security identifiers (SIDs) for actions. It states that when users perform operations on an action, the system checks their privileges, and any specified SIDs must be present in the user’s security profile. It lists two action SIDs: Create SID, required to create the action, and Modify SID, required to modify the action. Useful for understanding action-level access control and permission requirements."
+                      },
+                      {
+                        "title": "Batch Process",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000093",
+                        "range": {
+                          "start_unit_id": "p000047",
+                          "end_unit_id": "p000047",
+                          "start_page": 47,
+                          "end_page": 47
+                        },
+                        "summary": "Describes the StartEffectiveOutcomePlanActions batch process, which updates outcome plan actions from Not Started to In Progress when the start date is in the past and the end date is blank or future. It can be run from System Administration > Batch Process, with an optional date override. Also introduces configuring progress values for outcome plans, including defining progress labels, optional icons, and resource names, via Administration Workspace > Outcome Management > Progress > New."
+                      }
+                    ],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000046",
+                      "start_page": 44,
+                      "end_page": 46
+                    },
+                    "summary": "Explains what an action is in Outcome Management and how to configure one in Administration Workspace > Outcome Management > Actions > New. Covers keyword tagging for search, action setup fields (name, reference, cost model, fixed cost, multiple clients, client participation, responsibility, owner, SIDs, availability-check exclusion, description, list preview, home page, rename allowed), plus responsibility options and security identifiers for create/modify permissions."
+                  },
+                  {
+                    "title": "Configuring services and referrals",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Explains how to configure services and referrals, focusing on outcome plan progress values. Describes the StartEffectiveOutcomePlanActions batch process, which changes “Not Started” actions to “In Progress” based on start/end dates and a selectable check date. Also outlines how to add progress values in Administration Workspace (Outcome Management > Progress > New), including required Value, optional Name/Description, Resource Name for icons, and an Icon that appears when progress is recorded."
+                  }
+                ],
+                "node_id": "n000087",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000046",
+                  "start_page": 43,
+                  "end_page": 46
+                },
+                "summary": "Defines how to configure activities in Outcome Management, especially actions. Covers creating actions in Administration Workspace > Outcome Management > Actions > New, tagging with keywords, and setting fields such as name, reference, cost model/fixed cost, multiple clients, client participation, responsibility, owner, SID-based create/modify security, availability-check exclusion, description, list preview, home page, and rename permission. Also explains responsibility options and how SIDs control access."
+              },
+              {
+                "title": "Configuring progress",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Progress",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000096",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "This section explains how to configure progress values for outcome plans in Administration. It defines progress as how well outcome plan activities address client needs, and notes that caseworkers select from admin-defined values such as Good, Bad, or Excellent. It also describes optional icons for each value, requiring a resource name for storage in application resources, and gives steps to create a new progress value via Outcome Management > Progress > New and save it."
+                  },
+                  {
+                    "title": "Configuring a progress value",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000097",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Explains how to create a progress value for Outcome Management so caseworkers can record client progress on an outcome plan. Defines progress as a measure of how well activities address client needs, and notes that values must be set up in administration, optionally with an icon. To add one, go to Administration Workspace > Shortcuts > Outcome Management > Progress > New, enter Name, Description, Value, Resource Name, and Icon, then save."
+                  }
+                ],
+                "node_id": "n000095",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Explains how to configure Outcome Management progress values used by caseworkers to record client progress on an outcome plan. Progress is defined as how well plan activities address client needs. Admins can create values such as Good, Bad, or Excellent, optionally assign an icon, and must provide a Resource Name so the icon can be stored in application resources. Steps: Administration Workspace > Shortcuts > Outcome Management > Progress > New, enter Name, Description, Value, Resource Name, and Icon, then save."
+              },
+              {
+                "title": "Configuring Recommendation Conditions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "This section explains how to configure recommendation conditions for outcome plans so only activities meeting client criteria are shown. It covers creating conditions based on gender, age, assessment answers, or rules, reusing them across activities, and combining them into condition sets for more complex logic. It also notes outcome plan system properties, including the factor graph color setting and the referral lookback period used in agreement creation."
+              },
+              {
+                "title": "Configuring outcome plan system properties",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring the automatic population of plans",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000100",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Explains how to enable automatic population of new outcome plans with default objectives and activities. By default it is off; when enabled, mandatory fields are filled and recommended objectives/activities are added, but factors are not. This works only for single-member outcome plans; multi-member plans remain empty. If an activity is recommended for multiple objectives, it is added once and linked to all relevant objectives."
+                  },
+                  {
+                    "title": "Configuring the planning workspace",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000101",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000051",
+                      "start_page": 50,
+                      "end_page": 51
+                    },
+                    "summary": "Explains how to configure the Outcome Planning workspace via Property Administration for system administrators. Covers key workspace settings and their defaults, including default side panel/workspace views, favorites and recommendations views, hiding completed activities/objectives, description length, search minimum characters, photograph column count, and limits for embedded pages, content area items, side panel items, and progress chart points. Notes that some limits must not be changed and that these settings control workspace behavior and display."
+                  },
+                  {
+                    "title": "Configuring the planning workspace search",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000102",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000052",
+                      "start_page": 52,
+                      "end_page": 52
+                    },
+                    "summary": "Explains how to configure search ranking in the planning workspace for objectives and activities via Application Data > Property Administration, under Application - Outcome Planning Settings. Describes weighting settings that control how full and partial matches are ordered in search results, including Description (default 3), keyword (10), Name (100), and Partial Description. Notes that higher values give greater importance, maximum is 100, and changes require Publish to save."
+                  }
+                ],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000052",
+                  "start_page": 48,
+                  "end_page": 52
+                },
+                "summary": "Explains outcome plan system properties configurable in Property Administration, including automatic population of new plans, workspace settings, and search weighting. Automatic population is off by default and only applies to single-member plans, adding recommended objectives/activities but not factors; existing plans are unchanged. Workspace settings control default views, favorites/recommendations/search/timeline/list visibility, completed-item hiding, description length, photo columns, search minimum characters, progress chart limits, and item limits. Search settings weight name, keyword, description, and partial description matches (max 100) to rank objective/activity search results."
+              },
+              {
+                "title": "Outcome Plan Security",
+                "level": 3,
+                "children": [],
+                "node_id": "n000103",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Outcome Plan Security explains that outcome management can reuse case security checks for outcome plans, but no security is provided by default. A hook is available for customers to implement custom security processing, which requires development and is documented in the JavaDoc."
+              }
+            ],
+            "node_id": "n000066",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000052",
+              "start_page": 33,
+              "end_page": 52
+            },
+            "summary": "Covers configuring outcome plans in Outcome Management: defining goals and objectives, factors and factor classifications, and outcome plan types, plus actions, progress values, recommendation conditions, and system properties. Includes how outcome plans can be automatically populated, workspace/search display settings, and search weighting. Also explains linking assessments to case types and controlling where assessments can be launched or shown on the case home page. Useful for administrators setting up outcome plan structure, behavior, and navigation."
+          },
+          {
+            "title": "1.3 Using dynamic products with outcome management",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuration example",
+                "level": 3,
+                "children": [],
+                "node_id": "n000105",
+                "range": {
+                  "start_unit_id": "p000054",
+                  "end_unit_id": "p000054",
+                  "start_page": 54,
+                  "end_page": 54
+                },
+                "summary": "Example configuration for delivering a dynamic product (Mileage Reimbursement) as a service in an outcome plan. It outlines steps in the Cúram Administration Application to define dynamic evidence, create and publish CER rules, create a product delivery case, then create a Service Offering linked to that product. The key setup is choosing a Delivery Type that uses product delivery processing and selecting the product. The section ends by introducing configuration of CDA-based assessments for outcome plan activity recommendations."
+              }
+            ],
+            "node_id": "n000104",
+            "range": {
+              "start_unit_id": "p000053",
+              "end_unit_id": "p000053",
+              "start_page": 53,
+              "end_page": 53
+            },
+            "summary": "Outcome Management can deliver CPM-based services either as standard service deliveries or as dynamic product deliveries. Dynamic products are configured entirely in the Cúram Administration Application, without Java/UIM development, and are delivered through product delivery cases. This approach supports services with additional eligibility criteria or client-paid services, combining product delivery features (evidence, eligibility, financial processing) with service-delivery features (provider selection, enquiries, reviews, progress reporting, invoice/roster-based payment). The section gives Mileage Reimbursement as an example and notes dynamic products are useful where standard service delivery is unsuitable."
+          },
+          {
+            "title": "1.4 Configuring CDA assessments",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuration example",
+                "level": 3,
+                "children": [],
+                "node_id": "n000107",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000058",
+                  "start_page": 55,
+                  "end_page": 58
+                },
+                "summary": "Step-by-step configuration example for a Cúram Outcome Management CDA assessment with an outcome plan. It shows creating and releasing a questionnaire, defining outcomes, setting up a code table and datastore domain, adding required IEG entities/attributes, building a one-page questionnaire with literacy and child care questions, then creating a CDA assessment configuration and decision matrix with scoring and outcomes. Useful for implementing a simple back-to-work assessment using IEG plus CDA."
+              }
+            ],
+            "node_id": "n000106",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000058",
+              "start_page": 54,
+              "end_page": 58
+            },
+            "summary": "Explains how to configure a Cúram CDA assessment for outcome management. Covers creating and releasing a questionnaire, defining outcomes, adding a code table and datastore domain, setting up IEG entities/attributes, building a simple one-page assessment with literacy and child care questions, then creating a CDA assessment configuration and decision matrix with scoring and outcomes. Includes guidance on when to use CDA vs CER and notes that the example is a simple back-to-work assessment."
+          },
+          {
+            "title": "1.5 Configuring a CER assessment",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuration example",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000060",
+                  "end_unit_id": "p000063",
+                  "start_page": 60,
+                  "end_page": 63
+                },
+                "summary": "Step-by-step configuration example for an Outcome Management assessment using CER rules and an IEG script. It defines rule classes and attributes for Person, BasicLiteracy, and Factor/FactorList; builds search, compare, choose, and decision table logic to map canReadOrWrite to a classification code table value; then configures a datastore schema, IEG script, page, cluster, and question for “Are you able to read and write and do basic math?”. Ends by creating a CER assessment configuration and linking it to Outcome Management."
+              },
+              {
+                "title": "Additional technical information",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Rules execution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000111",
+                    "range": {
+                      "start_unit_id": "p000064",
+                      "end_unit_id": "p000064",
+                      "start_page": 64,
+                      "end_page": 64
+                    },
+                    "summary": "Assessment rule execution supports pre- and post-execution events around assessment processing, exposing AssessmentInstanceEvents.preExecuteAssessment and postExecuteAssessment for custom logic. By default, assessments can use Cúram Decision Assist or Cúram Express Rules as the rules engine. Customers can also plug in their own assessment engine by implementing AssessmentConfiguration. This section is useful if you need to customize how CER assessment rules are invoked or extended."
+                  },
+                  {
+                    "title": "Rules configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000112",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains how Outcome Management initializes and runs CER rules from IEG-captured data. It describes DataStoreRuleObjectCreator mapping datastore entities/attributes to rule objects, creation of a FactorList class with a factors list, and how rules execute differently for role-based versus group-based assessments. For each factor, roleID, reference, score, and classification are processed, with results stored in FactorResults. Also outlines IEG configuration basics: root entity must be Application, prePopulateDatastore hook, and use of Person entities for role-based assessments."
+                  },
+                  {
+                    "title": "IEG configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000113",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000070",
+                      "start_page": 65,
+                      "end_page": 70
+                    },
+                    "summary": "Explains IEG configuration for Outcome Management assessments. Covers required root entity name Application, prePopulateDatastore and postPopulateDatastore hooks, and how Person entities are used for role-based assessments with automatically populated attributes. Also covers Group entity requirements for group-based assessments and optional Assessment entity fields. Includes how rules are created/executed from IEG data, FactorList/FactorResults handling, and how roles, factors, scores, and classifications are processed. Pages 69–70 are legal notices, copyright, privacy, and trademark information."
+                  }
+                ],
+                "node_id": "n000110",
+                "range": {
+                  "start_unit_id": "p000064",
+                  "end_unit_id": "p000070",
+                  "start_page": 64,
+                  "end_page": 70
+                },
+                "summary": "Covers advanced CER assessment setup: rule execution hooks, rule configuration, and IEG configuration. Describes pre/post assessment events, default support for Cúram Decision Assist and Cúram Express Rules, and custom engines via AssessmentConfiguration. Explains how IEG data becomes rule objects through DataStoreRuleObjectCreator, how FactorList/FactorResults drive role-based vs group-based assessments, and required IEG entities/hooks (Application root, pre/post populate datastore, Person/Group, optional Assessment). Pages 69–70 contain legal notices, copyright, privacy, and trademarks."
+              }
+            ],
+            "node_id": "n000108",
+            "range": {
+              "start_unit_id": "p000059",
+              "end_unit_id": "p000070",
+              "start_page": 59,
+              "end_page": 70
+            },
+            "summary": "Explains how to configure a CER-based assessment for Outcome Management. Includes a worked example building CER rule classes (Person, Factor, BasicLiteracy, FactorList) and logic to map a yes/no literacy answer to ClassDivisionType values Strength/Need, then wiring the assessment definition, roles, classifications, factors, and outcome plan. Also covers advanced technical notes: pre/post rule execution events, custom assessment engines via AssessmentConfiguration, how IEG datastore data becomes rule objects, and required IEG entities/hooks for role-based or group-based assessments."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000070",
+          "start_page": 9,
+          "end_page": 70
+        },
+        "summary": "Configures Outcome Management assessments and outcome plans. Covers assessment definitions as templates, including categories, factors, classifications, roles, reassessment timing, security, result display options, graphs, guidance, scores, priorities, and links to case types. Explains when to use CDA vs CER for assessment logic, and notes group- vs role-based assessments. Also covers outcome plan structure, actions, progress values, recommendations, workspace/search settings, and assessment launch locations. Includes dynamic products and technical guidance for CER rules, IEG datastore mapping, and assessment engine hooks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,1417 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "5179a34b5e5e8e1e",
+    "title": "Cúram 8.1.2 Operations Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramOperationsGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "5179a34b5e5e8e1e4f9b7b0f03566e85ba603eef46bdd5ed1c714c606318c824",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T18:21:51+00:00",
+    "page_count": 42,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramOperationsGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Operations Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000042",
+      "start_page": 1,
+      "end_page": 42
+    },
+    "summary": "Operations guide for administering a production or production-like Cúram 8.1–8.1.2 system. Covers advanced setup: storing XSL templates for the XML Server, creating/refining a production database from generated scripts, data conversion/migration cautions, and creating organization data. Explains how to start and stop the Cúram Online System and where to find system logs. Describes batch processing via the Batch Launcher, stand-alone batch processes, core batch jobs, processing dates/parameters, and input/output interfaces. Documents configuration for the Cúram XML Server and Server Application, including dynamic vs. static properties, online administration, and publishing changes. Also covers monitoring workflow and deferred processes through Process Instances and Process Instance Errors, including suspend, stop, retry, abort, and overriding event waits. The section ends with legal notices, copyright, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note instructs readers to review the Notices section before using the information or the supported product. It also includes the copyright statement for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition page for Cúram 8.1/8.1.1/8.1.2, followed by the start of Chapter 1 on production operations. Covers advanced production setup: XSL template storage for correspondence, creating/refining a production database, data migration cautions, and setting up organization data. Also explains how to start/stop the Cúram Online System and where logs are stored for WebSphere, Liberty, and WebLogic. Begins batch processing overview and Batch Launcher request flow, with notes on execution order and standalone batch alternatives."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers production operation tasks and core batch processing. Explains how to run the Batch Launcher and XML Server, customize online batch process lists/groups, execute stand-alone and scheduled batches, and review batch logs. Introduces core batch parameters, especially optional processingDate. Lists major batch jobs such as GenerateCommunications, closure and eligibility jobs, reassessment and rule-object propagation utilities, CREOLE chunk reassessment and streaming, reassessment strategy updates, and Redetermine Translator, including when and why to use them and key parameters like product ID and instance ID."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section lists batch processes in Cúram 8.1.2 for production administration, especially Dependency Manager tooling, financial processing, workflow deadlines, wait list maintenance, and input/output interfaces. It documents each batch’s purpose, parameters, class/method, streaming support, ordering constraints, and operational notes. Key items include submitting/recalculating/completing precedent change sets; generating instruction line items and instruments; concern payments; payslips; payment reconciliation/expiry; task deadline processing; wait list expiry/review; and loading received payments or supplier returns."
+          },
+          {
+            "title": "Edition — pages 35-40",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000040",
+              "start_page": 35,
+              "end_page": 40
+            },
+            "summary": "Cúram production operations guide covering batch exports and system administration. It describes Calendar Export and Generate Ledger Interface batch processes, including required parameters and class/method names. It then explains Cúram configuration settings: XML Server and Server Application properties, dynamic vs static settings, publishing changes, and steps to edit properties in the admin UI. Finally, it covers monitoring workflow/deferred processes via Process Instances and Process Instance Errors views, with options to suspend, stop, override event waits, retry, or abort failed instances."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000040",
+          "start_page": 5,
+          "end_page": 40
+        },
+        "summary": "Production operations guide for Cúram 8.1–8.1.2. Covers advanced setup (XSL templates, production database creation, data migration cautions, organization setup), starting/stopping the online system and viewing logs, batch launcher and standalone/scheduled batch processing, and core batch jobs/interfaces. Also documents configuration settings for XML Server and Server Application, including dynamic/static properties and publishing changes. Ends with monitoring workflow/deferred processes via Process Instances and Process Instance Errors, including suspend, stop, retry, abort, and override event wait actions."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000042",
+              "end_unit_id": "p000042",
+              "start_page": 42,
+              "end_page": 42
+            },
+            "summary": "Contains legal/disclaimer text: sample data and names are fictitious; sample source programs may be copied, modified, and distributed for API-conforming development, but are provided “AS IS” without warranty or liability. Gives the Merative privacy policy URL and lists trademarks/ownership notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others, plus copyright years 2012 and 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000042",
+              "end_unit_id": "p000042",
+              "start_page": 42,
+              "end_page": 42
+            },
+            "summary": "Lists trademark and legal notices for the document. States that the examples use fictitious names, the sample programs are provided “as is” under the Merative Client Agreement, and links to Merative’s privacy policy. Identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes other names may be trademarks of others. Includes copyright notice: © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000041",
+          "end_unit_id": "p000041",
+          "start_page": 41,
+          "end_page": 41
+        },
+        "summary": "This section contains legal notices and usage terms for the publication. It covers personal and enterprise reproduction permissions, restrictions on distribution and derivative works, export-law compliance, and Merative’s right to revoke permissions. It includes an “as-is” warranty disclaimer, patent notice, third-party product and website disclaimers, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the “Administering operations for a production system” chapter. It lists sections on advanced setup, running the Cúram Online System, running batch processes, core batch processes, configuration settings, and monitoring Cúram processes. Subtopics include XSL template storage, production database creation, data conversion, organization setup, starting/stopping the system, logs, batch launcher, standalone batches, processing dates, input/output interfaces, XML server and server application settings, workflow monitoring, and process instance errors."
+      },
+      {
+        "title": "1 Administering operations for a production system",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Advanced Setup",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Overview of advanced production setup for a Cúram system. It lists key topics: storing XSL templates for correspondence generation, creating the production database, handling data conversion issues, and creating your organization. It notes this chapter can be skipped for demo/investigation installs. The section explains that the Cúram XML Server merges XSL letter templates with user-entered text and database data, and gives initial steps for adding templates via System Administration (default admin is sysadmin/password)."
+              },
+              {
+                "title": "Storing XSL Templates for Use in the Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how to store and enable XSL templates for use by the Cúram XML Server when generating pro forma correspondence. Covers that templates merge stored XSL with user free text and database data, notes sample templates are inserted during database setup, and says no XSL editing tools are provided in the application. Includes steps to add a template through System Administration: log in, open System Configurations, go to Communications - XSL Templates, view existing templates, and click New."
+              },
+              {
+                "title": "Creating the Production Database in the Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to create a production Cúram database using the application’s generated scripts rather than only the basic runtime procedure. Steps include running `build database`, reviewing `build/datamanager`, and refining DDL/SQL for physical database setup, shared databases, table attributes, initial data, data loading, and indexing. Strongly recommends not using database-enforced foreign key constraints in production because referential integrity is handled by the application and constraints hurt performance. Also notes that data migration from existing systems is a separate, out-of-scope concern."
+              },
+              {
+                "title": "Data Conversion Issues",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "In production, you may need to migrate data from existing systems into the Cúram database. The section says data conversion/migration planning is outside this document’s scope because it depends on detailed knowledge of the source systems, target database design, and migration requirements. Useful for deciding whether to open: this node mainly flags that production deployments often require data loading/migration, but gives no procedural steps."
+              },
+              {
+                "title": "Creating Your Organization in the Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains that the application database must include organization, organization units, and users. It provides sample organization data that lets you start the Cúram Online Server Application and log on from a Cúram Client. The sample includes an organization structure, defined as a hierarchy of organization units, where units can contain positions and positions can contain users."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000011",
+              "start_page": 9,
+              "end_page": 11
+            },
+            "summary": "Advanced setup for a production Cúram system. Covers storing XSL templates for correspondence generation in the System Administration UI, creating a production database from generated `build database` scripts and `build/datamanager` DDL/SQL, handling data migration/conversion planning, and creating organization data. Notes the chapter can be skipped for demo/investigation installs. Key warnings: Cúram XML Server merges XSL with user text and database data, the app has no XSL editor, and production databases should not use database-enforced foreign keys."
+          },
+          {
+            "title": "1.2 Running the Cúram Online System",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Overview of running and administering the Cúram online system. Covers how to start the system, including starting the Cúram XML Server first when the runtime uses it, then starting the Cúram Server Application. Gives command-line and Windows shortcut methods for both servers, and points to the XML Infrastructure Guide and deployment guide for more details."
+              },
+              {
+                "title": "Starting the System",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Cúram XML Server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to start the Cúram XML Server in the online system. It gives the command to run from the XMLServer directory (`ant -f xmlserver.xml`), notes the Windows shortcut to start it, and states that the Cúram Server Application should be started after the XML Server if the runtime uses it. It also points readers to the Cúram XML Infrastructure Guide for more details."
+                  },
+                  {
+                    "title": "Cúram Server Application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to start the Cúram online system’s Server Application, including its dependency on starting the Cúram XML Server first when used. Gives the command to start the server from the Runtime installation directory (`build startserver -Dserver.name=curam1`), notes that `curam1` matches `curam.server.name`, and lists Windows alternatives via Start menu shortcut or `StartServer.bat`. Refers readers to the Cúram XML Infrastructure Guide and deployment guide for more details."
+                  }
+                ],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains how to start the Cúram online system. It covers starting the Cúram XML Server first when the runtime uses it, using `ant -f xmlserver.xml` from the XMLServer directory or the Windows shortcut. It also explains starting the Cúram Server Application from the Runtime directory with `build startserver -Dserver.name=curam1`, where `curam1` matches `curam.server.name`, plus Windows shortcut and `StartServer.bat` options. Referenced guides provide more detail."
+              },
+              {
+                "title": "Stopping the System",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Cúram Server Application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to stop the Cúram online system, focusing on the Cúram Server Application and XML Server. Gives the command to stop the server from the runtime directory (`build stopserver -Dserver.name=curam1`), Windows alternatives (`StopServer.bat` or menu shortcut), and warns to notify online users first. Also notes that the Server Application should be stopped before the XML Server, and lists default log locations for WebSphere Application Server and WebSphere Liberty."
+                  },
+                  {
+                    "title": "Cúram XML Server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to stop the Cúram online system, with specific steps for the Cúram Server Application and Cúram XML Server. Notes that the Server Application should be stopped first, gives command-line and Windows options, and warns online users to finish work before shutdown. Also mentions how to stop the XML Server (^C or closing the console on Windows) and points to the Cúram XML Infrastructure Guide. Includes default locations for online logs on IBM WebSphere Application Server and WebSphere Liberty."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Instructions for stopping the Cúram online system. Covers stopping the Cúram Server Application first, with the command `build stopserver -Dserver.name=curam1`, plus Windows options (`StopServer.bat` or the Start menu shortcut). Advises notifying online users before shutdown. Also explains how to stop the Cúram XML Server (`^C` or closing the console on Windows) and includes default online log locations for IBM WebSphere Application Server and WebSphere Liberty."
+              },
+              {
+                "title": "System Logs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to stop the Cúram online system: stop the Cúram Server Application first, then the Cúram XML Server. Gives command-line and Windows methods for stopping the server and notes users should finish work before shutdown. The System Logs subsection identifies default online log locations for IBM WebSphere Application Server and WebSphere Liberty, including the relevant logs directories."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000013",
+              "start_page": 12,
+              "end_page": 13
+            },
+            "summary": "Covers administering the Cúram online system: how to start and stop it, required server order, and where logs are stored. Start the Cúram XML Server first if used, then the Cúram Server Application; stop them in reverse order. Gives command-line and Windows shortcut/batch options for both servers, notes users should finish work before shutdown, and lists default log locations for IBM WebSphere Application Server and WebSphere Liberty."
+          },
+          {
+            "title": "1.3 Running batch processes in the application",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Batch Launcher",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Batch Process Requests",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how to submit a batch process request in Cúram 8.1.2 via the application UI. A system administrator navigates to Administration > System Configurations > Batch Processes, selects a process, enters any required parameters, and clicks Execute to queue it. The section sits within the broader discussion of running batch processes, which notes that application batch jobs are model-generated, parameterized at runtime, logged per invocation, and emailed to a nominated user."
+                  },
+                  {
+                    "title": "Running the Batch Launcher",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to run the Batch Launcher and related batch configuration tasks. Recommends running the Batch Launcher when the Cúram online application is down, though it can run while up if it will not lock the application database. Gives commands to start the launcher (`build runbatch`) and the XML Server (`ant -f xmlserver.xml`), plus a Windows shortcut path. Also introduces customizing online batch process lists, including viewing, adding, and updating batch processes as a system administrator."
+                  },
+                  {
+                    "title": "Cúram XML Server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to start the Cúram XML Server from the XMLServer subdirectory using `ant -f xmlserver.xml`. The section also covers administration of batch processes: running the Batch Launcher (`build runbatch`, or a Windows shortcut), when it is safe to run it while the online application is up, and how system administrators can view, add, or update the online batch process list."
+                  },
+                  {
+                    "title": "Configuring the Online Interface of Batch Processes",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Maintaining the Batch Process List",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000033",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Explains how to maintain the online Batch Processes list in Cúram. It notes that batch processes can be added or removed from the user-visible list, which initially includes all available batch processes and may be trimmed for stand-alone executables. It gives navigation to view the list as a system administrator via System Configurations > Batch Processes, and describes adding a new batch process using the New button and Save. It begins the procedure for updating an existing batch process."
+                      },
+                      {
+                        "title": "Viewing the List of Batch Processes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000034",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Explains how to view and manage the online Batch Processes list in Cúram. To view it, log in as a system administrator and go to System Configurations > Batch Processes, which shows available batch processes. The section also notes that the list can be customized by adding or removing processes, with all processes included initially. This is useful if some batch executables should be run only as stand-alone programs rather than exposed to users."
+                      },
+                      {
+                        "title": "Adding a New Batch Process to the List",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000035",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Explains how to run the Batch Launcher and Cúram XML Server, then how to configure the online interface for batch processes. Focuses on maintaining the batch process list, including viewing existing processes and adding a new batch process via System Configurations > Batch Processes, clicking New, entering details, and saving. Also notes the list initially contains all available batch processes and can be customized to hide stand-alone executables."
+                      },
+                      {
+                        "title": "Updating a Batch Process Already in the List",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000036",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Explains how to configure the online Batch Processes list in Cúram. Covers viewing the list as a system administrator, adding a new batch process, and updating an existing one in the list. Also notes that the list can be customized by adding/removing processes, initially contains all available batch processes, and may be used to restrict stand-alone executables from user launch."
+                      },
+                      {
+                        "title": "Removing a Batch Process from the List",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000037",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Explains how to remove a batch process from the batch process list: go to the list of batch processes and click Remove next to the chosen process. This page also introduces batch process groups, including viewing, adding, and removing groups, and adding/removing batch processes within groups. It notes that batch processes can belong to zero, one, or more groups."
+                      }
+                    ],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to configure the online Cúram Batch Processes interface. The section covers viewing the Batch Processes list as a system administrator via System Configurations > Batch Processes, adding a new batch process with New and Save, and beginning the update flow for an existing entry. It notes the list initially includes all available batch processes and can be trimmed to hide stand-alone executables from users."
+                  },
+                  {
+                    "title": "Maintaining Batch Process Groups",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Viewing the List of Batch Process Groups",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Explains how to view the Batch Process Groups list from the ShortCuts Panel by clicking “Batch - Process Groups,” which displays the list of Batch Groups. The surrounding section also covers maintaining process groups: adding a new group, removing a group, adding a batch process to a group, and removing a batch process from a group."
+                      },
+                      {
+                        "title": "Adding a New Batch Group to the List",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Explains how to maintain batch process groups in Cúram. It covers viewing the list of batch process groups, adding a new batch group via the New button and saving its details, removing a batch process group with Remove, and assigning or removing batch processes from groups. Notes that batch processes can belong to zero, one, or multiple groups."
+                      },
+                      {
+                        "title": "Removing a Batch Process Group from the List",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Explains how to maintain batch process groups in Cúram: view the list via Batch - Process Groups in the ShortCuts Panel, add a new group with New, remove a group with Remove, add a batch process to a group via View and Add, and begin the steps for removing a batch process from a group. Also notes that batch processes can belong to zero, one, or more groups for categorization and navigation."
+                      },
+                      {
+                        "title": "Adding a Batch Process to a Group",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Explains how to maintain batch process groups and assign processes to them. Covers viewing the list of batch process groups, creating a new group, removing a group, adding a batch process to a selected group via View > Add > Save, and begins the removal procedure. Notes that batch processes can belong to zero, one, or multiple groups, helping with categorization and navigation."
+                      },
+                      {
+                        "title": "Removing a Batch Process from a Group",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "This section covers managing batch process groups in Cúram 8.1.2. It explains how to view, add, and remove batch process groups, and how to add a batch process to a group. It also notes that batch processes can belong to zero, one, or multiple groups. The excerpt ends at “Removing a Batch Process from a Group,” but the detailed steps are not shown in the provided text."
+                      },
+                      {
+                        "title": "Executing a Batch Process from a Group",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000044",
+                        "range": {
+                          "start_unit_id": "p000017",
+                          "end_unit_id": "p000017",
+                          "start_page": 17,
+                          "end_page": 17
+                        },
+                        "summary": "Explains how to execute a batch process from within a batch process group: go to the group list, click View for the desired group, then click Execute next to the chosen process. The section also introduces stand-alone batch execution, noting it is used for testing, ordered dependencies, or routine runs. It gives the basic command-line format for running a batch process, including batch program, batch username, and optional parameters, and notes that parameter names can be viewed in the application before scheduling."
+                      }
+                    ],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains how to maintain batch process groups in Cúram. It covers opening the Batch - Process Groups list from the ShortCuts Panel, creating a new group, removing a group, and assigning a batch process to a group via View and Add. It also notes that batch processes may belong to zero, one, or multiple groups for categorization and navigation, and begins the procedure for removing a batch process from a group."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000016",
+                  "start_page": 14,
+                  "end_page": 16
+                },
+                "summary": "Explains Cúram batch process execution and administration. Covers the Batch Launcher deferred-request mechanism, noting it runs queued jobs in request order and is best used when the online app is down unless database locking is not a risk. Gives commands to start the launcher (`build runbatch`) and XML Server (`ant -f xmlserver.xml`), plus a Windows shortcut. Also describes the online Batch Processes interface for viewing, adding, updating, and removing processes, and managing batch process groups for categorization and navigation."
+              },
+              {
+                "title": "Running stand-alone batch Processes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Command Format",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains the command-line format for running batch processes in stand-alone mode. It notes that required input parameters vary by batch process and can be viewed in the online Cúram application before scheduling. The section gives the runtime directory command pattern using `build runbatch`, specifying `-Dbatch.program`, `-Dbatch.username`, and `-Dbatch.parameters` as comma-separated name=value pairs, and includes an example using `curam.intf.PersonExtract.extractPersonDetails`."
+                  },
+                  {
+                    "title": "Scheduling of Batch Processes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Use any external scheduling tool to run batch processes at a specified time; batch processes return status values per the BatchErrorCodes codetable for scheduler integration. No scheduling tools are bundled with the application. Batch logs are written in the Runtime installation’s buildlogs directory, named with the batch process name plus date/time, and are emailed automatically to the address configured in Bootstrap.properties or Administration properties."
+                  },
+                  {
+                    "title": "System Logs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Batch process logs are stored in the Cúram Runtime installation’s buildlogs subdirectory and named with the batch process name plus date/time. Each batch run creates a log showing execution progress, and the log contents are automatically emailed to the address configured in Bootstrap.properties or Administration properties. This section also notes that batch processes may be scheduled with external tools, and that batch jobs can accept an optional processingDate parameter to control the effective date used by getCurrentDate()."
+                  }
+                ],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains when and how to run Cúram batch processes in stand-alone mode, mainly for testing, dependency ordering, or regular scheduled jobs. It gives the runtime command format using `build runbatch` with `-Dbatch.program`, `-Dbatch.username`, and `-Dbatch.parameters`, and notes that required parameters vary by process and can be viewed in the online application before execution. Includes an example using `curam.intf.PersonExtract.extractPersonDetails`."
+              }
+            ],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000017",
+              "start_page": 14,
+              "end_page": 17
+            },
+            "summary": "Explains how Cúram batch processes are run in the application. Covers batch process characteristics, queued execution via the Batch Launcher, when to use it, and commands to start the launcher and XML Server. Describes the online Batch Processes interface for viewing, adding, updating, removing, and grouping processes, plus executing them from groups. Also explains stand-alone batch execution, including when it’s appropriate, the `build runbatch` command format with `-Dbatch.program`, `-Dbatch.username`, and `-Dbatch.parameters`, and an example program."
+          },
+          {
+            "title": "1.4 Core Batch Processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Overview of core batch process usage and operations. Describes how to pass batch parameters on the command line, notes that repeated testing can move `-D` options into `Bootstrap.properties`, and explains scheduling via external tools only (no built-in scheduler). Also covers batch log storage and email notification. Introduces core batch processes, stating they can generally run in any order, and explains the optional `processingDate` parameter as the effective date used by `getCurrentDate()`, unless otherwise specified."
+              },
+              {
+                "title": "Batch Parameters and Processing Date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Several core batch jobs accept an optional processingDate parameter. By default, getCurrentDate() uses the current system date as the effective date, but processingDate can override this for the batch run. Some batch programs may use processingDate in additional, program-specific ways described in their own documentation."
+              },
+              {
+                "title": "Cúram Processing",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Case Management",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "GenerateCommunications",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Describes the GenerateCommunications batch process for Cúram Case Management. It generates pending case management communications (for example, case approval notices), typically run nightly; rerunning more than once a day has no effect. It takes no parameters. Also lists related nightly batch processes on this page: ProductDeliveryFinalClosure, which closes cases in pending closure after the grace period, and EvaluateCertificationGracePeriod, which moves cases to pending closure after certification grace period. Includes the fully qualified batch process class/method names."
+                      },
+                      {
+                        "title": "ProductDeliveryFinalClosure",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000055",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Describes two nightly batch processes for case management closure. ProductDeliveryFinalClosure closes cases in pending closure after the closure grace period expires; it takes no parameters and can be rerun without effect, though delays closure if run less often. It maps to curam.core.intf.CloseCasesPendingClosure.closeCasesPendingClosure. The same page also introduces EvaluateCertificationGracePeriod, which sets cases to pending closure after the certification grace period and is similarly nightly, parameterless, and idempotent."
+                      },
+                      {
+                        "title": "EvaluateCertificationGracePeriod",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000056",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Describes the EvaluateCertificationGracePeriod batch process, which sets cases to pending closure after they have been out of certification for the certification grace period. It is intended to run nightly; running less often only delays the transition, and running more than once daily has no effect. The process takes no parameters. Class/method: curam.core.intf.EvaluateCertificationGracePeriod.run."
+                      },
+                      {
+                        "title": "DetermineProductDeliveryEligibility",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000057",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "Describes the DetermineProductDeliveryEligibility batch process for newly approved cases: ineligible cases are set to pending closure, eligible cases to active, and errors suspend the case and notify the owner. It is intended to run nightly but can run less or more often; more frequent runs process all approved cases currently on the system. Covers parameters Product ID and Batch Process Instance ID, the class/method `curam.core.intf.DetermineProductDeliveryEligibility.process`, and the related `DetermineProductDeliveryEligibilityStream` for concurrent streaming instances."
+                      },
+                      {
+                        "title": "DetermineProductDeliveryEligibilityStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000058",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "Describes the DetermineProductDeliveryEligibility batch process and its streaming companion. The main process handles newly approved cases: ineligible cases move to pending closure, eligible cases to active, and errors suspend the case and notify the owner. It is intended to run nightly but can run less or more often. Parameters include Product ID and Batch Process Instance ID; the class/method is curam.core.intf.DetermineProductDeliveryEligibility.process. The stream process supports concurrent execution and must use the same Batch Process Instance ID as the main instance."
+                      },
+                      {
+                        "title": "ReassessOutstandingCases",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000059",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Describes the ReassessOutstandingCases batch process, which reads all ScheduleReassessment records and reassesses each pending case in batch mode. It supports an optional processingDate parameter to set the effective date; otherwise getCurrentDate() uses the current system date. The class/method is curam.core.intf.ReassessOutstandingCases.reassess. The page also begins adjacent batch-process docs for FullPropagationToRuleObjects and RateCreateInitialRuleObjects, covering rule-object propagation from rate table data."
+                      },
+                      {
+                        "title": "FullPropagationToRuleObjects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000060",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Describes the FullPropagationToRuleObjects batch process, which fully propagates rate table database data to CER rule objects when stored rule objects may no longer match their source data, such as after updates outside application APIs. Recommends using “Apply Changes” for small numbers of changes and reserving this batch for larger discrepancies. Notes that discrepancy summaries are logged and detailed logging requires verbose or ultra-verbose mode. The batch takes no parameters and is implemented by curam.core.sl.infrastructure.propagator.intf.FullPropagationToRuleObjects.execute."
+                      },
+                      {
+                        "title": "RateCreateInitialRuleObjects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000061",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Describes the RateCreateInitialRuleObjects batch process, which creates initial CER rule objects from existing rate table entries when rate table data has been loaded outside the application’s APIs. It refers readers to the “Propagating Non Cúram Data For Cúram Express Rules” guide for more detail and notes that the process takes one parameter."
+                      },
+                      {
+                        "title": "CREOLEBulkCaseChunkReassessmentByProduct",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000062",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "Describes the CREOLEBulkCaseChunkReassessmentByProduct batch process for forcing full reassessment of many active CER cases for a specified product type, storing new determinations and superseding old ones if they change. Notes it may cause unnecessary reassessments and suggests writing a more targeted batch process when appropriate. Lists use cases such as CER rule set, product configuration, data configuration, and rate table changes. Also documents parameters Product ID and Batch Process Instance ID, and mentions the companion streaming process CREOLEBulkCaseChunkReassessmentStream."
+                      },
+                      {
+                        "title": "CREOLEBulkCaseChunkReassessmentStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000063",
+                        "range": {
+                          "start_unit_id": "p000022",
+                          "end_unit_id": "p000022",
+                          "start_page": 22,
+                          "end_page": 22
+                        },
+                        "summary": "Defines the CREOLEBulkCaseChunkReassessmentStream batch process, which supports streaming for CREOLEBulkCaseChunkReassessmentByProduct. It can only be run together with the by-product reassessment process and exists to help process large-scale CER case reassessments. This section is mainly relevant if you need the companion stream process for bulk reassessment operations."
+                      },
+                      {
+                        "title": "ApplyProductReassessmentStrategy",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000064",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Describes the ApplyProductReassessmentStrategy batch process for a specific product. It scans all product delivery cases and updates reassessment support when a product’s reassessment strategy changes: if a case becomes reassessable, it runs an assessment to build dependency records; if it is no longer reassessable, it removes those dependency records; otherwise it does nothing. The only parameter is Product ID, used to target cases for one product."
+                      },
+                      {
+                        "title": "Redetermine Translator",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000065",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Describes the RedetermineTranslator batch, which automatically recalculates translator requirements when a user’s language skills change and many cases may be affected. It checks all open cases owned by a specified user, compares each participant’s preferred language to the user’s language skill, and updates the translator-required indicator if needed. Includes batch classes/methods RedetermineTranslator.process and RedetermineTranslatorStream.process, plus parameters for instance ID, processing date, and user name. Also notes the application property controlling online vs batch execution."
+                      }
+                    ],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000023",
+                      "start_page": 19,
+                      "end_page": 23
+                    },
+                    "summary": "Case Management batch processes for communications, closure, eligibility, reassessment, and CER rule propagation. Covers nightly/idempotent jobs like GenerateCommunications, ProductDeliveryFinalClosure, and EvaluateCertificationGracePeriod; DetermineProductDeliveryEligibility and its stream companion for newly approved cases; ReassessOutstandingCases with optional processingDate; FullPropagationToRuleObjects and RateCreateInitialRuleObjects for rate-table-to-rule-object propagation; CREOLEBulkCaseChunkReassessmentByProduct and stream for bulk CER reassessment by product; and ApplyProductReassessmentStrategy for updating reassessment support when a product strategy changes."
+                  },
+                  {
+                    "title": "Dependency Manager",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "SubmitPrecedentChangeSet",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000067",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Describes the Dependency Manager batch suite’s first step, SubmitPrecedentChangeSet: a lightweight single-stream batch process that submits the currently open batch precedent change set and opens a new one for later changes. Includes the batch class/method curam.dependency.intf.SubmitPrecedentChangeSet.process. The excerpt also introduces the related suite steps PerformBatchRecalculationsFromPrecedentChangeSet and CompletePrecedentChangeSet, plus tooling prerequisites for running the suite with Ant scripts and required environment variables (SERVER_DIR, CURAMSDEJ)."
+                      },
+                      {
+                        "title": "PerformBatchRecalculationsFromPrecedentChangeSet",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000068",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Describes the Dependency Manager batch process “PerformBatchRecalculationsFromPrecedentChangeSet,” a heavyweight multi-stream batch that identifies dependents affected by a submitted precedent change set and recalculates them. It must be run once for each dependent type registered with Dependency Manager. Also lists the associated chunker and stream batch class/method names. This section sits within the broader batch suite flow between SubmitPrecedentChangeSet and CompletePrecedentChangeSet, and begins the tooling/prerequisites discussion for running the batch suite."
+                      },
+                      {
+                        "title": "CompletePrecedentChangeSet",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000069",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "End point of the Dependency Manager batch suite. Describes `CompletePrecedentChangeSet`, a lightweight single-stream batch process that completes the currently submitted batch precedent change set. Includes the batch process class/method: `curam.dependency.intf.CompletePrecedentChangeSet.process`. This section is useful if you need the final step of the precedent change set batch workflow."
+                      },
+                      {
+                        "title": "Dependency Manager Batch Tooling",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000070",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "This section explains Dependency Manager batch tooling for running the batch suite with Ant scripts. It covers the three batch processes—SubmitPrecedentChangeSet, PerformBatchRecalculationsFromPrecedentChangeSet, and CompletePrecedentChangeSet—and notes that recalculations must be run once per registered dependent type. It also describes the tooling’s purpose: generating a system-specific Ant script and then invoking it to run jobs in the correct order, with a configurable performance property. Prerequisites include SERVER_DIR and CURAMSDEJ, database drivers in SERVER_DIR/drivers, and connection details from Bootstrap.properties."
+                      }
+                    ],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000025",
+                      "start_page": 24,
+                      "end_page": 25
+                    },
+                    "summary": "Defines the Dependency Manager batch suite: SubmitPrecedentChangeSet starts a new precedent change set after submitting the current one; PerformBatchRecalculationsFromPrecedentChangeSet is the multi-stream recalculation step and must be run once per registered dependent type; CompletePrecedentChangeSet closes the submitted set. Also documents Ant-based tooling to generate and run a system-specific script in the correct order, with performance tuning and prerequisites such as SERVER_DIR, CURAMSDEJ, database drivers, and Bootstrap.properties connection details."
+                  },
+                  {
+                    "title": "Financial",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "GenerateInstructionLineItems",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000072",
+                        "range": {
+                          "start_unit_id": "p000026",
+                          "end_unit_id": "p000026",
+                          "start_page": 26,
+                          "end_page": 26
+                        },
+                        "summary": "Describes the Financial batch process GenerateInstructionLineItems, which creates instruction line items for financial components due for processing. It explains that input parameters determine which Financial Components are selected, using Date From/Date To when provided, or the current system date if omitted. The process retrieves components with processing dates earlier than the specified date. This section is useful for understanding when and how the batch generates instruction line items and how date filtering affects processing."
+                      },
+                      {
+                        "title": "GenerateInstructionLineItemsStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000073",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "Supports streaming/concurrent execution for the Generate Instruction Line Items batch process. It can only be used with GenerateInstructionLineItems and is intended to let batch work run in parallel, possibly on different machines, to better use database capacity. The only parameter is Batch Process Instance ID, which allows multiple simultaneous instances; if omitted, only one instance can run."
+                      },
+                      {
+                        "title": "GenerateInstruments",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000074",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "Describes the GenerateInstruments batch process, which identifies due instruction line items, rolls them up into instructions, and creates instruments where appropriate. It takes a Batch Process Instance ID to support concurrent runs; without one, only one instance can run. Gives the batch class/method as curam.core.intf.GenerateInstruments.processInstructionLineItemsDue and notes it should run after GenerateInstructionLineItems and before IssueConcernPayments. Also introduces GenerateInstrumentsStream, which supports streaming/concurrent execution and must be used with Generate Instruments using the same instance ID."
+                      },
+                      {
+                        "title": "GenerateInstrumentsStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000075",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "Describes the GenerateInstrumentsStream batch process, which supports streaming/concurrent execution for Generate Instruments only. It must be run together with the Generate Instruments process and uses Batch Process Instance ID to link to a specific instance; without an ID, only one instance can run. The section also explains that streaming enables concurrent execution, potentially on different machines, to better use database capacity."
+                      },
+                      {
+                        "title": "IssueConcernPayments",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000076",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "Describes the IssueConcernPayments batch process for paying Utility, Service Supplier, or Product Provider concerns. It selects concerns due for payment within a Date From/Date To range, optionally filtered by method of payment and concern type, then combines outstanding payment instructions into a single payment instrument and updates the next payment date. Includes the batch class/method curam.core.intf.IssueConcernPayments.issueConcernTypePayment and notes it should run after GenerateInstruments and before GeneratePayslips."
+                      },
+                      {
+                        "title": "GeneratePayslips",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000077",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "Describes the GeneratePayslips batch process, which finds unissued payslips and retrieves data to format them for readable output. It appears as part of a production-system administration section and follows a note that IssueConcernPayments should run after GenerateInstruments and before GeneratePayslips. Useful if you need the batch process’s purpose or its place in the processing sequence."
+                      },
+                      {
+                        "title": "LoadServiceSupplierReturns",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000078",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Defines the LoadServiceSupplierReturns batch process, which loads service supplier returns from an input file. It takes one parameter, File Name, specifying the directory containing the input file. The associated batch class and method are curam.core.intf.LoadServiceSupplierReturns.loadSupplierReturns."
+                      },
+                      {
+                        "title": "ProcessPaymentInstrumentTypes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000079",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Sample batch process for issuing payment instruments. It retrieves unissued payments, outputs payment data to a file for external system integration, and updates payment status to issued. Takes an optional Delivery Method parameter; if omitted, it processes all unissued payments, otherwise only those for the specified method. Implemented by `curam.core.intf.ProcessPaymentInstrumentTypes.processPmtInstrumentType`. This is a sample integration process for payment processing systems and runs only on unissued payments."
+                      },
+                      {
+                        "title": "ExpirePayments",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000080",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Describes several batch processes related to payment handling. It includes GeneratePayslips (sample implementation; no parameters; runs after IssueConcernPayments; updates payslips to Issued), LoadServiceSupplierReturns (loads supplier returns from a file; takes File Name), and ProcessPaymentInstrumentTypes (exports unissued payments for external payment processing and marks them issued; optional Delivery Method parameter). The section then begins ExpirePayments, but its details are not shown in the excerpt."
+                      },
+                      {
+                        "title": "PaymentReconciliation.",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000081",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "Reconciles an account by comparing amounts due with amounts actually paid, generating a report of discrepancies. It takes two parameters: File Path and File Name, and reads the specified payment file from that location. The batch process class/method is curam.core.intf.PaymentReconciliation.reconcilePayments."
+                      },
+                      {
+                        "title": "ReconcileCaseAccount",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000082",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "Runs batch reconciliation for liability cases with underpayments or overpayments applied. It takes no parameters and is invoked via `curam.core.intf.ReconcileCaseAccount.reconcileCaseAccount`. Useful if you need account/case payment reconciliation behavior rather than general payment reconciliation."
+                      }
+                    ],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000030",
+                      "start_page": 26,
+                      "end_page": 30
+                    },
+                    "summary": "Financial batch processes for payment generation and reconciliation. Covers GenerateInstructionLineItems and its stream variant for creating instruction line items from due financial components, with Date From/To, Delivery Method, and Batch Process Instance ID for concurrent runs. Also documents GenerateInstruments and stream variant for rolling line items into instructions/instruments. Includes IssueConcernPayments, GeneratePayslips, LoadServiceSupplierReturns, and ProcessPaymentInstrumentTypes, each with purpose, key parameters, and sequencing notes. Ends with the start of ExpirePayments."
+                  },
+                  {
+                    "title": "Workflow",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "ScanTaskDeadlines",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000084",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "Describes the ScanTaskDeadlines workflow batch process, noting it can be achieved by ProcessTaskDeadlines or ProcessTaskDeadlinesStream. This section is a brief pointer within the workflow batch processing area, indicating task-deadline processing rather than detailing parameters or implementation here."
+                      },
+                      {
+                        "title": "ProcessTaskDeadlines",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000085",
+                        "range": {
+                          "start_unit_id": "p000032",
+                          "end_unit_id": "p000032",
+                          "start_page": 32,
+                          "end_page": 32
+                        },
+                        "summary": "Describes the ProcessTaskDeadlines batch process: it scans overdue tasks, invokes a configured deadline handler or, if none, completes the associated activity when the complete-activity flag is true. It removes processed deadlines, persists Context_Deadline data, and writes task history for expired task deadlines. The process takes no parameters and is implemented by curam.core.facade.intf.ProcessTaskDeadlines.process. Command-line execution requires a valid batch.username. Also notes ProcessTaskDeadlinesStream, used only with this process to support concurrent streaming execution."
+                      },
+                      {
+                        "title": "ProcessTaskDeadlinesStream",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000086",
+                        "range": {
+                          "start_unit_id": "p000032",
+                          "end_unit_id": "p000032",
+                          "start_page": 32,
+                          "end_page": 32
+                        },
+                        "summary": "Defines the ProcessTaskDeadlinesStream batch process, which supports streaming only when run with ProcessTaskDeadlines. It is intended to enable concurrent execution of batch programs, possibly across different machines, to maximize database utilization. This section mainly provides the purpose and relationship of the streaming process to the main deadline-processing batch job."
+                      },
+                      {
+                        "title": "RestartTask",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000087",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "RestartTask batch process. It finds tasks with status Deferred whose restart datetime has passed, reopens them by setting status to Open, and clears the restart datetime to the zero datetime. This process takes no parameters. Class/method: curam.core.facade.intf.RestartTask.restart."
+                      },
+                      {
+                        "title": "ExpireWaitListEntry",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000088",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "Describes the ExpireWaitListEntry batch process, which expires open wait list entries whose expiry date is on or before the batch date and no allocation/removal has occurred. If renumbering is required, it decrements positions of later open entries. After expiring an entry, it raises workflow event WAITLIST.WAITLISTENTRYEXPIRED. Intended to run daily. Also gives the batch process class/method: curam.core.intf.ExpireWaitListEntry.expireWaitListEntry."
+                      },
+                      {
+                        "title": "WaitListReview",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000089",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000034",
+                          "start_page": 34,
+                          "end_page": 34
+                        },
+                        "summary": "WaitListReview describes a daily batch process that raises the WAITLIST.WAITLISTENTRYSELECTEDFORREVIEW workflow event to create review tasks for eligible wait list entries. Entries qualify if their review date is on or before the batch date; if no review date exists, it is derived from expiry date minus the configured status review reminder period. It also notes required JMS/batchlauncher properties for task generation and gives the process class/method: curam.core.sl.intf.WaitListReview.processWaitListEntriesDueForReview. The page then begins other batch/interface topics: LoadPaymentsReceived and Calendar Export."
+                      }
+                    ],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000033",
+                      "start_page": 31,
+                      "end_page": 33
+                    },
+                    "summary": "Workflow batch processes: ScanTaskDeadlines, ProcessTaskDeadlines, and ProcessTaskDeadlinesStream handle overdue workflow task deadlines, invoking deadline handlers or completing activities, persisting Context_Deadline data, and writing task history; the stream process supports concurrent/multi-machine execution via Batch Process Instance ID. RestartTask reopens Deferred tasks whose restart time has passed. ExpireWaitListEntry expires open wait list entries past expiry, optionally renumbers positions, and raises WAITLIST.WAITLISTENTRYEXPIRED. Also includes command-line/batch class notes and the batch.username requirement."
+                  }
+                ],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000033",
+                  "start_page": 19,
+                  "end_page": 33
+                },
+                "summary": "Cúram Processing lists batch jobs for case management, dependency manager, financial, and workflow operations. It covers nightly/idempotent processes for communications, closure, eligibility, reassessment, CER rule propagation, and bulk reassessment by product; dependency manager recalculation/change-set tooling and generated scripts; financial jobs for instruction lines, instruments, concern payments, payslips, supplier returns, payment types, expiry, reconciliation; and workflow deadline, restart, and wait-list expiry handling. Many jobs support stream/multi-instance execution via Batch Process Instance ID and note required parameters, sequencing, and command-line prerequisites."
+              },
+              {
+                "title": "Input Interfaces",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "LoadPaymentsReceived",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000091",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "LoadPaymentsReceived is a batch process for importing a payment file (PaymentReceivedFile.txt). It validates each record, posts payments to a concern’s account when identified or to suspense otherwise, tracks control totals, and rolls back all processing if totals don’t match the file’s control record. It requires File Path and File Name parameters and uses class/method curam.core.intf.LoadPaymentsReceived.loadPaymentReceivedFile. The excerpt also briefly shows the next topic, Calendar Export."
+                  }
+                ],
+                "node_id": "n000090",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "This section covers the Input Interfaces batch process LoadPaymentsReceived. It validates each record in PaymentReceivedFile.txt, posts payments to a concern’s account when identified or to suspense otherwise, and maintains control totals that must match the file’s control record or all processing is rolled back. It requires File Path and File Name parameters and uses curam.core.intf.LoadPaymentsReceived.loadPaymentReceivedFile. The excerpt also briefly begins the next topic, Calendar Export."
+              },
+              {
+                "title": "Output Interfaces",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Calendar Export",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000034",
+                      "start_page": 34,
+                      "end_page": 34
+                    },
+                    "summary": "Calendar Export is listed as an output interface, but the excerpt provides no details about its behavior or parameters. The surrounding page covers other batch processes: WaitListReview, which generates review tasks for eligible wait list entries based on review dates and reminder periods, and LoadPaymentsReceived, which loads payment records from a file with control-total validation and rollback on mismatch."
+                  },
+                  {
+                    "title": "Generate Ledger Interface",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Describes the Generate Ledger Interface batch process, which gathers financial transactions for a specified date or date range and exports Instruction Line Item details to an output file for import into the General Ledger. Key parameters are Date From and Date To, both required or the process fails, plus a Creation Date Search Indicator that selects creation-date versus effective-date search. Class/method: curam.core.intf.GeneralLedgerInterface.exportFinancialDetails."
+                  }
+                ],
+                "node_id": "n000092",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000035",
+                  "start_page": 34,
+                  "end_page": 35
+                },
+                "summary": "Output Interfaces describes two batch exports. Calendar Export gathers user or organization activities, or activities within a start/end date range, and writes a vCalendar file for import into an external calendar; it requires either User Name, Organization ID, or both Start Date and End Date. Generate Ledger Interface exports financial transactions/instruction line items for a specified date or date range to a file for General Ledger import; Date From and Date To are mandatory, and a Creation Date Search Indicator switches between creation-date and effective-date search."
+              }
+            ],
+            "node_id": "n000049",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000035",
+              "start_page": 18,
+              "end_page": 35
+            },
+            "summary": "Core batch operations overview: command-line batch parameters, optional `processingDate`/`getCurrentDate()` behavior, external scheduling only, batch logs and emailed output. Covers many core Cúram jobs: case management (communications, closure, eligibility, reassessment, CER propagation and bulk reassessment), financial processing/reconciliation, workflow deadline/restart/wait-list expiry handling, and streaming/multi-instance execution via Batch Process Instance ID. Also includes input/output interfaces: LoadPaymentsReceived, Calendar Export, and Generate Ledger Interface with their file/date parameter requirements."
+          },
+          {
+            "title": "1.5 Cúram Configuration Settings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Introduces Cúram 8.1.2 configuration settings for both the XML Server and the Cúram Server Application. It notes that the chapter contains the full set of application-suite properties, though not all apply to every deployment. It points to the XMLServer directory and the Cúram XML Infrastructure Guide for XML server settings. For the server application, it explains that initial settings come from Application.prx, then can be managed online; dynamic settings apply on publish, while static settings require a reboot. It also outlines how to access property administration."
+              },
+              {
+                "title": "Cúram XML Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "This section introduces Cúram configuration settings for both the XML Server and the Cúram Server Application. It notes that the XML Server uses the xmlserverconfig.xml file in the XMLServer directory and refers readers to the Cúram XML Infrastructure Guide for details. For the Server Application, it explains that Application.prx seeds initial database settings, that settings can be managed online after database build, and distinguishes dynamic versus static settings, including publishing and reboot requirements and the basic steps to access property administration."
+              },
+              {
+                "title": "Cúram Server Application",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Managing Configuration Settings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000099",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains Cúram configuration settings for the XML Server and Server Application. Notes that the full set of properties applies across the Business Application Suite, but not all are relevant to every application. For the Server Application, initial settings come from Application.prx during database build and can later be administered online. Distinguishes dynamic settings (take effect after publish) from static settings (require reboot). Also outlines how to publish changes and the navigation path to access Property Administration, including the default sysadmin/password login."
+                  },
+                  {
+                    "title": "Changing configuration settings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000100",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains Cúram configuration settings for the XML Server and Server Application. Notes that the XML Server uses xmlserverconfig.xml, with details in the Cúram XML Infrastructure Guide. For the Server Application, Application.prx initializes database settings, which can later be administered online. Distinguishes dynamic settings, applied at publish time, from static settings, which require a reboot. Describes that changes are not effective until published or rebooted, and outlines how to reach Property Administration via System Configurations and ShortCuts, using the default sysadmin/password credentials."
+                  },
+                  {
+                    "title": "Available Configuration Settings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000101",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Describes where Cúram Server configuration settings are defined. It identifies the server’s logical components—Cúram Server Infrastructure, Core Cúram Server Application, and Customized Cúram Server Application—and notes that Application.prx lists the settings for each. It points readers to the Cúram Server Developer’s Guide for infrastructure settings and to the development team for custom application settings. This section is useful for locating configuration sources and understanding which guide or team to consult for each component."
+                  }
+                ],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "This section introduces Cúram configuration settings for the XML Server and Server Application. It notes that Application.prx seeds server application settings at database build, with later online administration via Property Administration. It distinguishes dynamic settings, applied on publish, from static settings, which require a reboot, and explains how to publish changes. It also gives the path to change settings in the UI (System Configurations > Application Data - Property Administration) and mentions the default sysadmin/password login."
+              }
+            ],
+            "node_id": "n000095",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "This section overviews Cúram 8.1.2 configuration settings for the XML Server and Server Application. It notes that the chapter contains the full suite of properties, though not all apply to every deployment. For the XML Server, it points to xmlserverconfig.xml in the XMLServer directory and the Cúram XML Infrastructure Guide. For the Server Application, it explains that Application.prx seeds initial database settings, then settings can be managed online; dynamic changes apply on publish, static ones require a reboot, and property administration is accessed via System Configurations > Application Data - Property Administration."
+          },
+          {
+            "title": "1.6 Monitoring Cúram processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Monitoring Workflow process instances",
+                "level": 3,
+                "children": [],
+                "node_id": "n000103",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Explains how to monitor workflow process instances in Cúram using Administration Workspace > Process Monitoring > Process Instances. Covers searching and filtering to view current instances, especially in-progress and complete ones, and troubleshooting actions: suspend, resume, stop/abort, and override event waits. Also describes the Process Instance Errors view for workflow and deferred process errors, which should be checked regularly, and notes that failed instances can be retried to re-enact execution from the failure point or aborted to stop activities and close related manual tasks."
+              },
+              {
+                "title": "Process Instance Errors",
+                "level": 3,
+                "children": [],
+                "node_id": "n000104",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Explains how to monitor and troubleshoot workflow process instance errors in Cúram Process Monitoring. The Workflow Engine records errors for process instances, and the Process Instance Errors view is used to find workflow process or deferred process errors. Key actions are retrying failed instances, which re-enacts the process from the failure point, or aborting them, which stops the instance, ends related activities, and may require manual cleanup. Advises regular review of this view via Administration Workspace > Process Monitoring > Process Instance Errors."
+              },
+              {
+                "title": "Monitoring Process Instance Errors",
+                "level": 3,
+                "children": [],
+                "node_id": "n000105",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000042",
+                  "start_page": 38,
+                  "end_page": 42
+                },
+                "summary": "Explains how to monitor workflow process instance errors in Cúram Administration Workspace. The Process Instance Errors view is used to find Workflow process and Deferred Process errors, with recommendations to monitor it regularly for operational exceptions. It outlines troubleshooting actions for failed workflow instances, including retrying to re-enact a process from the failure point or aborting it, which stops associated activities and closes manual tasks. Includes the basic steps to access the view, search/filter errors, and open error details."
+              }
+            ],
+            "node_id": "n000102",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000042",
+              "start_page": 37,
+              "end_page": 42
+            },
+            "summary": "Explains how to monitor and troubleshoot Cúram workflow processes in Administration Workspace > Process Monitoring. Covers the Process Instances view for searching/filtering current workflow instances, especially complete or in-progress ones, and troubleshooting actions such as suspend, resume, stop/abort, and overriding event waits. Also describes the Process Instance Errors view for workflow and deferred process errors, which should be checked regularly. Failed workflow instances can be retried from the failure point or aborted, which stops activities and may close related manual tasks."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000042",
+          "start_page": 9,
+          "end_page": 42
+        },
+        "summary": "Operational administration for a production or production-like Cúram system. Covers advanced setup (XSL template storage for correspondence, production database creation from generated scripts, data migration/conversion considerations, organization data), starting/stopping online servers and log locations, running batch processes and core batch jobs, XML Server and Server Application configuration settings, and monitoring/troubleshooting workflow process instances and process errors. Key cautions include starting/stopping servers in the correct order and avoiding database-enforced foreign keys in production."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

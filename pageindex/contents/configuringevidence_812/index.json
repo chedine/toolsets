@@ -1,0 +1,2199 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "095b571a6441031f",
+    "title": "Cúram 8.1.2 Configuring Evidence Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/ConfiguringEvidence_812.pdf",
+    "source_type": "pdf",
+    "sha256": "095b571a6441031fc60341ce4f2940f6571db992924724b8f9e8796c1b43b4f6",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:08:27+00:00",
+    "page_count": 112,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/ConfiguringEvidence_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Configuring Evidence Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000112",
+      "start_page": 1,
+      "end_page": 112
+    },
+    "summary": "This guide explains how to configure evidence in Cúram 8.1.2. It covers evidence type setup for caseworkers, including showing deleted evidence in lists, creating case-type-specific Evidence Dashboard groups with required evidence flags, and enabling end dating during evidence creation for dynamic and non-dynamic evidence. A major focus is dynamic evidence administration: evidence types vs. versions, lifecycle and activation, metadata evolution, security administration, editor and model/UI setup, multiple participant updates, rule sets, localization, extractors/loaders, generated artefacts, application properties, and compliance constraints. It also includes sample widget/domain setup and generated resource details. The front matter contains edition info, contents, and legal notices/trademark/privacy material.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "A brief front-matter note directing readers to the Notices section on page 111 before using the document or product. It also includes Merative copyright information (2012, 2024) on pages 3–4."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter and start of Chapter 1 on configuring evidence. Covers edition/applicability for Cúram 8.1–8.1.2, the table of contents, and introductory guidance on evidence configuration. Key topics include configuring evidence types, showing deleted evidence, evidence dashboard groups, and enabling end-dating during evidence creation. It then introduces dynamic evidence: why it replaces development-heavy static evidence, the roles of dynamic evidence types versus versions, how versions are effective-dated and stored as metadata, and the main version actions such as view/edit metadata, edit effective-from, copy, and activate."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Explains how to configure dynamic evidence: create, edit, version, activate, delete, and associate evidence types with case types. Covers page fields, generated artefacts (code tables, security groups, version records), naming/globalization rules, and restrictions on deletion/modification. Describes the dynamic evidence lifecycle (Active, Canceled; version states In Edit, Pending Activation, Active, Canceled) and activation behavior via deferred processing. Also outlines how received date and effective dates determine which version’s UI is used when caseworkers create evidence records."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section explains dynamic evidence maintenance and administration. It covers how Received Date determines the Dynamic Evidence Type Version for create and in-edit records, how Effective Date of Change creates new active record versions, and how metadata evolves through version copying and activation restrictions on parents, attributes, and business dates. It also describes security administration with generated create/modify/view identifiers and the EVIDENCEGROUP convenience group. The latter pages introduce the Dynamic Evidence Editor structure, properties, validation behavior, and how to define model metadata for a client data type version."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section describes Dynamic Evidence configuration properties and validations. It covers runtime settings such as correction-only mode, Save and New behavior, related case participant mapping, business start/end dates, dialog widths, calculated attribute rule set, description, and online help. It then explains validation setup: standard vs additional CER rule set validations, how to add/delete them, and detailed rules for comparison and dependency validations, including operators, literals, multiple clauses, bidirectional dependency, and date of birth validation."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers dynamic evidence configuration: Date of Birth and duplicate validations, including related participant/date fields, date-range checking, overlapping records, and custom validation messages. Explains summary details/mapping for evidence descriptions in workspace pages, with start/end dates, participant, and message parameters. Introduces adding attributes via the model palette, especially new data attributes and calculated attributes, with properties like name, type, domain, default value, volatility, mandatory, and calculate-on-create."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Covers Dynamic Evidence configuration for evidence attributes and relationships. Describes properties for address, related case participant, related employment, and comments attributes, plus common data/calculated attribute options by type (dates, datetimes, codetables, etc.). Explains runtime behavior, naming rules, volatility, mandatory settings, and reserved identifiers. Also details adding mandatory and optional parent relationships, including wizard-based create flows, parent selection rules, filtering, uniqueness constraints, and how relationship names feed CER data and processing rule sets."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Explains how to configure a dynamic evidence type version: deleting attributes/relationships, saving updates, and using the User Interface canvas to define evidence screen layout. Covers fields vs clusters, automatic widget mapping by data type, and reordering/deleting UI elements. Details attribute cluster creation and properties (title, columns, label width, page visibility, online help). Also describes related case participant clusters, including labels, search, modification rules, multi-case updates, and show-all-panels behavior, plus related employment clusters and their wizard-based runtime behavior."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "Covers Dynamic Evidence UI and CER rule-set configuration. It explains Comments Cluster properties; Skip and Label fields and their display controls; enabling multiple participant evidence updates; and how generated processing/data rule sets map evidence attributes, related participants/employment, parent-child relationships, and multiple evidence versions. It also describes loading rule objects at runtime and utility methods in DynamicEvidenceStatics for listing parent/child records and case-specific evidence lists."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "This section explains dynamic evidence rule sets and localization. It covers attribute availability across evidence versions; summary, validation, calculated attribute, and eligibility/entitlement rule set contracts and authoring patterns; starter vs existing rule sets; and how validation uses informational types and validation modes. It also describes localization for dynamic evidence editor resources, runtime UI static strings, evidence type descriptions, and version-specific properties in the Application Resource Store."
+          },
+          {
+            "title": "Edition — pages 95-104",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000095",
+              "end_unit_id": "p000104",
+              "start_page": 95,
+              "end_page": 104
+            },
+            "summary": "Covers Dynamic Evidence localization and configuration tooling: how properties, message files, and codetable items are localized; generated UI resources and fallback behavior; and the Dynamic Evidence Configuration Extractor for exporting runtime evidence configuration to files. Describes extractor outputs, key-range handling, supported extraction strategies, and required regeneration of codetables. Also explains the Dynamic Evidence Metadata Loader for downloading/uploading effective-date metadata, plus generated artefacts such as EvidenceType codetable entries and evidence type property resources."
+          },
+          {
+            "title": "Edition — pages 105-110",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000105",
+              "end_unit_id": "p000110",
+              "start_page": 105,
+              "end_page": 110
+            },
+            "summary": "This section explains what artifacts dynamic evidence generates and how they are managed: security groups/SIDs, CER rule sets, propagator configurations, property resources, UIM resources, tab/nav/menu application resources, domain definitions, and EvidenceTypeDefinition records. It summarizes generated artifacts and the related application properties, especially the codetable prefix and in-progress cache size. It also covers compliance guidance, public Java API constraints, infrastructure rule sets, the default DET prefix, and brief steps for configuring sample widget domains."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000110",
+          "start_page": 5,
+          "end_page": 110
+        },
+        "summary": "Front matter and Chapter 1 on configuring evidence. Covers evidence type setup, display of deleted evidence, evidence dashboard groups, and enabling end-dating during evidence creation. Introduces dynamic evidence as an administrative alternative to development-heavy static evidence, explaining evidence types vs. versions, lifecycle and activation, metadata evolution, security administration, editor/model/UI configuration, rule sets, localization, extractors/loaders, generated artefacts, application properties, compliance constraints, and sample widget/domain setup."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000112",
+              "end_unit_id": "p000112",
+              "start_page": 112,
+              "end_page": 112
+            },
+            "summary": "Legal and copyright notices for the document: fictitious example data disclaimer, sample code “AS IS” license and liability limits, link to Merative privacy policy, and a list of trademark attributions (Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX). Includes Merative copyright years 2012 and 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000112",
+              "end_unit_id": "p000112",
+              "start_page": 112,
+              "end_page": 112
+            },
+            "summary": "This section lists legal notices: sample data and program examples are fictitious and provided “as is” without warranty; sample code may be copied, modified, and distributed under the Merative Client Agreement. It includes the privacy policy link and a trademark notice identifying marks owned by Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus a note that other names may be trademarks. Copyright is © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000111",
+          "end_unit_id": "p000111",
+          "start_page": 111,
+          "end_page": 111
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise copying is allowed only if proprietary notices are preserved, but distribution, display, derivative works, and external use require Merative consent. It disclaims warranties, grants no patent rights, and notes export-law compliance. It also says non-Merative product information is unverified, external links are not endorsements, and includes Merative copyright © 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000017",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 documentation. Lists front matter (Note, Edition) and Chapter 1, “Configuring evidence,” with sections on evidence types and dynamic evidence. Dynamic evidence coverage includes lifecycle, metadata evolution, security administration, editor overview, model/UI definition, multiple participant updates, rule sets, localization, extractors/loaders, generated artefacts, application properties, compliance, and sample widget source code. Also includes Notices, Privacy policy, and Trademarks."
+      },
+      {
+        "title": "1 Configuring evidence",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring evidence types",
+            "level": 2,
+            "children": [
+              {
+                "title": "Display deleted evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how administrators enable deleted evidence display in Cúram. By default, deleted evidence is hidden; to show it in the Evidence Type list or Evidence Object Type tab, update the application property “Display Deleted Evidence” to TRUE in Property Administration, save, and publish. Notes that this affects only pages where evidence is listed and does not impact evidence dashboard groups or the Evidence Dashboard."
+              },
+              {
+                "title": "Configuring an Evidence Dashboard Group",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how administrators configure evidence types and create evidence dashboard groups. Evidence can be captured on person and case tabs, but must be configured to be usable by caseworkers. The section notes support for dynamic and static evidence types, association with evidence dashboard groups, and end dating. It also clarifies that deleted evidence display is controlled separately via application properties and does not affect evidence dashboard groups."
+              },
+              {
+                "title": "Enabling the end dating of previous evidence when creating evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how administrators enable end dating of existing evidence during evidence creation, so caseworkers can combine creation and end dating in one wizard instead of a separate process. If enabled, an end dating option appears in the evidence creation wizard. Covers where to configure this for dynamic evidence (New/Edit Dynamic Evidence Type) and non-dynamic evidence (New/Edit Evidence Metadata), including the need to generate the wizard page and enable it via server XML metadata."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Explains how to configure evidence types so person- and case-level evidence can be used by caseworkers. Covers enabling deleted evidence display via the Display Deleted Evidence application property (affects Evidence Type lists only), setting up evidence dashboard groups by case type to filter and require evidence on the Evidence Dashboard, and enabling end dating during evidence creation for dynamic and non-dynamic evidence, including wizard/page generation requirements."
+          },
+          {
+            "title": "1.2 Configuring dynamic evidence",
+            "level": 2,
+            "children": [
+              {
+                "title": "Dynamic evidence types and dynamic evidence type versions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Understanding dynamic evidence type versions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000014",
+                      "start_page": 13,
+                      "end_page": 14
+                    },
+                    "summary": "Explains how dynamic evidence type versions let evidence evolve without redeployment or migration. Covers effective dates, one active version per date, and how past evidence uses the version valid at that time. Describes metadata storage in XML via EvidenceTypeVersionDef and warns against direct XML edits. Summarizes the Dynamic Evidence Type List page actions: view/edit metadata, edit effective date, create an In Edit copy, and activate. Also notes activation is asynchronous, generates artefacts, and requires validations before a version goes live."
+                  },
+                  {
+                    "title": "Creating a dynamic evidence type version",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to create a new dynamic evidence type version from the dynamic evidence type list item menu using New Version, which is only enabled when no Active or In Edit versions exist. A modal prompts for the effective-from date, and the new version starts with blank metadata. Also notes deletion rules: a version and its generated artefacts can be deleted only if no In Edit or Active evidence records remain, with special caution for test/staging cleanup before promoting versions."
+                  },
+                  {
+                    "title": "Creating a dynamic evidence type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000017",
+                      "start_page": 15,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to create a dynamic evidence type and version in Cúram. Covers prerequisites and actions in the Dynamic Evidence admin area, required fields (Evidence Type, Logical Name, Effective From Date, Security Group, Definition, Description), naming/uniqueness rules, and how the system auto-creates the initial version plus generated artifacts and code table entries. Also notes delete restrictions, version lifecycle constraints, and that security access is shared across all versions of a dynamic evidence type."
+                  },
+                  {
+                    "title": "Editing and modifying a dynamic evidence type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to edit and modify a dynamic evidence type. The Edit action opens a modal Modify page where only the evidence type name, definition, and description can be changed, following the same rules as creation. It also contrasts dynamic evidence with non-dynamic evidence by noting that dynamic types can have multiple time-based versions, each effective from a date until the next version, allowing requirements to evolve without redevelopment."
+                  },
+                  {
+                    "title": "Defining the model",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "This section explains how to define the model for a dynamic evidence type version in the dynamic evidence editor. It describes the model as the structure and behavior of the evidence type, including attributes, relationships, validations, summaries, and other functional aspects. It then walks through creating two data attributes, incomeAmount (Money, mandatory) and incomeType (Codetable with IncomeTypeCode), and saving the model. It also notes that the editor opens on the Model tab and points to further model options elsewhere."
+                  },
+                  {
+                    "title": "Defining the user interface",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how caseworkers use evidence screens and how dynamic evidence UI is defined in the Dynamic Evidence Editor. For non-dynamic evidence, screen definitions are provided by developers at build time; for dynamic evidence, administrators configure screen layouts that generate create/modify/view screens at runtime. Uses the Sample Income version to show adding a cluster, placing fields, setting labels, and automatic control selection by attribute type. Also introduces activation requirements: an In Edit version is not usable until at least one version is Active."
+                  },
+                  {
+                    "title": "Activating the dynamic evidence type version",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains that a dynamic evidence type version in “In Edit” status is not yet approved for use in products or cases. Unlike non-dynamic evidence, which is available when deployed, dynamic evidence must be explicitly activated. For the sample income evidence type to be usable in a case, it needs at least one Active version."
+                  },
+                  {
+                    "title": "Associating dynamic evidence types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains how to make a dynamic evidence type usable in caseworker workspaces by associating it with Product Delivery or Integrated Cases. Notes that association is done through the same admin interface as non-dynamic evidence types and applies to the evidence type, not individual versions. Gives a step-by-step example creating a new integrated case type, then adding the Sample Income evidence type in the Income category. Concludes that administration is complete and the next step is testing by creating an evidence record."
+                  },
+                  {
+                    "title": "Creating evidence records for this dynamic evidence type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how to create sample income evidence records for a dynamic evidence type in Cúram. It walks through first creating a Sample Integrated Case, then using the Integrated Case’s Evidence tab to add a Sample Income record via the Evidence Dashboard. Notes that the dynamic editor supplies common fields like Received Date and mandatory markers automatically. Also covers deleting a dynamic evidence type, including removal of generated artifacts and links, and that deletion is only allowed when no Active or In Edit versions exist."
+                  },
+                  {
+                    "title": "Deleting an evidence type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how to delete a dynamic evidence type using the Delete action from its list item menu. Deletion removes all generated artefacts, including code table entries, security information, and globalized text, and also removes links to products or integrated cases. A dynamic evidence type can be deleted only if it has no Active or In Edit versions."
+                  },
+                  {
+                    "title": "Viewing dynamic evidence type details",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how to view a dynamic evidence type’s details by expanding the list item and opening the Details tab, which is read-only. Also summarizes the dynamic evidence lifecycle: evidence types have system-managed statuses Active and Canceled, with only Active types usable; deleting a type cancels it and removes generated artefacts, and canceled types cannot be reactivated. Describes version lifecycle states In Edit and Pending Activation, including when versions can be modified, used, activated, or require manual refresh to show Active status."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000022",
+                  "start_page": 11,
+                  "end_page": 22
+                },
+                "summary": "Explains how Cúram dynamic evidence types are configured and evolved without redeployment or data migration. Covers the type/version model, effective dates, one active version per date, XML metadata storage in EvidenceTypeVersionDef, and version actions on the Dynamic Evidence Type List page (view/edit metadata, edit effective date, create In Edit copy, activate). Also shows defining the model and UI in the dynamic evidence editor, activation validations and asynchronous status, associating with case types, testing by creating evidence records, and delete restrictions for types and versions."
+              },
+              {
+                "title": "Dynamic evidence lifecycle",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Dates in runtime evidence record maintenance",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Creating evidence records",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000038",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Explains how evidence records are created for dynamic and non-dynamic evidence types. All create pages default the mandatory received date to today; for dynamic evidence, the received date cannot be earlier than the earliest version’s effective date. The system initially shows the UI for the active dynamic evidence type version on the current date, then redirects to the correct version’s UI if the received date changes into another version’s active period."
+                      },
+                      {
+                        "title": "Modifying in-edit evidence records",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000039",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Explains how to modify evidence records in edit and active states. In-edit records are updated in place; changing Received Date may redirect to a different Dynamic Evidence Type Version, while Effective Date of Change cannot be edited until activation. For active records, Effective Date of Change either corrects data or creates a new successor record to reflect a change in circumstances, with the applicable dynamic version determined by that date. Also introduces evolving dynamic evidence metadata via versioned copies."
+                      },
+                      {
+                        "title": "Modifying active evidence records",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000040",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Explains how active evidence records are modified. If an Effective Date of Change is entered, the system treats the edit as a change in circumstances, creates a new record in the same succession set, and starts its active period at that date; if the applicable Dynamic Evidence Type Version changes, the user is redirected to the correct UI. Also notes that dynamic evidence metadata can evolve over time, with new versions created by copying the latest active version."
+                      }
+                    ],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how runtime evidence maintenance uses Received Date and Effective Date of Change for dynamic and non-dynamic evidence. Create pages default Received Date to today; for dynamic evidence it cannot precede the earliest version’s effective date. The system initially opens the UI for the version active on the current date, and redirects to the correct version if the Received Date moves into another version’s active period. Also notes dynamic version activation is asynchronous and failures revert to In Edit with administrator error details."
+                  }
+                ],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000024",
+                  "start_page": 23,
+                  "end_page": 24
+                },
+                "summary": "Explains dynamic evidence lifecycle and date-driven runtime behavior. Dynamic evidence types have Active/Canceled states; versions move through In Edit, Pending Activation, Active, and Canceled. Activation is asynchronous and may revert to In Edit on failure, with admin error details. For evidence creation, Received Date defaults to today and cannot precede the earliest version’s Effective Date. The system opens the UI for the version active on the current date and redirects if the Received Date falls into another version’s active period."
+              },
+              {
+                "title": "Evolution of dynamic evidence type metadata",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000026",
+                  "start_page": 25,
+                  "end_page": 26
+                },
+                "summary": "Explains how dynamic evidence type metadata evolves via versions over time. A new In Edit version is created by copying the latest Active version, with an effective date set by an administrator; only the latest Active version can be copied. Describes validation rules enforced on activation: parents can be added but not removed, attribute data type/volatility/class cannot change, and business start/end dates are fixed after the initial version. Also notes constraints on creating new versions and that these rules apply only when at least one Active version exists."
+              },
+              {
+                "title": "Security administration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Dynamic evidence security administration uses standard Cúram security administration, but only supports operation-level security, not field-level security. When a Dynamic Evidence Type is created, a security group and three generated identifiers (Create, Modify, View) are created and can be assigned to user roles. A special optional group, EVIDENCEGROUP, can collect all dynamic evidence identifiers for broad access. Do not manually rename generated security groups or identifiers; this can cause undefined behavior."
+              },
+              {
+                "title": "Dynamic evidence editor overview",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The dynamic evidence editor",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Introduces the Dynamic Evidence Editor as a graphical environment for editing dynamic evidence type version metadata. Explains its main parts: the Palette for adding attributes/clusters and saving, the Canvas for modeling either the data type structure or the user interface layout, and the Properties Panel for editing selected artefacts. Notes the difference between Model and User Interface tabs, including that fields must be based on existing attributes and UI screens are only planning views, not exact runtime screens."
+                  },
+                  {
+                    "title": "Editor structure",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000031",
+                      "start_page": 30,
+                      "end_page": 31
+                    },
+                    "summary": "Explains the Dynamic Evidence Editor’s structure and workflow. Model definitions and relationships must be created before the user interface, because fields can only reference existing attributes. The editor has two tabs: Model and User Interface, with Model opened first. Both tabs include a Palette and Save button. The Model Palette creates attributes and parent relationships. The User Interface Palette creates clusters and provides an accordion of model attributes that can be dragged onto the canvas to form fields and clusters."
+                  },
+                  {
+                    "title": "Properties data display",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "This section explains how the Properties Panel is populated based on the currently selected artefact in the dynamic evidence editor. It notes that selection controls what pre-filled data appears, and lists selectable artefacts including all Model Attributes, all Model Parents, Client Data Type Version, and all Clusters. Useful for understanding how property editing works and which items can be selected to view or change their properties."
+                  },
+                  {
+                    "title": "Changing properties",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Validation problems",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "Explains how property values are validated when committed in the editor. If a value fails validation, it is not saved to Dynamic Evidence Type Version Metadata, but the invalid text remains visible in the field so it can be corrected. Invalid fields are highlighted with a red border until cleared or updated to a valid value. Useful for understanding edit-time validation behavior and failure feedback in the Properties panel."
+                      }
+                    ],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how to edit property values in the editor: type a new value and commit with Enter or Tab, which updates the field and may move focus; switching artefacts also attempts a commit. Notes that some properties are read-only or unavailable to edit. Reminds users to click Save to persist changes. Also covers validation: invalid values are not saved to Dynamic Evidence Type Version Metadata, remain visible for correction, and the field is highlighted with a red border until fixed."
+                  }
+                ],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000033",
+                  "start_page": 28,
+                  "end_page": 33
+                },
+                "summary": "Overview of the Dynamic Evidence Editor, a graphical tool for editing dynamic evidence type version metadata. Explains its two tabs, Model and User Interface, and why model attributes/relationships must be defined before UI fields and clusters. Describes the shared layout: Palette for creating artefacts and saving, Canvas for model or UI layout, and Properties Panel for editing the selected item. Covers selectable artefacts, property editing and commit behavior, validation feedback, and that the UI tab is only a planning view, not runtime screens."
+              },
+              {
+                "title": "Defining a model for a client data type version",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Client data type version properties",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "General Properties",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000051",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000035",
+                          "start_page": 34,
+                          "end_page": 35
+                        },
+                        "summary": "Describes General Properties for a client data type version in the Dynamic Evidence Editor. It explains how these settings affect runtime behavior and the end user experience, including read-only mode, correction-only updates, Save and New, Related CP Attribute, business start/end dates, and create/modify dialog widths. It also notes defaults and key effects such as disabling create/modify, removing the Effective Date of Change field, and selecting the participant used on Evidence Descriptor records."
+                      },
+                      {
+                        "title": "Validations",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Standard validations",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000053",
+                            "range": {
+                              "start_unit_id": "p000036",
+                              "end_unit_id": "p000036",
+                              "start_page": 36,
+                              "end_page": 36
+                            },
+                            "summary": "This section explains standard validations for Dynamic Evidence. It describes how validations are configured in the Validations tab of the Evidence Properties Panel and notes they run at runtime when saving evidence or applying/validating changes. It distinguishes Standard Validations from Additional Validations (CER rule sets), and says standard validations are predefined, configurable checks usually based on model attributes. Useful for understanding what validation options exist and when they execute."
+                          },
+                          {
+                            "title": "Standard validation types",
+                            "level": 6,
+                            "children": [
+                              {
+                                "title": "Standard validation types — pages 37-46",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000055",
+                                "range": {
+                                  "start_unit_id": "p000037",
+                                  "end_unit_id": "p000046",
+                                  "start_page": 37,
+                                  "end_page": 46
+                                },
+                                "summary": "Explains how to configure Standard Validations for dynamic evidence: adding/deleting validations, using optional CER rule set validations, and how these interact with Summary Details. Covers four validation types in detail: Comparison, Dependency, Date of Birth, and Duplicate. Includes supported fields, operators, literals, multiple clauses, bidirectional dependency behavior, date-related special fields, and duplicate-check options for date ranges and other attributes. Useful if you need validation setup rules, restrictions, or operator/data-type compatibility."
+                              },
+                              {
+                                "title": "Standard validation types — pages 47-47",
+                                "level": 7,
+                                "children": [],
+                                "node_id": "n000056",
+                                "range": {
+                                  "start_unit_id": "p000047",
+                                  "end_unit_id": "p000047",
+                                  "start_page": 47,
+                                  "end_page": 47
+                                },
+                                "summary": "Describes Duplicate Validation settings for evidence, especially the “Validate Date Range and Other Attributes together” property. If enabled, runtime checks require both overlapping start/end dates and matching selected attributes for duplicates; if disabled, either condition can trigger failure. Also covers optional custom validation messages, including Message text, Message ID, and parameter substitution using placeholders like {0} and {1} to display runtime-specific attribute names/values."
+                              }
+                            ],
+                            "node_id": "n000054",
+                            "range": {
+                              "start_unit_id": "p000037",
+                              "end_unit_id": "p000047",
+                              "start_page": 37,
+                              "end_page": 47
+                            },
+                            "summary": "Covers Standard Validation setup for dynamic evidence: adding/deleting validations and optional CER rule set validations, which coexist with Standard Validations but are mutually exclusive with Summary Details. Describes Comparison, Dependency, Date of Birth, and Duplicate validations, including supported fields, operators, literals, multiple clauses, bidirectional dependency behavior, date-specific fields (evidenceReceivedDate, evidenceEffectiveDateOfChange), and duplicate detection by date range and/or other attributes. Also explains custom validation messages with Message/Message ID and parameter placeholders like {0}."
+                          }
+                        ],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000047",
+                          "start_page": 36,
+                          "end_page": 47
+                        },
+                        "summary": "Explains how to configure runtime evidence validations in the Dynamic Evidence Editor’s Validations tab. Covers Standard Validations versus Additional Validations (CER rule sets), noting both can coexist, but not with Summary Details. Describes standard validation types: Comparison, Dependency, Date of Birth, and Duplicate validations, including supported fields, operators, literals, bidirectional dependency, date fields like evidenceReceivedDate/evidenceEffectiveDateOfChange, duplicate matching by date range and/or other attributes, and custom validation messages with parameter placeholders and Message ID."
+                      },
+                      {
+                        "title": "Summary Details",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Summary Mapping",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000058",
+                            "range": {
+                              "start_unit_id": "p000049",
+                              "end_unit_id": "p000050",
+                              "start_page": 49,
+                              "end_page": 50
+                            },
+                            "summary": "Explains Summary Mapping for Dynamic Evidence Type Workspace summary details. Covers optional properties administrators can set: Start Date, End Date, Participant, and Message ID. Start/End Date determine the Period column, with fallback behavior to Evidence Business Start Date or Case Start Date, and open-ended periods if no end date exists. Participant defaults to Primary Client if unset. Message ID opens an Edit Summary Message dialog, where a message, ID, and ordered message parameters define the Description column using runtime substitution, including locale-specific currency formatting."
+                          }
+                        ],
+                        "node_id": "n000057",
+                        "range": {
+                          "start_unit_id": "p000048",
+                          "end_unit_id": "p000050",
+                          "start_page": 48,
+                          "end_page": 50
+                        },
+                        "summary": "Describes Summary Details for Dynamic Evidence Type versions, controlling the Description shown in the Dynamic Evidence Type Workspace. Covers the three modes: None (asterisk placeholder), Use Rule Set (CER summary rule set), and Use Mapping. Details Summary Mapping properties: Start Date and End Date determine the Period column with fallbacks to Evidence Business Start Date or Case Start Date, Participant defaults to Primary Client, and Message ID opens an Edit Summary Message dialog. Also explains message parameter substitution for runtime description formatting, including locale-specific currency rules."
+                      }
+                    ],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000050",
+                      "start_page": 34,
+                      "end_page": 50
+                    },
+                    "summary": "Covers client data type version properties in Dynamic Evidence Editor: General Properties, Validations, and Summary Details. General Properties include read-only, correction-only, Save and New, Related CP Attribute, business start/end dates, dialog widths, calculated attributes rule set, description, and online help. Validations explains runtime standard validations (comparison, dependency, DOB, duplicate) and optional CER rule set validations, with custom messages and parameters. Summary Details explains None, Use Rule Set, and Use Mapping, including period fields, participant defaults, and message parameterized descriptions."
+                  },
+                  {
+                    "title": "Adding new attributes",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "New Data Attribute",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000060",
+                        "range": {
+                          "start_unit_id": "p000051",
+                          "end_unit_id": "p000053",
+                          "start_page": 51,
+                          "end_page": 53
+                        },
+                        "summary": "Describes how to create a New Data Attribute in the Dynamic Evidence Editor and what properties it supports. Covers Attribute Name rules and uniqueness, supported Attribute Types (String, Integer, Date, DateTime, Money, Boolean, Float, Codetable), and how type affects validation, UI widgets, available selections, and references. Also explains Domain Name for custom widgets/converters and Default Value behavior, including type-specific input controls and locale-specific formats."
+                      },
+                      {
+                        "title": "Add Calculated Attribute",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000061",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000054",
+                          "start_page": 54,
+                          "end_page": 54
+                        },
+                        "summary": "Calculated attributes are read-only dynamic evidence type version attributes computed by the system at runtime via a CER Calculated Attributes Rule Set, rather than entered by the caseworker. The section explains that selecting Add Calculated Attribute in the Model Palette creates a new calculated attribute, adds it to the Model Canvas, selects it, and opens its Properties Panel. Useful for understanding how calculated values are defined and managed in dynamic evidence models."
+                      },
+                      {
+                        "title": "Add Address Attribute",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000062",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000055",
+                          "start_page": 55,
+                          "end_page": 55
+                        },
+                        "summary": "Explains how to add an Address Attribute in Dynamic Evidence. An address attribute is a single runtime-maintainable field that can expand into a full address UI cluster (for example, address line 1, country). Clicking Add Address Attribute creates the attribute, adds it to the canvas, selects it, and opens its properties panel. The section details the main property shown here: Attribute Name, which must be unique, hidden from caseworkers, and follow strict naming rules (lowercase start, alphanumerics/underscores only, no reserved words like relatedEmployment or comments)."
+                      },
+                      {
+                        "title": "Add related case participant",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000063",
+                        "range": {
+                          "start_unit_id": "p000056",
+                          "end_unit_id": "p000057",
+                          "start_page": 56,
+                          "end_page": 57
+                        },
+                        "summary": "Explains how to add a Related Case Participant attribute to a Dynamic Evidence Type Version. Related case participants can link an evidence record to an existing case participant, search for a non-case participant and add them to the case, or register a new Representative. The section covers the attribute’s properties: Attribute Name rules and uniqueness, Participant Type values (Person, Employer, Service Provider, Unknown), Participant Role Type from a codetable, and Participant Type Options for limiting search choices."
+                      },
+                      {
+                        "title": "Add related employment attribute",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000064",
+                        "range": {
+                          "start_unit_id": "p000058",
+                          "end_unit_id": "p000058",
+                          "start_page": 58,
+                          "end_page": 58
+                        },
+                        "summary": "Defines the Related Employment Attribute for a Dynamic Evidence Type Version. It lets evidence records be linked to an employment record, adds a wizard step where caseworkers select from eligible employments, and shows employer/case participant details on view/modify pages. The attribute name is fixed to relatedEmployment and only one can exist per evidence type version. Properties include a non-localizable description and optional participant type filtering; defaults include Primary Client and Member participant employments unless overridden."
+                      },
+                      {
+                        "title": "Add Comments Attribute",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000065",
+                        "range": {
+                          "start_unit_id": "p000058",
+                          "end_unit_id": "p000058",
+                          "start_page": 58,
+                          "end_page": 58
+                        },
+                        "summary": "This section explains how to add a Comments Attribute to a Dynamic Evidence Type Version. It notes that at runtime the attribute appears as a multi-line free-text comments field on create and modify screens, and as a label when viewed. It also states that only one Comments Attribute is allowed per Dynamic Evidence Type Version and introduces the properties that can be configured for it."
+                      },
+                      {
+                        "title": "Data Attribute and Calculated Attribute type options",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "String",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000067",
+                            "range": {
+                              "start_unit_id": "p000059",
+                              "end_unit_id": "p000059",
+                              "start_page": 59,
+                              "end_page": 59
+                            },
+                            "summary": "This section explains String attribute configuration for Dynamic Evidence. It notes that changing an attribute type resets prior options and affects validation, UI widget behavior, and availability in other evidence settings. For String data attributes, the only listed property is Minimum Length, which enforces a minimum character count at save time and can use locale-specific formatting. It also includes general comments attribute properties, such as the reserved, unchangeable Attribute Name “comments” and a non-localizable description field for annotation only."
+                          },
+                          {
+                            "title": "Integer, Float, or Money",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000068",
+                            "range": {
+                              "start_unit_id": "p000060",
+                              "end_unit_id": "p000060",
+                              "start_page": 60,
+                              "end_page": 60
+                            },
+                            "summary": "This section covers numeric data attribute validation for Integer, Float, and Money types. It explains the available properties: Maximum Value and Minimum Value, both of which can use locale-specific formats; Money values may also include a currency symbol. It also notes that similar property settings continue for Date attributes, where Current Date Comparison validates a caseworker-entered date against the current date using conditions like before, after, equal to, on or before, and on or after."
+                          },
+                          {
+                            "title": "Date",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000069",
+                            "range": {
+                              "start_unit_id": "p000060",
+                              "end_unit_id": "p000060",
+                              "start_page": 60,
+                              "end_page": 60
+                            },
+                            "summary": "This section describes date-attribute validation properties in Cúram 8.1.2. It explains that a Date field can be checked against the current date using comparison rules such as before, after, equal to, not equal to, on or before, and on or after. It also sits within a broader set of data attribute properties, including text cleanup options and numeric bounds, but the key focus here is the Date type’s current-date validation."
+                          },
+                          {
+                            "title": "DateTime",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000070",
+                            "range": {
+                              "start_unit_id": "p000061",
+                              "end_unit_id": "p000061",
+                              "start_page": 61,
+                              "end_page": 61
+                            },
+                            "summary": "Defines DateTime data attribute properties for dynamic evidence. The main option is Current Date Comparison, which validates a case worker’s date/time value against the current date/time using before, after, on or before, or on or after operators; equality is not supported. A Custom Message can be configured through the validation message dialog. The section also notes Codetable properties and introduces adding relationships for dynamic evidence type versions, including parent-child associations and the requirement to select a parent record before creating a child record."
+                          },
+                          {
+                            "title": "Codetable",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000071",
+                            "range": {
+                              "start_unit_id": "p000061",
+                              "end_unit_id": "p000061",
+                              "start_page": 61,
+                              "end_page": 61
+                            },
+                            "summary": "This section describes the Codetable property for data attributes or calculated attributes with the Codetable data type. It explains that the Codetable Name setting links the attribute to a specific codetable, and at runtime the case worker selects a field value from a dropdown list of items from that codetable. The surrounding page also introduces adding parent/child relationships for dynamic evidence type versions."
+                          }
+                        ],
+                        "node_id": "n000066",
+                        "range": {
+                          "start_unit_id": "p000059",
+                          "end_unit_id": "p000060",
+                          "start_page": 59,
+                          "end_page": 60
+                        },
+                        "summary": "This section explains how Attribute Type controls available options and broader behavior for data and calculated attributes: changing the type resets prior settings, affects validation, UI widgets, and what attributes can be used elsewhere. It then lists type-specific properties for String (minimum/maximum length, whitespace trimming/compression, uppercase conversion), Integer/Float/Money (minimum/maximum value, locale formats, money currency symbol), and Date (current date comparison with before/after/equal/not equal/on or before/on or after)."
+                      }
+                    ],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000060",
+                      "start_page": 51,
+                      "end_page": 60
+                    },
+                    "summary": "Explains how to add and configure dynamic evidence attributes in the Model Palette: New Data, Calculated, Address, Related Case Participant, Related Employment, and Comments attributes. Covers what each attribute type does at runtime, creation behavior, and core properties such as unique Attribute Name rules, participant type/role options, fixed reserved names for relatedEmployment/comments, and read-only calculated attributes. Also details data type effects and options for Data/Calculated attributes, including validation, UI widgets, default values, domain/custom widget use, volatility, mandatory settings, and type-specific string, numeric, and date constraints."
+                  },
+                  {
+                    "title": "Adding relationships",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Add mandatory parent",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000073",
+                        "range": {
+                          "start_unit_id": "p000062",
+                          "end_unit_id": "p000063",
+                          "start_page": 62,
+                          "end_page": 63
+                        },
+                        "summary": "Explains how to add a mandatory parent relationship in Dynamic Evidence Editor. A child evidence type must have at least one parent; adding a mandatory parent creates a wizard page at evidence-record creation where the caseworker must select one parent record of the specified parent type. Multiple mandatory parents are allowed, but not multiple to the same parent type on one version. Describes mandatory parent properties: relationship name, parent type code, filter attribute name/literal value, and description."
+                      },
+                      {
+                        "title": "Add optional parent",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000074",
+                        "range": {
+                          "start_unit_id": "p000064",
+                          "end_unit_id": "p000064",
+                          "start_page": 64,
+                          "end_page": 64
+                        },
+                        "summary": "Explains how to add an optional parent relationship to a dynamic evidence type version model definition using New Optional Parent Relationship, then model canvas and Optional Parent Properties Panel. Notes that evidence types can have multiple optional parents, but not multiple of the same evidence type for one version. Describes wizard-based evidence pages where caseworkers select one parent record. Covers key properties: unique Relationship Name with naming rules and reserved words, Parent Type Code, and non-localizable Description."
+                      }
+                    ],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000061",
+                      "end_unit_id": "p000064",
+                      "start_page": 61,
+                      "end_page": 64
+                    },
+                    "summary": "Explains how dynamic evidence type version relationships are defined and added in the Evidence Editor. Covers the two supported relationship types: mandatory parents and optional parents. A child evidence type must have at least one parent, and parent selection happens in wizard-based evidence creation pages. Details the model palette actions, canvas/panel workflow, relationship limits, and key properties such as unique relationship name, parent type code, filtering for mandatory parents, and non-localizable description."
+                  },
+                  {
+                    "title": "Deleting attributes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains how administrators delete attributes and relationships in the dynamic evidence type editor, including warnings when removed items are referenced by validations, summary info, dates, related CP properties, or UI fields. Notes that deleting a relationship is invalid if an active version already uses it, though the editor allows the change and activation will fail. Also covers saving updates and introducing the User Interface tab/canvas for designing evidence record screens with clusters and fields."
+                  },
+                  {
+                    "title": "Deleting relationships",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Administrators can delete relationships from a dynamic evidence type version by clicking the x on the Mandatory or Optional Parent class in the Model Canvas. If the evidence type has an active version containing that relationship, deletion is not valid and activation will fail. Deleting a relationship removes the class and connector line, repositions other relationship classes, and may reposition the dynamic evidence type version class if it was the last relationship."
+                  },
+                  {
+                    "title": "Saving dynamic evidence type version updates",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains how to persist edits to a dynamic evidence type version: use Save to write the current Model or User Interface state to the database. Also covers deleting attributes and relationships from the model canvas, including warning behavior when deleted attributes are referenced elsewhere and the restriction that relationships cannot be removed if they exist in an active version. Introduces the User Interface tab and canvas for designing evidence record screens with clusters and fields."
+                  }
+                ],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000064",
+                  "start_page": 34,
+                  "end_page": 64
+                },
+                "summary": "Explains how to define a client data type version model in Dynamic Evidence Editor: add attributes and parent relationships on the Model tab, then configure version properties, runtime validations, and summary details in the Properties Panel. Covers General Properties such as read-only, correction-only, Save and New, related CP, business start/end dates, dialog widths, calculated-attribute rule set, description, and online help. Also describes standard and CER rule set validations, plus mandatory/optional parent relationship creation, wizard-based selection at runtime, and relationship naming/constraints."
+              },
+              {
+                "title": "Defining the user interface",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The canvas",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000065",
+                      "start_page": 65,
+                      "end_page": 65
+                    },
+                    "summary": "Explains the Dynamic Evidence Type Version model canvas and UI canvas. Covers deleting attributes and relationships from the model canvas, including warnings when deleted attributes are referenced in validations, summary info, business dates, related CP properties, or UI fields. Notes relationship deletion is invalid if the active version already contains that relationship. Also describes saving changes and using the User Interface tab’s Canvas Panel to design evidence record screens with clusters and fields such as attribute, calculated, address, related participant/employment, comments, and utility fields."
+                  },
+                  {
+                    "title": "Mapping model attributes to user interface artefacts",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Fields",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Reordering fields",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000082",
+                            "range": {
+                              "start_unit_id": "p000067",
+                              "end_unit_id": "p000067",
+                              "start_page": 67,
+                              "end_page": 67
+                            },
+                            "summary": "Explains how to reorder fields on the evidence UI canvas. Fields in attribute clusters can be moved within the same cluster by dragging a field label onto another label, or moved between clusters by dragging the label to the center of another cluster, where it becomes the last field. Also defines cluster types: attribute, address, related case participant, related employment, and comments. Notes that clusters can be reordered on the canvas, and attribute clusters are always added last on a page."
+                          }
+                        ],
+                        "node_id": "n000081",
+                        "range": {
+                          "start_unit_id": "p000066",
+                          "end_unit_id": "p000066",
+                          "start_page": 66,
+                          "end_page": 66
+                        },
+                        "summary": "Explains that the User Interface Canvas shows dynamic evidence record layouts, though runtime screens may differ slightly from the canvas. Introduces fields as the screen representation of data or calculated attributes, usually consisting of a label and value. Describes how an attribute’s data type determines the runtime widget: String/Integer/Money/Float use text boxes, Codetable uses a dropdown, Boolean a checkbox, Date a Cúram Date widget, and DateTime a Cúram DateTime widget."
+                      },
+                      {
+                        "title": "Clusters",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Reordering and deleting clusters",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000084",
+                            "range": {
+                              "start_unit_id": "p000067",
+                              "end_unit_id": "p000067",
+                              "start_page": 67,
+                              "end_page": 67
+                            },
+                            "summary": "Explains that clusters on the UI canvas can be reordered at any time, especially attribute clusters, which are always added last on a page. States that the same reordering method applies to all cluster types: Attribute, Address, Related Case Participant, Related Employment, and Comments clusters. This section follows earlier instructions on dragging fields within or between attribute clusters and introduces cluster types and their canvas behavior."
+                          }
+                        ],
+                        "node_id": "n000083",
+                        "range": {
+                          "start_unit_id": "p000067",
+                          "end_unit_id": "p000067",
+                          "start_page": 67,
+                          "end_page": 67
+                        },
+                        "summary": "Explains what “clusters” are on evidence record screens and lists the cluster types: Attribute, Address, Related Case Participant, Related Employment, and Comments. Notes that each type maps to a specific model attribute and can be dragged from the palette onto the canvas. Also states that clusters can be reordered at any time on the UI canvas, using the same method for all cluster types, with attribute clusters especially important because they are always added last on a page."
+                      }
+                    ],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000066",
+                      "end_unit_id": "p000067",
+                      "start_page": 66,
+                      "end_page": 67
+                    },
+                    "summary": "Explains how model attributes map to User Interface Canvas artefacts. Fields represent Data or Calculated Attributes on runtime evidence screens, with labels and values; widget choice is inferred by data type (text box, dropdown, checkbox, Cúram Date/DateTime). Clusters are containers for fields or specific model attributes, including Attribute, Address, Related Case Participant, Related Employment, and Comments clusters. Covers dragging from the palette and reordering fields/clusters, noting the canvas is close to but not exactly WYSIWYG at runtime."
+                  },
+                  {
+                    "title": "Attribute clusters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000085",
+                    "range": {
+                      "start_unit_id": "p000068",
+                      "end_unit_id": "p000068",
+                      "start_page": 68,
+                      "end_page": 68
+                    },
+                    "summary": "Explains how to create, move, and delete attribute clusters in the User Interface Canvas. Attribute clusters can only be created via the “Add Attribute Cluster” button, are added to the end of the canvas, and can be repositioned by drag-and-drop; deletion is via the “x” on hover. Notes that activation validates every attribute cluster has at least one field. Also lists standard properties: optional title/description and IDs, number of columns (1–4), label width, and whether shown on the create page."
+                  },
+                  {
+                    "title": "Data attribute fields",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000069",
+                      "end_unit_id": "p000069",
+                      "start_page": 69,
+                      "end_page": 69
+                    },
+                    "summary": "Explains how to add data attribute fields to attribute clusters by dragging them from the UI palette. Lists field properties: Label (mandatory for default locale), Label ID, Source Attribute, Modifiable (controls read-only vs editable widget), and Use Default (prefills from the source attribute’s default or type-based defaults like current date/0). Useful for configuring evidence create/modify behavior and default values."
+                  },
+                  {
+                    "title": "Calculated attribute fields",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000087",
+                    "range": {
+                      "start_unit_id": "p000070",
+                      "end_unit_id": "p000070",
+                      "start_page": 70,
+                      "end_page": 70
+                    },
+                    "summary": "This section explains configurable properties for calculated attribute fields in Dynamic Evidence UI. It covers dragging calculated attributes onto attribute clusters and the field settings available: Label, Label ID, Source Attribute (the referenced model calculated attribute), and Online Help. It also continues adjacent field-property documentation, including Use Blank for codetable sources and notes on address clusters and related case participant clusters. Useful if you need field-level configuration details for calculated attributes or nearby evidence UI cluster settings."
+                  },
+                  {
+                    "title": "Address clusters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000070",
+                      "end_unit_id": "p000070",
+                      "start_page": 70,
+                      "end_page": 70
+                    },
+                    "summary": "Address clusters let you drag address attributes onto existing clusters to create address clusters in the UI palette. Their properties are the same as attribute clusters; see the attribute clusters section for details. This section is brief and mainly points to that related configuration."
+                  },
+                  {
+                    "title": "Related case participant clusters",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Show All Panels and Allow Modification",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000090",
+                        "range": {
+                          "start_unit_id": "p000073",
+                          "end_unit_id": "p000073",
+                          "start_page": 73,
+                          "end_page": 73
+                        },
+                        "summary": "Explains how Related Case Participant behavior is controlled by Show All Panels and Allow Modification. When Show All Panels is true, the evidence create page shows three panels: select existing participant, search system participants, or register a new representative; false shows only the first panel. Allow Modification determines whether the related participant can later be changed: multiple always allows edits, single allows one-time setting then locks it, and no makes it mandatory on create and read-only on modify."
+                      }
+                    ],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000070",
+                      "end_unit_id": "p000073",
+                      "start_page": 70,
+                      "end_page": 73
+                    },
+                    "summary": "Defines configuration for Related Case Participant clusters in evidence screens. Covers labels/help text, search type, default blank behavior, and visibility on create/modify/view pages. The main behavior is controlled by Show All Panels and Allow Modification: true shows three create-page panels (select existing participant, search system participant, or register a new representative); false shows only the first. Allow Modification values multiple, single, and no determine whether the participant can be edited later, with no making it mandatory on create and read-only on modify."
+                  },
+                  {
+                    "title": "Related employment clusters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000091",
+                    "range": {
+                      "start_unit_id": "p000074",
+                      "end_unit_id": "p000074",
+                      "start_page": 74,
+                      "end_page": 74
+                    },
+                    "summary": "Describes the “Related Employment” cluster used in Dynamic Evidence. It groups related employment attributes such as participant and employer, and at runtime requires the case worker to select an employment record in a wizard before creating or modifying an evidence record. The selected employment populates Participant Name and Employer Name on the wizard’s second page. Also documents cluster properties: title/description, title/description IDs, number of columns, related employment attribute, page display flags for create/modify/view, and online help text."
+                  },
+                  {
+                    "title": "Comments clusters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000092",
+                    "range": {
+                      "start_unit_id": "p000075",
+                      "end_unit_id": "p000075",
+                      "start_page": 75,
+                      "end_page": 75
+                    },
+                    "summary": "Explains how to configure Comments clusters in Dynamic Evidence: drag comments attributes onto existing clusters to create a single multi-line text-box cluster. Lists cluster properties such as optional Title/Description (with resource IDs), mandatory Number of Columns (1–4), page visibility flags for Create/Modify/View, and optional Online Help text. Also introduces utility fields, especially Skip fields, which insert blank layout space in attribute clusters and have no properties."
+                  },
+                  {
+                    "title": "Utility fields: Skip and Label fields",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Skip Fields",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000094",
+                        "range": {
+                          "start_unit_id": "p000076",
+                          "end_unit_id": "p000076",
+                          "start_page": 76,
+                          "end_page": 76
+                        },
+                        "summary": "Skip Fields are layout-only placeholders in an Attribute Cluster that render a blank space at the specified position. They help control field arrangement within a containing cluster. Unlike Label Fields, Skip Fields have no properties and no display behavior beyond creating spacing. This section appears alongside repeated Label Field documentation, including label text, label ID, create/modify/view visibility flags, and online help."
+                      },
+                      {
+                        "title": "Label Fields",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000095",
+                        "range": {
+                          "start_unit_id": "p000076",
+                          "end_unit_id": "p000076",
+                          "start_page": 76,
+                          "end_page": 76
+                        },
+                        "summary": "This section explains Label Fields in Cúram dynamic evidence screens. A Label Field displays text at a specified location in an Attribute Cluster and can be shown or hidden on create, modify, and view pages. It lists key properties: mandatory default-locale Label, optional Label ID resource identifier, On Create/Modify/View Page booleans, and optional Online Help text. It also briefly contrasts Skip Fields, which insert blank space and have no properties."
+                      }
+                    ],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000075",
+                      "end_unit_id": "p000076",
+                      "start_page": 75,
+                      "end_page": 76
+                    },
+                    "summary": "This section explains Utility fields in dynamic evidence Attribute Clusters: Skip fields and Label fields. Skip fields create blank spacing to control layout and have no properties. Label fields display text in a cluster and can be shown or hidden on create, modify, and view pages. It documents Label properties such as mandatory default-locale Label, optional Label ID, page-visibility flags, and optional Online Help, with repeated table references for these settings."
+                  }
+                ],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000065",
+                  "end_unit_id": "p000076",
+                  "start_page": 65,
+                  "end_page": 76
+                },
+                "summary": "Covers defining the Dynamic Evidence User Interface tab and canvas. Explains deleting model attributes/relationships and the warnings/constraints, then saving changes. Describes how fields and clusters map model attributes to runtime evidence screens, including inferred widgets and near-WYSIWYG behavior. Details creating, moving, and deleting attribute, address, related case participant, related employment, and comments clusters, plus their main properties. Also covers utility Skip and Label fields and their layout/display settings."
+              },
+              {
+                "title": "Configuring the multiple participant evidence update",
+                "level": 3,
+                "children": [],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000077",
+                  "end_unit_id": "p000077",
+                  "start_page": 77,
+                  "end_page": 77
+                },
+                "summary": "This section explains how to configure the multiple participant evidence update in the dynamic evidence editor. It says administrators enable it by setting the participant in the Related CP Attribute field, then clearing Show All Panels and selecting Enable Multi Case Member Updates in the related participant properties panel. The page also begins a broader discussion of dynamic evidence rule sets, including generated rule sets for evidence processing logic and eligibility/entitlement determination."
+              },
+              {
+                "title": "Dynamic evidence rule sets",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Generated Rule Sets",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Processing rule sets",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Data attributes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000100",
+                            "range": {
+                              "start_unit_id": "p000078",
+                              "end_unit_id": "p000078",
+                              "start_page": 78,
+                              "end_page": 78
+                            },
+                            "summary": "This section explains how processing rule sets are generated for dynamic evidence types. It details data attribute handling: one rule attribute is created per data attribute, with the same name and a mapped CER type (e.g., Boolean, Date, String, Number, codetable). It also introduces related case participant and related employment attributes, noting they generate additional rule attributes in the processing rule class, including companion attributes for referenced role objects."
+                          },
+                          {
+                            "title": "Related case participant attributes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000101",
+                            "range": {
+                              "start_unit_id": "p000078",
+                              "end_unit_id": "p000078",
+                              "start_page": 78,
+                              "end_page": 78
+                            },
+                            "summary": "Explains how generated processing rule sets are built for dynamic evidence types, including rule set/class naming and data attribute type mappings. Focuses on related case participant attributes: each one generates two rule attributes in the processing rule class—one java.lang.Number attribute named after the attribute, and one related_<name> attribute holding the corresponding case participant role object of type CaseParticipantRole from CaseEntitiesRuleSet. Also begins the parallel pattern for related employment attributes."
+                          },
+                          {
+                            "title": "Related employment attributes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000102",
+                            "range": {
+                              "start_unit_id": "p000078",
+                              "end_unit_id": "p000078",
+                              "start_page": 78,
+                              "end_page": 78
+                            },
+                            "summary": "This section explains how generated processing rule sets are structured for dynamic evidence types. It covers rule set naming, the associated rule class, and how data attributes map to rule attribute types. It also describes related case participant attributes and related employment attributes, noting that each generates specific rule attributes in the processing rule class. Useful for understanding how dynamic evidence version changes produce rule sets and how evidence-related attributes are represented in CER."
+                          },
+                          {
+                            "title": "Parent-child relationships",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000103",
+                            "range": {
+                              "start_unit_id": "p000079",
+                              "end_unit_id": "p000079",
+                              "start_page": 79,
+                              "end_page": 79
+                            },
+                            "summary": "Explains how dynamic evidence parent-child relationships generate rule attributes in processing rule classes. Child versions create a parent-navigation list attribute; parent types get child-navigation attributes once both versions are activated, with names like related_<child logical name>. Warns not to reference these before activation due to CER validation errors. Also covers address attribute generation (ID plus related_<address> object), notes calculated attributes generate no rule attributes, and describes generated data rule sets and their naming/class conventions."
+                          },
+                          {
+                            "title": "Address attributes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000104",
+                            "range": {
+                              "start_unit_id": "p000079",
+                              "end_unit_id": "p000079",
+                              "start_page": 79,
+                              "end_page": 79
+                            },
+                            "summary": "Dynamic evidence address attributes generate two processing rule attributes: one numeric attribute named after the address attribute for the address ID, and one related_<Address Attribute Name> attribute for the full address object, typed as the address rule class in ParticipantEntitiesRuleSet. This section also notes nearby rules for calculated attributes and data rule set generation, but the focus here is address attribute mapping in dynamic evidence processing rules."
+                          },
+                          {
+                            "title": "Calculated attributes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000105",
+                            "range": {
+                              "start_unit_id": "p000079",
+                              "end_unit_id": "p000079",
+                              "start_page": 79,
+                              "end_page": 79
+                            },
+                            "summary": "Calculated attributes do not generate any rule attributes automatically. Any rule attributes for calculated values must be defined manually in the calculated attributes rule set for the dynamic evidence type version. This section sits among evidence configuration rules, alongside generated attributes for parent/child and address relationships and the naming of data rule sets."
+                          }
+                        ],
+                        "node_id": "n000099",
+                        "range": {
+                          "start_unit_id": "p000078",
+                          "end_unit_id": "p000078",
+                          "start_page": 78,
+                          "end_page": 78
+                        },
+                        "summary": "This section defines generated processing rule sets for dynamic evidence types. It covers the naming convention (<Dynamic Evidence Type Logical Name>RuleSet), the associated processing rule class, and how data attributes map to CER types. It also explains generated rule attributes for related case participant and related employment attributes, including the companion related_<name> role-object attributes. Useful for understanding how evidence records are represented in CER and how rule sets are created when in-edit evidence type versions are saved."
+                      },
+                      {
+                        "title": "Data rule sets",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000106",
+                        "range": {
+                          "start_unit_id": "p000079",
+                          "end_unit_id": "p000080",
+                          "start_page": 79,
+                          "end_page": 80
+                        },
+                        "summary": "This section explains generated Data Rule Sets for Dynamic Evidence Types. It covers rule set naming and class structure, mapping business start/end dates to Evidence Object Lifetime, and generating rule attributes from data attributes with type mappings (including volatile attributes as Timelines). It also describes parent-child navigation attributes in data rule sets and how they differ from processing rule sets. Relevant for understanding how evidence data is represented, temporalized, and linked in CER rule generation."
+                      },
+                      {
+                        "title": "Propagator configurations",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000107",
+                        "range": {
+                          "start_unit_id": "p000081",
+                          "end_unit_id": "p000081",
+                          "start_page": 81,
+                          "end_page": 81
+                        },
+                        "summary": "Explains how generated data rule sets are populated for dynamic evidence in eligibility/entitlement rules. Covers generated relationship attributes for parent-child evidence, related employment, related case participant, and address attributes, plus the note that calculated attributes produce no data rule elements. Describes Propagator Configurations created on activation to route evidence records to active succession sets. Also outlines support for multiple dynamic evidence type versions and the two modeling options: one rule set per evidence type, or one per version."
+                      }
+                    ],
+                    "node_id": "n000098",
+                    "range": {
+                      "start_unit_id": "p000077",
+                      "end_unit_id": "p000080",
+                      "start_page": 77,
+                      "end_page": 80
+                    },
+                    "summary": "Generated Rule Sets explains how CER automatically creates rule sets for dynamic evidence types. It covers processing rule sets for evidence logic, including rule set/class naming, data attribute type mapping, related case participant/employment/address attributes, parent-child navigation, and exclusion of calculated attributes. It also covers data rule sets for eligibility/entitlement, including Evidence Object Lifetime, volatile attributes as timelines, and parent-child differences. Useful for understanding how dynamic evidence is represented and propagated in generated CER rules."
+                  },
+                  {
+                    "title": "Support for multiple dynamic evidence type versions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000108",
+                    "range": {
+                      "start_unit_id": "p000081",
+                      "end_unit_id": "p000081",
+                      "start_page": 81,
+                      "end_page": 81
+                    },
+                    "summary": "Dynamic evidence types can have multiple versions over time, with attributes and relationships added or removed between versions. To represent these changes in generated rule sets, the system supports two approaches: one rule set per dynamic evidence type across all versions, or one rule set per individual dynamic evidence type version. This section is useful for understanding versioned rule-set generation for evolving evidence models."
+                  },
+                  {
+                    "title": "Loading of dynamic evidence rule objects",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000109",
+                    "range": {
+                      "start_unit_id": "p000082",
+                      "end_unit_id": "p000082",
+                      "start_page": 82,
+                      "end_page": 82
+                    },
+                    "summary": "Explains how dynamic evidence rule objects are loaded for handcrafted rule sets. The generated rule class is identified, a rule object is created, and common descriptor fields plus data attributes are populated from stored evidence or user-entered values. For new evidence, IDs are set to zero, parent navigation attributes use selected parent records, child evidence lists are empty, and address/related case participant attributes are initialized from entered details. Notes that handcrafted logic may need to branch when an attribute doesn’t yet exist for older evidence versions."
+                  },
+                  {
+                    "title": "Utility rule classes and functions",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Listing parent rule objects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000111",
+                        "range": {
+                          "start_unit_id": "p000083",
+                          "end_unit_id": "p000083",
+                          "start_page": 83,
+                          "end_page": 83
+                        },
+                        "summary": "Describes utility Java static operations in `DynamicEvidenceStatics` for dynamic evidence processing, focusing on listing parent rule objects. Explains that each parent dynamic evidence type has a generated rule attribute containing all parent records, and highlights three methods: `getActiveParentList()` for active parents, `getActiveandPendingChangesParentList()` for active and in-edit parents without pending updates, and `getParent()` to retrieve a specific parent record. Includes an XML rule snippet showing `getParent` used to derive a `relatedMember` attribute."
+                      },
+                      {
+                        "title": "Listing child rule objects",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000112",
+                        "range": {
+                          "start_unit_id": "p000084",
+                          "end_unit_id": "p000084",
+                          "start_page": 84,
+                          "end_page": 84
+                        },
+                        "summary": "Explains how generated processing rule classes expose child-evidence lists and case-specific evidence lists. For each child dynamic evidence type, a rule attribute can return all child records, with DynamicEvidenceStatics methods for filtered lists: getActiveChildList(), getActiveandPendingChangesChildList(), and getChildList(). Includes a rule snippet showing getChildList used to populate a list attribute. Also covers retrieving rule objects for a specific dynamic evidence type and case, useful for validations like duplicate checks, via getEvidenceListForCase() and getActiveEvidenceListForCase()."
+                      },
+                      {
+                        "title": "Listing rule objects for a particular dynamic evidence type",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000113",
+                        "range": {
+                          "start_unit_id": "p000084",
+                          "end_unit_id": "p000084",
+                          "start_page": 84,
+                          "end_page": 84
+                        },
+                        "summary": "Explains how to retrieve rule objects for dynamic evidence. It distinguishes child evidence lists from case-specific evidence lists, and shows that generated processing rule classes expose child rule attributes. For child evidence, DynamicEvidenceStatics provides getActiveChildList(), getActiveandPendingChangesChildList(), and getChildList() to return different filtered lists. For a particular case, it describes getEvidenceListForCase() and getActiveEvidenceListForCase() for obtaining all or active rule objects used in validations such as duplicate checks."
+                      },
+                      {
+                        "title": "Attribute availability",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000114",
+                        "range": {
+                          "start_unit_id": "p000085",
+                          "end_unit_id": "p000085",
+                          "start_page": 85,
+                          "end_page": 85
+                        },
+                        "summary": "Explains how CER rules handle attribute availability across dynamic evidence versions. A rule set may be reused when evidence structures change, so validation logic should first check whether an attribute exists using isAttributeAvailable(). Example: if actualExpense is replaced by child Expense records in a newer version, the rule can sum child values instead. Also introduces dynamic evidence rule set types, especially summary information rule sets, and their contract: one concrete rule class extending DefaultEvidenceSummary with an evidence rule attribute of the generated processing rule class."
+                      }
+                    ],
+                    "node_id": "n000110",
+                    "range": {
+                      "start_unit_id": "p000083",
+                      "end_unit_id": "p000084",
+                      "start_page": 83,
+                      "end_page": 84
+                    },
+                    "summary": "Describes `DynamicEvidenceStatics` utility methods used in dynamic evidence CER rule sets. Covers how generated processing rules expose parent and child evidence rule objects, with filters for active, active-plus-in-edit-without-pending-changes, and full lists via `getParent()`, `getChildList()`, `getActiveParentList()`, `getActiveChildList()`, and related methods. Also explains case-specific retrieval with `getEvidenceListForCase()` and `getActiveEvidenceListForCase()` for validations like duplicate checks. Includes XML examples of rule derivations and notes `isAttributeAvailable()` for handling evolving evidence structures."
+                  },
+                  {
+                    "title": "Specific dynamic evidence rule set types",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Summary information rule sets",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Contract",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000117",
+                            "range": {
+                              "start_unit_id": "p000085",
+                              "end_unit_id": "p000085",
+                              "start_page": 85,
+                              "end_page": 85
+                            },
+                            "summary": "This section explains dynamic evidence “Contract” requirements for summary rule sets. It describes how CER rule sets must account for attribute availability across evidence type versions, using isAttributeAvailable() when structural changes exist. It also outlines specific dynamic evidence rule set types and focuses on summary information rule sets. Key restrictions are that a handcrafted Summary Rule Set must contain one concrete rule class extending DefaultEvidenceSummaryRuleClass, and it must define an “evidence” rule attribute of the generated processing rule class using the specified default derivation expression."
+                          },
+                          {
+                            "title": "Authoring",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000118",
+                            "range": {
+                              "start_unit_id": "p000086",
+                              "end_unit_id": "p000086",
+                              "start_page": 86,
+                              "end_page": 86
+                            },
+                            "summary": "Explains how to author a Summary Rule Set for Dynamic Evidence. DefaultEvidenceSummary defines standard attributes (startDate, endDate, availability flags, summary, participantDetails) and admins override only those needing different values. startDate/endDate populate the Evidence Workspace Period only when the availability flags are true; otherwise Business Start/End Date modeling is used. Summary logic typically derives from the current evidence record via an evidence attribute. Dynamic Evidence Administration can generate a starter Rule Set if none exists."
+                          }
+                        ],
+                        "node_id": "n000116",
+                        "range": {
+                          "start_unit_id": "p000085",
+                          "end_unit_id": "p000086",
+                          "start_page": 85,
+                          "end_page": 86
+                        },
+                        "summary": "Explains summary information rule sets for Dynamic Evidence, including when CER rule sets are used instead of simple summary mapping, and the contract required for handcrafted sets. A Summary Rule Set must contain one concrete rule class extending DefaultEvidenceSummaryRuleClass and an evidence attribute of the generated processing rule class. It also covers DefaultEvidenceSummary’s standard attributes, how start/end dates affect the workspace period, and that admins can use a starter rule set generated by Dynamic Evidence Administration."
+                      },
+                      {
+                        "title": "Validation rule sets",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Contract",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000120",
+                            "range": {
+                              "start_unit_id": "p000087",
+                              "end_unit_id": "p000087",
+                              "start_page": 87,
+                              "end_page": 87
+                            },
+                            "summary": "This section explains how dynamic evidence summary and validation rule sets are configured and enforced. It covers starter vs existing summary rule sets, activation behavior, and how changes affect all evidence versions sharing a set. It also describes using CER rule sets for complex validations and how to enable them in Evidence Properties. The “Contract” defines required validation rule set structure: one concrete rule class extending DefaultEvidenceValidationResult and containing an evidence attribute of the generated processing rule class with specified derivation."
+                          },
+                          {
+                            "title": "Infrastructure rule classes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000121",
+                            "range": {
+                              "start_unit_id": "p000088",
+                              "end_unit_id": "p000089",
+                              "start_page": 88,
+                              "end_page": 89
+                            },
+                            "summary": "Describes infrastructure rule classes for evidence validation rule sets. Covers the Validation rule class, including isFailure, failureMessage, and informationalType (warning/error/fatal error behavior and rollback effects), plus ValidationMode for selecting validations by operation. Also explains that validation rule sets must extend DefaultEvidenceValidationResult, which defines lists of validations for details, standard, pre/post create, and pre/post modify phases, and includes a validationMode attribute. Useful for understanding when each validation group runs and what evidence-related operations they apply to."
+                          },
+                          {
+                            "title": "Authoring",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000122",
+                            "range": {
+                              "start_unit_id": "p000090",
+                              "end_unit_id": "p000090",
+                              "start_page": 90,
+                              "end_page": 90
+                            },
+                            "summary": "This section explains how to author Dynamic Evidence validation rule sets: define the rule set, validation sets, and individual validations. It covers generating a starter rule set when none exists, reusing existing rule sets, and the impact of modifying shared sets across versions. It also describes redefining validation-set attributes (often via CER fixed lists) and creating validations with CER create expressions, including required derivations for isFailure and failureMessage, using evidence data such as comparing startDate and endDate."
+                          }
+                        ],
+                        "node_id": "n000119",
+                        "range": {
+                          "start_unit_id": "p000087",
+                          "end_unit_id": "p000090",
+                          "start_page": 87,
+                          "end_page": 90
+                        },
+                        "summary": "Explains dynamic evidence validation rule sets: when to use standard validations versus CER rule sets for complex, parent/child-based checks; how to enable a rule set in Evidence Properties; and the required contract. A validation rule set must contain one concrete class extending DefaultEvidenceValidationResult and an evidence attribute of the generated processing rule class. It also details infrastructure classes (Validation, ValidationMode) and validation groups: details, standard, pre/post create, and pre/post modify. Describes starter vs existing rule sets and shared-change impact across versions."
+                      },
+                      {
+                        "title": "Calculated attributes rule sets",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Contract",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000124",
+                            "range": {
+                              "start_unit_id": "p000091",
+                              "end_unit_id": "p000091",
+                              "start_page": 91,
+                              "end_page": 91
+                            },
+                            "summary": "This section defines the contract for Calculated Attributes rule sets in dynamic evidence. It explains required structure: one concrete rule class extending DefaultCalculatedAttributes, and a mandatory evidence attribute typed to the generated Processing Rule Class using a specified derivation. It also notes calculated attributes derive values from other attributes or related evidence types, are used in evidence pages and validations, and must exist for each evidence type version that includes calculated attributes."
+                          },
+                          {
+                            "title": "Authoring",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000125",
+                            "range": {
+                              "start_unit_id": "p000092",
+                              "end_unit_id": "p000092",
+                              "start_page": 92,
+                              "end_page": 92
+                            },
+                            "summary": "Explains how to author calculated attributes rule sets for a dynamic evidence type version. The evidence Rule Class must include an “evidence” Attribute of type Alien, and matching Rule Attributes for each Calculated Attribute. In the evidence editor, a Calculated Attributes Rule Set Name must be specified. If the rule set doesn’t exist, a starter CalculatedAttributes class is generated and later edited; existing rule sets can be reused, but must be extended if new calculated attributes are added. Begins introducing eligibility and entitlement rule set layers."
+                          }
+                        ],
+                        "node_id": "n000123",
+                        "range": {
+                          "start_unit_id": "p000091",
+                          "end_unit_id": "p000091",
+                          "start_page": 91,
+                          "end_page": 91
+                        },
+                        "summary": "This section introduces calculated attributes rule sets for dynamic evidence. It explains that calculated attributes derive values from other attributes or related evidence and may be used in evidence pages or validations. It defines the contract for these rule sets: each version with calculated attributes must have one calculated attributes rule set containing a single concrete class extending DefaultCalculatedAttributes and an “evidence” attribute typed to the generated processing rule class with specified derivation. It also starts the authoring guidance for creating or reusing these rule sets."
+                      },
+                      {
+                        "title": "Eligibility and entitlement rule sets",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000126",
+                        "range": {
+                          "start_unit_id": "p000092",
+                          "end_unit_id": "p000092",
+                          "start_page": 92,
+                          "end_page": 92
+                        },
+                        "summary": "This section introduces the three-layer architecture for eligibility and entitlement determination rule sets. It explains that Data Rule Classes mirror dynamic evidence type data and relationships, with rule objects created or updated when evidence records change. It then begins describing Calculator Rule Classes, which model higher-level business concepts derived from those data elements. Useful for understanding how rule sets are structured and how evidence changes drive rule object creation."
+                      }
+                    ],
+                    "node_id": "n000115",
+                    "range": {
+                      "start_unit_id": "p000085",
+                      "end_unit_id": "p000092",
+                      "start_page": 85,
+                      "end_page": 92
+                    },
+                    "summary": "Covers CER-based dynamic evidence rule sets: when to use them instead of simple mappings/standard validations, and their required contracts. Summary rule sets need one concrete class extending DefaultEvidenceSummary with an evidence attribute; start/end dates affect workspace period unless disabled. Validation rule sets extend DefaultEvidenceValidationResult, use EvidenceValidationRuleSet classes, and support validation groups plus validation mode/informational type. Also introduces calculated attributes rule sets (one class extending DefaultCalculatedAttributes with evidence plus calculated attrs) and starts eligibility/entitlement layered rule-set architecture."
+                  }
+                ],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000077",
+                  "end_unit_id": "p000092",
+                  "start_page": 77,
+                  "end_page": 92
+                },
+                "summary": "Covers CER use with dynamic evidence: generated processing and data rule sets per evidence type, not per version; data type mappings, related case participant/employment/address attributes, parent-child navigation, and exclusion of calculated attributes. Explains evidence business object lifetime, volatile attributes as timelines, and handling evolving evidence versions. Also describes loading dynamic evidence rule objects for handcrafted rules, utility methods in DynamicEvidenceStatics, and contracts/authoring for summary, validation, and calculated-attributes rule sets, plus layered eligibility/entitlement rule-set architecture."
+              },
+              {
+                "title": "Localizing dynamic evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Localizing dynamic evidence process overview",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000128",
+                    "range": {
+                      "start_unit_id": "p000093",
+                      "end_unit_id": "p000093",
+                      "start_page": 93,
+                      "end_page": 93
+                    },
+                    "summary": "Explains how to localize dynamic evidence in Cúram. It says the process is similar to other localization tasks, using the Application Resource Store and standard resource naming conventions. The main focus is localizing the dynamic evidence editor properties file, dynevd_evidenceeditor.properties, which controls labels, tooltips, dropdown items, buttons, and messages in UTF-8 key/value format. Steps shown include logging into Application Resources, downloading the default locale file, and editing property values to localized equivalents."
+                  },
+                  {
+                    "title": "Localizing the dynamic evidence editor properties resource in administration suite",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000129",
+                    "range": {
+                      "start_unit_id": "p000093",
+                      "end_unit_id": "p000093",
+                      "start_page": 93,
+                      "end_page": 93
+                    },
+                    "summary": "Explains how to localize the dynamic evidence editor properties resource in the administration suite. The editor uses `dynevd_evidenceeditor.properties` / `DynEvd_EvidenceEditor.properties` to define labels, text, tooltips, button labels, drop-down items, and messages. The file is UTF-8 and must be localized by downloading the default-locale version from Application Resource Store, then editing each property value to the appropriate locale-specific equivalent."
+                  },
+                  {
+                    "title": "Localizing the runtime dynamic evidence user interface",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Static properties resource",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000131",
+                        "range": {
+                          "start_unit_id": "p000094",
+                          "end_unit_id": "p000094",
+                          "start_page": 94,
+                          "end_page": 94
+                        },
+                        "summary": "Describes how dynamic evidence runtime UI localization is handled via properties resources. Covers the shared static file DynEvdStaticProperties.properties for common labels/messages (e.g., Save, Cancel), localized once per locale through the Application Resource Store. Also explains evidence-type-specific properties resources named DynEvd_EvidenceType_<logicalName>.properties for the runtime description shown in Evidence Maintenance, created per evidence type and localized per supported locale. Introduces version-specific properties resources used when editing/activating evidence type versions for UI labels and titles."
+                      },
+                      {
+                        "title": "Evidence type properties resources",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000132",
+                        "range": {
+                          "start_unit_id": "p000094",
+                          "end_unit_id": "p000094",
+                          "start_page": 94,
+                          "end_page": 94
+                        },
+                        "summary": "Explains localization resources for dynamic evidence runtime UI. Covers the shared static properties file (DynEvdStaticProperties.properties) used for common labels/messages and how to localize it in Application Resource Store, plus per–Evidence Type properties resources (DynEvd_EvidenceType_<logicalName>.properties) that store the runtime description shown in Evidence Maintenance/New Evidence screens. Notes each type gets its own resource, created/deleted with the type, and that version-specific properties resources are also stored when an Evidence Type Version is activated."
+                      },
+                      {
+                        "title": "Evidence type version properties resources",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000133",
+                        "range": {
+                          "start_unit_id": "p000094",
+                          "end_unit_id": "p000094",
+                          "start_page": 94,
+                          "end_page": 94
+                        },
+                        "summary": "This section explains localization of dynamic evidence runtime resources in Cúram. It covers the shared static properties file for common labels/messages, individual evidence type properties files for type-specific runtime descriptions, and evidence type version properties resources created when a version is activated. It outlines how to download the default locale file from Application Resource Store, edit translations, and create localized resources for other locales. It also notes that evidence type resources are created/deleted with the evidence type."
+                      },
+                      {
+                        "title": "Generating the localized user interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000134",
+                        "range": {
+                          "start_unit_id": "p000095",
+                          "end_unit_id": "p000095",
+                          "start_page": 95,
+                          "end_page": 95
+                        },
+                        "summary": "This section explains how dynamic evidence localization works at runtime. It covers localized properties resources, default-locale fallback, and that runtime UI properties are generated on first access and won’t reflect later source changes. It also notes localization requirements for message files and codetable descriptions, which drive UI text such as page titles. Finally, it introduces the Dynamic Evidence Configuration Extractor, used to export generated artefacts (UIM pages, rules, properties, security IDs, etc.) so dynamic evidence definitions can be persisted and source-controlled."
+                      }
+                    ],
+                    "node_id": "n000130",
+                    "range": {
+                      "start_unit_id": "p000094",
+                      "end_unit_id": "p000094",
+                      "start_page": 94,
+                      "end_page": 94
+                    },
+                    "summary": "Explains how dynamic evidence runtime screens are localized using Application Resource Store properties files. Covers the shared DynEvdStaticProperties.properties for common labels/messages, per–evidence type DynEvd_EvidenceType_<logicalName>.properties for the runtime description shown in Evidence Maintenance/New Evidence, and evidence type version properties created on version activation for UI labels/titles. Describes downloading the default-locale file, translating it, re-uploading it for each locale, and notes static localization is done once while evidence type resources are created/deleted with the type."
+                  },
+                  {
+                    "title": "Message files",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000135",
+                    "range": {
+                      "start_unit_id": "p000095",
+                      "end_unit_id": "p000095",
+                      "start_page": 95,
+                      "end_page": 95
+                    },
+                    "summary": "Message files for dynamic evidence must be localized for every supported locale, using the same process as other dynamic evidence resources. The section also notes that each dynamic evidence type generates a localized codetable entry on EvidenceType, and that its description is used in UI elements such as evidence maintenance page titles. It follows from the surrounding discussion that generated properties files are created at first access and should be localized before users begin using the screens."
+                  },
+                  {
+                    "title": "Codetable items",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000136",
+                    "range": {
+                      "start_unit_id": "p000095",
+                      "end_unit_id": "p000095",
+                      "start_page": 95,
+                      "end_page": 95
+                    },
+                    "summary": "Dynamic evidence types generate an EvidenceType codetable entry. Its description must be correctly localized because it is used in UI generation, including evidence maintenance page titles. The section also notes that dynamic evidence localization depends on generated properties resources and message files, and that these runtime properties are created on first access, so source files should be finalized before users begin using the screens."
+                  }
+                ],
+                "node_id": "n000127",
+                "range": {
+                  "start_unit_id": "p000093",
+                  "end_unit_id": "p000094",
+                  "start_page": 93,
+                  "end_page": 94
+                },
+                "summary": "Explains how to localize dynamic evidence in Cúram using Application Resource Store properties files. Covers the dynamic evidence editor resource `dynevd_evidenceeditor.properties`, the shared runtime static resource `DynEvdStaticProperties.properties`, per–evidence type runtime resources `DynEvd_EvidenceType_<logicalName>.properties`, and version-activated evidence type properties. Describes downloading the default-locale file, translating UTF-8 key/value entries, re-uploading/publishing, and notes that static resources are localized once while evidence type resources are created/deleted with the type."
+              },
+              {
+                "title": "Dynamic Evidence Configuration Extractor",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Features of the Dynamic Evidence Configuration Extractor",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000138",
+                    "range": {
+                      "start_unit_id": "p000096",
+                      "end_unit_id": "p000096",
+                      "start_page": 96,
+                      "end_page": 96
+                    },
+                    "summary": "Describes the Dynamic Evidence Configuration Extractor, which exports runtime Cúram Dynamic Evidence configuration into standard development artefacts (DMX, CTX, XML blobs/clobs, tab and section files) for database rebuilds. Key features include output to a single component directory, replacement of generated primary keys to avoid clashes, handling of tab/section configuration files, optional extraction of links to Application/Product/Integrated Cases, and three extraction modes: all types, a named list, or code-prefix-based selection. Also notes splitting legacy shared description properties into per-entity files."
+                  },
+                  {
+                    "title": "Running the Extractor",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000139",
+                    "range": {
+                      "start_unit_id": "p000097",
+                      "end_unit_id": "p000097",
+                      "start_page": 97,
+                      "end_page": 97
+                    },
+                    "summary": "Explains how to run the Dynamic Evidence extractor and what it captures. It preserves the DYNEVDCODE key set state, extracts active and in-edit Evidence Type versions, version snapshots, and related generated/processing/custom rulesets, but not localizable resource bundles. Notes that published custom ruleset changes are only picked up after republishing. Before upload, codetables must be regenerated. Also covers a required property for generated tab sections and gives command-line execution setup and example parameters."
+                  },
+                  {
+                    "title": "Extractor input parameters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000140",
+                    "range": {
+                      "start_unit_id": "p000098",
+                      "end_unit_id": "p000098",
+                      "start_page": 98,
+                      "end_page": 98
+                    },
+                    "summary": "Defines extractor input parameters for dynamic evidence configuration extraction. Covers how to run the extractor from command line, Ant script, or Eclipse, and notes the parameter format uses -D name=value with no spaces. Mandatory parameters include component, serverDir (for Eclipse), lowerKey, and upperKey. Also introduces evidence type extraction strategy parameters, with extractAll=true extracting all active dynamic evidence types and overriding other strategy settings."
+                  },
+                  {
+                    "title": "Extracted artefacts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000141",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000100",
+                      "start_page": 99,
+                      "end_page": 100
+                    },
+                    "summary": "This section explains what artefacts the extractor generates for dynamic evidence configuration. It covers input parameters that control extraction, then lists output types: CTX codetable files and DMX entity files with blob/clob subfolders. It details extracted entities and dependencies, including EvidenceTypeDef, version, security, AppResource, and Creole ruleset tables, plus what each contains (localizable descriptions, tab/menu/navigation XML, rulesets, links). Useful if you need the extraction output structure or entity dependency rules."
+                  }
+                ],
+                "node_id": "n000137",
+                "range": {
+                  "start_unit_id": "p000095",
+                  "end_unit_id": "p000100",
+                  "start_page": 95,
+                  "end_page": 100
+                },
+                "summary": "Describes the Dynamic Evidence Configuration Extractor, which exports runtime Dynamic Evidence configuration into rebuildable Cúram artefacts (DMX/CTX/XML blobs, tab/section files). Covers output layout, key replacement to avoid primary-key clashes, optional links to Application/Product/Integrated Cases, and three selection modes: all types, named list, or code prefix. Explains command-line/Eclipse execution and required parameters. Lists extracted codetables/entities, active and in-edit versions, rulesets, and notes that localizable bundles aren’t extracted and codetables must be regenerated before upload."
+              },
+              {
+                "title": "Features of the Dynamic Evidence Metadata Loader",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Running the downloader",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000143",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000102",
+                      "start_page": 102,
+                      "end_page": 102
+                    },
+                    "summary": "Explains how to run the Dynamic Evidence Metadata Downloader from either the command line or Eclipse. It gives example invocation syntax for a batch file or Ant script, and for Eclipse using `curam.util.impl.BatchLauncher` with the batch operation `DynamicEvidenceMetadataDownloader.downloadMetadata`. It also notes the required input parameters (`location`, `evidenceType`, `effectiveDate`) and that command-line arguments must be passed with `-D`."
+                  },
+                  {
+                    "title": "Downloader input parameters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000144",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000102",
+                      "start_page": 102,
+                      "end_page": 102
+                    },
+                    "summary": "This section explains how to run the Dynamic Evidence Metadata Downloader and what input parameters it requires. It covers command-line and Eclipse execution, showing example invocations for batch/Ant scripts and BatchLauncher. It also states that all parameters must be passed with the `-D` option when running from the command line. The section begins the list of mandatory parameters, but their details are not included in the excerpt."
+                  },
+                  {
+                    "title": "Running the uploader",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000145",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "Explains how to run the Dynamic Evidence metadata uploader from either the command line or Eclipse. It gives example commands using `uploadDynamicEvidenceMetadata` or its Ant script, and Eclipse run configuration details for `curam.util.impl.BatchLauncher` with two arguments. It also lists uploader input parameters, emphasizing that `location` is mandatory and must point to a valid XML file; invalid paths or contents cause errors."
+                  },
+                  {
+                    "title": "Uploader input parameters",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000146",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "Describes uploader input parameters and how to run the Dynamic Evidence Metadata Uploader. Key mandatory parameter is `location`, the XML file location in the file system; missing folder/file, invalid contents, or insufficient privileges cause errors. Also references `evidenceType` (logical Dynamic Evidence Type name) and `effectiveDate` (version effective date) as input parameters used when launching from command line or Eclipse, including required `-D` syntax and batch launcher/ant examples."
+                  }
+                ],
+                "node_id": "n000142",
+                "range": {
+                  "start_unit_id": "p000101",
+                  "end_unit_id": "p000103",
+                  "start_page": 101,
+                  "end_page": 103
+                },
+                "summary": "Explains the Dynamic Evidence Metadata Loader, a tool for importing and exporting dynamic evidence metadata. It has two features: Download, which writes metadata for a specified effective date from the runtime database to XML in the file system; and Upload, which reads XML metadata from the file system and updates the runtime database. Describes how to run both tools from the command line or Eclipse using BatchLauncher/Ant scripts, and lists mandatory input parameters such as location, evidenceType, and effectiveDate, including error conditions for invalid paths or files."
+              },
+              {
+                "title": "Generated artefacts",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "EvidenceType codetable entries",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000148",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "This section explains auto-generated EvidenceType code table entries for new Dynamic Evidence Types. It covers how the codetable code is formed (environment variable prefix plus unique number, default prefix DET), that the description comes from the Dynamic Evidence Type name, and that entries use the server locale and are removed if the type is cancelled. It also warns about locale issues in multi-locale deployments and notes the related application property resource naming for evidence type descriptions."
+                  },
+                  {
+                    "title": "Property resources for evidence types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000149",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000104",
+                      "start_page": 104,
+                      "end_page": 104
+                    },
+                    "summary": "Dynamic evidence types automatically create a localized property application resource for the evidence type description. The file is generated when the Evidence Type is created, and its name follows the pattern `DynEvd_EvidenceType_<logicalName>.properties`. This section sits alongside other generated artefacts such as codetable entries and explains that dynamic evidence administration creates resources that affect runtime behavior and localization."
+                  },
+                  {
+                    "title": "Security identifiers and security groups",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000150",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "Explains how dynamic evidence types create and manage security identifiers and security groups. Each type is linked to an administrator-chosen security group, and three SIDs are auto-generated for create, modify, and read operations using the group name. These SIDs are added to both that group and EVIDENCEGROUP if present, and are removed when the type is cancelled. The section also notes related generated CER rule sets, propagator configurations, and property/UIM resources created on activation and removed on cancellation."
+                  },
+                  {
+                    "title": "Cúram Express Rule (CER) Rule Sets",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000151",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "Activation of each dynamic evidence type version generates CER rule sets, which are removed if the version is cancelled. This section also notes related generated artifacts: security identifiers and groups for evidence maintenance, propagator configurations tied to the rule sets, property application resources for localized UI strings, and dynamic UIM resources created on first caseworker access. It points to other sections for more detail on dynamic evidence rule sets and localization."
+                  },
+                  {
+                    "title": "Propagator configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000152",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "This section explains automatically generated artifacts for dynamic evidence, including security groups and SIDs for create/modify/read permissions, CER rule sets, propagator configurations, property application resources, and dynamic UIM resources. It notes when each is generated or removed (on activation, first page access, or cancellation), naming conventions such as the DynEvd_ prefix, and that administrators should not edit or remove generated resources."
+                  },
+                  {
+                    "title": "Properties resources for evidence type versions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000153",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "Describes resources generated for dynamic evidence type versions. On activation, each version creates a default-locale property application resource containing all localizable UI strings, named DynEvd_ + logical evidence type name + effective date; administrators must not modify it, and it is removed on cancellation. It also notes dynamic UIM pages and their property resources, generated on first caseworker access, all prefixed DynEvd_, also protected from editing/removal and removed when the version is cancelled."
+                  },
+                  {
+                    "title": "Dynamic UIM resources",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000154",
+                    "range": {
+                      "start_unit_id": "p000105",
+                      "end_unit_id": "p000105",
+                      "start_page": 105,
+                      "end_page": 105
+                    },
+                    "summary": "Dynamic evidence type versions generate dynamic UIM pages and matching property application resources on first access in the case worker application. All files use the “DynEvd_” prefix. Administrators should not edit or remove these resources, and they are deleted when the dynamic evidence type version is cancelled."
+                  },
+                  {
+                    "title": "Tab configuration and the Application Resource Store",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000155",
+                    "range": {
+                      "start_unit_id": "p000106",
+                      "end_unit_id": "p000106",
+                      "start_page": 106,
+                      "end_page": 106
+                    },
+                    "summary": "Explains how dynamic evidence tab, nav, and optional menu configuration resources are generated in the Application Resource Store for each Dynamic Evidence Type Version, including naming based on type code plus effective date and cleanup on cancellation. Also covers dynamic generation of shared domain definitions in DynEvdDomains.xml, regenerated on startup and when versions are activated/cancelled. Notes the EvidenceTypeDefinition entity stores behavior data, and ends with a checklist-style summary of generated artefacts (codetable entries, properties resources, SIDs, CER rulesets, propagator configs)."
+                  },
+                  {
+                    "title": "Domain definitions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000156",
+                    "range": {
+                      "start_unit_id": "p000106",
+                      "end_unit_id": "p000106",
+                      "start_page": 106,
+                      "end_page": 106
+                    },
+                    "summary": "This section explains dynamically generated domain definitions for Dynamic Evidence. They are stored in the Application Resource Store in a shared file, DynEvdDomains.xml, generated on startup and regenerated whenever a Dynamic Evidence Type Version is activated or cancelled; admins should not edit it. It also notes the EvidenceTypeDefinition entity, which stores behavior info for each evidence type, and introduces a checklist-style summary of generated artefacts for dynamic evidence."
+                  },
+                  {
+                    "title": "The Evidence Type Definition entity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000157",
+                    "range": {
+                      "start_unit_id": "p000106",
+                      "end_unit_id": "p000106",
+                      "start_page": 106,
+                      "end_page": 106
+                    },
+                    "summary": "This section explains the EvidenceTypeDefinition entity, which stores behavior information for each dynamic evidence type and gets one database entry per new type. It also summarizes generated artefacts for dynamic evidence, including tab/nav/menu configuration resources in the Application Resource Store, the shared DynEvdDomains.xml domain resource, and other generated items such as codetable entries, properties resources, security identifiers, CER rulesets, and propagator configurations. It is useful for understanding what system artifacts are created, updated, or removed when evidence types are activated or cancelled."
+                  },
+                  {
+                    "title": "Summary of generated artefacts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000158",
+                    "range": {
+                      "start_unit_id": "p000106",
+                      "end_unit_id": "p000106",
+                      "start_page": 106,
+                      "end_page": 106
+                    },
+                    "summary": "This section lists generated artefacts for Dynamic Evidence as a checklist. It covers tab, nav, and optional menu configuration resources in the Application Resource Store, updates to Application section files on activation/cancellation, shared domain definitions in DynEvdDomains.xml, and the EvidenceTypeDefinition database entity. It also summarizes artefact types and multiplicities: EvidenceType codetable entries, per-type properties resources, three security identifiers, CER rulesets, and propagator configurations."
+                  }
+                ],
+                "node_id": "n000147",
+                "range": {
+                  "start_unit_id": "p000104",
+                  "end_unit_id": "p000106",
+                  "start_page": 104,
+                  "end_page": 106
+                },
+                "summary": "This section explains the automatic artefacts created for Dynamic Evidence administration and when they are generated, updated, or removed. It covers EvidenceType codetable entries, evidence type property resources, security groups and SIDs, CER rule sets, propagator configurations, dynamic UIM resources, tab/nav/menu resources in the Application Resource Store, shared domain definitions in DynEvdDomains.xml, and the EvidenceTypeDefinition database entity. It also warns administrators not to edit generated resources and notes locale considerations and cancellation cleanup."
+              },
+              {
+                "title": "Dynamic Evidence application properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000159",
+                "range": {
+                  "start_unit_id": "p000107",
+                  "end_unit_id": "p000107",
+                  "start_page": 107,
+                  "end_page": 107
+                },
+                "summary": "This section lists Dynamic Evidence-related artefacts and their multiplicity in AppResource store and the EvidenceTypeDefinition table, then defines application properties for Dynamic Evidence. Key properties include the auto-generated evidence type code prefix (max three characters, default DET) and the LRU cache maximum size for in-progress user operations across evidence versions (default 1000). It also notes that Cúram application properties are managed in the system administration application."
+              },
+              {
+                "title": "Compliance for dynamic evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Java API",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000161",
+                    "range": {
+                      "start_unit_id": "p000108",
+                      "end_unit_id": "p000108",
+                      "start_page": 108,
+                      "end_page": 108
+                    },
+                    "summary": "Dynamic Evidence exposes public Java APIs for custom rule sets and application code; do not implement or subclass its interfaces/classes unless Javadoc explicitly allows it. It also ships four infrastructure rule sets—DynamicEvidenceRuleSet, EvidenceCalculatedAttributesRuleSet, EvidenceSummaryRuleSet, and EvidenceValidationRuleSet—which must not be modified because they form the contract with custom processing rule sets. The section also notes the default “DET” codetable prefix for evidence types and how to change it via application property, plus brief steps for sample widget source code setup."
+                  },
+                  {
+                    "title": "Infrastructure rule sets",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000162",
+                    "range": {
+                      "start_unit_id": "p000108",
+                      "end_unit_id": "p000108",
+                      "start_page": 108,
+                      "end_page": 108
+                    },
+                    "summary": "Dynamic Evidence includes four infrastructure rule sets—DynamicEvidenceRuleSet, EvidenceCalculatedAttributesRuleSet, EvidenceSummaryRuleSet, and EvidenceValidationRuleSet—that are part of the contract with custom processing rule sets and should not be modified. The section also notes that Dynamic Evidence public Java APIs may be used by custom code, but implementations or subclasses should not be provided unless Javadoc explicitly allows it. It mentions the default “DET” evidence type prefix and the property to change it, plus brief sample widget setup steps."
+                  },
+                  {
+                    "title": "Dynamic evidence types prefix",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000163",
+                    "range": {
+                      "start_unit_id": "p000108",
+                      "end_unit_id": "p000108",
+                      "start_page": 108,
+                      "end_page": 108
+                    },
+                    "summary": "Dynamic Evidence type codetable entries are auto-generated with a default “DET” prefix. Customers should not use this prefix for custom Dynamic Evidence Types; administrators should set a different prefix via the application property `curam.dynamicevidence.type.code.prefix`. This section also notes that Dynamic Evidence public Java APIs are documented in Javadocs and must not be implemented or subclassed unless explicitly allowed, and that four infrastructure rule sets ship with Dynamic Evidence and should not be modified."
+                  }
+                ],
+                "node_id": "n000160",
+                "range": {
+                  "start_unit_id": "p000107",
+                  "end_unit_id": "p000107",
+                  "start_page": 107,
+                  "end_page": 107
+                },
+                "summary": "This section covers Dynamic Evidence compliance and upgrade-related settings. It documents the application property `curam.dynamicevidence.type.code.prefix`, whose default is `DET`, to control auto-generated Dynamic Evidence Type codetable prefixes (max three characters), and notes the in-progress cache size property `curam.dynamicevidence.inprog.cache.max.size` with default 1000. It is useful for administrators and developers needing to adjust evidence type code generation or understand Dynamic Evidence behavior during upgrades and user transfers."
+              },
+              {
+                "title": "Source code for the sample widgets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000164",
+                "range": {
+                  "start_unit_id": "p000108",
+                  "end_unit_id": "p000112",
+                  "start_page": 108,
+                  "end_page": 112
+                },
+                "summary": "Gives brief setup steps for a sample dynamic evidence widget: define a domain and plugins in DomainsConfig.xml, implement the plugin classes under the component’s javasource folder, then rebuild the client. Notes that the example domain name can then be used in dynamic evidence configuration and refers to the Custom Widget Development Guide. The rest of the pages are legal notices, copyright/license terms, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000112",
+              "start_page": 11,
+              "end_page": 112
+            },
+            "summary": "Explains how administrators configure dynamic evidence in Cúram using the Dynamic Evidence Editor and Dynamic Evidence List page. Covers dynamic evidence types vs. versions, effective dates, version lifecycle, activation and validation, version copying, case type association, and runtime behavior when entering evidence. Also summarizes generated artefacts, security setup, application properties, infrastructure rule sets, localization, metadata import/export tools, and the sample widget setup. Useful for understanding admin workflows and the configuration objects created for dynamic evidence."
+          }
+        ],
+        "node_id": "n000018",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000112",
+          "start_page": 9,
+          "end_page": 112
+        },
+        "summary": "Covers how to configure evidence for use by caseworkers: enabling deleted-evidence display in Evidence Type/Object Type lists, creating case-type-specific evidence dashboard groups with optional required evidence, and enabling end dating during evidence creation for dynamic and non-dynamic evidence. Also introduces dynamic evidence administration: types vs. versions, effective dating and lifecycle behavior, case-type association, and generated artefacts, security, properties, rule sets, localization, import/export, and sample widget setup."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

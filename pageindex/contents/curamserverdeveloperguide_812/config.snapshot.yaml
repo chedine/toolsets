@@ -1,0 +1,45 @@
+output_dir: contents
+schema_version: vectorless-pageindex-lite/v1
+llm:
+  provider: pi_openai_codex
+  model: gpt-5.4-mini
+  temperature: null
+  timeout_seconds: 120
+  max_retries: 3
+  required: true
+  auth_path: ~/.pi/agent/auth.json
+  auth_provider_key: openai-codex
+  codex_base_url: https://chatgpt.com/backend-api
+  originator: pi
+  pi_agent_package_dir: /opt/homebrew/lib/node_modules/@mariozechner/pi-coding-agent
+  openai_base_url: https://api.openai.com/v1
+  openai_api_key_env: OPENAI_API_KEY
+pdf:
+  extraction_backend: pymupdf
+  use_native_outline: true
+  min_outline_items: 2
+markdown:
+  heading_based_tree: true
+content:
+  include_empty_pages: true
+  normalize_whitespace: true
+  collapse_blank_lines: true
+indexing:
+  prefer_llm_structure_when_no_outline: true
+  structure_preview_chars_per_page: 1200
+  max_structure_pages_per_call: 80
+  max_structure_nodes: 80
+  split_large_leaves: true
+  max_pages_per_leaf: 10
+  max_markdown_chars_per_leaf: 12000
+  generate_summaries: true
+  summary_max_words: 90
+  root_summary_max_words: 180
+  summary_input_chars: 24000
+  child_context_chars: 12000
+output:
+  slug_max_length: 80
+  overwrite: true
+  write_metadata: true
+  write_config_snapshot: true
+  pretty_index_json: true

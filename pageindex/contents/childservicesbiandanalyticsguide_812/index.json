@@ -1,0 +1,201 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "7ffe4075c256e76f",
+    "title": "Cúram 8.1.2 Business Intelligence and Analytics for Cúram Child Services Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/ChildServicesBIandAnalyticsGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "7ffe4075c256e76f7862cce7d9c9dbc9a488a9d0a5ecd4c9263fff61195da624",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:39:20+00:00",
+    "page_count": 14,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/ChildServicesBIandAnalyticsGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Business Intelligence and Analytics for Cúram Child Services Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000014",
+      "start_page": 1,
+      "end_page": 14
+    },
+    "summary": "Introduces Cúram Child Services Business Intelligence and Analytics. The section explains the three-part BI architecture: a domain-specific reporting schema, ETL infrastructure, and business process support, all sourced from the Cúram operational database. It outlines the three tiers used across schema and ETL: staging, central data warehouse, and data mart. The content highlights child welfare reporting use cases such as contact compliance, placement stability, and maltreatment recurrence, with sample data elements including contact type/purpose/frequency and placement/removal dates. It also describes report configuration options for administrators, including contact compliance settings in CFSS, maltreatment recurrence window and target parameters, and the days-in-placement threshold. The rest of the pages are legal/front-matter content: notices, usage permissions, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section before using the information or the supported product. It also provides the copyright statement for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000012",
+          "start_page": 5,
+          "end_page": 12
+        },
+        "summary": "This front-matter edition section states the guide applies to Cúram 8.1, 8.1.1, and 8.1.2, and includes copyright/trademark notices. It also begins the table of contents, pointing to the main chapter on Business Intelligence and Analytics for Child Services, plus notices, privacy policy, and trademarks. Useful mainly for version applicability and document orientation rather than technical content."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "Contains legal and copyright notices: sample data and fictitious names disclaimer, license terms for sample programs (“AS IS” with no warranty or liability), a link to Merative’s privacy policy, trademark attributions for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX, and the copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "Contains legal notices: fictitious examples disclaimer, sample program copyright/license terms, privacy policy link, and trademark attributions. Lists Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks, plus a note that other names may belong to others. Includes copyright © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000013",
+          "start_page": 13,
+          "end_page": 13
+        },
+        "summary": "Legal notice and permissions for Merative publications: personal use allowed with proprietary notices preserved; enterprise use allowed internally only, with no derivative works or external distribution without consent. No other rights are granted, and Merative may withdraw permission. Includes export-law compliance, “AS IS” no-warranty disclaimer, patent notice, third-party product/website disclaimers, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter entries (Note, Edition), the main chapter “Business Intelligence and Analytics for Child Services” with subsections on Reporting Schema, ETL Infrastructure, Business Process, Representative Analyses, Additional Analysis, and Configuring Reports, plus Notices, Privacy policy, and Trademarks. Useful for locating sections rather than substantive content."
+      },
+      {
+        "title": "1 Business Intelligence and Analytics for Child Services",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Reporting Schema",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "This section describes the Reporting Schema for Child Services BI. It says the module uses a domain-specific schema to model child welfare processes for reporting, organized into three tiers: Staging, Central Data Warehouse, and Data Mart. The Cúram operational database is the source. It is useful for understanding how BI data is structured and whether the schema fits child welfare reporting needs."
+          },
+          {
+            "title": "1.2 ETL Infrastructure",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Defines the ETL pipeline for Business Intelligence and Analytics for Child Services. ETL extracts data from the Cúram operational database and moves it through three tiers: staging, central data warehouse, and data mart. The staging tier transfers source data to a staging area; central ETL applies business logic and manipulation in the warehouse; the data mart finalizes data into denormalized dimensional format for easier cube and report building."
+          },
+          {
+            "title": "1.3 Business Process",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "This section states that the Business Intelligence and Analytics schema supports reports on children’s safety, well-being, and stability to promote child welfare. It is the business-process context for the reporting solution, indicating the kind of outcomes and report content the schema is designed to cover."
+          },
+          {
+            "title": "1.4 Representative Analyses",
+            "level": 2,
+            "children": [
+              {
+                "title": "Additional Analysis",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section adds child welfare analytics available with additional licensing, focusing on placement stability and maltreatment recurrence. Placement stability measures how long children remain with a single provider to assess disruption and resource effectiveness. Maltreatment recurrence counts children with more than one maltreatment report within six months to evaluate service effectiveness and identify problem areas. It also explains report configuration, including administrator settings for contact compliance and how to change the maltreatment recurrence window and target average via configuration parameters."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Section 1.4 describes representative child welfare analytics supported by BI/reporting. It covers contact compliance analyses: initial contact compliance and reporting compliance for investigations, plus ongoing contact compliance and ongoing contact reporting compliance for recurring child contacts. Each uses dates and assigned priority/frequency to assess timeliness against mandated statutes. The section also lists sample data elements used in analytics, including contact type, contact purpose/frequency, removal date, placement type, and placement date."
+          },
+          {
+            "title": "1.5 Configuring Reports",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000014",
+              "start_page": 11,
+              "end_page": 14
+            },
+            "summary": "Explains how administrators configure report-related analytics in Cúram/CFSS. Covers setting contact compliance parameters (contact frequency and compliant contact types), adjusting maltreatment recurrence behavior via DW_CONFIGPROPERTIES.csv and application properties, and configuring the placement-day threshold that excludes initial placements under eight days from active placement counts. Also includes general publishing notices, copyright/license terms, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000014",
+          "start_page": 9,
+          "end_page": 14
+        },
+        "summary": "Introduces Business Intelligence and Analytics for Child Services: a domain-specific reporting schema, ETL pipeline, and child-welfare business processes. It explains the three-tier architecture (staging, central data warehouse, data mart) sourced from the Cúram operational database, and the kinds of reports supported for children’s safety, well-being, and stability. Covers sample data elements, representative analyses such as contact compliance, placement stability, and maltreatment recurrence, plus report configuration options for administrators. Includes legal notices, copyright, privacy, and trademarks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

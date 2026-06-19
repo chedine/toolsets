@@ -1,0 +1,388 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "7d374fe7c83e0b75",
+    "title": "Cúram 8.1.2 Plan Items Customization Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CustomizingPlanItems_812.pdf",
+    "source_type": "pdf",
+    "sha256": "7d374fe7c83e0b7527e223023d1ee97d1d695217eea82b627f850e8698a8661e",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:04:50+00:00",
+    "page_count": 22,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CustomizingPlanItems_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Plan Items Customization Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000022",
+      "start_page": 1,
+      "end_page": 22
+    },
+    "summary": "This section introduces how to customize, develop, and implement Cúram Service Planning plan items, the building blocks of service plans. It explains the main administration settings for a plan item type, including reference, type, associated object, approval requirement, and the create/modify/view UIM pages and their parameters, plus how resolve scripts route users to those pages. It covers integrating plan items with workflow, service plans, and product deliveries, including cost handling and provider-related integration. A detailed Mileage Reimbursement example shows how custom data is stored, how approval can trigger workflow that creates, approves, and activates a product delivery, how plan-item and case records are linked, and how edit/view behavior changes once the case is active. It also notes generic compliance entities for good cause and outcome links. The section ends with legal notices, permissions, warranty disclaimers, privacy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice section directing readers to the Notices section before using the information and product. It includes Merative copyright information (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introduces Cúram Service Planning plan items and how to customize, configure, and implement them. Covers core configuration fields (reference, type, associated object, approval, create/modify/view pages and parameters), workflow integration for events like approval, and integration with product deliveries including date, outcome, and cost synchronization. Also explains how estimated and actual costs can come from plan item definitions, user input, or product delivery payments, with examples such as mileage reimbursement, bus passes, car repair, and training services."
+          },
+          {
+            "title": "Edition — pages 15-20",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000020",
+              "start_page": 15,
+              "end_page": 20
+            },
+            "summary": "Explains how service and custom service plan items integrate with Provider Management and other cases. Covers approval-driven creation and maintenance of service authorizations and line items, CPM events, attendance/participation updates, and key system properties. Describes implementation of a Mileage Reimbursement plan item that creates a product delivery case on approval, including custom data storage, workflow extension, evidence capture, edit/view behavior, and linking the case to the plan item. Also notes generic plan item compliance entities for good cause and outcome links."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000020",
+          "start_page": 5,
+          "end_page": 20
+        },
+        "summary": "Covers how to develop and configure Cúram Service Planning plan items. Explains key admin fields (reference, type, associated object, approval, create/modify/view pages and parameters), workflow integration for plan-item events, and how plan items integrate with service plans and product deliveries. Includes cost handling rules and implementation guidance using a Mileage Reimbursement example: storing custom data, creating/approving/activating a product delivery on approval, linking records, managing edit/view behavior, and syncing actuals from the case. Also notes generic compliance entities for good cause and outcome links."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "This page is a legal/endmatter section covering sample data disclaimers, copyright license terms for sample programs, the Merative privacy policy link, and trademark notices for Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX. It states sample programs are provided “AS IS” without warranty and limits Merative liability."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000022",
+              "start_page": 22,
+              "end_page": 22
+            },
+            "summary": "This section provides legal notices: fictitious-name disclaimer for examples, sample code copyright/license terms, a link to Merative’s privacy policy, and trademark attributions. It lists brands and products recognized as trademarks or registered trademarks, including Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes other names may belong to third parties."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000021",
+          "end_unit_id": "p000021",
+          "start_page": 21,
+          "end_page": 21
+        },
+        "summary": "Legal notices and publication permissions. Covers personal and commercial reuse rules, requiring proprietary notices and Merative consent for redistribution or derivatives outside allowed use. States no other rights are granted, Merative may withdraw permission, and export laws apply. Disclaims warranties: publications are “AS-IS,” without guarantee, and no patent license is implied. Also notes non-Merative product information comes from third parties, external websites are not endorsed, and use is at your own risk.© Merative US L.P. 2012, 2024"
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter and Chapter 1, “Developing with plan items,” with subsections on why to customize plan items, configuring plan items, implementing a plan item, and plan item compliance. It also points to topics like workflow integration, service plans and product deliveries, cost configuration, provider integration, system properties, and an example mileage reimbursement. Useful as a navigation entry rather than substantive content."
+      },
+      {
+        "title": "1 Developing with plan items",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Why customize plan items?",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains why plan items may need customization in Cúram Service Planning and how they serve as the basic building blocks of a service plan. It highlights that agencies across SEM segments have varied goals, so designers/developers may need to extend plan items to meet specific requirements. Also introduces that creating a plan item involves both integrating its functionality (for example, case creation, workflow, or referral letters) and configuring it for use in a service plan."
+          },
+          {
+            "title": "1.2 Configuring plan items",
+            "level": 2,
+            "children": [
+              {
+                "title": "What can you configure?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000010",
+                  "start_page": 9,
+                  "end_page": 10
+                },
+                "summary": "This section explains what administrators can configure for plan items in Service Planning Administration. It covers the main plan item settings: reference, type, associated object, approval required, create page name, create page plan item ID parameter, and create page sub goal ID parameter. It also describes how custom plan item pages and workflows are integrated, including support for product delivery integration and approval-triggered workflow paths."
+              },
+              {
+                "title": "Integrating with Cúram workflow",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains how Cúram Service Planning integrates plan items with workflow. It notes that plan items may involve real work or system-driven actions, unlike standard project tasks. It describes configuration for UIM pages and resolve scripts for plan item viewing/modification, using the plannedItemID to route users. It also covers workflow events raised during service plan and plan item lifecycle activities, which customers can map to workflow processes for actions such as plan approval, item approval, or contract issue."
+              },
+              {
+                "title": "Integrating with service plans and product deliveries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how plan items in Cúram Service Planning can trigger product delivery cases, but only after approval. A workflow event “plan item approval” starts a process that checks the plan item Type and can route or extend behavior for specific item types. It also maps plan item dates to product delivery case header dates: expected start date syncs with case start/expectedStartDate until activation, and expected end date syncs with case expectedEndDate until activation; after activation, some updates affect actual rather than expected dates."
+              },
+              {
+                "title": "Configuring plan item cost",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Estimated cost",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how a plan item’s estimated cost is configured and used. Estimated cost represents the organization’s expected payment for a service delivery and may come from the plan item definition, the PlanItem entity’s cost attribute, or be entered by the user. Includes examples contrasting fixed-cost bus pass provisioning with variable-cost car repair. Notes that estimated cost is shown during product delivery creation but not stored on the product delivery case, serving only to help select the appropriate product provision."
+                  },
+                  {
+                    "title": "Actual cost",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains how a plan item’s actual cost is determined. It may come from the PlanItem definition’s cost attribute, be entered by the user, or be derived from payments made through a product delivery. It notes that actual cost is usually fixed for standard services like a bus pass, user-entered when costs can vary independently, and unavailable for direct editing when calculated from product delivery payments."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000014",
+                  "start_page": 13,
+                  "end_page": 14
+                },
+                "summary": "Explains how plan item cost is configured in three ways: from the PlanItem definition’s cost attribute, entered by the user, or derived from product delivery payments. Estimated cost reflects expected spend and may come from the definition, the PlanItem cost, or a product provision; it is shown during product delivery creation but not stored on the case. Actual cost is the amount actually paid, usually fixed for standard services, user-entered when variable, or calculated from product delivery payments, and is not directly editable when derived."
+              },
+              {
+                "title": "Integrating with service plans and providers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how plan items integrate with service plans and provider management. It states that Service and Custom Service plan items can authorize client services, and that delivery updates fields like service date and units delivered. It describes the approval flow that calls the Create Service Authorization API using Case ID and Case Participant Role ID, then creates one or more authorization line items based on frequency. It also lists CPM APIs for creating, modifying, and canceling service authorizations and line items."
+              },
+              {
+                "title": "Integrating with the Provider Management module",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Updating client participation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how client participation is updated when service units are delivered via invoice processing or attendance tracking, automatically setting actual start/end dates, cost, status, and units delivered. Lists CPM events that trigger updates (SILIAPPROVED, PRLI_APPROVED, PRLIC_APPROVED) and their related actions. Describes when daily attendance records can be created, including attendance tracking rules and service type constraints, and notes that total hours participated can be updated for hour-based services. Also covers updating planned item details and associating absence/attendance records."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000016",
+                  "start_page": 15,
+                  "end_page": 16
+                },
+                "summary": "Explains how service or custom service plan items integrate with Provider Management to create service authorizations and line items using case and participant role IDs, with inputs like units authorized, dates, provider, and rate. When service units are delivered via invoice processing or attendance tracking, CPM events update the plan item’s actual dates, cost, status, and units delivered. Also covers creating daily attendance records under specific attendance-tracking rules, updating total hours for hour-based services, and associating absence/attendance records."
+              },
+              {
+                "title": "Setting service and custom service system properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Lists system properties for Service and Custom Service plan items, including validation hooks, whether the Gantt chart shows responsibility or concerning participant names, event raising on service plan approval, and whether cloning closes the existing plan. It then introduces how to implement a plan item in a service plan, emphasizing the basic steps needed for functionality. The section uses a Mileage Reimbursement example to explain integrating a service plan item with a product delivery case to create reimbursement payments."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000016",
+              "start_page": 9,
+              "end_page": 16
+            },
+            "summary": "Covers how to configure plan items in Service Planning Administration: defining reference, type, associated object, approval requirement, create/modify/view page names, and page parameters. Explains how UIM pages and resolve scripts use plannedItemID to route create/modify/view actions. Also describes workflow integration via plan item/service plan events, including approval-triggered flows, and links plan items to product deliveries and provider/service authorization behavior, with plan item dates, cost, status, and attendance updates driven by CPM events."
+          },
+          {
+            "title": "1.3 Implementing a plan item",
+            "level": 2,
+            "children": [
+              {
+                "title": "Example: Mileage Reimbursement",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Adding a Mileage Reimbursement plan item",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to implement a Mileage Reimbursement service plan item so that a product delivery case is created only when the plan item is approved, not when it is first added. Describes storing both generic PlannedItem data and custom MileageReimbursementData (e.g., mileage rate, maximum monthly amount) linked by associated ID. Notes that custom client/server processing is needed to capture and persist these fields, and that the approval workflow must be extended with a plan-item-type condition to create the product delivery."
+                  },
+                  {
+                    "title": "Modifying the Mileage Reimbursement plan item",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Describes how a Mileage Reimbursement plan item can be modified after product delivery creation. Once the case is activated, expected start/end dates and expected outcome become read-only because the plan item is “In Progress.” For this plan item type, actual start/end dates and actual cost are derived from the associated product delivery and cannot be edited directly. The section also reinforces that case evidence must be captured before approval, and that the product delivery is linked back to the plan item via a ProductDeliveryPlanItemLink record."
+                  },
+                  {
+                    "title": "Viewing Mileage Reimbursement plan item details",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "This section explains how the Mileage Reimbursement plan item view page should integrate with the related product delivery case. It should display key case details, especially traveled distance and mileage claimed, and allow maintaining these fields from the plan item details page as well as the case. It notes that a hyperlink can provide direct access to the case, and that if the case has not yet been created (e.g., before plan approval), the page should show an informational message instead of case data."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000019",
+                  "start_page": 17,
+                  "end_page": 19
+                },
+                "summary": "Explains how to implement the Mileage Reimbursement service plan item so approval creates a product delivery case, not item creation. Describes storing generic PlannedItem data plus custom MileageReimbursementData (mileage rate, max monthly amount), linked by associated ID, and extending workflow with a plan-item-type condition and custom code to create, approve, activate the case, and capture evidence before approval. Also notes a ProductDeliveryPlanItemLink is written and the custom data can then be deleted. Covers modification limits after activation and how plan-item details should reflect linked case data."
+              }
+            ],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000019",
+              "start_page": 17,
+              "end_page": 19
+            },
+            "summary": "Explains how to implement a plan item, using Mileage Reimbursement as the example. Describes storing generic PlannedItem data plus custom MileageReimbursementData (rate, max monthly amount) linked by associated ID, then extending workflow so approval triggers custom code to create, approve, and activate a product delivery case. A ProductDeliveryPlanItemLink is written, the custom data can be deleted, and case evidence must be captured before approval. Notes data modification limits after activation and that plan-item details should reflect linked case data."
+          },
+          {
+            "title": "1.4 Plan item compliance",
+            "level": 2,
+            "children": [],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000022",
+              "start_page": 20,
+              "end_page": 22
+            },
+            "summary": "This section explains plan item compliance in service planning, focusing on generic linking of Outcomes and Good Causes through the Goodcauselink and Outcomelink entities, which customers can customize. The excerpt also includes guidance on Mileage Reimbursement plan items: how actual dates/costs are handled, how mileage rate and amount update either plan data or case evidence depending on product delivery status, and how plan item details can display and maintain key case information, including mileage claimed and access to the related product delivery case."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000022",
+          "start_page": 9,
+          "end_page": 22
+        },
+        "summary": "Explains how to develop, configure, and implement Cúram Service Planning plan items. Covers why plan items are customizable, key administration fields (reference, type, associated object, approval, create/modify/view pages and parameters), and how resolve scripts route UIM pages using plannedItemID. Describes workflow/event integration for approvals and service plan actions, plus links to product delivery cases. Uses Mileage Reimbursement as an example of custom data, workflow-driven case creation/approval, case evidence handling, modification limits, and viewing/maintaining linked case details."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

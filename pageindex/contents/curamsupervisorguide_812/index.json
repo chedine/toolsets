@@ -1,0 +1,1498 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "f354ded72fae99ac",
+    "title": "Cúram 8.1.2 Supervisor Workspace Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramSupervisorGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "f354ded72fae99ac9467d0c2e04aba710f1b87cb37201604d07a5584cdca7c82",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:10:21+00:00",
+    "page_count": 38,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramSupervisorGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Supervisor Workspace Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000038",
+      "start_page": 1,
+      "end_page": 38
+    },
+    "summary": "Front matter and full contents for the Cúram 8.1.2 Supervisor Workspace Guide, plus the guide’s introduction, conclusion, and legal notices. It explains the guide’s purpose and audience, then covers how supervisors monitor and balance workloads across case, user, organization unit, and work queue workspaces. Key topics include task and user search, bulk reassignment/forwarding/reallocation, reserving and redirecting work, handling cases with issues or appeals, user settings and subscription management, schedules, and workspace customization hook points. It also documents how to exclude custom case types from supervisor views. The conclusion summarizes supported actions such as reserve, forward, reassign, block allocation, and manage user skills, working patterns, approval rules, and work queue subscriptions. The final pages contain Merative legal notices, copyright, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section on page 37 before using the information or the supported product. It also includes the copyright statement for Merative US L.P. covering 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram Supervisor Workspace Guide edition (applies to Cúram 8.1, 8.1.1, and 8.1.2), including copyright/trademark notices and the table of contents. The TOC shows the guide’s scope: supervisor role and workspace overview, work management for cases, users, organization units, and work queues, plus issues, appeals, customization points, and bulk reassignment. The excerpt also begins the introduction, stating the guide is for business analysts and explains how supervisors monitor and redistribute workload via case and task assignment."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers Supervisor Workspace edition updates and work management features. It details redesigned bulk case reassignment and bulk task forwarding, both using deferred and batch processing with a configurable threshold of 100, plus related notifications, summary reports, and batch/streaming batch interfaces. It also introduces managing work for cases: filtering case lists, case workspace actions, automatic case reassignment rules, reserved task handling, and case user schedules. Finally, it begins “Managing Cases With Issues,” including heat map/list views for prioritizing and drilling into issue-heavy cases."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section covers Supervisor Workspace management features: cases with issues, cases with appeals, user workload management, organization unit work management, and work queue management. It explains heat maps, lists, drill-down views, reassignment/reservation options, task redirection/forwarding/reallocation, schedules, and application properties controlling task list/search behavior. It also introduces customization hook points for My Work Queues and case filtering. Useful for finding how supervisors monitor, reserve, reassign, and navigate work across users, units, and queues."
+          },
+          {
+            "title": "Edition — pages 35-36",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000036",
+              "start_page": 35,
+              "end_page": 36
+            },
+            "summary": "Explains how to exclude custom case types from Supervisor Workspace via the `curam.core.hook.impl.SWExcludedCases` hook and Guice multi-binder, affecting several workspace views. Concludes the guide with a recap of Supervisor Workspace purpose, workspaces included, and heat map/appeals support. Also provides a summary table of supervisor functions such as reserving, forwarding, reallocating, reassigning, redirecting tasks, blocking task allocation, and managing user skills, working patterns, approval rules, and subscriptions across User, Case, and Work Queue workspaces."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000036",
+          "start_page": 5,
+          "end_page": 36
+        },
+        "summary": "Front matter and table of contents for the Cúram Supervisor Workspace Guide (applies to 8.1, 8.1.1, 8.1.2), followed by the introduction and closing sections. It defines the guide’s purpose/audience, then previews supervisor functionality across case, user, organization unit, and work queue workspaces: monitoring workload, searches, bulk reassignment/forwarding, reserved tasks, issues and appeals, schedules, and customization hooks. The end section explains how to exclude custom case types and summarizes supported actions such as reserve, forward, reallocate, reassign, redirect, block allocation, and manage user settings/subscriptions."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000038",
+              "end_unit_id": "p000038",
+              "start_page": 38,
+              "end_page": 38
+            },
+            "summary": "Contains legal and policy information: a link to Merative’s privacy policy, copyright license terms for sample source code, an “AS IS” warranty disclaimer and liability limitation, plus a list of third-party trademarks and copyright notice. Useful for identifying licensing, usage, and trademark details rather than product functionality."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000038",
+              "end_unit_id": "p000038",
+              "start_page": 38,
+              "end_page": 38
+            },
+            "summary": "This section lists trademark and copyright/legal notices for the document. It states that sample data and programs are fictitious, provided “as is,” and may be copied/modified/distributed under the Merative Client Agreement and related copyright license terms. It also links to Merative’s privacy policy and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice about other names potentially being trademarks."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000037",
+          "end_unit_id": "p000037",
+          "start_page": 37,
+          "end_page": 37
+        },
+        "summary": "Legal notices and permissions for using the publication. Covers personal and enterprise reproduction limits, preservation of proprietary notices, no derivative works or external redistribution without consent, export-law compliance, and Merative’s right to withdraw permission. Includes an “as-is” warranty disclaimer, no implied warranties, no patent license grant, caveats about third-party product information and links, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Supervisor Workspace Guide. Lists chapters and subtopics on supervisor role, managing work for tasks, cases, issues, appeals, users, organization units, and work queues, plus customization points and conclusion. Includes front matter (Note, Edition) and notices/privacy/trademarks pages, with chapter page numbers for navigation."
+      },
+      {
+        "title": "1 Cúram Supervisor Workspace Guide",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the Cúram Supervisor Workspace Guide and its purpose: to provide a business overview of how supervisors monitor and manage workloads for users, organization units, and work queues through case and task assignment. Notes the intended audience is business analysts with knowledge of the organization’s requirements and SEM basics, plus familiarity with related Cúram guides. Also outlines that the guide should be read in full and is not a training manual, and previews the guide’s chapters on the supervisor role and using the workspace to manage work."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for business analysts with strong knowledge of the organization’s business requirements and basic familiarity with SEM and supervisor work balancing. The guide provides a business overview of the Cúram Supervisor Workspace, explaining how supervisors monitor and manage workloads for users, organization units, and work queues through case and task assignment. It is not a training manual or user guide. Helpful related reading includes Cúram Workflow Overview, Integrated Case Management Guide, Participant Guide, and Organization Administration Guide."
+              },
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Prerequisites for the Cúram Supervisor Workspace Guide: readers should know basic Social Enterprise Management (SEM) concepts and how supervisors balance workload through case and task assignment. Helpful prior reading includes the Cúram Workflow Overview, Integrated Case Management Guide, Cúram Participant Guide, and Cúram Organization Administration Guide. This section indicates the guide is a business overview for business analysts, not a training manual or user guide."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Lists the two chapters in the Cúram Supervisor Workspace Guide: “The Supervisor Workspace and Role,” covering the workspace overview and supervisor role, and “Using the Supervisor Workspace to Manage Work,” covering work management principles, task functionality, and task/user search features. This section is mainly a table of contents entry for navigating the guide."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the Cúram Supervisor Workspace Guide as a business overview for business analysts on how supervisors monitor and manage workloads for users, organization units, and work queues through case and task assignment. Notes the guide is not a training manual, should be read in full, and assumes familiarity with SEM and related Cúram guides. Also previews the two chapters: the supervisor workspace/role and using the workspace to manage work, including task functionality and search features."
+          },
+          {
+            "title": "1.2 The Supervisor Workspace and Role",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces the Cúram Supervisor Workspace and its role in helping supervisors monitor and manage work assigned to users, organization units, and work queues. Explains work supervision as balancing case and task loads to improve workflow efficiency. Notes that the workspace supports case and task assignment using task actions, graphs, and lists. Also lists the main chapter topics covered in the chapter set: managing work for cases, users, organization units, work queues, issues, appeals, and customization points."
+              },
+              {
+                "title": "The Meaning of Work Supervision",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Defines work supervision as actively managing case and task flow to improve efficiency and workload balance. Explains that the Cúram Supervisor Workspace supports supervisors in monitoring and managing work assigned to users, organization units, and work queues they oversee. Highlights that workload balancing is achieved through case and task distribution, and that graphs and lists help supervisors assign and administer work more effectively."
+              },
+              {
+                "title": "The Cúram Supervisor Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces the Cúram Supervisor Workspace and its role in helping supervisors monitor and manage work assigned to users, organization units, and work queues. It explains work supervision and workload balancing through case/task distribution and assignment. The section also previews related chapters on managing work for cases, users, organization units, work queues, issues, appeals, and workspace customization points. It emphasizes that graphs, lists, and task actions support supervisors in administering workloads effectively."
+              },
+              {
+                "title": "The Supervisor Role",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains the Supervisor Role in Cúram: it is an administration-level role for workload management, not casework, with access to the Supervisor Workspace. Describes how the workspace opens on login and provides navigation to alternative views for users, cases, organization units, work queues, and special views like Cases With Issues or Appeals. Also outlines which users appear by default based on lead positions and reporting relationships, and notes that the lists serve as overviews with links to individual workspaces."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "Introduces the Cúram Supervisor Workspace and the supervisor role. It explains work supervision as actively balancing case and task loads to move work through its lifecycle more efficiently. The workspace helps supervisors monitor and manage work assigned to users, organization units, and work queues they oversee, using task actions, graphs, and lists to support case/task assignment. This section also situates the chapter set covering work management for cases, users, organization units, work queues, issues, appeals, and workspace customization."
+          },
+          {
+            "title": "1.3 Using the Supervisor Workspace to Manage Work",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Introduces the Cúram Supervisor Workspace and the supervisor role. It explains that supervisors use the workspace for workload management, not casework, and access it on log-in. The workspace provides overview lists and navigation to alternate views for users, cases, organization units, and work queues, with default display of reporting users, calendar, and shortcuts. It also notes optional views for cases with issues and appeals, and explains that each list links to the relevant individual workspace."
+              },
+              {
+                "title": "The Supervisor Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section introduces the Supervisor Workspace and its role as the supervisor’s main portal for workload management, not casework. It explains what supervisors see on login: a default list of report-to users, plus calendar and shortcuts. It also outlines the alternative workspace views available for users, cases, organization units, and work queues, including special views for cases with issues or appeals. It emphasizes that these views provide overview information and links to individual workspaces."
+              },
+              {
+                "title": "Task Functionality Available to the Supervisor",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Viewing Tasks Using Workspaces",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Viewing Tasks By Month or By Week",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000027",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Explains how supervisor workspaces visualize tasks by time period. The initial workspace view shows related reserved and assigned tasks due in the current week or current month, using horizontal bar charts split by assigned vs. reserved tasks. Week view shows daily load; month view shows weekly load. The weekly view can be configured for 5 or 7 days. This section also notes that workspaces support viewing assigned tasks, opening task details, reserving tasks, and viewing reserved tasks for case, organization unit, and work queue workspaces."
+                      },
+                      {
+                        "title": "Viewing Assigned Tasks",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000028",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "This section explains how supervisors view assigned tasks in Case, User, Organization Unit, and Work Queue workspaces. It notes that workspaces provide overviews and detailed task lists, including task loads by week or month, with bar charts showing assigned and reserved tasks due by day or week. It also mentions actions available from assigned task views: opening task details, reserving a task to a user, or reserving multiple tasks."
+                      },
+                      {
+                        "title": "Viewing Reserved Tasks",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000029",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Explains how supervisors view reserved tasks in Case, Organization Unit, and Work Queue workspaces. Reserved tasks are first shown as a horizontal bar chart split into open and deferred tasks. The section sits alongside other workspace views for case, user, organization unit, and work queue workloads, including task lists, month/week charts, and assigned-task actions such as viewing details or reserving tasks."
+                      }
+                    ],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains how supervisors use Case, User, Organization Unit, and Work Queue workspaces to assess workloads. It covers initial month/week bar-chart views of assigned and reserved tasks due in the current period, with weekly views configurable for 5 or 7 days. It also describes viewing assigned-task lists and actions such as opening task details and reserving tasks to users, plus reserved-task views for Case, Organization Unit, and Work Queue workspaces, including open vs. deferred task charts."
+                  },
+                  {
+                    "title": "Task Details Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains the Task Details page, accessible from any page where a task is listed. It provides supervisor actions on an individual task: forward, reallocate, reserve, unreserve, defer, restart, add comment, and close. The page also shows task header details and full task history in reverse chronological order. Includes guidance on reserving/unreserving tasks, deferring and restarting deferred tasks, forwarding to other targets, and the difference between reallocation and unreserving."
+                  },
+                  {
+                    "title": "Reserving Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how supervisors manage reserved tasks. A task can be reserved for a specific user so only that user can work it, enabling workload balancing. Reserved tasks can later be unreserved to return them to prior assignees or queues. The section also covers deferring reserved tasks, including automatic restart on a specified date and manual restart. It notes that reserved or assigned tasks can be forwarded to another target, and distinguishes reallocation from unreserving."
+                  },
+                  {
+                    "title": "Unreserving Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how supervisors unreserve tasks. Reserved tasks can be made available again to the users or work queues they were previously assigned to before reservation. This section sits within broader task management guidance, contrasting unreserving with reallocation and related actions like reserving, deferring, restarting, forwarding, and closing tasks."
+                  },
+                  {
+                    "title": "Deferring Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how supervisors defer reserved tasks until a later date. A deferred task stays reserved to the user, appears in the user’s Deferred Tasks list, and can be scheduled for automatic restart to reopen on a specified date. It can also be restarted manually, but only if it is deferred or reserved. This section is useful for understanding deferred task status, visibility, and restart behavior in task management."
+                  },
+                  {
+                    "title": "Restarting Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains manual restarting of deferred tasks in the supervisor workspace. A task must be deferred or reserved before it can be restarted, and restarting returns it from deferred back to open. The section sits among related task-management actions such as reserve, unreserve, defer, forward, and reallocate, and helps clarify when a task can be restarted versus other supervisor actions."
+                  },
+                  {
+                    "title": "Forwarding Tasks to Alternative Targets",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how supervisors forward tasks to alternative targets in Cúram. A reserved or assigned task can be forwarded to a job, position, organization unit, user, or work queue; reserved tasks are first unreserved. Closed tasks cannot be forwarded. The section sits with related task actions such as reserve, unreserve, defer, restart, and reallocate, and distinguishes forwarding from reallocation/unreserving behavior."
+                  },
+                  {
+                    "title": "Reallocating Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains task reallocation in the supervisor workspace. Reallocating a task reapplies its initial allocation strategy, sending it back to the item, group, or work queue it was originally assigned to by the system. This differs from unreserving: unreserve returns a task to the last group it was assigned to before reservation, while reallocation usually restores the first assigned group unless allocation rules or groups have changed."
+                  },
+                  {
+                    "title": "Closing Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains supervisor task management: closing user-created tasks, while system-created tasks close automatically after completion. Covers finding tasks and users via Task Search, User Search, and User Select for assignment, reservation, or forwarding. Describes bulk reassignment/forwarding in Supervisor Workspace, including deferred vs batch processing based on a configurable threshold visible to supervisors. Notes that items scheduled for later reassignment/forwarding are temporarily unavailable for further reassignment or online handling until the initial process completes."
+                  }
+                ],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000013",
+                  "start_page": 12,
+                  "end_page": 13
+                },
+                "summary": "Overview of supervisor task management in workspaces. Describes Case, User, Organization Unit, and Work Queue workspaces for viewing assigned and reserved tasks by week/month, with bar charts and drill-down lists. Explains the Task Details page and available actions: forward, reallocate, reserve/unreserve, defer/restart, add comment, and close. Covers reserving tasks to balance workloads, unreserving to return tasks to prior queues/users, deferring and manually/auto restarting, forwarding to alternative targets, and how reallocation differs from unreserving."
+              },
+              {
+                "title": "Finding Tasks and Users",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Task Search",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Task Search explains how supervisors find tasks by task ID, case reference number, or participant name. Search results show matching tasks and link to each task’s details page. This section sits within a broader topic on finding tasks and users, alongside User Search, User Selection, and bulk reassignment/forwarding of work."
+                  },
+                  {
+                    "title": "User Search",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Describes supervisor search capabilities in Cúram: Task Search finds tasks by task ID, case reference number, or participant name; User Search finds users by first name, last name, organization unit, or job and opens their User Workspace. Also covers User Select for assigning, reserving, or forwarding work to users across the organization. Includes brief context on bulk reassignment/forwarding of cases and tasks, with deferred vs batch processing based on a configurable threshold."
+                  },
+                  {
+                    "title": "User Selection",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains the User Select tool, which lets supervisors search for and choose any user by first/last name, organization unit, or job, mainly for task or case assignment, reservation, or forwarding. Also notes related supervisor capabilities for finding tasks and users, plus bulk reassignment/forwarding behavior: work can be reassigned in deferred or batch mode based on a configurable threshold, and items scheduled for reassignment/forwarding are temporarily unavailable for further reassignment."
+                  }
+                ],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how supervisors find specific tasks or users in Cúram. Task Search lets them search by task ID, case reference number, or participant name and open task details. User Search finds users by first/last name, organization unit, or job and opens the User Workspace. User Select is used to choose users for task/case assignment, reservation, or forwarding. Also introduces bulk reassignment/forwarding of work, including deferred vs batch processing based on a configurable threshold."
+              },
+              {
+                "title": "Bulk Reassignment of Work",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Bulk Case Reassignment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000016",
+                      "start_page": 15,
+                      "end_page": 16
+                    },
+                    "summary": "Redesigned bulk case reassignment uses deferred processing for smaller requests and batch processing for larger ones, controlled by environment property `curam.batch.bulkcasereassignment.deferredprocess.max.processing.count` (default 100). It explains the execution flow, user-facing messages, rollback behavior, and notifications to current/new owners. It also covers batch summary email contents, invalid/failure case handling, and notes that chunking/streaming batch processing is recommended for faster concurrent reassignment via the `CaseReassignmentBatch` job."
+                  },
+                  {
+                    "title": "Bulk Task Forwarding",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000021",
+                      "start_page": 17,
+                      "end_page": 21
+                    },
+                    "summary": "Describes redesigned bulk task forwarding in Supervisor Workspace. A new property, `curam.batch.bulktaskforward.deferredprocess.max.processing.count` (default 100), determines whether forwarding runs as deferred processing or is queued for batch processing. Covers success/failure behavior, rollback rules, user/admin notifications, and batch summary email. Also lists batch options: `TaskForwardBatch`, `TaskForwardBatchStream`, `AssignedTaskForwardBatch`, and advises chunking/streaming for faster concurrent processing."
+                  }
+                ],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000021",
+                  "start_page": 14,
+                  "end_page": 21
+                },
+                "summary": "Explains bulk reassignment in Supervisor Workspace for cases and tasks. A configurable threshold (default 100) determines whether selected items run as deferred processing or are queued for batch processing. Covers execution flow, user/admin messages, rollback rules, owner notifications, and batch summary emails. Lists batch jobs and chunking/streaming options for faster concurrent processing: CaseReassignmentBatch/Stream, TaskForwardBatch/Stream, and AssignedTaskForwardBatch. Useful if you need operational details for bulk work reallocation and related batch controls."
+              }
+            ],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000021",
+              "start_page": 11,
+              "end_page": 21
+            },
+            "summary": "Explains how supervisors use the Cúram Supervisor Workspace to manage workload, not casework. Covers the default login view, alternate workspaces for users, cases, organization units, and work queues, and their overview links. Describes task management functions: viewing assigned/reserved tasks by week or month, task details, reserve/unreserve, defer/restart, forward, reallocate, comment, and close. Also covers Task/User Search, User Select, and bulk case/task reassignment, including configurable deferred-vs-batch processing, notifications, rollback, and batch job types."
+          },
+          {
+            "title": "1.4 Managing Work for Cases",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Introduces case management in Cúram Supervisor Workspace. Supervisors can filter large case lists to focus on specific groups, then use the Case Workspace to view and manage case workload, distribute tasks, and reassign cases to a new owner either manually or automatically. It also mentions the case user schedule for viewing activities of users who have a role on the case."
+              },
+              {
+                "title": "The Case List in the Supervisor Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains the Supervisor Workspace case list and case workspace. Supervisors can view cases they own or that belong to their users, positions, organization units, or work queues, but must filter by case owner for performance and may also filter by product and status; unselected status excludes closed cases. The case workspace supports assessing and redistributing task load, viewing/reassigning issues, checking user schedules, and reassigning the case. It also details automatic reassignment rules based on fewest assigned cases, reserved tasks, and assigned tasks, with random tie-breaking."
+              },
+              {
+                "title": "The Case Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section explains the Supervisor Workspace case list and case workspace. It covers which cases a supervisor can see, required filtering by case owner, and optional filters by product and case status. It describes how the Case Workspace helps assess and redistribute task load, view/reassign issues, check user schedules, and reassign cases. It also outlines automatic case reassignment rules: fewest assigned cases, then reserved tasks, then assigned tasks, with random selection if tied, and notes the process can be customized."
+              },
+              {
+                "title": "Reassigning Cases to New Case Owners",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Automatic Case Reassignment",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains how supervisors in the Cúram Supervisor Workspace can reassign cases, including automatic reassignment rules. The system selects a new owner by comparing users with the fewest assigned cases, then fewest reserved tasks, then fewest assigned tasks, and finally choosing randomly among ties. The goal is workload balancing, and the default process can be customized. Also notes the supervisor’s case list and workspace views for filtering, assessing task load, and reassigning cases or issues."
+                  }
+                ],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains how supervisors can reassign a case to another owner manually or automatically in Cúram Supervisor Workspace. Automatic reassignment balances workload by choosing the user with the fewest assigned cases, then fewest reserved tasks, then fewest assigned tasks, and finally selecting randomly among ties. Notes this default logic can be customized. The section also describes the supervisor case list and workspace views used to filter cases, assess task load, review issues and schedules, and reassign cases."
+              },
+              {
+                "title": "Reserving Case Assigned Tasks To A User",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Supervisors can reserve all or some case tasks to a chosen user, including already assigned tasks, by selecting from their users list or searching the organization. The Case Reserved Tasks page shows reserved tasks with a bar chart of open and deferred tasks by case user, allowing drill-down to task lists, task details, and forwarding tasks to another user. The Case Users Schedule shows weekly scheduled activities per case role, with navigation by week and links to each user’s calendar."
+              },
+              {
+                "title": "Viewing Case Reserved Tasks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Supervisors can view tasks reserved on cases in the Case Reserved Tasks page. It shows open and deferred tasks as a bar chart broken down by case user, lets supervisors drill down to lists of tasks and task details for each user, and supports forwarding reserved tasks to another user."
+              },
+              {
+                "title": "Case Users Schedule",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Describes the Case Users Schedule in Supervisor Workspace. It shows, for each case user with a role on the case, the number of activities scheduled per week. The view opens on the current week and can be navigated with Previous Week and Next Week to see historical or future weeks. Supervisors can click “Activities In Week” for a user to open that user’s calendar."
+              }
+            ],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000023",
+              "start_page": 22,
+              "end_page": 23
+            },
+            "summary": "This section explains how supervisors manage case work in Cúram Supervisor Workspace. It covers filtering large case lists by owner, product, and status; opening cases in the Case Workspace to assess and redistribute task load, review/reassign issues, view case-user schedules, and reassign the case. It also describes manual versus automatic case reassignment, where default auto-assignment balances workload by fewest assigned cases, then reserved tasks, then assigned tasks, with random tie-breaking and customizable logic."
+          },
+          {
+            "title": "1.5 Managing Cases With Issues",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This introduction explains supervisor tools for managing cases with issues in Cúram Supervisor Workspace. It describes reserving case-assigned tasks to a user, viewing reserved tasks through a chart and task lists, and checking the Case Users Schedule for weekly activity counts. It then introduces the “Managing Cases With Issues” area, where supervisors can see all cases with issues using a heat map and list, drill into case issues by type or age, and reassign issues if needed."
+              },
+              {
+                "title": "Getting an Overview of all Cases With Issues",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Heat Maps",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "This section explains the Cases With Issues heat map in the Supervisor Workspace. It shows all cases managed by the supervisor and registered this week that have issues, color-graded by issue count: red for the most issues, blue for the fewest. Supervisors can drill down from the heat map to the Case Issues page for more detail on a case’s issues, helping prioritize cases that need attention."
+                  },
+                  {
+                    "title": "List of Cases With Issues",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "List of Cases With Issues By Date",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000059",
+                        "range": {
+                          "start_unit_id": "p000025",
+                          "end_unit_id": "p000025",
+                          "start_page": 25,
+                          "end_page": 25
+                        },
+                        "summary": "Describes the “Cases With Issues By Date” view in Cúram Supervisor Workspace. Supervisors can drill down to cases with issues registered on a single day, shown either as a heat map or as a list sorted by number of issue cases. From both views, they can open each case’s Case Issues page directly and reassign individual or multiple issues. This section is useful for managing and prioritizing issue cases by date, with navigation between dates and week-based views nearby."
+                      }
+                    ],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Shows the “Cases With Issues” list in Cúram Supervisor Workspace, which displays cases registered during the current week that have associated issues. The list is sorted by issue count descending and supports week-to-week navigation. Supervisors can drill down from each case to the Case Issues page to review and manage issues. This section is mainly about identifying and prioritizing cases with issues across the week."
+                  }
+                ],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This section explains the Cases With Issues overview in Cúram Supervisor Workspace. It shows how supervisors use a heat map and a ranked list to view cases registered this week that have associated issues, helping prioritize cases with the most problems. The heat map is color-coded by issue count, from red (most) to blue (fewest). From either view, supervisors can drill down to the Case Issues page to see issues by type and age and possibly reassign them."
+              },
+              {
+                "title": "Managing Issues Associated with a Single Case",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Viewing Issues Associated with a Case by Type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how supervisors view issues for a single case by type. Issues can be shown as a bar chart or basic list sorted by type, helping identify the most frequent issue category. From the bar chart, supervisors can drill down to issues of a specific type and reassign all or some of them to a specialist user, either manually or via automatic reassignment."
+                  },
+                  {
+                    "title": "Viewing Issues associated with a Case by Age",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "This section explains how supervisors view issues associated with a single case by age. It describes a list view sorted by issue age, helping identify and address the oldest issues first. It follows related views for issues by type and sits within the broader case and appeals management area of the Supervisor Workspace guide."
+                  }
+                ],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "This section explains how supervisors drill down from case-level heat maps and lists to view issues on a single case. Issues can be displayed by type, either as a bar chart or a basic list sorted by type, to identify the most frequent issue category and reassign all or some issues to a specialist or via automatic reassignment. It also covers viewing issues by age in a list sorted by oldest first, helping supervisors address overdue issues promptly."
+              }
+            ],
+            "node_id": "n000054",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "This section explains how supervisors manage cases with issues in Cúram Supervisor Workspace. It introduces the Cases With Issues page, which shows all cases registered this week that have associated issues using a heat map and ranked list. The heat map is color-coded by issue count, from red for the most issues to blue for the fewest. Supervisors can drill down to a Case Issues page to inspect issues by type or age and reassign issues if needed."
+          },
+          {
+            "title": "1.6 Managing Cases With Appeals",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Introduces supervisor workspace features for managing issues and appeals. It explains week/day heat maps for cases with issues, lists of cases with issues by week or date, and drilling down to case-level issue views. Supervisors can view issues by type or age, reassign issues manually or automatically, and prioritize older issues. It also notes that if Appeals is installed, supervisors can isolate cases with appeals to help resolve them and move cases through their lifecycle."
+              },
+              {
+                "title": "Getting an Overview of all Cases With Appeals",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Heat Maps",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section explains the Cases With Appeals heat map in Workspace. It shows all supervisor-managed cases with appeals, color-graded by appeal count (red = most, blue = least) to help prioritize work. Supervisors can drill down from the heat map or list to a Case Appeals page for a specific case. It also notes that appeals for a case can be viewed by type or deadline, with options to inspect details and reassign appeals, including automatic reassignment."
+                  },
+                  {
+                    "title": "Cases With Appeals Heat Map",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section explains the Cúram supervisor view for cases with appeals. It shows how to use a heat map and sorted list to see all cases with appeals, ranked by number of appeals, and drill down to a case’s appeals. It also covers viewing a case’s appeals by type or deadline, using bar charts or lists, opening appeal details, and reassigning appeals manually or automatically."
+                  },
+                  {
+                    "title": "Cases With Appeals List",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section explains how supervisors use the Cases With Appeals workspace to review all cases with appeals and the appeals within a single case. It covers the heat map and ranked list views, which sort cases by number of appeals to help prioritize work. It also describes drilling down to Case Appeals, viewing appeals by type or deadline, and reassigning appeals as needed. The by-type view can be shown as a bar chart or list and supports further drill-down to appeal details."
+                  }
+                ],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Explains the supervisor Workspace view for all cases with appeals. It uses a heat map and descending list to rank cases by appeal count, with red indicating the most appeals and blue the fewest, helping prioritize work. Supervisors can drill down from either view to a Case Appeals page for a specific case. That page shows appeals by type or deadline, supports bar chart or list views, lets supervisors open appeal details, and reassign appeals manually or automatically."
+              },
+              {
+                "title": "Managing Appeals Associated with a Case",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Viewing Appeals Associated with a Case By Type",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section explains how supervisors view appeals for a single case by type. It describes a bar chart and basic list showing appeal types, how to drill down from the chart to a list and appeal details, and how type-based views help identify the most frequent appeal categories. It also covers reassigning appeals by type to specialized users, including automatic reassignment."
+                  },
+                  {
+                    "title": "Viewing Appeals Associated with a Case By Deadline",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how supervisors can view appeals linked to a case as a list sorted by appeal deadline and drill down to each appeal’s case home page. This page is a brief transition into the broader “Managing Work for Users” section, which covers the User Workspace, task graphs, work queue subscriptions, task reservation/redirection, allocation blocks, user calendars, and user settings. Suitable if you need the deadline-sorted appeal list or are entering user work management topics."
+                  }
+                ],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Explains how supervisors manage appeals for a single case after drilling down from case-level appeal views. Appeals can be grouped and viewed by type or deadline. By type, supervisors use a bar chart or list to identify the most frequent appeal categories, open appeal details, and reassign all or some appeals of a type to specialized users, including via automatic reassignment."
+              }
+            ],
+            "node_id": "n000063",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000026",
+              "start_page": 25,
+              "end_page": 26
+            },
+            "summary": "Explains how supervisors manage cases with appeals in Cúram Supervisor Workspace. It shows how to view all appealed cases using a heat map and descending list ranked by appeal count, with red indicating the most appeals. Supervisors can drill into a Case Appeals page for a specific case, then view appeals by type or deadline, inspect appeal details, and reassign appeals manually or automatically, including by appeal type to specialized users."
+          },
+          {
+            "title": "1.7 Managing Work for Users",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Introduction to Managing Work for Users in the Supervisor Workspace. Describes the User Workspace for overseeing an individual user’s workload: task graphs for current week/month views, lists of subscribed work queues and organization units, task reservation/unreservation, task redirection, and allocation blocking. Also covers viewing a user’s calendar and adjusting user settings. Includes managing assigned tasks, with options to view task details and reserve tasks, plus an application property to use search-based assigned-task viewing when many tasks exist."
+              },
+              {
+                "title": "The User Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "The User Workspace lets supervisors manage an individual user’s workload: view task graphs, assigned tasks, subscribed work queues, and organization units; reserve, unreserve, assign, redirect, and block tasks; unsubscribe the user from queues; and view calendar and settings. Task graphs provide week/month overviews with drill-down to specific days or tasks. The assigned-tasks page can show a list or search-based view, with a property to hide initial task display for large task volumes."
+              },
+              {
+                "title": "Managing Tasks Assigned to the User",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how supervisors manage a user’s assigned tasks in User Workspace. The “assigned tasks” page shows tasks assigned to a user but not yet reserved by them, with options to view task details and reserve individual tasks to the user. It also notes an application property that switches the view between a simple list and search-based results for large task volumes; when enabled, no tasks display initially and the supervisor searches first."
+              },
+              {
+                "title": "Reserving Tasks",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Reserving Assigned Tasks To The User",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how a supervisor reserves tasks to a user in Cúram Supervisor Workspace. The supervisor can reserve multiple tasks from the user’s assigned task list, from a work queue, or reserve a specific task. Assigned-task reservation can be based on priority or how long tasks have been assigned, but the supervisor cannot choose exact tasks. Also notes that task search can be disabled via the application property `curam.supervisor.enableUserAssignedTasksSeach`, in which case all tasks are shown."
+                  },
+                  {
+                    "title": "Reserving Tasks from a Work Queue for the User",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000078",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how a supervisor reserves work to a user in Cúram Supervisor Workspace. Covers reserving tasks from a user’s assigned task list, from a work queue, or selecting a specific task. For work queue reservations, the supervisor can choose how many tasks to reserve but not which specific tasks, helping clear overloaded queues. Also introduces related workload management and task reassignment options: redirection, forwarding, and reallocation."
+                  },
+                  {
+                    "title": "Reserving a Specific Task to the User",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how a supervisor can reserve work to a user in Cúram Supervisor Workspace. Covers three reservation options: reserving a number of tasks from the user’s assigned tasks list, reserving a number of tasks from a work queue, or reserving a specific task. Notes that bulk reservation can be based on priority or assignment age but does not let the supervisor pick exact tasks, while specific-task reservation is useful for assigning work requiring special skills. Also introduces task reassignment options."
+                  }
+                ],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains how Cúram Supervisor Workspace lets a supervisor reserve work to a user: taking multiple tasks from the user’s assigned task list, from a work queue, or reserving one specific task. Bulk reservation can be based on priority or task age, but the supervisor cannot pick exact tasks. It also notes a user-assigned task search filter can be disabled by `curam.supervisor.enableUserAssignedTasksSeach`, and introduces task reassignment options: redirection, forwarding, and reallocation."
+              },
+              {
+                "title": "Options for Task Reassignment",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Redirecting the User's Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000081",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how supervisors redirect a user’s tasks to another user, useful for situations like annual leave. Covers setting start/end dates, moving currently assigned tasks, stopping new tasks from going to the original user, and preserving reserved tasks. Also notes that task redirection can be future-dated, active/pending/expired redirections are viewable in history, and active/pending redirections can be removed. Includes related options for forwarding or reallocating reserved tasks and compares these task reassignment functions."
+                  },
+                  {
+                    "title": "Forwarding Tasks Reserved by a User",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how supervisors can forward a user’s reserved tasks to another target. Reserved tasks can be sent to a user, position, job, organization unit, work queue, or other allocation target, and single or multiple tasks may be forwarded. The section highlights this as useful when a user is overloaded or tasks are better handled elsewhere. It also contrasts forwarding with task redirection and reallocation, noting that redirection does not affect reserved tasks and reallocation uses the original allocation strategy."
+                  },
+                  {
+                    "title": "Reallocating Tasks Reserved by a User",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how supervisors handle a user’s reserved tasks: they can forward them to a chosen target or reallocate them using the initial allocation strategy. Reallocation is useful when no specific recipient is known or tasks were assigned in error, and the supervisor can add a note that is recorded in task history. Also distinguishes task redirection from forwarding/reallocation: redirected user tasks move assigned work to another user, but reserved tasks are not affected."
+                  },
+                  {
+                    "title": "Forwarding Tasks Assigned to a User",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000084",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains supervisor actions for managing a user’s workload: forwarding assigned tasks to another target, reallocating tasks to reapply the original allocation strategy, and blocking future task allocation for a user. Notes that allocation blocks can be scheduled, viewed in current/pending/history pages, and cleared if active or pending. Also covers viewing and editing certain user settings—skills, working patterns, case approval rules, and evidence approval rules—and inspecting calendar activities to assess availability."
+                  },
+                  {
+                    "title": "Reallocating Tasks Assigned to a User",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000085",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "This section explains how a supervisor can manage tasks assigned to a user by forwarding them to another target, reassigning them via reallocation to restore the original allocation strategy, or blocking further task assignment to the user. It also describes viewing current/pending allocation blocks and clearing active ones. In addition, supervisors can review and edit certain user settings—skills, working patterns, approval rules—and inspect calendar activity to assess workload, though they cannot add or remove calendar activities."
+                  }
+                ],
+                "node_id": "n000080",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000029",
+                  "start_page": 28,
+                  "end_page": 29
+                },
+                "summary": "Explains task reassignment in Cúram Supervisor Workspace: redirecting a user’s assigned tasks to another user (optionally future-dated, with start/end dates; active/pending/expired redirections viewable and removable), forwarding reserved tasks to specific targets, and reallocating reserved tasks using the original allocation strategy. Notes that redirection does not affect reserved tasks, and forwarding/reallocation can move single or multiple tasks to users, positions, jobs, org units, work queues, or other allocation targets."
+              },
+              {
+                "title": "Task Allocation Blocking",
+                "level": 3,
+                "children": [],
+                "node_id": "n000086",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "This section explains task allocation blocking, which lets a supervisor prevent new tasks from being assigned to a user without redirecting them elsewhere. Blocking can start immediately or at a future date, end at a specified time, or run indefinitely. Existing assignments for the blocked user are deleted, and no new assignment records are created. It also notes that current/pending blocks can be viewed on the Task Allocation Blocking page, full history on the History page, and active/pending blocks can be cleared by a supervisor."
+              },
+              {
+                "title": "Managing User Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000087",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "This section explains how supervisors can review and edit selected user settings to help manage workload and task assignment. It covers editable settings: user skills, working patterns, case approval rules, and evidence approval rules. It also notes that supervisors can view a user’s calendar activity to judge availability, but cannot add or remove calendar entries. Other user settings are configured at the administration level."
+              }
+            ],
+            "node_id": "n000072",
+            "range": {
+              "start_unit_id": "p000027",
+              "end_unit_id": "p000029",
+              "start_page": 27,
+              "end_page": 29
+            },
+            "summary": "Section 1.7 explains how supervisors manage an individual user’s workload in User Workspace. It covers task graphs for week/month views with drill-down, lists of subscribed work queues and organization units, viewing the user’s calendar, and adjusting user settings such as skills and working patterns. It also describes managing assigned tasks, reserving tasks from assigned lists or work queues, and task reassignment via redirection, forwarding, and reallocation. Finally, it explains task allocation blocking, including immediate or future blocks and viewing/clearing block history."
+          },
+          {
+            "title": "1.8 Managing Work for Organization Units",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Role of the Organization Reporting Hierarchy",
+                "level": 3,
+                "children": [],
+                "node_id": "n000089",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how supervisors use the organization reporting hierarchy to assess work assigned to units, redirect it when needed, and allocate appropriate tasks to individuals. Describes the Organization Unit Workspace for viewing unit details, members, positions, and contacts, plus monitoring and reserving tasks for unit members. Also covers viewing reserved tasks via charts and drilling into task details, and using the Organization Unit Schedule to see weekly activity for all users in the unit."
+              },
+              {
+                "title": "The Organization Unit Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000090",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains the Organization Unit workspace for supervisors. It shows how supervisors manage work assigned to an organization unit by reviewing unit details, members, positions, and contact information, then directing tasks to appropriate users. Covers monitoring assigned tasks, reserving some or all tasks to a single user, viewing reserved tasks via charts broken down by user with drill-down to task details, and using the organization unit schedule to review weekly user activity with navigation by week."
+              },
+              {
+                "title": "Managing Assigned Tasks for Organization Unit Members",
+                "level": 3,
+                "children": [],
+                "node_id": "n000091",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how supervisors manage tasks assigned to an organization unit by monitoring work for unit members and reserving tasks to specific users. Covers choosing a user from the supervisor’s users or searching the organization, viewing reserved tasks in a chart broken down by user with drill-down to task details, and using the organization unit schedule to review all members’ weekly activities with week-by-week navigation."
+              },
+              {
+                "title": "Reserving Organization Unit Assigned Tasks to a User",
+                "level": 3,
+                "children": [],
+                "node_id": "n000092",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how supervisors manage work assigned to an organization unit and reserve tasks to a specific user. It covers the role of the reporting hierarchy, the Organization Unit workspace, monitoring and redirecting assigned tasks, choosing a user from the supervisor’s users or searching the organization, and viewing reserved tasks by user with drill-down charts and task details. It also mentions the organization unit schedule for weekly activity overview."
+              },
+              {
+                "title": "Viewing the Organization Unit Reserved Tasks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000093",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how supervisors view reserved tasks for an organization unit. The Organization Unit Reserved Tasks page shows a bar chart of open and deferred tasks broken down by user, with drill-down to lists of each user’s open or deferred tasks and individual task details. This section sits within broader guidance on managing organization unit work, including task assignment, reassignment, and the unit schedule."
+              },
+              {
+                "title": "Organization Unit Schedule",
+                "level": 3,
+                "children": [],
+                "node_id": "n000094",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how supervisors manage work in an organization unit: understanding the reporting hierarchy, assessing tasks assigned to the unit, redirecting work to the right unit or individual, and using the Organization Unit workspace to view unit details, members, positions, and contact info. Covers reserving assigned tasks to users, viewing reserved tasks with charts and drill-downs, and using the Organization Unit Schedule to see a weekly group schedule with previous/next week navigation."
+              }
+            ],
+            "node_id": "n000088",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000030",
+              "start_page": 30,
+              "end_page": 30
+            },
+            "summary": "Covers how supervisors manage work for individual users within an organization unit: forwarding assigned tasks to another target, reallocating tasks to restore original allocation, and blocking future task allocation to a user. Also explains viewing current/pending and historical allocation blocks, clearing active blocks, and managing user settings such as skills, working patterns, and approval rules. Supervisors can inspect a user’s calendar to assess availability, but cannot add or remove calendar activities."
+          },
+          {
+            "title": "1.9 Managing Work for Work Queues",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Introduces the Supervisor Workspace’s work queue management. It explains that supervisors can view only active work queues subscribed to by their users, with task counts, task graphs, and member lists. Describes the My Work Queues page, including subscribed vs. unsubscribed queues and customization via hook points. Covers User Subscribed Work Queues behavior controlled by the `curam.supervisor.listSupervisorDirectlySubscribedWorkQueuesOnly` property, and notes the Work Queue Workspace shows queue owner and sensitivity level."
+              },
+              {
+                "title": "Managing Supervisor's Work Queues",
+                "level": 3,
+                "children": [],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains the Supervisor Workspace’s My Work Queues page and Work Queue Workspace. Covers viewing active work queues, task counts, subscribed members, and task reservation/assignment. Describes tabs for Subscribed vs. Unsubscribed Work Queues, including User, Organization Unit, Position, and Job subscriptions, with hook points for customization. Details the application property curam.supervisor.listSupervisorDirectlySubscribedWorkQueuesOnly, which switches between listing queues directly subscribed by the supervisor or those tied to reporting users. Notes that the Work Queue Workspace shows owner and sensitivity level."
+              },
+              {
+                "title": "Managing User Subscribed Work Queues",
+                "level": 3,
+                "children": [],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains how the Supervisor Workspace lists and manages user-subscribed work queues. The list shows active queues only, task counts, and subscribed members, with work queues grouped by subscription type. A key setting, `curam.supervisor.listSupervisorDirectlySubscribedWorkQueuesOnly`, controls whether the list shows queues the supervisor directly subscribes to (default, better for large teams) or queues subscribed by direct/indirect reports (for small teams). Notes that listings can be customized via hook points and that the Work Queue Workspace shows queue owner and sensitivity level."
+              },
+              {
+                "title": "The Work Queue Workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000099",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section explains the Supervisor’s Work Queue Workspace and My Work Queues page. It covers viewing active work queues, task counts, members, and task assignment/reservation management. It describes subscribed vs. unsubscribed work queue tabs, customization hook points, and how “User Subscribed Work Queues” behaves based on the curam.supervisor.listSupervisorDirectlySubscribedWorkQueuesOnly property. It also notes the Work Queue Workspace shows key queue details such as owner and sensitivity level."
+              },
+              {
+                "title": "Managing Work Queue Subscription",
+                "level": 3,
+                "children": [],
+                "node_id": "n000100",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains work queue subscription and task management in Supervisor Workspace. If enabled by the system administrator, users can subscribe/unsubscribe via Subscribe New User and subscriber lists. Access depends on the supervisor’s sensitivity level matching the queue. It also covers viewing assigned tasks, reserving multiple tasks to a user, and viewing reserved tasks. Search-based task filtering can be enabled by application properties, recommended for large queues, and reserved-task views include charts by user with drill-down to open/deferred task details."
+              },
+              {
+                "title": "Managing Assigned Tasks for Work Queues",
+                "level": 3,
+                "children": [],
+                "node_id": "n000101",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how supervisors manage work queue tasks: viewing unreserved assigned tasks, reserving multiple tasks to a user, and reviewing reserved tasks by user. Notes that task lists can be shown directly or filtered by search criteria via application properties, with search recommended for large queues. Also describes the Work Queue Reserved Tasks page, which provides bar charts of open and deferred tasks and drill-down to task details."
+              },
+              {
+                "title": "Reserving Tasks in Work Queues",
+                "level": 3,
+                "children": [],
+                "node_id": "n000102",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how supervisors reserve multiple tasks from a work queue to a single user using Reserve Tasks, either by selecting from reporting users or searching the organization. Notes the work queue assigned-tasks view can show all tasks or be filtered by search criteria based on the application property curam.supervisor.enableWorkQueueAssignedTasksSeach. Also covers viewing reserved tasks via a chart on the Work Queue Reserved Tasks page, with drill-down to open/deferred tasks by user and task details."
+              },
+              {
+                "title": "Viewing Work Queue Reserved Tasks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000103",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how supervisors view work queue reserved tasks. The Work Queue Reserved Tasks page shows a bar chart of open and deferred tasks by user, and supervisors can drill down to task lists and then individual task details. Context from the section also notes work queue access depends on sensitivity levels, and nearby topics cover subscribing users, viewing assigned tasks, and reserving tasks from a work queue."
+              },
+              {
+                "title": "Work Queue Schedule",
+                "level": 3,
+                "children": [],
+                "node_id": "n000104",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Describes the Work Queue Schedule page for supervisors: a weekly group schedule for all users subscribed to a work queue, with Previous/Next Week navigation and a link from Activities In Week to the user’s calendar. The remainder introduces Supervisor Workspace customization points, including Guice hook methods to customize work queue listings for user, organization unit, position, job, and unsubscribed queues, plus a hook point for filtering out irrelevant cases from supervisor workloads."
+              }
+            ],
+            "node_id": "n000095",
+            "range": {
+              "start_unit_id": "p000031",
+              "end_unit_id": "p000033",
+              "start_page": 31,
+              "end_page": 33
+            },
+            "summary": "Explains Supervisor Workspace management of work queues. Covers My Work Queues, showing active queues, task counts, member lists, and subscribed vs. unsubscribed tabs with customization hook points. Describes User Subscribed Work Queues behavior controlled by `curam.supervisor.listSupervisorDirectlySubscribedWorkQueuesOnly` (direct supervisor subscriptions vs. reporting users). Also covers Work Queue Workspace details like owner, sensitivity level, and self-subscription. Includes subscribing/unsubscribing users, viewing assigned tasks, reserving multiple tasks to a user, search-based task filtering via `curam.supervisor.enableWorkQueueAssignedTasksSeach`, and viewing reserved-task charts with drill-down."
+          },
+          {
+            "title": "1.10 Supervisor Workspace Customization Points",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000106",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Introduces Supervisor Workspace customization points. Covers hook points for customizing the My Work Queues page listings: user, organization unit, position, job subscribed work queues, and unsubscribed work queues, all via Guice overrides. Also begins a section on filtering out irrelevant cases so supervisors see only workload they need to manage."
+              },
+              {
+                "title": "Using Hook Points To Customize My Work Queues page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000107",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains how to customize the Supervisor Workspace “My Work Queues” page using hook points and Guice overrides. Covers separate fetcher methods for user-, organization unit-, position-, job-subscribed, and unsubscribed work queues; notes that implementing a hook can override application properties. Also introduces a hook point for filtering cases so supervisors see only relevant workloads, with unsupported case types filtered out by default."
+              },
+              {
+                "title": "Using Hook Point To Filter Out Cases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000108",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains how Supervisor Workspace filters cases so supervisors only see relevant workload. Out of the box, case types that do not need monitoring or management are excluded. This section is about the hook point used to customize that filtering behavior."
+              }
+            ],
+            "node_id": "n000105",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Describes Supervisor Workspace customization points. Covers Guice hook overrides for the My Work Queues page to customize user-, organization unit-, position-, job-subscribed, and unsubscribed work queue listings, noting hooks can override application properties. Also explains the case-filtering hook point used to hide irrelevant cases so supervisors see only workload they need to manage; by default, unsupported case types are filtered out."
+          },
+          {
+            "title": "1.11 Conclusion",
+            "level": 2,
+            "children": [
+              {
+                "title": "Summary of Concepts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000110",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "This section summarizes Cúram Supervisor Workspace concepts and functionality. It explains that supervisors use the workspace to balance workloads, monitor and move cases/tasks through their lifecycles, and work across Supervisor, Case, User, Organization Unit, and Work Queue workspaces. It also notes heat maps for issue tracking and Appeals support when installed. In addition, it describes a custom hook for excluding cases from supervisor views, affecting multiple workspace screens, and gives a brief function summary for reserving and forwarding tasks."
+              },
+              {
+                "title": "Summary of Functionality",
+                "level": 3,
+                "children": [],
+                "node_id": "n000111",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000038",
+                  "start_page": 35,
+                  "end_page": 38
+                },
+                "summary": "This section summarizes Supervisor Workspace functionality and a custom exclusion hook. It explains that custom case types can be filtered from supervisor views via curam.core.hook.impl.SWExcludedCases, affecting pages like Cases, Assigned Workload, My User, User Workload, and Reassign Cases. It also lists key supervisor actions and where they are available, including reserving, forwarding, reallocating, reassigning, redirecting tasks, blocking allocation, managing user skills/working patterns/approval rules, and subscribing users or work queues. The section then contains legal notices, warranty, privacy, and trademark information."
+              }
+            ],
+            "node_id": "n000109",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "Concludes the Cúram Supervisor Workspace Guide by summarizing core concepts and functionality. It notes that supervisors use the workspace to balance workloads, monitor and move cases/tasks, and work across Supervisor, Case, User, Organization Unit, and Work Queue workspaces, with heat maps and Appeals support if installed. It also documents the custom SWExcludedCases hook for filtering case types from supervisor views and lists major supervisor actions such as reserving, forwarding, reallocating, reassigning, redirecting, blocking allocation, managing skills/patterns/approval rules, and subscriptions. Includes legal notices, privacy, and trademarks."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000038",
+          "start_page": 9,
+          "end_page": 38
+        },
+        "summary": "Overview of the Cúram Supervisor Workspace Guide. Explains how supervisors monitor and balance workloads for users, organization units, and work queues via case/task assignment. Covers the supervisor role, workspace navigation, task lifecycle actions, task/user search, and managing work in the Case, User, Organization Unit, and Work Queue workspaces. Includes handling cases with issues or appeals, customization hook points, and related configuration properties. Ends with a functionality summary and legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

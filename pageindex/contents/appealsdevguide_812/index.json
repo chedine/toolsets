@@ -1,0 +1,241 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "5a2da6ca3b4a0667",
+    "title": "Cúram 8.1.2 Appeals Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/APPEALSDevGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "5a2da6ca3b4a066772ba263eec5ac6ee3154a74c1a6513903cd78ef903ccb2d7",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T05:15:21+00:00",
+    "page_count": 14,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/APPEALSDevGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Appeals Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000014",
+      "start_page": 1,
+      "end_page": 14
+    },
+    "summary": "This section is the front matter and core developer guide for Cúram 8.1/8.1.1/8.1.2 Appeals. It explains how to extend Merative SPM Appeals beyond the default Product Delivery, Issue, and Integrated Case types. Key topics include enabling appeal of case objects via the Appealable interface, adding ct_AppealObjectType code table entries, binding implementations with Guice, and implementing a 3-step client wizard that passes selected objects as ObjectID,ObjectTypeCode. It also covers enabling appeals for another case type with the AppealableCaseType interface, including appeal eligibility, continue-benefits logic, wizard hooks, Guice binding, and updating Appeals Client navigation/menu configuration. Front matter includes notices, edition, contents, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory notice section stating that users should read the “Notices” information before using the document or supported product. Includes copyright attribution to Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000012",
+          "start_page": 5,
+          "end_page": 12
+        },
+        "summary": "This section states the document applies to Cúram 8.1, 8.1.1, and 8.1.2. It covers extending Merative SPM Appeals to support new case types and appealable case objects. Key topics include implementing the Appealable and AppealableCaseType interfaces, adding and binding code table entries in Guice, creating wizard pages/properties for appeal creation, and updating client navigation/menu configuration to expose Appeals screens for the new case type."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section provides legal notices: sample data are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and they are offered “AS IS” without warranty or liability. It also gives the Merative privacy policy URL, lists major trademarks (Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX), and includes copyright information (© Merative US L.P. 2012, 2024)."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "Lists trademark and copyright notices for Merative documentation. Covers fictitious example names, Merative’s client agreement, sample code “AS IS” licensing/disclaimer, privacy policy URL, and trademark ownership for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Includes © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000013",
+          "start_page": 13,
+          "end_page": 13
+        },
+        "summary": "Legal notices and permissions for using the publication: personal/commercial reuse rules, prohibition on derivatives and external distribution without consent, and required preservation of proprietary notices. States no additional rights are granted, Merative may withdraw permissions, and export must comply with laws. Includes strong “AS-IS” warranty disclaimer, patent notice, third-party product/site disclaimers, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document, listing front matter and Chapter 1, “Developing Appeals.” It shows sections on enabling appeals for case objects and another case type, with subtopics such as implementing interfaces, adding/binding code table entries, updating client navigation, and implementing the client wizard. Also includes notices, privacy policy, and trademarks. Useful as an index for locating appeal-related implementation guidance."
+      },
+      {
+        "title": "1 Developing Appeals",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Enabling the appeal of case objects",
+            "level": 2,
+            "children": [
+              {
+                "title": "Implementing the Appealable interface",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how to extend Merative SPM Appeals so case objects, not just cases, can be appealed. To enable this, implement the Appealable interface for any case object with a unique identifier. The interface requires two methods: getAppealObjectDescription() for the Description column on the “Items Under Appeal” page, and getHomePageURI() for the object’s home page. Also add a corresponding ct_AppealObjectType code table entry with a Java identifier used to bind the implementation."
+              },
+              {
+                "title": "Adding a code table entry",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how to enable appeal of case objects in Merative SPM Appeals by implementing the Appealable interface and adding a corresponding code table entry in ct_AppealObjectType.ctx. Notes that the interface must provide a localized object description for the Items Under Appeal page and a home page URI, and that the code table entry must include a Java identifier used for binding the implementation."
+              },
+              {
+                "title": "Binding the code table to the implementation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to bind an appealable object code table entry to its implementation using a Guice MapBinder, then outlines building a client wizard for creating an Appeal case without direct dependency on the Appeals component. Key steps include implementing the parent case interface, creating a first page that converts a multiselect list into a delimited ObjectID,ObjectTypeCode format, and defining a 3-page wizard properties file with page titles, descriptions, and page IDs."
+              },
+              {
+                "title": "Implementing the client wizard",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to implement the client wizard for creating an Appeal case without compile-time dependency on the Appeals component. Key steps: implement the parent case type interface, create a first wizard page that collects appealable objects and converts multiselect selections into a delimited `ObjectID,ObjectTypeCode|` list, and define a 3-page wizard properties file. Also notes a required façade helper for the conversion and for returning the wizard properties file."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Explains how to extend Merative SPM Appeals so individual case objects, not just cases, can be appealed. It covers implementing the Appealable interface with methods for an object description and home page URI, adding a ct_AppealObjectType code table entry with a Java identifier, and binding that entry to the implementation via Guice MapBinder. It also outlines the client wizard flow for creating an Appeal case without a direct Appeals dependency, including converting multiselect selections to ObjectID,ObjectTypeCode format and defining a 3-page wizard properties file."
+          },
+          {
+            "title": "1.2 Enabling the appeal of another case type",
+            "level": 2,
+            "children": [
+              {
+                "title": "Implementing the AppealableCaseType interface",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to enable appeals for a new case type by implementing the AppealableCaseType interface. It lists five required methods: three for appeal business logic—`isContinueBenefitsEnabled(CaseID)`, `listAppealableCaseDetails()`, and `isCaseAppealable(CaseID)`—and two for the appeal wizard—`getCreateWizardProperties()` and `getCreateWizardURI(CaseID)`. Notes that the default Appeals component supports only Product Delivery, Issue, and Integrated Case unless this interface is added."
+              },
+              {
+                "title": "Binding the code table to the implementation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how to bind `AppealableCaseType` implementations to case type codes in a Guice module using `MapBinder`, with `APPLICATION_CASE` mapped to `ApplicationAppealableCaseType`. Also describes client navigation updates for the new Appeals case type: add multiple tab IDs to the workspace section file and add a dynamic `CaseAppeal` menu item to the Case menu, pointing to `Appeal_resolveCaseAppealWizard` or the first wizard screen for object appeals."
+              },
+              {
+                "title": "Updating the Appeals Client navigation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000014",
+                  "start_page": 12,
+                  "end_page": 14
+                },
+                "summary": "Explains how to update the Appeals Client navigation for a new case type. It instructs adding multiple Appeals-related tabs to the Workspace Section File and adding a Case menu item to launch an Appeal case creation wizard (page-id set to Appeal_resolveCaseAppealWizard or the first wizard screen for object appeals). Includes a brief code example for binding the AppealableCaseType implementation to a case type code via Guice."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000014",
+              "start_page": 11,
+              "end_page": 14
+            },
+            "summary": "Explains how to enable appeals for additional case types beyond Product Delivery, Issue, and Integrated Case. Defines the required AppealableCaseType interface methods for appeal eligibility, continue-benefits logic, case detail listing, and appeal wizard setup. Shows how to bind a case type code to its implementation in Guice using MapBinder. Also outlines Appeals Client navigation changes: add specific workspace tabs and a dynamic CaseAppeal menu item that launches the appeal wizard or first object-appeal screen."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000014",
+          "start_page": 9,
+          "end_page": 14
+        },
+        "summary": "Explains how to extend Merative SPM Appeals beyond default case types. Covers enabling appeals for case objects by implementing the Appealable interface, adding ct_AppealObjectType code table entries, binding them with Guice, and building a 3-step wizard that passes selected objects as ObjectID,ObjectTypeCode. Also describes enabling a new case type via AppealableCaseType, including appeal eligibility, continue-benefits logic, wizard hooks, Guice binding, and required Appeals Client navigation/menu updates for the new case type."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

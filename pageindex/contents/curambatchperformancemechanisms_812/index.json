@@ -1,0 +1,638 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "2f6e09e6ce10bffb",
+    "title": "Cúram 8.1.2 Tuning Batch Streaming Performance Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramBatchPerformanceMechanisms_812.pdf",
+    "source_type": "pdf",
+    "sha256": "2f6e09e6ce10bffb2d71f5b9aa3c2918d1ef0fb8a54fe9c06f9142c66fa9266e",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T03:39:32+00:00",
+    "page_count": 28,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramBatchPerformanceMechanisms_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Tuning Batch Streaming Performance Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000028",
+      "start_page": 1,
+      "end_page": 28
+    },
+    "summary": "Guide to tuning Cúram 8.1/8.1.1/8.1.2 batch performance via batch streaming and transaction-level caching. Explains the two-executable streaming model (Chunker and parallel Stream processes), chunk creation and commit-point processing, optional serial processing of leftover unprocessed records, and dynamic stream coordination. Lists streamed batch programs such as Generate Instruction Line Items, Generate Instruments, CREOLE Bulk Case Chunk Reassessment By Product, Apply Product Reassessment Strategy, Perform Batch Recalculations From Precedent Change Set, and related translation/redetermination processing. Covers how to run streamed batch executables and tune behavior with environment variables for chunk size, wait intervals, whether to run/sleep for streams, and whether to process unprocessed chunks. Includes error handling for skipped chunks and skipped records, distinguishing business errors (record removed and task created) from technical errors (record retained for rerun). Also contains front matter, contents, notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note advises readers to review the Notices section on page 27 before using the information or the supported product. It also includes the copyright statement for Merative US L.P. covering 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition and front-matter for Cúram 8.1/8.1.1/8.1.2, followed by the start of “Tuning batch streaming performance.” Covers purpose, intended audience, and the two main performance mechanisms: batch streaming and transaction-level caching. Introduces which batch processes use streaming and begins the architecture section, explaining chunking, chunker vs. stream executables, transactional chunk processing, optional final serial processing of remaining records, key tables (BatchProcessChunk, BatchChunkKey, BatchProcess), and dynamic addition of streams."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram batch streaming tuning overview for pages 15–24. Covers data caching to reduce database I/O contention, lists core entity caches and warns they are batch-only, not for online use. Describes streamed batch processes split into chunker/stream executables: eligibility determination, instruction line item generation, instrument generation, bulk case reassessment, product reassessment strategy, precedent-change recalculations, and translator redetermination. Also explains how to launch executables and details key environment variables for chunk sizes, wait intervals, and unprocessed chunk handling."
+          },
+          {
+            "title": "Edition — pages 25-26",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000026",
+              "start_page": 25,
+              "end_page": 26
+            },
+            "summary": "This section documents batch-streaming environment variables and error handling for Cúram batch programs. It covers tuning settings for Apply Product Reassessment Strategy and Perform Batch Recalculations From Precedent Change Set, including chunk size, stream/sleep behavior, wait intervals, and whether to process unprocessed chunks. It also notes a redetermination setting for product delivery eligibility. Finally, it explains streamed batch error handling for skipped chunks and skipped records, distinguishing business errors (task created, case suspended) from technical errors (record unchanged, rerun after fixing issue)."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000026",
+          "start_page": 5,
+          "end_page": 26
+        },
+        "summary": "Front matter and tuning guide for Cúram 8.1/8.1.1/8.1.2 batch streaming performance. Explains the two main mechanisms: batch streaming (chunker/stream executables, transactional chunk processing, optional serial cleanup of unprocessed records) and transaction-level caching. Lists streamed batch programs and key tables, then details command-line execution and tuning environment variables for chunk size, wait intervals, buffer size, and unprocessed-chunk handling. Ends with error handling for skipped chunks/records, distinguishing business vs technical failures."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "Provides legal notices: sample data and names are fictitious; sample programs may be copied, modified, and distributed for API-conforming applications but are offered “AS IS” without warranty or liability. Points to Merative’s privacy policy at https://www.merative.com/privacy and lists trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus copyright © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "States that all example names in the document are fictitious and that sample programs are provided under the Merative Client Agreement, with an “AS IS” warranty disclaimer. Provides the Merative privacy policy URL. Lists trademarks and registered trademarks for Merative, IBM, Adobe/PostScript, Oracle/Java, Linux, Microsoft/Windows, and UNIX, and notes that other names may also be trademarks. Includes Merative copyright notice for 2012, 2024."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000027",
+          "end_unit_id": "p000027",
+          "start_page": 27,
+          "end_page": 27
+        },
+        "summary": "Legal notices and usage permissions for the publication. Covers personal and enterprise copying limits, preservation of proprietary notices, no derivative works or external distribution without Merative consent, and no implied rights beyond those granted. Includes export-law compliance, an “AS IS” warranty disclaimer, patent notice, third-party product/site disclaimer, and no endorsement of non-Merative websites. Ends with copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter (Note, Edition) and Chapter 1, “Tuning batch streaming performance,” with subsections on overview, architecture, data caching, batch processes using streaming, and operation of streamed batch processes. Also includes notices, privacy policy, and trademarks, with page references for navigation."
+      },
+      {
+        "title": "1 Tuning batch streaming performance",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Intended Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for people interested in batch process performance mechanisms in Cúram. This section introduces two main performance features: batch streaming, which splits a batch process into chunking and parallel stream executables for concurrent processing, and caching of batch process data, which uses transaction-level caching to reduce database I/O. It frames the guide as an overview of improving batch processing efficiency and scalability, and notes it should be read alongside the Cúram Batch Processing Guide."
+              },
+              {
+                "title": "What Batch Performance Mechanisms does the application Provide?",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Batch Streaming",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Introduces tuning batch streaming performance in Cúram. Explains two main batch performance mechanisms: Batch Streaming and caching of batch process data. Batch Streaming splits a logical batch process into a Chunker and parallel Stream executables, using chunk sizes set by system properties so multiple stream instances can process chunks concurrently and increase throughput. Also notes transaction-level caching for batch data to reduce database I/O. Intended as an overview and should be read with the Batch Processing Guide."
+                  },
+                  {
+                    "title": "Caching of Batch Process Data",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000009",
+                      "start_page": 9,
+                      "end_page": 9
+                    },
+                    "summary": "Explains two main batch performance mechanisms in Cúram: batch streaming and caching of batch process data. Batch streaming splits work into chunks via a Chunker and processes them in parallel with multiple Stream instances to improve throughput and scalability. Caching uses transaction-level data caching to reduce database I/O during batch execution. The section is an overview aimed at readers interested in batch process performance and should be read alongside the Cúram Batch Processing Guide."
+                  }
+                ],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Overview of two batch performance mechanisms in Cúram: Batch Streaming and caching of batch process data. Batch Streaming splits a logical batch process into a Chunker and parallel Stream executables, with chunk sizes controlled by system properties, to increase throughput and use available processing power. Caching uses transaction-level data caching to reduce database I/O during batch execution. This section is introductory and meant to be read alongside the Cúram Batch Processing Guide."
+              },
+              {
+                "title": "Cúram Batch Processes using Batch Streaming",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduces Cúram batch streaming for selected batch programs, enabling streamed and cached processing to improve efficiency when records must be skipped or processing restarts. Lists the batch programs that use this approach, including product delivery eligibility, instruction line items, instruments, CREOLE bulk case chunk reassessment, product reassessment strategy, and batch recalculations from precedent change sets. Also outlines operational considerations for streamed batch processes and the architecture, where data is split into chunks so multiple batch processes can run in parallel for better resource use."
+              },
+              {
+                "title": "Operation of Streamed Batch Processes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Describes how streamed batch processes operate in Cúram 8.1.2, focusing on operational considerations such as command-line execution, new streaming-related properties, and exception handling. It explains the batch streaming architecture: data is segmented into chunks so multiple batch processes can run in parallel on identical processing tasks, improving resource use and efficiency. Also notes caching support for restart-like scenarios when records must be skipped or excluded, and lists the batch programs that use streaming."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Overview of Cúram batch performance tuning. It explains two main mechanisms for improving batch efficiency and scalability: batch streaming, which splits a logical batch process into a Chunker and parallel Stream executables using a chunk-size system property, and transaction-level caching of batch process data to reduce database I/O. The guide is intended for readers interested in batch performance and should be read with the Cúram Batch Processing Guide."
+          },
+          {
+            "title": "1.2 Batch Streaming Architecture",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "Introduces Cúram batch streaming and its architecture. Explains how data is segmented into chunks so multiple batch processes can run in parallel on the same workload, maximizing resource use and efficiency. Notes that caching helps when processing must restart after skipping/excluding a record. Lists batch programs that use streaming, and flags operational concerns such as command-line execution, new properties, and exception handling in streamed batch processes."
+              },
+              {
+                "title": "Architectural Details",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The Chunker",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "The Chunker is the batch executable that identifies records, assembles them into transactional chunks, and writes them to the BatchProcessChunk queue table before any Stream starts. It typically runs once per batch process, waits for all Stream instances to finish, and produces a summary report. If it fails after chunk creation, it can usually be restarted. The section also notes a final optional serial pass for unprocessed records and that completion triggers a notification report."
+                  },
+                  {
+                    "title": "The Stream",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "The Stream is the batch executable that processes one chunk at a time, applying business logic to each record, then updating chunk status and marking records processed. Each chunk runs in its own database transaction for commit-point processing, helping avoid reprocessing if other chunks fail. If a record causes contention, the chunk can roll back, remove the problem record, and retry. After all chunks, an optional serial final pass handles remaining unprocessed records, then a notification/report is sent."
+                  },
+                  {
+                    "title": "Additional Information",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000014",
+                      "start_page": 13,
+                      "end_page": 14
+                    },
+                    "summary": "Describes batch streaming architecture details. Explains that BatchChunkKey acts as a key server to distribute chunks to individual streams without contention and can be used to gauge batch progress via the next available key. Notes that BatchProcess stores Chunker parameters for reuse by streams and records total chunks written and related batch info. Also states streams can be added dynamically during batch execution if hardware permits, and that failures are not distinguished by the environment between technical and business skips."
+                  }
+                ],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000014",
+                  "start_page": 12,
+                  "end_page": 14
+                },
+                "summary": "Explains batch streaming architecture: each batch process has a Chunker and one or more Streams. The Chunker identifies records, builds transactional chunks in BatchProcessChunk, waits for streams to finish, and generates the final report; it can usually be restarted if it fails after chunking. Streams process one chunk per transaction, support rollback/retry on contention, and may perform an optional final serial pass for leftover records. Also covers BatchChunkKey for contention-free chunk distribution and progress tracking, BatchProcess parameter storage, dynamic stream addition, and unified handling of technical/business skips."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000014",
+              "start_page": 10,
+              "end_page": 14
+            },
+            "summary": "Batch Streaming Architecture describes how Cúram batch processing splits records into chunks so multiple stream executables can process the same workload in parallel. It explains the two-part design: a Chunker that identifies records, writes chunks to BatchProcessChunk, waits for completion, and produces the report, and Streams that process one chunk per transaction with rollback/retry support. It also covers BatchChunkKey for contention-free chunk serving, BatchProcess for parameter storage, optional serial final-pass processing, dynamic stream addition, and the lack of distinction between technical failures and business skips."
+          },
+          {
+            "title": "1.3 Data Caching",
+            "level": 2,
+            "children": [
+              {
+                "title": "Core Entity Caches",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000016",
+                  "start_page": 15,
+                  "end_page": 16
+                },
+                "summary": "Describes batch-processing data caching to reduce database I/O contention and improve eligibility processing performance. Notes that caches are for batch use only, not online mode, because consistency with the database cannot be guaranteed. Lists core entity caches available for reuse, including CaseEvidenceTree, CaseEvidenceGroupLink, AttributedEvidence, and stand-alone caches such as CachedCaseHeader, CachedConcernRole, CachedCaseParticipantRole, CachedCaseRelationship, CachedCaseStatus, CachedPerson, CachedProduct, ProductDelivery-related caches, FinancialCalendar, and ProviderLocation. Also suggests customers consider caching custom entities used repeatedly."
+              }
+            ],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "Describes batch-only data caching to reduce database I/O contention and improve eligibility/batch processing performance. Notes caches cannot be used in online mode because cached/database consistency cannot be guaranteed. Highlights reusable core entity caches for CaseEvidenceTree, CaseEvidenceGroupLink, AttributedEvidence, and stand-alone caches such as CaseHeader, ConcernRole, CaseNomineeProdDelPattern, CaseParticipantRole, CaseRelationship, CaseStatus, ConcernRoleRelationship, FinancialCalendar, Person, Product, ProductDelivery-related entities, and ProviderLocation. Also recommends caching custom entities repeatedly accessed in eligibility processing."
+          },
+          {
+            "title": "1.4 Batch Processes using Streaming",
+            "level": 2,
+            "children": [
+              {
+                "title": "DetermineProductDeliveryEligibility",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Describes the batch process DetermineProductDeliveryEligibility, which processes “Approved” cases to determine eligibility. It explains the two executables: the Chunker, which finds approved cases and can optionally filter by product identifier, and the Stream, which runs eligibility determination per case and saves results to the database. The section sits within batch streaming/caching documentation and also briefly contrasts it with the similar GenerateInstructionLineItems process."
+              },
+              {
+                "title": "GenerateInstructionLineItems",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Describes the GenerateInstructionLineItems batch program in the streaming/caching batch architecture. It processes cases with Financial Components due, reassesses the case for the payable period, and generates Instruction Line Item records. Two executables are defined: GenerateInstructionLineItems (chunker) selects eligible cases and can be filtered by optional from date, to date, and delivery method; GenerateInstructionLineItemsStream (stream) performs the per-case eligibility check and creates the line items."
+              },
+              {
+                "title": "GenerateInstruments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Defines the GenerateInstruments batch process, which processes due Instruction Line Items into Payment Instrument records. It has two executables: GenerateInstruments as the chunker, which finds nominees with due instruction line items and writes nominee IDs to chunks, and GenerateInstrumentsStream, which generates payment instruments for each nominee. The excerpt also begins descriptions of nearby CER reassessment batch processes, but the core focus here is instrument generation."
+              },
+              {
+                "title": "CREOLEBulkCaseChunkReassessmentByProduct",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Describes the CREOLEBulkCaseChunkReassessmentByProduct batch process for Cúram CER cases. It reassesses all “Active” cases, optionally restricted by product ID. The chunker selects active case IDs into chunks; the stream runs reassessment for each case and stores a new determination if it changes, superseding the old one. Warns this can trigger many unnecessary reassessments and recommends writing a more targeted batch process when cases span multiple products. Also begins the related ApplyProductReassessmentStrategy process, which handles products whose reassessment strategy has changed."
+              },
+              {
+                "title": "ApplyProductReassessmentStrategy",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Describes the ApplyProductReassessmentStrategy batch process for CER-based products. It checks all cases for a product whose reassessment strategy has changed. The Chunker takes a product ID, identifies all product delivery cases for that product, and writes case IDs to chunks. The Stream executable is listed but its detailed behavior is not shown in this excerpt."
+              },
+              {
+                "title": "Perform Batch Recalculations From Precedent Change Set batch process",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Describes the PerformBatchRecalculationsFromPrecedentChangeSet batch process, which recalculates dependents affected by changes in precedent data. The chunker executable takes a dependent type, reads the latest precedent change set, identifies unique potentially affected dependents, and writes their IDs to chunks. The stream executable recalculates each dependent appropriately, such as reassessing CER-based cases. References the Dependency Manager guide for full details."
+              },
+              {
+                "title": "RedetermineTranslator",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Describes the RedetermineTranslator batch process. It scans open cases owned by a specified user, compares each case participant’s preferred language with the user’s language skill, and updates the participant’s translator-required indicator if needed. It is used when a user’s language skill changes and many cases are affected. The section also notes the application property curam.cases.maxnocases.onlineautotranslatordetermination, which determines whether translator redetermination runs online or must be handled in batch when case volume is too high."
+              }
+            ],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000019",
+              "start_page": 17,
+              "end_page": 19
+            },
+            "summary": "This section outlines Core batch processes implemented with streaming/caching, each split into Chunker and Stream executables. It covers DetermineProductDeliveryEligibility, GenerateInstructionLineItems, and GenerateInstruments, including their inputs, chunk selection criteria, and per-item processing. It also describes CER-related batch jobs: bulk reassessment of active cases, applying changed reassessment strategies, recalculating dependents after precedent changes, and redetermining translators when user language skills change. Useful for identifying batch-process behavior, optional filters, and when batch execution is required over online processing."
+          },
+          {
+            "title": "1.5 Operation of Streamed Batch Processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Running Batch Executables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000021",
+                  "start_page": 20,
+                  "end_page": 21
+                },
+                "summary": "Explains how to launch streamed batch executables from the command line using `ant -f app_batchlauncher.xml -Dbatch.username=superuser -Dbatch.program=<method name>`. Lists method names for several batch executables and their stream/chunk counterparts, including DetermineProductDeliveryEligibility, GenerateInstructionLineItems, GenerateInstruments, CREOLEBulkCaseChunkReassessmentByProduct, ApplyProductReassessmentStrategy, and PerformBatchRecalculationsFromPrecedentChangeSet. Also continues prior descriptions of RedetermineTranslator chunker/stream behavior for updating translator-required indicators based on participant language skills."
+              },
+              {
+                "title": "Environment variables",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "General Batch streaming",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Describes environment variables for general batch streaming behavior in Cúram batch processing. Key settings include retry wait intervals for reading the batch process table and chunk key table, and how long the main chunker waits before scanning for unprocessed chunks. Also notes a generic caching buffer size setting and mentions Determine Product Delivery Eligibility batch options for chunk size and whether the stream should wait for completion. Includes a note that BatchLauncher can run batch executables, but queued processes run sequentially."
+                  },
+                  {
+                    "title": "General Caching",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Defines a generic batch caching setting: `curam.batch.caching.buffersize`, which sets the initial size of circular buffers used by batch process caches. The section sits among batch streaming/performance tuning variables and notes these parameters affect batch behavior and should be adjusted carefully, as poor tuning can degrade performance."
+                  },
+                  {
+                    "title": "Determine Product Delivery Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Explains how to run the DetermineProductDeliveryEligibilityStream batch process with BatchLauncher and notes queued processes run sequentially. Lists environment variables that tune batch performance, including generic batch streaming and caching settings, plus program-specific controls for Determine Product Delivery Eligibility: chunk size and whether the stream should sleep while waiting for processing to complete."
+                  },
+                  {
+                    "title": "Generate Instruction Line Items",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Defines environment variables for the Generate Instruction Line Items batch process: chunk size, whether to sleep instead of running a stream, retry intervals for chunk key and chunk table reads, whether to process unprocessed chunks after streams finish, and whether to skip case reassessment before payment. The page also shows adjacent batch tuning settings for Determine Product Delivery Eligibility and the start of Generate Instruments."
+                  },
+                  {
+                    "title": "Generate Instruments",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000041",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Defines environment variables for the Generate Instruments batch process. Key settings include chunk size, whether the stream should wait/sleep for processing completion, and the wait interval for retrying reads from the chunk key table. The section appears alongside similar batch tuning settings and is useful for configuring performance and execution behavior of Generate Instruments."
+                  },
+                  {
+                    "title": "CREOLE Bulk Case Chunk Reassessment By Product",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Defines environment variables for the CREOLE Bulk Case Chunk Reassessment By Product batch and its stream, including chunk size, whether the batch waits instead of running a stream, retry intervals for chunk key/table reads, and whether to process unprocessed chunks after streams finish. Also begins the similar configuration list for Apply Product Reassessment Strategy. Useful for batch-processing tuning and chunk retry behavior."
+                  },
+                  {
+                    "title": "Apply Product Reassessment Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Defines environment variables for the Apply Product Reassessment Strategy batch and its Stream process. Covers chunk size, whether the batch should sleep instead of running a stream, the wait interval for retrying reads from the chunk key table, and the wait interval for retrying reads of unprocessed chunks. This section is useful if you need to configure or troubleshoot batching, chunk processing, or stream coordination for product reassessment."
+                  },
+                  {
+                    "title": "Perform Batch Recalculations From Precedent Change Set",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Defines environment variables for the “Perform Batch Recalculations From Precedent Change Set” batch and stream process. Covers chunk size, whether to run the stream in-process, wait intervals for chunk key and unprocessed chunk retries, and whether to process leftover unprocessed chunks after streams complete. Also notes related batch configuration for “Determine Product Delivery Eligibility” and summarizes streamed batch error handling, especially skipped chunks versus skipped records."
+                  },
+                  {
+                    "title": "Determine Product Delivery Eligibility",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Defines batch-streaming environment variables around product delivery eligibility, specifically the RedetermineTranslator program. Main setting: curam.cases.maxnocases.onlineautotranslatordetermination, which controls whether automatic translator requirement redetermination runs in batch or online mode. The section also notes general streamed batch error handling, distinguishing skipped chunks from skipped records and explaining that reruns can usually process skipped chunks."
+                  }
+                ],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000024",
+                  "start_page": 22,
+                  "end_page": 24
+                },
+                "summary": "Lists batch-performance environment variables for Cúram batch streaming and caching. Covers generic settings for retry intervals on batch process/chunk key/chunk tables and a buffer-size setting for circular-buffer caches. Also documents program-specific controls for Determine Product Delivery Eligibility, Generate Instruction Line Items, Generate Instruments, CREOLE Bulk Case Chunk Reassessment By Product, and Apply Product Reassessment Strategy, including chunk size, don’t-run-stream/sleep behavior, and whether to process unprocessed chunks, with some cases adding reassessment controls."
+              },
+              {
+                "title": "Error handling",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000028",
+                  "start_page": 25,
+                  "end_page": 28
+                },
+                "summary": "Explains error handling for streamed batch programs. Two error types are covered: skipped chunks and skipped records. Skipped chunks are reported at completion with an estimated affected record count; rerunning the batch usually processes them unless an unrecoverable issue persists. Skipped records are also reported in completion output and stream log files with stack traces. For business errors, the record is removed from processing and a case-suspension task is created for the case owner. For technical errors, the record remains unchanged and the batch should be rerun after fixing the issue."
+              }
+            ],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000028",
+              "start_page": 20,
+              "end_page": 28
+            },
+            "summary": "Covers operational guidance for streamed batch processes. Explains how to launch batch executables via `ant -f app_batchlauncher.xml -Dbatch.username=superuser -Dbatch.program=<method>`, with method names for streamed and chunker variants. Documents tuning environment variables for streaming, caching, and program-specific behavior (chunk sizes, wait intervals, unprocessed-chunk handling, don’t-run-stream, reassessment controls). Also describes error handling for skipped chunks and skipped records, including log reporting, case suspension tasks for business errors, and rerun guidance for technical errors."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000028",
+          "start_page": 9,
+          "end_page": 28
+        },
+        "summary": "Explains Cúram batch performance tuning for batch streaming and transaction-level caching. Covers the two-part streaming model (Chunker and parallel Stream executables), chunking via system properties, BatchProcessChunk/BatchChunkKey/BatchProcess tables, optional serial final-pass processing, and dynamic stream addition. Describes batch-only data caches for core entities to reduce DB I/O and lists key streamed batch programs plus operational launch, tuning properties, and error handling for skipped chunks/records and rerun guidance."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

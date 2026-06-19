@@ -1,0 +1,2274 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "42fd2b24c3cd2c4e",
+    "title": "Cúram 8.1.2 Authoring Scripts using Intelligent Evidence Gathering Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/AuthoringScriptsUsingIEG_812.pdf",
+    "source_type": "pdf",
+    "sha256": "42fd2b24c3cd2c4e65323f87f956e7c431c99df17d09b7d784fbe5f8072d5c6e",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T06:20:29+00:00",
+    "page_count": 126,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/AuthoringScriptsUsingIEG_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Authoring Scripts using Intelligent Evidence Gathering Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000126",
+      "start_page": 1,
+      "end_page": 126
+    },
+    "summary": "Comprehensive guide to authoring Cúram 8.1.2 Intelligent Evidence Gathering (IEG) scripts. It covers the script lifecycle from basics and prerequisites (XML, databases, stylesheets) through script structure (scripts, sections, pages, clusters, questions, subscripts), element reference, expression operators and custom functions, flow control and conditional navigation, layout/configuration options, administration/import/testing, and compliance rules. Also includes legal notices and permissions. Useful if you need to create, customize, administer, or upgrade IEG scripts, understand supported XML elements and expressions, or follow constraints on internal IDs, public API use, source control, and non-customizable model files.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section before using the product or this information. It also includes the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram 8.1/8.1.1/8.1.2 documentation, including edition/copyright pages and the contents table. The first substantive chapters are introduced: authoring Intelligent Evidence Gathering (IEG) scripts and prerequisites. The contents also show the full scope of the guide: script structure, element reference, expressions, flow control, configuration, administration, and compliancy/API topics. Useful as an entry point for navigating the manual, not for implementation details itself."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Defines IEG script structure and element reference basics. Covers how scripts are organized into sections, pages, clusters, questions, and optional summary pages; how to group pages logically; and how subscripts can be reused within scripts, including progress-bar calculation. Begins the XML element reference, focusing on meta-display and display elements such as codetable-hierarchy-layout, layout-related controls (label alignment/width, num-cols/rows, type, width), and add-link, alias, and argument. Useful for understanding script layout, navigation, and UI configuration."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Reference for IEG script elements and attributes. Covers cluster, column, combo-box, confirm-button/message, container, custom-output, delete-link, description, display-text, divider, edit-link, explainer, first-identifier, and footer-field. Explains element purpose, key attributes (IDs, entity/criteria, read-only/collapsed expressions, search-function, target-entity, layout/help options, page flow controls, localization IDs), child-element cardinalities, and a few Universal Access Responsive Web Application limitations. Useful for understanding how lists, clusters, text, confirmations, custom HTML, and edit/delete flows are configured."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Cúram IEG script element reference covering page/list UI elements and their support limits. Describes footer-row, help-text, hint-text, icon, informational-message, item-label/item-layout, label, label-element, legislation, list, and list-question. Includes attributes, child elements, locale/property-file handling, supported help types, list nesting/footer rows, and list-question validation/display options. Useful for understanding how to add help, hints, icons, informational messages, legislation links, lists, and selectable list questions in IEG scripts."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers IEG script elements from message through relationship-page. Defines message text localization via CDATA and id, next-button-label for Universal Access pages, page-content for quick-add-list dialogs, page-title for quick-add/edit/delete link titles, and policy links at page/question level. Describes question attributes (mandatory, control-question, multi-select, default/read-only expressions, help, autocomplete) and child elements. Explains question-page and quick-add-list attributes/children, quick-add-link/delete-link/edit-link structure, and relationship-page requirements, including datastore schema for Person/Relationship household relationships."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Cúram IEG script element reference for page-level and flow-control elements. Covers relationship-page, row-help, relationship-detail-header, relationship-summary-list, second-identifier, skip-field, subtitle, summary-page, and title, including their attributes, child elements, defaults, and Responsive Web Application applicability. Also explains flow-control elements condition, loop, and validation: expressions, fast-path, nested child types, loop types and criteria, and validation messaging. Useful for script authors configuring page layout, localized text, conditional display, repeated sections, and input validation."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Covers IEG script XML elements and expression rules. Key script elements include callout, identifier, ieg-script, ieg-sub-script, section, and set-attribute, with their attributes and child-element constraints. Also explains which IEG elements/attributes are supported when generating summary PDFs via IntakeApplicationPDFTemplate.xsl, including required summary-page placement and supported cluster, list, question, and relationship-summary-list features. The section then details expression operator precedence, supported data-type operations, custom functions (setFullNameAge, isNotNull), and special IntakeProgramType/ScreeningProgramType expression handling."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "Covers IEG script flow control. Explains natural page/section navigation, back/next/save-exit behavior, and differences in section navigation between classic UI and responsive web app. Describes conditional sections and page conditions, including null-safe expressions and conditional clusters. Details loop types: for-each, for, and while, with guidance on criteria, control questions, persistence/editing behavior, and nested loop patterns for capturing repeated/nested entities."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "Covers IEG script flow control and page/list behavior. Topics include control questions (types, scope, loop/condition use, persistence), person tabs and relationship pages/summaries, and customizable edit/delete/add links for clusters and lists. Also begins IEG configuration, focusing on the layout element: cluster appearance (type, columns, width, label width/alignment), multiple-choice question layouts (num-cols, num-rows, autosize, input alignment), and container-based question/column grouping with dividers."
+          },
+          {
+            "title": "Edition — pages 95-104",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000095",
+              "end_unit_id": "p000104",
+              "start_page": 95,
+              "end_page": 104
+            },
+            "summary": "This section explains how to configure IEG page layout and appearance using application properties in a custom config file, instead of changing CSS. It covers container usage in clusters and lists, including grouped questions, widths, and dividers, then details property tables for customizing the banner, progress panel, person tabs, action links, relationship pages, help panel, page title panel, navigation panel, list styling, and other page elements such as fonts, mandatory icons, messages, and dropdown text."
+          },
+          {
+            "title": "Edition — pages 105-114",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000105",
+              "end_unit_id": "p000114",
+              "start_page": 105,
+              "end_page": 114
+            },
+            "summary": "This section catalogs IEG configuration properties for UI text, images, colors, labels, validation messages, help panels, section panels, page buttons, clusters, and other widgets, including Universal Access and high-contrast variants. It explains layout options for the sections panel (vertical or horizontal), modal dialog behavior for the IEG Player, and customization of widget defaults like dropdowns. It also notes how localized currency symbols/placement/spacing must be defined in property files per locale."
+          },
+          {
+            "title": "Edition — pages 115-124",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000124",
+              "start_page": 115,
+              "end_page": 124
+            },
+            "summary": "IEG administration and compliancy guidance. Covers admin screens to list, download, delete, run, validate, and import IEG scripts; read-only mode; and command-line import options. Also explains customization best practices, including copying scripts with new IDs, handling internal IDs and script upgrades, and storing scripts/resources in DMX/CLOB/BLOB files under source control for database builds. Describes public API/FIDS, warns against using classes outside the API, and states that IEG model files (.emx/.efx) should not be customized."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000124",
+          "start_page": 5,
+          "end_page": 124
+        },
+        "summary": "Front matter and full contents for the Cúram 8.1/8.1.1/8.1.2 IEG guide, followed by the complete technical scope: script structure, XML element reference, expressions, flow control, layout/configuration, administration, and compliancy. It covers how IEG scripts are organized; key UI and flow elements; expression operators and custom functions; page navigation, loops, conditions, and validation; configuration properties for appearance and localization; admin/import tools; and upgrade/compliance rules, including source control, internal IDs, public API use, and non-customizable model files."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000016",
+            "range": {
+              "start_unit_id": "p000126",
+              "end_unit_id": "p000126",
+              "start_page": 126,
+              "end_page": 126
+            },
+            "summary": "This section contains legal and attribution information: a privacy policy link, copyright/license terms for sample programs, warranty/liability disclaimers, and a trademarks notice listing Merative and other third-party marks. It notes the sample code is provided “AS IS” and that the full Merative privacy policy is available at the listed URL."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000126",
+              "end_unit_id": "p000126",
+              "start_page": 126,
+              "end_page": 126
+            },
+            "summary": "This section lists legal notices: sample data use, copyright/license terms for sample programs, a privacy policy link, and trademark attributions. It identifies Merative and logo trademarks, and notes third-party marks including IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Useful if you need licensing, redistribution, privacy, or trademark ownership details."
+          }
+        ],
+        "node_id": "n000015",
+        "range": {
+          "start_unit_id": "p000125",
+          "end_unit_id": "p000125",
+          "start_page": 125,
+          "end_page": 125
+        },
+        "summary": "Legal notice and permissions for the publication: personal noncommercial use is allowed if proprietary notices are kept; enterprise-wide reproduction/display is allowed with notices preserved, but no derivatives or external distribution without Merative consent. It disclaims all warranties, notes no patent/license rights are granted, and says export/re-export must follow applicable laws. It also warns that information on non-Merative products and websites is unverified and not endorsed, and that use is at your own risk."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000018",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000010",
+          "start_page": 7,
+          "end_page": 10
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 IEG scripting guide. Lists major chapters on authoring scripts, prerequisites, script structure, element reference, expressions, flow control, configuration, administration, and compliancy, with detailed subtopics and page numbers. Useful for jumping to specific sections rather than content itself."
+      },
+      {
+        "title": "1 Authoring Intelligent Evidence Gathering scripts",
+        "level": 1,
+        "children": [],
+        "node_id": "n000019",
+        "range": {
+          "start_unit_id": "p000011",
+          "end_unit_id": "p000012",
+          "start_page": 11,
+          "end_page": 12
+        },
+        "summary": "Introduces how to author Intelligent Evidence Gathering (IEG) scripts. Covers their defined structure, supported IEG expression operations, configurable page presentation, and migration between systems. Explains that scripts are dynamic because the IEG Engine renders screens and flows at runtime and scripts can be created or modified in a live system via an administration interface. Also highlights conditional logic for controlling page display and tailoring questions based on prior answers, so users provide only relevant information."
+      },
+      {
+        "title": "2 Prerequisites",
+        "level": 1,
+        "children": [],
+        "node_id": "n000020",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000014",
+          "start_page": 13,
+          "end_page": 14
+        },
+        "summary": "This section lists the prerequisites for the material. Readers should already understand XML, databases, stylesheets, and simple functions. Helpful background includes using databases to store data (for example, database entities), customizing application appearance with stylesheets such as CSS, and adding simple functions to web-based applications, such as links."
+      },
+      {
+        "title": "3 Defining IEG script structures",
+        "level": 1,
+        "children": [
+          {
+            "title": "3.1 Overview",
+            "level": 2,
+            "children": [],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "IEG scripts are organized as a hierarchy of script, section, page, cluster, question, and summary page, all defined in XML. Sections group pages logically so answers can be captured effectively. A section may include a summary page, which shows read-only feedback for the entered answers, is always the last page in the section, and appears when the section is clicked in the IEG Player sidebar."
+          },
+          {
+            "title": "3.2 Organizing Script Pages into Sections",
+            "level": 2,
+            "children": [],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "Explains how to organize IEG script pages into logical sections, using an example that groups pages like About You, Household, Income, and Expenses. Shows that larger scripts should be divided into sections for better user navigation and comprehension. Includes sample XML structure with section titles, question pages, and summary pages. Also notes that pages contain questions grouped into clusters, with input controls determined by data types and cluster properties controlling layout."
+          },
+          {
+            "title": "3.3 Subscripts",
+            "level": 2,
+            "children": [],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000018",
+              "start_page": 17,
+              "end_page": 18
+            },
+            "summary": "Subscripts are reusable standalone IEG scripts that can be included at script level or within a section. If included inside a section, they must not contain sections. A subscript can itself include other subscripts, but only once in a given script hierarchy. Inclusion uses the `ieg-sub-script` element with subscript ID, version, and type. The section also explains progress-bar calculation for subscripts using parent `start-progress` and `end-progress` values and a page-progress formula."
+          }
+        ],
+        "node_id": "n000021",
+        "range": {
+          "start_unit_id": "p000015",
+          "end_unit_id": "p000018",
+          "start_page": 15,
+          "end_page": 18
+        },
+        "summary": "Explains the XML hierarchy of IEG scripts: script, section, page, cluster, question, and summary page. Sections group pages logically and may end with a summary page that shows read-only feedback and appears as the section’s last page and in the sidebar. Describes organizing larger scripts into meaningful sections and how questions are grouped into clusters with layout controlled by cluster properties and data types. Also covers subscripts: reusable scripts included at script or section level, constraints on nesting, `ieg-sub-script` syntax, and progress-bar calculation."
+      },
+      {
+        "title": "4 IEG script element reference",
+        "level": 1,
+        "children": [
+          {
+            "title": "4.1 Meta-display elements",
+            "level": 2,
+            "children": [
+              {
+                "title": "codetable-hierarchy-layout",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Describes the IEG meta-display element `codetable-hierarchy-layout`, used in questions with a code-table hierarchy to control layout. Covers supported layout options and notes they are not available in compact layout clusters or Cúram Universal Access Responsive Web Application. Lists attributes: `vertical` (vertical layout), `hide-description` (hide description text), `hide-label` (hide path labels), and `show-path` (show selected path in read-only mode). States that only one of `hide-description` or `hide-label` can be true and that the element has no child elements."
+              },
+              {
+                "title": "label-alignment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Describes the `label-alignment` element for cluster layouts, which aligns all labels in a cluster to LEFT, CENTER, or RIGHT (default RIGHT). It has no attributes or child elements, and applies within a layout element. The section also briefly covers `label-width`, which sets the label width as an integer percentage from 0 to 100, and introduces `layout` for controlling cluster/question layout and input field formatting, with a reference to more detailed cluster layout options."
+              },
+              {
+                "title": "label-width",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "`label-width` is a cluster layout element that sets the percentage width allocated to labels within a cluster. It takes no attributes or child elements, but contains an integer from 0 to 100. The remaining width is used for the question’s input control or value. Useful if you need to control label-to-input space distribution in cluster layouts."
+              },
+              {
+                "title": "layout",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "This section explains the layout element for clusters and questions, including how it controls cluster/question layout, input field formatting and constraints in the Cúram Universal Access Responsive Web Application, and date picker usage for dates. It also covers cluster label options: label-alignment (LEFT, CENTER, RIGHT default) and label-width (0–100% of available width). It notes label-alignment and label-width have no child elements and refers to related cluster layout documentation."
+              },
+              {
+                "title": "num-cols",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "The num-cols element is used inside a layout element for a cluster to set how many columns the cluster uses. Each column contains both question labels and their input controls or values. It has no attributes. For more details, the section points to the layout element documentation on changing cluster appearance."
+              },
+              {
+                "title": "num-rows",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "`num-rows` is a layout element for clusters that renders text fields as a text area spanning a specified number of rows. It has no child elements, and its only content is an integer greater than 1 (default) indicating the row count. The section also notes that Cúram Universal Access uses the Social Program Management Design System’s `CharacterCount` for `TextArea` components, showing remaining characters near 75% of a `maxLength` limit."
+              },
+              {
+                "title": "type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Describes the `type` element for cluster/question layout configuration. It has no attributes and takes a string value. For clusters, use `\"flow\"` to place labels left of inputs/values, or `\"compact-flow\"` to place labels above them. For questions with a code table, use `\"radio\"` to show radio buttons beside the label, or `\"radio-indent\"` to show them underneath the question label. Notes that this element is not supported in the referenced context and points to a separate layout-appearance section."
+              },
+              {
+                "title": "width",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Defines the `width` element for a cluster layout. It controls cluster width on the page by containing an integer value from 0 to 100, representing the percentage of available page width to allocate. It has no attributes or child elements. The section also notes that `width` is not supported in one unspecified context and points to the layout appearance chapter for more details."
+              }
+            ],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000022",
+              "start_page": 19,
+              "end_page": 22
+            },
+            "summary": "Section 4.1 lists IEG meta-display elements that control how display elements render. It covers `codetable-hierarchy-layout` for code-table hierarchy questions (vertical layout, hide description/labels, show selected path in read-only; not supported in compact clusters or Cúram Universal Access Responsive Web Application), plus cluster layout helpers: `label-alignment`, `label-width`, `layout`, `num-cols`, `num-rows`, `type`, and `width`. These elements define label alignment/size, column and row counts, question/cluster flow, radio/date-picker behavior, and input width."
+          },
+          {
+            "title": "4.2 Display elements",
+            "level": 2,
+            "children": [
+              {
+                "title": "add-link",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Defines the `add-link` display element for list elements, used to let users add extra records via a link at the top of a list, optionally with an icon. It notes that link text can be configured through IEG properties. The section documents two attributes: `start-page` (mandatory, the page opened when clicked, usually the first loop page) and `end-page` (optional, used to finish adding a record when loops span multiple pages or require revisiting later pages)."
+              },
+              {
+                "title": "alias",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Defines question aliases used to vary question labels and help text by viewer type (for example, Customer, Third Party, Third Party Medical). The only attribute is type, which identifies the viewer category that can see the alias. No child elements are allowed."
+              },
+              {
+                "title": "argument",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "The argument element is used inside a message element to substitute an attribute value into message text. It supports argument placeholders as tokens for this substitution, with details referenced in the message-creation documentation."
+              },
+              {
+                "title": "cluster",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "The cluster element visually groups questions and answers on an IEG page under a shared heading and layout. Its key attributes are entity, criteria, read-only-expression, collapsed-expression, and grouping-id. entity links the cluster to a child entity of the page’s entity; if omitted, attributes default to the page entity. criteria selects a specific instance when multiple exist. read-only-expression makes the cluster read-only. collapsed-expression controls initial collapse on summary pages. grouping-id is for merging clusters in Cúram Universal Access Responsive Web Application."
+              },
+              {
+                "title": "column",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Defines the `column` element for list columns in Cúram 8.1.2. It specifies a column heading and the data shown in that column, usually from an attribute of the list’s entity, but optionally from a related entity using `column entity` and `link-entity`. Key attributes documented are `id` (attribute to display), `entity` (data store entity for column values), `link-entity` (relationship entity instead of `id`), and `criteria` (record retrieval filter)."
+              },
+              {
+                "title": "combo-box",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Defines the IEG script `combo-box` element, used on `question` elements to provide an asynchronous search field with selectable results. It requires a `search-function` implemented in the Cúram Universal Access Responsive Web Application and registered in `IEGRegistry`; the function returns a JSON array of `{id, value, item}` objects. The `key` attribute stores the selected value as a hidden input for conditions/read-only expressions. Optional `target-entity` can populate a same-page cluster entity from the selected item."
+              },
+              {
+                "title": "confirm-button",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Defines the confirm-button element for use as a child of quick-delete-link in a quick-add-list deletion flow. It specifies the button label shown in the delete confirmation dialog. The section documents its single id attribute, which uniquely references text in a properties file, and notes that the element content is CDATA text. It also introduces confirm-message, which similarly supplies the confirmation dialog message and uses the same id attribute pattern."
+              },
+              {
+                "title": "confirm-message",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Defines the `confirm-message` element used as a child of `quick-delete-link` to specify the confirmation message shown when deleting from a quick-add-list. It has one attribute, `id`, which uniquely identifies the text within the current context and links to the associated properties file. The element’s content is a CDATA section containing the message text."
+              },
+              {
+                "title": "container",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Defines the IEG `container` element, used to group questions into clusters and combine multiple list columns into one. Documents the `show-container-help` attribute, which adds a help icon that opens container help text set via `help-text`. Lists child elements: `question`, `column`, `layout`, `divider`, `title` (required), `help-text`, and `hint-text`. Also notes related use for controlling question and column layout."
+              },
+              {
+                "title": "custom-output",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Defines the IEG `custom-output` display element. It is used only on summary pages to render custom HTML in both the Cúram and classic Universal Access user interfaces. The element lets entity data be retrieved from a data store and passed to a custom renderer for HTML-based display."
+              },
+              {
+                "title": "delete-link",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "`delete-link` adds a delete option to each record in a list so users can remove records. Clicking the link opens a confirmation dialog; confirming deletes the record and all child entities from the data store. The section notes that the link and dialog text are configured elsewhere (“Deleting Records from Lists” on page 89). The element has no attributes or child elements."
+              },
+              {
+                "title": "description",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Defines the `description` element for adding descriptive text to titled script elements. It uses an `id` attribute that maps to a locale-specific properties file key. Script authors may place default-locale text directly in a CDATA child; when imported, the IEG Engine removes the inline text and stores it in the appropriate properties file using the `id`."
+              },
+              {
+                "title": "display-text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Defines the `display-text` element for IEG scripts. It is used in clusters to show text with questions and in relationship pages for non-repeating text. Default-locale text can be embedded as CDATA in the script; on import, IEG Engine removes it and stores it in the associated properties file using the element’s `id` as the key. The `id` must be unique within the page where used. Child elements: optional `argument` elements, unbounded."
+              },
+              {
+                "title": "divider",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "This section is part of the IEG script element reference and describes the divider element. It explains that divider is used in a container to separate question elements and can appear before, after, or between questions or columns. The excerpt also includes nearby reference material for description and display-text elements, covering their id attributes, use of CDATA for default locale text, and child argument elements."
+              },
+              {
+                "title": "edit-link",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains the `edit-link` element for list records. It adds an edit action beside each list item, sending users to the record’s detail page to change values. The linked page can show only selected clusters and may display an icon configured via IEG properties. Key attributes are `start-page` (required), `end-page` (optional, for multi-page records), and `skip-to-summary` (controls whether the flow returns directly to the summary or continues through validation pages before returning)."
+              },
+              {
+                "title": "explainer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains the explainer element in the IEG script. It is used to present large amounts of text in a compact, expandable format, letting users choose what to read. HTML formatting is supported. It applies only to the Cúram Universal Access Responsive Web Application and is allowed on question pages, relationship pages, and clusters, but not within questions. The explainer shows a visible title initially and a description that appears when expanded. It has no attributes and requires exactly one title and one description child element."
+              },
+              {
+                "title": "first-identifier",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Defines the `first-identifier` child of `item-layout` for quick-add-list cards, used to specify the first displayed line as a localizable pattern. Describes its required `id` attribute (unique in scope) and CDATA text child. The page also begins the `footer-field` element, which displays calculated values in a list footer via an `expression`, with `id` and `type` attributes; no child elements are allowed."
+              },
+              {
+                "title": "footer-field",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Describes the `footer-field` element, used inside a `footer-row` to display calculated list footer values via an expression. Covers its attributes: `id` for unique identification, `expression` for the runtime-calculated value, and `type` for the displayed data type (must be a valid domain definition). Notes that it has no child elements and that this feature is not supported in the referenced environment."
+              },
+              {
+                "title": "footer-row",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Defines the footer-row element for IEG lists, used to add a bottom row showing totals or summary information, often populated by expressions. Notes that it is not supported in this environment. Lists no attributes or child elements."
+              },
+              {
+                "title": "help-text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Defines the help-text element for IEG scripts. It provides localized, HTML-formatted help content for supported elements: cluster, question, container, question-page, summary-page, and row-level list help, though question-page/summary-page and row-level list help are not supported in the current context. It maps help types to message IDs, can store default-locale text in CDATA, and the engine moves that text to locale properties files on import. Also describes cluster help panel behavior and how question/container help combines into it."
+              },
+              {
+                "title": "hint-text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains how help and hint text work in Cúram IEG forms. Covers question-level help, container-level help, and row-level help for lists, including how help icons appear and what is shown in each case. Notes that cluster-level help can combine field and container help when enabled. Introduces the hint-text element for short field guidance, limited to the Cúram Universal Access Responsive Web Application, with no HTML formatting. Hint text applies to containers only; field hint text inside containers is ignored."
+              },
+              {
+                "title": "icon",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Describes the `icon` element for adding images to a page title area or sections panel. Notes that it is not supported in the unspecified environment referenced in the text. For pages, only the `image` attribute is used for a single title icon state. For sections, it can define `enabled-image`, `disabled-image`, `current-image`, and `hover-image` for different link states. No child elements are allowed."
+              },
+              {
+                "title": "informational-message",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Describes the `informational-message` display element for showing a message in the heading of a cluster, list, or relationship summary list. Covers its purpose, required title context, and supported options: optional `message` child for custom text (stored via message ID and localized properties), optional `image` attribute for a custom icon, and optional `expression` attribute to conditionally show or hide it. Notes default text/image behavior, truncation with hover tooltip, and related configuration properties."
+              },
+              {
+                "title": "item-label",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "Defines the `item-label` element for list questions. It specifies the display text for each list item and can be composed from one or more entity attributes via one or more `label-element` children. The element has no attributes. It must contain at least one `label-element` child and can contain unlimited `label-element` entries."
+              },
+              {
+                "title": "item-layout",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "This section covers the `item-layout` element for `quick-add-list` cards and the `label` element for script text localization. `item-layout` customizes card display; by default it shows first and last name on line one and age on line two, with corresponding localizable properties (`FirstIdentifier`, `SecondIdentifier`). It has no attributes and requires `first-identifier` and `second-identifier` child elements. The `label` element defines localized question/answer text via a unique `id`, can include default-locale CDATA, and supports optional `argument` and `alias` child elements."
+              },
+              {
+                "title": "label",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Defines the `label` element for scripts, used to set text for questions or answers. Each label has a unique `id` within the page, which becomes the key in the locale-specific properties file. For convenience, default locale text can be placed directly in a CDATA child; during import, IEG Engine extracts it and stores it in the properties file. The section also lists child elements `argument` and `alias` (both optional, repeatable)."
+              },
+              {
+                "title": "label-element",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "Defines the `label-element` used inside a list question’s `item-label` to specify part of the text shown as each list item’s label. Multiple label elements can be used to build labels from fields such as first and last name. It has one attribute, `attribute-id`, which names the entity attribute to read the value from, and no child elements. The excerpt also starts a new `legislation` section describing page- and question-level legislative links, their runtime display, full URL requirement, and unique `id` attribute."
+              },
+              {
+                "title": "legislation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "Describes the `legislation` element for adding links to legislative information at the page or question level. Page-level links appear in the page title banner; question-level links appear in the page’s Help section. Links open in a new window and must be full URLs with protocol. The element is not supported in the unspecified target mentioned in the text. It has one required attribute, `id`, which must be unique within the page and serves as the key in the associated properties file."
+              },
+              {
+                "title": "list",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000042",
+                  "start_page": 42,
+                  "end_page": 42
+                },
+                "summary": "Defines the list element for displaying multiple entity records in a datastore. Covers use cases like showing one entity’s records, adding footer rows and row help, and nesting lists for parent-child records (e.g., person and incomes). Notes lists can appear on question or summary pages, but lists under question pages cannot include add/edit/delete links. Documents key attributes: entity, criteria, show-icons, and summary-page-only collapsed-expression. Also lists child elements: title, description, edit-link, delete-link, add-link, and column."
+              },
+              {
+                "title": "list-question",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000044",
+                  "start_page": 43,
+                  "end_page": 44
+                },
+                "summary": "Defines the `list-question` script element for displaying selectable lists of entities, usually people, with labels, images, and checkboxes. Covers creation using `entity`, `id`/`link-entity`, `item-label`, and optional `criteria`, `mandatory`, `single-select`, `display` (`horizontal`, `vertical`, `dropdown`), `input-alignment`, and `read-only-expression`. Notes support for summary pages, question matrices with code tables, layout rules for cluster/compact flow, and validation via `IEG2Context` methods for selected IDs and values."
+              },
+              {
+                "title": "message",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Defines the `message` element used for validation error messages and informational text in clusters, lists, and relationship summary lists. It has a required unique `id` attribute (unique within the page) that maps to a locale-specific properties file key. Script authors may include default-locale text as a CDATA child; the IEG Engine extracts it on import and stores it in the properties file. The element has no normal child elements, but may include `argument` entries in its CDATA-based usage context."
+              },
+              {
+                "title": "next-button-label",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "Defines the `next-button-label` element for Cúram Universal Access Responsive Web Application pages. It sets the label text for the Next button on `question-page`, `relationship-page`, and `summary-page` elements. The section includes an example on `summary-page`, the required `id` attribute used as the properties-file key, and notes that `argument` is a possible child element. It also begins a separate `page-content` topic for `quick-add-list`, but this excerpt mainly covers `next-button-label`."
+              },
+              {
+                "title": "page-content",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "This section describes the `page-content` element for `quick-add-list`. It links to an existing `question-page` that supplies the fields for the add/edit dialog used by a quick-add list, often from a hidden loop so it does not appear in the normal navigation flow. It also notes the single `id` attribute, which must reference an existing `question-page`."
+              },
+              {
+                "title": "page-title",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Defines the page-title element for localizing dialog titles used by quick-add-link, quick-delete-link, and quick-edit-link. It supports an id attribute as a unique key within the containing page/context and can contain CDATA text; its child content includes optional argument elements. The excerpt also describes policy links, which can be specified at page or question level to point users to related policy information, open in a new window, and use full URLs. Policy links have a unique id attribute and no child elements."
+              },
+              {
+                "title": "policy",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Defines the policy element for adding policy links at page or question level. Page-level policy links appear in the page title banner; question-level links appear in the parent page’s Help section. Both open in a new window and should use full URLs including protocol. The only attribute is a unique id used as the properties-file key. No child elements are supported."
+              },
+              {
+                "title": "question",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000049",
+                  "start_page": 48,
+                  "end_page": 49
+                },
+                "summary": "Defines the `question` script element for asking a page question and capturing an answer. Covers how answers are stored in the Datastore via `id`, mandatory validation, control questions and types, multi-select code table behavior, default-value and read-only expressions, help display, and autocomplete. Also lists child elements such as `label`, `help-text`, `hint-text`, `layout`, `legislation`, `combo-box`, and `auto-complete`, with some elements limited to specific Cúram applications."
+              },
+              {
+                "title": "question-page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000051",
+                  "start_page": 50,
+                  "end_page": 51
+                },
+                "summary": "Defines the `question-page` script element, used for standard pages that capture user answers. It documents page-level attributes such as `id`, `entity`, `criteria`, progress bar percentage, person tabs, read-only mode, and button visibility settings, plus read-only expressions and focus behavior. It also lists required and optional child elements, including `title`, `subtitle`, `description`, `icon`, `help-text`, `legislation`, `policy`, `cluster`, `list`, `quick-add-list`, `condition`, `validation`, `set-attribute`, and UI-specific `next-button-label` and `explainer`."
+              },
+              {
+                "title": "quick-add-link",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "Defines the `quick-add-link` element, used only as a child of `quick-add-list` to specify the Add button label and the Add page title. The section also introduces `quick-add-list`, which displays entities as editable/deletable cards and is typically used for household members. It lists `quick-add-list` attributes (`entity`, `criteria`) and child elements (`title`, `description`, `item-layout`, `page-content`, `quick-add-link`, `quick-delete-link`, `quick-edit-link`)."
+              },
+              {
+                "title": "quick-add-list",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "Defines the quick-add-list element, used to display entity records as editable/deletable cards and allow adding new entities, commonly for household members. It takes entity and criteria attributes to specify the datastore source and retrieval filter. Child elements can include an optional title, description, item-layout, page-content, and the quick-add-link, quick-delete-link, and quick-edit-link elements for add/edit/delete actions."
+              },
+              {
+                "title": "quick-delete-link",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Defines the quick-delete-link element for use under quick-add-list to configure a Delete page title and confirmation message. Its required child elements are confirm-button, confirm-message, and page-title, each occurring exactly once. The section also immediately transitions to quick-edit-link and relationship-page, so this node is mainly useful for understanding quick-delete-link’s required structure and purpose."
+              },
+              {
+                "title": "quick-edit-link",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Defines the quick-edit-link element, used as a child of quick-add-list to specify the Edit page title. Its only child element is page-title, required exactly once. The surrounding page also references quick-delete-link, which uses confirm-button, confirm-message, and page-title, and introduces relationship-page for household relationship capture with specific Person/Relationship schema requirements."
+              },
+              {
+                "title": "relationship-page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000054",
+                  "start_page": 53,
+                  "end_page": 54
+                },
+                "summary": "Defines the IEG `relationship-page`, used only to capture relationships between people in a household. It requires a datastore schema with `Person` entities containing nested `Relationship` elements and key/keyref links by `personID`. The section shows example XML for required and optional relationship attributes. It notes that people must be captured first, and that a relationship page is shown for all household members except the last. Also documents page attributes like `id`, `progress`, `show-person-tabs`, and button visibility flags."
+              },
+              {
+                "title": "row-help",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "Defines the `row-help` child element for a relationship page. It lets you provide help text for rows in a list by associating the help with an entity attribute; the text shown for each row depends on that attribute’s value. At runtime the help text is hidden until the user selects a help icon on the right side of the row. This element is not supported in the Cúram Universal Access Responsive Web Application."
+              },
+              {
+                "title": "relationship-detail-header",
+                "level": 3,
+                "children": [],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000056",
+                  "start_page": 56,
+                  "end_page": 56
+                },
+                "summary": "Explains the `relationship-detail-header` element for customizing the header of a relationship list in Cúram Universal Access Responsive Web Application. It accepts an ICU message template, enabling dynamic titles such as “Your relationships” or “{personName}’s relationships” based on index. Notes the `id` attribute, which must be unique within its context and maps to a properties file key. Includes a usage example within `<relationship-summary-list>`."
+              },
+              {
+                "title": "relationship-summary-list",
+                "level": 3,
+                "children": [],
+                "node_id": "n000080",
+                "range": {
+                  "start_unit_id": "p000057",
+                  "end_unit_id": "p000057",
+                  "start_page": 57,
+                  "end_page": 57
+                },
+                "summary": "Defines the `relationship-summary-list` element for summary pages, used to display all household relationships captured by `relationship-page`. It notes the `collapsed-expression` attribute, which controls whether the list starts collapsed or expanded. The section also lists child elements: `title`, `description`, `edit-link`, `column` (unbounded), `informational-message`, and `relationship-detail-header`. Useful if you need the element’s purpose, initial display behavior, or allowed child structure."
+              },
+              {
+                "title": "second-identifier",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000058",
+                  "start_page": 58,
+                  "end_page": 58
+                },
+                "summary": "Defines the `second-identifier` child of `item-layout` for the localizable second line shown on each quick-add-list card. It has one attribute, `id`, used as a unique key for text in the related properties file (unique only within the local context, such as a page or cluster). The element’s content is CDATA text, with an `argument` child allowed 0 or more times. The section also begins the next topics, `skip-field` and `subtitle`."
+              },
+              {
+                "title": "skip-field",
+                "level": 3,
+                "children": [],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000058",
+                  "start_page": 58,
+                  "end_page": 58
+                },
+                "summary": "Defines the `skip-field` element for flexible layout in clusters or footer rows when no visible display element is needed. In the IEG Player, skip fields render as spaces, allowing rows to have differing numbers of visible fields. Notes that it has no attributes or child elements and is used only in specific layout contexts."
+              },
+              {
+                "title": "subtitle",
+                "level": 3,
+                "children": [],
+                "node_id": "n000083",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000058",
+                  "start_page": 58,
+                  "end_page": 58
+                },
+                "summary": "Defines the optional `subtitle` element for scripts, used to provide localized subtitle text displayed directly below a page title. This section follows descriptions of related layout elements (`second-identifier` and `skip-field`), but the key point is that `subtitle` is a page-level text element for localized display."
+              },
+              {
+                "title": "summary-page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000084",
+                "range": {
+                  "start_unit_id": "p000059",
+                  "end_unit_id": "p000060",
+                  "start_page": 59,
+                  "end_page": 60
+                },
+                "summary": "Explains the IEG `summary-page` element, used as the last page in a section to display read-only answers from earlier questions and support navigation back to previous sections. Notes that large summary pages can use `custom-output` for custom HTML rendering. Documents `summary-page` attributes: unique `id`, datastore `entity` and optional `criteria`, `progress`, button visibility flags, `read-only-expression`, and `set-focus`. Also lists required/optional child elements: `title`, `subtitle`, `description`, and `icon`."
+              },
+              {
+                "title": "title",
+                "level": 3,
+                "children": [],
+                "node_id": "n000085",
+                "range": {
+                  "start_unit_id": "p000061",
+                  "end_unit_id": "p000061",
+                  "start_page": 61,
+                  "end_page": 61
+                },
+                "summary": "Defines the IEG `title` element, used to provide localizable text for titled script elements such as sections, pages, and clusters. The title has a required unique `id` used as the key in locale-specific properties files, with default text optionally embedded as CDATA and moved to the properties file on import. It also notes an optional `subtitle` for page subtitles. The `title` element may contain `argument` child elements."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000061",
+              "start_page": 23,
+              "end_page": 61
+            },
+            "summary": "Section 4.2 defines IEG display elements used to control page layout, content, and actions. It covers add-link, alias, argument, cluster, column, combo-box, confirm-button/message, container, delete-link, display-text, row-help, relationship-detail-header, relationship-summary-list, second-identifier, skip-field, subtitle, summary-page, and title. Key points include attributes, child elements, localization via properties/CDATAs, and page-specific behavior such as list actions, cluster grouping, summary-page display, and relationship-page customization. Open this node for syntax, supported attributes, and how elements render in IEG pages."
+          },
+          {
+            "title": "4.3 Flow-control elements",
+            "level": 2,
+            "children": [
+              {
+                "title": "condition",
+                "level": 3,
+                "children": [],
+                "node_id": "n000087",
+                "range": {
+                  "start_unit_id": "p000062",
+                  "end_unit_id": "p000062",
+                  "start_page": 62,
+                  "end_page": 62
+                },
+                "summary": "Explains the condition flow-control element in Cúram IEG scripts. It determines whether an element is displayed based on previous answers, commonly in sections, pages, or summary pages. Describes two cluster behaviors: pre-evaluated conditions include/exclude the cluster before page display, while unevaluated conditions are handled dynamically by the IEG Player and shown with special highlighting. Notes restrictions for dynamic clusters: no custom functions and the expression must return Boolean. Also explains that hidden conditional values persist temporarily until page navigation."
+              },
+              {
+                "title": "loop",
+                "level": 3,
+                "children": [],
+                "node_id": "n000088",
+                "range": {
+                  "start_unit_id": "p000063",
+                  "end_unit_id": "p000063",
+                  "start_page": 63,
+                  "end_page": 63
+                },
+                "summary": "Defines the IEG `<loop>` element, which repeats the pages contained within it multiple times. The repetition count depends on the loop type and its criteria/expressions. Supported `loop-type` values are `for`, `for-each`, `while`, and `hidden` (the latter only with `quick-add-list`). Required attributes are `entity` (data source for saving/loading loop data) and `criteria` (record selection criteria)."
+              },
+              {
+                "title": "validation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000089",
+                "range": {
+                  "start_unit_id": "p000064",
+                  "end_unit_id": "p000064",
+                  "start_page": 64,
+                  "end_page": 64
+                },
+                "summary": "Explains the `validation` element for question pages in IEG scripts. It validates answers using a Boolean `expression` that must evaluate to true before the script can continue past the page. Includes an example showing a warning if `Income.wageAmount` is less than or equal to zero. The only child element is `message` (required, exactly one). Useful if you need page-level answer validation syntax, attributes, or message structure."
+              }
+            ],
+            "node_id": "n000086",
+            "range": {
+              "start_unit_id": "p000062",
+              "end_unit_id": "p000064",
+              "start_page": 62,
+              "end_page": 64
+            },
+            "summary": "Section 4.3 introduces flow-control elements in Cúram IEG scripts: constructs like conditions and loops that control which display elements appear and in what sequence. It explains `condition` for showing sections, pages, clusters, or summary lists based on prior answers, including dynamic cluster behavior, restrictions, and temporary persistence of hidden values. It also defines `loop` for repeating pages, with types `for`, `for-each`, `while`, and `hidden`, plus required `entity` and `criteria` attributes. Finally, it covers `validation`, which blocks page progression unless a Boolean expression is true and requires one message child."
+          },
+          {
+            "title": "4.4 Structural, administrative, and other elements",
+            "level": 2,
+            "children": [
+              {
+                "title": "callout",
+                "level": 3,
+                "children": [],
+                "node_id": "n000091",
+                "range": {
+                  "start_unit_id": "p000065",
+                  "end_unit_id": "p000065",
+                  "start_page": 65,
+                  "end_page": 65
+                },
+                "summary": "The callout element lets a script invoke a custom function outside IEG during execution, typically for validations or other operations before moving to the next page. It can access Datastore identifiers automatically and can be used to save extra data from queries. Callouts may appear anywhere a question page can, except before the first question page. If reached from a summary page link, they run unless the link uses skip-to-summary=true. Attributes: unique page id and an expression for the function call."
+              },
+              {
+                "title": "identifier",
+                "level": 3,
+                "children": [],
+                "node_id": "n000092",
+                "range": {
+                  "start_unit_id": "p000065",
+                  "end_unit_id": "p000065",
+                  "start_page": 65,
+                  "end_page": 65
+                },
+                "summary": "The identifier element is a mandatory script-level element that stores the information needed to identify a script in the database. Its three attributes—id, scriptversionnumber, and type—together form the script record key, enabling multiple versions of the same script id. The type attribute can also be used to group scripts for filtering and display."
+              },
+              {
+                "title": "ieg-script",
+                "level": 3,
+                "children": [],
+                "node_id": "n000093",
+                "range": {
+                  "start_unit_id": "p000066",
+                  "end_unit_id": "p000066",
+                  "start_page": 66,
+                  "end_page": 66
+                },
+                "summary": "Defines the root `<ieg-script>` XML element for an IEG script. Describes key attributes for script behavior and UI control: `config-properties` for player text/style overrides, `fast-path` navigation, `finish-page`, `quit-page`, `show-progress-bar`, `show-sections`, `highlight-validation`, and `hide-for-control-question`. Notes defaults and that some attributes are unsupported in certain client technologies. Useful for understanding script-level configuration and navigation settings."
+              },
+              {
+                "title": "ieg-sub-script",
+                "level": 3,
+                "children": [],
+                "node_id": "n000094",
+                "range": {
+                  "start_unit_id": "p000067",
+                  "end_unit_id": "p000067",
+                  "start_page": 67,
+                  "end_page": 67
+                },
+                "summary": "Defines the `ieg-sub-script` element for including standalone subscripts inside an IEG script, either at script level or within a section. It explains that when included inside a section, the subscript must not contain any sections. The element has `start-progress` and `end-progress` attributes to control progress bar percentage calculations for pages in the subscript. Child elements are `identifier` and `section` (same as `ieg-script` child structure)."
+              },
+              {
+                "title": "section",
+                "level": 3,
+                "children": [],
+                "node_id": "n000095",
+                "range": {
+                  "start_unit_id": "p000067",
+                  "end_unit_id": "p000067",
+                  "start_page": 67,
+                  "end_page": 67
+                },
+                "summary": "This section defines the IEG script elements around `validate-save-and-exit`, `ieg-sub-script`, and `section`. It explains that `validate-save-and-exit=\"false\"` skips page and mandatory validation when Save and Exit is selected, defaulting to `true`. It also notes that subscripts are standalone scripts that can be included at script level or inside a section, but section-included subscripts must not contain sections. The `section` element represents a page section and can be made read-only via `read-only-expression`."
+              },
+              {
+                "title": "set-attribute",
+                "level": 3,
+                "children": [],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000068",
+                  "end_unit_id": "p000068",
+                  "start_page": 68,
+                  "end_page": 68
+                },
+                "summary": "Defines the `set-attribute` element for `question-page` scripts. It lets you set an entity attribute value in the Datastore without prompting the user, useful when the value is already known from context. Example shown sets `Person.isPrimary` to `true` on an “AboutYouPage” for the primary person. Attributes: `id` names the entity attribute to set, and `expression` provides the value expression."
+              }
+            ],
+            "node_id": "n000090",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000068",
+              "start_page": 65,
+              "end_page": 68
+            },
+            "summary": "Covers IEG “structural, administrative, and other” script elements not used for display or flow control: callout, identifier, ieg-script, ieg-sub-script, section, and set-attribute. Explains callout behavior, placement, and Datastore access; identifier as mandatory script key fields; ieg-script root attributes for navigation/UI settings and validation; ieg-sub-script inclusion rules and progress attributes; section attributes for read-only and visibility plus child structure; and set-attribute for silently writing known entity values to the Datastore."
+          },
+          {
+            "title": "4.5 IEG elements and attributes supported for the summary PDF",
+            "level": 2,
+            "children": [],
+            "node_id": "n000097",
+            "range": {
+              "start_unit_id": "p000069",
+              "end_unit_id": "p000070",
+              "start_page": 69,
+              "end_page": 70
+            },
+            "summary": "Describes which IEG script elements and attributes are supported when generating summary PDFs with IntakeApplicationPDFTemplate.xsl. It explains the required script structure: a summary page must be last, with no nested summary pages, no missing cluster on the final summary page, and no summary pages inside conditions. It then lists supported summary-page, cluster, container, title, question, divider, list, relationship-summary-list, and condition meta-display elements, along with key supported attributes such as entity, criteria, grouping-id, id, multi-select, and list-question."
+          }
+        ],
+        "node_id": "n000025",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000070",
+          "start_page": 19,
+          "end_page": 70
+        },
+        "summary": "Section 4 is a reference for IEG script elements: meta-display, display, flow-control, and structural/administrative elements. It covers layout controls like code-table hierarchy, cluster label/column/width settings, display elements such as add-link, alias, argument, cluster, and summary-page, and flow elements including condition, loop, and validation. It also documents callout, identifier, ieg-script, ieg-sub-script, section, and set-attribute. The final part lists which elements/attributes are supported when generating summary PDFs, including required summary-page placement and supported cluster/container/question/list structures."
+      },
+      {
+        "title": "5 Operations supported for IEG expressions",
+        "level": 1,
+        "children": [
+          {
+            "title": "5.1 Bracketing of Terms",
+            "level": 2,
+            "children": [],
+            "node_id": "n000099",
+            "range": {
+              "start_unit_id": "p000071",
+              "end_unit_id": "p000071",
+              "start_page": 71,
+              "end_page": 71
+            },
+            "summary": "Explains that in IEG expressions, bracketing terms can change calculation results and should be used to force operations to happen first, e.g. 5 * (3/4). Also notes that expression evaluation follows Java operator precedence, with parentheses highest, then multiplicative, additive, relational, and equality operators. This section is mainly about how brackets affect expression results and how they interact with precedence."
+          },
+          {
+            "title": "5.2 Operator Precedence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000100",
+            "range": {
+              "start_unit_id": "p000071",
+              "end_unit_id": "p000071",
+              "start_page": 71,
+              "end_page": 71
+            },
+            "summary": "Defines IEG expression operator precedence, which follows Java language rules. Lists precedence order: parentheses first, then multiplicative (*, /), additive (+, -), relational (<, <=, >, >=), and equality (==, !=), all left-to-right associative. Useful for understanding how expressions are evaluated when brackets and operators are combined."
+          },
+          {
+            "title": "5.3 Data Types and Supported Operations",
+            "level": 2,
+            "children": [],
+            "node_id": "n000101",
+            "range": {
+              "start_unit_id": "p000071",
+              "end_unit_id": "p000071",
+              "start_page": 71,
+              "end_page": 71
+            },
+            "summary": "This section describes which operations are explicitly supported between IEG expression data types and notes that some additional operations may work when an attribute’s underlying type can be converted to a supported type. It gives an example where IEG_INT8 plus IEG_MONEY is allowed because IEG_INT8 converts to IEG_DOUBLE, and IEG_DOUBLE with IEG_MONEY supports addition. Useful for checking type compatibility in expressions."
+          },
+          {
+            "title": "5.4 Custom functions in expressions",
+            "level": 2,
+            "children": [],
+            "node_id": "n000102",
+            "range": {
+              "start_unit_id": "p000072",
+              "end_unit_id": "p000073",
+              "start_page": 72,
+              "end_page": 73
+            },
+            "summary": "Explains custom functions in IEG expressions. Built-in functions include setFullNameAge and isNotNull. Custom functions are server-side only, so they cannot be used in client-evaluated expressions such as dynamically conditional clusters, and they cannot take variable numbers of parameters. Gives an example custom function setFullNameAge, including CustomFunctionMetaData.xml, required Person schema updates, and a callout usage example. Also notes placing fullNameAge as the first list column to support add-link generation."
+          },
+          {
+            "title": "5.5 IntakeProgramType and ScreeningProgramType in Expressions",
+            "level": 2,
+            "children": [],
+            "node_id": "n000103",
+            "range": {
+              "start_unit_id": "p000074",
+              "end_unit_id": "p000076",
+              "start_page": 74,
+              "end_page": 76
+            },
+            "summary": "IEG scripts can reference IntakeProgramType and ScreeningProgramType in expressions, but these are transformed internally into schema entities IntakeProgram and ScreeningProgram. These entities must exist in the datastore under the root Application entity, each with a programTypeReference IEG_STRING attribute. IEG only checks for matching child entities and attribute values; it does not create them. This lets one script support multiple programs, e.g. IntakeProgramType.FoodStamps==true or ScreeningProgramType.CashAssistanceProgram==true. Only these two entity types are supported."
+          }
+        ],
+        "node_id": "n000098",
+        "range": {
+          "start_unit_id": "p000071",
+          "end_unit_id": "p000076",
+          "start_page": 71,
+          "end_page": 76
+        },
+        "summary": "Covers IEG expression features and supported operations. Explains how parentheses affect evaluation, Java-based operator precedence, and type-compatibility rules for comparisons/arithmetic, including date ± integer and some implicit type conversions. Describes custom functions: built-ins, server-side-only restrictions, no variable arguments, and an example setFullNameAge usage. Also documents special IntakeProgramType and ScreeningProgramType expression handling, where they map to IntakeProgram/ScreeningProgram datastore entities with programTypeReference, enabling one script to target multiple programs."
+      },
+      {
+        "title": "6 Controlling the flow of your IEG script",
+        "level": 1,
+        "children": [
+          {
+            "title": "6.1 Natural Flow of an IEG Script",
+            "level": 2,
+            "children": [],
+            "node_id": "n000105",
+            "range": {
+              "start_unit_id": "p000077",
+              "end_unit_id": "p000077",
+              "start_page": 77,
+              "end_page": 77
+            },
+            "summary": "Explains the natural navigation order of an IEG script: pages display in definition order, Next advances within a section, then to the section summary, then to the next section’s first page, and finally to the configured finish page. Back retraces steps and may discard unsaved input, while Save and Exit saves (if valid) and goes to a quit page. Also notes optional Exit behavior and that section links in the left panel enable jumping among completed sections."
+          },
+          {
+            "title": "6.2 Controlling the Flow using Sections",
+            "level": 2,
+            "children": [],
+            "node_id": "n000106",
+            "range": {
+              "start_unit_id": "p000077",
+              "end_unit_id": "p000077",
+              "start_page": 77,
+              "end_page": 77
+            },
+            "summary": "Explains how script sections control navigation in an IEG script. As users progress with Next, completed sections become enabled in the left-hand sections panel, letting them jump back to any previously completed section’s summary page. Example behavior shows users can move among completed sections, but only up to the furthest point reached in the script. Useful for understanding section-based navigation and how section links are activated during execution."
+          },
+          {
+            "title": "6.3 Controlling the Flow using Sections (Cúram Universal Access Responsive Web Application)",
+            "level": 2,
+            "children": [],
+            "node_id": "n000107",
+            "range": {
+              "start_unit_id": "p000078",
+              "end_unit_id": "p000078",
+              "start_page": 78,
+              "end_page": 78
+            },
+            "summary": "Explains section-based navigation in Cúram Universal Access responsive forms. When enabled, a Go to section menu lets users jump only among sections reached so far, starting with the first section and expanding as they progress. Selecting a section opens the furthest page visited there, or the section summary page if completed; summary pages are recommended for easier editing. The section also notes that changing earlier answers can alter later flow, disabling later sections and forcing linear progression to revalidate the route."
+          },
+          {
+            "title": "6.4 Controlling the Flow using Conditions",
+            "level": 2,
+            "children": [
+              {
+                "title": "Controlling Page Content using Conditional Clusters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000080",
+                  "end_unit_id": "p000080",
+                  "start_page": 80,
+                  "end_page": 80
+                },
+                "summary": "Explains how conditions control page content via conditional clusters inside a page. Covers dynamic clusters that hide/show based on answers from the current page and possibly previous pages, with the constraint that the expression cannot use custom functions and must reference at least one current-page question at the start. Also reiterates related condition usage: nested conditions, combining pages/loops/conditions, and using `isNotNull` in expressions to guard against null values."
+              }
+            ],
+            "node_id": "n000108",
+            "range": {
+              "start_unit_id": "p000079",
+              "end_unit_id": "p000080",
+              "start_page": 79,
+              "end_page": 80
+            },
+            "summary": "Explains how IEG conditions control script flow by showing or skipping pages based on earlier answers, including nested conditions and combinations of pages, loops, and summary pages. Notes that expressions may use Datastore values, but referenced attributes must already have values; mandatory questions, defaults, or set-attribute can prevent nulls. Also mentions custom functions in expressions, with a warning against side-effect functions, and the built-in isNotNull for null checks. Introduces conditional clusters within pages for dynamic hide/show behavior, with restrictions on current-page questions and no custom functions."
+          },
+          {
+            "title": "6.5 Controlling the Flow using Loops",
+            "level": 2,
+            "children": [
+              {
+                "title": "The For-each loop",
+                "level": 3,
+                "children": [],
+                "node_id": "n000111",
+                "range": {
+                  "start_unit_id": "p000081",
+                  "end_unit_id": "p000081",
+                  "start_page": 81,
+                  "end_page": 81
+                },
+                "summary": "Explains the IEG “for-each” loop, the simplest loop type, used to repeat a page or page set once for each instance of a specified datastore entity within its parent entity. Shows a basic example looping through all Person instances and a filtered example using a criteria such as hasIncome==true. Notes that criteria should ideally be a simple Boolean attribute expression so IEG can automatically update it via summary links when nested entities are added or removed."
+              },
+              {
+                "title": "The For loop",
+                "level": 3,
+                "children": [],
+                "node_id": "n000112",
+                "range": {
+                  "start_unit_id": "p000082",
+                  "end_unit_id": "p000082",
+                  "start_page": 82,
+                  "end_page": 82
+                },
+                "summary": "Explains the Cúram “for” loop, which repeats a page a fixed number of times based on a loop-expression (typically an Integer control question). Notes that once entity data exists, the for loop effectively behaves like a for-each loop, so the loop may need an entity and criteria, and pages inside can omit the entity if shared. Recommends using a simple loop expression, warns the control question becomes read-only and may be hidden, and says for loops have limited use compared with while loops for capturing data."
+              },
+              {
+                "title": "The While Loop",
+                "level": 3,
+                "children": [],
+                "node_id": "n000113",
+                "range": {
+                  "start_unit_id": "p000083",
+                  "end_unit_id": "p000083",
+                  "start_page": 83,
+                  "end_page": 83
+                },
+                "summary": "Explains the IEG while loop for cases where the number of iterations is unknown and controlled by a user’s answer inside each iteration. It shows an example for entering multiple income records with a “More income?” control question. Key facts: a while loop always runs at least once, so wrap it in a condition if it should be skipped entirely; it requires an entity attribute and may include criteria; when revisiting already entered data, it behaves like a for-each loop. Also notes while loops can be nested, commonly inside a for-each loop."
+              },
+              {
+                "title": "Controlling the Flow Using Nested Loops",
+                "level": 3,
+                "children": [],
+                "node_id": "n000114",
+                "range": {
+                  "start_unit_id": "p000084",
+                  "end_unit_id": "p000084",
+                  "start_page": 84,
+                  "end_page": 84
+                },
+                "summary": "Explains how to use nested loops in IEG to gather and display hierarchical entities, such as households with Person entities containing Income entities. Recommends choosing loop types based on data availability: use for-each when the outer entity already exists, for when the count is predetermined, and while when the count is unknown. Notes that nested loops can be combined for nested entity creation and nested summary lists, and highlights a control Boolean question pattern for while loops to manage adding more records."
+              }
+            ],
+            "node_id": "n000110",
+            "range": {
+              "start_unit_id": "p000081",
+              "end_unit_id": "p000084",
+              "start_page": 81,
+              "end_page": 84
+            },
+            "summary": "Explains IEG loop-based flow control: for-each, for, while, and nested loops. For-each repeats once per matching datastore entity, optionally filtered by simple Boolean criteria that can auto-update via summary links. For loops repeat a fixed number of times from a control Integer question, but once data exists they behave like for-each; the control question becomes read-only/hidden and loops are limited for data capture. While loops handle unknown counts, use a Boolean control question, always run at least once, and are commonly nested inside for-each loops."
+          },
+          {
+            "title": "6.6 Control-Questions",
+            "level": 2,
+            "children": [],
+            "node_id": "n000115",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000085",
+              "start_page": 85,
+              "end_page": 85
+            },
+            "summary": "This section explains IEG control questions: how to define them with control-question and control-question-type, and how they control loop flow or conditional cluster display. It notes control answers are not persisted, so types must be specified (integer for for-loops, boolean for while/conditions). Control questions are global per script, duplicate IDs can cause issues, and answers generally can’t change once looping starts. It also describes how conditional cluster values are temporarily retained and restored when conditions toggle."
+          },
+          {
+            "title": "6.7 Looping through People",
+            "level": 2,
+            "children": [],
+            "node_id": "n000116",
+            "range": {
+              "start_unit_id": "p000086",
+              "end_unit_id": "p000087",
+              "start_page": 86,
+              "end_page": 87
+            },
+            "summary": "Explains how IEG scripts loop over Person entities using person tabs to show household members and the current person. Notes setup via show-person-tabs=\"true\" on pages inside Person loops, including nested loops. Introduces relationship-page for capturing household relationships, which iterates through entered people and avoids duplicate reciprocal entries. Covers optional caretaker indicator, adding other relationship attributes via clusters, display text behavior, and using relationship-summary-list on summary pages with columns for relationship details."
+          },
+          {
+            "title": "6.8 Customizing Links on Summary Pages",
+            "level": 2,
+            "children": [
+              {
+                "title": "Editing Information in Clusters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000118",
+                "range": {
+                  "start_unit_id": "p000088",
+                  "end_unit_id": "p000088",
+                  "start_page": 88,
+                  "end_page": 88
+                },
+                "summary": "Explains how to make a cluster on a summary page editable by adding an `edit-link` to the cluster, which shows an Edit link beside the cluster title. The `start-page` attribute points to the question page to reopen for edits and must be in the same section as the summary page. Describes the edit flow: if no answers change, the user returns to the summary page; if changes are made, the system checks whether those answers affect conditions or loops before deciding the next step."
+              },
+              {
+                "title": "Editing Records in Lists",
+                "level": 3,
+                "children": [],
+                "node_id": "n000119",
+                "range": {
+                  "start_unit_id": "p000089",
+                  "end_unit_id": "p000089",
+                  "start_page": 89,
+                  "end_page": 89
+                },
+                "summary": "Explains how edit links work for list rows: each row gets its own edit link, usually returning the user to the loop iteration that created that record with prior values prefilled. If changes affect later conditions or expressions, the script re-evaluates flow and may send the user through subsequent pages; otherwise it returns to the summary page. Also covers delete links for list records, including confirmation, deleting the entity and child entities, removing related pages from visited history, and cancel behavior."
+              },
+              {
+                "title": "Deleting Records from Lists",
+                "level": 3,
+                "children": [],
+                "node_id": "n000120",
+                "range": {
+                  "start_unit_id": "p000089",
+                  "end_unit_id": "p000089",
+                  "start_page": 89,
+                  "end_page": 89
+                },
+                "summary": "This section explains Delete links for list rows. Clicking Delete opens a confirmation dialog; OK deletes the related entity from the Datastore, including child entities, and also deletes other entities created on the same page. It notes that pages creating the entity and its children, and certain pages referencing them, are removed from the visited-pages list so they no longer appear during navigation. Cancel closes the dialog with no deletion."
+              },
+              {
+                "title": "Adding Records to Lists",
+                "level": 3,
+                "children": [],
+                "node_id": "n000121",
+                "range": {
+                  "start_unit_id": "p000090",
+                  "end_unit_id": "p000090",
+                  "start_page": 90,
+                  "end_page": 90
+                },
+                "summary": "Explains how to add links in a list that create new records. Use an add-link element on the list and specify start and end pages for the add flow. The start page is usually inside the list’s loop, while the end page can differ if users must complete extra follow-up pages after creating the record. Example: adding a person may redirect the user through relationship pages after the loop to keep related information current."
+              }
+            ],
+            "node_id": "n000117",
+            "range": {
+              "start_unit_id": "p000088",
+              "end_unit_id": "p000090",
+              "start_page": 88,
+              "end_page": 90
+            },
+            "summary": "Explains how to customize summary-page links for editable and maintainable data. Clusters can get an Edit link via `edit-link` with a `start-page` in the same section; users return to the summary page if no relevant changes are made, or the flow continues through later pages if edited answers affect conditions or loops. Lists can have per-row edit links plus Delete links with confirmation, datastore deletion, child-entity cleanup, and visited-page removal. Lists can also use `add-link` to create new records and optionally route users through follow-up pages."
+          }
+        ],
+        "node_id": "n000104",
+        "range": {
+          "start_unit_id": "p000077",
+          "end_unit_id": "p000090",
+          "start_page": 77,
+          "end_page": 90
+        },
+        "summary": "Covers IEG flow control beyond basic page order: natural Next/Back/Save and Exit behavior, section navigation and section enable/disable rules, conditional sections, and how conditions evaluate against control questions or datastore values. Also explains loop types and control questions, person loops and relationship pages, plus summary-page action links for editing, deleting, and adding records, including how edits can alter later flow and disable downstream sections."
+      },
+      {
+        "title": "7 Configuring IEG",
+        "level": 1,
+        "children": [
+          {
+            "title": "7.1 Using the layout element to customize IEG pages",
+            "level": 2,
+            "children": [
+              {
+                "title": "Using the Layout Element to Change the Appearance of Clusters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000124",
+                "range": {
+                  "start_unit_id": "p000091",
+                  "end_unit_id": "p000091",
+                  "start_page": 91,
+                  "end_page": 91
+                },
+                "summary": "Explains how the IEG layout element changes cluster appearance in IEG pages. By default, clusters render all questions in one column in script order, with label and input/value each using 50% of the width. Adding a layout element to a cluster overrides this default to customize question presentation. The section introduces layout-based customization as part of configuring IEG page layout and presentation."
+              },
+              {
+                "title": "Summary of Cluster Layout Options",
+                "level": 3,
+                "children": [],
+                "node_id": "n000125",
+                "range": {
+                  "start_unit_id": "p000092",
+                  "end_unit_id": "p000092",
+                  "start_page": 92,
+                  "end_page": 92
+                },
+                "summary": "Describes cluster layout options in Cúram 8.1.2. Explains how `<layout>` can change label width, layout type, number of columns, and cluster width. `type` supports `flow` (default) and `compact-flow`; `flow` places labels left of inputs, while `compact-flow` places labels above inputs to fit more columns. `num-cols` controls question columns and can also set multiple-select option columns. `width` sets cluster width as a percentage of available page space, defaulting to 100%."
+              },
+              {
+                "title": "Using the Layout Element to Change the Appearance of Multiple-Choice Questions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000126",
+                "range": {
+                  "start_unit_id": "p000093",
+                  "end_unit_id": "p000093",
+                  "start_page": 93,
+                  "end_page": 93
+                },
+                "summary": "Explains how the layout element changes multiple-choice question presentation beyond the default dropdown. It describes using num-cols to show options in columns, num-rows to display a scrollable list box, autosize=true to use the configured optimum column count, and input-alignment to place checkboxes/radio buttons left or right of the option text. Notes that num-cols overrides num-rows when both are set."
+              },
+              {
+                "title": "Summary of Multiple-Choice Question Layout Options",
+                "level": 3,
+                "children": [],
+                "node_id": "n000127",
+                "range": {
+                  "start_unit_id": "p000094",
+                  "end_unit_id": "p000094",
+                  "start_page": 94,
+                  "end_page": 94
+                },
+                "summary": "This section summarizes layout options for codetable-type multiple-choice questions: `num-cols`, `num-rows`, `autosize`, and `input-alignment`, including how rows/columns behave and the default column count property. It also explains how the `container` element controls layout by grouping questions in a cluster or grouping multiple columns in a list, with optional dividers. An example begins showing clustered questions with a shared title."
+              },
+              {
+                "title": "Using the Container Element to Control Layout of Questions and Columns",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Using the Container Element in a Cluster",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000129",
+                    "range": {
+                      "start_unit_id": "p000094",
+                      "end_unit_id": "p000094",
+                      "start_page": 94,
+                      "end_page": 94
+                    },
+                    "summary": "This section explains how the container element controls question and column layout. In a cluster, a container groups multiple questions so they display side by side under one shared title instead of separate labels. It also notes that containers can separate grouped items with divider elements. An example cluster shows a container with a title “Contact number” and questions like country code and area code with custom widths."
+                  },
+                  {
+                    "title": "Using the Container Element in a List",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000130",
+                    "range": {
+                      "start_unit_id": "p000095",
+                      "end_unit_id": "p000095",
+                      "start_page": 95,
+                      "end_page": 95
+                    },
+                    "summary": "Explains how to use a container inside a list to group multiple columns into a single displayed column with the container title as the heading. Shows XML examples for grouping first and last name under a “Full Name” container, and notes that containers can also have a width setting (e.g., 60% of list width). Useful for understanding list column grouping and container layout behavior."
+                  },
+                  {
+                    "title": "Using Dividers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000131",
+                    "range": {
+                      "start_unit_id": "p000096",
+                      "end_unit_id": "p000096",
+                      "start_page": 96,
+                      "end_page": 96
+                    },
+                    "summary": "Explains how to use divider elements inside a container to group questions in a cluster so they display side by side with the container title shown for the group, not each question. Provides XML example using dividers like “+” and “-” between phone number fields, notes that divider text with leading/trailing spaces must be wrapped in tags such as `<span>`, and says question widths should be adjusted to fit divider length."
+                  }
+                ],
+                "node_id": "n000128",
+                "range": {
+                  "start_unit_id": "p000094",
+                  "end_unit_id": "p000096",
+                  "start_page": 94,
+                  "end_page": 96
+                },
+                "summary": "Explains how the container element controls layout for questions and columns. In clusters, a container groups multiple questions side by side under one shared title, while each question still needs its own label for tooltip use. In lists, a container groups multiple columns into one displayed column with the container title as the heading, and can have a width setting. Also covers dividers inside containers to separate grouped questions, including spacing rules and the need to adjust question widths for divider length."
+              }
+            ],
+            "node_id": "n000123",
+            "range": {
+              "start_unit_id": "p000091",
+              "end_unit_id": "p000096",
+              "start_page": 91,
+              "end_page": 96
+            },
+            "summary": "Explains how the IEG `layout` element customizes page presentation for clusters, multiple-choice questions, and containers. Covers cluster options such as `type` (`flow` vs `compact-flow`), `num-cols`, `width`, `label-width`, and `label-alignment`, plus multiple-choice options `num-cols`, `num-rows`, `autosize`, and `input-alignment`. Also describes using `container` to group questions or list columns under one title, set container width, and insert dividers, including spacing and width adjustments."
+          },
+          {
+            "title": "7.2 Using configuration properties to customize IEG pages",
+            "level": 2,
+            "children": [
+              {
+                "title": "Changing the Look-and-Feel of the Pages",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring the Page Banner",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000134",
+                    "range": {
+                      "start_unit_id": "p000097",
+                      "end_unit_id": "p000097",
+                      "start_page": 97,
+                      "end_page": 97
+                    },
+                    "summary": "This section lists page banner configuration properties for IEG pages. It explains how to control banner visibility, system and application titles, banner background and border colors/images, text color and weight, print link text/description, and logo image/alt text. These properties are set through configuration files rather than CSS, using values that override defaults in ieg-config.properties."
+                  },
+                  {
+                    "title": "Configuring the Progress Panel",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000135",
+                    "range": {
+                      "start_unit_id": "p000098",
+                      "end_unit_id": "p000098",
+                      "start_page": 98,
+                      "end_page": 98
+                    },
+                    "summary": "This section lists configuration properties for the Progress Panel’s appearance. It covers border color, background color, and background image settings, and presents them in a table of progress panel configuration properties. Useful if you need to customize the visual styling of the progress panel in Cúram 8.1.2."
+                  },
+                  {
+                    "title": "Configuring the Persons Tab Panel",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000136",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "This section lists configuration properties for the Persons Tab Panel in IEG. It covers visual settings such as background color/image, border color, tab width, and maximum displayed name length, plus behavior for hiding the panel when only one person is shown. It appears alongside nearby progress-panel and action-link settings, but the main focus here is person tab appearance and layout customization."
+                  },
+                  {
+                    "title": "Configuring the Action Links",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000137",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000099",
+                      "start_page": 99,
+                      "end_page": 99
+                    },
+                    "summary": "Introduces the “Action Links” configuration area and identifies the available action links in IEG: the Edit link on a cluster and the Add link on a list. This section follows UI configuration properties for progress and person tabs panels, so it likely continues the set of interface customization options."
+                  },
+                  {
+                    "title": "Configuring Relationship Pages",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000138",
+                    "range": {
+                      "start_unit_id": "p000100",
+                      "end_unit_id": "p000100",
+                      "start_page": 100,
+                      "end_page": 100
+                    },
+                    "summary": "Explains how to configure relationship pages through properties that control standard text and layout. Key settings define the three relationship capture items (from/subject person, type input control, to/object person), the domain used to populate the relationship type input, and labels for the subject and type columns in relationship summary lists. This section follows a table of action-link configuration properties and is useful if you need to customize relationship page wording or structure."
+                  },
+                  {
+                    "title": "Configuring the Help Panel",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000139",
+                    "range": {
+                      "start_unit_id": "p000101",
+                      "end_unit_id": "p000101",
+                      "start_page": 101,
+                      "end_page": 101
+                    },
+                    "summary": "Lists help panel configuration properties for customizing the UI. Covers link text and titles, whether descriptive text appears beside the Help link, and visual styling for the expanded panel and bottom Close area, including background colors, text colors, background image, and open/selected icons. Useful for adjusting the help panel’s look and behavior in Cúram IEG."
+                  },
+                  {
+                    "title": "Configuring the Page Title Panel",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000140",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000102",
+                      "start_page": 102,
+                      "end_page": 102
+                    },
+                    "summary": "This section lists configuration properties for the page title panel’s appearance. It covers border color, background color and image, title and description text colors, and the width of the image cell. Useful if you need to customize the look and feel of page headers in Cúram."
+                  },
+                  {
+                    "title": "Configuring the Navigation Panel",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000141",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "Explains how to customize the navigation panel’s appearance and labels via configuration properties. Covers button background images/colors, hover/corner images, selected/active states, and text/alt descriptions for Back, Exit, Save and Exit, and Next buttons. Includes a table of available `navpanel.*` properties for look-and-feel changes."
+                  },
+                  {
+                    "title": "Configuring Lists",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000142",
+                    "range": {
+                      "start_unit_id": "p000103",
+                      "end_unit_id": "p000103",
+                      "start_page": 103,
+                      "end_page": 103
+                    },
+                    "summary": "This section introduces configuration properties for the navigation panel and begins the list of settings that control its look and behavior. It covers button styling (background images/colors, hover, selected, active states), button text labels for Back/Exit/Save and Exit/Next, and their description/alt text. It then starts a new subsection on configuring lists, indicating similar look-and-feel properties for list UI elements follow."
+                  },
+                  {
+                    "title": "Other Page Layout Configurations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000143",
+                    "range": {
+                      "start_unit_id": "p000104",
+                      "end_unit_id": "p000106",
+                      "start_page": 104,
+                      "end_page": 106
+                    },
+                    "summary": "Lists and other IEG page layout settings configurable via properties. Covers list styling as clusters, list title colors/borders, add-link icons, and general page UI options such as font family, mandatory-field icon, cluster and message panel colors, dropdown/list text, validation and navigation/session timeout messages, matrix and policy/legislation images, adult age threshold, date field width, delete dialog text, label alignment, cluster edit-link icons, and a skip link."
+                  }
+                ],
+                "node_id": "n000133",
+                "range": {
+                  "start_unit_id": "p000097",
+                  "end_unit_id": "p000106",
+                  "start_page": 97,
+                  "end_page": 106
+                },
+                "summary": "This section explains how to customize IEG page look-and-feel through configuration properties instead of CSS. It covers banner, progress panel, person tabs, action links, relationship pages, help panel, page title, navigation panel, list styling, and other page layout settings. It includes properties for colors, images, labels, alt text, button states, visibility, validation/session messages, date and list behavior, matrix/policy/legislation icons, adult age threshold, label alignment, and skip/edit/add link icons."
+              },
+              {
+                "title": "Changing the look-and-feel of Universal Access scripts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000144",
+                "range": {
+                  "start_unit_id": "p000107",
+                  "end_unit_id": "p000109",
+                  "start_page": 107,
+                  "end_page": 109
+                },
+                "summary": "This section lists Universal Access IEG configuration properties for changing script appearance. It covers look-and-feel settings for help panels, section panels, field-level help, page buttons, relationship pages, question pages, clusters, and other labels. Properties include colors, fonts, weights, borders, background colors, images, and link text for the external (UA) interface. It also notes transition animation control and default informational message text/images. Useful if you need UI theming or to customize UA script presentation."
+              },
+              {
+                "title": "Configuring the Layout of the Sections Panel",
+                "level": 3,
+                "children": [],
+                "node_id": "n000145",
+                "range": {
+                  "start_unit_id": "p000110",
+                  "end_unit_id": "p000111",
+                  "start_page": 110,
+                  "end_page": 111
+                },
+                "summary": "Explains how to configure the IEG sections panel layout. By default it is vertical, but setting `sectionspanel.style=horizontal` displays it across the top. Lists universal styling properties for both layouts, including border/background colors, selected and enabled section styling, and alt text for completed/current sections. Also details horizontal-only settings such as maximum visible sections, arrow navigation step, title truncation, text sizing and margins, bar colors, box dimensions, arrow icons/titles, and navigation width."
+              },
+              {
+                "title": "Configuring the Layout of the IEG Player in Modal Dialogs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000146",
+                "range": {
+                  "start_unit_id": "p000112",
+                  "end_unit_id": "p000112",
+                  "start_page": 112,
+                  "end_page": 112
+                },
+                "summary": "This section explains how to configure the IEG Player when it opens in a modal dialog instead of a tab/page. It covers modal-specific properties for sizing the dialog, hiding the title, anchoring navigation at the bottom, dismissing the dialog on Exit, and setting button images. It also notes these settings are defined in the script’s config file and default to ieg-config.properties. The section begins introducing high contrast mode support in the Universal Access UI."
+              },
+              {
+                "title": "Configuring the IEG Player for High Contrast Mode in the Universal Access UI",
+                "level": 3,
+                "children": [],
+                "node_id": "n000147",
+                "range": {
+                  "start_unit_id": "p000112",
+                  "end_unit_id": "p000113",
+                  "start_page": 112,
+                  "end_page": 113
+                },
+                "summary": "Explains how to configure IEG Player high contrast mode in the Universal Access (external) UI. High contrast is enabled only when the user preference is switched on, and custom IEG script configuration files must include the relevant properties, defaulting to ieg-config.properties. Lists properties for section panel icons/colors, page title font color, cluster title color, validation error icon, help panel and dialog help styling, add-link icons, and matrix selection icons."
+              }
+            ],
+            "node_id": "n000132",
+            "range": {
+              "start_unit_id": "p000097",
+              "end_unit_id": "p000113",
+              "start_page": 97,
+              "end_page": 113
+            },
+            "summary": "This section explains how to customize IEG page look-and-feel and layout using configuration properties instead of CSS, with defaults in ieg-config.properties and overrides via a script’s config-properties file. It covers banner, progress, person tabs, action links, relationship pages, help panel, page title, sections panel (vertical/horizontal), modal dialog layout, and Universal Access/high contrast styling. Useful when you need to change colors, images, labels, alt text, button behavior, panel visibility, navigation, or external UI presentation."
+          },
+          {
+            "title": "7.3 Configuration properties to customize IEG widgets",
+            "level": 2,
+            "children": [],
+            "node_id": "n000148",
+            "range": {
+              "start_unit_id": "p000114",
+              "end_unit_id": "p000114",
+              "start_page": 114,
+              "end_page": 114
+            },
+            "summary": "This section lists IEG widget configuration properties used to change default widget behavior. It documents three properties: `dropdown.list.blank.entry.description` for the blank code-table dropdown entry, `dropdown.list.description` for dropdown list descriptions, and `dropdown.expand` to make dropdowns expand on the first mouse click. The page also begins the next topic on configuring currency symbols, placement, and spacing in IEG scripts via locale-specific properties files."
+          },
+          {
+            "title": "7.4 Configuring the currency symbol, placement, and spacing in IEG scripts",
+            "level": 2,
+            "children": [],
+            "node_id": "n000149",
+            "range": {
+              "start_unit_id": "p000114",
+              "end_unit_id": "p000114",
+              "start_page": 114,
+              "end_page": 114
+            },
+            "summary": "Explains how to configure currency display in IEG scripts using localized property files. To render currency symbols in text fields, you must define currency symbol, placement, and spacing rules at development time for each supported locale. Example entries are shown for English and French, with the symbol before the amount in English (“$%1s per month”) and after the amount in French (“%1s $ par mois”)."
+          }
+        ],
+        "node_id": "n000122",
+        "range": {
+          "start_unit_id": "p000091",
+          "end_unit_id": "p000114",
+          "start_page": 91,
+          "end_page": 114
+        },
+        "summary": "Explains how to configure IEG page layout and presentation. Covers the `layout` element for clusters, multiple-choice questions, and containers (columns, widths, label alignment, dividers). Describes using configuration properties for page chrome, sections panel (vertical/horizontal), modal dialogs, and Universal Access high-contrast support. Also lists widget properties for dropdown behavior and shows how locale properties control currency symbol placement/spacing in scripts."
+      },
+      {
+        "title": "8 IEG administration",
+        "level": 1,
+        "children": [
+          {
+            "title": "8.1 Listing all Scripts",
+            "level": 2,
+            "children": [],
+            "node_id": "n000151",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000115",
+              "start_page": 115,
+              "end_page": 115
+            },
+            "summary": "Explains how admin users access the IEG Scripts screen and view the full list of existing IEG scripts. The page provides links for each script to download its XML, delete it, or run test executions. It notes that deleted scripts cannot be recovered, and that running a script requires selecting a suitable Datastore schema defining the data structure used by the script."
+          },
+          {
+            "title": "8.2 Downloading an Existing Script",
+            "level": 2,
+            "children": [],
+            "node_id": "n000152",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000115",
+              "start_page": 115,
+              "end_page": 115
+            },
+            "summary": "Shows how to download an existing IEG script from the administration list. Each listed script has an XML link; opening it lets you save the script locally, edit it, and later re-upload the updated version via “Import IEG Script.” This section is part of IEG administration for accessing and managing scripts."
+          },
+          {
+            "title": "8.3 Removing an Existing Script",
+            "level": 2,
+            "children": [],
+            "node_id": "n000153",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000115",
+              "start_page": 115,
+              "end_page": 115
+            },
+            "summary": "Explains how to remove an existing IEG script from the administration list. Each script has a Delete link that opens a confirmation dialog before permanent removal. Deleted scripts cannot be recovered or accessed again, so deletion should be used only in exceptional cases, ideally after downloading the latest version first."
+          },
+          {
+            "title": "8.4 Running a Script",
+            "level": 2,
+            "children": [],
+            "node_id": "n000154",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000115",
+              "start_page": 115,
+              "end_page": 115
+            },
+            "summary": "This section explains how to test-run an existing IEG script from the administration list. It describes using the “Run” link, selecting a Datastore schema that matches the script’s data structure and types, and then clicking “run script” to launch the IEG Player. It also notes that any data elements saved to or retrieved from the Datastore must be defined in the chosen schema, and that missing schemas should be uploaded through Datastore administration."
+          },
+          {
+            "title": "8.5 Validating a Script",
+            "level": 2,
+            "children": [],
+            "node_id": "n000155",
+            "range": {
+              "start_unit_id": "p000116",
+              "end_unit_id": "p000116",
+              "start_page": 116,
+              "end_page": 116
+            },
+            "summary": "Explains how to validate an IEG script from the IEG Scripts page using the Validate link, including selecting a datastore schema and interpreting validation results. Lists common validation failures such as mismatched list question IDs, missing parent-child relationships or entities, duplicate page IDs, and missing Person/Relationship requirements for relationship summary pages. Also briefly covers uploading/importing a new script, overwriting existing scripts, and read-only mode behavior for reviewing scripts without editing."
+          },
+          {
+            "title": "8.6 Uploading a New Script",
+            "level": 2,
+            "children": [],
+            "node_id": "n000156",
+            "range": {
+              "start_unit_id": "p000116",
+              "end_unit_id": "p000116",
+              "start_page": 116,
+              "end_page": 116
+            },
+            "summary": "Describes how to import/upload a new IEG script from the IEG Scripts page using the “Import IEG Script” link. The upload screen requires selecting the script file and entering a logical name; the script’s id, version, and type are read from the file. If the uploaded script is meant to replace an existing script with the same id, the Overwrite checkbox must be selected or an error occurs."
+          },
+          {
+            "title": "8.7 Read-only Mode",
+            "level": 2,
+            "children": [],
+            "node_id": "n000157",
+            "range": {
+              "start_unit_id": "p000116",
+              "end_unit_id": "p000116",
+              "start_page": 116,
+              "end_page": 116
+            },
+            "summary": "Read-only mode makes all pages immutable during a script execution, letting users (typically caseworkers) review the script via navigation buttons and the sections panel without editing. The mode is enabled by setting the script execution’s read-only flag to true via the public API. If switched back to editable mode, resumed editing returns to the last page the editor was on, not the page the reviewer last visited."
+          },
+          {
+            "title": "8.8 Command Line Development Options",
+            "level": 2,
+            "children": [],
+            "node_id": "n000158",
+            "range": {
+              "start_unit_id": "p000117",
+              "end_unit_id": "p000118",
+              "start_page": 117,
+              "end_page": 118
+            },
+            "summary": "Describes the command-line Import IEG Script option for developers as an alternative to uploading scripts through administration screens. Syntax: `appbuild ieg.importscript -Dscript.file=<path> -Doverwrite=<true|false> -Dgenerate.properties=<true|false>`. `overwrite` defaults to false and blocks import if the script already exists; `generate.properties` defaults to true and controls whether text elements are extracted into the Resource Store properties. If false, only the script definition is inserted."
+          }
+        ],
+        "node_id": "n000150",
+        "range": {
+          "start_unit_id": "p000115",
+          "end_unit_id": "p000118",
+          "start_page": 115,
+          "end_page": 118
+        },
+        "summary": "IEG administration covers managing existing scripts and importing new ones. It explains how admin users access the IEG Scripts page, download a script’s XML, delete scripts permanently, run test executions against a chosen Datastore schema, and validate scripts for common schema/page errors. It also describes importing a new script via the UI, including overwrite behavior, read-only mode for non-editable review, and command-line import options for developers with overwrite and property-generation flags."
+      },
+      {
+        "title": "9 Compliancy for IEG",
+        "level": 1,
+        "children": [
+          {
+            "title": "9.1 Customizing IEG Scripts",
+            "level": 2,
+            "children": [
+              {
+                "title": "Creating a Custom Copy of an IEG Script",
+                "level": 3,
+                "children": [],
+                "node_id": "n000161",
+                "range": {
+                  "start_unit_id": "p000119",
+                  "end_unit_id": "p000119",
+                  "start_page": 119,
+                  "end_page": 119
+                },
+                "summary": "Explains compliant IEG script customization. Key points: customize scripts per the relevant Cúram solution/module guide; IEG resources (text, images, icons) are stored in the Resource Store and should be extracted after changes, with scripts/resources kept under source control. Recommends creating a new copy of a script and updating script ID, type, and version, especially for sub-scripts, which require parent script updates. Also notes IEG Editor edits are in-place; production changes to non-text elements should avoid active scripts, favoring copies for changes that may affect resumed executions."
+              },
+              {
+                "title": "Script Upgrades",
+                "level": 3,
+                "children": [],
+                "node_id": "n000162",
+                "range": {
+                  "start_unit_id": "p000119",
+                  "end_unit_id": "p000119",
+                  "start_page": 119,
+                  "end_page": 119
+                },
+                "summary": "Guidelines for compliant IEG script customization and upgrades. It explains that scripts/resources may be shipped with Cúram modules, should follow module-specific customization rules, and that modified resources should be extracted from the Resource Store and kept under source control. It recommends creating a new copy of a script and updating its ID/version/type, especially for custom sub-scripts. It also warns that the IEG Editor edits scripts in place; in production, avoid in-place non-text changes to executing or resumable scripts and copy instead."
+              },
+              {
+                "title": "Database Representation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "IEG Database Representation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000164",
+                    "range": {
+                      "start_unit_id": "p000120",
+                      "end_unit_id": "p000120",
+                      "start_page": 120,
+                      "end_page": 120
+                    },
+                    "summary": "IEG scripts and application resources are stored in the database as CLOBs and BLOBs, but database builds can overwrite them from file-system DMX files. This section explains how to keep custom artifacts under source control and prepare them for the build process. It gives steps for custom IEG scripts: extract the latest IEGSCRIPTINFO.dmx, copy it to a custom directory, remove unrelated rows, ensure the script identifier matches, rename the CLOB file for readability, and update the script definition path."
+                  },
+                  {
+                    "title": "APPRESOURCE Database Representation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000165",
+                    "range": {
+                      "start_unit_id": "p000120",
+                      "end_unit_id": "p000120",
+                      "start_page": 120,
+                      "end_page": 120
+                    },
+                    "summary": "Application resources are stored in the APPRESOURCE database table as BLOBs and can be overwritten during database builds. Custom IEG scripts, application resources, and their DMX files should be kept on the file system under source control. For custom IEG scripts, the section explains extracting the latest IEGSCRIPTINFO.dmx, copying it to a custom component directory, keeping only the relevant row, and updating the script definition to match the custom script/CLOB name."
+                  }
+                ],
+                "node_id": "n000163",
+                "range": {
+                  "start_unit_id": "p000120",
+                  "end_unit_id": "p000120",
+                  "start_page": 120,
+                  "end_page": 120
+                },
+                "summary": "Explains how IEG scripts and application resources are represented in the database and how database builds can overwrite them from file-system DMX/CLOB/BLOB artifacts. Notes that IEG scripts are stored in IEGSCRIPTINFO as CLOBs and application resources in APPRESOURCE as BLOBs, so custom artifacts should be kept on the file system under source control. Includes steps to prepare a custom IEG script: extract the latest IEGSCRIPTINFO.dmx, copy it to a custom directory, keep only the relevant row, match the script identifier, rename the CLOB for readability, and update the script definition path."
+              },
+              {
+                "title": "Internal IDs and Script Executions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000166",
+                "range": {
+                  "start_unit_id": "p000121",
+                  "end_unit_id": "p000121",
+                  "start_page": 121,
+                  "end_page": 121
+                },
+                "summary": "This section explains how to prepare and rename APPRESOURCE DMX/blob files for custom IEG components, then references the datamanager_config.xml entry needed so build processes pick them up. It also describes IEG internal IDs: scripts are updated on first execution to fill missing internal-id values, and these IDs must remain consistent for resumed executions. Finally, it introduces IEG functional identifiers (FIDS), noting IEGRuntime and IEGPageNavigator as the classes used to run IEG scripts."
+              },
+              {
+                "title": "IEG Functional Identifiers (FIDS)",
+                "level": 3,
+                "children": [],
+                "node_id": "n000167",
+                "range": {
+                  "start_unit_id": "p000121",
+                  "end_unit_id": "p000121",
+                  "start_page": 121,
+                  "end_page": 121
+                },
+                "summary": "Explains IEG script execution internals and functional identifiers. Covers how APPRESOURCE DMX/blob resources are extracted, renamed, copied, and registered in a custom component so the build database can pick them up. Describes internal IDs: they are auto-populated on first script execution, must remain consistent for resumed executions, and should match production in upgrade environments. Introduces the IEG classes that provide functional identifiers for running scripts, especially IEGRuntime and IEGPageNavigator."
+              }
+            ],
+            "node_id": "n000160",
+            "range": {
+              "start_unit_id": "p000119",
+              "end_unit_id": "p000121",
+              "start_page": 119,
+              "end_page": 121
+            },
+            "summary": "Guidelines for compliant IEG script customization and upgrade. Covers when to copy scripts vs edit in place, noting non-text changes to active/resumable scripts should use a new script copy with updated ID/type/version. Explains that scripts/resources are stored in the database but can be overwritten by builds, so custom IEGSCRIPTINFO and APPRESOURCE DMX/CLOB/BLOB artifacts must be extracted, renamed, placed in custom components, and kept under source control. Also covers internal IDs, execution/resume consistency, and IEG runtime/page navigator classes."
+          },
+          {
+            "title": "9.2 Public API",
+            "level": 2,
+            "children": [],
+            "node_id": "n000168",
+            "range": {
+              "start_unit_id": "p000122",
+              "end_unit_id": "p000122",
+              "start_page": 122,
+              "end_page": 122
+            },
+            "summary": "IEG defines a public API intended for use in application code, with changes/removals governed by Cúram customer-impact standards. The JavaDoc is the only source for identifying public classes, interfaces, and methods. The section also warns that IEG contains non-API public classes/interfaces/methods that may change without notice; do not depend on them, call only documented methods, and avoid placing your own classes/interfaces in IEG’s packages unless JavaDoc explicitly allows it."
+          },
+          {
+            "title": "9.3 Identifying the API",
+            "level": 2,
+            "children": [],
+            "node_id": "n000169",
+            "range": {
+              "start_unit_id": "p000122",
+              "end_unit_id": "p000122",
+              "start_page": 122,
+              "end_page": 122
+            },
+            "summary": "This section states that the JavaDoc shipped with IEG is the authoritative source for identifying which classes, interfaces, and methods belong to the public API. It supports the earlier note that IEG has a public API used by application code, and distinguishes it from other public members that are not part of the API and may change or be removed without notice."
+          },
+          {
+            "title": "9.4 Outside the API",
+            "level": 2,
+            "children": [],
+            "node_id": "n000170",
+            "range": {
+              "start_unit_id": "p000122",
+              "end_unit_id": "p000122",
+              "start_page": 122,
+              "end_page": 122
+            },
+            "summary": "IEG includes some public classes, interfaces, and methods that are outside the supported public API. You must not depend on them, call methods other than those documented in the JavaDoc, or place your own classes/interfaces in IEG’s packages unless explicitly allowed. These non-API elements may change or be removed without notice. This section warns that only JavaDoc-defined public API elements are compliant and safe for application use."
+          },
+          {
+            "title": "9.5 Model Customization",
+            "level": 2,
+            "children": [],
+            "node_id": "n000171",
+            "range": {
+              "start_unit_id": "p000123",
+              "end_unit_id": "p000126",
+              "start_page": 123,
+              "end_page": 126
+            },
+            "summary": "IEG model files should not be customized because customization is unsupported. This section identifies the protected file types and names: .emx and .efx files, including IntelligentEvidenceGathering.emx, IEGScriptAdmin_cat.efx, and ResourceAdmin_cat.efx."
+          }
+        ],
+        "node_id": "n000159",
+        "range": {
+          "start_unit_id": "p000119",
+          "end_unit_id": "p000126",
+          "start_page": 119,
+          "end_page": 126
+        },
+        "summary": "Guidelines for compliant IEG use. Covers how to customize scripts safely: prefer copying to a new script with new ID/type/version for non-text changes, keep scripts/resources under source control, and extract custom IEGSCRIPTINFO/APPRESOURCE DMX, CLOB, and BLOB artifacts into custom components. Explains internal IDs must stay consistent for resumed executions and identifies runtime/page navigation FIDs. Defines the supported public API via shipped JavaDoc, warns against using non-API classes/packages, and states that delivered .emx/.efx model files must not be customized."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

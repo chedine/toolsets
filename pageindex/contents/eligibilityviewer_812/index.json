@@ -1,0 +1,242 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "d2faec18fe059677",
+    "title": "Cúram 8.1.2 Implementing the Eligibility Viewer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/EligibilityViewer_812.pdf",
+    "source_type": "pdf",
+    "sha256": "d2faec18fe059677a62ffabd2b70ba1a5070a300766ea20765fe20d6be403b18",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:25:26+00:00",
+    "page_count": 16,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/EligibilityViewer_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Implementing the Eligibility Viewer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000016",
+      "start_page": 1,
+      "end_page": 16
+    },
+    "summary": "Guide for implementing the Cúram 8.1.2 Eligibility Viewer (EV) for integrated cases. Covers the EV purpose and navigation tabs, the required SPI (`TimelineCalendarDataRetrieval`) and returned data model (`TimelineCalendarRow`, `TimelineCalendarTimeline`, `TimelineCalendarIntervalValue`), and binding the SPI to an integrated case type with Guice/`MODULECLASSNAME.dmx`. Explains how to add the EV navigation page (`EligibilityGraph`), enable it with `curam.core.timelinecalendar.enabled=true`, and configure display settings in `TimelineCalendar.properties` (row titles and interval colors). Also describes key events: customizing evidence-based event messages and adding non-evidence-based key events using separate retriever interfaces. Front matter, notices, privacy policy, and trademarks are included but are mostly legal/reference material.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section on page 15 before using the information or the supported product. It also shows the Merative US L.P. copyright dates (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000014",
+          "start_page": 5,
+          "end_page": 14
+        },
+        "summary": "This section covers how to implement and configure the Cúram Eligibility Viewer (EV). It explains the SPI data model (TimelineCalendarRow, TimelineCalendarTimeline, TimelineCalendarIntervalValue), binding the SPI to an integrated case type, adding the EV tab to navigation, enabling it via `curam.core.timelinecalendar.enabled`, and configuring colors and row-title visibility in `TimelineCalendar.properties`. It also describes key events: customizing evidence-based event messages and defining non-evidence-based events through separate Guice-bound retrievers."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Legal/boilerplate page covering sample data disclaimer, copyright license for sample source programs, and warranty/liability limits. It points to Merative’s privacy policy URL and lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. Useful if you need licensing, reuse rights, privacy policy link, or trademark information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands, plus a privacy policy link. It states that sample programs may be copied, modified, and distributed for API-related development under the Merative Client Agreement, but are provided “AS IS” without warranty or liability. Also notes that example names are fictitious and includes trademarks for IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000015",
+          "end_unit_id": "p000015",
+          "start_page": 15,
+          "end_page": 15
+        },
+        "summary": "Legal notices for Merative publications: permits personal noncommercial or internal enterprise use only if proprietary notices are preserved, forbids derivative/distributed use outside those limits, and reserves withdrawal of permission. Disclaims all warranties, liability, and endorsements; warns about export controls and patents. Notes that third-party product info is unverified and external sites are at your own risk. Includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 document. Lists front matter (Note, Edition), then Chapter 1, “Implementing the Eligibility Viewer,” with subsections on SPI implementation, data format, binding to an integrated case type, add/enable/configure steps, and key events. Also includes Notices, Privacy policy, and Trademarks. Useful as a navigation index rather than substantive content."
+      },
+      {
+        "title": "1 Implementing the Eligibility Viewer",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Implementing a service provider interface for the Eligibility Viewer",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Eligibility Viewer data format",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000010",
+                  "start_page": 9,
+                  "end_page": 10
+                },
+                "summary": "Describes the Eligibility Viewer (EV) data format returned by the service provider interface for person or integrated case eligibility. Explains that EV uses a row per person with a title and a list of non-overlapping eligibility timelines, each containing timeline intervals. Details required fields: row ID must be the person’s ConcernRoleID; row title is the person label; interval ID is used to color the eligibility bar and should be populated by product type; interval title shows the eligible product name; categoryCode is optional."
+              },
+              {
+                "title": "Binding the SPI to your integrated case type",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to bind a Service Provider Interface (SPI) to an integrated case type so it can be discovered and injected. The procedure is to create a Guice AbstractModule, define a MapBinder<String, TimelineCalendarDataRetrieval> (or similar SPI), add the implementation keyed by the integrated case type, and register the module in the MODULECLASSNAME.dmx file. The section then begins instructions for adding and enabling the Eligibility Viewer in the navigation file, including adding an Eligibility tab/page for the integrated case."
+              },
+              {
+                "title": "Add, Enable, and Configure the Eligibility Viewer",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Adding and enabling an Eligibility tab to your navigation file",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000012",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "Explains how to add the Eligibility Viewer tab to an Integrated Case navigation file and enable it for the case type. Notes that EV shows eligibility in a timeline calendar widget plus an accessible list view. The section begins the procedure by adding a navigation-page entry with id “EligibilityGraph,” page-id “IntegratedCase_timelineCalendarGraph,” and title “Page.Title.EligibilityGraphView.”"
+                  },
+                  {
+                    "title": "Configuring the Eligibility Viewer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000013",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to configure the Eligibility Viewer via `TimelineCalendar.properties` in the Application Resource, either at runtime or build time. Key properties include `{Integrated Case Type}.showRowTitles` to show/hide person names on the Person tab, `{Product Type}.innerColor` for interval borders, and `{TimelineCalendarIntervalValue.id}.outerColor` for interval fill colors. Also notes enabling the Eligibility tab by setting `curam.core.timelinecalendar.enabled=true` and adding `Page.Title.EligibilityGraphView=Eligibility` in the Integrated Case navigation properties."
+                  }
+                ],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Explains how to add and enable the Eligibility Viewer for an Integrated Case: add the `EligibilityGraph` navigation-page entry, set `Page.Title.EligibilityGraphView=Eligibility`, and enable the tab with `curam.core.timelinecalendar.enabled=true`. Also covers configuring the viewer through `TimelineCalendar.properties` at runtime or build time, including row-title visibility and interval border/fill colors for product types and interval IDs. Includes that EV shows eligibility in a timeline calendar widget and an accessible list view."
+              },
+              {
+                "title": "Implementing key events for the Eligibility Viewer",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Customizing the display of evidence-based key events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to customize evidence-based key event display in the Eligibility Viewer. It describes the default key event message format, the controlling message key (BpoTimelineCalendarKeyEvents.INF_TIMELINE_KEY_EVENTS), and notes that date formatting depends on Bootstrap.properties or ApplicationConfiguration.properties. To customize for a specific evidence type, create a class implementing TimelineCalendarKeyEventsDataRetrival and bind it with Guice MapBinder using the evidence type as the key."
+                  },
+                  {
+                    "title": "Customizing the display of non-evidence-based key events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000016",
+                      "start_page": 14,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to customize display of non-evidence-based key events in Cúram 8.1.2. It notes that eligibility-affecting events can be generated from non-evidence changes (e.g., turning 65) and should be configured per integrated case type. The procedure is to create a class implementing `curam.core.sl.util.timelinecalendar.impl.TimelineCalendarKeyEventsRulesDataRetrival` and bind it with a Guice `MapBinder`, using the integrated case type as the key."
+                  }
+                ],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000016",
+                  "start_page": 13,
+                  "end_page": 16
+                },
+                "summary": "Explains how to implement and customize Eligibility Viewer key events. Key events mark eligibility-affecting changes on the timeline and may come from evidence-based or non-evidence-based changes. For evidence-based events, it documents the default message format, the controlling message key `BpoTimelineCalendarKeyEvents.INF_TIMELINE_KEY_EVENTS`, date-format dependencies, and using `TimelineCalendarKeyEventsDataRetrival` with Guice `MapBinder` keyed by evidence type. For non-evidence-based events, it shows using `TimelineCalendarKeyEventsRulesDataRetrival` keyed by integrated case type."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000016",
+              "start_page": 9,
+              "end_page": 16
+            },
+            "summary": "Explains how to implement the Eligibility Viewer SPI for an integrated case: create a `TimelineCalendarDataRetrieval` class, return EV data in the required row/timeline/interval format, and bind it with Guice via a `MapBinder` plus `MODULECLASSNAME.dmx`. Also covers adding the `EligibilityGraph` navigation page and enabling EV with `curam.core.timelinecalendar.enabled=true`. Describes runtime/build-time configuration in `TimelineCalendar.properties` and how to implement evidence-based and non-evidence-based key events via their respective retrieval interfaces."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000016",
+          "start_page": 9,
+          "end_page": 16
+        },
+        "summary": "Explains how to implement and enable the Eligibility Viewer (EV) for integrated cases. Covers creating a `TimelineCalendarDataRetrieval` SPI that returns row/timeline/interval eligibility data, binding it with Guice `MapBinder` and `MODULECLASSNAME.dmx`, and adding the `EligibilityGraph` navigation page plus `curam.core.timelinecalendar.enabled=true`. Also describes EV configuration via `TimelineCalendar.properties` (row titles and interval colors) and how to implement key events for evidence-based and non-evidence-based changes using their respective retrieval interfaces."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

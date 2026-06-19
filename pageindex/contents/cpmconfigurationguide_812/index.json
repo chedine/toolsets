@@ -1,0 +1,1045 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "20261a56811a0c4b",
+    "title": "Cúram 8.1.2 Provider Management Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CPMConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "20261a56811a0c4b8a6fa671d6c5f5e3f115f00bfce2ead555983fdd57cd3623",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:30:46+00:00",
+    "page_count": 30,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CPMConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Provider Management Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000030",
+      "start_page": 1,
+      "end_page": 30
+    },
+    "summary": "Front matter and the full “Configuring Provider Management” chapter for Cúram 8.1–8.1.2. It explains CPM runtime configuration for provider administration (external access security, provider email server, contract/license renewal notifications, training/certification setup), service offering administration (registration, financials, grouping/search, approval criteria, keywords/evidence, attendance and absence tracking, payment rules), service evaluation criteria, CPM batch processes, and a detailed summary of application properties. The properties cover attendance, financials, facility characteristics, contracts, licenses, sequential reference numbers, wait list review timing, reservation grace periods, infrastructure/email, case parameters, and dynamic SQL. Pages 29–30 are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section before using the product or its documentation. It identifies the copyright holder as Merative US L.P. and shows the copyright years 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the CPM guide: states applicability to Cúram 8.1, 8.1.1, and 8.1.2 and shows the contents for the Provider Management configuration chapter. The section introduces CPM configuration for provider administration, service offerings, evaluation criteria, batch processes, and application properties. It lists key topics such as external access security, email server, renewal periods, service rates, attendance/placement-based payments, training requirements, financial settings, and payslip batch controls."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers CPM Provider Management configuration: service offering grouping and search; approval criteria and preventing incidental authorization; keywords/evidence; attendance tracking, roster generation, grace periods, reminders, defaulting units, absence reasons, and attendance-required payment; service evaluation criteria setup. Also describes CPM batch processes like placement evidence creation, reservation expiry, payslip generation, roster/reminder jobs, payment correction activation, and taxonomy import/publish/extraction. Ends with a summary of key application properties for external access, attendance, financials, and manual approval settings."
+          },
+          {
+            "title": "Edition — pages 25-28",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000028",
+              "start_page": 25,
+              "end_page": 28
+            },
+            "summary": "This section lists Cúram CPM application properties for Provider Management and related settings. It covers financial/payment behavior (provider IDs, invoice withholding events, unlimited payable amounts, future-dated invoices/rosters, CPMSysAdmin, reassessment optimization), facility settings (ethnicity/religion characteristics), contract and license renewal notifications, sequential reference number ranges, wait list review timing, reservation grace period, provider email server and proximity units, case registrar hooks, and CPM dynamic SQL enablement. Useful for configuring CPM operational, financial, and scheduling behavior."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000028",
+          "start_page": 5,
+          "end_page": 28
+        },
+        "summary": "Front matter and the full “Configuring Provider Management” chapter for Cúram 8.1–8.1.2. It covers provider administration (external access security, provider email server, contract/license renewal notifications, training/certification setup), service offering administration (registration, financials, grouping/search, approval criteria, keywords/evidence, attendance tracking, absence reasons, payment rules), service evaluation criteria, CPM batch processes, and a detailed table of CPM application properties for attendance, financials, facility, contracts, licenses, reference numbers, wait list, reservation grace period, infrastructure, case parameters, and dynamic SQL."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000030",
+              "start_page": 30,
+              "end_page": 30
+            },
+            "summary": "This section contains legal notices: a privacy policy link, copyright/license terms for sample programs, warranty and liability disclaimers, and a trademarks list for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It notes that sample data and names are fictitious and that the examples are provided “AS IS” without warranty."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000030",
+              "start_page": 30,
+              "end_page": 30
+            },
+            "summary": "This section gives legal notices for the document: fictitious example names, sample code usage permissions and disclaimers, the Merative privacy policy link, and trademark ownership statements for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. It also notes that other names may be trademarks of third parties and includes Merative copyright years 2012, 2024."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000029",
+          "end_unit_id": "p000029",
+          "start_page": 29,
+          "end_page": 29
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise reproduction is allowed only with proprietary notices preserved, but redistribution, derivative works, and external use require Merative consent. It disclaims all warranties (“AS IS”), limits rights to the text and software, notes export-law compliance, and warns that third-party product information is unverified. It also states non-Merative website links are for convenience only, not endorsement, and includes Merative copyright © 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the CPM Provider Management guide, listing sections and page ranges. It covers Provider Administration, Service Offering Administration, Service Evaluation Configuration, CPM Batch Processes, and Summary of CPM Application Properties, with subsections such as registration, financials, attendance, renewals, taxonomy, and various application settings. Includes front matter entries (Note, Edition) and end matter (Notices, Privacy policy, Trademarks)."
+      },
+      {
+        "title": "1 Configuring Provider Management",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Provider Administration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Securing CPM External Access",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how CPM external access is secured via the application property `curam.custom.externalaccess.implementation`, which points to the CPM external access security implementation class (`curam.cpm.eua.facade.impl.CPMExternalAccessSecurity`). This class authenticates external users and controls authorization for specific application areas. Example given: external provider users can view provider offering details but cannot modify or cancel offerings. Relevant for understanding CPM security customization and external provider permissions."
+              },
+              {
+                "title": "Defining the Email Server for Providers and Provider Groups",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Defines the email server setting for provider/provider group communications. The property curam.cpmprovider.cpmprovideremailserver controls email sending and receiving for providers and provider groups; customers should set their own server because the default is smtp.curamsoftware.com. The excerpt also notes related configuration topics on contract and license renewal notifications, training course setup, and training credits, but this node’s core focus is provider email server configuration."
+              },
+              {
+                "title": "Configuring the Renewal Period for Provider Contracts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains the property curam.contracts.renewal.noofdaysevents, which sets the renewal period in days for all provider contracts. When configured, the system automatically notifies the responsible resource manager and the provider before contract expiry, using the provider’s preferred communication method. Example given: a 6-month contract triggers notifications 7 days before expiration. Default value is 7 days."
+              },
+              {
+                "title": "Setting up the Renewal Period for Provider Licenses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Sets the provider license renewal window via `curam.cpm.license.renewal.noofdaysevents`. This controls how many days before a license renewal a notification is sent to the responsible resource manager and to the provider through their preferred communication method. The default value is 7 days."
+              },
+              {
+                "title": "Setting Up a New Provider Training Course",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Adding Training Credits",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how CPM administrators add training credits to training records so provider members can be awarded for completed trainings. Credits can be configured by provider type and category, and if no type/category is selected, the credit acts as a default. Useful for customizing how training completions are recognized and credited for provider members."
+                  }
+                ],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to set up a new provider training course in CPM: a training type must be recorded so courses can be categorized and searched by resource managers, who then add the training to a provider’s record and select the provider members to attend. It also notes that, after creation, administrators can add training credits to the training record. Credits can be tailored by provider type and category, or used as a default if no type/category is specified."
+              },
+              {
+                "title": "Configuring Training Requirements for Licenses",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Administrators can configure training requirements for license types by adding multiple training requirements per license, marking them as required or recommended. These settings determine whether provider members must complete specific training to be licensed. The section illustrates this with a child care agency needing child development training before licensing. It also distinguishes certifications from trainings: certifications apply to individual provider members, include credits and an issuing body, and can be recorded by resource managers after setup."
+              },
+              {
+                "title": "Configuring Certifications for Provider Members",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to configure certifications for provider members in Provider Management. Certifications are individual-level qualifications, not provider-level settings. Administrators define certification details such as credits required and issuing body, and may set a validity period. Once created in the administration application, resource managers can record the certification for specific provider members. Example given: a CPR Practitioner certification required for Senior Care Ltd. provider members, valid for one year."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Provider Administration describes CPM runtime configuration options for external access security, provider email server setup, contract and license renewal notifications, and training setup. It explains the security implementation property for authenticating/authorizing external provider users, the email server property for provider/provider group communication, renewal-day properties for contracts and licenses, and how administrators define training courses, types, and credits. It also notes that resource managers can add trainings to provider records and select attending members."
+          },
+          {
+            "title": "1.2 Service Offering Administration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Registering Service Offerings",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring Maximum Units and Frequency for a Service Offering",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains how administrators configure a service offering’s maximum units and frequency to limit how many units a client can receive in a period, using an example of 5 physiotherapy units per week. It also briefly covers related setup for service rates and exceptional payment processing options, including fixed, minimum, and maximum rate settings and payment handling choices (fixed amount, not paid, or paid as billed)."
+                  },
+                  {
+                    "title": "Configuring Service Rates",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how administrators configure service offerings, including unit of measure, special condition types, and maximum units/frequency limits. Focuses on service rates: default rates can be fixed or within a minimum/maximum range, with only one active rate per service offering per time period; resource managers may also set provider-level rates, but administrator payment options still apply. Also covers exceptional payment processing options—minimum, maximum, and fixed amount payments—where each can be set to fixed amount, not paid, or paid as billed."
+                  },
+                  {
+                    "title": "Configuring Exceptional Payment Processing Options",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains how to configure exceptional payment processing for service offerings during or after registration. It covers three payment options: minimum amount payment, maximum amount payment, and fixed amount payment. For each option, administrators can choose whether the payment is paid at a fixed amount, not paid, or paid as billed. This helps control how exceptional payments are handled for specific service offerings."
+                  },
+                  {
+                    "title": "Basing Payments on Placements or Attendances",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how provider service offering payments can be based on placements or attendance. Placement-based payments require the service unit of measure to be “place” and use a payment frequency; they do not need service authorizations or provider payment requests. Attendance-based payments use rosters and compare authorized planned hours with tracked actual attendance. Once set to placement- or attendance-based, the payment basis cannot be changed. Also notes provider-specific settings can override service-offering defaults."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Registers service offerings in the organization’s service registry. Covers required unit of measure (e.g., place for placements; doses, treatments, visitations for others) and optional special condition types. Administrators can set maximum units and frequency to limit client service use. Also explains default service rates, including fixed or min/max ranges, one active rate per period, and provider-level rates set by resource managers. Finally, it introduces exceptional payment processing options for minimum, maximum, and fixed amounts, each configurable as fixed amount, not paid, or paid as billed."
+              },
+              {
+                "title": "Registering Training Service Offerings",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring Training Requirements for Service Offerings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how to configure training requirements for service offerings so provider members are qualified to deliver client services. It notes that once a training is recorded in the system, it can be added as a required training for a service offering, helping enforce provider eligibility. It follows earlier material on provider payment options and training service offering registration, including placement- and attendance-based payments, provider-specific overrides, and adding training offerings to provider profiles."
+                  }
+                ],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to register training service offerings: use an existing recorded training or create one by entering its name and type, after which it is saved automatically. Training credits can be assigned at registration or later. Once registered, the training service offering can be added to a provider member’s profile in the resource manager application. This section also introduces training requirements for service offerings, which are used to ensure provider members are qualified to deliver client services."
+              },
+              {
+                "title": "Configuring Service Offering Financials",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Indicating if Manual Approval Is Required for Service Invoice Line Items",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Defines the curam.sili.manual.approval property for service invoice line items. Default is TRUE: each line item must be manually approved by a supervisor before it can be used for provider payment; FALSE auto-approves on submission. This section appears within service offering financial configuration and also mentions related payment settings such as product provider identification, withholding notification events, and payslip batch commit-count processing."
+                  },
+                  {
+                    "title": "Identifying the Product Provider Responsible for Paying Providers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains CPM service offering financial configuration, especially the system properties that control provider payment behavior: whether service invoice line items need manual approval before payment, which product provider is used for provider payment product deliveries, whether a notification event is raised when invoice-based payments are withheld, and how the GenerateCPMPayslips batch process commits and whether commit-count processing is enabled. Also notes that these settings are configured during registration and affect how providers are paid."
+                  },
+                  {
+                    "title": "Raising an Event when an Invoice Based Payment is Withheld",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains the financial configuration option curam.financial.RaiseWithholdInvoicepaymentNotificationEvent, which controls whether an event is raised when an invoice-based payment is withheld. The default is TRUE, and the event can trigger further processing. The page also covers related service offering financial settings, including manual approval for service invoice line items, the product provider responsible for provider payments, and batch process settings for generating payslips."
+                  },
+                  {
+                    "title": "Configuring the Generate Payslips Batch Process",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains how to configure CPM financial settings for service offerings, including manual approval of service invoice line items, the product provider responsible for paying providers, and whether an event is raised when an invoice-based payment is withheld. It also describes GenerateCPMPayslips batch settings: commit count controls how many pay slip records are processed before being committed, and a separate property enables or disables commit-count processing."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains service offering financial configuration during registration. Covers system properties for provider payments: whether service invoice line items need supervisor approval before use in payment (default TRUE), which product provider is used for CPM provider payments, whether a notification event is raised when an invoice-based payment is withheld (default TRUE), and how GenerateCPMPayslips batch processing uses commit count and optional commit-count processing to generate payslips."
+              },
+              {
+                "title": "Grouping Service Offerings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how to group similar services into service groups, search service offerings by name or unit of measure, and configure approval criteria for offerings. It describes approval checks such as background checks, licenses, accreditations, home studies, and trainings, with warnings shown when criteria are unmet at both admin and provider levels. It also covers the “Prevent Authorization via Placement” setting, which stops automatic service authorization during placement to avoid duplicate authorizations."
+              },
+              {
+                "title": "Searching and Viewing Service Offerings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how administrators search and view service offerings by name substring or unit of measure, and notes that service groups can bundle similar offerings. It also describes configuring approval criteria for offerings (such as background checks, licenses, trainings, accreditations, and home studies), how warnings appear when criteria are unmet at admin or provider level, and the option to prevent incidental authorization via placement to avoid duplicate service authorizations."
+              },
+              {
+                "title": "Defining Approval Criteria for Service Offerings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how CPM administrators define approval criteria for service offerings, such as background checks, accreditations, home studies, licenses, and trainings. Criteria set at the administrative level apply to all providers offering that service, and warnings appear if requirements are unmet, but users may still continue. Gives examples for child care approvals at both admin and provider levels. Also notes the “Prevent Authorization via Placement” setting, which blocks duplicate service authorizations when a placement is made."
+              },
+              {
+                "title": "Preventing Incidental Authorization of Service Offerings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to prevent duplicate service authorizations by using the “Prevent Authorization via Placement” setting, which blocks creation of a service authorization when a placement is made. This is useful for services authorized through other channels, ensuring authorization is not incidentally duplicated."
+              },
+              {
+                "title": "Keywords",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section notes that keywords can be linked to service offerings to improve searching when adding services to an outcome plan, but this is reserved for future use. It also explains evidence configuration for service offerings and introduces attendance tracking for CPM, including roster generation, manual approval, grace periods, and submission reminders. Key properties covered are `curam.cpm.attendance.service.rostergraceperiod` (default 0) and `curam.cpm.attendance.service.submissionreminderrequired` (default FALSE)."
+              },
+              {
+                "title": "Evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains how evidence is added to service offerings on an outcome plan once an evidence type is configured, including admin options for read-only behavior and whether evidence is stored on the person or the outcome plan. Also covers CPM attendance tracking setup for service offerings, roster generation and approval rules, grace period configuration, and roster submission reminder settings, with related properties and defaults."
+              },
+              {
+                "title": "Setting Up Attendance Tracking for Service Offerings",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Roster Configuration Options",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Setting up the Roster Grace Period",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Defines the roster grace period setting for CPM attendance tracking. The `curam.cpm.attendance.service.rostergraceperiod` property sets how many days after the roster submission date a service offering’s roster may be submitted. Late submissions trigger a workflow event for custom processing. Example: a 15-day grace period makes a 07/05/2008 submission due on 07/20/2008. Default is 0."
+                      },
+                      {
+                        "title": "Indicating if a Roster Submission Reminder is Required",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000016",
+                          "start_page": 16,
+                          "end_page": 16
+                        },
+                        "summary": "Defines the `curam.cpm.attendance.service.submissionreminderrequired` property, which controls whether providers need a roster submission reminder. The default is `FALSE`. This section is a short configuration note within attendance tracking/roster setup, following discussion of roster grace periods and related service offering properties."
+                      },
+                      {
+                        "title": "Setting up the Roster Submission Reminder Period",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000017",
+                          "end_unit_id": "p000017",
+                          "start_page": 17,
+                          "end_page": 17
+                        },
+                        "summary": "Configures the roster submission reminder period for providers. The curam.cpm.attendance.service.rostersubmissionreminderperiod property sets how many days before a roster due date a provider is notified; the resource manager is also notified. Default is 0, and it applies only when submission reminder required is TRUE. The page also notes related attendance configuration: defaulting actual roster units to expected units, attendance payment frequency setup, service-offering attendance tracking options, and payable/deductible absence reason settings."
+                      },
+                      {
+                        "title": "Indicating if Actual Roster Units Should Default to Expected Units",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000044",
+                        "range": {
+                          "start_unit_id": "p000017",
+                          "end_unit_id": "p000017",
+                          "start_page": 17,
+                          "end_page": 17
+                        },
+                        "summary": "Explains the curam.cpm.attendance.service.plannedunitsdefaulted property, which controls whether actual roster units default to expected units. If TRUE, actual units are prefilled for each period so managers need not enter delivered units manually. If delivered units exceed authorized units, the system creates an exception task with a specific subject format. Default is FALSE. This section sits among other provider attendance configuration options such as reminder periods, payment frequencies, attendance tracking, and absence reason settings."
+                      }
+                    ],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains roster configuration for CPM attendance tracking. It covers how rosters support client participation tracking, manual approval at the service-offering level, and two key properties: `curam.cpm.attendance.service.rostergraceperiod` for setting a late-submission grace period (default 0, with a workflow event on late submission) and `curam.cpm.attendance.service.submissionreminderrequired` for enabling provider submission reminders (default FALSE). It is a short configuration node tied to attendance setup."
+                  }
+                ],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains how CPM attendance tracking works for service offerings to record client participation and support provider payment. Covers roster generation for attendance-tracked offerings, including multiple generation frequencies with only one active per period, and optional manual approval at the individual service-offering level. Describes roster grace periods via `curam.cpm.attendance.service.rostergraceperiod` (default 0; late submissions raise a workflow event) and provider submission reminders via `curam.cpm.attendance.service.submissionreminderrequired` (default FALSE)."
+              },
+              {
+                "title": "Attendance Configuration Options",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section covers attendance configuration for provider services. It explains the roster submission reminder period, which controls how many days before a due roster providers and resource managers are notified, and notes it applies only when reminders are enabled. It also describes a setting to default actual roster units to expected units, creating an exception task if delivered units exceed authorization. Finally, it outlines attendance payment frequency setup, service-offering attendance tracking options, and how absence reasons can be configured as payable and/or deductible."
+              },
+              {
+                "title": "Recording Absence Reasons for Service Offerings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section explains how absence reasons are configured for provider service offerings at both organization and service-offering levels. It distinguishes two flags: payable absence reasons trigger payment to the provider for the missed unit, while deductible reasons reduce the service authorization by one unit when the absence is recorded. Examples include family bereavement as payable and unexplained absence as deductible."
+              },
+              {
+                "title": "Indicating if Attendance Is Required for Payment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains the Attendance Required for Payment setting for each service offering. It determines whether proof of client attendance (an attendance roster) is needed before a provider can be paid. If the setting is Yes, payments for attendance-based services paid by invoice or flat-rate contract are not made unless a roster is submitted. The excerpt also begins the Service Evaluation Configuration topic, describing how evaluation criteria are defined in Administration with response types and scored responses."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000017",
+              "start_page": 11,
+              "end_page": 17
+            },
+            "summary": "Covers service offering administration: registering offerings with required unit of measure, special conditions, maximum units/frequency, default and provider-level service rates, and exceptional payment handling. Explains training service offerings and training requirements, plus financial settings such as invoice approval, product provider, withholding notifications, and payslip batch processing. Also includes grouping/searching offerings, approval criteria and preventing duplicate authorizations, keywords/evidence setup, attendance tracking and roster settings, payment frequencies, reminders, defaulting actual units, and payable/deductible absence reasons."
+          },
+          {
+            "title": "1.3 Service Evaluation Configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring Evaluation Criteria",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains how service evaluation criteria are configured in the Administration application. It covers defining each criterion’s name, response type, and score mapping, with examples for boolean and 1–5 rating questions. It also notes that scored responses are used to determine the outcome of a service evaluation, supporting assessment of service delivery quality and provider efficiency."
+              }
+            ],
+            "node_id": "n000048",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "This section explains service evaluation configuration. It describes how evaluation criteria are defined in the Administration application by specifying each criterion’s name, response type, and score mapping. Examples include a boolean question on staff attention and a 1–5 rating on facility cleanliness, with numeric scores assigned to each response. These scored responses are then used to determine the outcome of a service evaluation, supporting assessment of delivery effectiveness and provider efficiency."
+          },
+          {
+            "title": "1.4 CPM Batch Processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "Batch Parameters and Processing Date",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Explains how CPM batch processes use the optional `processingDate` parameter: if supplied, jobs run as of `getCurrentDate()`, otherwise they use system date. Introduces two batch jobs: `RosterSubmissionDue`, which raises `ROSTER.ROSTER_NOT_SUBMITTED_AFTER_DUE_DATE` the day after roster submission due date (based on roster grace period and generation frequency), and `ProcessContractRenewalNotifications`, which raises renewal workflow events for provider/provider group contracts a configured number of days before expiration."
+              },
+              {
+                "title": "RosterSubmissionDue",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Raises the `ROSTER.ROSTER_NOT_SUBMITTED_AFTER_DUE_DATE` event when a roster remains in Normal state one day after its submission due date, triggering notifications. The due date is calculated as the roster period end date plus the configured roster grace period. The batch should usually be scheduled to align with roster generation frequency (daily if multiple frequencies exist). Also notes the batch class/method: `RosterSubmissionDue.generateRosterNotification`."
+              },
+              {
+                "title": "ProcessContractRenewalNotifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Describes the CPM batch process ProcessContractRenewalNotifications, which sends renewal alerts before contract expiry. It raises workflow events ContractNotificationEvent.RENEWPROVIDERCONTRACT and ContractNotificationEvent.RENEWPGCONTRACT when the contract end date is within the configured number of days, set by the curam.contracts.renewal.noofdaysevents system property. It applies to provider and provider group contracts and is intended to run daily."
+              },
+              {
+                "title": "ProcessLicenseRenewalNotifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Batch process that raises workflow event `LicenseNotificationEvent.RENEWLICENSE` to notify users before license expiry. The lead time is configurable via `curam.license.renewal.noofdaysevents`; the job fires when the license end date is within that many days of the current date. It is typically scheduled daily, or can be run relative to a fixed renewal date. The batch class/method is `ProcessLicenseRenewalNotifications.processLicenseRenewalNotifications`."
+              },
+              {
+                "title": "ActivateCPMLiabilityCases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Activates CPM liability cases created during financial processing. It retrieves liability cases for CPM product delivery cases (Invoice, Attendance, Contract, Placement), sends them through activation eligibility processing via ProductDeliveryActivationEligibility.assessEligibilityForCase(CaseIDDetails), and activates eligible cases. Intended to run daily, before GenerateInstructionLineItem and GenerateInstruments. Batch class/method: ActivateCPMLiabilityCases.approveAndActivateCPMCases."
+              },
+              {
+                "title": "CreatePlacementEvidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Creates placement evidence for placements paid based on placement data. It identifies eligible placements, then calculates evidence periods using the placement payment frequency and either the next payment date or the placement end date, whichever comes first. Example: a 1 Mar–15 Apr placement with a 29th payment date yields evidence periods 1 Mar–29 Mar and 30 Mar–15 Apr. New evidence is created only when missing and added to the CPM Placement product delivery case, triggering reassessment."
+              },
+              {
+                "title": "ExpireReservation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "ExpireReservation describes a daily batch process that expires active reservations whose calculated expiry date (reservation start date plus grace period) is earlier than the processing date. It uses the provider-level reservation grace period if set, otherwise the agency-level grace period configured by the system property curam.cpm.reservation.agencygraceperiod. When a reservation expires, the case owner is notified. The batch takes no parameters. Class/method: ExpireReservation.expireReservation."
+              },
+              {
+                "title": "GenerateCPMPayslips",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Generates pay slips for all unissued payslips (invoice-based, attendance-based, placement, and flat-rate contract) from the payslip table. It may use commit-count batching, controlled by system properties curam.cpm.batch.generatepayslips.commitcountenabled and curam.cpm.batch.generatepayslips.commitcount. The batch is intended to run after financial processes GenerateInstructionLineItem and GenerateInstruments. Class/method: GeneratePayslips.generateNewPayslips."
+              },
+              {
+                "title": "GenerateRosters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "GenerateRosters describes a batch process that creates attendance rosters for providers with active service authorizations, i.e. clients expected to receive services in the upcoming period. It also generates a roster line item for each client authorized in the service authorization line item for the roster period. Scheduling is based on the provider’s roster generation frequency (for example, monthly scheduling such as running on the 1st)."
+              },
+              {
+                "title": "RosterSubmissionReminder",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Batch process for roster submission reminders. Generates previously unsent reminder notifications for roster submission using XSL or XML templates for `RosterNotificationEvent.ROSTER_SUBMISSION_REMINDER`. It runs when the “Roster Submission Reminder Required” system property is true, sending reminders a configured number of days before the due date based on `curam.cpm.attendance.service.rostersubmissionreminderperiod`. Intended to run daily. Includes batch class/method `RosterSubmissionReminder.createNotification`."
+              },
+              {
+                "title": "ActivateProviderPaymentCorrectionCases",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Describes the ActivateProviderPaymentCorrectionCases batch process, which finds and activates payment correction cases for CPM financial product deliveries (Invoice, Attendance, Contract, Placement) when rolled-up reassessment is not used. It manages overpayments and underpayments by invoking the paymentCorrection API on cases created for these product delivery cases. The job is intended to run daily before GenerateInstructionLineItem and GenerateInstruments. Batch class/method: ActivateProviderPaymentCorrectionCases.processPaymentCorrectionCases."
+              },
+              {
+                "title": "ImportTaxonomyData",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Describes the ImportTaxonomyData batch process, which imports a taxonomy XML file into the system whenever a new or updated file is available. It compares the incoming taxonomy file’s version number with previously imported versions to determine import handling. Useful if you need details on taxonomy data loading, version checks, or batch process behavior."
+              },
+              {
+                "title": "(deprecated) PublishTaxonomyData",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Deprecated batch process for publishing taxonomy data. Describes `PublishTaxonomyData.publishTaxonomyData(PublishTaxonomyVersionKey)`, which publishes a taxonomy version in “Submitted For Publishing” status, using a key with batch date and taxonomy version ID. It creates related concepts, external system classification terms, taxonomy terms, and their associations (including related terms and old codes). Runs after each new taxonomy import and customization. Also notes the follow-on `TaxonomyDatabaseSearchExtractor.extractTaxonomyData` job that copies taxonomy data to the staging database after publishing."
+              },
+              {
+                "title": "TaxonomyDatabaseSearchExtractor",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Describes the TaxonomyDatabaseSearchExtractor batch process, which copies taxonomy application data from the application database to the staging database for faster application access. It runs after taxonomy is published. The associated class and method are TaxonomyDatabaseSearchExtractor.extractTaxonomyData."
+              }
+            ],
+            "node_id": "n000050",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000022",
+              "start_page": 19,
+              "end_page": 22
+            },
+            "summary": "This section catalogs CPM batch processes and their scheduling rules. It explains the optional `processingDate` parameter, then covers roster due/reminder jobs, contract and license renewal notifications, activation of CPM liability and payment-correction cases, placement evidence creation, reservation expiry, payslip generation, roster generation, and taxonomy import/publish/extract jobs. It includes key events, config properties, run frequency guidance, and each job’s class/method names. Open this node for batch-process behavior, triggers, timing, and system-property details."
+          },
+          {
+            "title": "1.5 Summary of CPM Application Properties",
+            "level": 2,
+            "children": [
+              {
+                "title": "External User Security Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Lists CPM/Cúram application properties for external user security, attendance, and financial settings. Includes the external access security implementation class, roster grace period, planned-units defaulting, roster submission reminder settings, reporting configuration requirement, financial hook registrar needed for CPM payments, payslip batch commit-count controls, and manual approval for service invoice line items. Useful if you need specific property names, defaults, or behavior for CPM security, attendance, or financial processing."
+              },
+              {
+                "title": "Application – CPM Attendance Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This section lists CPM application configuration properties, focused on attendance settings. It covers roster grace period, defaulting planned units to expected units, roster submission reminder timing and whether reminders are required, and whether reporting method is mandatory. It also shows related external user security and financial settings nearby, including CPM financial hook registration, payslip batch commit-count behavior, and manual approval of service invoice line items. Useful for finding CPM attendance and related runtime property defaults and behavior."
+              },
+              {
+                "title": "Application – CPM Financials Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000025",
+                  "start_page": 24,
+                  "end_page": 25
+                },
+                "summary": "This section lists CPM financial configuration properties for provider management. It covers financial hook registrars required for CPM payments, payslip batch commit-count settings, invoice line item approval, product provider and provider location IDs, payment-withhold notification events, unlimited payable amount, future-dated invoices/rosters, CPM system admin ownership, and whether affected service invoices are tracked for reassessment performance. It is useful for understanding and tuning CPM payment, invoice, roster, and reassessment behavior."
+              },
+              {
+                "title": "Application – CPM Facility Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Lists CPM application configuration properties on one page: Facility Settings for maintaining ethnicity/religion characteristics in Provider Management (both default FALSE), Contract Settings renewal notification lead time (default 7 days), License Settings renewal notification lead time (default 7 days), and Sequential Continuous Reference Number starting values for providers, provider groups, provider enquiries, service invoices, and related line items."
+              },
+              {
+                "title": "Application - CPM Contracts Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "This section lists CPM application properties. It covers facility settings for maintaining Ethnicity and Religious characteristics in Provider Management (both default FALSE), contract renewal notification timing (curam.contracts.renewal.noofdaysevents, default 7 days), license renewal notification timing (curam.cpm.license.renewal.noofdaysevents, default 7 days), and sequential continuous reference number starting values for providers, provider groups, provider enquiries, service invoices, and related line items."
+              },
+              {
+                "title": "Application CPM License Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Defines CPM application settings, especially license renewal timing. The key property is `curam.cpm.license.renewal.noofdaysevents`, which sets the number of days before license expiration when the system notifies users and providers; default is 7. The page also briefly includes related CPM facility settings (ethnicity and religion characteristics toggles) and contract renewal timing, plus sequential reference number properties for provider-related records."
+              },
+              {
+                "title": "Application - Sequential Continuous Reference Numbers",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Application - Wait List Properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Defines wait list application properties: reminder period for generating review action tasks before expiry, and review interval between wait list entry reviews. Also includes nearby configuration tables for CPM reservation grace period, provider email server, proximity distance units, case product registrars, and CPM dynamic SQL enablement. Useful for locating system property names, defaults, and CPM/provider configuration details."
+                  }
+                ],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Defines sequential continuous reference number system properties and defaults for provider-related entities: provider (10000000), provider group (20000000), provider enquiry (10000), service invoice (10000), service invoice line item (100000), and service invoice request line item (100000). Useful for locating configurable starting numbers for these records."
+              },
+              {
+                "title": "Application - Miscellaneous Properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "This section lists application and infrastructure configuration properties for provider management and CPM. It covers wait list review reminders and review intervals, agency reservation grace period, provider email server, proximity distance units, case product registrars required for CPM payments, and whether CPM dynamic SQL is enabled. Defaults include null/0 for some properties, smtp.curamsoftware.com for email, and YES for dynamic SQL."
+              },
+              {
+                "title": "Infrastructure - Miscellaneous Properties",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Defines two infrastructure miscellaneous properties for provider management: `curam.cpmprovider.cpmprovideremailserver` (SMTP server used to email providers and provider groups, default `smtp.curamsoftware.com`) and `curam.miscapp.proximityCalculateDistanceIn` (unit used to measure calculated proximity between provider and client addresses, stored as a distance code table reference). Useful if you need email delivery or proximity calculation configuration for CPM/provider functions."
+              },
+              {
+                "title": "Case Parameters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "This section lists the Case Parameters application property, `curam.case.product.registrars`. It explains that CPM overrides the Cúram Platform registrar list to include Evidence Controller Hooks and that the CPM registrar (`curam.financial.impl.FinancialRegistrar`) must always remain present for CPM payments to work correctly."
+              },
+              {
+                "title": "Application - CPM Dynamic SQL Enabled",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000030",
+                  "start_page": 27,
+                  "end_page": 30
+                },
+                "summary": "This section documents provider management application properties related to wait list review timing, reservation grace periods, provider email server defaults, distance calculation units, and case product registrars. It also defines the CPM dynamic SQL setting: `curam.cpm.dynamicsql`, which enables or disables dynamic SQL functionality and defaults to YES. Pages 29–30 are legal notices, copyright, privacy policy, and trademark information."
+              }
+            ],
+            "node_id": "n000065",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000030",
+              "start_page": 23,
+              "end_page": 30
+            },
+            "summary": "Summarizes CPM/Provider Management application properties and defaults. Covers external user security implementation, attendance settings (roster grace period, planned units, submission reminders, reporting mandatory flag), financial settings (financial hook registrars, payslip commit controls, manual SILI approval, payment withholding events, unlimited amounts, future-dated invoices/rosters, CPMSysAdmin, affected invoices), facility and contract/license renewal settings, sequential continuous reference numbers, wait list and reservation timing, provider email/proximity infrastructure settings, case registrars, and dynamic SQL enablement. Pages 29–30 contain legal notices and trademarks."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000030",
+          "start_page": 9,
+          "end_page": 30
+        },
+        "summary": "This section configures Provider Management (CPM): external access security, provider email server, contract/license renewal notifications, provider trainings, training credits, license training requirements, certifications, and service offerings. It also covers service offering registration, units/frequency limits, rates and payment settings, attendance/absence tracking, approval rules, and related batch processes and application properties. Open it for runtime configuration details, scheduling behavior, and property defaults; pages 29–30 are legal notices and trademarks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

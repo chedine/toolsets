@@ -1,0 +1,471 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "82627620e73c4c59",
+    "title": "Cúram 8.1.2 Citizen Context Viewer Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CitizenContextViewerDeveloperGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "82627620e73c4c59b4f4ef1386dcfffd444af513e9eb464c28503aed454ceda7",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T16:45:04+00:00",
+    "page_count": 20,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CitizenContextViewerDeveloperGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Citizen Context Viewer Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000020",
+      "start_page": 1,
+      "end_page": 20
+    },
+    "summary": "Introductory guide for customizing the Cúram 8.1–8.1.2 Citizen Context Viewer (CCV). It explains the guide’s purpose, intended audience, prerequisites, and structure, then shows how to add UIM links that launch CCV, customize CCV through injection points/events, write loaders and case handlers, define node types and right-click menu options with XML examples, and localize non-database CCV text via message files. It also includes compliance guidance: use only the documented public API, avoid dependencies on undocumented classes/packages, and expect non-API elements to change without notice. The end of the section contains legal notices, privacy policy, and trademark/copyright information.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note states that before using the product or this information, readers should review the Notices section on page 19. It also includes the copyright notice for Merative US L.P. covering 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory section for customizing the Citizen Context Viewer (CCV) in Cúram 8.1–8.1.2. It explains the guide’s purpose, audience, prerequisites, and structure. Key topics include adding links to launch CCV from UIM pages, customizing via injection points/events, writing loaders for node data, and writing case handlers for case-specific retrieval and configuration. It also starts the section on adding node types and right-click menu options. Includes an example launch link and sample loader/case handler code."
+          },
+          {
+            "title": "Edition — pages 15-18",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000018",
+              "start_page": 15,
+              "end_page": 18
+            },
+            "summary": "Covers Citizen Context Viewer extension points and compliance. Explains how to add node types in loader data, including CONTEXTNODETYPE, Loadable, menuID, and isBranch behavior, with XML examples. Describes configuring right-click context menus via CONTEXTMENU, MENUITEM, MENUITEMLINK, PAGEPARAM, and PAGECONFIG. Notes that non-database viewer text is localized through message files on the server. Also outlines compliance guidance: rely only on the public API identified by JavaDoc, and avoid depending on undocumented classes or placing custom code in the viewer’s packages."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000018",
+          "start_page": 5,
+          "end_page": 18
+        },
+        "summary": "Introductory section for customizing the Citizen Context Viewer (CCV) in Cúram 8.1–8.1.2. Covers guide purpose, audience, prerequisites, and structure; adding links from UIM pages to launch CCV; customization via injection points/events; writing loaders for node data and case handlers for case-specific retrieval; defining node types and right-click menu options with XML examples; localizing non-database viewer text via message files; and compliance guidance to use only the documented public API and avoid undocumented classes/packages."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "States Merative’s privacy policy location (https://www.merative.com/privacy) and includes legal notices: fictitious sample data disclaimer, sample code copyright license and “AS IS” warranty/no liability terms, plus a list of trademarks (Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX) and copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "Lists trademark attributions and legal notices for Merative’s document. States that Merative and its logo are trademarks, and identifies trademarks of IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. Also notes that other company, product, and service names may be trademarks of others. Includes privacy policy link and copyright/licensing language about sample programs being provided “as is.”"
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000019",
+          "start_page": 19,
+          "end_page": 19
+        },
+        "summary": "Legal notices and permissions for using the publication. Covers personal and commercial reuse limits, required preservation of proprietary notices, no derivative works or outside distribution without consent, and export-law compliance. States content is provided “as-is” without warranties, may include patent-covered material, and non-Merative product references/websites are informational only. Includes privacy policy link plus trademark/copyright notices for Merative and other brands; sample code/data disclaimers and liability limits."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the guide “Developing with the Citizen Context Viewer.” It lists major sections on introducing CCV development, adding launch links, customizing the viewer (loaders, case handlers, injection points), adding node types and right-click menu options, localizing CCV data, and complying with the CCV API. Also includes front matter, notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Developing with the Citizen Context Viewer",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Lists prerequisite CCV documentation: the Cúram Citizen Context Viewer Guide and the Cúram Citizen Context Viewer Configuration Guide. This section is a brief orientation to the customization guide, which covers adding links to launch the CCV, customizing the CCV via loaders and case handlers, adding node types and right-click menu options, and localizing CCV data. Intended for developers integrating CCV into specific components."
+              },
+              {
+                "title": "Sections in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the guide for customizing the Citizen Context Viewer (CCV). It explains that the guide covers adding links from custom UIM pages to launch the CCV, customizing the CCV through injection points, loaders and case handlers, adding node types and right-click menu options, and localizing CCV text. It also notes the intended audience is developers integrating CCV into components, with prerequisites referencing the CCV user and configuration guides."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Overview of the CCV customization guide. It explains how developers can create custom UIM pages that launch the Citizen Context Viewer, use injection points, loaders, and case handlers to customize it, add node types and right-click menu options, and localize CCV text/data. It is aimed mainly at developers integrating CCV into specific components, though business analysts may also find it useful. Prerequisite guides are the Citizen Context Viewer Guide and the Citizen Context Viewer Configuration Guide."
+          },
+          {
+            "title": "1.2 Adding Links to Launch the Citizen Context Viewer",
+            "level": 2,
+            "children": [
+              {
+                "title": "Example",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Shows how to open the Citizen Context Viewer via a link and script, using concernRoleID as the source/target field mapping. Then introduces CCV customization: default interfaces can be replaced by injected implementations through events/listeners. Highlights two main injection points, ContextNodeRootEvent for adding ContextCategory implementations and loaders, and ContextCaseHandlerEvent for custom case handlers when default case-name retrieval from the case header table is insufficient."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains how to launch the Citizen Context Viewer from custom UIM pages by adding links that reference the CCV JavaScript. Useful for developers integrating CCV entry points into customized screens; this section is the starting point for implementing launch links from UIMs."
+          },
+          {
+            "title": "1.3 Customizing the Citizen Context Viewer",
+            "level": 2,
+            "children": [
+              {
+                "title": "Injection Points in the CCV",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "ContextNodeRootEvent",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "A CCV customization hook: a listener on ContextNodeRootEvent can inject a ContextCategory implementation used to populate Citizen Context Viewer data. That implementation can define loaders to display information in the CCV. This section is part of the “Customizing the Citizen Context Viewer” setup and sits among other injection-point events such as ContextCaseHandlerEvent."
+                  },
+                  {
+                    "title": "ContextCaseHandlerEvent",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how the Citizen Context Viewer (CCV) can be customized through the ContextCaseHandlerEvent. Cases shown in the CCV may require different retrieval logic depending on case type, so the IContextCaseHandler interface lets you define case-specific handlers for details like the case name. If the CCV does not recognize a case type, it falls back to a default handler that reads the case name from the case header table. Use this section if you need to replace or extend default case-detail retrieval in the CCV."
+                  }
+                ],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains how to customize the Citizen Context Viewer (CCV) through injection points and listeners. It introduces the main extension events: ContextNodeRootEvent, which lets you inject a ContextCategory implementation and loaders to populate CCV data, and ContextCaseHandlerEvent, which lets you supply case-type-specific IContextCaseHandler logic for retrieving case details such as the case name. It also notes the default fallback handler for unknown case types."
+              },
+              {
+                "title": "Writing a Loader",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000012",
+                      "start_page": 11,
+                      "end_page": 12
+                    },
+                    "summary": "This section introduces a sample CCV loader implementation. It explains that loaders extend ContextNode, are typically created per leaf node category, and are added via ContextNodeRootEvent. The example ContextInteractionLoader reads core interaction data for a citizen, checks authorization, sets labels and node type, handles the empty-results case with a default child, and creates child nodes based on each interaction’s type and related interaction details. Useful if you need to implement or understand CCV loader behavior."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "This section explains how to write a CCV loader. Loaders provide data for display in the Citizen Context Viewer, are usually created for each leaf node category, and must extend ContextNode. They can be added through a ContextNodeRootEvent listener using setChildNodesForContextType. An example ContextInteractionLoader shows loading core interaction data, checking user authorization, setting labels and node type, handling no-data cases with a default child, and creating child nodes based on interaction type and related interaction details."
+              },
+              {
+                "title": "Writing a Case Handler",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains how to develop with the Citizen Context Viewer, focusing on setting node types and context IDs for interaction-related child nodes, including payment interactions and defaults. It then introduces writing a custom case handler by extending `ContextCaseHandler` to provide case names when the default CCV handler is insufficient and to inspect case-type property settings. An example `IntegratedCaseHandler` shows use of dependency injection and `CodeTable` lookup for case names."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to write a custom CCV case handler when the default handler cannot retrieve case details or when case-type property settings must be checked. Case handlers must extend `ContextCaseHandler`. The section gives an `IntegratedCaseHandler` example using dependency injection (`Provider<ContextCore>`) and `CodeTable` lookup to return a case name, indicating how to customize case-name resolution and inspect display/status settings for integrated cases."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000013",
+              "start_page": 10,
+              "end_page": 13
+            },
+            "summary": "Explains how to customize the Citizen Context Viewer (CCV) by replacing default interface implementations via listeners/events. Covers ContextNodeRootEvent for adding ContextCategory-based loaders, and ContextCaseHandlerEvent for supplying case-type-specific IContextCaseHandler logic with a default fallback for unknown case types. Shows how loaders extend ContextNode, are typically written per leaf category, and populate CCV data. Includes an interaction loader example with authorization checks, labels, node types, and empty-child handling. Also describes custom case handlers for case-name lookup and case property/settings checks."
+          },
+          {
+            "title": "1.4 Adding Node Types and Right-click Menu Options",
+            "level": 2,
+            "children": [
+              {
+                "title": "Adding Node Types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to add node types in the Citizen Context Viewer, including the CONTEXTNODETYPE attributes: ID, loadable, menuID, and isBranch, and how these control loading behavior and child display. Includes an XML example of a node type definition. Also introduces adding right-click context menu options via contextmenu DMX files and notes the CONTEXTMENU and MENUITEM attributes used to define available menu items."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how context viewer tree elements are assigned node types and what each CONTEXTNODETYPE attribute means: ID, loadable, menuID, and isBranch. Notes how loadable and isBranch affect whether children are shown and when a server read occurs. Includes an XML example of a node type definition. Also describes adding right-click menu options via contextmenu DMX files, and the CONTEXTMENU and MENUITEM attributes used to define menu availability."
+              },
+              {
+                "title": "Adding Right-click Menu Options",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Setting Attributes for Context Menu",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section explains how to define context-menu attributes for right-click options in the Citizen Context Viewer. It states that CONTEXTMENU holds the menu ID referenced by a node type, and MENUITEM defines one or more right-click menu entries. It follows earlier guidance on adding node types, especially linking node types to menus via menuID, and describes that menu definitions are loaded from contextmenu DMX files as initial data."
+                  },
+                  {
+                    "title": "Example",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Shows an XML example of a context menu definition using `CONTEXTMENU`, `MENUITEM`, `MENUITEMLINK`, `PAGEPARAM`, and `PAGECONFIG` to open a page with right-click options. Also begins section 1.5 on localizing Citizen Context Viewer data, explaining that non-database display text comes from message files and that server-side localization is needed because the viewer’s XML tree is built on the server."
+                  }
+                ],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains how to add right-click options in Citizen Context Viewer by defining context menu data in contextmenu DMX files loaded as initial data. A context menu uses CONTEXTMENU as the menu ID referenced by a node type, and MENUITEM entries define the available right-click actions. This section is directly relevant if you need to link node types to context menus or configure viewer menu behavior."
+              }
+            ],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000015",
+              "start_page": 14,
+              "end_page": 15
+            },
+            "summary": "Explains how to extend Citizen Context Viewer with new node types and right-click menus. A node type defines a tree element’s CONTEXTNODETYPE ID, whether it is loadable, its menuID, and whether it is a branch; loadable and isBranch control whether children are shown and whether a server read occurs on expand. Includes a sample XML node type. Also describes defining context menus in contextmenu DMX initial data, where CONTEXTMENU IDs are referenced by node types and MENUITEM entries define available right-click actions."
+          },
+          {
+            "title": "1.5 Localizing Citizen Context Viewer Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "This section explains how Citizen Context Viewer data is localized when it is not read directly from application database tables. Such displayed text is loaded from message files, including messages shown when case security prevents viewing a case. It notes that because the context viewer’s XML tree is built on the server, localization substitution must also happen server-side, and it includes sample code showing localized message retrieval."
+          },
+          {
+            "title": "1.6 Compliancy for the Citizen Context Viewer",
+            "level": 2,
+            "children": [
+              {
+                "title": "Public API",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "The Citizen Context Viewer exposes a public API for application code, and its components will not be changed or removed without following Cúram customer-impact standards. The shipped JavaDoc is the only authoritative source for identifying public classes, interfaces, and methods. Other public members are not part of the API and may change or be removed without notice. To remain compliant, do not depend on non-API classes or methods, and do not place your own classes or interfaces in the same package unless the JavaDoc explicitly allows it."
+              },
+              {
+                "title": "Identifying the API",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "The section explains compliance rules for using the Citizen Context Viewer public API. The shipped JavaDoc is the only authoritative source for identifying supported public classes, interfaces, and methods. It warns that other public-looking classes or methods are outside the API, may change or be removed without notice, and must not be depended on. It also advises not to place custom classes or interfaces in the same package unless the JavaDoc explicitly allows it."
+              },
+              {
+                "title": "Outside the API",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000020",
+                  "start_page": 17,
+                  "end_page": 20
+                },
+                "summary": "Explains compliance rules for the Citizen Context Viewer: only the JavaDoc-defined public API is supported, and other public classes/methods may change or be removed without notice. Advises against depending on non-API classes or placing your own classes in the same package. The remainder of the pages are legal notices covering publication permissions, warranty/disclaimer terms, sample code licensing, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000020",
+              "start_page": 17,
+              "end_page": 20
+            },
+            "summary": "Explains compliance for using the Citizen Context Viewer: only the shipped JavaDoc defines the supported public API, and API components will not change without customer-impact standards. Do not depend on non-API classes, methods, or interfaces, and do not place custom types in the same package unless allowed. The remaining pages are legal notices covering publication permissions, warranty/disclaimer terms, sample code licensing, privacy policy, and trademarks."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000020",
+          "start_page": 9,
+          "end_page": 20
+        },
+        "summary": "Covers CCV development/customization: how to add UIM links that launch the viewer, use injection points/events to add loaders and case handlers, define node types and right-click menus, localize server-built CCV text, and follow supported public API rules. Includes example XML/code for links, loaders, case handlers, node types, and menus. The last pages are compliance and legal notices."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

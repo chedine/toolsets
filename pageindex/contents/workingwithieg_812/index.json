@@ -1,0 +1,1351 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "12832bb0bd079b29",
+    "title": "Cúram 8.1.2 Working with Intelligent Evidence Gathering (IEG) Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/WorkingWithIEG_812.pdf",
+    "source_type": "pdf",
+    "sha256": "12832bb0bd079b293b53e2e9bf803699527fe29a0c36dd8f70e1e3167e8e86da",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:49:45+00:00",
+    "page_count": 86,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/WorkingWithIEG_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Working with Intelligent Evidence Gathering (IEG) Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000086",
+      "start_page": 1,
+      "end_page": 86
+    },
+    "summary": "Introductory guide to Cúram 8.1.2 Intelligent Evidence Gathering (IEG). It explains IEG’s purpose for capturing client-related evidence in applications, the core architecture (Engine/Player, Datastore, Resource Store), and how to design, evaluate, build, validate, and run scripts. Main topics include household and relationship capture, composite and associated data, summary pages, efficient data-entry patterns (lists, code tables, conditional elements, matrices, fast path, implicit delete, date picker), read-only behavior, custom functions, reusable subscripts, versioning, and custom HTML on summaries. It also covers integrating IEG into Cúram apps (tab/modal, redirection, cleanup, resuming), managing captured datastore data, using the Resource Store, scanning with IBM Rational AppScan, and runtime behavior during network loss/offline use. Front matter includes notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the “Notices” section on page 85 before using the information or the supported product. It also includes the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory material for the IEG guide. Covers edition/version applicability (Cúram 8.1, 8.1.1, 8.1.2), contents, and the start of Chapter 1–2. Explains what Intelligent Evidence Gathering is, its purpose for interactive data collection, and its main components: Engine, Player, Datastore (DS), and Resource Store (RS). Describes how IEG scripts are structured (script, section, page, cluster, question, summary page) and gives an overview of using schemas, stored resources, and summary pages."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Introduces how to evaluate and build basic IEG solutions: decide what client data to capture, its source, use, and lifetime; create a datastore schema with BaseDomains, IEGDomains, and required root entity `Application`; define a `Person` entity and basic script with sections, question pages, clusters, and summary pages; upload, run, and validate scripts via admin screens. The section then begins household capture, explaining loops, control questions, person tabs, and a `for` loop to collect household member details."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section explains how IEG captures and summarizes client information using loops, relationship pages, and lists. It covers collecting household members with while/for-each loops, defining Relationship entities in the datastore, and displaying relationship summary lists. It then shows nested/composite data capture (e.g., Person → Income) and summary lists for nested entities, followed by associated data using link-entity/list questions (e.g., Income ↔ Employment). It also describes deletion behavior for associated data and how to enable cascading deletes via schema annotation."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers IEG data-capture patterns and navigation features: list questions for selecting entities, including single-select variants; code-table questions (single- and multi-select) and valid dropdown handling; conditional visibility for sections, pages, and clusters, including static vs dynamic conditions; question matrices for codetable-by-entity grids; and Fast Path navigation to skip previously answered loop/condition pages, with examples showing how changes affect revisits and deletions."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers advanced IEG script development: fast-path conditions and loops, implicit delete of irrelevant data, and a three-field date picker using IEG_THREE_FIELD_DATE. Also explains read-only display options, dynamic read-only expressions, whole-script read-only via API, calling external functionality with custom functions and callouts (ZIP/state examples), and reusing scripts via subscripts. Ends with source control/versioning guidance for script definitions stored in the database."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "This section covers two areas: script downloading/import differences and rendering custom HTML on summary pages using the `custom-output` element, including required data accessor and custom renderer classes, localization APIs, performance/accessibility guidelines, and sample code. It then begins application integration of IEG, explaining how to create a script execution, set finish/quit-page redirection URLs, and run the IEG Player in a tab via `Screening.do` with an execution ID."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Explains how to integrate and launch IEG scripts in Cúram, including resolving to the IEG Player, handling modal dialogs, and closing or redirecting from a modal with provided JSP patterns. Covers validation-error checks before running scripts, execution ID handling, and using CloseAndRedirect.jspx. Also describes cleanup of application data by deleting IEGEXECUTIONSTATE entries and datastore root entities, how to resume executions via executionID, and how to retrieve or pre-populate captured DS data before starting a script."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "Covers IEG runtime/documentation on three topics: using the Resource Store, scanning IEG with IBM Rational AppScan, and offline/runtime behavior. The Resource Store section explains listing, uploading, updating, deleting, downloading resources; resource categories; locale fallback; image and properties-file conventions; and UTF-8/charset handling. The AppScan section gives required prep, limitations with relationship pages, and detailed scan configuration/exclude-path settings. The runtime section describes network-loss modal dialog behavior, offline feature limits, and session-timeout issues."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000084",
+          "start_page": 5,
+          "end_page": 84
+        },
+        "summary": "Introductory IEG guide for Cúram 8.1–8.1.2. Explains what Intelligent Evidence Gathering is, its main parts (Engine, Player, Datastore, Resource Store), script structure, and how to evaluate, build, run, and validate basic scripts. Covers capturing household, composite, and associated data; lists, code tables, conditional elements, matrices, fast path, implicit delete, read-only, custom functions, subscripts, versioning, and custom HTML on summary pages. Also includes application integration, data management, resource store usage, AppScan setup, and runtime/offline behavior."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000086",
+              "end_unit_id": "p000086",
+              "start_page": 86,
+              "end_page": 86
+            },
+            "summary": "Contains legal and copyright notices: sample data is fictitious, sample programs may be copied/modified/distributed under the Merative Client Agreement, and they are provided “AS IS” without warranty or liability. Also points to Merative’s privacy policy URL and lists trademark attributions for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000086",
+              "end_unit_id": "p000086",
+              "start_page": 86,
+              "end_page": 86
+            },
+            "summary": "Lists Merative and third-party trademark notices for the document, including IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. Also notes that sample names in the document are fictitious, sample programs are provided “AS IS” under the Merative Client Agreement, and links to Merative’s privacy policy. Useful as a legal/attribution and usage-rights reference."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000085",
+          "end_unit_id": "p000085",
+          "start_page": 85,
+          "end_page": 85
+        },
+        "summary": "Legal notice and usage-rights page for the publication. It sets personal and enterprise copying limits, requires preservation of proprietary notices, and forbids derivatives or external distribution without Merative consent. It also states the content is provided “AS-IS” with no warranties, notes export-law compliance, patent/licensing reservations, and disclaims responsibility for third-party product or website claims. Includes copyright by Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000010",
+          "start_page": 7,
+          "end_page": 10
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 IEG guide, listing chapters and subtopics. It covers getting started with Intelligent Evidence Gathering, capturing client and related data, efficient data entry patterns, script development considerations, integrating IEG into applications, managing captured data, using the Resource Store, scanning IEG with IBM Rational AppScan, and runtime processing. Also includes front matter, notices, privacy policy, and trademarks. Useful as a navigation map rather than substantive guidance."
+      },
+      {
+        "title": "1 Working with Intelligent Evidence Gathering",
+        "level": 1,
+        "children": [],
+        "node_id": "n000015",
+        "range": {
+          "start_unit_id": "p000011",
+          "end_unit_id": "p000012",
+          "start_page": 11,
+          "end_page": 12
+        },
+        "summary": "Introduces Intelligent Evidence Gathering (IEG) for defining and maintaining scripts and associated data store schemas used in internal or external applications. Explains that IEG captures client-related evidence data needed for applications, program determination, or eligibility assessment. The section focuses on technical considerations for creating IEG scripts and Data Store schemas and on script maintenance. It also points readers to separate IEG Form Design Guidance for form design and user experience best practices."
+      },
+      {
+        "title": "2 Get started",
+        "level": 1,
+        "children": [
+          {
+            "title": "2.1 About IEG",
+            "level": 2,
+            "children": [
+              {
+                "title": "Datastore (DS)",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Describes the Datastore (DS) component used by IEG to persist user-entered data. Explains that DS is a configurable database whose stored data structure is defined dynamically by an XML schema, with data stored in XML conforming to W3C XML Schema. Highlights the tight linkage between an IEG script and its DS schema: scripts reference schema elements, and a schema is required both when editing and executing a script."
+              },
+              {
+                "title": "Resource Store (RS)",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains the Resource Store (RS) for IEG scripts: images and extracted text properties are stored there, including fallback default-locale properties and locale-specific files for localization. Describes how script text is auto-extracted on upload and retrieved at runtime by locale in the IEG Player. Also outlines basic IEG script structure: pages grouped into sections, each section ending with a summary page, with hierarchy Script > Section > Page > Cluster > Question > Summary Page."
+              },
+              {
+                "title": "Script Structure",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains the basic structure of an IEG script: pages are grouped into logical sections, and each section should include a summary page as the last page. Summary pages show read-only feedback using clusters and lists, and reappear when users click the section link in the sidebar. Also notes that scripts can reuse the same data structures across different circumstances, and that text and image resources are stored in the Resource Store for localization and runtime retrieval."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000014",
+              "start_page": 13,
+              "end_page": 14
+            },
+            "summary": "Introduces IEG as an interactive question-and-answer system that uses an Engine and Player to control script flow based on prior answers. Explains its two key dependencies: the Datastore (DS), a configurable XML-schema-based database closely linked to script definitions, and the Resource Store (RS), which holds images and localized text properties. Also outlines basic script structure: pages grouped into sections, each ending with a summary page, with a hierarchy from Script to Summary Page."
+          },
+          {
+            "title": "2.2 Evaluating the Use of IEG",
+            "level": 2,
+            "children": [],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "This section explains how to evaluate whether to use IEG by asking what data is captured, its source, how it will be used, and how long it must live in the application. It describes typical client-related data for agency applications, use of data from other systems for verification or retrieval, handling complex applications where users may save and return later, and temporary screening data that should be deleted after logout or after a set period."
+          },
+          {
+            "title": "2.3 The Basics",
+            "level": 2,
+            "children": [
+              {
+                "title": "Create a Schema",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000016",
+                  "start_page": 15,
+                  "end_page": 16
+                },
+                "summary": "Explains how to create a basic IEG datastore schema for client data capture. Covers why schema design matters, what client data to store, and minimum requirements for IEG schemas: BaseDomains, IEGDomains, and a root entity named Application. Shows a starter XML schema and adds a Person child entity with attributes for first, middle, and last name, gender, and date of birth using IEG domain types, noting that an ID/key is required."
+              },
+              {
+                "title": "Create a Script",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Adding a Section and a Question Page to an IEG Script",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to add a section and question page to an IEG script. A section groups related pages and helps users navigate progress; both section and question page can have titles, and a question page may have a description. The example shows a section containing a question page mapped to the Person entity. It also introduces clusters for organizing page layout, including informational display text and question groups, with questions tied to entity attributes and optional mandatory indicators."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000018",
+                  "start_page": 17,
+                  "end_page": 18
+                },
+                "summary": "Explains how to create a new IEG script and add a section and question page. Describes that scripts use an identifier built from ID, type, and version, and can contain sections, question pages, summary pages, questions, and conditional logic. A section groups related pages and helps show user progress; both section and question page can have titles, and a question page may have a description. The example maps a page to the Person entity and introduces clusters for grouping display text and questions, with questions tied to entity attributes and optional mandatory flags."
+              },
+              {
+                "title": "Adding a Summary Page to an IEG Script",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000020",
+                  "start_page": 19,
+                  "end_page": 20
+                },
+                "summary": "Explains how to add a summary page to an IEG script. A summary page usually appears at the end of each section and shows the most important captured data for user verification, often across multiple question pages. Users can correct data by navigating back or via edit links on summary clusters. Shows XML example of a `<summary-page>` mapped to an entity, with title, description, cluster, questions, and an `<edit-link>` to the original question page."
+              },
+              {
+                "title": "Run a Script",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Validating a Script",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000022",
+                      "start_page": 21,
+                      "end_page": 22
+                    },
+                    "summary": "This section explains how to run and validate an IEG script through the Administration Workspace. It covers uploading script and schema definitions via the Scripts and Datastore Schemas import links, then running a script with a chosen schema using Run or Run in Modal. It notes that scripts are validated automatically before execution, or manually via Validate, and validation errors must be fixed first. The example also shows sample data appearing on a summary page with an edit link, and warns that Next may error if required properties are missing."
+                  }
+                ],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000022",
+                  "start_page": 21,
+                  "end_page": 22
+                },
+                "summary": "Explains how to run an IEG script from the Administration Workspace. You must first upload the script and its datastore schema via the IEG “Scripts” and “Datastore Schemas” import links. Scripts can then be launched with Run or Run in Modal, choosing a schema at runtime. The admin harness validates scripts automatically before execution, and scripts can also be validated manually. The example shows sample data on a summary page with an edit link, and warns Next may error if required properties are missing."
+              }
+            ],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000022",
+              "start_page": 15,
+              "end_page": 22
+            },
+            "summary": "Introduces the basics of Intelligent Evidence Gathering (IEG) by showing how to capture client data with a datastore schema, script, summary page, and runtime testing. It defines the minimum schema requirements: BaseDomains, IEGDomains, and a root entity named Application, then adds a Person child entity with IEG domain types and a key. It explains creating scripts with identifiers, sections, question pages, clusters, and mandatory questions, then adds a summary page with edit links. Finally, it covers importing, running, and validating scripts in the Administration Workspace."
+          }
+        ],
+        "node_id": "n000016",
+        "range": {
+          "start_unit_id": "p000013",
+          "end_unit_id": "p000022",
+          "start_page": 13,
+          "end_page": 22
+        },
+        "summary": "Introduces IEG and its architecture: the Engine/Player, Datastore (DS), and Resource Store (RS). Explains when IEG is appropriate by considering what data is captured, its source, usage, and retention. Walks through the basics of building a simple client-intake solution: creating a DS schema with required BaseDomains/IEGDomains and root Application, defining a script with sections, question pages, clusters, mandatory questions, and a summary page with edit links, then importing, validating, and running scripts in the Administration Workspace."
+      },
+      {
+        "title": "3 Capturing Client Information",
+        "level": 1,
+        "children": [
+          {
+            "title": "3.1 Families and Households",
+            "level": 2,
+            "children": [],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000025",
+              "start_page": 23,
+              "end_page": 25
+            },
+            "summary": "Explains how IEG captures family/household data beyond a single client. Introduces asking whether the client lives alone or with others, then using loops to collect details for household members. Shows a “for” loop driven by a control question for number of other people in the household, and a “while” loop driven by a boolean control question about living with family. Notes the Person Tab in the UI and that control questions are used to govern loop flow, not stored in the datastore schema."
+          },
+          {
+            "title": "3.2 Household Relationships",
+            "level": 2,
+            "children": [],
+            "node_id": "n000031",
+            "range": {
+              "start_unit_id": "p000026",
+              "end_unit_id": "p000026",
+              "start_page": 26,
+              "end_page": 26
+            },
+            "summary": "Explains how IEG captures relationships among household members using relationship pages and a Datastore schema. It recommends defining a `Relationship` entity under `Person` as a repeatable child element, with a `relationshipType` string attribute. This section is useful for modeling links between people in a household, beyond simply collecting individual member details."
+          },
+          {
+            "title": "3.3 Summarizing Client Information",
+            "level": 2,
+            "children": [],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000027",
+              "end_unit_id": "p000028",
+              "start_page": 27,
+              "end_page": 28
+            },
+            "summary": "This section explains how to summarize client information on IEG summary pages using lists that mirror the structure of the data collection loops. The list entity and criteria should match the loop that gathered the data, such as displaying household members collected via a Person loop in a Person list. It also shows how relationship data captured on a relationship page can be displayed with a relationship-summary-list, including titles, columns, and an edit link back to the relationship page."
+          }
+        ],
+        "node_id": "n000029",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000028",
+          "start_page": 23,
+          "end_page": 28
+        },
+        "summary": "Explains how IEG captures household information beyond a single client. Shows using control questions to drive loop flow with for loops (`numPeople`) and while loops (`livesWithFamily`/`anotherMember`) to collect household members as `Person` entities, with Person Tabs aiding navigation. Describes modeling household relationships via a repeatable `Relationship` child under `Person` in the datastore, using a relationship page for caretaker/relationship details. Also covers summarizing looped data on summary pages with matching lists and relationship-summary-lists, including edit links back to the relationship page."
+      },
+      {
+        "title": "4 Capturing Related Data",
+        "level": 1,
+        "children": [
+          {
+            "title": "4.1 Capturing Composite Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000029",
+              "start_page": 29,
+              "end_page": 29
+            },
+            "summary": "Explains how IEG captures composite data by nesting related DS entities in a parent-child structure, contrasted with simple relationships. Uses a household income example where Income is nested inside Person and collected only for people whose hasIncome flag is true. Shows schema and loop-based capture patterns, including a for-each loop over Person and a while loop over Income, with a question page mapped to the nested Income entity."
+          },
+          {
+            "title": "4.2 Displaying Composite Data on a Summary",
+            "level": 2,
+            "children": [],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000030",
+              "start_page": 30,
+              "end_page": 30
+            },
+            "summary": "Explains how to display composite data on a summary page using nested lists that mirror the nested entities and criteria used when capturing data. Shows an income summary example with a Person list containing nested Income entries, grouped per person and supporting Edit, Delete, and Add actions. Also introduces association relationships in IEG as an alternative to deeper nesting, since nested entities/lists are limited to two levels, with an employment-information example motivating the approach."
+          },
+          {
+            "title": "4.3 Capturing Associated Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000036",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000031",
+              "start_page": 30,
+              "end_page": 31
+            },
+            "summary": "Explains how to capture associated data when nested entities/lists are limited to two levels. Introduces relationship entities as a way to link separately gathered entities, typically owned by one entity and modeled as a sequence. Shows that the related entity must have a key, then uses an Income/Employment example with EmploymentRelationship. Demonstrates capturing the association in script via a list-question with a link-entity attribute pointing to the related entity key, enabling users to select related records."
+          },
+          {
+            "title": "4.4 Displaying Associated Data on a Summary",
+            "level": 2,
+            "children": [],
+            "node_id": "n000037",
+            "range": {
+              "start_unit_id": "p000032",
+              "end_unit_id": "p000032",
+              "start_page": 32,
+              "end_page": 32
+            },
+            "summary": "Explains how to show related entity data on a summary page by adding a column to a list and setting `link-entity` to reference the associated entity. Gives an example where each Income row displays the related Employer name via an `EmploymentRelationship.employmentID` link. Also begins the next topic on deletion behavior for associated data, noting that parent-child deletions cascade to child entities while other relationship deletions remove only the relationship, not the related entity."
+          },
+          {
+            "title": "4.5 Deleting Associated Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000038",
+            "range": {
+              "start_unit_id": "p000032",
+              "end_unit_id": "p000034",
+              "start_page": 32,
+              "end_page": 34
+            },
+            "summary": "Explains deletion behavior for associated entities. By default, deleting a parent removes all child entities, but deleting an entity that participates in a relationship removes only the relationship records, not the related entities. Gives examples with Person/Relationship and Income/EmploymentRelationship. Also shows how to enable cascading deletes in the DS schema by adding an annotation/documentation element with `@curam.ieg.cascading.delete=true` on a relationship entity, causing related entities to be deleted when the relationship is deleted."
+          }
+        ],
+        "node_id": "n000033",
+        "range": {
+          "start_unit_id": "p000029",
+          "end_unit_id": "p000034",
+          "start_page": 29,
+          "end_page": 34
+        },
+        "summary": "Section 4 explains how IEG captures related data via composition or association. It shows nested parent-child entities, using Person/Income with loop criteria and nested summary lists. It then covers associated data for deeper relationships beyond two nesting levels, using relationship entities, keys, and list-questions with link-entity to select related records and display linked values in summaries. Finally, it describes delete behavior: parent-child deletions cascade, relationship deletions normally remove only links, and cascading deletes can be enabled with `@curam.ieg.cascading.delete=true`."
+      },
+      {
+        "title": "5 Efficient Ways of Capturing Data",
+        "level": 1,
+        "children": [
+          {
+            "title": "5.1 List Questions",
+            "level": 2,
+            "children": [
+              {
+                "title": "Single-select",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains single-select list questions in Cúram IEG: setting `single-select=\"true\"` makes a list question mutually exclusive, so only one item can be chosen. Shows an example for marking a primary care giver on `Person` using a boolean attribute and a list filtered by criteria (`age > 14`), rendered as radio buttons. Also notes list questions can be used with non-Person entity types and in `for-each` loops; the section then transitions to code-table questions."
+              }
+            ],
+            "node_id": "n000040",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "IEG list questions provide a more efficient alternative to repeating boolean questions for each entity. A list question is added to a cluster, specifies the entity type to display, and uses the question ID to bind to a boolean attribute on that entity. It includes a label for the question and an item-label to identify each list entry, such as first name for household members. Example: after capturing household members, display them in a list and let the user select who has income."
+          },
+          {
+            "title": "5.2 Code-table questions",
+            "level": 2,
+            "children": [],
+            "node_id": "n000042",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000037",
+              "start_page": 36,
+              "end_page": 37
+            },
+            "summary": "Explains code-table questions in Cúram IEG. By default, code-table attributes render as drop-down menus; questions can be single-select or multi-select. Notes that drop-downs must have a default selected option to avoid invalid HTML. Gives an example of a single-select homeState question backed by an AddressState code table, and explains that multi-select code-table questions require storing answers in a sequence with a separate entity type, using multi-select=\"true\"."
+          },
+          {
+            "title": "5.3 Conditional Elements",
+            "level": 2,
+            "children": [
+              {
+                "title": "Conditional Sections",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Explains conditional sections in IEG scripts. Sections can be shown or hidden by evaluating a `visible` expression at script start; if hidden, the section is omitted from the sections panel and the expression is not re-evaluated during execution. Uses a pre-populated DS flag example (`IntakeInformation.collectIncomeInformation==true`) to hide an Income section when the boolean is false. Also notes that conditional elements in general can be sections, pages, or clusters."
+              },
+              {
+                "title": "Conditional Pages",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "Explains how to make pages, sections, loops, and clusters conditional in IEG. A whole section can be wrapped in a condition that is re-evaluated whenever the section is reached, so changing earlier answers can enable/disable it; the section remains visible in the sections panel but grayed out if unavailable. Pages and loops can also be shown/hidden by condition expressions. Gives an example of a static conditional cluster on a Person page, displayed only when `Person.gender == \"SX2\"` to ask whether the person is pregnant."
+              },
+              {
+                "title": "Conditional Clusters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000040",
+                  "start_page": 39,
+                  "end_page": 40
+                },
+                "summary": "Explains how clusters can be conditionally displayed in IEG question pages. Distinguishes static conditional clusters, whose condition depends only on data from other pages and can be decided before rendering, from dynamic conditional clusters, whose condition references questions on the same page and updates live in the browser. Notes pregnancy as an example, requires JavaScript for dynamic behavior, disallows custom functions in dynamic expressions, and supports only one condition level around a cluster, though cascading dependencies are possible."
+              }
+            ],
+            "node_id": "n000043",
+            "range": {
+              "start_unit_id": "p000038",
+              "end_unit_id": "p000040",
+              "start_page": 38,
+              "end_page": 40
+            },
+            "summary": "Explains conditional elements in IEG scripts: sections, pages, and clusters can be shown or hidden based on prior answers or pre-populated DS data. Conditional sections can be hidden at script start via `visible` and won’t appear in the sections panel; using `condition` instead re-evaluates availability during navigation and can gray out the section. Pages and loops can also be conditional. Clusters may be static or dynamic: static conditions depend on other pages, while dynamic ones update live on the same page and require JavaScript, with limits on custom functions and nesting."
+          },
+          {
+            "title": "5.4 Question Matrices",
+            "level": 2,
+            "children": [],
+            "node_id": "n000047",
+            "range": {
+              "start_unit_id": "p000041",
+              "end_unit_id": "p000041",
+              "start_page": 41,
+              "end_page": 41
+            },
+            "summary": "This section explains question matrices as a way to ask the same codetable-based question across multiple entities, displayed as a matrix of codetable values versus entities with selectable checkboxes. It contrasts them with list questions from section 5.1, which ask boolean questions about groups. An example shows capturing SubstanceAbuse levels for each household member by defining a codetable domain, adding an attribute to Person, and using a regular list-question configuration that the IEG Player renders as a matrix."
+          },
+          {
+            "title": "5.5 Fast Path Navigation",
+            "level": 2,
+            "children": [
+              {
+                "title": "List Question driving a Loop",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000042",
+                  "start_page": 42,
+                  "end_page": 42
+                },
+                "summary": "Explains Fast Path navigation in Cúram IEG scripts, which is optional and off by default, and skips already answered loop/condition pages on later passes while still allowing edits from summary pages. This subsection focuses on the “List Question driving a Loop” use case: gathering household income data with a nested fast-path loop over persons and their income records. Includes an example XML snippet showing a `for-each` loop on `Person` with `fast-path=\"true\"` and an inner `while` loop on `Income`."
+              },
+              {
+                "title": "Eligibility Criteria",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "Shows how a fast-path list question can use eligibility criteria to filter who appears in a loop-driven income-entry flow. The example adds `criteria=\"age > 18\"` so only adults can be selected for income. It explains that the loop itself does not change, but if a person’s date of birth changes and they become ineligible, any previously entered income for that person is automatically deleted when the updated date is submitted."
+              },
+              {
+                "title": "Fast Path Conditions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Explains “fast path” conditional pages in Cúram scripts. When a condition is marked fast-path, its pages are hidden on re-iteration over household members unless the condition previously evaluated false and now becomes true. Uses pregnancy details for female household members as the example. Includes XML showing an About You page and a PregnancyPage under a fast-path condition on Person.gender==\"SX2\"."
+              },
+              {
+                "title": "Condition in Fast Path Loop",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Explains how a condition behaves when nested inside a Fast Path loop. It acts like putting criteria on the loop, except if the condition becomes true, the contained page cannot be shown because there is no new loop iteration, so it is skipped; if it becomes false, the page and its data are not deleted because the condition is not re-evaluated. The section recommends using loop criteria instead of a nested condition and includes an XML example with a for-each Person loop and nested Income loop."
+              }
+            ],
+            "node_id": "n000048",
+            "range": {
+              "start_unit_id": "p000042",
+              "end_unit_id": "p000045",
+              "start_page": 42,
+              "end_page": 45
+            },
+            "summary": "Fast Path navigation is an optional, off-by-default IEG feature that speeds repeated script entry by skipping previously answered loop/condition pages while still allowing edits from summary pages. This section covers four cases: a fast-path list question driving a nested income loop, eligibility criteria filtering loop members and auto-deleting data when a person becomes ineligible, fast-path conditional pages that reappear only when a condition changes from false to true, and a condition inside a fast-path loop, which is not recommended because newly true pages can be skipped and false conditions don’t trigger deletion."
+          },
+          {
+            "title": "5.6 Implicit Delete",
+            "level": 2,
+            "children": [],
+            "node_id": "n000053",
+            "range": {
+              "start_unit_id": "p000046",
+              "end_unit_id": "p000046",
+              "start_page": 46,
+              "end_page": 46
+            },
+            "summary": "Explains IEG “Implicit Delete”: when a user changes an answer via a regular question, list-question, or set-attribute (not a custom function), the engine rechecks any condition, list-question criteria, or loop criteria using that answer. If the expression becomes false, the related pages are removed and associated data is deleted automatically, without needing to revisit the script. This section is useful for understanding automatic cleanup behavior driven by changing inputs."
+          },
+          {
+            "title": "5.7 Three Field Date Picker",
+            "level": 2,
+            "children": [],
+            "node_id": "n000054",
+            "range": {
+              "start_unit_id": "p000046",
+              "end_unit_id": "p000048",
+              "start_page": 46,
+              "end_page": 48
+            },
+            "summary": "Describes the optional three-field date picker for user-entered dates. It replaces the default text field/calendar with day, month, and year drop-downs, improving speed for long-past dates and preventing invalid entries. To enable it, the data store schema attribute must use the `IEG_THREE_FIELD_DATE` type (or a domain extending it). Month display/order follows the application date format property. Day options run 1–31 with validation blocking impossible dates; year options span 100 years past to 30 years future and are not configurable."
+          }
+        ],
+        "node_id": "n000039",
+        "range": {
+          "start_unit_id": "p000035",
+          "end_unit_id": "p000048",
+          "start_page": 35,
+          "end_page": 48
+        },
+        "summary": "Covers IEG techniques for efficient data capture: list questions for selecting entities by boolean attribute, including single-select variants; code-table questions with single- and multi-select drop-downs; conditional sections, pages, and clusters (static vs dynamic); question matrices for repeating codetable questions across entities; Fast Path navigation and its effects on loops/conditions and implicit deletes; automatic implicit delete behavior when answers change; and the optional three-field date picker for faster, validated date entry."
+      },
+      {
+        "title": "6 Other Script Development Considerations",
+        "level": 1,
+        "children": [
+          {
+            "title": "6.1 Displaying Data as Read-Only",
+            "level": 2,
+            "children": [],
+            "node_id": "n000056",
+            "range": {
+              "start_unit_id": "p000049",
+              "end_unit_id": "p000049",
+              "start_page": 49,
+              "end_page": 49
+            },
+            "summary": "Explains how IEG scripts can display answers as read-only. Covers the basic `read-only` attribute on question pages and the more flexible `read-only-expression` on sections, pages, clusters, questions, and list questions. Notes that dynamic enable/disable works only in the browser with JavaScript, cannot use custom functions, and may cascade across questions on the same page. Also describes datastore behavior for disabled questions, the restriction on mandatory questions with dynamic read-only, and that this is unsupported on Relationship Pages."
+          },
+          {
+            "title": "6.2 Invoking external functionality by using expressions and custom functions",
+            "level": 2,
+            "children": [],
+            "node_id": "n000057",
+            "range": {
+              "start_unit_id": "p000050",
+              "end_unit_id": "p000052",
+              "start_page": 50,
+              "end_page": 52
+            },
+            "summary": "This section explains how scripts invoke external functionality through expressions and custom functions. It distinguishes read-only/list usage, browser-evaluated expressions that cannot call custom functions in dynamic conditional clusters, and two custom function types: pure functions that return values, and stand-alone callouts that may update the datastore. An example shows validating a ZIP code against state via a Java custom functor, metadata registration, and a validation expression that blocks Next on failure. It also notes optional validation with isNotNull and populating state from ZIP code."
+          },
+          {
+            "title": "6.3 Reusing Scripts",
+            "level": 2,
+            "children": [],
+            "node_id": "n000058",
+            "range": {
+              "start_unit_id": "p000053",
+              "end_unit_id": "p000053",
+              "start_page": 53,
+              "end_page": 53
+            },
+            "summary": "Explains how to reuse script definitions by splitting one script into multiple files. A main script references “subscripts,” each a standalone script that can also run independently. The section is a brief note on this reuse mechanism within script development."
+          },
+          {
+            "title": "6.4 Source Control and Versioning",
+            "level": 2,
+            "children": [],
+            "node_id": "n000059",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000054",
+              "start_page": 54,
+              "end_page": 54
+            },
+            "summary": "IEG script definitions are stored and edited directly in the database via the IEG Editor, so changes update the script in place. The section emphasizes that these scripts are development artifacts and should be placed under source control like other software assets. It also notes that scripts can be reused as subscripts elsewhere, so modifications may affect referencing scripts and should be re-tested."
+          },
+          {
+            "title": "6.5 Rendering Custom HTML on a Summary Page",
+            "level": 2,
+            "children": [
+              {
+                "title": "How to use the custom-output element",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000057",
+                  "start_page": 56,
+                  "end_page": 57
+                },
+                "summary": "Explains how to configure and use the custom-output element to render custom HTML on a summary page. Covers the required data-accessor attribute (fully qualified data accessor class) and class-name attribute (fully qualified custom renderer class), and notes that one renderer can be paired with different data accessors for different entity data. Describes implementing IEGCustomOutputEntityData or extending IEGCustomOutputDataAccessor to retrieve entity XML, and implementing IEGCustomOutputRenderer to process/render it, with key utility APIs for entity retrieval, XML parsing, and localization."
+              },
+              {
+                "title": "Guidelines for using the custom-output element",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000058",
+                  "start_page": 58,
+                  "end_page": 58
+                },
+                "summary": "Guidelines for custom-output on summary pages: add required custom properties to the summary page’s properties file and reference them directly in the custom renderer. Use IEGCustomOutputRenderer localization APIs for strings, code tables, money, booleans, and dates; no number-formatting API is provided. Retrieve entity data only through read-only data accessor classes, not for editing. Avoid fetching too much data due to performance impact. Images and properties should be loaded from the resource store, using methods like getLocalizedText and getLocalizedImageFromResourceStore."
+              },
+              {
+                "title": "Sample code for rendering custom HTML",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000059",
+                  "end_unit_id": "p000062",
+                  "start_page": 59,
+                  "end_page": 62
+                },
+                "summary": "Shows how to render custom HTML in an IEG summary page using a custom-output element. Covers rules: output must be read-only, valid within the page context, accessible, and not delegated to other renderers; use it for RTL/high-contrast needs. Includes sample Java classes for a data accessor and custom renderer, showing retrieval of Person entity data, localized text, and images from the resource store. Also shows a summary-page properties entry and sample IEG XML with custom-output placed before a list."
+              }
+            ],
+            "node_id": "n000060",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000062",
+              "start_page": 55,
+              "end_page": 62
+            },
+            "summary": "Explains how to render custom HTML on an IEG summary page with the optional custom-output element. It requires fully qualified data-accessor and class-name attributes, and can be used multiple times with different data accessors or the same renderer. Covers implementing IEGCustomOutputEntityData/IEGCustomOutputDataAccessor to retrieve read-only entity XML, and IEGCustomOutputRenderer to process, localize, and render it. Gives API guidance, performance/accessibility constraints, resource-store use, import caveats, and sample code for a household summary with properties and images."
+          }
+        ],
+        "node_id": "n000055",
+        "range": {
+          "start_unit_id": "p000049",
+          "end_unit_id": "p000062",
+          "start_page": 49,
+          "end_page": 62
+        },
+        "summary": "Covers advanced IEG script topics: making questions, pages, clusters, and lists read-only via `read-only` and `read-only-expression`, including dynamic browser-side enable/disable limits, datastore behavior, and whole-script read-only via runtime API. Explains calling external functionality with expressions and custom functions, including pure functions vs datastore-updating callouts, with ZIP/state validation and populate-state examples. Notes splitting scripts into reusable subscripts and source-control/versioning implications. Also details custom HTML on summary pages using `custom-output`, required accessor/renderer classes, localization/resource-store APIs, restrictions, and sample implementation."
+      },
+      {
+        "title": "7 Integrating IEG into a Cúram Application",
+        "level": 1,
+        "children": [
+          {
+            "title": "7.1 Creating a Script Execution",
+            "level": 2,
+            "children": [],
+            "node_id": "n000065",
+            "range": {
+              "start_unit_id": "p000063",
+              "end_unit_id": "p000063",
+              "start_page": 63,
+              "end_page": 63
+            },
+            "summary": "Recommends creating an IEG script execution before launching the Player, using the public API to generate an execution ID and pass it to the player. Shows example code with `IEGRuntime.createScriptExecution(iegScriptID, schemaName)`. This section also introduces using `finish-page` and `quit-page` attributes in the IEG script to define redirect URLs when the user completes or exits the player, linking the player back to an application page."
+          },
+          {
+            "title": "7.2 Specifying a Redirection URL",
+            "level": 2,
+            "children": [],
+            "node_id": "n000066",
+            "range": {
+              "start_unit_id": "p000063",
+              "end_unit_id": "p000063",
+              "start_page": 63,
+              "end_page": 63
+            },
+            "summary": "Explains how to specify redirect destinations for an IEG script using the finish-page and quit-page attributes. These attributes define the URL or application page the user is sent to when completing or quitting the IEG Player, linking the player back to the host application. An example sets both attributes to `IEG2_listAllIEG2Scripts`, redirecting to the list of IEG scripts in the administration screens."
+          },
+          {
+            "title": "7.3 Running the IEG Player in a Tab",
+            "level": 2,
+            "children": [],
+            "node_id": "n000067",
+            "range": {
+              "start_unit_id": "p000064",
+              "end_unit_id": "p000065",
+              "start_page": 64,
+              "end_page": 65
+            },
+            "summary": "Explains how to run the IEG Player in a tab instead of a modal. The opening link must target `ieg/Screening.do` and pass an `executionID`, since `Screening.do` invokes the player. Includes a sample resolve UIM/JSP script that checks for script validation errors, redirects to a validation error page if needed, or calls the script runner to obtain the execution ID and then redirects to the IEG player."
+          },
+          {
+            "title": "7.4 Running the IEG Player in a Modal Dialog",
+            "level": 2,
+            "children": [
+              {
+                "title": "Opening the IEG Player in a Modal Dialog",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000066",
+                  "end_unit_id": "p000067",
+                  "start_page": 66,
+                  "end_page": 67
+                },
+                "summary": "Explains how to open the IEG Player in a modal dialog by launching Screening.do from a modal with executionID and system parameters via a resolve UIM. Introduces the out-of-the-box System_IEGResolverModal.uim, which first checks for script validation errors using IEGScriptAdmin_checkForScriptErrors_TH. If errors exist, it redirects to a modal validation error page; otherwise it runs the script and redirects to the IEG player. Includes JSP scriptlet logic and parameter handling for modal execution."
+              },
+              {
+                "title": "Exiting a Script Execution in a Modal Dialog",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Directly Closing the Modal on Script Completion",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000068",
+                      "end_unit_id": "p000068",
+                      "start_page": 68,
+                      "end_page": 68
+                    },
+                    "summary": "Explains how to end an IEG script execution directly from a modal dialog. To close the modal on completion, Exit, or Save & Exit, the script must use a resolve UIM as the finish-page and/or quit-page. That resolve UIM then invokes a custom JSP that calls the JavaScript function to close the dialog, often with a redirect or refresh in the parent tab. Includes an example JSP scriptlet for redirecting to the IEG2_listAllIEG2Scripts administration screen."
+                  },
+                  {
+                    "title": "Progressing to Further UIM Screen/s in the Modal Dialog",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000069",
+                      "end_unit_id": "p000069",
+                      "start_page": 69,
+                      "end_page": 69
+                    },
+                    "summary": "Explains how to keep a modal IEG dialog open after script execution by defining the required UIM page as the finish-page and/or quit-page in the IEG script. Once that UIM loads, processing continues as standard UIM within the modal dialog. The section also notes `CloseAndRedirect.jspx` as the out-of-the-box helper for closing the modal and redirecting to a parent UIM, and begins the next topic on cleaning up application data."
+                  }
+                ],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000068",
+                  "end_unit_id": "p000068",
+                  "start_page": 68,
+                  "end_page": 68
+                },
+                "summary": "Explains two ways to finish or exit an IEG script running in a modal dialog: close the modal and refresh/redirect the parent page, or continue to further UIM screens inside the modal. To close directly on completion, Exit, or Save & Exit, the script must use a resolve UIM as the finish-page and/or quit-page, which calls a custom JSP/JavaScript handler to close the dialog. Includes an example that redirects to the IEG2_listAllIEG2Scripts admin screen and mentions `CloseAndRedirect.jspx` as a built-in helper."
+              }
+            ],
+            "node_id": "n000068",
+            "range": {
+              "start_unit_id": "p000066",
+              "end_unit_id": "p000068",
+              "start_page": 66,
+              "end_page": 68
+            },
+            "summary": "Explains how to run the IEG Player in a modal dialog and how to exit it cleanly. It describes opening Screening.do from a modal via a resolve UIM with executionID and system parameters, using the provided System_IEGResolverModal.uim. That resolver checks for script validation errors, redirects to a modal validation-error page if needed, otherwise runs the script and opens the player. It also covers two exit patterns: close the modal and refresh/redirect the parent, or continue to other UIM screens, using a resolve UIM such as CloseAndRedirect.jspx."
+          },
+          {
+            "title": "7.5 Cleaning Up Application Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000073",
+            "range": {
+              "start_unit_id": "p000069",
+              "end_unit_id": "p000069",
+              "start_page": 69,
+              "end_page": 69
+            },
+            "summary": "Explains how IEG script execution data is stored and cleaned up. Describes the IEGEXECUTIONSTATE table, which holds current page, navigation history, and control-question answers needed during execution, while script data is stored in the Datastore (DS). Introduces manual and automatic cleanup of application data, and notes recommendations to help cleanup proceed smoothly. Useful if you need details on persistence and removal of IEG execution state after script completion."
+          },
+          {
+            "title": "7.6 Resuming Executed Scripts",
+            "level": 2,
+            "children": [],
+            "node_id": "n000074",
+            "range": {
+              "start_unit_id": "p000070",
+              "end_unit_id": "p000070",
+              "start_page": 70,
+              "end_page": 70
+            },
+            "summary": "Explains how to resume a stopped IEG script execution by storing its execution ID in a custom table linked to a user ID. Notes that resumption works by passing the executionID to the IEG Player, as for a new execution, provided the IEGEXECUTIONSTATE entry still exists and the script definition has not changed. References cleanup guidance in section 7.5."
+          }
+        ],
+        "node_id": "n000064",
+        "range": {
+          "start_unit_id": "p000063",
+          "end_unit_id": "p000070",
+          "start_page": 63,
+          "end_page": 70
+        },
+        "summary": "Explains how to integrate IEG into a Cúram app via tab or modal. Covers creating a script execution with the public API and passing the execution ID to Screening.do, setting finish-page/quit-page redirection, and resolving to validation-error or player pages. Shows modal-specific handling, including CloseAndRedirect.jspx and whether to close the modal or continue with UIM screens. Also describes cleanup of IEGEXECUTIONSTATE/DS data and how to resume scripts later using a stored execution ID if state still exists."
+      },
+      {
+        "title": "8 Managing Captured Data",
+        "level": 1,
+        "children": [
+          {
+            "title": "8.1 Retrieving Captured Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000076",
+            "range": {
+              "start_unit_id": "p000071",
+              "end_unit_id": "p000071",
+              "start_page": 71,
+              "end_page": 71
+            },
+            "summary": "Explains how to retrieve and pre-populate captured data in the Datastore (DS) used by IEG scripts. The DS public API can read data from a populated schema or insert data before execution. To access the correct client data, the executionID and schema name are essential. Example code shows obtaining the root entity via IEGRuntime and then reading it from an opened datastore. Also notes that pre-population can supply known values, such as personal details, for confirmation or modification during script execution."
+          },
+          {
+            "title": "8.2 Pre-Populating Scripts with Captured Data",
+            "level": 2,
+            "children": [],
+            "node_id": "n000077",
+            "range": {
+              "start_unit_id": "p000071",
+              "end_unit_id": "p000074",
+              "start_page": 71,
+              "end_page": 74
+            },
+            "summary": "Explains how captured script data is stored in the Datastore (DS) and how to retrieve or pre-populate it for IEG scripts. Shows using the executionID and schema name to read the correct root entity, then using the public DS API to create entities, set attributes, add them under a root entity, and create a script execution from that existing root entity. Notes that only DS data can be pre-populated, not control questions or other script state, so the first section still displays for confirmation."
+          }
+        ],
+        "node_id": "n000075",
+        "range": {
+          "start_unit_id": "p000071",
+          "end_unit_id": "p000074",
+          "start_page": 71,
+          "end_page": 74
+        },
+        "summary": "Explains how IEG script data is stored and managed in the Datastore (DS), including retrieving captured data after execution and pre-populating scripts before execution. Covers using the public DS API with the correct executionID and schema name to access the root entity and related entities, and shows how to create entities and attributes, add a root entity, and start a script execution from existing DS data. Notes that only DS data can be pre-populated, not control questions or other script state, so the first section still appears for confirmation."
+      },
+      {
+        "title": "9 Using the Resource Store",
+        "level": 1,
+        "children": [
+          {
+            "title": "9.1 Listing all Resources",
+            "level": 2,
+            "children": [],
+            "node_id": "n000079",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000075",
+              "start_page": 75,
+              "end_page": 75
+            },
+            "summary": "Explains how an admin user lists all resources in the Resource Store. After logging in, go to the IEG navigation section and open “Application Resources” to view resources and search by category. Describes the main resource categories used by IEG: CSS for Player styling, Image for Player/scripts images, and Property for locale-specific text. Also notes that resources are organized by category and can be filtered and searched from the listing screen."
+          },
+          {
+            "title": "9.2 Uploading a New Resource",
+            "level": 2,
+            "children": [],
+            "node_id": "n000080",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000075",
+              "start_page": 75,
+              "end_page": 75
+            },
+            "summary": "Explains how to add a new resource in the Resource Store. From the resources list, an admin can click the add-new-resource link to open a form. Required fields are Name (unique, may follow type-specific naming conventions), Content Type (e.g., image/png or text/plain), and Content via file chooser. Useful for understanding how resources are uploaded and what metadata is needed before use in IEG scripts."
+          },
+          {
+            "title": "9.3 Removing an Existing Resource",
+            "level": 2,
+            "children": [],
+            "node_id": "n000081",
+            "range": {
+              "start_unit_id": "p000076",
+              "end_unit_id": "p000076",
+              "start_page": 76,
+              "end_page": 76
+            },
+            "summary": "Explains how to delete an existing resource in Application Resources: open the resource via the “view” link, then choose “delete” on the View Resource page. A confirmation dialog appears before the resource is removed from the system. Also sits among nearby sections on updating and downloading resources."
+          },
+          {
+            "title": "9.4 Updating an Existing Resource",
+            "level": 2,
+            "children": [],
+            "node_id": "n000082",
+            "range": {
+              "start_unit_id": "p000076",
+              "end_unit_id": "p000076",
+              "start_page": 76,
+              "end_page": 76
+            },
+            "summary": "Explains how to update an existing application resource: use the “edit” link from either the Application Resources page or the View Resource page, then choose the replacement file in the “New content” field from your file system."
+          },
+          {
+            "title": "9.5 Downloading an Existing Resource",
+            "level": 2,
+            "children": [],
+            "node_id": "n000083",
+            "range": {
+              "start_unit_id": "p000076",
+              "end_unit_id": "p000076",
+              "start_page": 76,
+              "end_page": 76
+            },
+            "summary": "Explains how to download an existing application resource from the “Application Resources” page. Each resource entry has a “download” link that opens the browser’s file download dialog, allowing the user to save the resource locally or open it directly."
+          },
+          {
+            "title": "9.6 Adding Images",
+            "level": 2,
+            "children": [],
+            "node_id": "n000084",
+            "range": {
+              "start_unit_id": "p000076",
+              "end_unit_id": "p000076",
+              "start_page": 76,
+              "end_page": 76
+            },
+            "summary": "Explains how to add images as application resources for use in IEG scripts. Images can be assigned to sections (shown in the left navigation panel) and to pages (shown in the page title area). This section introduces image usage in IEG and continues the resource-management workflow described in earlier sections."
+          },
+          {
+            "title": "9.7 Changing Static Text",
+            "level": 2,
+            "children": [],
+            "node_id": "n000085",
+            "range": {
+              "start_unit_id": "p000077",
+              "end_unit_id": "p000077",
+              "start_page": 77,
+              "end_page": 77
+            },
+            "summary": "Explains how static UI text is managed in IEG scripts: text is extracted into locale-specific properties files stored in the resource store rather than read directly from the script. Describes the naming convention for script and page properties files, how to update text by downloading/editing/reuploading the properties file, and how locale-specific versions override defaults. Notes upload settings for properties files: Content Type `text/plain` and empty Content Disposition."
+          },
+          {
+            "title": "9.8 Changing the Default File Encoding",
+            "level": 2,
+            "children": [],
+            "node_id": "n000086",
+            "range": {
+              "start_unit_id": "p000077",
+              "end_unit_id": "p000078",
+              "start_page": 77,
+              "end_page": 78
+            },
+            "summary": "Uploaded plain text resources are assumed to be UTF-8. If a different encoding is needed, specify it in the resource’s Content Type using an optional charset parameter, e.g. `text/plain; charset=ISO-8859-1`. This section is about controlling file encoding when uploading text resources to the resource store."
+          }
+        ],
+        "node_id": "n000078",
+        "range": {
+          "start_unit_id": "p000075",
+          "end_unit_id": "p000078",
+          "start_page": 75,
+          "end_page": 78
+        },
+        "summary": "Explains how to use the Resource Store in IEG: listing resources via the admin “Application Resources” screen with category search/filtering; uploading, updating, deleting, and downloading resources; and the main resource types (CSS, Image, Property). Also covers adding images for sections and pages, managing static text through locale-specific properties files, and controlling plain-text encoding with the Content Type charset parameter."
+      },
+      {
+        "title": "10 Using IBM Rational AppScan to scan IEG",
+        "level": 1,
+        "children": [
+          {
+            "title": "10.1 Preparation",
+            "level": 2,
+            "children": [],
+            "node_id": "n000088",
+            "range": {
+              "start_unit_id": "p000079",
+              "end_unit_id": "p000079",
+              "start_page": 79,
+              "end_page": 79
+            },
+            "summary": "Preparation for scanning IEG with IBM Rational AppScan. It explains that IEG uses a sync token to keep browser/player submissions consistent, which makes scanning difficult; for scans, set `appscan.mode.enabled=true` to disable sync token checking, but keep it enabled in production. It also recommends disabling stack traces by renaming the configuration file and setting `errorpage.stacktrace.output=false` to reduce noise. Notes that relationship pages cannot currently be scanned because their generated field names vary between runs."
+          },
+          {
+            "title": "10.2 Relationship Pages",
+            "level": 2,
+            "children": [],
+            "node_id": "n000089",
+            "range": {
+              "start_unit_id": "p000079",
+              "end_unit_id": "p000079",
+              "start_page": 79,
+              "end_page": 79
+            },
+            "summary": "Relationship pages in IEG are used to collect household relationship information, but they are dynamically generated with a variable number of fields. Because the field names can change between executions, it is currently not possible to run an AppScan scan on an IEG question script that contains a relationship page."
+          },
+          {
+            "title": "10.3 Scan Configuration",
+            "level": 2,
+            "children": [],
+            "node_id": "n000090",
+            "range": {
+              "start_unit_id": "p000079",
+              "end_unit_id": "p000079",
+              "start_page": 79,
+              "end_page": 79
+            },
+            "summary": "This section gives the basic AppScan setup for IEG scans. After launching AppScan, create a new scan from the Welcome screen by choosing “Create New Scan...” and then selecting the “Regular Scan” predefined template. It sits within broader guidance on scanning IEG applications, including prior notes about enabling appscan.mode.enabled, disabling stack trace output, and the limitation that relationship pages cannot currently be scanned."
+          },
+          {
+            "title": "10.4 Test Policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000091",
+            "range": {
+              "start_unit_id": "p000080",
+              "end_unit_id": "p000080",
+              "start_page": 80,
+              "end_page": 80
+            },
+            "summary": "Configure AppScan’s Test Policy for a web application scan: select Enabled/Disabled and keep only Enabled tests, then filter by Severity to disable Low and Informational tests, and by Invasive to disable invasive tests. The section is part of scan setup and explains which test categories to enable/disable for IEG scanning."
+          },
+          {
+            "title": "10.5 Explore Options",
+            "level": 2,
+            "children": [],
+            "node_id": "n000092",
+            "range": {
+              "start_unit_id": "p000080",
+              "end_unit_id": "p000080",
+              "start_page": 80,
+              "end_page": 80
+            },
+            "summary": "Configure AppScan’s Explore Options by selecting the section in the scan configuration view, setting Redundant Path Limit to 1, and choosing Breadth First as the Explore Method."
+          },
+          {
+            "title": "10.6 Communications and Proxy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000093",
+            "range": {
+              "start_unit_id": "p000080",
+              "end_unit_id": "p000080",
+              "start_page": 80,
+              "end_page": 80
+            },
+            "summary": "This section configures AppScan’s Communications and Proxy settings for a web application scan. The only specific setting shown is to set Number of Threads to 1 after selecting Communications and Proxy in the scan configuration dialog."
+          },
+          {
+            "title": "10.7 Test Options",
+            "level": 2,
+            "children": [],
+            "node_id": "n000094",
+            "range": {
+              "start_unit_id": "p000081",
+              "end_unit_id": "p000081",
+              "start_page": 81,
+              "end_page": 81
+            },
+            "summary": "This section configures AppScan test options for IEG scanning. It instructs users to disable adaptive testing based on application behavior. It then notes that IEG requires multi-step recorded training for correctly formatted input, and that recorded Screening.do steps and __u=x values must be handled with regular-expression exclude path exceptions."
+          },
+          {
+            "title": "10.8 Multi-Step Operations",
+            "level": 2,
+            "children": [],
+            "node_id": "n000095",
+            "range": {
+              "start_unit_id": "p000081",
+              "end_unit_id": "p000081",
+              "start_page": 81,
+              "end_page": 81
+            },
+            "summary": "Explains how to “train” AppScan for IEG multi-step operations by recording a browser session in Multi-Step Operations, navigating through the app, and saving the playback sequence. Advises enabling sequence playback and disabling play optimization. Notes that steps containing Screening.do can desynchronize AppScan, so they must be handled as exclude-path regexes with exceptions for specific executionID and __u=x values. Also references adding these rules in Exclude Paths and Files before continuing the configuration wizard."
+          },
+          {
+            "title": "10.9 Exclude Paths and Files",
+            "level": 2,
+            "children": [],
+            "node_id": "n000096",
+            "range": {
+              "start_unit_id": "p000081",
+              "end_unit_id": "p000081",
+              "start_page": 81,
+              "end_page": 81
+            },
+            "summary": "Configure AppScan exclude paths for IEG screening pages. Add a regular-expression Exclude rule for .*/Curam/ieg/Screening.do.*. Then add Exception rules using regular expressions: one for .*/Curam/ieg/Screening.do?executionID=.\\d* and additional exceptions for each recorded __u=x value in the sequence steps, using .*/Curam/ieg/Screening.do?executionID=.*&__u=[value]. This lets AppScan ignore unwanted Screening.do paths while preserving the trained multi-step playback sequence."
+          },
+          {
+            "title": "10.10 Complete",
+            "level": 2,
+            "children": [],
+            "node_id": "n000097",
+            "range": {
+              "start_unit_id": "p000082",
+              "end_unit_id": "p000082",
+              "start_page": 82,
+              "end_page": 82
+            },
+            "summary": "This section says the AppScan scan configuration is now complete. To preserve the configured scan, choose “I will start my scan later” rather than letting AppScan randomly scan the whole application, then click “Finish.” It transitions into the next step, “Running the Scan,” where the user starts the scan from the AppScan main window via Scan > “Test Multi-Step Operations Only.”"
+          },
+          {
+            "title": "10.11 Running the Scan",
+            "level": 2,
+            "children": [],
+            "node_id": "n000098",
+            "range": {
+              "start_unit_id": "p000082",
+              "end_unit_id": "p000082",
+              "start_page": 82,
+              "end_page": 82
+            },
+            "summary": "This section explains how to start a previously configured AppScan scan: open the AppScan main window, choose Scan, then select “Test Multi-Step Operations Only.” It notes that scans may take several days depending on the application. After completion, AppScan shows a summary screen, and the reported issues must be reviewed to separate real vulnerabilities from false positives."
+          }
+        ],
+        "node_id": "n000087",
+        "range": {
+          "start_unit_id": "p000079",
+          "end_unit_id": "p000082",
+          "start_page": 79,
+          "end_page": 82
+        },
+        "summary": "Guidance for scanning IEG applications with IBM Rational AppScan. It explains why scanning is difficult because IEG uses changing sync tokens and dynamic relationship pages, and recommends setting appscan.mode.enabled=true for scans plus disabling stack traces to reduce noise. It then walks through AppScan setup: create a regular web application scan, tune test policy, explore options, threads, and adaptive testing, record multi-step operations, add exclude/exception regexes for Screening.do and __u=x values, save the scan, and run “Test Multi-Step Operations Only.”"
+      },
+      {
+        "title": "11 Runtime processing in IEG",
+        "level": 1,
+        "children": [
+          {
+            "title": "11.1 Loss of network connectivity during an IEG session",
+            "level": 2,
+            "children": [],
+            "node_id": "n000100",
+            "range": {
+              "start_unit_id": "p000083",
+              "end_unit_id": "p000086",
+              "start_page": 83,
+              "end_page": 86
+            },
+            "summary": "Describes IEG behavior when network connectivity is lost during a session. If a user triggers an action that needs a server call, IEG shows a centered modal error dialog with configurable title, message, and OK button text, blocking the page behind it. Users can continue offline-only functions; server-dependent features stop working until connectivity is restored. Navigation actions reset after dismissal. If a session-timeout warning appears while offline, it shows no content and cannot be dismissed; the browser must be refreshed after reconnection."
+          }
+        ],
+        "node_id": "n000099",
+        "range": {
+          "start_unit_id": "p000083",
+          "end_unit_id": "p000086",
+          "start_page": 83,
+          "end_page": 86
+        },
+        "summary": "Explains IEG runtime behavior during network loss. If a user action requires a server call while offline, IEG shows a centered, configurable modal connectivity error dialog that blocks the page; offline-only features still work. Dismissing it resets navigation actions, and it can appear repeatedly until connectivity returns. Server-dependent features resume after reconnection. External links and non-navigation actions like print are not affected. Also notes that a session-timeout warning shown while offline is empty, non-dismissible, and requires a browser refresh after reconnection."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

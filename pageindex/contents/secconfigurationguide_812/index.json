@@ -1,0 +1,663 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "137ae557a9284b7b",
+    "title": "Cúram 8.1.2 Social Enterprise Collaboration Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/SECConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "137ae557a9284b7b1275e2d17a30ca946e6a9b73f0faba1bd90fb152b2bce3cd",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:29:56+00:00",
+    "page_count": 28,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/SECConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Social Enterprise Collaboration Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000028",
+      "start_page": 1,
+      "end_page": 28
+    },
+    "summary": "Configuration guide for Cúram 8.1–8.1.2 Social Enterprise Collaboration. Covers how to configure social enterprise folders and multidisciplinary teams: SEF types, predefined vs folder-defined MDTs, team member roles, sharing and sensitivity controls, supported case types, SEF relationships, MDT notifications, and portal display limits. Also explains discussion settings such as default moderator, pagination, comments per page, email links, and watcher notifications. Includes compliance guidance and transaction-history logging for SEF/MDT events, with application properties to disable specific transactions. Ends with summary tables of SEF/MDT and discussion configuration properties plus legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section on page 27 before using the document or the supported product. It also shows the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Cúram 8.1–8.1.2 edition notice and chapter start for Social Enterprise Collaboration. Covers configuration of social enterprise folders and MDTs, including SEF types, predefined vs folder-defined teams, roles, sharing/sensitivity, case type support, SEF relationships, MDT notifications, and MDT portal display limits. Also documents discussion settings: default moderator, user-defined moderator, comments per page, email links, and watcher notifications. Ends with compliance guidance for using the public API only."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section documents configurable transaction-history logging for Social Enterprise Collaboration, listing enabled SEF, MDT, meeting, discussion, communication, attachment, note, and file events with their transaction codes and example log text. It explains how to disable transactions via application properties, including steps to add/publish properties and sample properties for MDT-related events. It ends with summaries of SEF/MDT configuration options and discussion configuration options."
+          },
+          {
+            "title": "Edition — pages 25-26",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000026",
+              "start_page": 25,
+              "end_page": 26
+            },
+            "summary": "This section lists application properties for configuring Social Enterprise discussion behavior. It covers default moderator settings (case owner vs. user-defined moderator), moderator username setup, discussion pagination and comments-per-page defaults, URLs used in email links for viewing discussions and stopping watches, and whether watcher email notifications are sent on discussion updates."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000026",
+          "start_page": 5,
+          "end_page": 26
+        },
+        "summary": "Cúram 8.1–8.1.2 edition notice and chapter on configuring Social Enterprise Collaboration. Covers SEF/MDT setup: SEF types, predefined vs folder-defined MDTs, roles, sharing and sensitivity, case type support, SEF relationships, MDT notifications, and MDT portal limits. Also covers discussion settings (default moderator, pagination, comments per page, email links, watcher emails), compliance guidance, and transaction-history logging with codes and properties to disable SEF/MDT events. Includes summary tables of SEF/MDT and discussion application properties."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "Provides the Merative privacy policy link and surrounding legal notices. This section mainly covers copyright/license terms for sample programs, warranty and liability disclaimers, and a list of trademarks and registered marks owned by Merative and other companies. Useful if you need the official privacy policy URL or legal/branding usage information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "This section lists trademark and copyright notices for the document and related software. It states that sample names and data are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and the examples are provided “as is” without warranty. It also gives the Merative privacy policy URL and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000027",
+          "end_unit_id": "p000027",
+          "start_page": 27,
+          "end_page": 27
+        },
+        "summary": "This notice page gives the publication’s legal terms: permitted personal and internal commercial use, preservation of proprietary notices, and restrictions on derivative works or external distribution without Merative consent. It also disclaims warranties, limits liability, notes export-law compliance, and says no patent license is granted. It clarifies that non-Merative product information is unverified and external links are not endorsements. Includes copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a chapter on configuring Social Enterprise Collaboration. Lists sections on SEF/MDT setup, discussions, compliancy, transaction histories, and summary tables of configuration options. Also includes front matter entries like Note, Edition, Notices, Privacy policy, and Trademarks. Useful as a navigation index for locating detailed configuration topics rather than substantive content."
+      },
+      {
+        "title": "1 Configuring Social Enterprise Collaboration",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring Social Enterprise Folders and Multidisciplinary Teams",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring the SEF Types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Setting Up Predefined MDTs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000013",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how to set up predefined multidisciplinary teams (MDTs) for social enterprise folders. A social enterprise folder type can be marked as “Predefined,” so new folders must choose a team from a preconfigured list. It also contrasts this with defining an MDT directly from the folder for case-specific teams. The section outlines MDT configuration basics: selecting members from existing users or members, adding new members, assigning roles, and setting the first member as default lead. It notes roles must exist before assignment and may apply to external or internal users."
+                  },
+                  {
+                    "title": "Defining a Multidisciplinary Team for an Individual SEF",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000014",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains how to define a multidisciplinary team for an individual SEF by choosing “Define From Social Enterprise Folder,” which lets team members be entered manually rather than selected from a predefined MDT. Notes this is useful for case-specific teams, such as child welfare cases where members may include teachers or coaches. Also covers related setup for MDTs: predefined versus custom teams, member/lead-member configuration, role definitions, and sharing outcome plan activities, notes, and attachments with external MDT members."
+                  }
+                ],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains how social enterprise folder (SEF) types are configured in Cúram Social Enterprise Collaboration. Each SEF type is linked to a multidisciplinary team (MDT) type, which may be predefined or defined within a specific folder. This section frames the main configuration choices for SEF/MDT setup, including what information appears in SEF and MDT portals and which collaboration tools are available, such as incident reporting, transaction recording, and discussions. Useful if you need to understand how SEF types control MDT structure and portal behavior."
+              },
+              {
+                "title": "Configuring Multidisciplinary Teams and Team Members",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to configure multidisciplinary teams (MDTs) and members for social enterprise folders. Covers predefined MDTs versus defining teams per folder, selecting members from existing users or creating new reusable members, and assigning a default lead member. Notes that each member needs a defined role first, created on the New Role page, with role type indicating external MDT member or internal system user. Also mentions sharing outcome plan activities, notes, and attachments with external MDT members through the collaborative outcome plan."
+              },
+              {
+                "title": "Configuring the Case Types Supported in SEFs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains how to configure which case types can be included in Social Enterprise Folders (SEFs) using two application properties: `curam.ise.sef.casetypes.allowall` to allow all case types (default `NO`), and `curam.ise.sef.casetypes` to specify allowed case types via CaseTypeCode values (default `CT2,CT5` for product delivery and integrated cases). It also briefly introduces SEF relationship configuration for automatic relationship creation when adding clients."
+              },
+              {
+                "title": "Configuring SEF Relationships",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains the SEF relationship configuration property curam.ise.sef.client.createrelationship. Its default value is YES, meaning that when a new client is added to a social enterprise folder, the system automatically creates relationships between that SEF and any other SEFs the client already belongs to."
+              },
+              {
+                "title": "Configuring MDT Member Notifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains application properties for MDT notifications and portal display. It covers email notifications for team member add/remove events and team leader changes, with default curam.ise.send.mdtmembers.notifications = YES and a reminder to configure member email addresses. It also documents MDT portal settings for how long tasks, meeting invites, and meeting minutes appear on the home page, the My Tasks display window, and whether unmanaged clients on incidents are starred out, with default values and behavior."
+              },
+              {
+                "title": "Configuring the MDT Portal",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring Time Period for Displaying Tasks on Portal Home Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Defines the application property curam.mdtexternal.numDaysTasksToDisplayWorkspaceHome, which controls how long MDT member tasks appear on the portal home page after assignment. Tasks are shown for a maximum number of days from the current date; the default is 7 days."
+                  },
+                  {
+                    "title": "Configuring Time Period for Displaying Meeting Invites on Portal Home Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Defines the MDT portal home-page meeting invite display window. The application property curam.mdtexternal.numDaysMeetingsToDisplayWorkspaceHome sets how many days after the current date scheduled meetings are shown to a multidisciplinary team member on their portal home page. Default is 7, so invited meetings remain visible for up to seven days after the invite."
+                  },
+                  {
+                    "title": "Configuring Number of Meeting Minutes Displayed on Portal Home Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Defines the application property curam.mdtexternal.numMeetingMinutesToDisplayWorkspaceHome for the MDT member portal home page. It controls the maximum number of meeting minutes shown; the default is 5. The system retrieves all meeting minutes issued to the MDT member, then displays only the first five."
+                  },
+                  {
+                    "title": "Configuring Time Period for Displaying Tasks on My Tasks Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Defines the application property curam.mdtexternal.numDaysTasksToDisplayMyTasks for the MDT member’s My Tasks page. It controls the maximum number of days after the current date that assigned tasks remain visible. Default is 30 days, meaning tasks stay on the My Tasks page for up to thirty days after assignment."
+                  },
+                  {
+                    "title": "Configuring Display of Affected Clients on Incidents",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains the application property curam.mdtexternal.starUnmanagedClientsOnIncidents, which controls how affected clients are shown on incidents. When set to YES (default), clients not managed by the MDT member are starred out so members only see their own clients’ information. Useful for configuring incident privacy/display behavior for MDT members."
+                  }
+                ],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section lists MDT portal display configuration properties: how long assigned tasks appear on the portal home page (default 7 days), how long meeting invites remain visible on the home page (default 7 days), how many meeting minutes are shown on the home page (default 5), how long tasks stay on the My Tasks page (default 30 days), and whether unmanaged affected clients on incidents are starred out (default YES) to protect privacy."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000012",
+              "start_page": 9,
+              "end_page": 12
+            },
+            "summary": "Covers configuration of Social Enterprise Folders (SEFs) and Multidisciplinary Teams (MDTs): SEF types, predefined vs folder-defined MDTs, team members, roles, sharing options, sensitivity, supported SEF case types, automatic SEF relationships, MDT member email notifications, and MDT portal display settings. Includes key application properties and defaults for tasks, meeting invites/minutes, My Tasks duration, and starred unmanaged incident clients. Useful for admin setup of SEF/MDT structure, collaboration visibility, and portal behavior."
+          },
+          {
+            "title": "1.2 Configuring Discussions",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring the Default Type of Discussion Moderator",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to configure the default discussion moderator for social enterprise collaboration using the application property `curam.ise.discussion.discussionsModerator`. Default is `CASEOWNER`, with alternatives `CASESUPERVISOR`, `MDTLEADER`, and `USERDEFINED`. Describes fallback rules when a role maps to multiple users or none exist: use the system-defined moderator, then the `SYSTEM` user. Also begins the related topic of specifying a user-defined default moderator via `curam.ise.discussion.userDefinedModerator`."
+              },
+              {
+                "title": "Specifying a User as the Default Moderator for Discussions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to configure the default moderator for discussions in social enterprise folders, investigations, and outcome plans. The section describes the application property curam.ise.discussion.discussionsModerator, its default value CASEOWNER, and alternative values CASESUPERVISOR, MDTLEADER, and USERDEFINED. It also outlines how the system chooses a specific user when a role can map to multiple users or no user exists, including fallback to the system-defined moderator or SYSTEM user. Begins the topic of specifying a user-defined default moderator."
+              },
+              {
+                "title": "Configuring the Number of Comments Per Discussion Page",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains the `curam.ise.discussion.commentsPerPage` application property, which controls pagination in discussion pages. Its default value is `5`, meaning each discussion page shows up to 5 comments. It appears alongside related discussion email/URL configuration properties, but this section’s main focus is the number of comments displayed per page."
+              },
+              {
+                "title": "Providing Access to Discussion View Page in Email Notifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains the application property `curam.discussion.viewURL`, which controls the link used to access the discussion view page in email notifications. The default value is `Discussion_viewDiscussion`, but agencies can change it to point to their own discussion view page."
+              },
+              {
+                "title": "Providing Access to Stop Watching Discussions in Email Notifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains the `curam.discussion.stopWatching` application property, which controls the email link to the “stop watching discussion” page. The default target is `Discussion_stopWatchingFromEmail`, and agencies can change it to point to their own page. The surrounding page also mentions related discussion email settings, including the discussion view URL and whether watchers receive update notifications."
+              },
+              {
+                "title": "Emailing Discussion Watchers when Updates Occur",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains the application property curam.discussion.sendEmailNotifications, which controls whether discussion watchers receive email notifications when updates occur. Default is NO, so no watcher emails are sent unless enabled. This page also sits among related discussion settings for default moderators, comments per page, and email links to view or stop watching discussions."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "This section introduces discussion configuration for social enterprise folders, investigations, and outcome plans. It explains the default moderator type property `curam.ise.discussion.discussionsModerator` (default `CASEOWNER`; also `CASESUPERVISOR`, `MDTLEADER`, `USERDEFINED`) and how the system resolves a single user, falling back to a system-defined moderator or `SYSTEM` user when needed. It also begins the related topic of setting a specific user as the default moderator via `curam.ise.discussion.userDefinedModerator`."
+          },
+          {
+            "title": "1.3 Compliancy for Social Enterprise Collaboration",
+            "level": 2,
+            "children": [],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section defines compliance rules for Social Enterprise Collaboration. It states that the component has a public API identified by Javadoc, and only those documented classes, interfaces, and methods are safe to use. Other public-looking classes may change or be removed without notice. To remain compliant, applications must not depend on undocumented classes or call undocumented methods, and should not place custom classes or interfaces in the component’s packages unless the Javadoc explicitly allows it."
+          },
+          {
+            "title": "1.4 Configuring Transaction Histories",
+            "level": 2,
+            "children": [
+              {
+                "title": "Enabled SEF Transactions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "SEF Status, Case, and Client Transactions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Describes default SEF transaction log entries and how to disable them via application properties tied to CaseTransactionEvents codes. Focuses on enabled transaction types for social enterprise folder statuses, cases, and clients, including created/closed/reopened folders, cases added/removed, clients added/removed, and SEF relationships created. Provides example transaction descriptions and codes such as SEFET97, SEFET98, SEFET99, SEFET100–103, and SEFET111."
+                  },
+                  {
+                    "title": "Multidisciplinary Team and Team Member Transactions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section lists enabled transaction types for multidisciplinary teams and team members in Cúram 8.1.2. It covers four events: MDT added (SEFET109), MDT removed (SEFET110), MDT member added (SEFET107), and MDT member removed (SEFET108). Each transaction is shown with its description and example format for Social Enterprise Folder cases. A note points to application properties for disabling these transactions."
+                  },
+                  {
+                    "title": "Meeting and Meeting Minute Transactions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Lists enabled transaction types for social enterprise folder relationship changes and multidisciplinary team activity, then introduces meeting and meeting minute transactions. It shows example descriptions and codes for relationship modified/deleted (e.g., SEFET112, SEFET113), MDT added/removed (SEFET109, SEFET110), and MDT member added/removed (SEFET107, SEFET108). It notes sample application properties for disabling MDT/team member transactions and indicates the next table covers meeting and meeting minute transaction types."
+                  },
+                  {
+                    "title": "Discussion Transactions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section lists enabled discussion-related transaction types and their message formats. It covers Discussion Created, Modified, and Deleted events, each showing how the transaction text is composed from discussion subject, posted-by user, date, and time, with example values and transaction codes SEFET127, SEFET128, and SEFET129. Useful for identifying audit/history events for discussions in the application."
+                  },
+                  {
+                    "title": "Communication Transactions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section lists transaction types shown in communication history, with example descriptions and transaction codes. It covers communications inserted, modified, cancelled, and sent, including separate codes for recorded communications, hard copy communications, and emails (e.g., ET47, ET48, ET49, ET50, ET51, ET94). It also notes discussion comment transactions (created, modified, deleted) with codes SEFET137–SEFET139, and states these are hidden by default via application properties."
+                  },
+                  {
+                    "title": "Attachment Transactions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000020",
+                      "start_page": 19,
+                      "end_page": 20
+                    },
+                    "summary": "This section lists enabled attachment transaction types and their audit/event codes in Social Enterprise Collaboration. It covers attachment lifecycle actions such as added, modified, and deleted across cases, incidents, discussions, discussion posts, and meeting minutes, with example message formats and codes like SEFET120–SEFET134. Useful if you need to identify which attachment-related events are recorded and how they are described in transaction logs."
+                  }
+                ],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000020",
+                  "start_page": 15,
+                  "end_page": 20
+                },
+                "summary": "Lists enabled social enterprise transaction log events and their CaseTransactionEvents codes, plus how to disable them via application properties. Covers SEF status/case/client events (created, closed, reopened, added/removed, relationship created/modified/deleted), MDT/team member events, meetings and meeting minutes, discussions and discussion comments, communications (recorded, email, pro forma, word document, notes), and attachment/file events across cases, incidents, discussions, and meeting minutes. Includes example transaction text and codes such as SEFET97–139 and ET47–96."
+              },
+              {
+                "title": "Adding Application Properties to Disable SEF Transactions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Explains that all Social Enterprise Folder (SEF) transactions are enabled by default except discussion comments, and that application properties must be added to disable them. Lists the setup steps: log in as system administration, open Properties, add a property, enter details, save, publish changes, and confirm publication. Points readers to the sample application properties on the next page for the exact values."
+              },
+              {
+                "title": "Sample Application Properties for Disabling Transactions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Disabling the 'Multidisciplinary Team Added' Transaction",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Provides sample application properties for disabling multidisciplinary team transaction logging in Cúram. It covers the “Multidisciplinary Team Added” transaction (property `curam.config.transaction.disable.SEFET109`, value `YES`) and the “Multidisciplinary Team Removed” transaction (property `curam.config.transaction.disable.SEFET110`, value `YES`). Both are dynamic string properties under Application - Case Transaction Log settings, with descriptions indicating they prevent transaction records from being created when a team is added to or removed from a social enterprise folder."
+                  },
+                  {
+                    "title": "Disabling the 'Multidisciplinary Team Removed' Transaction",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "This section gives sample application properties for disabling case transaction log entries related to multidisciplinary teams. It specifically covers the “Multidisciplinary Team Removed” transaction, with property name `curam.config.transaction.disable.SEFET110`, value `YES`, dynamic String type, and category “Application - Case Transaction Log settings.” If set to YES, no transaction is recorded when a multidisciplinary team is removed from the social enterprise folder. It also briefly references the related “Multidisciplinary Team Added” property."
+                  },
+                  {
+                    "title": "Disabling the Multidisciplinary Team Member Added Transaction",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Describes application properties for disabling social enterprise folder case transaction logs when multidisciplinary team members are added or removed. It gives sample settings for two dynamic string properties in the “Application - Case Transaction Log settings” category: `curam.config.transaction.disable.SEFET107` and `curam.config.transaction.disabled.SEFET108`, both set to `YES`. When enabled, the corresponding “Multidisciplinary Team Member Added/Removed” transaction is not recorded."
+                  },
+                  {
+                    "title": "Disabling the Multidisciplinary Team Member Removed Transaction",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section documents application properties that disable Social Enterprise Collaboration transaction logging for multidisciplinary team member events. It gives sample settings for both “Multidisciplinary Team Member Added” and “Multidisciplinary Team Member Removed” transactions, including property names, category, type, dynamic status, and display names. Setting the value to YES prevents the corresponding transaction from being recorded in the social enterprise folder (SEF)."
+                  }
+                ],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000023",
+                  "start_page": 22,
+                  "end_page": 23
+                },
+                "summary": "Lists sample Application - Case Transaction Log settings for disabling social enterprise folder transaction logging in Cúram. Covers four dynamic String properties set to YES: Multidisciplinary Team Added (`curam.config.transaction.disable.SEFET109`), Removed (`...SEFET110`), Member Added (`...SEFET107`), and Member Removed (`curam.config.transaction.disabled.SEFET108`). Each entry includes property name, display name, category, type, locale, and description stating that no transaction is recorded when the corresponding team or member event occurs."
+              }
+            ],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000023",
+              "start_page": 15,
+              "end_page": 23
+            },
+            "summary": "Explains how to configure SEF transaction history logging. It lists enabled transaction types and CaseTransactionEvents codes for folders/cases/clients, MDT and team member actions, meetings and minutes, discussions and comments, communications, attachments, incidents, and notes. It also describes how to disable transactions using application properties in System Administration, with discussion comments disabled by default. Includes sample property settings for MDT/team member add/remove events (YES values) and notes that properties are dynamic and must be published."
+          },
+          {
+            "title": "1.5 Summary of SEF and MDT Configuration Options",
+            "level": 2,
+            "children": [],
+            "node_id": "n000047",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Summarizes SEF and MDT application properties and their defaults. Covers which case types are allowed in social enterprise folders, automatic creation of folder relationships for new clients, MDT member notification settings, and display limits for tasks/meetings on portal home and My Tasks pages. Also includes whether unmanaged clients are starred out on incidents to restrict visibility to each member’s own clients. Useful for locating configurable behavior and default values for SEF/MDT functionality."
+          },
+          {
+            "title": "1.6 Summary of Discussion Configuration Options",
+            "level": 2,
+            "children": [],
+            "node_id": "n000048",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000028",
+              "start_page": 24,
+              "end_page": 28
+            },
+            "summary": "Summarizes discussion application properties for Cúram social enterprise collaboration. Covers default moderator selection for discussions, configuration of a specific default moderator user, discussion pagination and comments per page, email notification behavior for watchers, and URLs used in discussion view and stop-watching links in email notifications. Includes default values such as pagination enabled, 5 comments per page, and email notifications disabled. Also includes licensing, warranty, privacy, and trademark notices for the documentation."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000028",
+          "start_page": 9,
+          "end_page": 28
+        },
+        "summary": "Covers configuration of Cúram Social Enterprise Collaboration, including social enterprise folder types and MDTs, predefined vs folder-defined teams, team member roles, sharing, sensitivity, case-type support, automatic SEF relationships, MDT notifications, and portal display limits. Also explains discussion settings such as default moderator selection, pagination, comments per page, email notifications, and view/stop-watching URLs. Includes transaction history logging options for SEF/MDT actions and notes a compliance rule that only documented public APIs are safe to use. Ends with notices and licensing text."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

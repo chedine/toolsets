@@ -1,0 +1,1284 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "606905f3cc824add",
+    "title": "Cúram 8.1.2 Configuration Transport Manager Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramTransportManager_812.pdf",
+    "source_type": "pdf",
+    "sha256": "606905f3cc824add8054c0832c75a00a7e36175b9fb0cf5a239c996be577e2b8",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:14:13+00:00",
+    "page_count": 60,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramTransportManager_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Configuration Transport Manager Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000060",
+      "start_page": 1,
+      "end_page": 60
+    },
+    "summary": "Overview of Cúram Configuration Transport Manager (CTM) and its documentation. Explains how CTM migrates application/configuration data as business objects across a system landscape, with a recommended minimum of separate development, test, and production systems. Covers prerequisites for setup, enabling CTM on new or existing installations, homogeneity requirements (same version, customizations, third-party software, time zone, locale, date formats, database character set), unique landscape naming, multiple landscapes, and data management policy choices, including where business objects may be created/modified and key-block range allocation. Describes the CTM change set lifecycle: define, transport/apply, clone/delete, troubleshooting, revert, and audit/history. Also includes extensive physical table-to-administration business object mappings for Platform, Infrastructure, Application Modules, Family Services, Income Support, and related assessment/outcome management areas. The last pages are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note tells readers to review the Notices section on page 59 before using the information or the supported product. It also shows the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introduces the Cúram Configuration Transport Manager and its setup requirements for migrating administrative business objects across systems. Covers recommended system landscape roles (development, test, production), landscape homogeneity, unique landscape naming, multiple landscapes, and data management policy choices. Also explains change-set application guidance, keeping test and production in sync, key block range allocation to avoid primary-key clashes, and handling cryptographic/password data differences. Includes steps for enabling the feature on new systems, configuring landscape names, and using the setup tool/XML config."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram Configuration Transport Manager overview: how to configure and enable CTM across a system landscape. Covers landscape name, key block range allocation, system identifier, and setup via Ant/database targets. Explains enabling CTM on existing production systems, prerequisites for other landscape systems, and restrictions when defaults are left in place. Also outlines transportable business objects and change sets, manual export/import, applying, cloning, deleting, bi-directional transport, undo/revert behavior, and accountability/audit trail."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Cúram Configuration Transport Manager overview covering change set transport/apply/undo history and the physical table-to-administration business object mapping. It lists business objects, impacted entities, and special transport/publish rules for case, CER, organization, and user configuration. Key areas include Benefit/Product, Integrated Case, Liability, Assessment, Investigation, Issues, Screening, CER Rule Set/Object Propagator/Category, plus organization structures, locations, internal/external users, and dynamic features. Useful for finding exact entities, dependencies, and manual publish/revert behavior."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section catalogs Cúram Configuration Transport Manager business objects and their backing entities, focusing on transportable configuration for evidence types, case audits, BIRT reports/viewers, workflow queues and allocation targets, miscellaneous settings (rate tables, financial calendar, language/locale, intake, PCR, advisor, decision assist, service plans), IEG scripts and datastore schemas, funded programs, and infrastructure items like rule sets, properties, code tables, workflow processes, events, templates, and application resources. It also includes important transport/activation notes and ordering caveats."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "This section catalogs Cúram Configuration Transport Manager business objects and their backing entities across multiple domains: security, user interface, application modules (verification, evidence broker, appeals/legal action, provider management), universal access (intake, application case, screening, triage, life events, outreach, motivation), social enterprise collaboration, and outcome management. It explains what each configuration object does and lists the entity tables used to store its data. Useful for locating specific transport/configuration entities or understanding dependencies before moving changes between systems."
+          },
+          {
+            "title": "Edition — pages 55-58",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000058",
+              "start_page": 55,
+              "end_page": 58
+            },
+            "summary": "This section catalogs Cúram Configuration Transport Manager business objects and their backing entities. It covers assessment-related configuration (Outcome Management Questionnaire, Assessment, CDA Assessment Configuration, CER Assessment Configuration), Federal Allowable Component, and suite-specific objects for Cúram Family Services and Income Support (Contact Log, Placement Type Mapping, Master Detail Code Table, Summary Rules, Benefit Delivery). It is mainly a reference table of what configuration data each business object contains and which entities store it."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000058",
+          "start_page": 5,
+          "end_page": 58
+        },
+        "summary": "Introduces Cúram Configuration Transport Manager and its setup: minimum development/test/production landscape, homogeneity requirements, unique landscape naming, multiple landscapes, and data management policy choices. Explains CTM enablement on new or existing systems, system identifiers, key block range allocation, and transport/change set lifecycle actions such as define, apply, clone, delete, undo, and audit/history. Also serves as a long reference mapping many business objects to their backing entities across platform, infrastructure, application modules, social enterprise collaboration, outcome management, assessment, family services, and income support."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000060",
+              "end_unit_id": "p000060",
+              "start_page": 60,
+              "end_page": 60
+            },
+            "summary": "This section contains legal notices: fictitious example names disclaimer, sample program copyright/license terms, warranty and liability limits, a link to the Merative privacy policy, and trademark acknowledgments for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. It is useful for finding usage rights, privacy policy reference, and trademark ownership details."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000060",
+              "end_unit_id": "p000060",
+              "start_page": 60,
+              "end_page": 60
+            },
+            "summary": "This section lists legal notices, including a copyright/license statement for sample source programs, a privacy policy link, and trademark attributions. It identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks, notes that sample programs are provided “AS IS” without warranty, and states that other names may also be trademarks."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000059",
+          "end_unit_id": "p000059",
+          "start_page": 59,
+          "end_page": 59
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and enterprise reproduction rights, restrictions on distribution/derivative works, required preservation of proprietary notices, and Merative’s right to withdraw permission. States no warranties; content is provided “AS-IS,” with export-law compliance required and no implied patent license. Also notes non-Merative products/websites are not endorsed or verified. Contains copyright notice for Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "This is the table of contents for the Cúram Configuration Transport Manager documentation. It lists the main sections on setup prerequisites, enabling CTM on new or existing systems, change set lifecycle, troubleshooting, reverting configuration data, accountability/history, and physical table-to-administration business object mappings. It also shows major product areas covered later, including Cúram Platform, Infrastructure, Application Modules, Family Services, and Income Support Suite, plus notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Cúram Configuration Transport Manager overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Setting up the Configuration Transport Manager",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites for setting up the Configuration Transport Manager",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Defining the system landscape",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000010",
+                      "start_page": 9,
+                      "end_page": 10
+                    },
+                    "summary": "Explains the minimum and recommended system landscape for Configuration Transport Manager: at least three separate systems—development, test, and production—with development used to create business objects, test used to validate them, and production used only after thorough testing. Also covers alternative landscapes (for example UAT or training), recommends keeping the number of systems manageable, and stresses homogeneity across systems: same application version, customizations, third-party software, time zone, locale, and date/date-time formats."
+                  },
+                  {
+                    "title": "Defining a data management policy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000012",
+                      "start_page": 11,
+                      "end_page": 12
+                    },
+                    "summary": "This section defines a data management policy for a Cúram system landscape. It covers whether business objects are created/changed only in development or sometimes locally on production, when change sets should be applied to production, how to keep test and production data in sync, and how to centrally manage unique key block range assignments to avoid primary key clashes. It also stresses that local production-managed business objects should not be transported with Configuration Transport Manager."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000012",
+                  "start_page": 9,
+                  "end_page": 12
+                },
+                "summary": "Prerequisites for Configuration Transport Manager setup. Covers required system landscape design: at least separate development, test, and production systems; optional UAT/training landscapes; and strict homogeneity across systems (same application version, customizations, third-party software, time zone, locale, date formats, and database character set). Defines a data management policy: create/modify business objects mainly in development, avoid test/production changes, transport only standard-lifecycle objects, schedule production change sets during maintenance, keep test and production in sync, and centrally manage unique key block ranges to prevent primary key clashes."
+              },
+              {
+                "title": "Enabling Configuration Transport Manager on a new system",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring landscape names",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains that each system in a Configuration Transport Manager landscape must be assigned a landscape name, and only systems with the same name can exchange change sets. If no name is set, the default is `nolandscape`, but systems using it cannot transport change sets to any other system, including other `nolandscape` systems. It also notes that landscape names are configured with the setup tool and that key block ranges must be assigned uniquely to prevent primary key and unique ID conflicts when transporting business objects."
+                  },
+                  {
+                    "title": "Configuring key block ranges",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to configure unique key block ranges for each system in a landscape so transported business objects do not conflict on primary keys or unique IDs. Notes this setup is required for Configuration Transport Manager, alongside configuring landscape names. Useful for understanding system prerequisites and ID collision avoidance before transporting change sets."
+                  },
+                  {
+                    "title": "Configuring the landscape name and key block range allocation",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Starting the Configuration Transport Manager setup tool",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000022",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000015",
+                          "start_page": 15,
+                          "end_page": 15
+                        },
+                        "summary": "Explains how to start the Cúram Configuration Transport Manager setup tool as an Apache Ant target. It states that landscape name and key block range values must be set in the configuration file before running the database build, where they are loaded into the system. It also describes an alternative `insertrangeawareconfig` target to load the values separately, and shows how to specify a non-default configuration file location using the `rangeAwareConfig` system property."
+                      }
+                    ],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000015",
+                      "start_page": 14,
+                      "end_page": 15
+                    },
+                    "summary": "Explains how to configure a unique landscape name and key block range allocation for each system in a landscape via the XML config file and the Cúram Configuration Transport Manager setup tool. Describes the default config path, editing or relocating the file, and loading values into the database through the `build database` Ant target or separately with `build insertrangeawareconfig`. Notes that group/range pairs must be unique, multiple `<Rangevalue>` stanzas are allowed, and `rangeAwareConfig` specifies a non-default file path."
+                  },
+                  {
+                    "title": "Configuring the system identifier",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to set the Configuration Transport Manager system identifier for each system. The identifier is a unique human-readable name used to show the source system of change sets. It must be alphanumeric, contain no spaces, be up to 500 characters, and should not be “noname.” If left unset, the default “noname” prevents change sets from being released. The property curam.ctm.systemIdentifier is configured in Admin - System Settings and should generally not be changed after being set. Also notes default CTM values when setup is incomplete."
+                  }
+                ],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000015",
+                  "start_page": 13,
+                  "end_page": 15
+                },
+                "summary": "Explains how to enable Configuration Transport Manager on a new system by setting a landscape name and unique key block range allocation before startup. Systems can exchange change sets only with the same landscape name; the default `nolandscape` cannot transport change sets to any other system. Key block ranges prevent primary key/unique ID collisions and may include multiple unique `<Rangevalue>` entries. Configuration is done in the XML config file via the CTM setup tool, loaded through `build database` or `build insertrangeawareconfig`, with `rangeAwareConfig` for custom file locations."
+              },
+              {
+                "title": "Enabling Configuration Transport Manager on an existing application",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuration Transport Manager restrictions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains Configuration Transport Manager setup restrictions and default values. If CTM is not fully configured, the system uses default landscape name nolandscape, key block range allocation group 3, range 2, and system identifier noname. The system identifier must be alphanumeric, no spaces, up to 500 characters, and should not be noname. Systems using the default noname cannot release change sets. The CTM system identifier is set via curam.ctm.systemIdentifier in Property Administrator and should not be changed after initial setup."
+                  },
+                  {
+                    "title": "Prerequisites for enabling Configuration Transport Manager on an existing application",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains prerequisites and setup steps for enabling Configuration Transport Manager on an existing application, especially production systems. It states the feature is restricted unless a full setup is completed, and change sets cannot be transported to other systems in restricted mode. Key prerequisites are selecting a system landscape name, assigning unique key block range allocations, and setting a unique Configuration Transport Manager system identifier. For production, the landscape name must be changed from nolandscape during scheduled maintenance, and testing on a non-live duplicate is recommended first."
+                  },
+                  {
+                    "title": "Setting up a production system",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to enable Configuration Transport Manager on an existing production system. The system starts with restricted functionality unless setup is completed; change sets cannot be transported to other systems. Key prerequisites are choosing a system landscape name, allocating unique key block ranges across the landscape, and assigning a unique Cúram Configuration Transport Manager system identifier. The production system must be renamed from the default nolandscape and this change should be done only during scheduled offline maintenance, ideally first tested in a non-live duplicate environment."
+                  },
+                  {
+                    "title": "Setting up other systems in the system landscape",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains how to prepare additional systems in a CTM landscape (development, test, etc.). It says each must be a fresh installation with Configuration Transport Manager enabled, should closely match production including customizations, and must receive the same initial business object data copied from production before first start. It also notes production data should ideally be copied during maintenance when production is offline. Afterward, the standard CTM setup steps for new installations must be completed."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000018",
+                  "start_page": 16,
+                  "end_page": 18
+                },
+                "summary": "Explains how to enable Configuration Transport Manager on an existing application, especially production. CTM defaults to restricted mode unless setup is completed: default landscape name is nolandscape, key block allocation is group 3 range 2, and system identifier is noname, which prevents releasing change sets. It covers prerequisites, changing the production landscape name via curam.ctm.landscape.name during scheduled maintenance, setting a unique system identifier via curam.ctm.systemIdentifier, and preparing fresh, homogeneous development/test systems with copied initial business object data."
+              },
+              {
+                "title": "Other administrative considerations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "Covers administrative tasks for Configuration Transport Manager, especially adding systems to an existing system landscape. New systems must be fresh installations; an existing installation cannot be moved into another landscape. It also explains the change set lifecycle: create a change set, add configuration data, release it, transport it to another system, and apply it so the data becomes live. A sample dev-to-test-to-production scenario illustrates the transport flow."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000018",
+              "start_page": 9,
+              "end_page": 18
+            },
+            "summary": "Explains how to set up Configuration Transport Manager for system data migration. Covers minimum landscape requirements (at least separate development, test, and production systems), recommended homogeneity, unique landscape naming, data management policy, key block range allocation, and change-set lifecycle. Also describes enabling CTM on new installations via configuration and Ant setup tools, and on existing production systems by changing the landscape name and system identifier, then preparing fresh, matching development/test systems with copied initial data."
+          },
+          {
+            "title": "1.2 The change set lifecycle",
+            "level": 2,
+            "children": [
+              {
+                "title": "Defining a change set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains the change set lifecycle in Configuration Transport Manager: create an Open change set, add transportable business objects, optionally add related business objects, and release the set. Notes that administrators can search for and remove business objects while the set is Open, without needing to know underlying data structures. Describes related-object recommendations based on database relationships (foreign keys/link tables) to preserve data integrity, but warns that non-database dependencies, such as API-based relationships, are not detected."
+              },
+              {
+                "title": "Transporting business objects",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Explains how Cúram Configuration Transport Manager handles transporting business objects in change sets. Business object data is frozen when a change set is released, and released contents can no longer be modified. Administrators can transport released change sets automatically or manually to target systems, then apply them to make configuration data live in the database. Manual transport uses export, copy, and import steps. Applying a change set can add or update business objects, and changes can be moved bi-directionally between systems."
+              },
+              {
+                "title": "Cloning and deleting change sets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains how administrators can clone or delete change sets in CTM. A cloned change set must have a new name, starts as Open, and copies only business object identifiers—not their data—so later edits to those objects can make cloned content differ from the original. Change sets can be deleted at any time; once deleted, no further operations are allowed and the status becomes Canceled."
+              }
+            ],
+            "node_id": "n000030",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000021",
+              "start_page": 19,
+              "end_page": 21
+            },
+            "summary": "Explains the CTM change set lifecycle: create an Open change set, add transportable business objects (with search and removal while Open), optionally add related objects suggested from database links to preserve integrity, then release. Release freezes business object data and prevents further edits. The section also covers transporting released sets to target systems, including manual export/copy/import when no network connection exists, and applying a set to make configuration data live, potentially adding or updating objects and supporting bi-directional transport."
+          },
+          {
+            "title": "1.3 Troubleshooting Configuration Transport Manager errors",
+            "level": 2,
+            "children": [
+              {
+                "title": "Recommended usage of Configuration Transport Manager",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Configuration Transport Manager moves configuration changes between environments and can affect production systems. The section recommends using it as part of a formal release process, with administrators understanding exactly what is being transported and when. It warns that missed change sets or applying successive change sets in the wrong order can cause incorrect production behavior or overwritten changes. It also points readers to data management policy guidance for business object creation and modification."
+              },
+              {
+                "title": "Reverting to a defined set of configuration data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how Configuration Transport Manager undo/revert works for configuration changes. It describes reverting to a previous configuration via an automatically created revert change set, and notes limits: undo is only available before runtime data is created, otherwise a database rollback is needed. It also covers behavior for logically deletable business objects, and emphasizes accountability features such as change set history, audit trail, unique change set names, frozen contents, and traceability of user actions."
+              },
+              {
+                "title": "Accountability and the change set history",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This section explains how Configuration Transport Manager supports accountability and auditability for transported change sets. It records history such as when a change set was transported or applied, enabling traceability across users and systems and helping with remediation if problems occur. It also notes that change set names must be unique and that change set contents are frozen before transport so applied contents are known and auditable."
+              }
+            ],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000024",
+              "start_page": 22,
+              "end_page": 24
+            },
+            "summary": "This section explains Configuration Transport Manager risks and safeguards: recommended use in a formal release process, with administrators responsible for knowing what is transported and when; examples of incorrect transport causing production issues; undo/revert behavior via automatically created revert change sets; limits of undo once runtime data exists, requiring database rollback; treatment of logically deletable objects; and accountability features such as unique change set names, frozen contents, and transport/application history for audit and traceability."
+          },
+          {
+            "title": "1.4 Physical table to administration business object mapping",
+            "level": 2,
+            "children": [
+              {
+                "title": "Cúram Platform",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Case",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Benefit Product",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000026",
+                          "end_unit_id": "p000026",
+                          "start_page": 26,
+                          "end_page": 26
+                        },
+                        "summary": "This section explains the Benefit Product business object in Cúram Platform configuration. It describes how it stores configuration data for benefit product delivery case types, which determine eligibility for a person or employer and typically lead to a payment if successful. It also lists the related entities that hold this configuration data, such as PRODUCT, PRODUCTCATEGORY, EVIDENCEMETADATA, PRODUCTDELIVERYPATTERN, DELIVERYMETHOD, and LOCALIZABLETEXT."
+                      },
+                      {
+                        "title": "Integrated Case",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section describes the Integrated Case business object, which holds configuration data for integrated case types used to manage and consolidate case information for members of a household or family unit. It lists the entities storing this data, including ADMININTEGRATEDCASE, ICASSESSMENTCONFIGURATION, EVIDENCEMETADATA, ADMINICEVIDENCELINK, MILESTONECONFIGURATION, MILESTONELINK, LOCALIZABLETEXT, and TEXTTRANSLATION. The excerpt also begins adjacent topics on Liability Product and Assessment business objects, explaining their purpose and related configuration entities."
+                      },
+                      {
+                        "title": "Liability Product",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section describes the Liability Product business object in Cúram Configuration Transport Manager. It covers configuration data for product delivery cases of type liability product, where liabilities are billed to persons or employers (for example, overpaid benefits). It lists the stored entities, including PRODUCT, PRODUCTCATEGORY, PRODUCTCONCERNROLE, evidence- and approval-related tables, delivery pattern and time constraint entities, provision location, rules links, and localization/security entities."
+                      },
+                      {
+                        "title": "Assessment",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000044",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section describes the Assessment business object, which stores configuration data for an assessment case type. It explains that assessment cases are used for initial eligibility evaluation for a person or prospect person, and each assessment case represents a program used to assess potential benefit eligibility."
+                      },
+                      {
+                        "title": "CER Benefit Product",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000045",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000028",
+                          "start_page": 28,
+                          "end_page": 28
+                        },
+                        "summary": "Defines the CER Benefit Product business object for Cúram Express Rules benefit products, which configures product delivery cases and eligibility determination for benefits. Notes key transport/publishing behavior: CER Rule Data Configuration must be manually published, and when mixing object types the publish order is Rate Table, CER Data Configuration, CER Rule Set, then CER Benefit Product. Also requires transporting the Product Name code table for new target-system products. Lists the underlying configuration entities stored by this business object."
+                      },
+                      {
+                        "title": "CER Liability Product",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000046",
+                        "range": {
+                          "start_unit_id": "p000029",
+                          "end_unit_id": "p000029",
+                          "start_page": 29,
+                          "end_page": 29
+                        },
+                        "summary": "Describes the CER Liability Product business object, which stores configuration for the CER Liability Product case type used to determine whether a person or employer meets liability criteria and trigger payments to the organization. Notes that CER Liability Products use Cúram Express Rules. Special transport behavior: the target system requires manual publication of CER Rule Data Configuration, and new products must include Product Name and Product Type code tables as dependent business objects. Lists the entities that store the related configuration data."
+                      },
+                      {
+                        "title": "Correction Product",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000047",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Defines the Correction Product business object for payment correction configuration, used to create granular overpayment and underpayment instruction line items. Lists the main entities storing its configuration data, including PRODUCT, PRODUCTCATEGORY, PRODUCTCONCERNROLE, PRODUCTPROVISION, DEDUCTION, CASEAPPROVALCHECK, PRODUCTTIMECONSTRAINT, PRODUCTDELIVERYPATTERN, MILESTONECONFIGURATION, LOCALIZABLETEXT, and TEXTTRANSLATION. The page also begins the next section, Investigation, describing investigation case-type configuration for allegations such as child maltreatment or benefit fraud."
+                      },
+                      {
+                        "title": "Investigation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Defines the Investigation business object, which configures investigation case types. It explains that investigation cases are used to inquire into allegations or incidents such as child maltreatment or benefit fraud. The section lists the main configuration entities stored in the business object, including investigation config, assessment and approval checks, milestone and resolution links/configuration, localization tables, and security/collaboration admin links."
+                      },
+                      {
+                        "title": "Issues",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000049",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "This section lists configuration business objects in Cúram Transport Manager. It explains the Issues business object, used for caseworker case problems/questions and evidence discrepancies, created manually or automatically, and names its related entities. It also covers Screening, which configures screening case types for household benefit eligibility assessments, with its entities. Finally, it introduces Cúram Express Rules and the CER Rule Set business object, noting its contents and dependency on the CER rule set category object."
+                      },
+                      {
+                        "title": "Screening",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000050",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "Describes the Screening business object in Cúram Configuration Transport Manager. It stores configuration for a screening case type used to run program assessments and determine potentially eligible household members for benefits. It also acts as a container for consolidating information. The section lists related entities: SCREENINGCONFIGURATION, SCREENINGASSESSMENTCONFIG, MILESTONECONFIGURATION, MILESTONELINK, LOCALIZABLETEXT, and TEXTTRANSLATION."
+                      }
+                    ],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000030",
+                      "start_page": 26,
+                      "end_page": 30
+                    },
+                    "summary": "This section lists case-related Cúram Platform business objects and their stored configuration entities: Benefit Product, Integrated Case, Liability Product, Assessment, CER Benefit Product, CER Liability Product, Correction Product, and Investigation. It explains each case type’s purpose (eligibility, household case consolidation, liabilities, assessments, payment corrections, investigations) and names the underlying tables/entities used to transport their configuration. It also notes CER-specific publishing and dependency rules for CER Benefit/Liability Products."
+                  },
+                  {
+                    "title": "Cúram Express Rules",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "CER Rule Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000052",
+                        "range": {
+                          "start_unit_id": "p000031",
+                          "end_unit_id": "p000031",
+                          "start_page": 31,
+                          "end_page": 31
+                        },
+                        "summary": "The CER Rule Set business object stores configuration data for a CER rule set, including the rule set itself and any category links. It depends on the CER rule set category business object. This section sits within the Cúram Express Rules configuration overview and is useful if you need the specific business object that defines CER rule set configuration."
+                      },
+                      {
+                        "title": "CER Rule Object Propagator",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000053",
+                        "range": {
+                          "start_unit_id": "p000032",
+                          "end_unit_id": "p000032",
+                          "start_page": 32,
+                          "end_page": 32
+                        },
+                        "summary": "Describes the CER Rule Object Propagator business object and its CER data configuration details. It repeats special CER behaviors: CER rule sets must be manually published on the target system; mixed transports should be published in order (Rate Table, CER Data Configuration, CER Rule Set, CER Benefit Product); and revert behavior depends on whether the rule set was already published, affecting CREOLERuleSetEditAction and category link records."
+                      },
+                      {
+                        "title": "CER Rule Set Category",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000033",
+                          "end_unit_id": "p000033",
+                          "start_page": 33,
+                          "end_page": 33
+                        },
+                        "summary": "Defines the CER Rule Set Category business object in Cúram Configuration Transport Manager. It stores configuration data for CER rule set categories, which describe and classify CER rule sets. The stored entities are CREOLERULESETCATEGORY, LOCALIZABLETEXT, and TEXTTRANSLATION. This section appears in a broader list of configuration business objects and precedes the Organization section."
+                      }
+                    ],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000032",
+                      "start_page": 31,
+                      "end_page": 32
+                    },
+                    "summary": "Cúram Express Rules lists CER configuration business objects. It describes CER Rule Set, which stores the rule set and category links, depends on CER Rule Set Category, and requires manual publishing on the target system. It also notes special transport/revert behavior, including publish order for mixed objects: Rate Table, CER Data Configuration, CER Rule Set, CER Benefit Product. CER Rule Object Propagator covers CER data configuration details with the same behaviors. CER Rule Set Category defines CER rule set categories and their stored entities."
+                  },
+                  {
+                    "title": "Organization",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "This section lists Organization-related Cúram configuration business objects and their database entities. It introduces Organization Structure as the main object for managing an organization’s hierarchy, users, and functional areas, and shows that it supports distributed administration across organizational lines. The excerpt details the entities used to store Organization Structure configuration, including organization units, activities, positions, jobs, resources, reporting/location links, approval checks, and localization text."
+                  },
+                  {
+                    "title": "Dynamic Features",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000035",
+                      "start_page": 34,
+                      "end_page": 35
+                    },
+                    "summary": "This section describes dynamic feature configuration business objects in Cúram CTM, especially Dynamic Evidence Type, Dynamic Evidence Type Version, Dynamic Product Evidence Type, and Integrated Case Evidence Type. It explains what each stores, how evidence types evolve through versions, and how product/integrated case links are transported. It also notes a key deployment caveat: product links are only visible after an active evidence type version exists on the target system, and transported versions arrive as InEdit until activated."
+                  },
+                  {
+                    "title": "Case Audits",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "This section lists business objects and database entities for case audit configuration. It covers Case Audit Configuration, which stores audit settings for a specific case type and cannot be removed because every case type requires one, and Case Audit Selection Query, which defines criteria for sampling cases and cannot remove active queries. It identifies the related entities: AUDITCASECONFIG, AUDITCASEFOCUSAREA, AUDITCASESELECTIONQUERY, SELECTION QUERY, CRITERIA, and SELECTIONQUERYCRITERIALINK."
+                  },
+                  {
+                    "title": "Business Intelligence and Reporting Tools",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "This section lists Cúram configuration transport business objects and entities for Business Intelligence and Reporting Tools (BIRT) and workflow. It covers Report Configuration and Viewer Configuration for BI reports, including reusable report display settings, parameters, and viewer setup (default BIRT vs Actuate BIRT). It notes that transported viewer settings require target-system root and viewer configuration adjustments. It also describes Workflow configuration for work queues and subscriptions, used in Workflow Administration and allocation targets."
+                  },
+                  {
+                    "title": "Workflow",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "This section lists Cúram configuration transport business objects and entities for Workflow. It focuses on the Workqueue business object, which stores work queue configuration data in WORKQUEUE and WORKQUEUESUBSCRIPTION. It explains that work queues are subscription-based targets used for allocation, managed in Workflow Administration, and can be assigned by administrators or users. The section also notes related BI report/viewer configuration, including a warning that transported BI viewer/report settings may require manual root and viewer setup on the target system."
+                  },
+                  {
+                    "title": "Miscellaneous",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Decision Assist Assessment Type",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000061",
+                        "range": {
+                          "start_unit_id": "p000039",
+                          "end_unit_id": "p000039",
+                          "start_page": 39,
+                          "end_page": 39
+                        },
+                        "summary": "Defines the Decision Assist Assessment Type business object for Cúram Decision Assist (CDA). It stores configuration data for assessment cases of type decision assist, including the questionnaires and rules used to run client assessments and calculate an outcome or rating. This node is useful if you need to understand or configure CDA assessment setup and its underlying stored configuration."
+                      }
+                    ],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000038",
+                      "end_unit_id": "p000039",
+                      "start_page": 38,
+                      "end_page": 39
+                    },
+                    "summary": "Covers miscellaneous Cúram configuration business objects and their stored entities, including Rate Table, Financial Calendar, Language and Locale Mapping, Intake Process, Priority/Complexity/Risk, Advisor, and Decision Assist Assessment Type. These define configuration data for rates, office calendars, UI language/locale mapping, Common Intake processes, PCR processing, advisor guidance, and CDA assessment setup (questionnaires and rules). Useful for finding which entities hold each configuration type and for understanding transport/publishing implications for rate table/CER data."
+                  },
+                  {
+                    "title": "Service Plan",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000040",
+                      "end_unit_id": "p000040",
+                      "start_page": 40,
+                      "end_page": 40
+                    },
+                    "summary": "Defines the Service Plan business object and its configuration data for planning coordinated services and activities to help a client achieve a specific goal. It notes that service plan types vary by organizational goal, with examples such as Return to Work, Child Protection, and Permanency Plans. The section identifies the core configuration entities: SERVICEPLAN, SERVICEPLANAPPROVALCHECK, GOAL, GOALCONTRACTTEXT, SERVICEPLANGOALLINK, ADMINICSERVICEPLANLINK, and MILESTONECONFIGURATION."
+                  },
+                  {
+                    "title": "Cúram Intelligent Evidence Gathering",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "Describes Cúram Intelligent Evidence Gathering (IEG) configuration data and its database entities. IEG stores script configuration for interactive question flows where later questions depend on prior answers, so only relevant questions are shown. Lists the main entities used: IEGSCRIPTINFO, IEGSCRIPTRELS, and APPRESOURCE. Useful for understanding where IEG script metadata and related resources are stored."
+                  },
+                  {
+                    "title": "Cúram Funded Program Management",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "This section lists configuration business objects and datastore entities for Cúram Funded Program Management. It describes Fund, which defines fund structure, fiscal years, budgets, and administrative associations, and FundingRuleSet, which defines rules for using multiple funds for a product or service. It also notes related infrastructure configuration objects and a transport behavior caveat: some primary-key changes create new objects on target systems, affecting Security, Code Table, and Properties-related objects."
+                  }
+                ],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000041",
+                  "start_page": 26,
+                  "end_page": 41
+                },
+                "summary": "Cúram Platform lists configuration transport business objects and their storage entities for core platform areas: case types (Benefit, Integrated, Liability, Assessment, CER variants, Correction, Investigation), CER rules, organization, case audits, workflow, BI/reporting, miscellaneous settings, service plans, and IEG. It highlights what each object configures, the main database entities used, and important transport rules such as manual publishing for CER objects, dependency/order requirements, and target-system setup for BI viewer settings. Useful for locating where specific configuration data is stored."
+              },
+              {
+                "title": "Infrastructure",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Application Resource",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Lists application resource business objects and their stored entities. On this page, Application Resource variants include Universal Access, Image, Properties, and Schema, each described as holding configuration data used by the system to alter behavior or support organization-specific needs. All four map to the APPRESOURCE entity. This section follows related resource types like Event and template resources and is useful for locating the table of business objects/entities for application resources."
+                  },
+                  {
+                    "title": "Security",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "This section lists Cúram Configuration Transport Manager business objects and entities for security-related configuration data. It covers Security Role, Security Group, and Security Identifier, explaining that roles manage groups, groups manage security identifiers, and identifiers control access to securable elements such as methods or fields. It also includes related application resource/schema entries and begins a user interface resource description. Open this node if you need the mapping between security configuration objects and their underlying entities."
+                  },
+                  {
+                    "title": "User Interface",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "This section lists configuration business objects and their entities, focusing on user interface resources. It explains that a User Interface Resource stores configuration data for a UI application, which is a collection of components assembled for a specific user or role (for example, an Administration application). It also shows the related entity used to store this data: APPRESOURCE. Useful if you need the mapping between UI configuration objects and their underlying entities."
+                  }
+                ],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000045",
+                  "start_page": 42,
+                  "end_page": 45
+                },
+                "summary": "Infrastructure lists configuration business objects and their datastore entities for Cúram system infrastructure. It covers rule sets, application properties, code tables, workflow definitions/enactments, events, templates, application resources, security, and user interface resources. Key mappings include PROPERTIES/PROPDESCRIPTION, CODETABLEHEADER/CODETABLEITEM, PROCESSDEFINITION, EVENTCLASS/EVENTTYPE, APPRESOURCE for all application resource types, and SECURITYROLE/SECURITYGROUP/SECURITYIDENTIFIER plus related link entities. Useful for finding which business object stores each infrastructure configuration type."
+              },
+              {
+                "title": "Application Modules",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Provider Management",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Service Offering",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000071",
+                        "range": {
+                          "start_unit_id": "p000048",
+                          "end_unit_id": "p000048",
+                          "start_page": 48,
+                          "end_page": 48
+                        },
+                        "summary": "Describes the Service Offering business object in Cúram 8.1.2, which stores configuration for services an agency can offer clients, including core service details such as cost per unit. Lists the entities used to hold this configuration, including SERVICEOFFERING, SERVICERATE, PAYMENTOPTIONS, SERVICEDELIVERYCONFIGURATION, security and attendance settings, roster/approval/evaluation criteria, and contract text links. Useful for understanding how service offering setup is modeled and what related configuration data is included."
+                      }
+                    ],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000048",
+                      "start_page": 47,
+                      "end_page": 48
+                    },
+                    "summary": "Provider Management lists Cúram configuration business objects and entities for provider-related setup, including attendance payment and roster generation frequencies, training, certification, performance measures, placement payment frequency, service evaluation criteria, absence reason configuration, service groups, and service offerings. It explains that these objects store agency setup data for provider operations and service delivery. The Service Offering object is highlighted as a service configuration model with key fields like cost per unit and related entities for rates, payment options, delivery, security, attendance, roster, approval, evaluation, and contract text."
+                  },
+                  {
+                    "title": "Universal Access",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Intake Application",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000073",
+                        "range": {
+                          "start_unit_id": "p000049",
+                          "end_unit_id": "p000049",
+                          "start_page": 49,
+                          "end_page": 49
+                        },
+                        "summary": "The Intake Application section describes configuration data for intake applications in Cúram. It explains that an intake application lets citizens apply for programs by submitting personal, income, expense, employment, and education details, which become evidence used for eligibility decisions. It also lists the related configuration entities, including INTAKEAPPLICATIONTYPE, APPLICATIONCATEGORY, PDFFORM, APPLICATIONTYPEPROGRAMLINK, PROGRAMTYPE, EXTERNALSYSTEM, SERVICEAREA, MAPPINGCONFIGURATION, ONLINEPROGRAMGROUP, and localization entities."
+                      },
+                      {
+                        "title": "Application Case",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000074",
+                        "range": {
+                          "start_unit_id": "p000049",
+                          "end_unit_id": "p000049",
+                          "start_page": 49,
+                          "end_page": 49
+                        },
+                        "summary": "Describes the Application Case business object in Cúram Configuration Transport Manager. It stores configuration data for an application case used to manage a citizen’s program application, created when an Intake Application is submitted. The case captures all information entered in the intake application, including personal details, income, expenses, employment, education, and other eligibility-related evidence. Useful for understanding how intake submissions become application cases and what data is retained."
+                      },
+                      {
+                        "title": "Screening",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000075",
+                        "range": {
+                          "start_unit_id": "p000050",
+                          "end_unit_id": "p000050",
+                          "start_page": 50,
+                          "end_page": 50
+                        },
+                        "summary": "The Screening section describes the Screening business object and its configuration data. It supports citizen self-assessment using guided questions and eligibility rules to determine potential program eligibility and direct applicants to relevant programs. Key configuration entities include screening types, rules, category links, application categories, localized text/translations, online program/group links, program types, mapping/PDF form links, service area links, and external/remote/target systems. Use this section if you need setup details for screening-based eligibility and program recommendation flows."
+                      },
+                      {
+                        "title": "Triage",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000076",
+                        "range": {
+                          "start_unit_id": "p000050",
+                          "end_unit_id": "p000050",
+                          "start_page": 50,
+                          "end_page": 50
+                        },
+                        "summary": "This section describes the Triage business object and its configuration data for triage processes that quickly identify a citizen’s needs and direct them to community services. It appears alongside related application case and screening business object content, including dependencies on Cúram Express Rules, organization, and workflow for application case transport. Open this node for details on triage configuration and how it fits with screening and application case setup."
+                      },
+                      {
+                        "title": "Life Event",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000077",
+                        "range": {
+                          "start_unit_id": "p000051",
+                          "end_unit_id": "p000051",
+                          "start_page": 51,
+                          "end_page": 51
+                        },
+                        "summary": "Describes the Life Event business object in Cúram Configuration Transport Manager. It stores configuration for citizen life events such as marriage, birth, or death, and supports Universal Access setup for reporting major life changes that may affect program eligibility or services. Lists the related configuration entities, including life event types, contexts, categories, result pages/actions, evidence mapping, and external/remote/target system links."
+                      },
+                      {
+                        "title": "Outreach",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000078",
+                        "range": {
+                          "start_unit_id": "p000051",
+                          "end_unit_id": "p000051",
+                          "start_page": 51,
+                          "end_page": 51
+                        },
+                        "summary": "Outreach describes the configuration data for outreach campaigns in Cúram. These campaigns let agencies define targeted messages shown in the citizen account, such as childcare information for an unemployed citizen with school-age children. The section identifies the main stored entities: CITIZENCAMPAIGN, ADVICECONTEXTRULES, ADVICECONTEXTCONFIGURATION, IMAGE, LOCALIZABLETEXT, and TEXTTRANSLATION."
+                      },
+                      {
+                        "title": "Motivation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000079",
+                        "range": {
+                          "start_unit_id": "p000052",
+                          "end_unit_id": "p000052",
+                          "start_page": 52,
+                          "end_page": 52
+                        },
+                        "summary": "This section explains the Motivation business object and its configuration data: custom citizen-facing processes, with questions, rules, and results. It lists the related entities (MOTIVATIONS, RESULTSCATEGORY, CATEGORYACTION, LOCALIZABLETEXT, TEXTTRANSLATION, RESULTSPAGEACTION). It also begins a table on Cúram Social Enterprise Collaboration, describing the Social Enterprise Folder and Multidisciplinary Team Member business objects and their entities, and starts the Outcome Management subsection."
+                      }
+                    ],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000051",
+                      "start_page": 49,
+                      "end_page": 51
+                    },
+                    "summary": "Universal Access groups configuration business objects for citizen-facing services: Intake Application, Application Case, Screening, Triage, Life Event, Outreach, and Motivation. It explains how intake applications capture applicant details and become evidence in application cases, how screening uses questions/rules to assess eligibility and suggest programs, how triage routes citizens to services, and how life events, outreach campaigns, and motivation flows are configured. Useful if you need Universal Access setup, related entities, and transport dependencies across these business objects."
+                  },
+                  {
+                    "title": "Cúram Social Enterprise Collaboration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000052",
+                      "start_page": 52,
+                      "end_page": 52
+                    },
+                    "summary": "Introduces Cúram Social Enterprise Collaboration configuration. Covers two business objects: Social Enterprise Folder, which configures a SEF for securely sharing client/case information across agencies and systems in one central view, and Multidisciplinary Team Member, which configures MDT member roles for outcome plans. Lists the stored entities for each. Also includes a brief transition to Outcome Management, indicating the next section."
+                  },
+                  {
+                    "title": "Outcome Management",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Outcome Plan",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000082",
+                        "range": {
+                          "start_unit_id": "p000053",
+                          "end_unit_id": "p000053",
+                          "start_page": 53,
+                          "end_page": 53
+                        },
+                        "summary": "Defines configuration business objects for Outcome Plan, Outcome Plan Action, and Outcome Plan Goal in Cúram Configuration Transport Manager. Explains that outcome plans support assessments, identify client needs, and plan activities such as services, actions, and referrals to help clients move toward independence. Lists the database entities used to store each object’s configuration data, including outcome plan links, recommendations, classifications, translations, and related admin records."
+                      },
+                      {
+                        "title": "Outcome Plan Action",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000083",
+                        "range": {
+                          "start_unit_id": "p000053",
+                          "end_unit_id": "p000053",
+                          "start_page": 53,
+                          "end_page": 53
+                        },
+                        "summary": "Defines the Outcome Plan Action business object in Cúram Configuration Transport Manager. It stores configuration data for outcome plan actions—activities added to an outcome plan to address needs identified by assessments. The data is persisted in OUTCOMEPLANACTIONADMIN plus localization tables LOCALIZABLETEXT and TEXTTRANSLATION. The surrounding excerpt also contrasts related objects for Outcome Plan and Outcome Plan Goal, which use separate entity sets."
+                      },
+                      {
+                        "title": "Outcome Plan Goal",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000084",
+                        "range": {
+                          "start_unit_id": "p000053",
+                          "end_unit_id": "p000053",
+                          "start_page": 53,
+                          "end_page": 53
+                        },
+                        "summary": "Defines the Outcome Plan Goal business object in Cúram Configuration Transport Manager. It stores configuration data for an outcome plan goal, which supports outcome plans used to achieve goals that help clients become independent of the social enterprise agency. The data is stored in OUTCOMEPLANGOALADMIN, LOCALIZABLETEXT, and TEXTTRANSLATION."
+                      },
+                      {
+                        "title": "Outcome Plan Objective",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000085",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000054",
+                          "start_page": 54,
+                          "end_page": 54
+                        },
+                        "summary": "Defines configuration data for outcome plan objectives, used to support client independence goals. It lists related entities for objectives (EXPECTEDOUTCOME, TEXTTRANSLATION, LOCALIZABLETEXT), then briefly describes related business objects for conditions and condition sets used to filter outcome plan data, and outcome plan factors used to assess clients independently of broader assessments. Useful if you need the data model/entities behind outcome planning, filtering logic, or factor-based recommendations."
+                      },
+                      {
+                        "title": "Condition Data",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000086",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000054",
+                          "start_page": 54,
+                          "end_page": 54
+                        },
+                        "summary": "Defines the Condition Data business object for configuring conditions used to filter data from users, such as showing only certain recommended outcome plan activities when criteria are met. Conditions may be based on gender, age, a rule set, a factor score, or a factor classification. The section also identifies the stored entity for this configuration: CONDITIONDATA. This node is useful if you need how conditional visibility/filtering is modeled in outcome plans."
+                      },
+                      {
+                        "title": "Condition Set",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000087",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000054",
+                          "start_page": 54,
+                          "end_page": 54
+                        },
+                        "summary": "Defines the Condition Set business object in Cúram 8.1.2. Condition sets group conditions together so multiple criteria can be combined, such as gender and age, to control what data is shown to users. Conditions may be based on gender, age, a rule set, a factor score, or a factor classification. The section lists the supporting configuration entities: CONDITIONSET and CONDITIONSETLINK."
+                      },
+                      {
+                        "title": "Outcome Plan Factor",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000088",
+                        "range": {
+                          "start_unit_id": "p000054",
+                          "end_unit_id": "p000054",
+                          "start_page": 54,
+                          "end_page": 54
+                        },
+                        "summary": "Defines the Outcome Plan Factor business object for configuring factors used to assess clients in an outcome plan. A factor is a domain or dimension, such as General Education Diploma, and can be added standalone without being part of a broader assessment. It lists related configuration entities: FACTOR, FACTORCATEGORY, FACTORCLASSIFICATION, RECOMMENDATIONADMIN, TEXTTRANSLATION, and LOCALIZABLETEXT."
+                      },
+                      {
+                        "title": "Outcome Management Questionnaire",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000089",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000055",
+                          "start_page": 55,
+                          "end_page": 55
+                        },
+                        "summary": "Describes configuration data for outcome management questionnaires used by assessment definitions with CDA matrices. Lists the entities stored in the Outcome Management Questionnaire object: QUESTION, QUESTIONNAIRE, and QUESTIONNAIREVERSION. Also briefly introduces related assessment configuration objects: Assessment, which defines client need assessments and recommended activities, and CDA Assessment Configuration, which uses IEG scripts and CDA decision matrices to collect answers and produce results. Useful for locating entity mappings for assessment-related configuration."
+                      },
+                      {
+                        "title": "Assessment",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000090",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000055",
+                          "start_page": 55,
+                          "end_page": 55
+                        },
+                        "summary": "This section describes the Assessment business object in Cúram Configuration Transport Manager. It explains that assessments define client needs analysis (for example, family strength, substance abuse, income, housing) and can recommend activities based on results. It lists the main configuration entities involved, including ASSESSMENTDEFINITION, FACTOR, CATEGORYCLASSIFICATION, RECOMMENDATIONADMIN, and related localization tables. It also briefly distinguishes CDA Assessment Configuration, which uses an IEG script and CDA decision matrix to collect answers and generate results."
+                      },
+                      {
+                        "title": "CDA Assessment Configuration",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000091",
+                        "range": {
+                          "start_unit_id": "p000055",
+                          "end_unit_id": "p000055",
+                          "start_page": 55,
+                          "end_page": 55
+                        },
+                        "summary": "Defines the CDA (Cúram Decision Assist) Assessment Configuration business object for assessment definitions that use a CDA matrix to generate results. It explains that an IEG script collects answers to assessment questions, then a CDA decision matrix computes outcomes. Lists the main stored entities: DAASSESSMENTCONFIGURATION, DAOUTCOMEFACTORLINK, DAOUTCOME, DECISIONMATRIX, and DECISIONMATRIXVERSION."
+                      },
+                      {
+                        "title": "CER Assessment Configuration",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000092",
+                        "range": {
+                          "start_unit_id": "p000056",
+                          "end_unit_id": "p000056",
+                          "start_page": 56,
+                          "end_page": 56
+                        },
+                        "summary": "Defines the CER Assessment Configuration business object in Cúram Express Rules. It stores assessment definition configuration for CER rule sets, where an IEG script collects answers and the rule set produces assessment results. Lists entities used for this configuration: CERTSPECIFICATION, LOCALIZABLETEXT, and TEXTTRANSLATION. The page also begins adjacent topics on Federal Allowable Component and Cúram Family Services business objects, including Contact Log and Placement Type Mapping."
+                      },
+                      {
+                        "title": "Federal Allowable Component",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000093",
+                        "range": {
+                          "start_unit_id": "p000056",
+                          "end_unit_id": "p000056",
+                          "start_page": 56,
+                          "end_page": 56
+                        },
+                        "summary": "Defines the Federal Allowable Component business object for configuring federal allowable components, which are components whose associated activities count toward a state’s federal participation rate and can be selected when adding activities to an outcome plan. The section lists the stored entities: FEDERALALLOWABLECOMPONENT, FEDERALALLOWABLECOMPONENTLINK, LOCALIZABLETEXT, and TEXTTRANSLATION."
+                      }
+                    ],
+                    "node_id": "n000081",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000055",
+                      "start_page": 52,
+                      "end_page": 55
+                    },
+                    "summary": "Covers Outcome Management configuration objects in Cúram 8.1.2: Outcome Plan, Outcome Plan Action, Outcome Plan Goal, Outcome Plan Objective, Condition Data, Condition Set, Outcome Plan Factor, Outcome Management Questionnaire, Assessment, and CDA Assessment Configuration. It explains how outcome plans use assessments to identify client needs and plan services/actions/referrals toward independence, and lists the database entities for each object. Also describes condition-based filtering, standalone factors, questionnaire storage, and CDA/IEG-based assessment results."
+                  }
+                ],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000055",
+                  "start_page": 46,
+                  "end_page": 55
+                },
+                "summary": "Application Modules lists configuration business objects and stored entities for core modules: Verification, Evidence Broker, Legal Action (Appeals), Provider Management, Universal Access, Social Enterprise Collaboration, and Outcome Management. It covers how each module configures operational data such as verification items, evidence sharing, legal processes, provider service/payment setup, intake/application/case and screening/triage/life event flows, outreach and motivation, SEF/MDT collaboration, and outcome plans, conditions, factors, questionnaires, assessments, and CDA decision matrices. Useful when you need module-specific configuration objects and entity mappings."
+              },
+              {
+                "title": "Cúram Family Services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000094",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000056",
+                  "start_page": 56,
+                  "end_page": 56
+                },
+                "summary": "Cúram Family Services explains the Family Services Suite business objects and their configuration entities. It covers Contact Log, used by caseworkers to record actions, conversations, conclusions, and rationale in a timely way, and Placement Type Mapping, which maps placement types to service offerings to streamline placement and provider searches. The section is part of a table listing business objects and their entities, helping identify configuration details for family services functionality."
+              },
+              {
+                "title": "Cúram Income Support Suite",
+                "level": 3,
+                "children": [],
+                "node_id": "n000095",
+                "range": {
+                  "start_unit_id": "p000057",
+                  "end_unit_id": "p000060",
+                  "start_page": 57,
+                  "end_page": 60
+                },
+                "summary": "This section introduces the Cúram Income Support Suite and lists its business objects and entities. It explains Summary Rules, which store configuration for summary views used by classic rules, and Benefit Delivery, which stores configuration data for the CHIP product delivery case type, including county details, fee-for-service, primary care provider, and third-party product data. The remaining pages are legal notices, permissions, copyright, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000038",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000060",
+              "start_page": 25,
+              "end_page": 60
+            },
+            "summary": "This section explains the Configuration Transport Manager’s physical table-to-business object mapping. It lists business objects, their descriptions, and the database entities impacted when transporting them, plus special transport rules. Covered areas include Cúram Platform case types (Benefit, Integrated, Liability, Assessment, CER variants, Correction, Investigation), infrastructure objects, application modules, Family Services, and Income Support. Useful details include manual publishing and dependency/order requirements for CER objects, and entity mappings for configuration data such as workflow, security, evidence, outcome management, and service delivery."
+          }
+        ],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000060",
+          "start_page": 9,
+          "end_page": 60
+        },
+        "summary": "Overview of Cúram Configuration Transport Manager, which migrates application/configuration data between systems as business objects. Covers the minimum landscape (separate development, test, production), required homogeneity, unique landscape naming, and data management policy, including when to apply change sets and key-block allocation. Also includes a table mapping transportable business objects to affected database entities for platform, assessment, CER, Family Services, and Income Support data. Useful for deciding setup, transport scope, and object dependencies."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

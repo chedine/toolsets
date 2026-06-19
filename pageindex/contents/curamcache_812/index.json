@@ -1,0 +1,440 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "ee27edd79201a6dc",
+    "title": "Cúram 8.1.2 Cúram Cache Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramCache_812.pdf",
+    "source_type": "pdf",
+    "sha256": "ee27edd79201a6dca9ae9513ab3dd71bd5dfec1bc5c596b1ddf157f52ebaeea3",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:14:44+00:00",
+    "page_count": 20,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramCache_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram Cache Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000020",
+      "start_page": 1,
+      "end_page": 20
+    },
+    "summary": "Front matter for the Cúram 8.1.2 Cúram Cache Guide. It includes a note pointing readers to Notices on page 19, the edition scope (Cúram 8.1, 8.1.1, and 8.1.2), and the full table of contents. The main document introduces Cúram Cache as a generic caching service for online and batch Java environments, covering three cache types: global, thread-local, and transaction-local. It previews declarative APP_CACHE configuration, eviction settings, statistics/JMX, shutdown requirements, global cache provider/default group behavior, transactional invalidation guidance, and code samples for loaders, clients, and invalidation. The back matter contains legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Preliminary note for the document. It instructs readers to review the Notices section on page 19 before using the information or the supported product. Also includes copyright attribution to Merative US L.P. for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory section for Cúram Cache (applies to Cúram 8.1, 8.1.1, 8.1.2) and starts the “Developing with Cúram Cache” chapter. It explains what Cúram Cache is, its three cache types (global, thread-local, transaction-local), declarative configuration via APP_CACHE/system properties, supported eviction settings, statistics/JMX support, shutdown requirements, and global cache behavior/recommendations. Also covers the default global cache group, provider (Ehcache), transactional invalidation, and begins code samples for loaders, clients, and invalidation."
+          },
+          {
+            "title": "Edition — pages 15-18",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000018",
+              "start_page": 15,
+              "end_page": 18
+            },
+            "summary": "Cúram Cache examples for registering a cache loader, using a cache, and invalidating global cache entries from server transactional code. Introduces thread local caches: tied to the creating thread, accessible only in that thread, deleted when the thread stops, and limited to timeToLive/timeToIdle settings with group name thread-group. Also covers transaction local caches: server-only, live only during the current transaction, use time-based eviction only, and are configured under transaction-group. Includes code samples for both cache types."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000018",
+          "start_page": 5,
+          "end_page": 18
+        },
+        "summary": "Intro to Cúram Cache for Cúram 8.1/8.1.1/8.1.2. Explains the three cache types (global, thread-local, transaction-local), declarative APP_CACHE/system-property configuration, eviction settings, statistics/JMX, and shutdown requirements. Covers global cache provider/default group (Ehcache, curam-group), transactional invalidation, consistency cautions, and usage recommendations. Includes code samples for cache loaders, cache use, and server-side invalidation. Also introduces thread-local caches (thread-group, thread-bound, time-based only) and transaction-local caches (server-only, transaction-bound, time-based only, transaction-group)."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "This section covers legal notices, including fictitious example data, sample code copyright/license terms, warranty disclaimer, and liability limits. It also points to Merative’s privacy policy URL and lists trademarks and registered trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. Useful for identifying licensing, usage permissions, and branding/legal references."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands, including IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Notes that sample names are fictitious, sample programs are provided “as is” under the Merative Client Agreement, and includes the Merative privacy policy URL. Useful mainly for legal, licensing, and branding reference."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000019",
+          "start_page": 19,
+          "end_page": 19
+        },
+        "summary": "Legal notices and usage terms for the publication: personal and enterprise reproduction is allowed only with proprietary notices preserved, while distribution/derivative works outside those limits require Merative consent. It states no additional rights are granted, export laws apply, and Merative may withdraw permission. The content is provided “as-is” with no warranties, and Merative disclaims responsibility for third-party products or websites. Also includes patent notice and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Cache documentation. It lists front matter (Note, Edition), then chapter 1, “Developing with Cúram Cache,” with sections on overview, what Cúram Cache is, configuration, statistics, shutdown, global caches (provider, default group, usage recommendations, transactional use), code samples (loader, client, invalidation), thread local caches, and transaction local caches. Also includes notices, privacy policy, and trademarks. Useful as a navigation index rather than substantive content."
+      },
+      {
+        "title": "1 Developing with Cúram Cache",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces Cúram Cache as a generic caching service for short- and long-lived caches in both application server containers and stand-alone Java processes. This overview explains that the guide is for architects and developers, and that Cúram Cache supports three cache types: global, thread local, and transaction local. It also notes that cache configuration is declarative via APP_CACHE, with global caches supporting size- and time-based eviction and multi-instance caches supporting time-based eviction only."
+          },
+          {
+            "title": "1.2 What is Cúram Cache",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000010",
+                  "start_page": 9,
+                  "end_page": 10
+                },
+                "summary": "This section introduces Cúram Cache configuration. It explains the cache types supported (global, thread local, transaction local), where they run, and that configuration is declarative via the APP_CACHE property section. It covers available parameters: size, eviction policy (LRU, LFU, FIFO), time to live, and time to idle, plus the naming pattern for cache properties. It also shows examples of configuring individual caches, all caches in a group, and overriding settings with JVM system properties for batch processes."
+              },
+              {
+                "title": "Statistics",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section describes cache statistics and shutdown behavior in Cúram Cache. It lists the standard MBean-exposed metrics for each cache, including cache group, cache name, layer, size, hits, misses, evictions, and average get time. It also explains snapshot versus aggregated statistics for multi-instance caches. Finally, it notes that caches should be shut down explicitly with `CacheManager.shutdown()` when possible, and introduces global caches, which persist across transactions but may be briefly inconsistent because invalidation is asynchronous."
+              },
+              {
+                "title": "Shutting Down Cúram Cache",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Cúram Cache should be shut down orderly on JVM exit. It installs a JVM shutdown hook as a fallback, but the recommended practice is to explicitly call CacheManager.shutdown() during application shutdown."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000010",
+              "start_page": 9,
+              "end_page": 10
+            },
+            "summary": "Introduces Cúram Cache as a generic caching service for online and batch Java applications, supporting global, thread-local, and transaction-local caches. Explains that configuration is declarative via APP_CACHE properties, with options for size, eviction policy (LRU/LFU/FIFO), time to live, and time to idle. Describes the cache property naming pattern and shows examples for configuring a single cache, all caches in a group, and overriding settings with JVM system properties."
+          },
+          {
+            "title": "1.3 Global Caches",
+            "level": 2,
+            "children": [
+              {
+                "title": "Global Cache Provider",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains Cúram Cache’s global caching infrastructure and its default provider, Ehcache. Describes the default global cache group (curam-group), which is not self-replicating and has no disk overflow/persistence, so cache operations are local to a JVM unless explicitly invalidated by server code across the cluster. Covers how global caches are created via get(), cache loaders, serialization limitations, and recommendations such as using immutable objects and serializable keys/values."
+              },
+              {
+                "title": "Default Global Cache Group",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Defines the default global cache group in Cúram Cache. All application caches are placed in `curam-group`; it is not self-replicating and has no disk overflow/persistence, so cache changes are local to a JVM unless explicitly invalidated by server code across the cluster. Explains that caches are created via `get()`, often populated with cache loaders, and recommends immutable, serializable keys/values. Notes non-serializable keys only invalidate locally and warns against loading caches with plain `get()`/`put()`."
+              },
+              {
+                "title": "Global Caches",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains Cúram’s global cache infrastructure and default provider (Ehcache). Describes the default cache group, curam-group, and notes it is not self-replicating and lacks disk overflow/persistence, so cache operations are local to a JVM unless explicitly invalidated across the cluster. Covers how global caches are created via get(), populated with cache loaders, and the importance of serializable keys/values for cluster-wide behavior. Recommends immutable objects, serializable data, and loader-based population."
+              },
+              {
+                "title": "Usage Recommendations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Recommends global cache best practices in Cúram Cache: cache only immutable objects; prefer serializable keys and values (at minimum keys) for full cluster-wide behavior; and use cache loaders to populate caches so concurrency is handled by the cache provider. It also warns that non-serializable keys are only invalidated on the local JVM, not the whole cluster, and that loading via get()/put() without a loader should be avoided."
+              },
+              {
+                "title": "Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains global cache configuration defaults and overrides. It states that all global caches inherit default values for size (200), eviction policy (LRU), timeToLive (0, inactive), and timeToIdle (0, inactive). It defines timeToLive and timeToIdle behavior in the underlying Ehcache implementation. It also shows how to override these settings per cache using properties, with an example cache group and cache name."
+              },
+              {
+                "title": "Using Global Caches in a Transactional Context",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section warns that global caches used inside transactions must remain consistent if the transaction rolls back. It says not to directly remove or update cached elements when underlying data changes; instead, call `CacheManagerEjb.postInvalidationMessage()` to post an invalidation message. It then introduces code samples covering a cache loader, cache usage, and cache entry invalidation, including an example `CacheLoaderAdapter` implementation."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000013",
+              "start_page": 11,
+              "end_page": 13
+            },
+            "summary": "Global caches in Cúram Cache are JVM-scoped long-lived caches with asynchronous invalidation after updates, so stale data can exist briefly. The default provider is Ehcache, and all application caches live in the default group curam-group, which is not self-replicating and has no disk persistence/overflow; cluster-wide consistency relies on explicit server-side invalidation. Caches are created via get(), ideally populated by cache loaders. Use immutable, serializable keys/values where possible; non-serializable keys invalidate only locally. Default config: size 200, LRU, TTL/TI 0."
+          },
+          {
+            "title": "1.4 Code Samples",
+            "level": 2,
+            "children": [
+              {
+                "title": "Cache Loader",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Shows how to implement a cache loader using `CacheLoaderAdapter` in Cúram. The example `MyCacheLoader` loads `ReadWorkQueueDetails` by `workQueueID`, creates a `WorkAllocation`, builds a nested `ReadWorkQueueKey`, calls `readWorkQueue`, and returns `item.dtls` or `null`. The surrounding page also notes transactional cache invalidation: when data changes, use `CacheManagerEjb.postInvalidationMessage()` instead of directly updating/removing cached entries."
+              },
+              {
+                "title": "Cache Client",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to use global caches safely in transactional contexts: when data affecting a cache changes, do not directly update/remove cached entries; instead call `CacheManagerEjb.postInvalidationMessage()` so rollback stays consistent. Also introduces code samples for cache loaders, cache usage, and cache-entry invalidation. The “Cache Client” example shows the usual pattern for registering a cache loader and accessing the cache, including a sample `MyCacheLoader` built with `CacheLoaderAdapter`."
+              },
+              {
+                "title": "Cache Invalidation",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how to invalidate entries in a global cache from server-side transactional code, using `CacheManagerEjb.postInvalidationMessage(...)` to send a `CacheInvalidationMessage` for a specific cache key. It also introduces thread local caches, which are tied to the creating thread, inaccessible to other threads, and deleted when that thread ends. Thread local caches are intended only for small caches and support time-based eviction only, with `timeToLive` and `timeToIdle` as the two configuration options."
+              }
+            ],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section provides code samples for using global caches in Cúram. It shows how to implement a cache loader with `CacheLoaderAdapter`, including a `MyCacheLoader` example that loads `ReadWorkQueueDetails` by `workQueueID` via `readWorkQueue`. It also explains safe cache use in transactions: do not directly update or remove cached entries when underlying data changes; use `CacheManagerEjb.postInvalidationMessage()` so rollback remains consistent. It introduces cache client usage and cache-entry invalidation examples."
+          },
+          {
+            "title": "1.5 Thread Local Caches",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Thread local caches are tied to the creating thread, inaccessible to other threads, and deleted when that thread stops. They are intended for small caches where global cache access overhead is too high. This configuration section states that thread local caches support only time-based eviction, with two parameters: timeToLive (maximum seconds an item may remain regardless of use) and timeToIdle (maximum seconds an item may stay unused)."
+              },
+              {
+                "title": "Code Samples",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Shows how to use thread local caches with example configuration and Java code. Emphasizes that thread local caches are only accessible in the correct thread context and should not be initialized in static blocks. Also introduces transaction local caches, which exist only during the current server-side transaction, support only time-based eviction, and have configurable timeToLive and timeToIdle defaults."
+              }
+            ],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000015",
+              "start_page": 15,
+              "end_page": 15
+            },
+            "summary": "Thread local caches are tied to the creating thread: only that thread can access them, and they are removed when the thread stops. They are intended for small caches where global cache synchronization overhead is too high. Configuration is limited to time-based eviction only, using timeToLive (max seconds an entry may remain regardless of use) and timeToIdle (max seconds an entry may remain unused)."
+          },
+          {
+            "title": "1.6 Transaction Local Caches",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Configures thread-local and transaction-local caches. Thread-local caches use the thread-group name in property keys (for example, `curam.cache.thread-group.<cache>.timeToLive/timeToIdle`) and must be accessed only within the correct thread context, not from static initialization. Transaction-local caches exist only during the current server transaction, support only time-based eviction, and accept only `timeToLive` and `timeToIdle` settings. Defaults: thread-local `timeToLive=0`, `timeToIdle=0`; transaction-local `timeToLive=0`, `timeToIdle=5`."
+              },
+              {
+                "title": "Code Samples",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000020",
+                  "start_page": 17,
+                  "end_page": 20
+                },
+                "summary": "This section shows a Java example for using a transaction local cache in Cúram Cache. It explains that transaction local caches are only accessible within the correct transaction context and demonstrates obtaining the cache via `CacheManagerEjb.getTransactionLocalCacheGroup().getCache(\"mycache\")`, checking for a missing value, performing an expensive calculation once per transaction, and storing the result. It also includes surrounding licensing, copyright, notice, privacy, and trademark information."
+              }
+            ],
+            "node_id": "n000029",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000020",
+              "start_page": 16,
+              "end_page": 20
+            },
+            "summary": "Explains transaction local caches in Cúram Cache: they exist only for the current server transaction, are accessible only in the correct transaction context, and support time-based eviction only (`timeToLive`, `timeToIdle`). Defaults are `timeToLive=0` and `timeToIdle=5`. Shows configuration using the `transaction-group` property namespace and a Java example using `CacheManagerEjb.getTransactionLocalCacheGroup().getCache(\"mycache\")` to cache a per-transaction expensive calculation. Includes legal notices and licensing text."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000020",
+          "start_page": 9,
+          "end_page": 20
+        },
+        "summary": "Introduces Cúram Cache for short- and long-lived caching in online and batch Java environments. Covers the three cache types—global, thread local, and transaction local—and declarative APP_CACHE configuration, including size, eviction policy, time-to-live, and time-to-idle. Explains default groups, provider behavior, statistics, shutdown, and cluster invalidation. Includes guidance on safe global cache use in transactions, cache loaders, cache client usage, and examples for thread-local and transaction-local caches. Ends with notices and licensing text."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,733 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "a4a2f7c81142cfcd",
+    "title": "Cúram 8.1.2 Workflow Overview Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramWorkflowOverviewGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "a4a2f7c81142cfcda37603e51104511448c07e8c27b45cb1afae58c6a702af84",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:49:32+00:00",
+    "page_count": 34,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramWorkflowOverviewGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Workflow Overview Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000034",
+      "start_page": 1,
+      "end_page": 34
+    },
+    "summary": "Introductory front matter and the main chapter on Cúram workflow. It explains workflow’s purpose: automating business processes and routing work across people/departments using process definitions, the PDT, the workflow engine, inbox/task tools, and administration. It covers when to use workflow versus API-only automation, including benefits (allocation, consistency, flexibility, traceability, customizability) and trade-offs (performance overhead, non-atomic transactions). It introduces process definition basics such as activity types, transitions, WDOs, enactment, task/notification creation, inbox queries/queues/preferences, and admin functions for monitoring instances and errors, handling events, allocation targets, work queues, and work queue name translation. The section also contains the document note, edition scope (8.1–8.1.2), contents, and legal notices/privacy/trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note advising readers to review the Notices section before using the information or the supported product. Includes Merative US L.P. copyright years 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory front-matter and workflow overview for Cúram 8.1/8.1.1/8.1.2. Covers the workflow management system’s purpose, when to use it, and the main components: process definitions, PDT, workflow engine, inbox/task management, and administration. Explains benefits/trade-offs, WDOs, method reference library, process instance lifecycle, task allocation, notifications, and admin controls. Begins the “Workflow Process Definitions” chapter, introducing activity types such as start/end, automatic, event wait, route, subflow, and loop."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Introduces Cúram workflow design and runtime concepts. Covers activity types (loop, decision, parallel, notifications), transitions, workflow data objects and context WDOs, plus how to analyze a business process for workflow suitability using the Close Case example. Explains workflow engine behavior, process enactment options (code, events, subflow, web services), and begins inbox/task management with My Open Tasks. Useful for understanding workflow structure, enactment, and task handling."
+          },
+          {
+            "title": "Edition — pages 25-32",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000032",
+              "start_page": 25,
+              "end_page": 32
+            },
+            "summary": "Cúram Workflow overview for users and admins. Covers Inbox and task handling: open/deferred tasks, getting next task, creating manual tasks, searching available/all tasks, task queries, notifications, work queues, task preferences, redirection, and allocation blocking. Describes task lifecycle pages and actions such as comment, priority/deadline updates, forward, reallocate, defer/restart, and close. Also includes workflow administration: monitoring process instances and errors, workflow events, allocation targets, work queues, and work queue name translation."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000032",
+          "start_page": 5,
+          "end_page": 32
+        },
+        "summary": "Cúram Workflow overview for 8.1–8.1.2. Covers workflow management purpose and benefits/trade-offs, when to use workflow, and core components: PDT, workflow engine, inbox/task management, and administration. Introduces process definitions, activity types, transitions, WDOs, enactment, and task/notification handling. Also includes user inbox features (queries, queues, preferences, redirection, blocking) and admin functions for monitoring instances/errors, events, allocation targets, work queues, and work queue name translation."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Contains legal notices: sample data/examples are fictitious, sample programs are provided “as is” without warranty, and Merative disclaims liability. Points to the Merative privacy policy URL. Also includes trademark ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and a copyright statement (© Merative US L.P. 2012, 2024)."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "Lists legal notices for the document: fictionalized example data disclaimer, Merative client agreement terms, copyright license for sample programs, and warranty/liability disclaimer for those samples. It also provides the privacy policy link and a trademarks notice identifying marks owned by Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus a note that other names may be trademarks. Includes copyright © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000033",
+          "end_unit_id": "p000033",
+          "start_page": 33,
+          "end_page": 33
+        },
+        "summary": "Legal notices and usage terms for the publication: personal use allowed with proprietary notices preserved; enterprise use allowed internally only; derivative works and external distribution require Merative consent. No additional rights are granted, and Merative may withdraw permission. Includes export compliance, “as-is” warranty disclaimer, patent notice, non-Merative product/website disclaimers, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram Workflow guide. It lists front matter (Note, Edition) and Chapter 1, “Cúram Workflow overview,” with subsections on workflow management system overview, process definitions, the workflow engine and enacting processes, managing inbox/tasks/notifications, and administering workflow/work allocation. It also includes notices, privacy policy, trademarks, and copyright. Useful for navigating to specific workflow topics rather than substantive content."
+      },
+      {
+        "title": "1 Cúram Workflow overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Workflow Management System Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Workflow Management System Functions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains the Cúram Workflow management system’s two core functions: automating business processes and routing work across people and departments. Describes the main components: workflow process definitions, the PDT, workflow engine, inbox/task management, and workflow administration. Outlines how developers model activities, transitions, data flow, and activity types (manual, automatic, loop, event wait, route, notification, subflow). Also covers runtime enactment, creation of process instances, task assignment via allocation strategies, and inbox use for users."
+              },
+              {
+                "title": "When to Use the Workflow Management System",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains when to use Cúram’s workflow management system. Key benefits: complex allocation, consistency, flexibility, traceability, and customizability. Key trade-offs: performance overhead and lack of atomicity across steps. Guidance: have documented business process requirements first; use workflow when human interaction is needed; avoid it for fully automated end-to-end processes unless runtime re-sequencing is required. For automated step sequences, prefer APIs per step composed into a method. Introduces the Workflow Process Definition Tool (PDT) for defining activities and transitions."
+              },
+              {
+                "title": "The Workflow Process Definition Tool",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains when to use the Workflow Management System and introduces the Workflow Process Definition Tool (PDT). It highlights workflow benefits: allocation, consistency, flexibility, traceability, and customizability, and trade-offs: performance overhead and non-atomic transactions. Workflow is recommended when human interaction is required, but not for fully automated processes unless runtime resequencing is needed. The PDT is used to create workflow process definitions by defining activities, transitions, conditions, and data flow, and includes a library of reusable business methods (BPO and entity methods)."
+              },
+              {
+                "title": "The Workflow Engine",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section introduces the workflow PDT and engine. It covers visualization and validation of workflow process definitions, Workflow Data Objects (WDOs) for passing data between activities, and the Method References Library for available BPO/entity methods. It then explains the workflow engine’s role in managing process instance lifecycles: executing activities, evaluating transitions, creating tasks and notifications, handling allocation, and recording failures for retry."
+              },
+              {
+                "title": "Tasks and Inbox Management",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains task and inbox management in Cúram workflow. It covers how the workflow engine creates and assigns manual tasks, how users track work in the Inbox, use task queries, subscribe to work queues, and manage individual tasks such as forwarding, reallocating, or updating time worked. It also introduces Workflow Administration, where administrators monitor process instances, inspect execution paths and data, manage instance state, handle errors, and maintain allocation targets and workflow events."
+              },
+              {
+                "title": "Workflow Administration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Workflow Administration covers managing workflow process instances created from enacted process definitions. Administrators can search instances by process definition, related tasks, or waiting events; inspect a graphical execution path and instance/activity data; and control state by suspending, resuming, or aborting instances. It also includes reviewing and handling process errors with retry or discard actions. The section notes maintenance of allocation targets for manual/decision activity assignment and creation of workflow events used to advance waiting workflows."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000012",
+              "start_page": 9,
+              "end_page": 12
+            },
+            "summary": "Overview of Cúram workflow management: it automates business processes and routes work across people/departments. Covers core components (process definitions, PDT, engine, inbox/task management, administration), activity types, WDOs, and method references. Explains runtime enactment, task allocation, notifications, and process instances. Also gives guidance on when to use workflow vs APIs, with benefits/trade-offs (flexibility, traceability, allocation vs performance and non-atomicity), plus PDT validation/visualization and admin controls for monitoring, suspending, retrying, or aborting instances."
+          },
+          {
+            "title": "1.2 Workflow Process Definitions",
+            "level": 2,
+            "children": [
+              {
+                "title": "Activities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000015",
+                  "start_page": 13,
+                  "end_page": 15
+                },
+                "summary": "This section explains workflow activities in process definitions and how they control execution. It covers start/end activities, automatic activities that invoke methods with input/output mappings, event wait activities that pause for application events, route activities for flow control, subflow activities for invoking other processes synchronously or asynchronously, loop activities with while/do-while behavior, decision activities for user choices with allocation and deadline strategies, parallel activities for multiple manual/decision tasks, and activity notifications sent by inbox or email."
+              },
+              {
+                "title": "Transitions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains workflow transitions and their role in controlling execution order between activities. Covers branch and synchronization points, including XOR (Choice) and AND (Parallel) behavior, and notes that branch/sync points must match types. Also states that transitions can have optional conditions made of logical expressions. The excerpt then begins Workflow Data Objects, but the main section focus here is transitions and their metadata reference in the Workflow Reference Guide."
+              },
+              {
+                "title": "Workflow Data Objects",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Context Workflow Data Objects",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "This section explains workflow data objects in Cúram workflow processes, including their lifecycle, attributes, and when they must be populated to avoid runtime failures. It also introduces context workflow data objects, which are not defined in process metadata but are provided by the PDT/workflow engine during execution. Examples include Context_RuntimeInformation, Context_Task for Manual activity mappings, and Context_Loop for Loop activity mappings. It notes that detailed metadata is in the Workflow Data Objects chapter and Workflow Reference Guide."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains workflow data objects in Cúram processes: logical named objects with typed attributes, including list WDOs, whose values can be set at enactment or by activity outputs. They exist for the full process lifetime, so designers must populate attributes before use or runtime failures occur. Also introduces context workflow data objects, which are not defined in process metadata but supplied by the PDT/workflow engine during execution, such as Context_RuntimeInformation, Context_Task for Manual activities, and Context_Loop for Loop activities."
+              },
+              {
+                "title": "Designing Workflow Process Definitions",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Considerations for Business Process Analysis",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to analyze a business process before designing workflow. Key considerations include identifying mandatory intrinsic steps, ensuring data integrity and traceability, checking for fallback methods when steps fail, spotting steps likely to change, recognizing nondivisible tasks, and determining whether steps require notifications or manual user work. Also stresses identifying required data and its purpose. Useful for deciding whether a business process is suitable for workflow modeling and how its activities should be structured."
+                  },
+                  {
+                    "title": "Selecting and Analyzing the Business Process for Workflow",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section explains how to analyze a business process before converting it into a Cúram workflow process definition. It covers key design considerations: identifying intrinsic and alterable steps, preserving data integrity and traceability, checking failure workarounds, recognizing non-divisible tasks, deciding when notifications or manual user work are needed, and determining required data. It frames workflow design as selecting process steps that can be handled flexibly and safely within workflow."
+                  },
+                  {
+                    "title": "Identifying Workflow Participants",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "This section explains how to identify workflow participants using the Close Case business process example. It distinguishes intrinsic business-process steps that should not be moved into workflow from configurable workflow steps, especially notifications and manual activities. It notes that workflow participants may receive information, notifications, or perform actions such as handling communications. The section also summarizes that seven steps may belong in the workflow and that case and reassessment data are required."
+                  },
+                  {
+                    "title": "Designing Workflow",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Listing Activities and Split/Join Types",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000028",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Explains how to design workflow activities by listing each activity, its split/join type, transitions, and required data attributes. Emphasizes that every activity must have an activity type plus split and join types, and that manual/notification activities need participants. Gives the Close Case workflow as an example, introducing the activity table and showing the start activity and a route activity for notifying the case owner when the case is not closed."
+                      },
+                      {
+                        "title": "Defining Transitions and Their Conditions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000029",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "This section explains how workflow transitions are defined and conditioned in the Close Case process. It states that all activities except the End Process need at least one outgoing transition, and that AND/XOR splits can have multiple transitions. It emphasizes that workflow designers must define transitions and, when applicable, conditions used by the engine to route the process. It then shows a table of Close Case transition mappings, including examples based on over/underpayment and whether the case owner is the user closing the case."
+                      },
+                      {
+                        "title": "Designing a Graph",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000030",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "This section explains that after identifying activities and transitions, you should create a graphical workflow diagram to validate the design before development, using tools such as Microsoft Visio. It also introduces the workflow data object attributes needed by the Close Case process, including caseID, overUnderPmtInd, caseOwner, userClosingCase, listOfCaseReviewers, and listOfServiceSuppliers, with each supporting transition conditions or notifications. It then begins discussing how to determine what starts the workflow process instance."
+                      },
+                      {
+                        "title": "Identifying Workflow Data Object Attributes",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000031",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000021",
+                          "start_page": 21,
+                          "end_page": 21
+                        },
+                        "summary": "Explains how to identify workflow data object attributes needed for the Close Case workflow. It states that required data must be available at enactment and flow between activities, then lists the key workflow data objects: caseID, overUnderPmtInd, caseOwner, userClosingCase, listOfCaseReviewers, and listOfServiceSuppliers, with their purposes for closure conditions and notifications. Also briefly introduces determining what starts the workflow process instance."
+                      }
+                    ],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000020",
+                      "start_page": 19,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to design the Close Case workflow by listing required activities, participants, split/join types, and transitions with conditions. It shows that every activity needs an activity type and split/join type, notifications/manual activities need participants, and all activities except End Process need outgoing transitions. The section provides the Close Case activity and transition tables, covering over/underpayment checks, reviewer notifications, case reactivation, referral communications, and case-owner notification logic, and introduces workflow data object attributes and diagramming the workflow."
+                  },
+                  {
+                    "title": "Determining the Start of the Workflow Process Instance",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Explains that the workflow developer must identify the business-process event that starts a workflow process instance, i.e., when the workflow is enacted. This section follows discussion of workflow data objects needed for the Close Case process and supports deciding how the process is initiated."
+                  },
+                  {
+                    "title": "Additional Considerations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "This section gives practical workflow-design considerations: break complex or failure-prone steps into smaller activities, and identify source-code/BPO changes needed to support workflow definitions. It illustrates choosing the enactment point for a workflow (e.g., after reassessment in a Close Case process) and notes that workflow support may require refactoring methods into discrete, well-defined steps that can be mapped into a process."
+                  }
+                ],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000021",
+                  "start_page": 17,
+                  "end_page": 21
+                },
+                "summary": "Explains how to analyze a business process before turning it into a workflow: identify intrinsic vs. configurable steps, data integrity/traceability needs, failure workarounds, nondivisible tasks, notifications, manual user work, and required data. Uses the Close Case example to show which steps belong in workflow, which should stay intrinsic, and which participants/data are needed. Introduces designing activities, split/join types, transitions, workflow data objects, graphing the process, and determining the enactment/start point for the workflow instance."
+              }
+            ],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000021",
+              "start_page": 13,
+              "end_page": 21
+            },
+            "summary": "Defines workflow process definitions and how they model a business process for the workflow engine: activities, transitions, and data mappings. Covers activity types including start/end, automatic, event wait, route, subflow, loop, decision, parallel, and notifications. Explains transition control with XOR/AND branch and join points plus optional conditions. Introduces workflow data objects and context data, emphasizing lifecycle and runtime population. Also outlines workflow design using the Close Case example, identifying intrinsic vs. configurable steps, participants, data needs, graphing, and enactment start point."
+          },
+          {
+            "title": "1.3 The Workflow Engine and Enacting Workflow Processes",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Workflow Engine",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Explains how a workflow is enacted and executed. It recommends choosing the enactment point just before the first main workflow step, illustrated by adding an event after reassessment in the Close Case process. It also highlights design considerations such as breaking complex steps into smaller ones and refactoring source code to support workflow-friendly activities. Introduces the workflow engine as the runtime that uses the latest released process definition, maps enactment data, manages process lifecycle, handles events and transitions, and creates user tasks via allocation strategies."
+              },
+              {
+                "title": "Enacting Workflow Processes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Enacting from Code",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains the “enacting from code” workflow mechanism: application code directly calls the enactment service API to start a named process instance with required input data. Notes this is simple but tightly hard-coded, so changing the process or enactment data requires code changes and redeployment. Also places this mechanism in the broader context of workflow enactment options, contrasting it with event-based enactment."
+                  },
+                  {
+                    "title": "Enacting by Raising Events",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains enacting workflow processes by raising events. Events let loosely coupled modules communicate state changes; developers define events, raise them in application code, and register handlers/listeners. The workflow system includes an automatically registered Process Enactment Event Handler that can start configured processes when matching events occur. It also supports configurable mappings from event data to process enactment data, set via admin UI or preconfigured database entries."
+                  },
+                  {
+                    "title": "Enactment as a Subflow",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how to enact a workflow process as a subflow. A parent process uses a subflow activity that names the target process; the latest released version is enacted. Subflows can run synchronously, making the parent branch wait for completion, or asynchronously, where the parent continues immediately and ignores the subflow outcome. Also briefly contrasts with event-based and web service enactment methods and points to the Workflow Reference Guide."
+                  },
+                  {
+                    "title": "Enacting with Web Services",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000024",
+                      "end_unit_id": "p000024",
+                      "start_page": 24,
+                      "end_page": 24
+                    },
+                    "summary": "This section explains how to enact workflow processes with web services. It says workflows can be exposed as web services by setting metadata, and once deployed the WSDL and service are available normally. It also notes the broader enactment options nearby: database-backed event configuration and subflows, including synchronous and asynchronous behavior. Useful if you need how Cúram workflow processes are published and invoked via web services."
+                  }
+                ],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section introduces workflow process enactment, explaining that starting a process instance requires initial input data and can be done in four ways. It covers enacting from code via the enactment service API, noting it is simple but hard-coded and requires redeployment for changes. It also explains event-based enactment, where registered event handlers and configurable mappings can start processes when events are raised."
+              }
+            ],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000022",
+              "end_unit_id": "p000023",
+              "start_page": 22,
+              "end_page": 23
+            },
+            "summary": "Explains where to enact a workflow in a business process, ideally just before the first main workflow step, with examples from Close Case. Notes design considerations: split complex steps into smaller activities and refactor source code to support workflow-friendly functions. Describes the workflow engine as the runtime that uses the latest released process definition, maps enactment data, manages lifecycle, handles events/transitions, creates user tasks/notifications, and can retry failed instances. Introduces enactment requirements and two mechanisms: code-based API startup and event-based startup via registered handlers and configurable mappings."
+          },
+          {
+            "title": "1.4 Managing My Inbox and Tasks",
+            "level": 2,
+            "children": [
+              {
+                "title": "Managing My Tasks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains task management in the inbox, focusing on My Open Tasks and My Deferred Tasks. To action a task, a user must add it to My Open Tasks via “Add to My Tasks” from Available Tasks search results or Task Home. Open tasks are removed from the available tasks list and are no longer available to other users. This section helps users understand how tasks are claimed and managed before completion."
+              },
+              {
+                "title": "Managing My Inbox",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Searching Available Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains how users search for available tasks from Inbox. Search can target tasks assigned to the user, their organizational objects (organization units, positions, jobs), or subscribed work queues. Results can be further filtered by task priority (High/Medium/Low) and deadline status (Overdue, Due Today, Due This Week, Due This Month, Due After This Month). Saved search criteria are reused on later visits and can be edited anytime."
+                  }
+                ],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Describes Inbox shortcut actions for task handling: Get Next Task, Get Next Task from Preferred Org Unit, Get Next Task from Preferred Queue, and New Task creation with optional priority, deadline, participant, and case assignment. Also covers searching available tasks from Inbox by assignment target (user, organizational objects, or subscribed queues), with filters for priority and deadline, and notes that saved search criteria persist for later visits and can be edited."
+              },
+              {
+                "title": "Working on Tasks",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Searching Tasks",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how users search and save task queries in Cúram. Users can search any task, including closed tasks and tasks not in My Open Tasks or otherwise available to them. Task queries can be reused and filtered by status, priority, deadline, creation date, and restart date. Includes an example of creating a saved query for tasks due this week. The section also notes that notifications are distinct from tasks: they inform users of events, can be delivered by email or alerts, appear in My Notifications, and can be acknowledged or deleted."
+                  }
+                ],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000027",
+                  "start_page": 26,
+                  "end_page": 27
+                },
+                "summary": "Overview of task lifecycle management in Cúram. Covers the task home page, history/comments, assignments, and graphical process view, plus core actions: add comment, add to My Tasks, update time worked, edit priority/deadline, make available, forward, reallocate, and defer. Notes that comments can be added even if the task is not in My Tasks, and deferral moves a task to My Deferred Tasks with optional automatic restart."
+              },
+              {
+                "title": "Running Task Queries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Explains running task queries in Cúram: users can create, run, and save reusable task search queries for tasks in My Open Tasks or available to them. Query results can be filtered by task status, priority, deadline date/time, creation date, and restart date. Gives an example of saving a weekly tasks query. Also briefly covers task actions Restart and Close, task searching, and managing notifications in My Notifications, including deletion and alert behavior."
+              },
+              {
+                "title": "Managing My Notifications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "This section explains workflow notifications: they can be generated during process execution and delivered by email or as alerts. Notifications inform users that an event occurred and do not require work like tasks. Alert-based notifications appear in the My Notifications page, stay there until acknowledged, and can be deleted individually or in bulk. Deleting an alert physically removes it from the Alert database table."
+              },
+              {
+                "title": "My Work Queues",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains the My Work Queues inbox area: user-subscribed queues versus queues subscribed by organizational objects, and what actions are available in each. Covers viewing assigned tasks, adding the next task to My Open Tasks, and subscribing/unsubscribing where permitted. Also describes task preferences such as preferred queue/organization unit, shortcut actions for getting next tasks, and task redirection for leave or absence, including future-dated redirections, batch reassignment, and viewing/removing active, pending, or expired redirections."
+              },
+              {
+                "title": "Setting Task Preferences",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "This section explains inbox task preferences: setting a preferred work queue or organization unit to prioritize where tasks are taken from, and using shortcut actions to get the next task from those preferences. It also covers task redirection, including redirecting tasks to another user or organizational object for a future start date and optional duration, such as during leave. It notes that during redirection, new tasks go to the target, open tasks remain, and a batch job may move existing tasks."
+              }
+            ],
+            "node_id": "n000041",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000029",
+              "start_page": 24,
+              "end_page": 29
+            },
+            "summary": "Covers inbox and task management: claiming tasks via Add to My Tasks, using My Open/Deferred Tasks, deferred-task restart, Inbox shortcuts for getting next tasks, creating manual tasks, searching available tasks, and task preferences. Also explains task lifecycle actions on Task Home (comments, time worked, priority/deadline edits, make available, forward, reallocate, defer, restart, close), task queries, notifications, work queues, and task redirection for leave or absence."
+          },
+          {
+            "title": "1.5 Administering Workflow",
+            "level": 2,
+            "children": [
+              {
+                "title": "Administering Work Allocation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Translating Work Queue Names",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000034",
+                      "start_page": 32,
+                      "end_page": 34
+                    },
+                    "summary": "Explains how to translate or modify work queue names in a multilingual Cúram application. It notes that the runtime language follows the user’s locale, and if only one non-English language is supported, names can be edited directly in that language. The procedure covers navigating to Administration Workspace > Shortcuts > Workflow > Work Queues, opening Translate Text, adding a new translation or editing an existing one, and saving changes. Updated names appear everywhere in the application."
+                  }
+                ],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000034",
+                  "start_page": 31,
+                  "end_page": 34
+                },
+                "summary": "Explains work allocation in Cúram Workflow: tasks and notifications are routed to users or groups via allocation rules, with four strategies supported—functions, classic rules, CER rules, and allocation targets. Covers maintaining allocation targets and work queues, including target item types such as job, organization unit, position, work queue, and user. Administrators can create, edit, remove, and translate work queue names; translations follow the user’s locale, and work queue access may be controlled by subscriptions and sensitivity levels."
+              }
+            ],
+            "node_id": "n000051",
+            "range": {
+              "start_unit_id": "p000030",
+              "end_unit_id": "p000034",
+              "start_page": 30,
+              "end_page": 34
+            },
+            "summary": "Cúram Workflow administration covers monitoring workflow process instances and errors, maintaining workflow events, and administering work allocation. Work allocation routes tasks and notifications to users or groups using one of four strategies: functions, classic rules, CER rules, or allocation targets. Administrators can manage allocation targets, work queues, and work queue name translations. Work queues support subscriptions, assigned administrators, optional user-subscription permissions, and sensitivity-based access control."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000034",
+          "start_page": 9,
+          "end_page": 34
+        },
+        "summary": "Overview of Cúram workflow: it automates business processes and routes work across people/departments using process definitions, the PDT, the workflow engine, inbox/task tools, and administration. Explains when workflow is appropriate versus API calls, noting benefits like allocation, traceability, and flexibility, with trade-offs in performance and non-atomicity. Covers PDT design/validation, WDOs and method references, runtime process enactment and task/notification creation, inbox task management, process monitoring/error handling, workflow events, allocation targets, work queues, and translation of work queue names."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

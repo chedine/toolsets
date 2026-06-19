@@ -1,0 +1,743 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "2278d9e4b58f0954",
+    "title": "Cúram 8.1.2 Deploying on Oracle WebLogic Server Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramDeploymentGuideForWeblogicServer_812.pdf",
+    "source_type": "pdf",
+    "sha256": "2278d9e4b58f0954fe74900d4395841a46b64d95385e616631f8d01f0c3b4857",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:20:24+00:00",
+    "page_count": 40,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramDeploymentGuideForWeblogicServer_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Deploying on Oracle WebLogic Server Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000040",
+      "start_page": 1,
+      "end_page": 40
+    },
+    "summary": "Front matter and full guide for deploying Cúram 8.1/8.1.1/8.1.2 on Oracle WebLogic Server. It covers prerequisite installation assumptions, building application and web services EARs with SDEJ/Ant, environment setup such as WLS_HOME, EAR contents, facade generation, and the H2 limitation. It then explains WebLogic application server configuration from Ant targets, including domain setup, data source, JMS, security, time zone, and server start/stop/logging. The deployment section covers installing/uninstalling EARs, required properties and parameters, changing the SYSTEM user, precompiling JSPs, and testing via SSL login. A manual configuration section details creating a WebLogic domain, JVM settings, JDBC driver replacement, database setup, security/authenticator and TLS 1.2 configuration, JMS resources (queues, topics, connection factories), and manual EAR deployment. The remaining pages are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This section is a brief front-matter note telling readers to review the Notices section on page 39 before using the information or product. It also includes the Merative US L.P. copyright notice for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter for the Cúram 8.1/8.1.1/8.1.2 WebLogic deployment guide, followed by the table of contents. It introduces deploying Cúram on Oracle WebLogic Server and building EAR files with SDEJ/Ant, including application.ear and Web Services.ear targets, required environment variables, and notes on facade generation and unsupported H2 builds. It also previews later sections on server configuration, deployment, manual WebLogic setup, JMS, security, TLS, and database configuration."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram WebLogic deployment guidance: how web service WSDL URLs are exposed, splitting applications into multiple EAR/WAR files via deployment_packaging.xml, and the meaning of EAR options like name, requireServer, components, context-root, and custom-web-xml. It explains automatic WebLogic configuration with AppServer.properties/Bootstrap.properties, security and identity-only authentication options, timezone requirements, start/stop/restart server Ant targets, server logging location, deployment/undeployment targets, SYSTEM user considerations, and precompiling JSPs before installation."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Section covers WebLogic deployment and manual configuration for Cúram. It explains how to test a deployed app via the SSL URL and then details optional/manual setup: creating a domain, setting MaxPermSize and JVM args, replacing the Oracle JDBC driver, starting AdminServer, configuring the Oracle data source, setting up the Cúram authenticator and SSL, enabling TLS 1.2, and creating JMS persistent stores, servers, and queues. Useful if you need server-side deployment or WebLogic setup steps."
+          },
+          {
+            "title": "Edition — pages 35-38",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000038",
+              "start_page": 35,
+              "end_page": 38
+            },
+            "summary": "Cúram 8.1.2 WebLogic manual configuration covering JMS setup and deployment. It details creating queue and topic quotas, queue/topic destinations, XA and non-XA connection factories, subdeployments targeting CuramJMSServer, delivery failure settings, and a cache invalidation topic for reload support. It also explains manual .ear deployment through the Administration Console, including installing Curam.ear, starting the application, and testing via browser URL."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000038",
+          "start_page": 5,
+          "end_page": 38
+        },
+        "summary": "Front matter and contents for the Cúram 8.1/8.1.1/8.1.2 WebLogic deployment guide, covering deployment on Oracle WebLogic Server, building application and web services EARs with SDEJ/Ant, multiple EAR packaging, server and security configuration, deployment/testing, and manual WebLogic setup. Key details include WLS_HOME and build targets, facade generation, H2 EAR limitation, SSL/TLS 1.2, system user changes, precompiling JSPs, and JMS setup. The manual section includes domain, JVM, database, authenticator, JMS, and manual EAR deployment instructions."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "This section contains legal notices: fictitious sample data disclaimer, sample program copyright/license terms, warranty/liability limitations, a pointer to Merative’s privacy policy URL, and a list of third-party trademarks used in the document."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000040",
+              "start_page": 40,
+              "end_page": 40
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands. Notes that Merative and its logo are trademarks; IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks are also identified with their owners. Includes a privacy policy link, a disclaimer that sample programs are provided “as is” without warranty, and permission terms for copying/modifying/distributing sample code for compatible application development."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000039",
+          "end_unit_id": "p000039",
+          "start_page": 39,
+          "end_page": 39
+        },
+        "summary": "Legal notices and publication-use terms: personal or internal commercial copying is allowed only if proprietary notices are preserved, with no derivative works or external distribution without Merative consent. It also states no additional rights are granted, Merative may withdraw permission, export laws apply, and the publications are provided “as-is” without warranties. The section includes patent and third-party product/site disclaimers and ends with the Merative copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a Cúram 8.1.2 guide on deploying and configuring applications on Oracle WebLogic Server. Lists sections on EAR file building (enterprise app, web services app, multiple EARs), WebLogic application server configuration, security, time zone, server start/stop/logging, deployment and testing, and manual WebLogic setup including domains, JVM, database driver/configuration, security, TLS, JMS, queues/topics, and manual deployment. Includes front matter and notices/privacy/trademarks."
+      },
+      {
+        "title": "1 Deploying on Oracle WebLogic Server",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000010",
+          "start_page": 9,
+          "end_page": 10
+        },
+        "summary": "This section introduces deploying Cúram on Oracle WebLogic Server. It states that deployment requires configuring the server and deploying the application EAR files. It also assumes Oracle WebLogic Server is already installed."
+      },
+      {
+        "title": "2 Building EAR files",
+        "level": 1,
+        "children": [
+          {
+            "title": "2.1 The Enterprise Application",
+            "level": 2,
+            "children": [
+              {
+                "title": "Building the Application.ear File",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to build the Cúram application EAR for WebLogic using the SDEJ Apache Ant target `build weblogicEAR`, run from the project root after setting `WLS_HOME` and required environment variables. The target generates `<SERVER_MODEL_NAME>.ear` in `<SERVER_DIR>/build/ear/WLS`. Notes that a fully built application is required and the EAR cannot be built for H2. Also briefly describes what the target packages “under the hood”: generated Java files and deployment descriptors from BPO/Facade/WebService classes."
+              },
+              {
+                "title": "Under the Hood",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to build Cúram EAR files for WebLogic using SDEJ Ant targets. The section notes required environment setup, especially `WLS_HOME`, and that `build weblogicEAR` creates `<SERVER_MODEL_NAME>.ear` in `<SERVER_DIR>/build/ear/WLS`. It also states a fully built application is required and that EARs cannot be built for H2. “Under the Hood” says the target packages previously generated Java files and deployment descriptors, produced from BPO-related facade/web service methods, into the EAR."
+              },
+              {
+                "title": "Contents of the application.ear file",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Describes the default remote-call handling via `curam.util.invoke.EJBMethod` and optional facade generation (`-Denablefacade=true`), then lists the structure of the produced `application.ear` file. Covers the `META-INF` contents (`application.xml`, `MANIFEST.MF`) and the main packaged components, including core JARs, Log4j and other library JARs, infrastructure modules, and WARs such as `DBtoJMS.war` and `ClientModule.war`."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000012",
+              "start_page": 11,
+              "end_page": 12
+            },
+            "summary": "Explains how to build the Cúram application EAR for WebLogic with the SDEJ Ant target `build weblogicEAR`, which must be run from the project root after setting `WLS_HOME` and other required environment variables. The target creates `<SERVER_MODEL_NAME>.ear` in `<SERVER_DIR>/build/ear/WLS` and requires a fully built application; EARs cannot be built for H2. Also covers how generated Java/deployment descriptors are packaged, default remote-call handling via `curam.util.invoke.EJBMethod`, optional facade generation, and the EAR’s main contents (META-INF, core JARs, WARs)."
+          },
+          {
+            "title": "2.2 The Web Services Application",
+            "level": 2,
+            "children": [
+              {
+                "title": "Building the Web Services.ear File",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Describes how to build the Web Services .ear file from the project root using the `build weblogicWebservices` target with three properties: `prp.webipaddress`, `prp.contextproviderurl`, and `prp.contextfactoryname`. Explains what each property controls and gives defaults (`http://localhost:7001`, `t3://localhost:7001`, and `weblogic.jndi.WLInitialContextFactory`). Notes that WebLogic’s `t3` protocol is used for the JNDI context provider by default."
+              },
+              {
+                "title": "Under the Hood",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains the weblogicWebServices build target, which packages previously generated Java files and deployment descriptors into the ready-to-install WebServices.ear. It notes that a fully built Cúram application must already exist, and that generation depends on model-defined web service stereotypes mapped to server components (treated like ejb). It also describes the EAR contents: META-INF/application.xml, MANIFEST.MF, and the webservices.war with coreinf.jar, axis.jar, appwebservices.jar, and server-config.wsdd."
+              },
+              {
+                "title": "Contents of Web Services.ear File",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section describes the contents and structure of the generated Web Services .ear file. It explains that the EAR includes META-INF/application.xml, MANIFEST.MF, and a webservices.war containing support JARs such as coreinf.jar, axis.jar, and appwebservices.jar, plus server-config.wsdd in WEB-INF. It also notes that the EAR is produced by the weblogicWebServices target after a fully built Cúram application exists, and that web service generation depends on model-defined stereotypes and BPO-to-server-component mappings."
+              },
+              {
+                "title": "Web Service WSDL",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section explains how a deployed Cúram Axis web service exposes its WSDL: append `?wsdl` to the service URL, and the `/services` endpoint lists all deployed Axis services with links to their WSDLs. It also introduces `deployment_packaging.xml` for building multiple EAR files, showing how to split components across EARs, set context roots, and configure EAR options such as `name` and `requireServer` in `SERVER_DIR/project/config`."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000014",
+              "start_page": 13,
+              "end_page": 14
+            },
+            "summary": "This section explains Cúram’s automatic web services generation and packaging. It shows how to build `WebServices.ear` from the project root with `build weblogicWebservices`, using properties for the server IP, JNDI provider URL, and context factory (defaults include `http://localhost:7001`, `t3://localhost:7001`, and `weblogic.jndi.WLInitialContextFactory`). It notes a fully built Cúram application is required first. It also outlines how web service stereotypes/BPO mappings drive generation and lists EAR contents such as `webservices.war`, `axis.jar`, `appwebservices.jar`, and `server-config.wsdd`."
+          },
+          {
+            "title": "2.3 Multiple EAR files",
+            "level": 2,
+            "children": [],
+            "node_id": "n000022",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "Explains how to build multiple EAR files using an optional `deployment_packaging.xml` in `SERVER_DIR/project/config`. The file can define multiple `<ear>` entries, each with a name, component list, context root, and optional custom web.xml path. `requireServer=true` includes the server module; only one EAR per cluster should do so. Outputs are placed in `SERVER_DIR/build/ear/WLS`. Also notes component ordering, environment-variable path references, and that separate web client components are needed for multiple WARs."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000011",
+          "end_unit_id": "p000016",
+          "start_page": 11,
+          "end_page": 16
+        },
+        "summary": "Covers packaging a built Cúram application into WebLogic EAR files. Explains required environment setup (`WLS_HOME` and other vars), running Ant targets from the project root, and output locations under `SERVER_DIR/build/ear/WLS`. Describes `build weblogicEAR` for the main application EAR, `build weblogicWebservices` for `WebServices.ear`, and how web service generation depends on BPO/webservice stereotypes. Also documents EAR contents and optional `deployment_packaging.xml` for splitting multiple EARs, context roots, custom web.xml, and `requireServer` handling."
+      },
+      {
+        "title": "3 Application server configuration",
+        "level": 1,
+        "children": [
+          {
+            "title": "3.1 WebLogic Server configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring a web server plug-in in Oracle WebLogic Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains how to configure a web server plug-in in Oracle WebLogic Server when a web server is part of the topology. The plug-in lets WebLogic communicate with the web server, and the section points to using the configurewebserverplugin target to enable it. It also notes related security guidance on configuring HTTP verb permissions to mitigate verb tampering."
+              }
+            ],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000017",
+              "end_unit_id": "p000018",
+              "start_page": 17,
+              "end_page": 18
+            },
+            "summary": "Explains how to configure Oracle WebLogic Server using the Cúram SDEJ `configure` target, which sets up the data source, domain, server, JMS, and security settings from `AppServer.properties` and `Bootstrap.properties`. Notes the target overwrites the existing domain, requires the properties files in the server project directory, and includes sample WebLogic settings such as admin credentials, server name, port, and heap size. Also covers enabling a web server plug-in with `configurewebserverplugin` when a web server is in the topology."
+          },
+          {
+            "title": "3.2 Security configuration for Oracle WebLogic Server",
+            "level": 2,
+            "children": [],
+            "node_id": "n000026",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "WebLogic security configuration uses the default authentication-provider model, with Cúram providing custom authentication. It supports alternative auth methods such as LDAP or single sign-on; if these are used, set `curam.security.check.identity.only=true` in `AppServer.properties` before running the configure target so Cúram only validates identity for authorization. An optional `curam.security.login.trace=true` enables authentication tracing in the WebLogic log. Additional authentication providers can be configured manually only after the configure target is run."
+          },
+          {
+            "title": "3.3 Time Zone Configuration",
+            "level": 2,
+            "children": [],
+            "node_id": "n000027",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000019",
+              "start_page": 19,
+              "end_page": 19
+            },
+            "summary": "If multiple application servers are used, their clocks must stay synchronized and set to the same time zone. This ensures database date/time ordering reflects real event order correctly. The server time zone must never change during the application’s lifetime, because stored dates use the current server time zone at entry time and a later change would make earlier dates inconsistent."
+          },
+          {
+            "title": "3.4 Starting and Stopping WebLogic Servers",
+            "level": 2,
+            "children": [
+              {
+                "title": "Start a WebLogic Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains how to start and stop a WebLogic Server on Windows using Cúram SDEJ Ant targets from the `<SERVER_DIR>` directory. Start command is `build startserver` with required `-Dserver.name` and optional `-Dweblogic.alternateMbeanTypesDir` if `CuramMBean.jar` is in a nondefault location; example invocations are given. Warns that before first server start, `database` and then `prepare.application.data` must be run, and rerun after database target changes to avoid timeouts and startup failures."
+              },
+              {
+                "title": "Stop a WebLogic Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Describes Windows Ant targets for starting and stopping a WebLogic server in Cúram SDEJ. Notes they must be run from the `<SERVER_DIR>` directory and depend on correct `AppServer.properties` plus extra parameters. Starting uses `build startserver` with required `-Dserver.name`, and optional `-Dweblogic.alternateMbeanTypesDir` if `CuramMBean.jar` is in a nondefault location. Also warns that `database` and `prepare.application.data` must be run before first startup, and again after rerunning database. Stopping uses `build stopserver`."
+              },
+              {
+                "title": "Restart a WebLogic Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Explains how to restart a WebLogic Server using the Ant target `build restartserver`, requiring `-Dserver.name` and optionally `-Dweblogic.alternateMbeanTypesDir` if `CuramMBean.jar` is in a nondefault location. Gives usage examples and notes that if the server is already stopped, the stop step won’t fail. Also describes Windows Service naming (`<domain_name>_<server_name>`) and where default server log output is written and cleared on startup."
+              },
+              {
+                "title": "Server Logging",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000022",
+                  "start_page": 21,
+                  "end_page": 22
+                },
+                "summary": "Explains where WebLogic server start/stop actions are run as Windows Services and how to find their service names in the format `<domain_name>_<server_name>`. It also identifies the default server log location for these services: `<WebLogic Install directory>/<domain_repository>/<domain_name>/<node.name>/servers/<server.name>/logs/<server.name>_Redirect.log`, and notes that this log is cleared on server startup."
+              }
+            ],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000022",
+              "start_page": 20,
+              "end_page": 22
+            },
+            "summary": "Windows-only Cúram SDEJ Ant targets for WebLogic server control from `<SERVER_DIR>`. Covers `build startserver`, `stopserver`, and `restartserver`, all requiring `-Dserver.name`; `startserver`/`restartserver` may also need `-Dweblogic.alternateMbeanTypesDir` if `CuramMBean.jar` is nondefault. Notes `AppServer.properties` must be configured and `database` plus `prepare.application.data` must run before first startup and after rerunning database. Also explains Windows Service naming (`<domain_name>_<server_name>`) and the default server log path/clearing behavior."
+          }
+        ],
+        "node_id": "n000023",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000022",
+          "start_page": 17,
+          "end_page": 22
+        },
+        "summary": "This section covers Oracle WebLogic Server application server configuration with Cúram SDEJ Ant targets. It explains the default `configure` target for setting up the domain, server, data source, JMS, and security from `AppServer.properties` and `Bootstrap.properties`, plus web server plug-in setup if needed. It also describes WebLogic security options, identity-only mode for external auth, time zone requirements, and Windows-only `startserver`, `stopserver`, and `restartserver` targets, including required parameters, first-start prerequisites, and server log/service details."
+      },
+      {
+        "title": "4 Deployment",
+        "level": 1,
+        "children": [
+          {
+            "title": "4.1 Deployment",
+            "level": 2,
+            "children": [
+              {
+                "title": "Deploy an Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains how to deploy a Cúram application EAR to Oracle WebLogic Server using the SDEJ Ant target `build installapp`. Notes that the server should be restarted first and the database must be correctly configured or deployment may fail. Requires `AppServer.properties` plus options `-Dserver.name`, `-Dear.file`, and `-Dapplication.name`, with an example provided. Also states the server-module EAR must be deployed before any client-only EARs, and recommends changing the SYSTEM username after deployment via the WebLogic admin console."
+              },
+              {
+                "title": "Change SYSTEM Username",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains application deployment on WebLogic after packaging Cúram application and web services EAR files. Covers restarting the server first, ensuring the database is correctly configured, and using Ant targets like `build installapp` with required options (`server.name`, `ear.file`, `application.name`). Includes a note that the EAR containing the server module must be deployed before client-only EARs. Also begins a “Change SYSTEM Username” note, recommending changing the SYSTEM username after deployment via the WebLogic administration console."
+              },
+              {
+                "title": "Undeploy an Application",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to undeploy/uninstall an application using the Ant target `build uninstallapp`, requiring `-Dserver.name` (target server) and `-Dapplication.name` (installed application name), with an example for CuramServer/Curam. The page also notes JMS-related WebLogic identity settings and mentions that the SYSTEM user runs JMS messages, plus a separate section on pre-compiling JSPs before deployment using `build precompilejsp -Dear.file=...`, which speeds first-page access and overwrites the EAR with precompiled JSPs."
+              }
+            ],
+            "node_id": "n000034",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000023",
+              "start_page": 23,
+              "end_page": 23
+            },
+            "summary": "Explains how to deploy a Cúram application EAR on Oracle WebLogic Server using the SDEJ Ant target build installapp. Requires a correctly configured AppServer.properties file, a restarted WebLogic server, and a properly configured database. The deploy command needs -Dserver.name, -Dear.file, and -Dapplication.name, and the server-module EAR must be installed before any client-only EARs. Also recommends changing the SYSTEM username after deployment via the WebLogic administration console."
+          },
+          {
+            "title": "4.2 Pre-compiling JSPs",
+            "level": 2,
+            "children": [],
+            "node_id": "n000038",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000024",
+              "start_page": 24,
+              "end_page": 24
+            },
+            "summary": "Explains how to pre-compile JSPs before deploying a client EAR using the Ant `precompilejsp` target. This speeds up first-page load in the browser after installation. The only option is `-Dear.file`, the fully qualified `.ear` file to process. The target overwrites the original EAR with a copy containing pre-compiled JSPs, which can then be deployed normally."
+          },
+          {
+            "title": "4.3 Testing Deployment",
+            "level": 2,
+            "children": [],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000026",
+              "start_page": 25,
+              "end_page": 26
+            },
+            "summary": "Explains how to test a deployed application on WebLogic Server. After deployment, start the relevant server and open `https://<host>:<ssl-port>/<context-root>` in a browser; the SSL port is one higher than `curam.server.port`. The browser will first redirect to the login page, where a valid user account is required. Notes that a web services application may also need installation and that example EAR/application names are illustrative."
+          }
+        ],
+        "node_id": "n000033",
+        "range": {
+          "start_unit_id": "p000023",
+          "end_unit_id": "p000026",
+          "start_page": 23,
+          "end_page": 26
+        },
+        "summary": "Covers deployment of Cúram application and web services EAR files on Oracle WebLogic Server. Describes required Ant targets for install/uninstall, including AppServer.properties setup, server restart, database readiness, and options like -Dserver.name, -Dear.file, and -Dapplication.name. Notes server-module EAR must be deployed first and recommends changing the SYSTEM user after deployment via WebLogic console. Also explains pre-compiling JSPs in client EARs and how to test deployment by accessing the SSL URL and logging in with a valid user."
+      },
+      {
+        "title": "5 Manual WebLogic Server configuration",
+        "level": 1,
+        "children": [
+          {
+            "title": "5.1 Creating a WebLogic Server Domain",
+            "level": 2,
+            "children": [
+              {
+                "title": "Domain Configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to manually create a WebLogic Server domain for Oracle WebLogic Server 11gR1 on Windows or UNIX, though manual setup is not recommended. It provides the wizard launch paths and step-by-step domain creation instructions: create a new domain, select automatic configuration for WebLogic Server, set the domain name, define an admin username/password meeting complexity requirements, choose startup mode and Java SDK, skip optional configuration, review, create, and finish."
+              }
+            ],
+            "node_id": "n000041",
+            "range": {
+              "start_unit_id": "p000027",
+              "end_unit_id": "p000027",
+              "start_page": 27,
+              "end_page": 27
+            },
+            "summary": "Explains how to manually create a WebLogic Server domain in Oracle WebLogic Server 11gR1, noting that manual configuration is not recommended. It gives the Configuration Wizard launch paths on Windows and UNIX, then outlines the required steps: create a new domain, choose automatic configuration with WebLogic Server, set the domain name, define an admin username and password meeting complexity rules, select startup mode and Java SDK, skip optional configuration, review settings, create the domain, and finish."
+          },
+          {
+            "title": "5.2 Java Virtual Machine Configuration",
+            "level": 2,
+            "children": [],
+            "node_id": "n000043",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "This section describes required JVM settings for the Cúram application on WebLogic. It explains configuring MaxPermSize to at least 256m in the domain’s setDomainEnv script, then setting JVM-related environment variables: USER_MEM_ARGS for heap and PermGen values, WLS_REDIRECT_LOG for server redirect logging, and JAVA_OPTIONS for headless mode on UNIX plus other JVM parameters. It also notes that if USER_MEM_ARGS is overridden, PermGen values must still be supplied."
+          },
+          {
+            "title": "5.3 Set up Database Driver",
+            "level": 2,
+            "children": [],
+            "node_id": "n000044",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000028",
+              "start_page": 28,
+              "end_page": 28
+            },
+            "summary": "This section notes that WebLogic Server uses a different Oracle database driver version than the one shipped with the application product. It specifically references the ojdbc6.jar driver and the drivers directory in the SDEJ installation. Use this section if you need to verify or align the database driver used by WebLogic with the application’s requirements."
+          },
+          {
+            "title": "5.4 Starting the WebLogic Administration Service",
+            "level": 2,
+            "children": [],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000029",
+              "start_page": 29,
+              "end_page": 29
+            },
+            "summary": "This section explains how to start the WebLogic Administration Service: run the startWeblogic command from the domain directory, confirm the server reaches RUNNING mode, open the Administration Console at http://<IP Address>:7001/console, and log in with the installation credentials. It also precedes database setup by noting Oracle JDBC driver replacement in WLS_HOME\\lib with the application’s driver, and gives the revert path via WLS_HOME\\ext\\jdbc\\oracle\\11g\\."
+          },
+          {
+            "title": "5.5 Database Configuration",
+            "level": 2,
+            "children": [],
+            "node_id": "n000046",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000030",
+              "start_page": 29,
+              "end_page": 30
+            },
+            "summary": "Configures Oracle database connectivity in WebLogic. It first notes replacing WebLogic’s ojdbc6.jar with the application’s driver if needed. Then it walks through creating a JDBC data source named curamdb with JNDI jdbc/curamdb, choosing Oracle and the Thin XA driver, entering database host/port/user/password from Bootstrap.properties, and adjusting the URL when using an Oracle service name. It ends by testing, targeting AdminServer, and setting curam.server.name accordingly."
+          },
+          {
+            "title": "5.6 Setup Security",
+            "level": 2,
+            "children": [],
+            "node_id": "n000047",
+            "range": {
+              "start_unit_id": "p000031",
+              "end_unit_id": "p000032",
+              "start_page": 31,
+              "end_page": 32
+            },
+            "summary": "Configures WebLogic security for Cúram. Requires copying CuramMBean.jar to WebLogic’s mbeantypes directory and CryptoConfig.jar to the JRE ext directory, then restarting AdminServer. In the Administration Console, create and configure a CuramAuthenticator in the myrealm authentication providers, delete DefaultAuthenticator, set control flag to REQUIRED, and save provider-specific settings. Notes include generating the encrypted admin password with the Ant digest target, default/clustered host and port values, and the need to enable SSL support."
+          },
+          {
+            "title": "5.7 Setup Transport Layer Security",
+            "level": 2,
+            "children": [],
+            "node_id": "n000048",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000033",
+              "start_page": 33,
+              "end_page": 33
+            },
+            "summary": "Configures WebLogic to use TLS 1.2 by editing the domain startup script (`setDomainEnv.cmd` or `setDomainEnv.sh`) in the domain `bin` directory. Replace the last `JAVA_OPTIONS` entry with `-Dweblogic.security.SSL.minimumProtocolVersion=TLSv1.2`, save the file, and restart the server. Notes that TLS 1.2 requires Java 7+ and that WebLogic selects strong ciphers automatically, though they should be reviewed periodically."
+          },
+          {
+            "title": "5.8 Setup JMS",
+            "level": 2,
+            "children": [],
+            "node_id": "n000049",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000033",
+              "start_page": 33,
+              "end_page": 33
+            },
+            "summary": "Configures JMS for Cúram persistent messaging in WebLogic. This section explains that a JMS file store must be created on the file system to hold persistent messages, typically under `<WebLogic Server Install directory>/user_projects/domains/<DomainName>/jms_file_store`. The setup is performed through the WebLogic Administration Console."
+          },
+          {
+            "title": "5.9 Queue Setup",
+            "level": 2,
+            "children": [],
+            "node_id": "n000050",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000034",
+              "start_page": 34,
+              "end_page": 34
+            },
+            "summary": "This section describes JMS queue setup in WebLogic. It first creates the JMS file store and JMS server, then configures the JMS module “op-jms” for AdminServer. It requires setting up four regular queues and two error queues, with the error queues created first. The queues to configure are CuramDeadMessageQueue, DPError, WorkflowError, DPEnactment, WorkflowEnactment, and WorkflowActivity, along with quota resources using default unlimited values and FIFO policy."
+          },
+          {
+            "title": "5.10 Queue Connection Factory Setup",
+            "level": 2,
+            "children": [],
+            "node_id": "n000051",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000035",
+              "start_page": 35,
+              "end_page": 35
+            },
+            "summary": "This section explains how to configure the XA Queue Connection Factory in WebLogic. It instructs you to navigate to JMS Modules, open the op-jms module, create a new Connection Factory, and set its Name to “CuramQueueConnectionFactory” with JNDI name “jms/CuramQueueConnectionFactory.” It ends by selecting the newly created factory for further configuration."
+          },
+          {
+            "title": "5.11 Topic Setup",
+            "level": 2,
+            "children": [],
+            "node_id": "n000052",
+            "range": {
+              "start_unit_id": "p000036",
+              "end_unit_id": "p000036",
+              "start_page": 36,
+              "end_page": 36
+            },
+            "summary": "Explains how to configure the JMS topic used for Cúram cache reloading in WebLogic. It creates a JMS quota named CuramCacheInvalidationTopic.Quota with default unlimited settings, then creates a Topic in the op-jms JMS module. This section is part of the messaging setup and is useful if you need cache invalidation or JMS topic configuration details."
+          },
+          {
+            "title": "5.12 Topic Connection Factory Setup",
+            "level": 2,
+            "children": [],
+            "node_id": "n000053",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000037",
+              "start_page": 37,
+              "end_page": 37
+            },
+            "summary": "Configures a JMS topic connection factory in WebLogic for Cúram. In the JMS module op-jms, create a Connection Factory named CuramTopicConnectionFactory with JNDI name jms/CuramTopicConnectionFactory, target it to the CuramJMSServer subdeployment/JMS server, and ensure XAConnection Factory Enabled is selected under Transactions. This section is relevant if you need JMS messaging setup for topic-based integration or want to verify WebLogic targeting and XA transaction settings."
+          },
+          {
+            "title": "5.13 Manual Deployment",
+            "level": 2,
+            "children": [],
+            "node_id": "n000054",
+            "range": {
+              "start_unit_id": "p000038",
+              "end_unit_id": "p000040",
+              "start_page": 38,
+              "end_page": 40
+            },
+            "summary": "Explains how to manually deploy the Curam .ear file through the Administration Console. Requires the target server to be running, then navigate to Deployments, install the .ear from %SERVER_DIR%/build/ear/WLS/Curam.ear, accept defaults through the wizard, start the deployed application, and verify it by opening https://localhost:7002/Curam. The remaining pages are legal notices, copyright, privacy, and trademark information."
+          }
+        ],
+        "node_id": "n000040",
+        "range": {
+          "start_unit_id": "p000027",
+          "end_unit_id": "p000040",
+          "start_page": 27,
+          "end_page": 40
+        },
+        "summary": "Manual WebLogic Server configuration for Cúram. Covers creating a WebLogic domain, JVM settings (MaxPermSize, USER_MEM_ARGS, WLS_REDIRECT_LOG, JAVA_OPTIONS), replacing the Oracle JDBC driver, starting AdminServer, and configuring the database data source. It also details security setup (CuramAuthenticator, JAR installs, digest password, SSL), TLS 1.2, JMS file store, queues, connection factories, cache invalidation topic, and manual EAR deployment. Includes legal notices at the end."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

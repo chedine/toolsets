@@ -1,0 +1,1905 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "7799a7239aa18e56",
+    "title": "Cúram 8.1.2 Developing Static Evidence Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/DevelopingEvidence_812.pdf",
+    "source_type": "pdf",
+    "sha256": "7799a7239aa18e5607df2792344ca5789643869f5f3fba2b6d80e9bcceed6fef",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:18:03+00:00",
+    "page_count": 132,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/DevelopingEvidence_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Developing Static Evidence Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000132",
+      "start_page": 1,
+      "end_page": 132
+    },
+    "summary": "Cúram 8.1.2 Developing Static Evidence Guide covers how to build static evidence either manually or with the Evidence Generator. It explains the evidence framework, required server/client artifacts, interface hierarchy, controller hooks, and core lifecycle operations such as create, modify, view, transfer, attribution, approval, succession, and participant handling. The guide details generator inputs/outputs, evidence patterns, required modeling, customization points, XML/properties metadata, build/configuration workflow, and troubleshooting. It also includes reference API examples for StandardEvidenceInterface, EvidenceInterface, and ParticipantEvidenceInterface, plus common compilation, metatype, and property-file generation errors. Front matter includes a note, edition applicability (Cúram 8.1–8.1.2), contents, and legal notices/privacy/trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note directing readers to review the Notices section on page 131 before using the product information. Includes Merative US L.P. copyright notice (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory “Edition” pages for Cúram 8.1/8.1.1/8.1.2. Mostly front matter and the start of Chapter 1, “Developing static evidence,” introducing manual vs Evidence Generator-based evidence development. Covers core evidence architecture: server/client artifacts, Standard/Evidence/Participant Evidence interfaces, interface-based implementation patterns, non-modeled functions and casting, and key client infrastructure files (.vim/.uim). Also begins the “Developing an evidence solution” overview, including Evidence Metadata and Product Evidence Link entities."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Section covers static evidence lifecycle setup for Cúram 8.1.2: create, modify, and read operations. It explains client pages and reusable evidence infrastructure .vim headers, especially Evidence_createHeader.vim, Evidence_modifyHeader1.vim, and Evidence_viewHeaderForModal.vim. It details create/modify flow through SEGEvidenceMaintenance facade methods, Asset service methods, and EvidenceController calls, with sample code. Modify behavior includes in-place edit, correction, and succession, and notes effective date/change reason handling plus reattribution on succession."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers Cúram static evidence development for Asset evidence: server-side readAssetEvidence flow, list display details, reassessment-specific suppression of some reads, validation support via selectForValidations/validate, attribution and reattribution behavior, and the generic EvidenceRelationship link entity for parent-child evidence. Also explains registering evidence implementations with Google Guice or legacy properties, and customizing evidence maintenance through EvidenceControllerHook extension points and case-type-specific overrides."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers static evidence customization for evidence controller hooks and multiple participant evidence. Explains how to register custom hooks via Guice/module bindings and matching case type codes, with manager/registrar runtime lookup. Describes MultiEvidenceHook extension points and how to implement/configure global and evidence-type filters for create/modify/discard operations, including examples and Guice map binding. Ends with evidence wizard end-dating behavior: Save and Next starts a second transaction, Finish commits end-dating, failures roll back, and validation can be aggregated."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Cúram Evidence Generator and static evidence customization. Covers how to override default auto-end-date behavior with Guice, enable pre/post end-date hook points, and when hook points run. Explains Evidence Generator inputs/outputs, what it generates, and what it does not (attribution periods and validations). Describes evidence design patterns: parent-child, pre-association, related, search case participant, validation callout, and page hierarchy. Also details required entity modeling, code package/locking/operations, mandatory structs and aggregations, and extra modeling for parent, pre-association, and case participant relationships."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "This section explains Cúram Evidence Generator requirements and metadata for static evidence. It covers special modeling patterns such as related entity attributes, non-evidence details, and non-modifiable entities, plus required structs and aggregations. It describes generator inputs and outputs, configuration files, directory structure under the evidence base folder, and the roles of server/client metadata. It also details server-side relationship patterns (parent-child, mandatory parents, pre-association, related), business dates, cached operations, and client metadata for screen layout, fields, and case participant handling."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "This section explains static evidence generation customization and configuration. It covers EUIM case participant search/create behavior, generator extension classes (customize, hook, validate, related entity attributes) and their methods/packages, and the evidence.properties file with required and recommended settings plus sample values. It also details general.properties, including dynamic placeholders like <displayName>, page title/help keys, field/list/cluster labels, informational messages, action control labels, business object tab labels, and wizard screen descriptions."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "Cúram static evidence generation reference covering sample properties files and XML metadata structure. Explains dynamic/static property keys for evidence and employment wizards, page titles, help text, labels, action controls, tab labels, and generated wizard descriptions. Lists required employment.properties keys and sample values. Documents general error messages for evidence creation/discarding and participant/phone validation. Introduces server metadata XML structure: Entity, relateEvidenceParticipantID, Relationships (Parent, Mandatory Parents, Child, PreAssociation), BusinessDates, and Override nodes, with attribute meanings and required/optional status."
+          },
+          {
+            "title": "Edition — pages 85-94",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "This section documents Cúram static evidence client metadata and the Evidence Generator workflow. It covers XML node structures and attributes for Entity, UserInterface, Cluster, Field, CaseParticipant, CreateCaseParticipant, and SearchType, plus supported meta types and participant types. It then explains when and how to use the Evidence Generator, its inputs and outputs, and the steps to configure an existing product with evidence, general, and employment properties plus module registration."
+          },
+          {
+            "title": "Edition — pages 95-104",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000095",
+              "end_unit_id": "p000104",
+              "start_page": 95,
+              "end_page": 104
+            },
+            "summary": "This section explains how to develop static evidence with the Cúram Evidence Generator, using an Asset evidence example. It covers required entity modeling, server XML and EUIM/properties metadata, end-dating configuration, standard and granular build targets, generator output, and mandatory handcrafted hook implementation (getDetailsForListDisplay). It also describes overriding default evidence products via evidence.properties, how custom metadata/display text are collected during the build, and notes that only handcrafted Java hook classes remain modifiable."
+          },
+          {
+            "title": "Edition — pages 105-114",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000105",
+              "end_unit_id": "p000114",
+              "start_page": 105,
+              "end_page": 114
+            },
+            "summary": "Explains how to customize and generate evidence entities in Cúram static evidence, including server/client metadata overrides, required Override node usage, and handcrafted code changes for custom entities. Covers evidence modeling concepts: entities, patterns, and four relationship types (parent-child, pre-associated, multiple mandatory parents, related). Describes the evidence controller, hooks/registrar, and the main evidence lifecycle processes: list, insert, modify, remove, apply changes, approval, activation, attribution periods, correction vs succession, and view/remove workflows."
+          },
+          {
+            "title": "Edition — pages 115-124",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000115",
+              "end_unit_id": "p000124",
+              "start_page": 115,
+              "end_page": 124
+            },
+            "summary": "Covers static evidence lifecycle and evidence generator support. Explains applying evidence changes, reattributing succession records, simulating in-edit activation, automatic attribution periods for new product delivery cases, approval workflow, participant evidence integration, evidence generation concepts, and evidence period calculation with hook-based start/end date overrides. Also includes detailed troubleshooting for Evidence Generator configuration, runtime, model, and compilation errors, with symptoms, causes, and fixes."
+          },
+          {
+            "title": "Edition — pages 125-130",
+            "level": 2,
+            "children": [],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000125",
+              "end_unit_id": "p000130",
+              "start_page": 125,
+              "end_page": 130
+            },
+            "summary": "Troubleshooting for Developing static evidence. Covers common generated-code compilation errors caused by missing associations between evidence-related structs (evidence key, selected parent, case ID key, descriptor, dtls, case participant details) and notes which links are mandatory. Also explains metatype mistakes for participant, date, and comments fields, and property-generation errors when general.properties or employment.properties is missing or when a property key cannot be resolved. Useful for diagnosing evidence model, metadata, and build issues."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000130",
+          "start_page": 5,
+          "end_page": 130
+        },
+        "summary": "Section for Cúram 8.1–8.1.2 “Developing static evidence.” Covers both manual evidence development and the Evidence Generator: core server/client artifacts, evidence interfaces and controller hooks, lifecycle operations (create/modify/view, attribution, succession, transfer, approval), participant/multi-evidence handling, generator patterns and required modeling, XML/properties metadata, configuration and build workflow, customization points, and troubleshooting. Includes detailed reference material and common compilation/metatype/property errors for generated evidence code."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000132",
+              "end_unit_id": "p000132",
+              "start_page": 132,
+              "end_page": 132
+            },
+            "summary": "This section covers legal notices: fictitious example names, sample code copyright/license terms, warranty disclaimer, and liability limits. It also points to Merative’s privacy policy URL and lists trademarks and copyrights for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others. Useful for checking usage rights, privacy reference, and trademark attributions."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000132",
+              "end_unit_id": "p000132",
+              "start_page": 132,
+              "end_page": 132
+            },
+            "summary": "This section lists trademark notices and legal attributions for Merative and third-party brands used in the document. It identifies Merative, IBM, Adobe/PostScript, Oracle/Java, Linux, Microsoft/Windows, and UNIX trademarks, notes that other names may belong to others, and includes the copyright notice © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000016",
+        "range": {
+          "start_unit_id": "p000131",
+          "end_unit_id": "p000131",
+          "start_page": 131,
+          "end_page": 131
+        },
+        "summary": "Legal notices and usage terms for the publications. Covers personal and enterprise reproduction limits, requirement to preserve proprietary notices, prohibition on derivative works outside allowed use, and Merative’s right to withdraw permission. Includes export-law compliance, “as-is” warranty disclaimer, no patent license, and disclaimer for non-Merative products and external websites. Also contains privacy policy and trademark/copyright attributions."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000019",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition) and Chapter 1, “Developing static evidence,” with subsections on manual evidence development (evidence components, developing an evidence solution) and using the Evidence Generator (inputs/outputs, evidence patterns, required modeling, specification, cookbook, and problem identification). It also lists Notices, Privacy policy, and Trademarks. Useful for navigating to the relevant chapter or appendix sections."
+      },
+      {
+        "title": "1 Developing static evidence",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Developing evidence manually",
+            "level": 2,
+            "children": [
+              {
+                "title": "Evidence components",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Server-side artifacts",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Standard Evidence Interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000024",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "Defines the `StandardEvidenceInterface` for Curam Temporal Evidence Solution. It is the common superinterface for other evidence interfaces and requires implementations to support core evidence management functions. The excerpt shows two key methods: `calcAttributionDatesForCase(CaseKey, EIEvidenceKey)` to compute the effective attribution period for evidence, and `getDetailsForListDisplay(EIEvidenceKey)` to provide summary text for evidence list/detail pages. It uses supporting evidence, case, date, validation, and exception types."
+                      },
+                      {
+                        "title": "Evidence Interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000011",
+                          "end_unit_id": "p000011",
+                          "start_page": 11,
+                          "end_page": 11
+                        },
+                        "summary": "Defines the `EvidenceInterface` for classic evidence, extending `StandardEvidenceInterface` and marked external/implementable. It exposes key methods for evidence management: transferring evidence between cases, retrieving case participant roles for a given evidence key, and setting business end/start dates on evidence details. The Javadoc notes exception behavior and links the interface to evidence ID/type keys, case headers, and date handling. Useful for understanding core evidence operations and the API contract for non-participant evidence."
+                      },
+                      {
+                        "title": "Participant Evidence Interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000026",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "Defines the ParticipantEvidenceInterface in Cúram 8.1.2, extending StandardEvidenceInterface. It declares participant-specific evidence methods with Javadoc: checkForReassessment to determine whether modified attributes require reassessment, createSnapshot to generate a snapshot record for a participant evidence item, getChangedAttributeList to compare two same-entity records and return differing attributes, and a search method for participant records by concernRoleID and status. Includes referenced evidence key types and exception signatures."
+                      },
+                      {
+                        "title": "Accessing non-modeled functions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000027",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "This section explains how to access non-modeled evidence functions. It notes that evidence entity methods defined by the Evidence Interface exist only on the impl class, so callers must cast to the impl class to use them. For the cast to work, the factory must extend the impl class, not the base class; if needed, add a non-stereotyped dummy function to force that inheritance. Otherwise, casting at runtime causes an error."
+                      }
+                    ],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000012",
+                      "start_page": 9,
+                      "end_page": 12
+                    },
+                    "summary": "Explains server-side evidence infrastructure in `curam.core.sl.infrastructure.impl` for static evidence. It introduces the evidence interface hierarchy: `StandardEvidenceInterface` as the parent, extended by `EvidenceInterface` for classic evidence and `ParticipantEvidenceInterface` for participant evidence. Key methods cover attribution/date calculation, list-display details, evidence transfer, participant-role lookup, start/end date setters, reassessment checks, snapshots, changed-attribute comparison, and participant searches. Also notes evidence metadata must be populated and evidence entities must implement the appropriate interface artifacts."
+                  },
+                  {
+                    "title": "Client-side artifacts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "This section explains client-side evidence infrastructure artifacts in the Cúram Platform. It covers how the Evidence Interface and Evidence Controller provide shared and custom evidence logic, and notes that non-modeled methods exist only in impl classes and may require casting plus a factory extension to avoid runtime errors. It also describes the \\webclient\\components\\core\\Evidence Infrastructure folder, its uim/vim pages, the upgrade-friendly role of vim files, and example infrastructural vim files such as Evidence_createHeader.vim, Evidence_modifyHeader.vim, Evidence_viewHeader.vim, and Evidence_typeWorkspace.vim."
+                  }
+                ],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000013",
+                  "start_page": 9,
+                  "end_page": 13
+                },
+                "summary": "Explains static evidence architecture. Covers server-side artifacts in `curam.core.sl.infrastructure.impl`: the evidence interface hierarchy (`StandardEvidenceInterface`, `EvidenceInterface`, `ParticipantEvidenceInterface`) and key methods for attribution dates, list-display details, transfer, participant roles, start/end dates, reassessment, snapshots, attribute comparison, and participant searches. Notes evidence metadata must be populated and entities must implement the right interface artifacts. Also describes client-side evidence infrastructure in `\\webclient\\components\\core\\Evidence Infrastructure`, especially reusable `.vim` pages, upgrade-safe customization, and non-modeled impl methods requiring casting/factory extension."
+              },
+              {
+                "title": "Developing an evidence solution",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Administration: Evidence Metadata entity and Product Evidence Link entity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000015",
+                      "start_page": 14,
+                      "end_page": 15
+                    },
+                    "summary": "Defines two administration entities for evidence handling: Evidence Metadata and Product Evidence Link. Evidence Metadata must be populated before evidence maintenance; it stores evidence type metadata, including view/modify page names, which are resolved at runtime via infrastructure scripts and Evidence Type implementations, and it is effective-dated for changes such as legislation. Product Evidence Link maps evidence to products; during attribution, only evidence linked to a product is attributed when evidence is stored at Integrated Case level."
+                  },
+                  {
+                    "title": "Create, modify, read, and list evidence maintenance operations",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Create evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000032",
+                        "range": {
+                          "start_unit_id": "p000016",
+                          "end_unit_id": "p000019",
+                          "start_page": 16,
+                          "end_page": 19
+                        },
+                        "summary": "Describes the create evidence operation for static evidence, covering both client and server development. It explains that the client page must include the infrastructure page Evidence_createHeader.vim to manage evidence descriptor attributes like receivedDate, enabling future attribute additions with minimal custom changes. On the server side, it shows the facade and service-layer flow for Asset evidence creation: validating mandatory details, setting informational management, creating the evidence object, handling shared vs regular create paths, and using the Evidence Controller infrastructure to insert the evidence and return warnings."
+                      },
+                      {
+                        "title": "Modify evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000033",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000022",
+                          "start_page": 20,
+                          "end_page": 22
+                        },
+                        "summary": "Explains how to modify evidence in Cúram 8.1.2, covering both client and server development. The client must include the infrastructure page Evidence_modifyHeader1.vim, which supports viewing/modifying attributes like received date, change reason, and effective date, enabling future mapping of additional descriptor attributes with minimal custom changes. Describes three modification modes: editing in place for inactive evidence, evidence correction for active evidence without changing effective date, and evidence succession when effective date changes, creating a new active record. Includes the server-side modifyAssetEvidence facade example."
+                      },
+                      {
+                        "title": "Read evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000034",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000026",
+                          "start_page": 23,
+                          "end_page": 26
+                        },
+                        "summary": "Explains how to implement read evidence for static Asset evidence. Covers the client page needed for viewing evidence (including Evidence_viewHeaderForModal.vim), the SEGEvidenceMaintenance.readAssetEvidence façade, and the service-layer readAssetEvidence method that calls EvidenceController.readEvidence, then reads the evidence descriptor and assembles a ReadAssetEvidenceDetails return object. Also notes reassessment behavior: readCurrentApprovalRequestDetails and readUserForLatestChange are suppressed by default and can be controlled via application properties."
+                      },
+                      {
+                        "title": "List evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000035",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000028",
+                          "start_page": 27,
+                          "end_page": 28
+                        },
+                        "summary": "Explains the “list evidence” operation for populating an evidence workspace page. Notes that the server-side data comes mainly from the Evidence Descriptor entity, while description and period are provided by evidence-type-specific Evidence Interface methods. Highlights the required server method Asset.getDetailsForListDisplay, which reads the Asset entity and returns start/end dates plus a formatted summary (asset type and currency amount). Also notes this method is reused for applying, approving, rejecting, sharing, verification, and issues screens."
+                      }
+                    ],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000028",
+                      "start_page": 16,
+                      "end_page": 28
+                    },
+                    "summary": "Covers static evidence maintenance in Cúram 8.1.2: create, modify, read, and list operations. Explains required client infrastructure pages (Evidence_createHeader.vim, Evidence_modifyHeader1.vim, Evidence_viewHeaderForModal.vim) and how they centralize descriptor attributes. Shows server facade/service flows for Asset evidence creation, modification, and reading via EvidenceController, including warnings and descriptor handling. Describes modify modes: in-place edit, evidence correction, and succession. Also covers list-display data sourcing and Asset.getDetailsForListDisplay for summary, dates, and formatted amount."
+                  },
+                  {
+                    "title": "Validations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000030",
+                      "start_page": 29,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how the infrastructure validates work-in-progress evidence changes, either at the case level or for a specific evidence type, so users can pre-test and fix failures before applying changes. Describes two key Evidence Interface functions: selectForValidations and validate. Shows how selectForValidations gathers related Active and In Edit evidence in a hierarchy, filters the list, and passes it to validation logic. Includes Asset/Asset Ownership example code using readAllByParentID and evidence relationship lookup."
+                  },
+                  {
+                    "title": "Evidence attribution and reattribution",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Explains evidence attribution as assigning a date period when evidence counts for entitlement calculations, managed by the evidence controller and potentially calculated by custom logic. Notes attribution from/to dates can be null, defaulting to case start and expected end. Describes reattribution when evidence in a succession is activated or removed, causing attribution records to be split or extended. Includes an example showing business dates being divided into multiple attribution periods after succession changes."
+                  },
+                  {
+                    "title": "EvidenceRelationship link entity",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000038",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Describes the default EvidenceRelationship link entity used to connect parent and child evidence. It lists the key fields (evidenceRelationshipID, parentID/type, childID/type) and explains that EvidenceController.insertEvidence creates links via EvidenceRelationship.createLink, while insertEvidenceOnModify triggers cloneLinks, cloneLinksForParent, and cloneLinksForChild. It also notes that custom link entities must override these business processes and use evidence type from input keys. The section then begins introducing evidence registration and Google Guice-based module registration."
+                  },
+                  {
+                    "title": "Registering evidence implementations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000039",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "This section explains that evidence entities must be registered before use so the evidence controller can access them at runtime. Because the Core Cúram Framework cannot know a product’s evidence types in advance, each evidence type must be paired with its implementation at runtime. It also introduces the evidence registrar module, which uses Google Guice dependency injection to register evidence types and implementations, either in a new module class or an existing evidence module."
+                  },
+                  {
+                    "title": "Customizing evidence maintenance",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Evidence Controller Hook",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000041",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000034",
+                          "start_page": 34,
+                          "end_page": 34
+                        },
+                        "summary": "Explains the EvidenceControllerHook extension interface for customizing evidence maintenance processing. It provides extension points where custom code can run, supports case type–specific implementations, and can map different hooks to different case types (for example, Product Delivery vs Integrated Case). Describes how to extend the abstract curam.core.sl.infrastructure.impl.EvidenceControllerHook, override methods like postRemoveEvidence or postInsertEvidence, and optionally call super() to preserve default behavior. Also outlines basic steps for creating a custom hook process class."
+                      },
+                      {
+                        "title": "Providing a custom implementation of the EvidenceControllerHook",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000042",
+                        "range": {
+                          "start_unit_id": "p000034",
+                          "end_unit_id": "p000034",
+                          "start_page": 34,
+                          "end_page": 34
+                        },
+                        "summary": "Explains how to provide a custom `EvidenceControllerHook` implementation in Cúram evidence maintenance. The hook exposes extension points for custom processing, including case-type-specific behavior so different implementations can be mapped to different case types (for example, Product Delivery vs Integrated Case). It notes that `curam.core.sl.infrastructure.impl.EvidenceControllerHook` can be extended, most methods are no-op while some have defaults, and overridden methods can call `super()` to retain base behavior. Includes basic steps and an example custom hook class."
+                      },
+                      {
+                        "title": "Evidence Controller Hook Registrar and Manager",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000043",
+                        "range": {
+                          "start_unit_id": "p000035",
+                          "end_unit_id": "p000035",
+                          "start_page": 35,
+                          "end_page": 35
+                        },
+                        "summary": "Explains how to register a custom Evidence Controller Hook via a Guice Module binding keyed by product type/case type code, using `MapBinder` and `RegistrarImpl(RegistrarType.EVIDENCE_CONTROLLER_HOOK)`. The key must match `CaseTypeEvidence.getCaseTypeCode()` (e.g., Product Delivery, Integrated Case, Screening, Assessment, Investigation) or the custom hook won’t be used. Also describes the Evidence Controller Hook Registrar/Manager pattern: runtime lookup of the registrar, static mapping initialization, and fallback to the default hook when no subclass is found."
+                      }
+                    ],
+                    "node_id": "n000040",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000035",
+                      "start_page": 33,
+                      "end_page": 35
+                    },
+                    "summary": "Explains how to customize evidence maintenance by extending `curam.core.sl.infrastructure.impl.EvidenceControllerHook` and overriding hook methods such as `postRemoveEvidence` or `postInsertEvidence`, optionally calling `super()` to keep default behavior. Describes case type–specific implementations and mapping custom hooks to the correct case type/product type code. Shows how to register a hook using an `AbstractModule`, `MapBinder`, and `RegistrarImpl(RegistrarType.EVIDENCE_CONTROLLER_HOOK)`, and notes the manager falls back to the default hook if no match is found."
+                  },
+                  {
+                    "title": "Customizing multiple participant evidence",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Multiple participant evidence extension points",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000045",
+                        "range": {
+                          "start_unit_id": "p000036",
+                          "end_unit_id": "p000036",
+                          "start_page": 36,
+                          "end_page": 36
+                        },
+                        "summary": "This section explains how to customize multiple participant evidence handling in Cúram using six hook extension points: pre/post create, modify, and discard. It describes the dependency injection pattern for registering custom hook classes via an Evidence Controller Hook Registrar configured with the `curam.case.evidencecontrollerhook.registrars` environment variable, and notes that missing configuration can cause runtime failure. It also gives an implementation example: create a class implementing `curam.core.sl.infrastructure.impl.MultiEvidenceHook` and implement all interface methods."
+                      },
+                      {
+                        "title": "Configuring custom filters for multiple participant evidence",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Configuring global filters",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000047",
+                            "range": {
+                              "start_unit_id": "p000038",
+                              "end_unit_id": "p000041",
+                              "start_page": 38,
+                              "end_page": 41
+                            },
+                            "summary": "Explains how to configure global filters for multiple participant evidence maintenance in Cúram. Global filters apply across all evidence types and newly created types, reducing duplicated rules. Covers default behavior for create, modify, and discard operations, and how to replace defaults by extending AbstractMultiEvidenceFiltersImpl. Gives example criteria for custom create/modify/discard filters and shows Guice binding of MultiEvidenceFiltersImpl to a custom implementation via an AbstractModule."
+                          },
+                          {
+                            "title": "Configuring evidence type filters",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000048",
+                            "range": {
+                              "start_unit_id": "p000042",
+                              "end_unit_id": "p000043",
+                              "start_page": 42,
+                              "end_page": 43
+                            },
+                            "summary": "Explains how to configure evidence type filters for multiple participant update operations in Cúram. Evidence type filters override global filters and can be mapped to one or more evidence type codes for full control over record inclusion. Describes implementing a custom filter by extending AbstractMultiEvidenceFiltersImpl and overriding modify/discard exclusion methods, then binding it with a Guice MapBinder using the evidence type code. Includes an example for excluding non-matching email address evidence (PDC0000260)."
+                          }
+                        ],
+                        "node_id": "n000046",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000043",
+                          "start_page": 37,
+                          "end_page": 43
+                        },
+                        "summary": "Explains how to customize multiple participant evidence maintenance filters in Cúram. Covers two filter types: global filters, which apply across all evidence types (including new ones), and evidence type filters, which override globals for specific evidence codes. Shows how to extend AbstractMultiEvidenceFiltersImpl, implement create/modify/discard exclusion logic, and bind custom implementations with Guice. Includes examples for participant-based filtering, removing non-current records, and an email-address-specific filter bound to evidence type PDC0000260."
+                      }
+                    ],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000043",
+                      "start_page": 36,
+                      "end_page": 43
+                    },
+                    "summary": "Explains how to customize multiple participant evidence in Cúram. Covers six hook extension points (pre/post create, modify, discard) via `MultiEvidenceHook`, registered through an Evidence Controller Hook Registrar configured with `curam.case.evidencecontrollerhook.registrars`. Also describes maintenance filters: global filters for all evidence types and evidence type filters that override globals for specific codes. Includes Guice binding examples, implementation patterns using `AbstractMultiEvidenceFiltersImpl`, and an email-address-specific filter bound to `PDC0000260`."
+                  },
+                  {
+                    "title": "Evidence end dating feature implementation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Explains how the evidence wizard’s end dating works in Cúram 8.1.2. If end dating is enabled and criteria are met, caseworkers click Save and Next to create evidence and move to a second page for end dating previous records. The create and end date steps are separate transactions: create failures roll back on the first page; successful creates commit before the second page. On Finish, end dating is processed as one transaction, with aggregated validation errors for dynamic evidence and optional aggregation for non-dynamic evidence."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000044",
+                  "start_page": 14,
+                  "end_page": 44
+                },
+                "summary": "Covers end-to-end evidence solution development in Cúram 8.1.2: evidence metadata and product link setup, create/modify/read/list maintenance flows, validation of WIP evidence, attribution and reattribution, default evidence relationship linking, runtime registration of evidence implementations, and customization via evidence controller hooks and multi-participant evidence filters. Also explains evidence wizard end-dating behavior, including Save and Next / Finish transactions and aggregated validation handling."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000044",
+              "start_page": 9,
+              "end_page": 44
+            },
+            "summary": "Introduces manual development of static Cúram evidence solutions. Explains required server-side artifacts in `curam.core.sl.infrastructure.impl`, including evidence metadata setup and the interface hierarchy (`StandardEvidenceInterface`, `EvidenceInterface`, `ParticipantEvidenceInterface`) with methods for attribution, list display, transfer, start/end dates, reassessment, snapshots, changed attributes, and participant searches. Also covers client-side evidence infrastructure and upgrade-safe `.vim` customization. Later pages describe multi-participant evidence filters, Guice bindings, and evidence wizard end-dating behavior, including Save and Next/Finish transaction and validation rollback rules."
+          },
+          {
+            "title": "1.2 Developing with the Evidence Generator",
+            "level": 2,
+            "children": [
+              {
+                "title": "Inputs and outputs",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "This section explains the Evidence Generator’s required inputs and outputs. Inputs include a Rational Software Architect Designer model, an XML file for extra server-side metadata, an EUIM file for client-side metadata, and a properties file for globalization and online help content. Outputs include generated server code for CRUD and list functions, client screens/views with tabs and DMX data, and online help screens for each maintenance page. It also notes that attribution periods and validations are not generated."
+              },
+              {
+                "title": "Evidence patterns",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Parent-Child pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Explains the Parent-Child Evidence Generator pattern for modeling a logical dependency where a child entity cannot exist without a parent, while one parent can have many children. It describes when to use it, using income and income-usage evidence as the example, and notes that the pattern is the most common. The section also sits among broader guidance on static evidence design, including attribution periods and handcrafted validations."
+                  },
+                  {
+                    "title": "Pre-Association pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Describes the Pre-Association pattern for evidence entities that can exist independently but are linked by a caseworker before data entry. It’s used when two records are logically related and the user should first select an existing evidence record, then enter the new evidence details. Example: selecting a household member before creating a household relationship record. Do not use it for unrelated entities, parent-child structures, or links to non-evidence records; use the Related pattern instead."
+                  },
+                  {
+                    "title": "Related pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "This section explains the Related pattern, which links a new evidence entity to a non-evidence record. It notes that creating the evidence entity depends on the other record, and the child record requires a parent record. It also contrasts this with Pre-Association: use Related for relationships to non-evidence entities, not for associative links between two evidence entities. Useful for deciding when a relationship should model dependency on an existing non-evidence record."
+                  },
+                  {
+                    "title": "Search Case Participant pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Use the Search Case Participant pattern when creating or maintaining an evidence entity requires searching for a case participant. It is used to associate a case participant with evidence being created, such as finding a client’s employer while creating employment evidence when the employer’s case participant role identifier is stored on the employment record. This section sits alongside Related, Validation CallOut, and Page Hierarchy patterns and helps decide when participant lookup logic belongs in the evidence design."
+                  },
+                  {
+                    "title": "Validate CallOut pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Explains the Validation CallOut pattern for generated evidence entities. Use it when custom validations are needed: the Evidence Generator does not create them, so you place validations in a separate file and design the entity to call out to that file. The generated validate class is created only once and will not be overwritten on later generations, so it should be version-controlled and edited as needed. Also briefly contrasts nearby patterns: Related, Search Case Participant, and Page Hierarchy."
+                  },
+                  {
+                    "title": "Page Hierarchy pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "Use the Page Hierarchy pattern when an evidence entity must be associated with many different record types, and those types need to appear in the navigation bar on evidence maintenance screens. This section also briefly contrasts related evidence-generation patterns: Related for linking evidence to non-evidence entities, Search Case Participant for finding a case participant during evidence creation, and Validation CallOut for adding custom validations in a separate file that is not overwritten on regeneration."
+                  }
+                ],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000048",
+                  "start_page": 47,
+                  "end_page": 48
+                },
+                "summary": "This section introduces Evidence Generator design patterns for static evidence, following notes on attribution periods and handcrafted validations. It explains when to use Parent-Child (child depends on parent; one parent can have many children; most common), Pre-Association (two evidence records are independent until a caseworker links them), and Related (a new evidence entity depends on a non-evidence record). It helps choose the right pattern based on entity relationships and whether the linked record is evidence or non-evidence."
+              },
+              {
+                "title": "Modeling that is required for the evidence patterns",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Entity modeling: entities",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000050",
+                      "end_unit_id": "p000050",
+                      "start_page": 50,
+                      "end_page": 50
+                    },
+                    "summary": "This section explains entity-modeling requirements for Cúram evidence generator compatibility. It covers required model settings for evidence entities and structs, including code package alignment with product.ejb.package, enabling optimistic locking, naming the key field evidenceID, and defining required operations such as an insert operation with the correct stereotype. It also notes that the evidence generator depends on specific attributes, structs, and aggregations, and points readers to related evidence modeling documentation and the evidence metadata entity used to support evidence maintenance."
+                  },
+                  {
+                    "title": "Entity modeling: required structs",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000051",
+                      "end_unit_id": "p000051",
+                      "start_page": 51,
+                      "end_page": 51
+                    },
+                    "summary": "This section explains required entity-layer structs for evidence generation. It states that the generator reuses entity structs in the façade layer, so specific naming conventions and aggregations are mandatory. It introduces `<EntityName>EvidenceDetails`, which must exist, contain no own attributes, and include three required aggregations. It also notes that additional aggregations may be needed depending on conditions covered in the related `<EntityName>EvidenceDetails` and `Read<EntityName>EvidenceDetails` sections and the entity modeling build process."
+                  },
+                  {
+                    "title": "Entity modeling: the build process",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000052",
+                      "end_unit_id": "p000052",
+                      "start_page": 52,
+                      "end_page": 52
+                    },
+                    "summary": "This section explains that entity-layer modeling for evidence is enough for the build process: the evidence generator infers the needed service and façade classes. It creates, per evidence entity, a service-layer process class with create, read, and modify operations, plus any specialized generated functions. At the façade layer, it generates one product-level process class containing evidence-maintenance functions for each entity, including create and modify evidence methods. It also references required structs such as Read<EntityName>EvidenceDetails and core.sl.EvidenceDescriptorDetails."
+                  },
+                  {
+                    "title": "Parent-child relationships",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000053",
+                      "end_unit_id": "p000053",
+                      "start_page": 53,
+                      "end_page": 53
+                    },
+                    "summary": "Defines required extra aggregations for evidence entities used as children in parent-child relationships. For `<EntityName>EvidenceDetails`, add `parEvKey` (`core.sl.EvidenceKey`) and `selectedParent` (`core.sl.ParentSelectDetails`). If the child has multiple mandatory parents, add one `core.sl.EvidenceKey` aggregation per parent (`<ParentEntityName>ParEvKey`, lowercase initial). For `Read<EntityName>EvidenceDetails`, also add one `core.sl.ParentEvidenceLink` per mandatory parent (`<ParentEntityName>ParentEvidenceLink`)."
+                  },
+                  {
+                    "title": "Multiple mandatory parent relationships",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000053",
+                      "end_unit_id": "p000053",
+                      "start_page": 53,
+                      "end_page": 53
+                    },
+                    "summary": "Explains how to define evidence entities with multiple mandatory parents. For each mandatory parent type, the `<EntityName>EvidenceDetails` struct must include a 1:1 `core.sl.EvidenceKey` aggregation named `<ParentEntityName>ParEvKey` (lowercase first letter per Java naming). The corresponding `Read<EntityName>EvidenceDetails` struct must also include a 1:1 `core.sl.ParentEvidenceLink` aggregation named `<ParentEntityName>ParentEvidenceLink`. This extends the standard parent-child evidence aggregation pattern."
+                  },
+                  {
+                    "title": "Pre-association relationships",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000054",
+                      "end_unit_id": "p000054",
+                      "start_page": 54,
+                      "end_page": 54
+                    },
+                    "summary": "Explains extra modeling needed for pre-association relationships in evidence entities. Covers required aggregations for `<EntityName>EvidenceDetails` and `Read<EntityName>EvidenceDetails`, including `core.sl.EvidenceKey` as `preAssocKey` and `core.sl.CaseParticipantDetails` / `core.sl.ReadCaseParticipantDetailss` as `caseParticipantDetails` (1:1). Also describes “additional case participant attributes,” where non-primary participants are stored as evidence data, using EUIM metadata to flag an attribute as a case participant and supply the CaseParticipant name for aggregation."
+                  },
+                  {
+                    "title": "Case participant attributes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000066",
+                    "range": {
+                      "start_unit_id": "p000054",
+                      "end_unit_id": "p000054",
+                      "start_page": 54,
+                      "end_page": 54
+                    },
+                    "summary": "Explains how “case participant attributes” affect evidence modeling in Cúram 8.1.2. When an entity includes a case participant attribute, the `<EntityName>EvidenceDetails` and `Read<EntityName>EvidenceDetails` structs must aggregate `core.sl.CaseParticipantDetails` via a `caseParticipantDetails` 1:1 relationship. Also notes a metadata-driven special case participant attribute pattern for storing role IDs of non-primary participants (e.g., medical report subject, practitioner, employer), requiring a CaseParticipant name in EUIM metadata for aggregation."
+                  },
+                  {
+                    "title": "Related entity attributes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000067",
+                    "range": {
+                      "start_unit_id": "p000055",
+                      "end_unit_id": "p000055",
+                      "start_page": 55,
+                      "end_page": 55
+                    },
+                    "summary": "Explains how to expose fields from a related entity for display or data entry. Introduces a new entity-layer struct, `<EntityName>RelatedEntityAttributesDetails`, containing shared attributes with appropriate types. This struct is then added to `Read<EntityName>EvidenceDetails` via a 1:1 `relatedEntityAttributes` aggregation. Notes this is useful when user-maintained data needs a value from a parent or related evidence record, and briefly references the same pattern for non-evidence details."
+                  },
+                  {
+                    "title": "Non-evidence attributes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000068",
+                    "range": {
+                      "start_unit_id": "p000055",
+                      "end_unit_id": "p000055",
+                      "start_page": 55,
+                      "end_page": 55
+                    },
+                    "summary": "Explains the non-evidence details pattern: when an entity uses non-evidence details, an extra struct must be modeled and aggregated into the standard evidence struct. The surrounding page also describes related entity attributes, including creating a `<EntityName>RelatedEntityAttributesDetails` struct to hold shared attributes and adding it to `Read<EntityName>EvidenceDetails` as `relatedEntityAttributes` (1:1)."
+                  },
+                  {
+                    "title": "Non-modifiable entities",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000056",
+                      "end_unit_id": "p000056",
+                      "start_page": 56,
+                      "end_page": 56
+                    },
+                    "summary": "This section explains extra modeling needed for non-modifiable evidence entities in Cúram. It defines required structs such as `<EntityName>NonEvidenceDetails` for extra attributes and notes additional aggregations into `<EntityName>EvidenceDetails` and `Read<EntityName>EvidenceDetails`. For non-modifiable entities, `Read<EntityName>EvidenceDetails` must also aggregate `ECWarningsDtlsList` as `warnings` (1:1). It also notes that Evidence Generator depends on specific modeling options and naming/aggregation conventions."
+                  }
+                ],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000055",
+                  "start_page": 49,
+                  "end_page": 55
+                },
+                "summary": "Explains the modeling rules required for Cúram Evidence Generator compatibility. Covers entity-layer requirements such as correct code package, optimistic locking, key field evidenceID, and required insert/modify/read/remove stereotypes. Defines mandatory structs EvidenceDetails and ReadEvidenceDetails, and notes the build process infers service/facade classes from entity-layer modeling. Also details extra aggregations for parent-child and multiple-parent relationships, pre-association and case participant patterns, related entity attributes, and non-evidence/non-modifiable evidence specifics."
+              },
+              {
+                "title": "Evidence Generator specification",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Input sources for the generator",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000057",
+                      "end_unit_id": "p000057",
+                      "start_page": 57,
+                      "end_page": 57
+                    },
+                    "summary": "Explains the input sources the Evidence Generator needs to produce code: the component-level evidence.properties configuration, standard message/properties files (general.properties, employment.properties, Ent<product.prefix>GeneralError.xml), and per-entity metadata. It notes these inputs control generated package/location settings, consistent UI labels and links, error messages, and server-side entity details such as relationships, participant, business dates, and cached operations."
+                  },
+                  {
+                    "title": "Outputs from the generator",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000058",
+                      "end_unit_id": "p000058",
+                      "start_page": 58,
+                      "end_page": 58
+                    },
+                    "summary": "The Evidence Generator outputs all code, screens, and configuration needed to fully integrate evidence types with Cúram Evidence Solution, with no further coding required. It also generates skeleton extension points for customization such as validations and pre-/post-processing. The section covers modeled service and facade classes, generated implementation and entity code, per-entity message files, CRUD and list screens, wizard flows for selecting related objects, and Business Object Tabs for viewing details, history, and related objects."
+                  },
+                  {
+                    "title": "Base directory and directory structure setup",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000059",
+                      "start_page": 59,
+                      "end_page": 59
+                    },
+                    "summary": "Explains the required evidence directory setup for the Evidence Generator. The base folder must be named evidence and include evidence.properties plus three subdirectories: properties, server/metadata, and client metadata folders (integrated/metadata for integrated cases, product/metadata for product delivery cases). Emphasizes exact case-sensitive naming and that the generator relies on this structure to locate evidence. Also notes key config files general.properties and employment.properties, and that evidence.properties customizes generator behavior such as output locations and Java package."
+                  },
+                  {
+                    "title": "Configuration and common page properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000059",
+                      "end_unit_id": "p000059",
+                      "start_page": 59,
+                      "end_page": 59
+                    },
+                    "summary": "Explains the required evidence directory setup for the Evidence Generator: the base folder must be named evidence and include evidence.properties plus properties, server, and client metadata subdirectories with exact case-sensitive names. Describes where general.properties and employment.properties belong, and distinguishes client metadata locations for integrated vs product delivery cases. Also notes that evidence.properties controls configurable aspects of output generation, including output location and Java package, with a link to more customization details."
+                  },
+                  {
+                    "title": "Server metadata: the entity node",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "The Business Dates pattern and override",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000076",
+                        "range": {
+                          "start_unit_id": "p000062",
+                          "end_unit_id": "p000062",
+                          "start_page": 62,
+                          "end_page": 62
+                        },
+                        "summary": "This section explains the Business Dates pattern and the Override node in evidence metadata. Business Dates maps entity date fields to business start and end dates, which the generator exposes via getStartDate() and getEndDate() on EvidenceInterface. An example shows PaidEmployment using employmentStartDate and terminationDate. It also notes Override can replace a default entity from application modules or add a custom entity to a default product, with related server/client metadata changes."
+                      },
+                      {
+                        "title": "The Cached Operation pattern and metadata entries",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000077",
+                        "range": {
+                          "start_unit_id": "p000062",
+                          "end_unit_id": "p000062",
+                          "start_page": 62,
+                          "end_page": 62
+                        },
+                        "summary": "This section explains the Cached Operation pattern for generated entity-layer classes. It says cached operations are used to cache SQL operations, with the generator handling cache implementation and management. Because the entity class is generated, the operation must be SQL on the entity and cannot contain business logic."
+                      }
+                    ],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000060",
+                      "end_unit_id": "p000062",
+                      "start_page": 60,
+                      "end_page": 62
+                    },
+                    "summary": "Introduces server-side entity XML metadata for evidence. The Entity root sets the logical name and case participant association, and Relationships supports parent-child, multiple mandatory parents, pre-association, and related links, with examples of the required XML. Also covers BusinessDates, which maps entity fields to start/end dates used by EvidenceInterface getStartDate()/getEndDate(), Override for replacing default or adding custom entities, and Cached Operation for caching generated SQL entity-layer operations only."
+                  },
+                  {
+                    "title": "Client metadata",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Case participant fields",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000079",
+                        "range": {
+                          "start_unit_id": "p000064",
+                          "end_unit_id": "p000064",
+                          "start_page": 64,
+                          "end_page": 64
+                        },
+                        "summary": "This section explains how to configure a Field node for case participant attributes. It states that the Field metatype must be CASE_PARTICIPANT_SEARCH and describes three participant selection modes on generated screens: choosing from a drop-down list, searching for an existing participant, or registering a new representative. It also introduces the CaseParticipant node, which adds storage and behavioral metadata, including the option to create a new case participant role for the selected participant."
+                      }
+                    ],
+                    "node_id": "n000078",
+                    "range": {
+                      "start_unit_id": "p000063",
+                      "end_unit_id": "p000064",
+                      "start_page": 63,
+                      "end_page": 64
+                    },
+                    "summary": "This section explains EUIM client metadata for generated screens: the Entity root, UserInterface settings, Cluster visibility by create/modify/view, and Field node behavior such as default values and codetable handling. It also covers case participant fields, where the Field metatype must be CASE_PARTICIPANT_SEARCH, and shows three participant selection modes: drop-down, search, or registering a new representative. It introduces the CaseParticipant node, which adds storage/behavior metadata, including creating a new case participant role."
+                  },
+                  {
+                    "title": "Adding functionality",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Customize class",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000081",
+                        "range": {
+                          "start_unit_id": "p000066",
+                          "end_unit_id": "p000066",
+                          "start_page": 66,
+                          "end_page": 66
+                        },
+                        "summary": "This section explains the generated “customize” class used to add custom logic around service-layer evidence operations. It names the class Customise<Entity Name>.java, its package curam.<product.package>.evidence.customise.impl, and the available lifecycle methods: preCreate, postCreate, preModify, postModify, preRead, and postRead. It also introduces the generated hook class <Entity Name>Hook.java in curam.<product.package>.evidence.hook.impl, used to access infrastructure methods normally implemented on entity classes."
+                      },
+                      {
+                        "title": "Hook class",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000082",
+                        "range": {
+                          "start_unit_id": "p000066",
+                          "end_unit_id": "p000066",
+                          "start_page": 66,
+                          "end_page": 66
+                        },
+                        "summary": "This section explains the generated Hook class used in evidence service layers. It states that infrastructure methods from EvidenceInterface, previously implemented on entity implementation classes, must now be implemented in the hook class. It also gives the naming and location conventions: `<Entity Name>Hook.java` in `curam.<product.package>.evidence.hook.impl`, with `product.package` defined in `evidence.properties`."
+                      },
+                      {
+                        "title": "Validate class",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000083",
+                        "range": {
+                          "start_unit_id": "p000067",
+                          "end_unit_id": "p000067",
+                          "start_page": 67,
+                          "end_page": 67
+                        },
+                        "summary": "Describes the generated Validate<Entity Name>.java class for custom entity validations in curam.<product.package>.evidence.validation.impl. It lists three validate methods—preModifyValidate, preInsertValidate, and validate—and notes where each is called. Also briefly mentions a related entity attributes class, <Entity Name>RelatedEntityAttributes.java, in curam.<product.package>.evidence.relatedattribute.impl, which reads related values for service-layer reads and create-screen display."
+                      },
+                      {
+                        "title": "Related attributes class",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000084",
+                        "range": {
+                          "start_unit_id": "p000067",
+                          "end_unit_id": "p000067",
+                          "start_page": 67,
+                          "end_page": 67
+                        },
+                        "summary": "Describes the generated related attributes class used with the related entity attributes pattern. It reads related values from alternative sources during service-layer read operations and when loading the create screen for display. The class is named `<Entity Name>RelatedEntityAttributes.java` and placed in `curam.<product.package>.evidence.relatedattribute.impl` (from `evidence.properties`). It provides `getRelatedEntityAttributes` to fetch the related attributes."
+                      }
+                    ],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000065",
+                      "end_unit_id": "p000067",
+                      "start_page": 65,
+                      "end_page": 67
+                    },
+                    "summary": "Explains how to add custom functionality to generated static evidence service layers. Covers the extension classes the generator creates: Customise<Entity Name>.java for pre/post create, modify, and read hooks; <Entity Name>Hook.java for EvidenceInterface infrastructure methods like calcAttributionDatesForCase and getDetailsForListDisplay; Validate<Entity Name>.java for preModifyValidate, preInsertValidate, and validate; and <Entity Name>RelatedEntityAttributes.java for reading related values during read and create-screen display. Includes class naming, packages, and method purposes."
+                  },
+                  {
+                    "title": "evidence.properties: explanation and sample file",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000085",
+                    "range": {
+                      "start_unit_id": "p000068",
+                      "end_unit_id": "p000068",
+                      "start_page": 68,
+                      "end_page": 68
+                    },
+                    "summary": "Explains the evidence.properties file, which configures Evidence Generator options. It lists key properties and what each controls, including whether to build/clean product evidence, product naming and prefixes, package and root directories, alternate ID behavior, output locations for server and client generated files, and paths for EvidenceEntities.xml and metadata/EUIM files for product and integrated case evidence generation. Includes a sample file context via the property descriptions."
+                  },
+                  {
+                    "title": "general.properties",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Dynamic properties",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000087",
+                        "range": {
+                          "start_unit_id": "p000070",
+                          "end_unit_id": "p000071",
+                          "start_page": 70,
+                          "end_page": 71
+                        },
+                        "summary": "Explains how dynamic properties in evidence generator properties files use placeholders, mainly `<displayName>`, to substitute evidence entity metadata at build time. Warns that property keys must not be changed, added, or removed. Provides examples for page title generation and lists required generic keys for page titles, help descriptions, field labels, and page informational messages, including which generated page types each supports."
+                      },
+                      {
+                        "title": "Static properties",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000088",
+                        "range": {
+                          "start_unit_id": "p000072",
+                          "end_unit_id": "p000074",
+                          "start_page": 72,
+                          "end_page": 74
+                        },
+                        "summary": "Defines static properties used in generated Cúram evidence UI, mainly keys in general.properties. Covers action control labels (Cancel, Save, View, New, Back, etc., with optional .Help variants), field and list label keys, cluster key Cluster.EvidenceHeader.Modify.Title, business object tab/menu keys (Home, ChangeHistory, Verifications, Issues, submenu and menu item labels/tooltips), and wizard screen description keys for create wizards. Includes notes on when help properties exist and how some labels are auto-appended with child entity names."
+                      },
+                      {
+                        "title": "Sample file for dynamic and static properties",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000089",
+                        "range": {
+                          "start_unit_id": "p000075",
+                          "end_unit_id": "p000077",
+                          "start_page": 75,
+                          "end_page": 77
+                        },
+                        "summary": "Shows a sample general.properties file for evidence UI localization, illustrating dynamic and static property patterns. Covers page titles, help descriptions, informational messages, field labels, action controls, list titles, wizard text/titles, and in-page navigation labels. Emphasizes that individual properties cannot contain line breaks and shows placeholder usage like <displayName>. Includes examples for create/modify/view/list pages and evidence wizard steps, useful for implementing or customizing Cúram evidence screens."
+                      }
+                    ],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000069",
+                      "end_unit_id": "p000077",
+                      "start_page": 69,
+                      "end_page": 77
+                    },
+                    "summary": "Defines the `general.properties` file for generated Cúram evidence UI localization. Covers mandatory keys, warning that keys cannot be changed/added/removed, and no line breaks in individual properties. Explains dynamic placeholders, mainly `<displayName>`, for build-time substitution in page titles, help text, and messages. Lists static labels for action controls, field/list titles, cluster title, business object tabs/submenus, and wizard descriptions, including optional `.Help` variants and auto-appended child names. Includes a sample file showing create/modify/view/list/wizard usages."
+                  },
+                  {
+                    "title": "employment.properties",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000078",
+                      "end_unit_id": "p000079",
+                      "start_page": 78,
+                      "end_page": 79
+                    },
+                    "summary": "Defines the required `employment.properties` file for generated employment pages. It explains that property keys are fixed and must not be changed, added, or removed or the evidence generator will error. The section lists required localized labels for page titles, field labels, and action control labels, including keys for delete, list, modify, and view employment pages, plus primary, occupation, employer, from/to, action container, and Delete/Edit/Employment buttons. It also notes optional `.Help` properties and shows a sample entry format."
+                  },
+                  {
+                    "title": "General error messages",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000091",
+                    "range": {
+                      "start_unit_id": "p000080",
+                      "end_unit_id": "p000081",
+                      "start_page": 80,
+                      "end_page": 81
+                    },
+                    "summary": "Explains how to define a component’s general error message file (must be named `Ent<product.prefix>GeneralError.xml` in the component messages folder, using the `product.prefix` from `evidence.properties`). Lists standard validation/error codes and suggested message text for case participant and evidence scenarios, including missing name/address/details, mismatched field entry, associated or missing parent record discard errors, multiple participant entries, and incomplete phone number."
+                  },
+                  {
+                    "title": "Server metadata: document structure",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000092",
+                    "range": {
+                      "start_unit_id": "p000082",
+                      "end_unit_id": "p000085",
+                      "start_page": 82,
+                      "end_page": 85
+                    },
+                    "summary": "Defines the server-side evidence metadata XML structure for static evidence generation. Covers the root Entity node, relateEvidenceParticipantID, relatedEntityAttributes, exposeOperation, and the Relationships node with Parent, MandatoryParents, Child, PreAssociation, and BusinessDates. Also explains Override for customizing or adding entities, including flags for custom classes and validation/hook overrides, and CachedOperation for caching database reads. Useful if you need XML schema details, relationship modeling, business date mapping, or entity override/caching configuration."
+                  },
+                  {
+                    "title": "Client metadata: document structure",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000086",
+                      "end_unit_id": "p000089",
+                      "start_page": 86,
+                      "end_page": 89
+                    },
+                    "summary": "Defines the client-side metadata XML structure for a .euim file and related locale properties. Covers the main nodes and attributes: Entity, UserInterface, Clusters, Cluster, SkipField, Field, CaseParticipant, and CreateCaseParticipant. Explains defaults and options for display, create/modify/view behavior, labels, column layout, mandatory fields, default/blank values, non-entity fields, metatype formatting, and case participant search/registration settings. Useful if you need the full XML schema and attribute meanings for generating or customizing client screens."
+                  },
+                  {
+                    "title": "Meta types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000094",
+                    "range": {
+                      "start_unit_id": "p000090",
+                      "end_unit_id": "p000090",
+                      "start_page": 90,
+                      "end_page": 90
+                    },
+                    "summary": "This section explains Evidence Generator meta types and their effect on field display/linking. It lists key types such as PARENT_CASE_PARTICIPANT_ROLE_ID, EMPLOYER_CASE_PARTICIPANT_ROLE_ID, CASE_PARTICIPANT_SEARCH, and CODETABLE_CODE, showing how they render participant/employer names as links or replace stored codes with codetable descriptions. It also notes that case participant search lists can be filtered by role type via SearchType."
+                  },
+                  {
+                    "title": "Participant types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000095",
+                    "range": {
+                      "start_unit_id": "p000091",
+                      "end_unit_id": "p000091",
+                      "start_page": 91,
+                      "end_page": 91
+                    },
+                    "summary": "This section lists the five participant types supported by the Evidence Generator’s CreateCaseParticipant node: Person, Employer, ServiceProvider, Union, and Unknown, with a note to choose the closest match. It then introduces the Evidence Generator Cookbook, explaining that the generator is used in standard build targets to create repeatable evidence entities for common patterns across Cúram solutions, while unusual patterns must be developed manually."
+                  }
+                ],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000090",
+                  "start_page": 56,
+                  "end_page": 90
+                },
+                "summary": "Covers Evidence Generator setup and reference for static evidence entities. Explains required inputs: evidence.properties, general.properties, employment.properties, Ent<product.prefix>GeneralError.xml, and server/client metadata. Describes outputs: generated code, screens, wizards, tabs, message files, and extension hooks with no extra coding required. Details directory structure, server metadata (Entity, Relationships, BusinessDates, Override, CachedOperation), client .euim structure (UserInterface, Clusters, Fields, CaseParticipant/CreateCaseParticipant), and meta types for participant links and codetable display."
+              },
+              {
+                "title": "Evidence Generator Cookbook",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Quick overview",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Generator inputs and outputs",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000098",
+                        "range": {
+                          "start_unit_id": "p000092",
+                          "end_unit_id": "p000092",
+                          "start_page": 92,
+                          "end_page": 92
+                        },
+                        "summary": "This section explains the Evidence Generator’s inputs and outputs. It lists five input resources: evidence.properties (product/component configuration, naming, paths, settings), general.properties and employment.properties (shared client screen labels and help text), server metadata (entity names and relationships), and client metadata (screen definitions). It also notes the sample component structure, including a model directory and an evidence directory containing evidence.properties, which points to server, integrated case, product delivery, and shared display-text property files."
+                      }
+                    ],
+                    "node_id": "n000097",
+                    "range": {
+                      "start_unit_id": "p000091",
+                      "end_unit_id": "p000092",
+                      "start_page": 91,
+                      "end_page": 92
+                    },
+                    "summary": "This overview explains when to use the Evidence Generator: for repeatable evidence patterns in Cúram Platform solutions, as part of standard build targets, rather than for unusual patterns that must be built manually. It describes the generator’s basic workflow, sample component/evidence directory structure, and the five input resources it uses: evidence.properties, general.properties/employment.properties, server metadata, client metadata, and related display-text property files. It also notes that evidence.properties controls paths, naming, and product settings."
+                  },
+                  {
+                    "title": "Configuring an existing product",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000099",
+                    "range": {
+                      "start_unit_id": "p000093",
+                      "end_unit_id": "p000094",
+                      "start_page": 93,
+                      "end_page": 94
+                    },
+                    "summary": "Explains how to configure an existing product for the Evidence Generator so it can produce its first evidences. The section outlines five required steps: create an evidence directory, create evidence.properties with mandatory product/output settings, create general.properties for generic client page/message/help properties, create employment.properties for product-specific employment properties, and configure the module by adding the generated registrar module class. It also notes required property locations, key examples, and that missing mandatory keys can break the build or cause compilation errors."
+                  },
+                  {
+                    "title": "Asset as generated evidence: implementing a sample evidence type",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Model evidence entity",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000101",
+                        "range": {
+                          "start_unit_id": "p000095",
+                          "end_unit_id": "p000095",
+                          "start_page": 95,
+                          "end_page": 95
+                        },
+                        "summary": "Explains Step 1 of implementing generated evidence: model the evidence entity in the standard Cúram way, independent of the Evidence Generator, using metadata to connect through service, façade, or client layers. The example asset evidence entity includes attributes such as value, asset type, start date, and end date. It also notes required generator conventions: evidenceID primary key, optimistic locking, standard read/insert/modify operations, correct naming/multiplicities, and use of placeholders like RelatedEntityAttribute for displaying related data not stored on the entity."
+                      },
+                      {
+                        "title": "Asset entity diagram",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000102",
+                        "range": {
+                          "start_unit_id": "p000096",
+                          "end_unit_id": "p000096",
+                          "start_page": 96,
+                          "end_page": 96
+                        },
+                        "summary": "This section explains how to complete the asset evidence model by defining the entity’s attributes plus required structs and aggregations, following Cúram Evidence Generator naming and aggregation conventions. It references the “Asset entity diagram” as the example and leads into Step 2, which covers creating evidence metadata. It also notes that the Evidence Generator looks for specific file types: server XML metadata files and integrated case EUIM metadata files with matching properties files."
+                      },
+                      {
+                        "title": "Step 2: Create evidence metadata",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Asset server XML",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000104",
+                            "range": {
+                              "start_unit_id": "p000097",
+                              "end_unit_id": "p000097",
+                              "start_page": 97,
+                              "end_page": 97
+                            },
+                            "summary": "Explains the Asset server XML metadata file for static evidence and the attributes needed to generate the evidence end-dating wizard page for non-dynamic evidence. The key required elements are `<AutoEndDate active=\"Yes\"/>` and `<BusinessDates endDate=\"endDate\"/>`, shown in the Asset entity XML example. Also notes how to disable wizard-page generation by removing `<AutoEndDate>` or setting `active=\"No\"`."
+                          },
+                          {
+                            "title": "Asset client Evidence UIM (EUIM)",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000105",
+                            "range": {
+                              "start_unit_id": "p000098",
+                              "end_unit_id": "p000098",
+                              "start_page": 98,
+                              "end_page": 98
+                            },
+                            "summary": "Shows the Asset client Evidence UIM (EUIM) metadata and Asset.euim properties file. The XML example defines an Asset entity UI with two clusters: Asset Details (AssetType, StartDate, AssetValue, EndDate) and Comments. It notes EUIM is similar to UIM, using familiar concepts like fields, labels, and clusters. The properties file maps labels and help text, such as Type, Value, Received, Disposed, and Comments. Useful if you need the Asset screen layout or label mappings."
+                          }
+                        ],
+                        "node_id": "n000103",
+                        "range": {
+                          "start_unit_id": "p000096",
+                          "end_unit_id": "p000098",
+                          "start_page": 96,
+                          "end_page": 98
+                        },
+                        "summary": "Explains how to create evidence metadata for static evidence. The Evidence Generator looks for server XML, integrated case EUIM, and product delivery EUIM files plus properties files. For non-dynamic evidence end-dating, the Asset server XML must include `<AutoEndDate active=\"Yes\"/>` and `<BusinessDates endDate=\"endDate\"/>`; removing or disabling AutoEndDate prevents wizard-page generation. It also shows the Asset client EUIM layout with Asset Details and Comments clusters, and the Asset.euim properties mappings for labels/help text."
+                      },
+                      {
+                        "title": "Step 3: Standard evidence configuration",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000106",
+                        "range": {
+                          "start_unit_id": "p000099",
+                          "end_unit_id": "p000099",
+                          "start_page": 99,
+                          "end_page": 99
+                        },
+                        "summary": "Explains the standard setup required to configure a new evidence type before generating an asset: add evidence type code, optional text translation/localizable text, evidence metadata, and links to an integrated case or product, with category if needed. Notes that if the Asset Evidence Business Object tab should appear in a section, the section definition must be updated. Also warns that a handcrafted implementation for `getDetailsForListDisplay` is required after generation, and mentions Evidence Generator standard targets and build integration."
+                      }
+                    ],
+                    "node_id": "n000100",
+                    "range": {
+                      "start_unit_id": "p000095",
+                      "end_unit_id": "p000098",
+                      "start_page": 95,
+                      "end_page": 98
+                    },
+                    "summary": "Explains how to implement “Asset” as generated static evidence in Cúram. Covers Step 1 modeling the evidence entity independently of the generator with required conventions: evidenceID primary key, optimistic locking, standard read/insert/modify operations, correct structs/aggregations, and related-entity placeholders. Step 2 shows required server XML and EUIM/properties metadata, including end-dating support via AutoEndDate and BusinessDates. Also includes the sample Asset client layout and label mappings. Good entry point for understanding evidence-generator setup and file requirements."
+                  },
+                  {
+                    "title": "Executing the Evidence Generator",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Evidence Generator standard targets",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000108",
+                        "range": {
+                          "start_unit_id": "p000099",
+                          "end_unit_id": "p000099",
+                          "start_page": 99,
+                          "end_page": 99
+                        },
+                        "summary": "Describes standard Evidence Generator target integration and what must be configured before generating a new evidence asset. It lists required setup: Evidence Type Code Table or localized text, Evidence Metadata, links to Integrated Case/Product evidence, optional evidence category, and section definition contribution for the Asset Evidence Business Object tab. It notes a generated sample section file location, and warns that a handcrafted asset hook implementation is still required after generation. The generator’s standard targets require no extra environment variables or new targets."
+                      },
+                      {
+                        "title": "Evidence Generator specific targets",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000109",
+                        "range": {
+                          "start_unit_id": "p000100",
+                          "end_unit_id": "p000100",
+                          "start_page": 100,
+                          "end_page": 100
+                        },
+                        "summary": "This section explains the evidence-generation-specific Ant targets in Cúram. It notes that standard build targets can generate/clean metadata-driven evidence and standard files, while build generated and build client generate server/client layers and screens. It warns to rebuild the server before the client after model/metadata changes. For finer control, build egtools.clean and build egtools.client.clean clean only generated evidence without removing standard generated files, speeding development."
+                      },
+                      {
+                        "title": "Generator output",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000110",
+                        "range": {
+                          "start_unit_id": "p000101",
+                          "end_unit_id": "p000101",
+                          "start_page": 101,
+                          "end_page": 101
+                        },
+                        "summary": "Explains generator output for static evidence builds. Describes when build egtools.clean and build egtools.client.clean remove server/client evidence files, and notes new generated directories are created per evidence.properties with code written to the build directory rather than component source. Also states all evidence entities must implement the asset hook getDetailsForListDisplay, which populates evidence details for list display on client screens, and includes a sample implementation stub."
+                      }
+                    ],
+                    "node_id": "n000107",
+                    "range": {
+                      "start_unit_id": "p000099",
+                      "end_unit_id": "p000100",
+                      "start_page": 99,
+                      "end_page": 100
+                    },
+                    "summary": "Explains how to run the Evidence Generator and what it produces. It covers required evidence setup before generation (metadata, code table or localized text, IC/product links, optional category, section contribution), then describes standard targets versus evidence-specific targets. Standard build targets generate/clean metadata-driven evidence without extra env vars; build generated and build client produce server and client layers/screens, with server rebuilt first after model/metadata changes. Also notes granular clean targets and that handcrafted asset hook code remains required."
+                  },
+                  {
+                    "title": "Asset handcrafted code: asset hook getDetailsForListDisplay",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000111",
+                    "range": {
+                      "start_unit_id": "p000101",
+                      "end_unit_id": "p000101",
+                      "start_page": 101,
+                      "end_page": 101
+                    },
+                    "summary": "Explains that all evidence entities must implement the mandatory asset hook getDetailsForListDisplay. This method generates text descriptions for a specific asset business object on evidence workspace pages, and the returned link text is used on client screens to access all screens. Includes a brief code example signature returning EIFieldsForListDisplayDtls from an EIEvidenceKey, and notes that custom code can be added in generated server stubs when generated patterns do not exactly match an evidence entity."
+                  },
+                  {
+                    "title": "Customizing a product",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Overriding a default evidence entity: example",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000113",
+                        "range": {
+                          "start_unit_id": "p000104",
+                          "end_unit_id": "p000106",
+                          "start_page": 104,
+                          "end_page": 106
+                        },
+                        "summary": "Example of overriding a default evidence entity (Asset) in Cúram Evidence Generator. Shows how to customize server-side and client-side metadata by copying the default metadata and adding an Override node in the server XML plus extra fields in the EUIM. The example adds user-created/modified name and number of children, but only the reference text field is exposed on the UI; user name remains hidden. Includes sample XML/EUIM and properties entries, and notes that attributes cannot be removed."
+                      },
+                      {
+                        "title": "Adding a new custom entity",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000114",
+                        "range": {
+                          "start_unit_id": "p000107",
+                          "end_unit_id": "p000107",
+                          "start_page": 107,
+                          "end_page": 107
+                        },
+                        "summary": "Explains how to add a new custom entity to a custom evidence product that overrides a default product. The entity is developed like any other product entity, but you must use the Override node and set newEntity to Yes, while keeping the same codepath as the default product. The section also notes that most code is generated automatically, but handcrafted methods may need updates in custom extensions (for example, preCreate and validateDetails)."
+                      }
+                    ],
+                    "node_id": "n000112",
+                    "range": {
+                      "start_unit_id": "p000102",
+                      "end_unit_id": "p000107",
+                      "start_page": 102,
+                      "end_page": 107
+                    },
+                    "summary": "Explains how to customize an existing evidence product that overrides a default one. Covers thin `evidence.properties` setup (`override.product`, product prefix, metadata paths), build behavior, and the limits of what can be changed. Shows an example of overriding a default entity by copying server/client metadata, adding an `Override` node, exposing only needed new fields in the EUIM, and updating handcrafted hooks like `preCreate` and `validateDetails`. Also notes how to add a new custom entity using the same codepath but with `newEntity=\"Yes\"`."
+                  },
+                  {
+                    "title": "Identifying entities, patterns and relationships",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000115",
+                    "range": {
+                      "start_unit_id": "p000108",
+                      "end_unit_id": "p000108",
+                      "start_page": 108,
+                      "end_page": 108
+                    },
+                    "summary": "Explains how the Evidence Generator identifies entities, patterns, and relationships. Evidence entities are standard evidence-interface entities maintained by the evidence solution, used to determine client eligibility/entitlement. Patterns are entity functions captured in XML and turned into UI or code features, such as buttons or callout stubs. Relationships are defined in the generator to produce server/client maintenance code. Covers four relationship types: parent-child, pre-associated, multiple mandatory parents, and related; begins with parent-child as a common one-to-many dependency."
+                  },
+                  {
+                    "title": "The evidence controller",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Evidence hooks and registrar",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000117",
+                        "range": {
+                          "start_unit_id": "p000110",
+                          "end_unit_id": "p000110",
+                          "start_page": 110,
+                          "end_page": 110
+                        },
+                        "summary": "Explains how evidence hooks and the evidence registrar extend Cúram evidence processing. Hooks provide product-specific extension points, especially when evidence is removed; the registrar lets each product register its own hook so the controller can invoke customized processing. Also outlines evidence list methods for viewing evidence by type, active status, or edit status. Describes the insert evidence flow: create an in-edit evidence record, generate an evidence descriptor with correction set, succession, status, case ID, and participant ID, and create a relationship record if the new evidence is a child of existing evidence."
+                      },
+                      {
+                        "title": "List evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000118",
+                        "range": {
+                          "start_unit_id": "p000110",
+                          "end_unit_id": "p000110",
+                          "start_page": 110,
+                          "end_page": 110
+                        },
+                        "summary": "Explains the list evidence process, which displays relevant evidence information in an evidence list. Notes there are different list methods: one for all evidence objects of a type, and others for active objects of all types and in-edit objects of all types. Also briefly introduces evidence hooks and registrar as extension points for customized business logic, and begins the insert evidence process, including creation of an in-edit evidence record, descriptor fields, and parent-child evidence relationships."
+                      },
+                      {
+                        "title": "Insert evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000119",
+                        "range": {
+                          "start_unit_id": "p000110",
+                          "end_unit_id": "p000110",
+                          "start_page": 110,
+                          "end_page": 110
+                        },
+                        "summary": "Describes the insert evidence process for capturing evidence of a specific type, resulting in a new evidence record with in-edit status. The evidence controller creates an evidence descriptor containing correction set ID, succession ID, status, case ID, and participant ID. If the evidence is a child of another record, it also creates an evidence relationship record linking parent and child. Includes mention of evidence hooks/registrar as extension points for customized processing, though the main focus is insertion workflow."
+                      },
+                      {
+                        "title": "Modify evidence",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Evidence correction and succession",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000121",
+                            "range": {
+                              "start_unit_id": "p000111",
+                              "end_unit_id": "p000111",
+                              "start_page": 111,
+                              "end_page": 111
+                            },
+                            "summary": "This section explains evidence modification and the two change types used by the evidence pattern: evidence correction and evidence succession. It describes how the modify evidence process retrieves data from custom evidence and descriptor tables, validates changes, and either updates in-edit evidence or creates a new active record for corrections/successions. It also notes that the process writes to the evidence change history table and calls an evidence hook for business-specific logic."
+                          }
+                        ],
+                        "node_id": "n000120",
+                        "range": {
+                          "start_unit_id": "p000111",
+                          "end_unit_id": "p000111",
+                          "start_page": 111,
+                          "end_page": 111
+                        },
+                        "summary": "Explains the modify evidence process for updating active or in-edit evidence. The evidence controller loads data from the custom evidence entity and evidence descriptor tables, with most custom data editable except descriptor fields and certain dates. On save, it validates changes, including warnings for pending approval and errors for approved/ready-for-activation evidence. Active evidence changes create a new record as either evidence correction or evidence succession; in-edit evidence is updated in place. The process also writes to evidence change history and calls an evidence hook for extra business logic."
+                      },
+                      {
+                        "title": "View evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000122",
+                        "range": {
+                          "start_unit_id": "p000112",
+                          "end_unit_id": "p000112",
+                          "start_page": 112,
+                          "end_page": 112
+                        },
+                        "summary": "Describes the view evidence process for displaying an evidence record from the evidence list. The evidence controller gathers data from the custom evidence entity table, evidence descriptor table, and evidence change history table, including the last modifier’s name. The information is then shown on a view evidence screen specific to the evidence type. This section is useful if you need how evidence details are retrieved and presented, especially in relation to evidence history and type-specific UI."
+                      },
+                      {
+                        "title": "Remove evidence",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000123",
+                        "range": {
+                          "start_unit_id": "p000112",
+                          "end_unit_id": "p000112",
+                          "start_page": 112,
+                          "end_page": 112
+                        },
+                        "summary": "Explains the remove evidence process, which flags an active evidence record as pending removal rather than deleting it. The record remains active until the apply evidence changes process is run. This section is useful for understanding evidence lifecycle handling, especially how removal is initiated and deferred, and how it differs from correction or succession updates discussed earlier on the page."
+                      },
+                      {
+                        "title": "Apply evidence changes",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "1. Validating evidence changes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000125",
+                            "range": {
+                              "start_unit_id": "p000113",
+                              "end_unit_id": "p000113",
+                              "start_page": 113,
+                              "end_page": 113
+                            },
+                            "summary": "This section explains stage 1 of applying evidence changes: validating pending changes before activation or removal. The evidence controller first runs case-level checks via a hook for requirements like minimum evidence records, then runs evidence-type-specific validations. If any validation fails, an exception stops the process and the user must correct the data and retry. Useful for understanding how evidence changes are pre-checked before approval, activation, attribution period calculation, or removal."
+                          },
+                          {
+                            "title": "2. Checking whether evidence requires approval",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000126",
+                            "range": {
+                              "start_unit_id": "p000113",
+                              "end_unit_id": "p000113",
+                              "start_page": 113,
+                              "end_page": 113
+                            },
+                            "summary": "This section explains the approval check within the “apply evidence changes” process. After validating pending evidence changes, the evidence controller determines whether they require case supervisor approval as part of submit for approval. It describes the second stage of the multi-stage apply flow, which sits between validation and later activation/cancellation steps, and is relevant for understanding how pending evidence is routed into approved processing."
+                          },
+                          {
+                            "title": "3. Activating evidence and calculating attribution periods",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000127",
+                            "range": {
+                              "start_unit_id": "p000114",
+                              "end_unit_id": "p000114",
+                              "start_page": 114,
+                              "end_page": 114
+                            },
+                            "summary": "Explains the third stage of applying evidence changes: newly edited evidence is activated, assigned the current activation date, and any existing active records with the same correction set ID are superseded. It then starts attribution-period calculation via a hook that finds the case IDs needing attribution periods, with a single case ID for stand-alone product delivery."
+                          },
+                          {
+                            "title": "4. Removing active evidence",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000128",
+                            "range": {
+                              "start_unit_id": "p000115",
+                              "end_unit_id": "p000115",
+                              "start_page": 115,
+                              "end_page": 115
+                            },
+                            "summary": "Describes the fourth stage of applying evidence changes: removing active evidence. Pending removals are applied by changing active evidence status to canceled, reattributing any evidence with the same succession ID, calling a hook for additional cancellation steps, and writing history entries for each canceled record. Also notes that after evidence changes, affected product delivery cases are assessed using the earliest From and latest To dates across applied evidence, and that the framework can simulate activation of in-edit evidence with virtual attribution periods."
+                          },
+                          {
+                            "title": "5. Assessing evidence changes",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000129",
+                            "range": {
+                              "start_unit_id": "p000115",
+                              "end_unit_id": "p000115",
+                              "start_page": 115,
+                              "end_page": 115
+                            },
+                            "summary": "This section explains the final step in applying evidence changes: assessing affected product delivery cases. The evidence controller builds an eligibility and entitlement determination period from the earliest attributed From date and latest attributed To date across all applied evidence, then calls the eligibility and entitlement engine. It also introduces extra attribution-period functionality, including simulated activation of in-edit evidence for manual checks and automatic attribution-period calculation for new product delivery cases."
+                          }
+                        ],
+                        "node_id": "n000124",
+                        "range": {
+                          "start_unit_id": "p000113",
+                          "end_unit_id": "p000114",
+                          "start_page": 113,
+                          "end_page": 114
+                        },
+                        "summary": "Explains the “apply evidence changes” workflow, which activates new/updated evidence and removes evidence pending removal. It introduces the multi-stage process: validate pending changes, check whether approval is required, activate in-edit evidence and calculate attribution periods, cancel active evidence marked for removal, and then call the eligibility/entitlement engine. Also notes users can apply all, their own, or selected changes, and that validation uses case-level and evidence-type-specific hooks."
+                      },
+                      {
+                        "title": "Calculating attribution periods: additional functionality",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000130",
+                        "range": {
+                          "start_unit_id": "p000115",
+                          "end_unit_id": "p000115",
+                          "start_page": 115,
+                          "end_page": 115
+                        },
+                        "summary": "Describes extra attribution-period functionality in the evidence framework: simulating activation of in-edit evidence for manual eligibility checks by creating virtual attribution periods and virtually superseding active evidence, so users can preview likely eligibility outcomes. Also notes automatic attribution-period calculation for new product delivery cases."
+                      },
+                      {
+                        "title": "Submit evidence for approval workflow",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000131",
+                        "range": {
+                          "start_unit_id": "p000116",
+                          "end_unit_id": "p000116",
+                          "start_page": 116,
+                          "end_page": 116
+                        },
+                        "summary": "Describes the evidence approval workflow for manual evidence activities. A case supervisor receives a task with approve/reject links; on completion, the workflow branches to evidence approval or rejection route activities, which notify the user who initiated activation and link to the evidence list screen. The page also notes automatic creation of attribution periods when evidence is activated or when new product delivery cases are added, and introduces participant data as evidence, listing the default integrated entities."
+                      },
+                      {
+                        "title": "Participant evidence integration",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000132",
+                        "range": {
+                          "start_unit_id": "p000116",
+                          "end_unit_id": "p000116",
+                          "start_page": 116,
+                          "end_page": 116
+                        },
+                        "summary": "This section explains how participant data is treated as evidence in the evidence framework. It notes that participant details such as date of birth must be available across cases, even when maintained in Participant Manager. It lists the default integrated entities supported by the application, including Address, Alternate ID/Name, Bank Account, Citizenship, Concern Role/Relationship, Education, Employer, Employment/Working Hour, Foreign Residency, Person, Prospect Employer, and Prospect Person."
+                      },
+                      {
+                        "title": "Evidence generation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000133",
+                        "range": {
+                          "start_unit_id": "p000117",
+                          "end_unit_id": "p000117",
+                          "start_page": 117,
+                          "end_page": 117
+                        },
+                        "summary": "This section explains evidence generation in Cúram: evidence entities follow repeatable high-level patterns, so an evidence generator can reduce maintenance by producing server-side code plus client UIM/VIM files, properties, and help from entity/relationship metadata. It links this to standard build targets and modeling requirements for generated evidence. The section also begins evidence period calculation, describing how system-recorded validity dates are derived from start/end/effective dates or case creation date, with a five-step algorithm."
+                      },
+                      {
+                        "title": "Evidence period calculation",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Customizing the evidence start and end dates",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000135",
+                            "range": {
+                              "start_unit_id": "p000118",
+                              "end_unit_id": "p000120",
+                              "start_page": 118,
+                              "end_page": 120
+                            },
+                            "summary": "Explains how to customize evidence period start/end dates when evidence records lack business dates. By default, Cúram uses the case start date or related record succession logic, but the EvidencePeriodHook can override these values for specific evidence types. Gives use cases such as Names, child evidence, and Paid Employment, and notes the hook affects pages using getPeriodForEvidenceRecord. Includes setup steps: implement getStartDate/getEndDate, return null to preserve defaults, and bind the hook with Guice, plus a sample Income/Tax implementation."
+                          }
+                        ],
+                        "node_id": "n000134",
+                        "range": {
+                          "start_unit_id": "p000117",
+                          "end_unit_id": "p000120",
+                          "start_page": 117,
+                          "end_page": 120
+                        },
+                        "summary": "Explains how Cúram calculates evidence record periods: start date from effective date, business start date, then case start date; end date from succession (day before next effective date) or business end date. Describes the Evidence Controller and getPeriodForEvidenceRecord, and when default logic is unsuitable. Introduces EvidencePeriodHook to override start/end dates for evidence types lacking business dates, affecting Evidence List and Incoming Evidence List pages. Gives use cases (Names, child evidence, Paid Employment) and setup steps with Guice binding plus an Income/Tax example."
+                      }
+                    ],
+                    "node_id": "n000116",
+                    "range": {
+                      "start_unit_id": "p000109",
+                      "end_unit_id": "p000120",
+                      "start_page": 109,
+                      "end_page": 120
+                    },
+                    "summary": "This section explains the Evidence Controller, which centralizes evidence maintenance across all evidence types while invoking type-specific interfaces. It covers evidence hooks and registrar extension points, list/insert/modify/view/remove evidence flows, evidence change history, correction vs succession handling, and deferred removal via apply evidence changes. It also introduces participant evidence integration, evidence generation, and evidence period calculation, including the EvidencePeriodHook used to override default start/end dates for cases like names, child evidence, and paid employment."
+                  }
+                ],
+                "node_id": "n000096",
+                "range": {
+                  "start_unit_id": "p000091",
+                  "end_unit_id": "p000120",
+                  "start_page": 91,
+                  "end_page": 120
+                },
+                "summary": "Evidence Generator Cookbook explains how Cúram’s Evidence Generator is used for repeatable evidence patterns in standard build targets, with inputs like evidence.properties, general/employment properties, server/client metadata, and generated outputs such as Java, UIM/VIM, wizard data, and tabs. It covers configuring an existing product, modeling and generating sample Asset evidence, required conventions and metadata, and custom hooks like getDetailsForListDisplay. It also describes evidence generation workflows, participant evidence integration, and overriding evidence period start/end dates via EvidencePeriodHook."
+              },
+              {
+                "title": "Identifying problems",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuration errors: generation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000137",
+                    "range": {
+                      "start_unit_id": "p000121",
+                      "end_unit_id": "p000122",
+                      "start_page": 121,
+                      "end_page": 122
+                    },
+                    "summary": "Lists seven Evidence Generator generation-time configuration errors tied to evidence properties, with each error’s symptom, cause, and fix. Covers: build/clean not running due to product.build.option; evidence not found from mismatched product.name; missing <EntityName>Details from product.ejb.package/CODE_PACKAGE mismatch; no XML source files from incorrect server.metadata; missing general.properties from bad properties.home; and another no-source-files case for EJBServer/Webclient. Useful for troubleshooting setup and path/package property misconfiguration."
+                  },
+                  {
+                    "title": "Configuration error: runtime",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000138",
+                    "range": {
+                      "start_unit_id": "p000123",
+                      "end_unit_id": "p000123",
+                      "start_page": 123,
+                      "end_page": 123
+                    },
+                    "summary": "This section covers a runtime configuration error in the Evidence Generator: an HTTP 404 when accessing the generated evidence workspace. The cause is an incorrect product.codetable setting in evidence.properties, pointing to the wrong codetable directory. The solution is to set product.codetable to the product root code table directory. The page also briefly transitions into model generation errors, specifically an invalid mandatory field caused by a missing dtls association."
+                  },
+                  {
+                    "title": "Model errors: generation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000139",
+                    "range": {
+                      "start_unit_id": "p000123",
+                      "end_unit_id": "p000123",
+                      "start_page": 123,
+                      "end_page": 123
+                    },
+                    "summary": "This section describes a generation-time model error in the Evidence Generator: an invalid mandatory field error when running build generated from EJBServer. It explains that the dtls parameter for create<EntityName>Evidence is invalid because the mandatory association between the <EvidenceEntity>Details struct and the EvidenceEntity entity is missing. Useful for diagnosing evidence-generation failures related to malformed entity/detail model definitions."
+                  },
+                  {
+                    "title": "Model errors: compilation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000140",
+                    "range": {
+                      "start_unit_id": "p000124",
+                      "end_unit_id": "p000126",
+                      "start_page": 124,
+                      "end_page": 126
+                    },
+                    "summary": "Lists 11 Evidence Generator compilation errors for static evidence models and explains each with symptom, cause, and solution. Main issues are missing or misconfigured struct associations/fields in evidence entity models, including parEvKey, selectedParent, caseIDKey, descriptor, dtls, and caseParticipantDetails, plus a package mismatch causing `<EntityName>Details` not present in the model. Solutions consistently require creating the missing association between the relevant structs or aligning CODE_PACKAGE with product.ejb.package."
+                  },
+                  {
+                    "title": "Metatype errors: incorrect participant, date, and comments",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000141",
+                    "range": {
+                      "start_unit_id": "p000127",
+                      "end_unit_id": "p000127",
+                      "start_page": 127,
+                      "end_page": 127
+                    },
+                    "summary": "Explains common metatype errors in evidence metadata for participant, date, and comments fields. If the case participant role ID field lacks CASE_PARTICIPANT_SEARCH or PARENT_CASE_PARTICIPANT_ROLE_ID, the participant name won’t appear as a link. If START_DATE or END_DATE metatypes are missing, start/end dates won’t populate on the evidence workspace. An incorrect comments metatype causes the comments box to render as a single-row field using only half the screen."
+                  },
+                  {
+                    "title": "Property errors: generation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000142",
+                    "range": {
+                      "start_unit_id": "p000128",
+                      "end_unit_id": "p000132",
+                      "start_page": 128,
+                      "end_page": 132
+                    },
+                    "summary": "This section lists common generation-time property errors in Cúram static evidence generation. It covers missing `general.properties` and `employment.properties` files under `$properties.home`, and unresolved text properties when a required key is absent from either file. For each error it gives symptom, cause, and solution, including creating the missing file, setting `properties.home`, or adding the missing property key. It also briefly describes the role of `general.properties` and `employment.properties` as sources of localized label values."
+                  }
+                ],
+                "node_id": "n000136",
+                "range": {
+                  "start_unit_id": "p000121",
+                  "end_unit_id": "p000132",
+                  "start_page": 121,
+                  "end_page": 132
+                },
+                "summary": "Explains how to diagnose Evidence Generator problems from setup to model/property issues. Covers seven generation configuration errors (build/clean not running, evidence not found, missing `<EntityName>Details`, no XML source files, missing general properties, no EUIM source files), one runtime error (HTTP 404 from incorrect `product.codetable`), one generation model error (invalid mandatory `dtls` association), 11 compilation errors from missing model associations/fields, common metatype mistakes for participant/date/comments, and property-file errors involving `general.properties`, `employment.properties`, and unresolved text keys."
+              }
+            ],
+            "node_id": "n000050",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000132",
+              "start_page": 45,
+              "end_page": 132
+            },
+            "summary": "Explains how to develop static evidence with the Evidence Generator: required inputs (RSA model, XML metadata, EUIM, properties) and outputs (server CRUD/list code, EUI screens/views, online help). Describes when to use the main evidence patterns—Parent-Child, Pre-Association, Related, Search Case Participant, and Validation CallOut—and the modeling rules needed for generator compatibility, including mandatory structs and associations. Also covers customization hooks for list/end-date behavior and common generation, compilation, metatype, and property-file errors."
+          }
+        ],
+        "node_id": "n000020",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000132",
+          "start_page": 9,
+          "end_page": 132
+        },
+        "summary": "Covers developing static Cúram evidence, either manually or with the Evidence Generator. Manual development explains required server-side and client-side artifacts, evidence metadata, and the interface hierarchy (StandardEvidenceInterface, EvidenceInterface, ParticipantEvidenceInterface) with methods for attribution, list display, transfer, dates, reassessment, snapshots, changed attributes, and participant searches. Also notes upgrade-safe client customization, filters, Guice bindings, and wizard end-dating transaction/rollback behavior. The generator path covers required inputs/outputs, evidence patterns, modeling rules, customization hooks, and common generation, metatype, and property-file errors."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

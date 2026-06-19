@@ -1,0 +1,1263 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "462fbfd4a86aa7d2",
+    "title": "Cúram 8.1.2 Person and Prospect Person Evidence Developers Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramPersonProspectPersonEvidenceDevelopersGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "462fbfd4a86aa7d28dd9b35cb681d33a22d509f970f4b7a4a259e58cc59f189f",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T19:02:34+00:00",
+    "page_count": 46,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramPersonProspectPersonEvidenceDevelopersGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Person and Prospect Person Evidence Developers Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000046",
+      "start_page": 1,
+      "end_page": 46
+    },
+    "summary": "Introductory developer guide for Cúram 8.1–8.1.2 person and prospect person evidence. It explains how participant data is modeled as dynamic evidence, shared across cases, validated by Dynamic Evidence and CER, optionally brokered and verified, and replicated to legacy database tables. The guide covers prerequisites, design considerations, and a roadmap, then details dynamic evidence-to-legacy table mappings for common data such as address, bank account, birth/death, contact preferences, email, gender, identification, name, phone, relationship, and snapshot tables. It also documents customization/extension points: replicators and converters for new or existing attributes, evidence sharing automation, primary information selection, reciprocal evidence handling, and Participant Data Case owner assignment, including Guice bindings and system-user owner settings for system-created cases. The last pages are legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This brief front-matter note directs readers to review the “Notices” section before using the information or the product it supports. It also includes the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Edition page listing for Cúram 8.1, 8.1.1, and 8.1.2 plus the start of the guide’s contents and opening chapter. It introduces person/prospect person evidence, covering overview, prerequisites, evidence types, validation, evidence sharing, design considerations, evidence broker flow, CER usage, and a section on dynamic evidence-to-legacy table mappings. Useful as the entry point for developers/architects working with participant application dynamic evidence, especially if they need navigation to design, customization, replicators/converters, or data mapping topics."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section maps person/prospect person dynamic evidence types to legacy database tables, covering address, bank account, birth/death, contact preferences, email, gender, identification, name, phone, and relationship fields, plus notes on snapshot tables not being replicated. It then explains customization via replicator extenders for custom columns, and how to implement full replicators and event listeners for new evidence types, using Guice bindings. Includes example code for extending phone number replication and for a new “Sample Foreign Residency” evidence type."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers Person/Prospect Person evidence extension points and evidence sharing automation. Explains converters for legacy-to-dynamic evidence, how to extend populator interfaces for custom fields, and how to implement and bind a full converter via Guice. Then introduces evidence sharing automation for Person cases, describing the three share outcomes, the PDCEvidence strategy interface, binding strategies by evidence type code, and overriding default implementations. Includes example code for gender evidence strategy and notes about ModuleClassName registration."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers customizations for person/prospect person evidence: overriding primary record selection with primary handler interfaces and Guice bindings, using a phone-number example that selects the latest start date. Explains reciprocal evidence processing via GlobalEvidenceHook and ReciprocalEvidenceConversion, with a working relationship example and limitations. Also describes changing Participant Data Case ownership through PDCCaseOwnerAssignmentStrategy, plus setting system-created case owners via application properties."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000044",
+          "start_page": 5,
+          "end_page": 44
+        },
+        "summary": "Introductory chapter for developing with Person/Prospect Person evidence in Cúram 8.1–8.1.2. Explains evidence as dynamic data shared across cases, with Dynamic Evidence, CER, Evidence Broker, and verification flow. Covers design considerations, prerequisites, and a roadmap of the guide. Includes dynamic evidence-to-legacy table mappings, plus customization points: replicators and converters, evidence sharing automation, primary record selection, reciprocal evidence, and Participant Data Case owner assignment/system owner settings. Useful for developers/architects working on participant application evidence design or extensions."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000046",
+              "end_unit_id": "p000046",
+              "start_page": 46,
+              "end_page": 46
+            },
+            "summary": "This section is mostly legal and attribution material: it states that example names are fictitious, sample programs are provided “AS IS” under the Merative Client Agreement, and Merative disclaims warranties and liability. It also points to Merative’s privacy policy URL and lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, ending with copyright notice."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000046",
+              "end_unit_id": "p000046",
+              "start_page": 46,
+              "end_page": 46
+            },
+            "summary": "Legal notices for the document, including fictitious-name disclaimer, sample code copyright/license terms, privacy policy link, and trademark attributions. Lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and notes other names may belong to third parties. Includes Merative copyright years 2012 and 2024."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000045",
+          "end_unit_id": "p000045",
+          "start_page": 45,
+          "end_page": 45
+        },
+        "summary": "Legal notice and usage terms for the publication. Covers personal and commercial reproduction limits, preservation of proprietary notices, no derivative works without consent, and no implied rights beyond those granted. Includes AS-IS/no-warranty disclaimer, export compliance, patent notice, third-party product/website disclaimers, and Merative copyright (2012, 2024)."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Contents for the guide, listing front matter and Chapter 1 on developing with Person and Prospect Person Evidence. It shows the major subsections: overview, evidence concepts, designing solutions, dynamic evidence type data mappings, and customization topics such as replicators, converters, evidence sharing automation, primary information selection, reciprocal evidence, and participant data case owner. Useful for navigating to specific topics and page locations."
+      },
+      {
+        "title": "1 Developing with Person and Prospect Person Evidence",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Lists the background knowledge needed to work with person/prospect person evidence. Assumes familiarity with the Evidence Guide, Participant Guide, Dynamic Evidence Configuration Guide, and Google Guice. It is only relevant for users of the participant application with person and prospect person dynamic evidence. Also introduces the guide’s scope: overview of technical concepts, design considerations, data mappings to legacy tables, and customization/extension points."
+              },
+              {
+                "title": "Sections in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces the person/prospect person evidence guide for developers and architects. It explains that the guide covers technical design, data structure, evidence constraints, and data flow for evidence shared across cases. It applies only to the participant application with person/prospect person dynamic evidence. Prerequisites include the Evidence Guide, Participant Guide, Dynamic Evidence Configuration Guide, and Google Guice. The section also lists the guide’s main parts: overview, design considerations, data mappings to legacy tables, and customization/extension options."
+              }
+            ],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "High-level introduction to developing person/prospect person evidence solutions. It explains the guide’s purpose: to provide technical understanding of the evidence model, data structure, constraints, data flow, customization options, and extension points for developers/architects. It applies only to the participant application using person/prospect person dynamic evidence. Prerequisites: Evidence Guide, Participant Guide, Dynamic Evidence Configuration Guide, and Google Guice. The guide’s main sections cover overview, design considerations, legacy table mappings, and customization."
+          },
+          {
+            "title": "1.2 Person/Prospect Person Evidence Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Person and Prospect Person Data as Evidence",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how Cúram treats person and prospect person data as shared evidence. Covers Dynamic Evidence for storage and basic validation, CER for complex validation, optional Evidence Broker for sharing across cases, and optional verifications. Describes the underlying model: each person/prospect person has an associated Participant Data Case, evidence is stored in dynamic evidence tables and replicated to existing tables, edits read/write those tables, and some screens/processes still use the legacy tables. Useful for understanding configuration/customization points."
+              },
+              {
+                "title": "How Person or Prospect Person Evidence is Managed",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Person/Prospect Person Evidence Types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains how Person/Prospect Person evidence is managed in Cúram. It covers built-in evidence types, how to add new evidence types or attributes, and the required replicator/converter changes when legacy tables are involved. It also describes validation options for evidence, including Dynamic Evidence Editor rules and Express Rule Sets, plus the special handling of brokered evidence. Finally, it introduces evidence sharing via the Evidence Broker and notes that sharing is uni-directional and configured per evidence type."
+                  },
+                  {
+                    "title": "Evidence Validations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains how person and prospect person evidence is validated and shared. It covers two validation mechanisms: Dynamic Evidence Editor validations for simple rules like mandatory fields, and Cúram Express Rule Sets for cross-evidence checks. It notes that brokered evidence is not validated the same way: evidence coming from another case is generally accepted and activated, though for some case types validation failures can block activation. It also introduces evidence sharing via the Evidence Broker and its directional, per-evidence-type behavior."
+                  },
+                  {
+                    "title": "Evidence Sharing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000011",
+                      "end_unit_id": "p000011",
+                      "start_page": 11,
+                      "end_page": 11
+                    },
+                    "summary": "This section explains how evidence sharing works in the framework. The Evidence Broker mediates uni-directional sharing of evidence by type between person/prospect person records, application cases, and ongoing cases, with different send/receive rules per target. It also notes that sharing can be triggered when a new person is added to a case. Useful for understanding evidence distribution, broker behavior, and how validation is handled for shared vs. entered evidence."
+                  }
+                ],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "This section gives a high-level overview of how person/prospect person data is managed as evidence in Cúram. It explains that dynamic evidence stores the data, CER handles complex validations, legacy tables are kept in sync via replicators/converters, and the Evidence Broker can share evidence between cases. It also covers how new evidence types/attributes are added and how validations work for created/edited evidence versus brokered evidence, including when brokered evidence is auto-accepted or blocked on activation."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000011",
+              "start_page": 10,
+              "end_page": 11
+            },
+            "summary": "Overview of how Cúram manages person/prospect person data as shared evidence. It explains the core stack: Dynamic Evidence for storage and basic validation, CER for complex rules, optional Evidence Broker for cross-case sharing, and optional verifications. It also describes the Participant Data Case model, replication between dynamic evidence and legacy tables, editing behavior, and that some screens still read legacy tables. Useful for customization details, adding evidence types/attributes, and understanding validation and brokered-evidence behavior."
+          },
+          {
+            "title": "1.3 Designing Person/Prospect Person Evidence Solutions",
+            "level": 2,
+            "children": [
+              {
+                "title": "Data: Dynamic Evidence Types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Structure",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section explains how person/prospect person evidence is structured for design. It says evidence is mainly stored as dynamic evidence types, which define the data, type, behavior, volatility, and calculated attributes. New dynamic evidence types must be activated and associated with relevant case types, persons, and prospect persons. It also highlights design considerations such as time variance, reciprocity, preferred evidence, and required validations, including standard and cross-evidence validation via Cúram Express Rules."
+                  },
+                  {
+                    "title": "Constraints",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Validations",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000025",
+                        "range": {
+                          "start_unit_id": "p000012",
+                          "end_unit_id": "p000012",
+                          "start_page": 12,
+                          "end_page": 12
+                        },
+                        "summary": "This section explains validations for person/prospect person dynamic evidence. It notes that the Dynamic Evidence Editor provides standard validations commonly used in evidence processing, while more complex checks like cross-evidence validations can be implemented with Cúram Express Rules. It also frames validation design as part of planning evidence integrity, alongside data structure, volatility, reciprocal evidence, case applicability, and preferred evidence considerations. Open this node if you need guidance on validation options and their role in dynamic evidence design."
+                      },
+                      {
+                        "title": "Verifications",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000026",
+                        "range": {
+                          "start_unit_id": "p000013",
+                          "end_unit_id": "p000013",
+                          "start_page": 13,
+                          "end_page": 13
+                        },
+                        "summary": "This section explains evidence verification for person/prospect person records. It defines verification as checking evidence accuracy, notes that verification may be documentary or verbal, and says the verification engine determines whether evidence requires verification when captured. It highlights that, except for evidence brokered to a person/prospect person record, evidence cannot be activated until mandatory verification requirements are met. It also introduces the Evidence Broker behavior and key configuration questions about when evidence should be shared, accepted, or manually reviewed."
+                      }
+                    ],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "This section covers validation constraints for person/prospect person dynamic evidence. It notes that the Dynamic Evidence Editor provides standard validations used in evidence processing, while more complex checks, such as cross-evidence validations, can be implemented with Cúram Express Rules. It also positions validation design as part of overall evidence planning, alongside data structure, volatility, reciprocal evidence, case applicability, and preferred evidence. Open this section if you need guidance on what validations are available and how they support evidence integrity."
+                  }
+                ],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section outlines how to design person/prospect person evidence solutions, focusing on dynamic evidence types as the main storage model. It explains that dynamic evidence types define the data, type, behavior, volatility, and calculated attributes, and must be activated and associated with relevant case types, persons, and prospect persons. It also highlights key design questions: time variance, reciprocal evidence, available case types, preferred evidence, and required validations. Standard validations are built into the Dynamic Evidence Editor, while cross-evidence checks can use Cúram Express Rules."
+              },
+              {
+                "title": "Flow: Evidence Broker",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how evidence brokered to person/prospect person records is handled. Incoming brokered evidence is automatically accepted and activated on those records, even if validation fails, unlike other case types where validation failure blocks activation. It also covers required validations for succession constraints, recommends using standard validation patterns over validation rule sets, and warns about performance impacts of complex retrieval in custom validations. It briefly describes verification requirements and notes that person/prospect data captured outside participant manager must be shared back for system processing to work correctly."
+              },
+              {
+                "title": "Cúram Express Rules: Case Eligibility/Entitlement Calculations",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Read participant data from the dynamic evidence stored by the participant manager",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section compares three sources for participant data used in case eligibility/entitlement calculations: dynamic evidence from the participant manager, brokered evidence on cases, and legacy tables. It highlights key considerations for using dynamic evidence: it is the primary source and updates trigger immediate recalculations, but there is no case-worker review. It also notes brokered evidence is the recommended option for new development, while legacy tables are mainly for upgrades. The section begins the dynamic evidence-to-legacy data mapping tables, starting with Address."
+                  },
+                  {
+                    "title": "Read participant data which has been brokered onto cases",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains the option to read participant data brokered onto cases for Cúram Express Rules case eligibility/entitlement calculations. It notes this is the recommended approach for new development, with changes applied only when evidence is activated and requiring the evidence type to be configured for case brokering. It appears alongside a comparison of three sourcing options: dynamic evidence, brokered case data, or legacy tables, to help decide how participant data should be read."
+                  },
+                  {
+                    "title": "Continue to read from the legacy tables",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Explains the option to continue reading participant data from legacy database tables for eligibility/entitlement calculations in Cúram Express Rules. It compares this with reading from dynamic evidence or brokered case evidence, noting the legacy-table approach should be used carefully and is mainly recommended for upgrading customers. The section then introduces dynamic evidence type data mappings to legacy tables, stating that replicators map dynamic evidence to legacy data and converters reverse it, with an example for Address fields."
+                  }
+                ],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains where case eligibility/entitlement calculations should read participant data from: dynamic evidence in the participant manager, brokered case evidence, or legacy database tables. It compares the options and key tradeoffs: dynamic evidence is primary and recalculates immediately; brokered evidence is recommended for new development and only updates when activated; legacy tables are mainly for upgrades. Introduces dynamic evidence-to-legacy data mapping tables, starting with Address, and notes replicators/converters handle the mappings."
+              }
+            ],
+            "node_id": "n000021",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000013",
+              "start_page": 12,
+              "end_page": 13
+            },
+            "summary": "This section explains how to design person/prospect person evidence solutions. It emphasizes dynamic evidence types as the primary data structure, including activation, case/person associations, volatility, calculated attributes, reciprocal evidence, preferred evidence, and required validations. It notes that standard validations are built into the Dynamic Evidence Editor, with complex cross-evidence checks possible via Cúram Express Rules, and that validations must not be removed. It also describes evidence broker behavior: brokered evidence to person/prospect person records is automatically accepted and activated, even if validation fails, and must be shared back to participant manager for system processing."
+          },
+          {
+            "title": "1.4 Dynamic Evidence Type Data Mappings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Address",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Defines the Address dynamic evidence mapping to legacy database fields. The section shows that the participant maps to ConcernRoleAddress.concernRoleID (calculated from caseParticipantRoleID), address maps to Address.addressData, and fromDate maps to ConcernRoleAddress.startDate. It sits within guidance on Cúram Express Rules data sourcing options (dynamic evidence, brokered-to-case, or legacy tables), noting brokered case data is recommended for new development and legacy tables mainly for upgrades."
+              },
+              {
+                "title": "Bank Account",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section shows the “Bank Account” dynamic evidence mapping for Person and Prospect Person evidence. It lists how attributes map to database columns, including participant/concernRoleID, account name and number, IBAN, account type, sort code, BIC, start/end dates, account status, joint account indicator, and comments. It is useful if you need the schema mapping for bank account evidence storage or to understand how bank account fields are persisted."
+              },
+              {
+                "title": "Birth and Death",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section maps the “Birth and Death” dynamic evidence attributes to Person/ProspectPerson database columns. It shows how person-related fields are stored: person ID, birth last name, mother’s birth last name, date of birth, and date of death. The comments field has no database mapping (N/A). Use this section if you need the data model for birth/death evidence on person or prospect person records."
+              },
+              {
+                "title": "Contact Preferences",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section maps Contact Preferences-related dynamic evidence attributes to database columns. It covers mappings for contact preferences (preferred language, preferred communication, comments), email address details (address, dates, type, comments), gender, and identification/alternate ID fields. It mainly lists how participant/person data and related email/ID records correspond to ConcernRole, ConcernRoleEmailAddress, EmailAddress, Person/ProspectPerson, and ConcernRoleAlternateID columns."
+              },
+              {
+                "title": "Email Address",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Maps the Email Address dynamic evidence to database columns. It shows participant maps to ConcernRoleEmailAddress.concernRoleID (calculated from caseParticipantRoleID), emailAddress to EmailAddress.emailAddress, fromDate/toDate to ConcernRoleEmailAddress.startDate/endDate, emailAddressType to ConcernRoleEmailAddress.typeCode, and comments to EmailAddress.comments. This section is a table of field-to-column mappings for email address evidence."
+              },
+              {
+                "title": "Gender",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Defines the Gender mapping table for dynamic evidence. It maps the participant to Person/ProspectPerson.concernRoleID and the gender attribute to Person/ProspectPerson.gender; comments are not mapped. The page also shows adjacent mapping tables for Contact Preferences, Email Address, and Identification, but the focus of this section is the gender field mapping."
+              },
+              {
+                "title": "Identification",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section maps the Identification dynamic evidence attributes to database fields. It shows how participant is stored via ConcernRoleAlternateID.concernRoleID (calculated from caseParticipantRoleID), and maps alternateID, altIDType, fromDate, and toDate to ConcernRoleAlternateID columns. Useful for understanding how participant identification/alternate ID records are persisted."
+              },
+              {
+                "title": "Name",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section maps the Name dynamic evidence attributes to database columns. It covers participant, title, first/middle/last name, suffix, initials, name type, and comments, all stored in the AlternateName table (with participant calculated from caseParticipantRoleID). It appears alongside nearby mappings for Phone Number and Relationship on the same page, but the focus here is the Name mapping table."
+              },
+              {
+                "title": "Phone Number",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section defines the Phone Number evidence-to-database mapping. It lists dynamic evidence attributes and their corresponding tables/columns: participant maps to ConcernRolePhoneNumber.concernRoleID (via caseParticipantRoleID), phoneCountryCode/AreaCode/Number/Extension map to PhoneNumber fields, fromDate/toDate map to ConcernRolePhoneNumber start/end dates, phoneType maps to ConcernRolePhoneNumber.typeCode, and comments to PhoneNumber.comments. Useful if you need the exact persistence mapping for phone number evidence."
+              },
+              {
+                "title": "Relationship",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section lists the database mapping for the Relationship dynamic evidence type. It shows how the participant is stored in ConcernRoleRelationship.concernRoleID (calculated from caseParticipantRoleID) and the relatedParticipant in ConcernRoleRelationship.relConcernRoleID. It appears alongside other evidence mapping tables on the page, helping developers understand how relationship evidence fields map to database columns."
+              },
+              {
+                "title": "Snapshot Tables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section lists legacy snapshot tables that are not updated when person/prospect person data is registered or maintained: AlternateNameSnapshot, ConcernRoleAddressSnapshot, ConcernRoleAlternateIDSnapshot, ConcernRoleBankAccountSnapshot, ConcernRoleRelSnapshot, ConcernRoleSnapshot, PersonSnapshot, and ProspectPersonSnapshot. It also introduces customization of person/prospect person evidence, outlining five areas: replicators, converters, selection of primary information, reciprocal evidence, and participant data case owner, with a definition of replicators and their role in syncing dynamic evidence to legacy tables."
+              }
+            ],
+            "node_id": "n000032",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000017",
+              "start_page": 14,
+              "end_page": 17
+            },
+            "summary": "This section explains three participant data sourcing options for Cúram Express Rules eligibility/entitlement calculations: dynamic evidence, brokered-to-case data, or legacy tables. It recommends brokered case data for new development and legacy tables mainly for upgrades. It then provides table mappings from dynamic evidence to legacy database columns for Address, Bank Account, Birth and Death, Contact Preferences, Email Address, Gender, Identification, Name, Phone Number, and Relationship, noting replicators perform the forward mapping and converters the reverse."
+          },
+          {
+            "title": "1.5 Customizing Person/Prospect Person Evidence",
+            "level": 2,
+            "children": [
+              {
+                "title": "Replicators",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Replicator Extension",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how to extend built-in person/prospect person evidence replicators when legacy database tables have custom columns. Lists the available extender interfaces in curam.pdc.impl (for address, alternate ID/name, bank account, birth/death, contact preferences, email, gender, phone, relationships). Most use assignDynamicEvidenceToExtendedDetails; birth/death and gender have separate methods for person and prospect person details. Includes an example of implementing a PDCPhoneNumberReplicatorExtender."
+                  },
+                  {
+                    "title": "Example: Implementing a Person/Prospect Person Evidence Replicator Extender",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Provide a Replicator Extension Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000048",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "Explains how to extend a replicator for dynamic evidence when a legacy table has a custom field (example: `phoneProvider` on `PhoneNumber`). Step 1 shows implementing `PDCPhoneNumberReplicatorExtender` to map dynamic evidence attribute `phoneProvider` into `ParticipantPhoneDetails.phoneProvider`; the default replicator then performs the actual data replication. Also notes the next step: register the extension with a Guice binding."
+                      },
+                      {
+                        "title": "Step 2: Add a Binding to the New Replicator Extension Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000049",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "This section explains the second step in extending a replicator: registering the new extension implementation with Guice. It shows how to use a Multibinder in a module to add a binding for `PDCPhoneNumberReplicatorExtender`, specifically binding `SampleReplicatorExtenderImpl`. The goal is to make the custom replicator extension discoverable so its data-mapping logic is used alongside the default replication behavior."
+                      }
+                    ],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000020",
+                      "start_page": 19,
+                      "end_page": 20
+                    },
+                    "summary": "Explains how to extend person/prospect person evidence replication for custom legacy table fields. The example uses `PDCPhoneNumberReplicatorExtender` to map dynamic evidence attribute `phoneProvider` into the extended `ParticipantPhoneDetails.phoneProvider` field for a `PhoneNumber` table, while the default replicator handles the actual persistence. It also shows registering the custom extender with Guice using a `Multibinder` binding in a module so the extension is discovered and applied."
+                  },
+                  {
+                    "title": "Why Implement a Replicator?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains why a new replicator may be needed when introducing dynamic evidence types, especially to keep legacy database tables in sync with evidence changes. It introduces replicator-based, event-driven replication and outlines the implementation steps: define a replicator interface, implement replication to the legacy table, create an event listener to trigger it, and add the required binding. An example shows a “Sample Foreign Residency” evidence type for person/prospect person, including its attributes and the need to mirror changes from dynamic evidence to the existing table."
+                  },
+                  {
+                    "title": "Implementing a Replicator",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "This section explains why and how to implement a replicator for new dynamic evidence types in person/prospect person evidence. It notes that replicators are event-driven and may be needed to keep legacy tables in sync when evidence is inserted, modified, or removed. A Sample Foreign Residency example is introduced, with its attributes and use case. The outlined implementation steps are: define a replicator interface, implement replication to the legacy database table, create an event listener to trigger replication, and add the binding for that listener."
+                  },
+                  {
+                    "title": "Example: Implementing a Person/Prospect Person Evidence Replicator",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Provide a Replicator Interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000053",
+                        "range": {
+                          "start_unit_id": "p000021",
+                          "end_unit_id": "p000022",
+                          "start_page": 21,
+                          "end_page": 22
+                        },
+                        "summary": "Introduces Step 1 of a sample replicator for Person/Prospect Person dynamic evidence. It explains that new dynamic evidence types may need a replicator to keep a legacy database table in sync when evidence is inserted, modified, or removed. This section defines the required replicator interface for “Sample Foreign Residency” with three methods: replicateInsertEvidence, replicateModifyEvidence, and replicateRemoveEvidence, each taking EvidenceDescriptorDtls (and previous active details for modify), and shows the @ImplementedBy binding to the implementation class."
+                      },
+                      {
+                        "title": "Step 2: Provide a Replicator Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000054",
+                        "range": {
+                          "start_unit_id": "p000023",
+                          "end_unit_id": "p000023",
+                          "start_page": 23,
+                          "end_page": 23
+                        },
+                        "summary": "Shows how to implement a replicator class for legacy database synchronization. The example `SampleForeignResidencyReplicatorImpl` implements three methods to translate dynamic evidence into legacy table fields and update records. It demonstrates reading evidence via `EvidenceController`, converting dynamic attributes like country, dates, and reason, populating a DTO, generating a unique ID, and inserting the legacy record. The section begins the modify workflow as well, using evidence descriptors and key lists for updates."
+                      },
+                      {
+                        "title": "Step 3: Implement an Event Listener",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000055",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Shows how to implement a `PDCEvents` listener for `SAMPLEFOREIGNRESIDENCY` evidence activation. The listener handles inserted, modified, and removed evidence events, checks the evidence type, and delegates to a `SampleForeignResidencyReplicator` to start insert/modify/remove replication or other custom processing. Also shows adding the listener to Guice via `Multibinder<PDCEvents>` in `SampleModule` so the event listener is registered."
+                      },
+                      {
+                        "title": "Step 4: Add a Binding to the New Event Listener Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000056",
+                        "range": {
+                          "start_unit_id": "p000024",
+                          "end_unit_id": "p000024",
+                          "start_page": 24,
+                          "end_page": 24
+                        },
+                        "summary": "Explains how to register the new event listener with Guice so it is discovered and invoked. Shows adding a `Multibinder<PDCEvents>` in `SampleModule` and binding `SampleForeignResidencyEventsListener` into the `PDCEvents` set. This follows the listener implementation from the prior step and enables the replication logic to run when evidence activation events occur."
+                      }
+                    ],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000024",
+                      "start_page": 21,
+                      "end_page": 24
+                    },
+                    "summary": "Explains how to implement a Person/Prospect Person evidence replicator for the “Sample Foreign Residency” dynamic evidence type so legacy static tables stay synchronized. Covers the required replicator interface with insert/modify/remove methods, an implementation that reads evidence and maps fields into the legacy SampleForeignResidency table, an event listener that triggers replication on evidence activation events, and the Guice Multibinder binding needed to register that listener."
+                  }
+                ],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000024",
+                  "start_page": 18,
+                  "end_page": 24
+                },
+                "summary": "Explains person/prospect person evidence customization focused on replicators. Defines replicators as event-driven components that keep legacy tables in sync with dynamic evidence; only the latest version in a succession set is replicated. Covers extending built-in replicators for custom columns via `curam.pdc.impl` extender interfaces and `assignDynamicEvidenceToExtendedDetails` methods, with a Phone Number/`phoneProvider` example and Guice binding. Also shows how to implement a new replicator for a custom evidence type, including interface, implementation, event listener, and binding using a Sample Foreign Residency example."
+              },
+              {
+                "title": "Converters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Why Extend a Converter?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "Explains why a converter should be extended: when legacy person/prospect person tables gain custom columns, the provided converters can be customized to map those fields into dynamic evidence. Notes that converters are mainly for development or upgrade tooling, not day-to-day processing. Introduces converter extension interfaces in `curam.pdc.impl` for multiple evidence types (address, name, bank account, gender, etc.), with most using a `populate` method and some, like birth/death and gender, offering `populatePerson` and `populateProspectPerson`."
+                  },
+                  {
+                    "title": "Converter Extension",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000025",
+                      "end_unit_id": "p000025",
+                      "start_page": 25,
+                      "end_page": 25
+                    },
+                    "summary": "This section explains how to extend Cúram person/prospect person converters so custom legacy database columns can be mapped to dynamic evidence. It lists the available populator interfaces in `curam.pdc.impl` for different evidence types, including address, alternate ID/name, bank account, birth/death, contact preferences, email, gender, phone number, and relationships. It notes that most interfaces expose a `populate` method, while birth/death and gender use `populatePerson` and `populateProspectPerson` with specific parameters."
+                  },
+                  {
+                    "title": "Example: Implementing a Person/Prospect Person Evidence Populator",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Provide a Populator Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000061",
+                        "range": {
+                          "start_unit_id": "p000026",
+                          "end_unit_id": "p000026",
+                          "start_page": 26,
+                          "end_page": 26
+                        },
+                        "summary": "This section explains Step 1 for extending a Cúram evidence converter by implementing a populator. It uses a custom `SamplePopulatorImpl` for `PDCPhoneNumberEvidencePopulator` to map a legacy `phoneProvider` field from the extended PhoneNumber table into dynamic evidence data. The example shows retrieving the `phoneProvider` attribute and setting it via `DynamicEvidenceTypeConverter`, while default converters handle storage. It also identifies the populator method parameters, including concern role, case ID, legacy details, and dynamic evidence details."
+                      },
+                      {
+                        "title": "Add a Binding to the New Populator Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000062",
+                        "range": {
+                          "start_unit_id": "p000027",
+                          "end_unit_id": "p000027",
+                          "start_page": 27,
+                          "end_page": 27
+                        },
+                        "summary": "This section shows how to register a new populator implementation with Guice using a `Multibinder` in a module, and notes that new Guice modules must also be added to the `ModuleClassName` database table. It then introduces why converters may be needed for new dynamic evidence types, explains that converters use the `PDCConverter` interface and its `storeEvidence(concernRoleKey, caseIDKey)` method, and begins an example for migrating “Sample Foreign Residency” from static to dynamic evidence."
+                      }
+                    ],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000026",
+                      "start_page": 26,
+                      "end_page": 26
+                    },
+                    "summary": "This section introduces how to extend a Cúram evidence converter for person/prospect person evidence using a custom populator. It explains a sample `PDCPhoneNumberEvidencePopulator` implementation that maps the legacy `phoneProvider` field from the extended `PhoneNumber` table into dynamic evidence via `DynamicEvidenceTypeConverter`. The populator receives concern role, case ID, legacy details, and dynamic evidence data, while default converters handle storage. It also notes the need to add a Guice binding for the new populator."
+                  },
+                  {
+                    "title": "Why Implement a Converter?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains when and why to implement a converter for new dynamic evidence types: mainly for development or upgrade tooling, not everyday processing. Introduces the PDCConverter interface in curam.pdc.impl and its storeEvidence method, which takes concernRoleKey and caseIDKey. Sets up an example where legacy static “Sample Foreign Residency” data for person/prospect person is migrated from a database table into a new dynamic evidence type via a converter."
+                  },
+                  {
+                    "title": "Implementing a Converter",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000027",
+                      "start_page": 27,
+                      "end_page": 27
+                    },
+                    "summary": "Explains how to implement a converter using the `PDCConverter` interface in `curam.pdc.impl`, whose `storeEvidence` method takes `concernRoleKey` and `caseIDKey`. Notes converters are mainly for development or upgrade tooling, not normal processing. Introduces an example for Person/Prospect Person evidence: migrating “Sample Foreign Residency” from a legacy static table to dynamic evidence with fields for participant, country, from/to dates, and reason. Also mentions binding a new populator implementation in Guice and registering new modules in the `ModuleClassName` table."
+                  },
+                  {
+                    "title": "Example: Implementing a Person/Prospect Person Evidence Converter",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Provide a Converter Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000066",
+                        "range": {
+                          "start_unit_id": "p000028",
+                          "end_unit_id": "p000029",
+                          "start_page": 28,
+                          "end_page": 29
+                        },
+                        "summary": "Explains step 1 of implementing a person/prospect person evidence converter: create a `PDCConverter` that reads legacy Sample Foreign Residency records, maps them to dynamic evidence, and stores them. Shows `SampleForeignResidencyConverterImpl` using injected evidence type DAO/version DAO, resolving the participant role ID from case data, fetching residency rows by concern role, and populating dynamic evidence attributes such as participant, country, fromDate, and toDate."
+                      },
+                      {
+                        "title": "Step 2: Add a Binding to the New Converter Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000067",
+                        "range": {
+                          "start_unit_id": "p000030",
+                          "end_unit_id": "p000030",
+                          "start_page": 30,
+                          "end_page": 30
+                        },
+                        "summary": "Shows how to register a new converter implementation with Guice using a `Multibinder` in `SampleModule`, binding `SampleForeignResidencyConverterImpl` to `PDCConverter`. Notes that new Guice modules must also be added to the `ModuleClassName` database table. The excerpt then introduces Evidence Sharing Automation, explaining that it enables shared evidence to be automatically activated or applied on a target case without manual intervention, and can ignore duplicates, create new evidence, or update existing records."
+                      }
+                    ],
+                    "node_id": "n000065",
+                    "range": {
+                      "start_unit_id": "p000027",
+                      "end_unit_id": "p000029",
+                      "start_page": 27,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how to implement a person/prospect person evidence converter for migrating legacy static evidence to dynamic evidence. It introduces `PDCConverter`, then shows a `SampleForeignResidencyConverterImpl` that looks up the participant’s case participant role, reads legacy residency rows by concern role, and populates dynamic evidence fields such as participant, country, fromDate, and toDate. Also covers registering the converter with Guice via `Multibinder` and notes new modules must be added to `ModuleClassName`."
+                  }
+                ],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000029",
+                  "start_page": 25,
+                  "end_page": 29
+                },
+                "summary": "Explains Cúram converters for person/prospect person evidence: what they are, when to extend them, and that they are mainly for development/upgrade tooling, not normal processing. Covers populator extension interfaces in `curam.pdc.impl` for various evidence types, how custom fields map to dynamic evidence via a populator and Guice binding, and how to implement a full `PDCConverter` to migrate legacy static table data into new dynamic evidence, including example code and registration notes."
+              },
+              {
+                "title": "Evidence Sharing Automation",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "What is Evidence Sharing Automation?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000069",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Evidence Sharing Automation explains how shared evidence can be automatically activated between cases without manual intervention or validation blocking. It describes three possible outcomes: ignore if duplicate, create a new evidence record, or update an existing matching record. The section also explains why this is needed for Person cases, where evidence cannot remain in an in-edit state, so validations that would block activation must be handled through an automation strategy for the evidence type."
+                  },
+                  {
+                    "title": "Why use Evidence Sharing Automation?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000070",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains why evidence sharing automation is needed for Person cases: shared evidence must activate automatically because Person case evidence has no in-edit state. If validations block activation, an automation strategy is used to bypass those validations and enable automatic activation. The section also notes that normal shared evidence may be ignored, created as new, or matched and updated on the target case, reflecting how a caseworker would handle the evidence manually."
+                  },
+                  {
+                    "title": "Implementing an Automation Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Explains how to implement an evidence automation strategy for Person-case sharing using the PDCEvidence interface. The strategy must decide whether shared evidence is ignored, inserted as new, or used to update a matching existing record. It notes that a business analyst typically defines the rules, custom strategies are important because normal business validations are disabled during sharing, and default behavior may cause duplicates. It also covers handling logically equivalent sharing between different evidence types and related attribute-matching considerations."
+                  },
+                  {
+                    "title": "Configuring an Automation Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how to configure a new automation strategy for an evidence type. First, retrieve the evidence type code from the CodeTableItem table using SQL. Then bind that code to a PDCEvidence implementation in a Guice module with MapBinder. Includes an example for “Gender Details” and shows how to override an existing implementation by linking the original class to a custom subclass."
+                  },
+                  {
+                    "title": "Example Automation Strategy",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000034",
+                      "start_page": 33,
+                      "end_page": 34
+                    },
+                    "summary": "Shows an example automation strategy for Person/Prospect Person evidence sharing, using the Gender Evidence strategy for the Gender Details product evidence type. Includes Java class `PDCGenderEvidenceImpl` extending `AbstractPDCEvidenceImpl`, with methods such as `isMultipleTimeLinePerType`, `matchAllEvidenceDetails`, and `matchEvidenceDetails`. Illustrates how exact and partial match logic is defined for dynamic evidence sharing, and notes that gender evidence is not multi-timeline per type."
+                  }
+                ],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000034",
+                  "start_page": 30,
+                  "end_page": 34
+                },
+                "summary": "Explains evidence sharing automation for Person cases, where shared evidence must auto-activate because Person evidence has no in-edit state. Describes three outcomes: ignore duplicate evidence, create a new record, or update an existing match. Covers using the PDCEvidence interface to define custom matching/validation logic, including handling logically equivalent sharing and the risk of default behavior creating duplicates. Also shows how to configure a strategy with a Guice MapBinder using the evidence type code, and includes a Gender Details example implementation."
+              },
+              {
+                "title": "Selection of Primary Information",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Why Change the Selection of Primary Information?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000075",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "This section explains why primary information selection may need customization for dynamic evidence types, since primary records are chosen by background algorithms rather than user input. It introduces the default primary handler interfaces in `curam.pdc.impl` for evidence types such as address, alternate ID/name, bank account, email, and phone number. It also notes that primary handler logic is event-driven after insert, modify, or remove operations, and outlines an example for implementing a custom handler, such as selecting the latest-start-date phone number."
+                  },
+                  {
+                    "title": "Changing the Selection of Primary Information",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Explains how dynamic evidence selects “primary” data via background algorithms rather than user choice, unlike legacy participant manager entities. Describes why the default selection may need changing and how to customize it using default primary handler interfaces in curam.pdc.impl for evidence types like address, bank account, email, and phone. Notes that primary handler implementations are event-driven after insert/modify/remove operations and may require a new event listener for new evidence types. Includes an example where the primary phone number is chosen by the latest start date."
+                  },
+                  {
+                    "title": "Changing the Selection of Primary Information Example",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Provide a Primary Handler Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000078",
+                        "range": {
+                          "start_unit_id": "p000035",
+                          "end_unit_id": "p000036",
+                          "start_page": 35,
+                          "end_page": 36
+                        },
+                        "summary": "Explains how to implement a primary handler for dynamic evidence when the system’s default primary-record selection is not suitable. It contrasts legacy user-driven primary indicators with event-driven, algorithmic selection, lists the available primary handler interfaces, and gives a phone-number example. The sample `PDCPrimaryPhoneNumberHandler` implementation selects the phone number with the latest start date, compares it to the current primary, and updates the concern role if needed."
+                      },
+                      {
+                        "title": "Step 2: Add a Binding to the New Primary Handler Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000079",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000037",
+                          "start_page": 37,
+                          "end_page": 37
+                        },
+                        "summary": "Explains how to register a new primary phone number handler in Guice by adding a binding in a module, mapping `PDCPrimaryPhoneNumberHandler` to `SamplePrimaryPhoneNumberHandlerImpl`. Notes that new Guice modules must also be added to the `ModuleClassName` database table. The excerpt then transitions into reciprocal evidence, introducing the concept, why a `ReciprocalEvidenceConversion` implementation is needed, and the `GlobalEvidenceHook` with post-insert, post-modify, and post-remove methods."
+                      }
+                    ],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000036",
+                      "start_page": 35,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how dynamic evidence chooses primary records via background algorithms instead of user-set primary indicators, and when custom selection logic is needed. Lists available primary handler interfaces, especially PDCPrimaryPhoneNumberHandler. The example shows implementing SamplePrimaryPhoneNumberHandlerImpl to select the phone number with the latest start date, compare it to the current primary, and update the concern role if needed. Also notes that primary handlers are event-driven after insert/modify/remove operations."
+                  }
+                ],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000036",
+                  "start_page": 35,
+                  "end_page": 36
+                },
+                "summary": "Explains how dynamic evidence chooses primary information automatically, unlike legacy participant manager entities where users set primary indicators. Describes when and why to customize the default business strategy, and lists the built-in primary handler interfaces in `curam.pdc.impl` for address, alternate ID/name, bank account, email, and phone. Notes that handlers are event-driven after insert/modify/remove, and new evidence types need an event listener. Includes a phone-number example selecting the latest start date and updating the concern role if the primary changes."
+              },
+              {
+                "title": "Reciprocal Evidence",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Why Provide a Reciprocal Evidence Implementation?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000081",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains reciprocal evidence as paired evidence that must be processed together, such as spouse relationships where updating one person updates the corresponding record for the other. States that any new reciprocal dynamic evidence type must implement ReciprocalEvidenceConversion. Introduces the GlobalEvidenceHook, a post-operation hook in curam.core.sl.infrastructure.impl that triggers after insert, modify, or remove, with methods postInsertEvidence, postModifyEvidence, and postRemoveEvidence taking caseKey and evKey."
+                  },
+                  {
+                    "title": "Reciprocal Evidence Implementations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000082",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000038",
+                      "start_page": 37,
+                      "end_page": 38
+                    },
+                    "summary": "Explains reciprocal evidence processing in Cúram: paired evidence records must be inserted, modified, or removed together (e.g., spouse relationships). Introduces the GlobalEvidenceHook, invoked after evidence operations, with postInsert/modify/remove and pending discard methods. The default hook calls the reciprocal evidence handler, which syncs or creates matching reciprocal evidence and is not directly customizable. The main extension point is implementing ReciprocalEvidenceConversion, which creates and updates reciprocal evidence, identifies primary/related participants, and matches evidence details."
+                  },
+                  {
+                    "title": "Reciprocal Evidence Implementation Example",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Provide a Reciprocal Evidence Conversion Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000084",
+                        "range": {
+                          "start_unit_id": "p000040",
+                          "end_unit_id": "p000040",
+                          "start_page": 40,
+                          "end_page": 40
+                        },
+                        "summary": "Provides a Java example of a `ReciprocalEvidenceConversion` implementation for WORKINGRELATIONSHIP dynamic evidence. It shows how `getReciprocal` creates reciprocal evidence by swapping `participant` and `relatedParticipant` values and converting `ISMANAGEROF` to `ISMANAGEDBY`, using injected evidence type DAOs and the active version definition. The excerpt begins `getUpdatedReciprocal`, indicating logic for updating an existing reciprocal based on modified original data."
+                      },
+                      {
+                        "title": "Step 2: Add a Binding to the New Reciprocal Evidence Conversion Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000085",
+                        "range": {
+                          "start_unit_id": "p000041",
+                          "end_unit_id": "p000041",
+                          "start_page": 41,
+                          "end_page": 41
+                        },
+                        "summary": "Explains how to register a new reciprocal evidence conversion implementation using Guice MapBinder bindings, including a sample module binding WORKINGRELATIONSHIP to a custom conversion class. Notes that new Guice modules must also be added to the ModuleClassName database table. Summarizes reciprocal evidence limitations: it must be temporal evidence, have or derive participant/related participant, changes to original and reciprocal evidence must be applied together, automatic processing requires both related participants to be MEMBER or PRIMARY on the same case or person/prospect person evidence, and support is limited to correction-only evidence types."
+                      }
+                    ],
+                    "node_id": "n000083",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000040",
+                      "start_page": 39,
+                      "end_page": 40
+                    },
+                    "summary": "Example of implementing reciprocal dynamic evidence for WORKINGRELATIONSHIP. It shows a `ReciprocalEvidenceConversion` class that creates reciprocal evidence by swapping `participant` and `relatedParticipant` and mapping `ISMANAGEROF` to `ISMANAGEDBY`, using active evidence type/version DAOs. It also introduces `getUpdatedReciprocal` for updating an existing reciprocal from modified source data. The section sets up the need for this implementation and notes that the reciprocal evidence must be registered via a Guice binding in the next step."
+                  },
+                  {
+                    "title": "Reciprocal Evidence Limitations",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000086",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "This section lists limitations of reciprocal evidence handling: it applies only to temporal evidence (static, dynamic, or generated), requires a participant and related participant or logic to derive them, and original/reciprocal changes on the same case must be applied together to avoid data mismatch. It can be processed automatically only when both related participants are MEMBER or PRIMARY on the same case, or for person/prospect person evidence, and is supported only for evidence types modeled to allow corrections."
+                  }
+                ],
+                "node_id": "n000080",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000040",
+                  "start_page": 37,
+                  "end_page": 40
+                },
+                "summary": "Explains reciprocal evidence, where paired records (e.g., spouse/relationship) must be inserted, modified, or removed together. Describes the GlobalEvidenceHook in `curam.core.sl.infrastructure.impl`, which runs after evidence operations and delegates to the reciprocal evidence handler. The main customization point is `ReciprocalEvidenceConversion`, which creates, updates, matches, and maps primary/related participants for reciprocal evidence. Includes a working relationship example and notes reciprocal evidence limitations and the need to register implementations via Guice binding."
+              },
+              {
+                "title": "Participant Data Case Owner",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Why Change the Participant Data Case Owner?",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000088",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "Explains why the Participant Data Case owner might be changed: to enforce tighter control over participant ownership. Describes that a person/prospect person registration creates a background “Participant Data Case” owned by the logged-in user by default, and that ownership can be customized through the PDCCaseOwnerAssignmentStrategy interface in curam.pdc.impl. Notes the interface’s createOwner method and that it takes the Participant Data Case identifier as an input."
+                  },
+                  {
+                    "title": "Changing the Participant Data Case Owner",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000089",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "Explains how to change the owner of a Participant Data Case created when a person/prospect person is registered. By default, the case owner is the logged-in user, but ownership can be customized via the `PDCCaseOwnerAssignmentStrategy` interface in `curam.pdc.impl`, which provides a `createOwner` method. Useful for tighter control over participant ownership."
+                  },
+                  {
+                    "title": "Changing the Participant Data Case Owner Example",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Step 1: Provide a Case Owner Assignment Strategy Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000091",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "Shows how to implement a Participant Data Case owner assignment strategy in Cúram 8.1.2. The example `PDCCaseOwnerAssignmentStrategy` sets the case owner to the system user by creating an org object link, inserting a `CaseUserRole` as OWNER, and updating `CaseHeader.ownerOrgObjectLinkID`. It also explains registering the implementation with Guice by binding the interface to `SampleCaseOwnerAssignmentStrategyImpl` in a module."
+                      },
+                      {
+                        "title": "Step 2: Add a Binding to the Case Owner Assignment Strategy Implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000092",
+                        "range": {
+                          "start_unit_id": "p000042",
+                          "end_unit_id": "p000042",
+                          "start_page": 42,
+                          "end_page": 42
+                        },
+                        "summary": "Shows how to register a custom Participant Data Case owner assignment strategy with Guice. After implementing `PDCCaseOwnerAssignmentStrategy` to assign the case owner (example uses the system user), the module binds `PDCCaseOwnerAssignmentStrategy` to `SampleCaseOwnerAssignmentStrategyImpl` in `configure()`. This section is specifically about adding the binding needed for the implementation to be used."
+                      }
+                    ],
+                    "node_id": "n000090",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "Explains how to change the Participant Data Case owner in Cúram 8.1.2 so the owner becomes the system user. It shows a `PDCCaseOwnerAssignmentStrategy` implementation that creates a user org object link, inserts a `CaseUserRole` with OWNER, and updates `CaseHeader.ownerOrgObjectLinkID`. It also shows registering the custom strategy with Guice by binding `PDCCaseOwnerAssignmentStrategy` to `SampleCaseOwnerAssignmentStrategyImpl` in a module."
+                  },
+                  {
+                    "title": "Setting the Case Owner for Participant Data Cases Created by System Processes",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000093",
+                    "range": {
+                      "start_unit_id": "p000043",
+                      "end_unit_id": "p000046",
+                      "start_page": 43,
+                      "end_page": 46
+                    },
+                    "summary": "Explains how to set the owner for Participant Data Cases when they are created by system processes such as deferred processes or batch jobs. Use application properties curam.case.owner.system.user.type and curam.case.owner.system.user.reference. The first property selects the user type from OrgObjectType (for example, user, organization unit, position, or work queue); the second specifies the unique reference, such as a username or position ID. Includes only this configuration guidance; the remaining pages are legal notices."
+                  }
+                ],
+                "node_id": "n000087",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000046",
+                  "start_page": 41,
+                  "end_page": 46
+                },
+                "summary": "Explains how to control ownership of Participant Data Cases created when a person or prospect person is registered. By default the case owner is the logged-in user, but custom ownership can be implemented with `PDCCaseOwnerAssignmentStrategy.createOwner` in `curam.pdc.impl`; an example sets ownership to the system user and registers it with Guice. Also covers configuring owners for Participant Data Cases created by system processes using `curam.case.owner.system.user.type` and `curam.case.owner.system.user.reference`. Remaining pages are legal notices."
+              }
+            ],
+            "node_id": "n000044",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000046",
+              "start_page": 18,
+              "end_page": 46
+            },
+            "summary": "Covers customization of Person/Prospect Person evidence: replicators for syncing dynamic evidence to legacy tables (including extending built-ins for custom columns and creating new event-driven replicators), converters for development/upgrade data migration, evidence sharing automation, primary information selection handlers, reciprocal evidence processing, and Participant Data Case owner assignment. Includes extension points, Guice binding patterns, and examples such as Phone Number, Gender, Working Relationship, and system user ownership. Also notes default behavior, limitations, and when custom logic is needed."
+          }
+        ],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000046",
+          "start_page": 9,
+          "end_page": 46
+        },
+        "summary": "This section explains how to develop person/prospect person evidence solutions in Cúram. It covers the evidence model and flow, dynamic evidence types, validation rules, evidence sharing/brokering, and how dynamic evidence maps to legacy tables. It also highlights customization points such as replicators, converters, reciprocal evidence handling, participant data case ownership, and Guice bindings. Useful if you need technical guidance for adding or extending person/prospect person evidence or understanding related constraints and extension hooks."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "c2c4fd4816b652f7",
+    "title": "Cúram 8.1.2 Wait List Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramWaitListDeveloperGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "c2c4fd4816b652f7ecb858109560137302c095e2e284b9fe243f0453426581ba",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:19:53+00:00",
+    "page_count": 18,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramWaitListDeveloperGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Wait List Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000018",
+      "start_page": 1,
+      "end_page": 18
+    },
+    "summary": "Front matter and the main chapter on developing Cúram wait lists. It defines a wait list as a list of clients awaiting a resource and explains that the framework is lightweight, generic, and customizable via extension points and customizable interfaces. Key topics include the default package `curam.waitlist.impl`, replacing implementations with Guice/module bindings, renumbering logic for create/update/cancel/expire/allocate actions, and workflow events for entry created/updated/allocated/removed/expired/selected for review/deferred.\n\nIt also covers how to implement a new wait list using `WaitListType` and a `Resource` implementation, plus integration with Provider Management and Funded Program Management. Operational topics include the Expire Wait List Entry and Wait List Review batch jobs, required batch launcher settings for review-task generation, and application properties `curam.waitlist.statusreviewreminderperiod` and `curam.waitlist.statusreviewintervalperiod`. The remaining pages are notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section before using the information or the supported product. It also shows the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory edition/front-matter for Cúram 8.1/8.1.1/8.1.2 and the start of “Developing with Wait Lists.” Covers what wait lists are, why they’re customizable, the implementation package, extension points, renumbering logic, workflow events, how to define a new wait list/resource, integrations with Provider Management and Funded Program Management, and batch jobs for expiration and review. Useful as the main entry for wait list design, customization, and operational behavior."
+          },
+          {
+            "title": "Edition — pages 15-16",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "This section explains how to configure Wait List Review batch processing and application properties. It notes that the batch launcher must have DB-to-JMS enabled, with notification host and port set, so workflow events can create review reminder tasks. It also documents two wait list properties: `curam.waitlist.statusreviewreminderperiod`, which sets the reminder offset from the expiry date (default -1, ignored), and `curam.waitlist.statusreviewintervalperiod`, which sets the number of days between entry reviews (default 0)."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000016",
+          "start_page": 5,
+          "end_page": 16
+        },
+        "summary": "Front-matter and the start of “Developing with Wait Lists” for Cúram 8.1/8.1.1/8.1.2. Introduces wait lists as customizable lists of clients awaiting resources, with default implementation package `curam.waitlist.impl`, extension points, renumbering logic, and workflow events for create/update/allocate/remove/expire/review/defer. Explains how to define a new wait list/resource and integrate with Provider Management and Funded Program Management. Also covers batch jobs for expiring and reviewing entries, plus review batch launcher requirements and properties `curam.waitlist.statusreviewreminderperiod` and `curam.waitlist.statusreviewintervalperiod`."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "States that the document’s examples use fictitious names and are for illustration only. Includes copyright/license terms for sample source programs, allowing copying, modification, and distribution for compatible application development, but with no warranty and no liability from Merative. Points to the Merative privacy policy URL and lists trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "This section lists trademark and copyright notices for Merative and third-party products, including IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. It also includes a privacy policy link, a copyright license for sample programs (with “AS IS” warranty disclaimer), and notes that example names are fictitious. Useful for legal, licensing, and attribution details."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000017",
+          "start_page": 17,
+          "end_page": 17
+        },
+        "summary": "Merative’s notices and permissions terms for using the publication. It covers personal and enterprise use limits, preservation of proprietary notices, and restrictions on redistribution or derivative works outside those limits. It states no additional rights are granted, permissions may be withdrawn, and export laws must be followed. The publication is provided “AS IS” with no warranties, and Merative disclaims liability for non-Merative products and external websites. Includes patent notice and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition, Notices, Privacy policy, Trademarks) and the main chapter “Developing with Wait Lists,” covering why to customize a wait list, code package, customization points, replacing implementations, events reference, implementing a new wait list, integration with Provider Management and Cúram Funded Program Management, batch jobs, and application property configuration. Useful as a navigation overview rather than substantive content."
+      },
+      {
+        "title": "1 Developing with Wait Lists",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Why Customize a Wait List?",
+            "level": 2,
+            "children": [
+              {
+                "title": "What is a Wait List?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Defines a wait list as a list of clients awaiting a specified resource, such as a facility place, and explains that clients can be added to a position or the end of the list and moved up or down as needs change. It introduces Cúram wait lists as a lightweight, generic implementation designed for broad use across SEM industry segments, emphasizing customization via extension points and configurable interfaces. Also notes the implementation uses the Persistence Infrastructure approach in package `curam.waitlist.impl`."
+              },
+              {
+                "title": "Code Package",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces Cúram wait lists and explains that they are lightweight, generic lists of clients awaiting a resource, with customizable behavior via extension points and interfaces. It emphasizes why customization is important for diverse SEM agency needs and describes basic wait-list actions like adding clients by position or at the end and adjusting their order. The code package note says the implementation uses the Persistence Infrastructure approach and resides in curam.waitlist.impl."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains why Cúram wait lists must be customized: SEM agencies have diverse wait-list needs across services, funding, and third-party arrangements. The section presents Cúram wait lists as a lightweight, generic framework with extension points and customizable interfaces to alter default behavior. It also defines a wait list as a list of clients awaiting a resource, where clients can be added at a position or end and moved up or down. Implementation uses the Persistence Infrastructure in `curam.waitlist.impl`."
+          },
+          {
+            "title": "1.2 Customization Points",
+            "level": 2,
+            "children": [
+              {
+                "title": "Replacing Implementations",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Renumbering of Wait List entries",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Interface location",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000016",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "Describes the customization point for wait list renumbering. The interface location is `curam.waitlist.impl.WaitListRenumberLogic`, with a default implementation that adjusts positions of open wait list entries when entries are created, canceled, expired, or allocated. It explains that new entries increment positions at or above the inserted position, while removals or expiries decrement higher positions. Includes an example of inserting a new entry at position 5 into a list numbered 1–10."
+                      },
+                      {
+                        "title": "Default implementation",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000017",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "Explains the default wait list renumbering implementation and how it can be replaced via a custom Guice module in the MODULE table. The default logic updates positions when entries are created, canceled, expired, or allocated: it increments positions for open entries at or above an inserted position, and decrements positions above a removed position. Includes an example of inserting a new entry at position 5 in a list of 10 clients."
+                      }
+                    ],
+                    "node_id": "n000015",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Describes how wait list entries are renumbered via the customizable interface `curam.waitlist.impl.WaitListRenumberLogic`. The default implementation, replaceable through a Guice module entry in the MODULE table, increments positions for open entries at or above a newly inserted position and decrements positions above a removed/canceled/expired entry. Applies during create/modify/cancel/expire/allocate operations, with an example inserting a new entry at position 5 into a 1–10 wait list."
+                  }
+                ],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains how to replace default implementations using Google Guice and the MODULE table, noting upgrade risks if done non-compliantly. It focuses on wait list customization via `curam.waitlist.impl.WaitListRenumberLogic`, which can be overridden to renumber entries by different criteria. The default logic adjusts open wait list positions on create, modify, cancel, expire, and allocate: it increments positions at or above a new entry’s position and decrements positions above removed or expired entries, with an example inserting at position 5 in a 1–10 list."
+              },
+              {
+                "title": "Events Reference",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "Describes wait list renumbering behavior after cancel, expire, allocate, and update operations, including how open entries’ positions are shifted when entries are removed or moved. Main content is an Events Reference listing wait-list workflow events and their triggers/implementations: creation, update, allocation, removal, expiration, review selection, and review deferral. Each event includes the event ID, data payload (waitListEntryID), and the raised-from method/job. Useful for developers implementing custom workflows or event listeners."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000012",
+              "start_page": 10,
+              "end_page": 12
+            },
+            "summary": "Explains wait list customization points: default implementations can be replaced via Google Guice modules registered in the MODULE table, though non-compliant changes may complicate upgrades. The main extension point is `curam.waitlist.impl.WaitListRenumberLogic`, which renumbers open wait-list positions on create, modify, cancel, expire, and allocate operations. Also lists wait-list workflow events for custom automation: entry created, updated, allocated, removed, expired, selected for review, and review deferred, with event IDs and source methods."
+          },
+          {
+            "title": "1.3 Implementing a new Wait List",
+            "level": 2,
+            "children": [],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "Explains how to implement a new wait list type: add a custom WaitListType code table entry, create a resource that extends `curam.waitlist.impl.Resource`, and implement the required methods in the corresponding class. Includes example `Provider` interface/implementation methods such as `getResourceID()` and `getResourceType()`. Also notes that wait list APIs for add/modify/cancel, history, and search are documented in Javadocs, and introduces integration with Provider Management for wait-listing clients when no suitable provider is available."
+          },
+          {
+            "title": "1.4 Integrating with other systems",
+            "level": 2,
+            "children": [
+              {
+                "title": "Integrating with Provider Management",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how Cúram wait lists integrate with Provider Management. If no suitable provider is available, caseworkers can add clients to a provider wait list in CPM for non-placement or placement services, either at the provider level or for a specific provider offering. The section also notes that custom wait list types must be added to the WaitListType code table, with new resources implementing the curam.waitlist.impl.Resource interface."
+              },
+              {
+                "title": "Integrating with Cúram Funded Program Management",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains how wait lists integrate with Cúram Funded Program Management and how wait list batch jobs work. It notes that clients may be wait-listed when funds are insufficient, such as for child care obligations; when funds become available, obligations can be reassessed and processed. It also covers wait list behavior for placement services, including selecting available places, handling multiple providers, and canceling overlapping reservations. Two batch jobs are described: Expire Wait List Entry and Review Wait List Entry, which generate review reminders based on review or derived dates."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000013",
+              "start_page": 13,
+              "end_page": 13
+            },
+            "summary": "Explains how Cúram wait lists integrate with other systems, especially Provider Management and Funded Program Management. In Provider Management, caseworkers can add clients to provider wait lists when no suitable provider is available, for either non-placement or placement services, at the provider level or for a specific offering. It also points to custom wait list setup via the WaitListType code table and Resource interface, and notes support for wait list batch jobs and funding-based wait listing in Funded Program Management."
+          },
+          {
+            "title": "1.5 Wait List Batch Jobs",
+            "level": 2,
+            "children": [],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000014",
+              "start_page": 14,
+              "end_page": 14
+            },
+            "summary": "This section describes two wait list batch jobs: Expire Wait List Entry, which expires entries after their expiration date, and Review Wait List Entry, which selects entries due for review and raises workflow events to create review reminder tasks. It explains that review tasks are generated for entries with a review date on or before the batch date, and that if no review date exists, it is derived from the expiry date minus the configured Status Review Reminder Period."
+          },
+          {
+            "title": "1.6 Configuring Wait List Application Properties",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuration of Wait List Review properties",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "curam.waitlist.statusreviewreminderperiod",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains wait list review configuration properties. `curam.waitlist.statusreviewreminderperiod` sets the reminder period for status review, subtracted from the expiry date to derive the review date when none is specified; default is -1, meaning ignored. Also mentions `curam.waitlist.statusreviewintervalperiod`, which controls the number of days between wait list entry reviews, with default 0. Context notes that batch launcher DB-to-JMS settings must be enabled for review reminder tasks to be generated."
+                  },
+                  {
+                    "title": "curam.waitlist.statusreviewintervalperiod",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000018",
+                      "start_page": 15,
+                      "end_page": 18
+                    },
+                    "summary": "Explains wait list application properties for status review configuration. The key property curam.waitlist.statusreviewintervalperiod sets the number of days between two wait list entry reviews, with default value 0. It also notes related review reminder settings and that wait list review batch jobs require batch launcher DB-to-JMS configuration (enabled, host, port) to generate workflow reminder tasks successfully. The rest of the pages are standard notices and legal/licensing text."
+                  }
+                ],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000018",
+                  "start_page": 15,
+                  "end_page": 18
+                },
+                "summary": "Describes configuration of Wait List Review properties in Cúram. It explains `curam.waitlist.statusreviewreminderperiod`, which sets the reminder period subtracted from the expiry date to derive the review date when none is specified; default is `-1` (ignored). It also covers `curam.waitlist.statusreviewintervalperiod`, which sets the number of days between wait list entry reviews; default is `0`. Notes that batch launcher DB-to-JMS settings must be enabled for review reminder workflow tasks to be generated."
+              }
+            ],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000018",
+              "start_page": 15,
+              "end_page": 18
+            },
+            "summary": "Explains how to configure Wait List application properties in Cúram. Covers `curam.waitlist.statusreviewreminderperiod`, which sets the reminder period subtracted from the expiry date to derive a review date when none is specified (default `-1`, ignored), and `curam.waitlist.statusreviewintervalperiod`, which sets the number of days between wait list entry reviews (default `0`). Also notes that to generate review reminder workflow tasks, batch launcher DB-to-JMS settings must be enabled."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000018",
+          "start_page": 9,
+          "end_page": 18
+        },
+        "summary": "This section introduces Cúram wait lists as a lightweight, generic framework for clients awaiting resources and explains how to design, customize, implement, and configure them. It covers extension points and Guice-based implementation replacement, renumbering logic, workflow events, creating new wait list types via WaitListType and Resource, integration with Provider Management and Funded Program Management, batch jobs for expiring and reviewing entries, and key application properties that control review timing and reminders."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

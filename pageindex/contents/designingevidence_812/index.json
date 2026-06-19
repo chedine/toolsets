@@ -1,0 +1,201 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "5863857555301614",
+    "title": "Cúram 8.1.2 Designing Evidence Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/DesigningEvidence_812.pdf",
+    "source_type": "pdf",
+    "sha256": "586385755530161416eabbd6a427052131176693d435dcf66dd31261b4768a5f",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:07:22+00:00",
+    "page_count": 18,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/DesigningEvidence_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Designing Evidence Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000018",
+      "start_page": 1,
+      "end_page": 18
+    },
+    "summary": "Front matter for the Cúram 8.1.2 Designing Evidence Guide. It includes the introductory note, edition statement, table of contents, and legal notices/trademarks/privacy information.\n\nThe substantive content introduces evidence design in Cúram and explains the key choice between dynamic evidence (recommended; configurable in the admin app; supports effective dating and shared storage) and static evidence (mainly for special cases such as encryption; separate tables; more manual implementation and validations). It then covers how to model real-world data as evidence: defining attributes and hierarchies, reusing delivered types, handling multiple instances, effective-date changes, evidence groups, verification, sharing between person and case levels, and multi-participant evidence.\n\nThe section also previews sample designs for Address, Employment, SSN, and Medical Condition evidence, plus delivered person-level evidence types such as birth/death, gender, name, identifications, bank accounts, postal addresses, email, phone, contact preferences, and relationships.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note for the document. It tells readers to review the Notices section on page 17 before using the information or the product it supports. Includes copyright attribution to Merative US L.P. for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory chapter on evidence design in Cúram 8.1–8.1.2. Covers when to use dynamic vs static evidence, noting dynamic is recommended while static may suit encryption or rare cases. Explains how to model real-world data into evidence types, including hierarchy, reuse of default types, multiple instances, effective dating, evidence groups, multiple participants, verification, and sharing between person and case levels. Includes sample configurations for Address, Employment, SSN details, and Medical condition details, plus delivered person-level evidence types such as birth/death, gender, name, identifications, and bank accounts."
+          },
+          {
+            "title": "Edition — pages 15-16",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "This section explains how different evidence types are modeled over time in Cúram. It covers postal addresses, email addresses, phone numbers, contact preferences, and relationships, noting which are correction-only and which can change over time. It explains that addresses and email periods are represented by start/end dates, phone numbers and contact preferences can change and be corrected, and relationships use start/end dates, reciprocal relationship management, and correction-only handling."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000016",
+          "start_page": 5,
+          "end_page": 16
+        },
+        "summary": "Introductory chapter on designing evidence in Cúram 8.1–8.1.2. Explains when to choose dynamic evidence (recommended, easier administration, effective-date support) versus static evidence (rare cases like encryption). Covers how to model real-world data into evidence types: hierarchy, reuse of default types, multiple instances, effective dating, evidence groups, multiple participants, verification, and sharing across person/case levels. Includes sample configurations for Address, Employment, SSN, and Medical condition evidence, plus delivered person-level evidence types such as birth/death, gender, name, IDs, bank accounts, addresses, email, phone, contact preferences, and relationships."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Contains legal notices for the document: fictitious example names, sample program copyright/license terms, and warranty/liability disclaimers. Points to the Merative privacy policy URL and lists trademark ownership for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, UNIX, and others. Includes copyright notice © Merative US L.P. 2012, 2024."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands, including IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. Also states sample data and source programs are fictitious, provided “as is” under the Merative Client Agreement, and may be copied/modified/distributed for API-conforming development. Includes a privacy policy link and a 2012, 2024 copyright notice."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000017",
+          "start_page": 17,
+          "end_page": 17
+        },
+        "summary": "Legal notices and usage terms for the publication: permissions for personal and enterprise use, restrictions on redistribution/derivative works, export-law compliance, and Merative’s right to revoke permissions. Includes strong warranty/liability disclaimers, patent notice, third-party product/website disclaimer, and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. Lists front matter (Note, Edition), chapter 1 “Designing evidence” with subsections on dynamic vs. static evidence, modeling real-life data, evidence design examples, and person evidence, plus notices on privacy policy and trademarks. Indicates page locations for each entry."
+      },
+      {
+        "title": "1 Designing evidence",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Dynamic and static evidence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains the choice between dynamic and static evidence. Dynamic evidence is the recommended, newer approach: it is configured and published in the administration application, needs less technical input, supports effective-date changes, and uses two shared database tables. Static evidence is mainly for special cases such as encryption; it stores each evidence type in separate tables, lacks effective-date support, and requires hand-crafted validations. Static development is slower and may require manual metadata setup or Evidence Generator-specific modeling."
+          },
+          {
+            "title": "1.2 Modelling real-life data as evidence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000010",
+              "start_page": 10,
+              "end_page": 10
+            },
+            "summary": "This section explains how to model real-life data as Cúram evidence. It covers identifying the data to capture, defining evidence attributes and data types, and deciding whether evidence should be simple or hierarchical (parent/child/grandchild). It also discusses choosing whether to reuse default evidence types, handling single vs. multiple concurrent instances, using Effective Date of Change for partial updates, and assigning evidence to evidence groups for dashboard display."
+          },
+          {
+            "title": "1.3 Evidence design examples",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000013",
+              "start_page": 11,
+              "end_page": 13
+            },
+            "summary": "Explains evidence design considerations: whether evidence can apply to multiple participants, needs verification, and should be shared between person and case records. Then gives sample configurations for four evidence types—Address, Employment, SSN details, and Medical condition details—showing attributes, where each can be configured (application, person/prospect person, integrated case), verification items and case types, and sharing/mapping options such as identical or logically equivalent evidence mapping."
+          },
+          {
+            "title": "1.4 Person evidence",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000018",
+              "start_page": 14,
+              "end_page": 18
+            },
+            "summary": "Describes Cúram “person evidence” used to store standard person data shared across applications/programs. Lists 10 delivered evidence types and how each is maintained: some are correction-only (birth/death, identifications, bank accounts, postal addresses, email, relationships), while others can change over time and/or be corrected (gender, name, phone number, contact preferences). Explains start/end date behavior, uniqueness rules for certain records, and special handling for relationships, including reciprocal relationship management. Includes surrounding legal notices on pages 17–18."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000018",
+          "start_page": 9,
+          "end_page": 18
+        },
+        "summary": "Covers evidence design in Cúram. Compares dynamic vs static evidence: dynamic is recommended, configured in the admin app, supports effective-date changes, and uses shared tables; static is mainly for special cases like encryption, uses separate tables, needs hand-built validations, and is slower to develop. Explains how to model real-life data as evidence: choose attributes, hierarchy, reuse of default types, single vs multiple instances, effective-date changes, evidence groups, verification, sharing, and multi-participant updates. Includes sample configurations and delivered person evidence types."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

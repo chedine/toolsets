@@ -1,0 +1,452 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "4a89025a70567730",
+    "title": "Cúram 8.1.2 Priority Complexity Risk Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/PCRConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "4a89025a7056773096450834a1b6228bfd44e4a3c6b2a23d585b6efd6b65085a",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T23:17:05+00:00",
+    "page_count": 18,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/PCRConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Priority Complexity Risk Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000018",
+      "start_page": 1,
+      "end_page": 18
+    },
+    "summary": "Front matter for the Cúram 8.1.2 Priority Complexity Risk Configuration Guide. It includes the title, note, edition/purpose, table of contents, and full legal pages (notices, privacy policy, trademarks). The guide targets administrators configuring PCR processing and covers: creating a PCR configuration, associating it with a case type, deferred/manual/automatic assessments, configuration lifecycle and publish rules, PCR range mappings, and building PCR rule sets in CER. It also lists required PCR rule attributes (caseID, description, priority/complexity/risk rates and reasons) and explains how to supply localized rule-set text via a properties file and Dynamic UIM resource store entry.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note stating that before using the information and the supported product, the reader should review the Notices section on page 17. Includes Merative US L.P. copyright information (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This edition page states the guide applies to Cúram 8.1, 8.1.1, and 8.1.2 and introduces the PCR (Priority, Complexity, Risk) configuration guide. It covers purpose, audience, related reading, and the chapters included. The section outlines PCR configuration basics: creating a configuration, associating it with a case type, deferred/manual/automatic assessments, lifecycle/publishing rules, PCR range mappings, and PCR rule set structure and required attributes."
+          },
+          {
+            "title": "Edition — pages 15-16",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000016",
+              "start_page": 15,
+              "end_page": 16
+            },
+            "summary": "Edition and section header pages. Includes the chapter title “Configuring Priority, Complexity, Risk Processing” and a brief note about configuring a PCRSample.properties entry in the Dynamic UIM administration section, with a page ID, resource store category, and properties file. Also identifies the product/version as Cúram 8.1.2 and copyright information. Useful mainly as a navigational/metadata node rather than substantive content."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000016",
+          "start_page": 5,
+          "end_page": 16
+        },
+        "summary": "Edition and introductory pages for the PCR (Priority, Complexity, Risk) configuration guide for Cúram 8.1, 8.1.1, and 8.1.2. Covers purpose, audience, selected reading, and chapter roadmap. Introduces PCR configuration basics: creating a configuration, linking it to a case type, deferred/manual/automatic assessments, lifecycle/publication rules, range mappings, and rule set structure. Also documents required PCR rule attributes and how to add rule-set text via a properties file and Dynamic UIM resource store entry."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "This section covers legal notices for the document: sample data disclaimer, copyright/license terms for sample programs, liability and warranty limits, a link to Merative’s privacy policy, and a trademarks notice listing Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX. It is useful if you need permissions, usage restrictions, privacy policy reference, or trademark attribution details."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000018",
+              "start_page": 18,
+              "end_page": 18
+            },
+            "summary": "This section lists trademark and copyright notices for Merative and third-party products. It states that sample names in the document are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and those samples are provided “AS IS” without warranty. It also points to Merative’s privacy policy and names trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000017",
+          "end_unit_id": "p000017",
+          "start_page": 17,
+          "end_page": 17
+        },
+        "summary": "This notices page states the publication’s use terms: personal use and internal enterprise copying are allowed only if proprietary notices are preserved, while redistribution, derivative works, and external use require Merative’s consent. It also disclaims warranties (“AS-IS”), limits rights and export/re-export, notes possible patent coverage, says non-Merative product information is unverified, and marks third-party website links as non-endorsed. Useful for copyright, usage, liability, and legal restrictions."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for a guide on configuring Priority, Complexity, Risk (PCR) processing. Lists Chapter 1 topics: introduction, creating a PCR configuration, range mappings, and configuring a PCR rule set. Also includes subtopics such as selecting a rule set, associating with a case, deferred processing, running/manually entering assessments, lifecycle, mandatory rule attributes, and rule set properties text. Includes front matter entries (Note, Edition) and legal pages (Notices, Privacy policy, Trademarks)."
+      },
+      {
+        "title": "1 Configuring Priority, Complexity, Risk Processing",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Introduction",
+            "level": 2,
+            "children": [
+              {
+                "title": "Purpose",
+                "level": 3,
+                "children": [],
+                "node_id": "n000011",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the guide for configuring Priority, Complexity, Risk (PCR) processing. It explains that PCR ratings can be calculated automatically through administrator-defined rule sets or entered manually by a case worker, and that PCR must be configured before use. It is aimed at administrators familiar with Cúram system administration and code tables, with prior Cúram Express Rules knowledge needed for rule set configuration. It also points readers to related Cúram documentation and notes that the next chapter covers creating a PCR configuration."
+              },
+              {
+                "title": "Audience",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Intended for administrators configuring the PCR component. Assumes familiarity with Cúram system administration, code tables, and, for rule set configuration, Cúram Express Rules. The section explains that Priority, Complexity, Risk ratings can be calculated automatically via administrator-defined rule sets or entered manually by a case worker, and that PCR must be configured before use. It also points to related reading and notes the guide includes a chapter on creating a PCR configuration."
+              },
+              {
+                "title": "Selected Reading",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Selected Reading lists related documentation for PCR configuration: Common Intake Guide for PCR overview, Working with Cúram Express Rules for creating rule sets, and the Cúram Express Rules Reference Manual for language, development, and runtime details. It also notes that this guide is for administrators configuring Priority, Complexity, Risk processing, assumes familiarity with code tables and Express Rules, and includes a chapter on creating a PCR configuration."
+              },
+              {
+                "title": "Chapters in this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section introduces the guide for configuring Priority, Complexity, Risk (PCR) processing. It explains that PCR ratings can be calculated automatically from administrator-defined rule sets or entered manually by a case worker, and that PCR must be configured before use. It identifies the target audience as administrators familiar with Cúram code tables and, for rule sets, Cúram Express Rules. It also lists related reading and notes the guide includes a chapter on creating a PCR configuration."
+              }
+            ],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Introduces the guide for configuring Priority, Complexity, Risk (PCR) processing. PCR ratings can be calculated automatically from administrator-defined rule sets or entered manually by a case worker, and PCR must be configured before use. The audience is administrators familiar with Cúram system administration/code tables; rule set configuration also requires Cúram Express Rules knowledge. It points to related PCR and Express Rules documentation and notes the guide includes a chapter on creating a PCR configuration."
+          },
+          {
+            "title": "1.2 Creating a PCR Configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Introduction to creating a PCR configuration in Cúram 8.1.2. Covers the configuration areas available: basic details, PCR rule set selection, associating the configuration with a case, deferred processing, running a PCR assessment, and manually entering an assessment. Notes that basic details include a mandatory name and start date, an optional end date, and that configurations with the same name can coexist if their date ranges differ. Also states a valid PCR rule set can be selected to calculate case PCR ratings."
+              },
+              {
+                "title": "Basic Configuration Details",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains the basic fields for creating a PCR configuration: Name (mandatory, can be reused for different date ranges), Start Date (mandatory), and End Date (optional; if omitted, the configuration applies indefinitely from the start date). Also notes that a valid PCR rule set can be selected for the configuration. Useful for understanding the core setup details before creating or editing PCR configurations."
+              },
+              {
+                "title": "Selecting a PCR Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Explains how to select a PCR rule set for a PCR configuration. Notes that the chosen rule set is used to calculate PCR ratings for the case and must be valid. This section appears within an overview of PCR configuration settings, alongside basic details, associating a configuration with a case, deferred processing, and running or manually entering assessments."
+              },
+              {
+                "title": "Associating a PCR Configuration with a Case",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains how to associate a PCR configuration with a case type and how PCR can be processed. It covers deferred processing, manual assessment via “Assess PCR” or “Enter PCR,” and automatic PCR assessment through run points triggered by specific case events. It also lists sample automatic run points such as Evidence Applied, Application Submitted, Check Eligibility, and Add Registered Client, and notes that manual entry does not raise an event."
+              },
+              {
+                "title": "Deferred Processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Deferred Processing explains that PCR calculation can be scheduled for off-peak times to reduce performance impact, though it is not directly used OOTB. It also introduces PCR assessment execution options: manually running assessments via “Assess PCR,” manually entering a PCR classification via “Enter PCR,” and automatically running PCR at configured run points triggered by case events. Sample automatic run points include Evidence Applied, Application Submitted, Check Eligibility, and others."
+              },
+              {
+                "title": "Running a PCR Assessment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains how to run PCR assessments in case processing. It covers associating a PCR configuration with a case type, optional deferred processing, and two ways to assess PCR: manually via an “Assess PCR” option that runs PCR rules, or via “Enter PCR” for manual classification without rules. It also describes automatic PCR run points that trigger rule execution on events such as Application Submitted, Evidence Applied, and Add Program Application."
+              },
+              {
+                "title": "Manually Entering a PCR Assessment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains how PCR assessments can be entered and triggered in case processing. It covers associating a PCR configuration with a case type, optional deferred processing, manually running PCR via the “Assess PCR” option, and manually entering a PCR assessment through the “Enter PCR” checkbox/button when enabled. It also describes automatic PCR run points, such as Application Submitted and Evidence Applied, which trigger rule-based PCR calculation."
+              },
+              {
+                "title": "Automatically Running a PCR Assessment",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains how PCR assessments can run automatically in response to configured “run points” that trigger PCR rules when specific case events occur. It notes that PCR configurations are tied to a case type, that deferred processing can move calculation off-peak, and that automatic assessment may occur at events such as Application Submitted, Evidence Applied, Add Program Application, Check Eligibility, Remove Applicant, and Add Registered Client. It also distinguishes automatic running from manual PCR entry."
+              },
+              {
+                "title": "PCR Configuration Lifecycle",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains the PCR configuration lifecycle and range mapping basics. A PCR configuration starts unpublished and cannot be used for calculations until published; publishing is blocked if another configuration for the same case type has overlapping dates, and range mappings must be defined before publishing. Editing a published configuration returns it to unpublished. Also introduces PCR range mappings: each PCR type (priority, complexity, risk) needs mappings that classify numeric ranges, with required type, classification, and range start/end fields. Ranges cannot overlap within a type."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000011",
+              "start_page": 10,
+              "end_page": 11
+            },
+            "summary": "Explains how to create a PCR configuration in Cúram 8.1.2. Covers required basic details (mandatory name and start date, optional end date, same name allowed across different date ranges), selecting a valid PCR rule set, associating the configuration with a case type, and optional deferred processing. Also describes two manual assessment options (“Assess PCR” to run rules and “Enter PCR” for manual classification) plus automatic PCR run points such as Application Submitted, Evidence Applied, Check Eligibility, and Add Registered Client."
+          },
+          {
+            "title": "1.3 Configuring PCR Range Mappings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Introduces PCR configuration lifecycle and range mappings. A PCR configuration starts unpublished, cannot be used for PCR calculations until published, and must have range mappings defined before publishing. Publishing is blocked if another configuration for the same case type has overlapping dates; editing a published configuration reverts it to unpublished. The section also explains PCR range mapping settings: type, classification, range start, and optional range end. Range mappings are required for each PCR rating, cannot overlap within a type, and each classification can be used only once per type."
+              },
+              {
+                "title": "Range Mapping Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Defines the settings used to create PCR range mappings. A range mapping requires a type (priority, complexity, or risk), a classification from the PCRclassification codetable, a mandatory range start, and an optional range end. If range end is blank, the range continues indefinitely from the start. Ranges cannot overlap within a type, and each classification can be used only once per type. Range mappings must exist before a PCR configuration can be published."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000012",
+              "start_page": 12,
+              "end_page": 12
+            },
+            "summary": "Explains how to configure PCR range mappings and how they fit into the PCR configuration lifecycle. A PCR configuration starts unpublished, cannot be used for PCR calculations until published, and publishing requires range mappings and no overlapping configuration dates for the same case type. Editing a published configuration makes it unpublished again. Range mappings define textual classifications for priority, complexity, and risk using PCRType and PCRclassification codetables, with mandatory range start and optional range end; blank end means indefinite. Ranges cannot overlap within a type, and each classification is used once per type."
+          },
+          {
+            "title": "1.4 Configuring a PCR Rule Set",
+            "level": 2,
+            "children": [
+              {
+                "title": "Introduction",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Introduces PCR rule set configuration for calculating a case’s priority, complexity, and risk ratings. Explains that each PCR component is modeled as an attribute, and successful rules can add weight to the overall result, determining final rating and classification. Describes that a PCR rule set must inherit from AbstractPCR/PCRRuleSet, be created in the CER editor, and implement required attributes. Lists mandatory rule attributes such as caseID, description, priorityRate, and priorityReason."
+              },
+              {
+                "title": "Configuring a PCR Rule Set",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to configure a PCR rule set for priority, complexity, and risk processing. A PCR rule class must inherit from AbstractPCR via PCRRuleSet, be created in the CER editor, and implement the required attributes used during rule execution. The section introduces PCR rule set structure, weighted rules, and the case result calculation/classification. It also lists mandatory attributes such as caseID, description, priorityRate, and priorityReason, with descriptions of their purposes."
+              },
+              {
+                "title": "Mandatory Rule Attributes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Defines mandatory attributes for PCR rule sets and explains that PCR rules calculate case priority, complexity, and risk. The section says PCR rule classes must inherit from PCRRuleSet/AbstractPCR and provide required attributes, including the inherited description. It lists mandatory attributes shown here: caseID (case identifier), description (property-file text reference), priorityRate (calculated ranking), and priorityReason (property-file text reference). Useful for understanding PCR rule-set structure and required implementation fields."
+              },
+              {
+                "title": "Specifying Rule Set Properties Text",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000018",
+                  "start_page": 14,
+                  "end_page": 18
+                },
+                "summary": "Explains how to specify rule set properties text for Cúram rule attributes such as complexityReason and riskReason. It defines these attributes as references to localized text in a properties file, shows creating entries in a file like PCRSample.properties, and illustrates linking them with a ResourceMessage in rule XML. It also notes that the properties file must be added to the Resource Store via the Administration Application’s Dynamic UIM section. The remaining pages are mostly legal notices, copyright, privacy, and trademark information."
+              }
+            ],
+            "node_id": "n000028",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000018",
+              "start_page": 12,
+              "end_page": 18
+            },
+            "summary": "Explains how to configure a PCR rule set for priority, complexity, and risk calculations. PCR rule sets must inherit from AbstractPCR/PCRRuleSet, be created in the CER editor, and implement mandatory attributes such as caseID, description, priorityRate, priorityReason, complexityRate, complexityReason, riskRate, and riskReason. It also shows how to externalize rule text in localized properties files and register them in the Resource Store. Includes brief notes on PCR lifecycle/publishing and range mappings, then mostly legal notices."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000018",
+          "start_page": 9,
+          "end_page": 18
+        },
+        "summary": "Covers configuring Priority, Complexity, Risk (PCR) processing in Cúram. Explains PCR purpose, audience prerequisites, and related documentation. Details creating a PCR configuration: mandatory name/start date, optional end date, case type association, valid rule set selection, deferred processing, manual “Assess PCR” and “Enter PCR” options, and automatic run points. Describes PCR configuration lifecycle and publish rules. Also explains PCR range mappings and how to build PCR rule sets in CER, including required attributes and localized resource text setup."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "2a05548e8c48633c",
+    "title": "Cúram 8.1.2 Cúram JMX Developer Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramJMXDevelopersGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "2a05548e8c48633c4967e96e397303d5781e5c4f72760595a267fe51c828fe06",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:49:29+00:00",
+    "page_count": 20,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramJMXDevelopersGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Cúram JMX Developer Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000020",
+      "start_page": 1,
+      "end_page": 20
+    },
+    "summary": "Front matter for the Cúram 8.1.2 Cúram JMX Developer Guide, introducing the guide and covering legal notices. The substantive content explains how to extend Cúram JMX with custom Open MBeans to expose application operational statistics, register them in the correct runtime MBean server, and instrument code to push data only when JMX monitoring is enabled. It defines allowed Open Data types, the required MBean interface naming convention ending in StatsMBean, and optional reset() support. It also describes implementation options via CuramMBeanAbstract and built-in abstract classes for tabular stats, name-value stats, and keyed-pool stats, plus numeric counter aggregation for average/min/max/max/std dev with overflow/reset handling. The section ends with notices, privacy policy, and trademark/copyright information.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note is a brief front-matter page directing readers to review the Notices section before using the information or product. It also provides the copyright notice for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "This section introduces Cúram JMX in the 8.1/8.1.1/8.1.2 editions and explains how to expose application statistics through custom Open MBeans. It covers required JMX data types, MBean interface naming, and implementation patterns using curam.util.jmx.CuramMBeanAbstract. It also documents the provided abstract MBean classes GenericTabularStats, GenericNameValueStats, and GenericKeyedPoolStats, with usage examples for tabular and name-value statistics collection, updates, and reset support."
+          },
+          {
+            "title": "Edition — pages 15-18",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000018",
+              "start_page": 15,
+              "end_page": 18
+            },
+            "summary": "Explains how to develop with Cúram JMX by creating custom MBeans for statistics, including GenericKeyedPoolStats for keyed pool usage and NumericCounterStatisticsAggregator/NumericCounterStatistics for numeric metrics like average, min, max, and standard deviation. Shows example code, including handling overflow/reset behavior. Describes registering the new MBean in JMX configuration for EJB or Web containers, and instrumenting application code to push stats only when JMX monitoring is enabled or to reuse existing JMX services for execution tracing."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000018",
+          "start_page": 5,
+          "end_page": 18
+        },
+        "summary": "Introduces Cúram JMX for 8.1/8.1.1/8.1.2 and how to expose application operational statistics via custom Open MBeans. Covers allowed JMX data types, MBean interface naming, and implementation with CuramMBeanAbstract, plus built-in abstract classes for tabular stats, name-value stats, and keyed-pool stats. Shows numeric counter aggregation for avg/min/max/std dev with overflow/reset handling. Also explains registering MBeans in JMX config and instrumenting code to push stats only when JMX monitoring is enabled or via existing tracing services."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "This section is a legal notice page. It covers fictitious sample data disclaimers, the Merative Client Agreement, copyright/license terms for sample programs, warranty/liability disclaimers, a link to Merative’s privacy policy, trademark notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, and the © Merative US L.P. 2012, 2024 notice."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000020",
+              "start_page": 20,
+              "end_page": 20
+            },
+            "summary": "States that all example names in the document are fictitious and that the licensed program and materials are provided under the Merative Client Agreement. Includes copyright/license terms for sample source programs: you may copy, modify, and distribute them for API-conforming development, but they are provided “AS IS” without warranty or liability. Also gives the Merative privacy policy link and lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX."
+          }
+        ],
+        "node_id": "n000005",
+        "range": {
+          "start_unit_id": "p000019",
+          "end_unit_id": "p000019",
+          "start_page": 19,
+          "end_page": 19
+        },
+        "summary": "Legal notices and usage terms for the publication. Covers personal and enterprise copying limits, restrictions on distribution and derivative works, and reservation of rights. States that no additional licenses are granted, Merative may withdraw permission, and export laws must be followed. Includes “as-is” warranty/liability disclaimers, patent notice, third-party product and website disclaimer, and © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 documentation. Lists front matter entries (Note, Edition), chapter 1 “Developing with Cúram JMX” with subsections “Overview” and “What is Cúram JMX,” and a topic on using Cúram JMX to expose application statistics. Also includes Notices, Privacy policy, and Trademarks, with copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "1 Developing with Cúram JMX",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "This overview explains that the guide’s purpose is to show how to extend Cúram JMX with custom MBeans, aimed at developers exposing custom operational data. It introduces Cúram JMX as a Java Management Extensions infrastructure for instrumenting code and collecting runtime statistics, with MBean registration handled according to the runtime environment. It also notes that exposing statistics requires creating an MBean, instrumenting application code, and updating JMX infrastructure configuration."
+          },
+          {
+            "title": "1.2 What is Cúram JMX",
+            "level": 2,
+            "children": [
+              {
+                "title": "Using Cúram JMX to Expose Application Statistics",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Developing the Custom MBean",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "The Interface",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000014",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000010",
+                          "start_page": 10,
+                          "end_page": 10
+                        },
+                        "summary": "Explains how to define a JMX MBean interface for exposing statistics in tabular form and optionally supporting a reset operation. The example interface returns TabularData via getStats() and includes reset() so the JMX infrastructure can invoke it when statistics are reset. It also notes that statistics-exporting MBean interfaces should end with StatsMBean. The section begins describing implementation options and lists abstract classes such as CuramMBeanAbstract and GenericTabularStats for building custom MBeans."
+                      },
+                      {
+                        "title": "The Implementation",
+                        "level": 5,
+                        "children": [
+                          {
+                            "title": "Using CuramMBeanAbstract",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000016",
+                            "range": {
+                              "start_unit_id": "p000011",
+                              "end_unit_id": "p000012",
+                              "start_page": 11,
+                              "end_page": 12
+                            },
+                            "summary": "Shows how to implement an MBean by extending curam.util.jmx.CuramMBeanAbstract. Explains that the superclass provides access to application configuration through the execution context and helps handle configuration changes. Includes a Java example of MyStats extending CuramMBeanAbstract and implementing MyStatsMBean, with Open MBean types (CompositeType, TabularType, TabularDataSupport) used to expose statistics as name-value/tabular data. Useful for building custom JMX stats MBeans in Cúram."
+                          },
+                          {
+                            "title": "Using GenericTabularStats",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000017",
+                            "range": {
+                              "start_unit_id": "p000013",
+                              "end_unit_id": "p000013",
+                              "start_page": 13,
+                              "end_page": 13
+                            },
+                            "summary": "Describes how to use `GenericTabularStats` to build an MBean that exposes a single tabular statistics set. It lists the standard fields reported: Target, Invocations, average elapsed time, standard deviation, min/max elapsed time, and Errors. The section gives the basic implementation steps: define the MBean interface/class, extend `GenericTabularStats`, and use its provided methods to push statistics data into the MBean."
+                          },
+                          {
+                            "title": "Using GenericNameValueStats",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000018",
+                            "range": {
+                              "start_unit_id": "p000014",
+                              "end_unit_id": "p000014",
+                              "start_page": 14,
+                              "end_page": 14
+                            },
+                            "summary": "Explains how to use GenericNameValueStats to build a simple MBean for statistics organized as name-value pairs. The section says to define the MBean interface and class, extend GenericNameValueStats, and push data through its methods. It includes a Java example showing a singleton-like instance field, constructor initialization, and a static addOrUpdateStats(String name, Object value) method that calls addOrUpdateStatistics on the instance."
+                          },
+                          {
+                            "title": "Using GenericKeyedPoolStats",
+                            "level": 6,
+                            "children": [],
+                            "node_id": "n000019",
+                            "range": {
+                              "start_unit_id": "p000015",
+                              "end_unit_id": "p000015",
+                              "start_page": 15,
+                              "end_page": 15
+                            },
+                            "summary": "Explains `GenericKeyedPoolStats`, a generic MBean for exposing usage statistics for keyed pools (multiple cached items per key). It defines the available stats fields: Key, Active (average borrowed/active items), and Size (average pool size per key). The section shows how to use it: create an MBean interface/class, extend `GenericKeyedPoolStats`, and push stats via provided methods, with a code example. It then begins a related example for `NumericalCounterStatisticsAggregator`/`NumericalCounterStatistics` to compute numeric counter metrics like average, min, max, and standard deviation."
+                          }
+                        ],
+                        "node_id": "n000015",
+                        "range": {
+                          "start_unit_id": "p000010",
+                          "end_unit_id": "p000014",
+                          "start_page": 10,
+                          "end_page": 14
+                        },
+                        "summary": "Explains implementation options for Cúram JMX statistics MBeans. It introduces abstract base classes: CuramMBeanAbstract for full-control/custom MBeans with access to application configuration and reset support; GenericTabularStats for one tabular stats set (Target, Invocations, elapsed time, standard deviation, min/max, Errors); and GenericNameValueStats for name-value statistics. Includes Java usage patterns with singleton-like instance fields and static update methods, plus an example using Open MBean types (CompositeType, TabularType, TabularDataSupport)."
+                      },
+                      {
+                        "title": "Using curam.util.jmx.NumericalCounterStatisticsAggregator",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000020",
+                        "range": {
+                          "start_unit_id": "p000015",
+                          "end_unit_id": "p000016",
+                          "start_page": 15,
+                          "end_page": 16
+                        },
+                        "summary": "Shows how to use `curam.util.jmx.NumericCounterStatisticsAggregator` and `NumericCounterStatistics` to expose arithmetic metrics for a numerical counter: average, minimum, maximum, and standard deviation. Example MBean code initializes the aggregator, retrieves sample count, returns aggregated stats, and tracks an error counter with `AtomicLong`. It also handles overflow/reset behavior when adding samples. Useful if you need JMX-based numeric statistics for elapsed times or similar counters."
+                      }
+                    ],
+                    "node_id": "n000013",
+                    "range": {
+                      "start_unit_id": "p000009",
+                      "end_unit_id": "p000016",
+                      "start_page": 9,
+                      "end_page": 16
+                    },
+                    "summary": "Explains how to create custom Cúram JMX Open MBeans for application statistics. Covers required interface naming (ends in StatsMBean), optional reset support, and Open MBean data types such as TabularData and CompositeData. Describes implementation choices using abstract base classes: CuramMBeanAbstract for full custom control, GenericTabularStats for standard invocation stats, GenericNameValueStats for name/value metrics, GenericKeyedPoolStats for keyed pool usage, and NumericCounterStatisticsAggregator for averages/min/max/std dev with overflow/reset handling."
+                  },
+                  {
+                    "title": "Updating the Configuration of Cúram JMX",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to register a new custom MBean with Cúram JMX by adding it to the appropriate configuration property: `curam.jmx.configured_mbeans_ejb` for EJB container MBeans or `curam.jmx.configured_mbeans_web` for Web container MBeans. Also shows how to instrument application code to push statistics to the MBean, ideally only when `CuramJMXUtil.isJmxMonitoringEnabled()` is true, and how to use `CuramJMXUtil.runAndRecord` to record execution statistics into existing JMX services like transaction tracing."
+                  },
+                  {
+                    "title": "Instrumenting Application Code",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000020",
+                      "start_page": 17,
+                      "end_page": 20
+                    },
+                    "summary": "Shows how to instrument application code for Cúram JMX monitoring. It explains pushing custom statistics to a new MBean, first checking CuramJMXUtil.isJmxMonitoringEnabled() to reduce overhead, and configuring the MBean via curam.jmx.configured_mbeans_ejb or curam.jmx.configured_mbeans_web depending on container. It also shows using CuramJMXUtil.runAndRecord() to add execution statistics to existing JMX services such as transaction tracing and in-flight transaction data. Pages 19–20 are license, copyright, and trademark notices."
+                  }
+                ],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000020",
+                  "start_page": 9,
+                  "end_page": 20
+                },
+                "summary": "Explains how to expose application statistics through Cúram JMX. Covers creating custom Open MBeans with StatsMBean interfaces, optional reset support, and allowed Open MBean data types. Describes implementation choices via abstract base classes: CuramMBeanAbstract, GenericTabularStats, GenericNameValueStats, GenericKeyedPoolStats, and NumericCounterStatisticsAggregator. Shows how to register MBeans in curam.jmx.configured_mbeans_ejb or _web, instrument code only when JMX monitoring is enabled, and use CuramJMXUtil.runAndRecord for existing JMX services."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000020",
+              "start_page": 9,
+              "end_page": 20
+            },
+            "summary": "Introduces Cúram JMX as the JMX-based infrastructure for instrumenting code, collecting operational data, and registering custom MBeans in the correct runtime MBean server. Explains that custom MBeans must be Open MBeans and use a restricted set of Java/Open Data types; the interface name must end in StatsMBean, and an optional reset() is invoked by the framework. Covers implementation choices via CuramMBeanAbstract and generic stats base classes, plus configuration registration and code instrumentation using CuramJMXUtil.isJmxMonitoringEnabled and runAndRecord."
+          }
+        ],
+        "node_id": "n000009",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000020",
+          "start_page": 9,
+          "end_page": 20
+        },
+        "summary": "Explains how to develop with Cúram JMX by creating custom Open MBeans to expose application statistics and operational data, then registering them in the correct runtime MBean server. Covers required MBean interface conventions (StatsMBean suffix, optional reset()), allowed Open Data types, and implementation options via CuramMBeanAbstract and generic stats classes for tabular, name-value, and keyed-pool metrics. Also shows numeric counter aggregation, updating JMX configuration, and instrumenting code with CuramJMXUtil.isJmxMonitoringEnabled and runAndRecord."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

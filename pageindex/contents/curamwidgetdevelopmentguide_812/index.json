@@ -1,0 +1,1809 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "219f6ea442dba708",
+    "title": "Cúram 8.1.2 Custom Widget Development Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramWidgetDevelopmentGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "219f6ea442dba708fc6e51d9e17c24607761e5a6fe0aa6791e1fa3170f53d797",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T20:47:25+00:00",
+    "page_count": 94,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramWidgetDevelopmentGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Custom Widget Development Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000094",
+      "start_page": 1,
+      "end_page": 94
+    },
+    "summary": "Front matter and the full “Developing Custom Widgets” chapter for Cúram 8.1–8.1.2. It explains when to use custom widgets versus UIM, how widgets are rendered and configured, and the tradeoffs around maintenance, styling, localization, accessibility, and browser support. The chapter includes detailed examples and source code for an email address widget, photograph widget, details widget, cascading context panel widgets, a no-auto-complete text field, and a horizontal layout widget. It also covers widget anatomy, XML/path-based data access, renderer classes, renderer component model, i18n/localization, accessibility, field-level security, CSS rules, debugging/testing, and renderer configuration. The section begins with a note to read Notices and ends with legal notices, copyright/license terms, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the Notices section before using the product or this information. It also includes the copyright statement for Merative US L.P. (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory front matter for the Cúram 8.1/8.1.1/8.1.2 custom widgets guide. It states the guide’s scope, audience, prerequisites, and warnings about unsupported extrapolations. It explains that widgets customize the HTML rendering of UIM field values, extending CDEJ’s domain-specific rendering and default widget mappings. The section outlines the guide structure: approaches to customization, how widgets work, sample read-only widgets, reusable and nested widgets, editing widgets, i18n/localization, accessibility, renderer model, implementation guidelines, testing, and configuration."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Introduces how to customize Cúram field presentation with widgets, from simplest to most complex: use only UIM, reconfigure standard widgets, build simple widgets, build complex widgets, or mix UIM with widgets. Explains when UIM is enough, when to override domain/widget mappings, and how widgets render HTML via renderer plug-ins and DOM fragments. Covers runtime selection by field domain and mode, component-order configuration merging, and use of component-renderers for layout. Begins an email-address widget example showing desired HTML/CSS and the renderer class structure."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Covers custom widget development from access to data through DOM-based HTML generation and renderer configuration. It explains a simple email-address view renderer using source-path access and domain conversion, then introduces more advanced context panel widgets: a photograph widget and related person details/list widgets. Key topics include XML-backed data access via extended paths, linking to UIM pages, static images, and the FileDownload servlet, plus configuring view-renderer and marshal plug-ins in DomainsConfig.xml."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Introduces custom widget reuse and cascading renderers. Covers a Details widget that formats person data with a single root CSS class, uses XML data, and reuses the earlier email widget by manually creating a Field, setting its domain/source path, and calling context.render. Then presents the Person Context Panel and Horizontal Layout widgets: a combined XML structure, a container-based component model, a component renderer, and HTML table layout that delegates rendering to photo and details widgets."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "Covers custom widget development for Cúram: configuring a horizontal layout widget via a style and renderer plug-in, and a no-auto-complete SSN text field edit renderer tied to a domain. Explains edit-renderer mechanics, form item registration with `addFormItem`, handling source/target bindings, default values, and validation re-display, plus limits on supported custom edit renderers. Introduces internationalization/localization basics, CDEJ locale support, localized text/images/JavaScript, layout implications, and begins accessibility concerns."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "This section covers accessibility and renderer design for custom widgets. It explains why Cúram uses the HTML title attribute instead of label elements for form controls, how relative font sizes improve zooming, and introduces the renderer component model, builders, bindings, and component parameters. It emphasizes reusable, context-independent renderers, designing rendering cascades bottom-up, and avoiding XML/path assumptions. It ends with a concurrency warning: renderer plug-ins are single instances and must not store request state in fields, illustrated by a defective email renderer example."
+          },
+          {
+            "title": "Edition — pages 65-74",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000074",
+              "start_page": 65,
+              "end_page": 74
+            },
+            "summary": "Covers Cúram custom widget guidance on renderer behavior and configuration. Key points: avoid concurrency defects by not storing per-request state in plug-in fields; do not convert data in renderers, use converter plug-ins; avoid excessive memory/CPU use, especially for lists and XML/XSLT processing; handle field-level security exceptions and display masked values; debugging tips with Tomcat/Eclipse/Firebug. Also explains renderer configuration for domains and styles, inheritance/override rules, and important limits: no custom select-renderers, limited marshal support, and no legacy renderer use."
+          },
+          {
+            "title": "Edition — pages 75-84",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000084",
+              "start_page": 75,
+              "end_page": 84
+            },
+            "summary": "This section explains how renderers use paths to access data sources, including server interface properties, general property resources, application resource store properties, and literal values. It covers path structure, immutability, creating new paths with ClientPaths, and DataAccessor methods (get/getRaw/getList/getRawList/count). It also introduces extended paths into XML server-interface data via SimpleXPathMarshal and SimpleXPathADCMarshal, describing supported XPath-like selectors, functions, evaluation rules, and automatic data conversion."
+          },
+          {
+            "title": "Edition — pages 85-92",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000092",
+              "start_page": 85,
+              "end_page": 92
+            },
+            "summary": "Explains generic string values and ADC behavior for data formatting/parsing, including locale handling, numeric and ISO 8601 date/time rules, and raw vs formatted values. Then shows sample custom widget source code: email address, photo, person details, person context panel, horizontal layout, and a text field without autocomplete. The examples demonstrate building DOM fragments, using data accessors, composing fields/containers, and setting HTML attributes and styles in renderers."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000092",
+          "start_page": 5,
+          "end_page": 92
+        },
+        "summary": "Front matter and the full “Developing Custom Widgets” chapter for Cúram 8.1–8.1.2. It covers customization approaches; widget anatomy and runtime rendering; sample widgets for email, photo, details, context panel, horizontal layout, and a no-autocomplete text field; XML/path-based data access; renderer, marshal, and style configuration; i18n/localization; accessibility; renderer component model; security, performance, debugging, and testing guidelines; and source-code examples for the sample widgets."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000094",
+              "end_unit_id": "p000094",
+              "start_page": 94,
+              "end_page": 94
+            },
+            "summary": "This page contains legal notices: sample data disclaimer, copyright license for sample programs, warranty/liability limitations, a link to Merative’s privacy policy, and a list of trademarks and ownership notices for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000094",
+              "end_unit_id": "p000094",
+              "start_page": 94,
+              "end_page": 94
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party brands. States that sample names in the document are fictitious, sample source programs may be copied/modified/distributed under the Merative Client Agreement, and are provided “AS IS” without warranty. Includes the Merative privacy policy URL and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a note that other names may be trademarks of others."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000093",
+          "end_unit_id": "p000093",
+          "start_page": 93,
+          "end_page": 93
+        },
+        "summary": "Legal notices for using Merative publications. Covers personal and enterprise reproduction rules, preservation of proprietary notices, and restrictions on distribution or derivative works outside allowed use. States no additional rights are granted, Merative may withdraw permissions, and export laws apply. Includes strong warranty/liability disclaimers (“AS IS,” no implied warranties), patent notice, and caution that information on non-Merative products or websites is unverified and not endorsed. Also contains Merative copyright notice."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000015",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000010",
+          "start_page": 7,
+          "end_page": 10
+        },
+        "summary": "Table of contents for a Cúram 8.1.2 guide on developing custom widgets. It lists Chapter 1 “Developing Custom Widgets” and its subsections: customization approaches, widget architecture, sample widgets (email address, photograph, details, cascade, text field, context panel), internationalization/localization, accessibility, renderer component model, design guidelines, testing/debugging, renderer configuration, path-based data access and XML XPath extensions, plus source code listings. Also includes front matter, notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Developing Custom Widgets",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Overview",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Prerequisites for developing custom Cúram widgets: the developer should already be proficient in Cúram client-side application development in Java and UIM, and should also know HTML, JavaScript, CSS, and related web technologies as needed. This section sits in the “Developing Custom Widgets” guide, which explains when custom widgets are appropriate and how to develop and integrate them. It also introduces widget customization support added from Cúram 6.0 onward, enabling richer UI presentations beyond standard UIM/widget configurations."
+              },
+              {
+                "title": "What's New?",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Introduces Cúram 6.0+ support for custom widget development in UIM pages. Explains that widgets render UIM field values and can now be customized to improve presentation or add richer functionality beyond default UIM/CDEJ widgets. Gives examples such as replacing date selectors with text fields and rendering email values as mailto links with icons. Also frames the guide’s purpose, audience, prerequisites, and how it helps developers integrate custom widgets into client applications."
+              },
+              {
+                "title": "Customizing Widgets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "This section explains how Cúram custom widgets work and why they are used. It describes how UIM pages are translated by CDEJ into HTML, how field labels are rendered consistently, and how field values can be customized by domain. It introduces the default widget configuration, customization of that mapping, and creating new widgets to control FIELD rendering. It also notes the tradeoff: more UI flexibility versus added responsibility for styling, i18n, and cross-browser support."
+              },
+              {
+                "title": "Outline of this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This guide section previews the widget-development chapters: choosing a customization approach, understanding widget internals and configuration, building a simple email address widget, and constructing sample context panel widgets. It also introduces later coverage of editable widgets, internationalization/localization, and accessibility. The section notes that the guide is not a complete reference, points readers to the Cúram Web Client Reference Manual and external Javadoc, and explains that code/configuration examples are abridged, with full source shown later."
+              },
+              {
+                "title": "Conventions of this Guide",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains guide conventions: code samples are abridged, with import statements and package names omitted, and configuration examples show only the widget-related domain entry rather than full files. Points readers to section 1.18 for complete source listings and notes that real application components usually include many configuration entries. Also frames the guide as a non-comprehensive reference that relies on external sources and the companion Web Client Reference Manual."
+              },
+              {
+                "title": "Limitations and Restrictions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section states that the guide covers only custom widgets for context panels in the tabbed UI, and only the functionality explicitly described is supported. Other widget uses or extrapolated behavior are not supported. It then explains when to use UIM versus a custom widget, noting that widgets offer greater presentation control but add complexity and maintenance risk, especially if they depend on CDEJ HTML/CSS that may change across upgrades."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000013",
+              "start_page": 11,
+              "end_page": 13
+            },
+            "summary": "Introduces the purpose of the guide: when to use custom widgets for UIM pages and how to develop and integrate them. It assumes proficiency in Cúram client-side Java and UIM plus HTML, JavaScript, and CSS. Explains that Cúram 6.0+ supports customizing widget rendering for UIM field values, enabling richer presentations than standard UIM/CDEJ widgets. Also outlines the guide structure, notes abridged examples and reference sources, and highlights that custom widgets add flexibility but also styling, localization, and cross-browser responsibilities."
+          },
+          {
+            "title": "1.2 Approaches to Customization",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Prerequisites for using custom widgets: a basic understanding of UIM capabilities and how web pages are rendered from UIM sources. This section also frames when to use UIM alone versus a custom widget, emphasizing intermediate approaches and the tradeoff between presentation control and maintenance complexity. It warns that relying on generated HTML/CSS structure from CDEJ or mimicking standard UIM elements can break after upgrades."
+              },
+              {
+                "title": "Identifying the Right Approach",
+                "level": 3,
+                "children": [],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Explains how to choose between using UIM alone, a custom widget alone, or an intermediate mix for page customization. UIM can satisfy most presentation needs with fields, clusters, lists, and action controls, while a single field can anchor a widget for more complex HTML. Emphasizes weighing customization scope against complexity and maintenance. Warns that mimicking standard UIM/Cúram HTML is risky because generated HTML/CSS may change across upgrades, making such widgets costly to maintain."
+              },
+              {
+                "title": "Using Only UIM",
+                "level": 3,
+                "children": [],
+                "node_id": "n000027",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains when to use UIM alone before building custom widgets. UIM can support complex layouts via nested CLUSTER/LIST elements, column control, titles/labels, and STYLE attributes for CSS-based presentation changes. A UIM-only solution can also be reused through VIM includes to reduce maintenance across pages. However, it may be insufficient for significant field-value changes or widely repeated customizations that create overhead, in which case standard widget reconfiguration or custom widgets may be needed."
+              },
+              {
+                "title": "Reconfiguring Standard Widgets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000028",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "This section introduces reconfiguring standard Cúram widgets as a middle-ground customization option when UIM alone is insufficient. It explains that the platform’s default widget-to-domain configuration can be overridden to change field-value presentation, especially for significant visual changes repeated across pages. It also frames this approach among other options (UIM only, simple/complex custom widgets) and emphasizes choosing the least complex method that meets requirements."
+              },
+              {
+                "title": "Developing Simple Custom Widgets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "Explains when to develop a simple custom widget instead of reconfiguring existing widgets or using custom CSS/UIM. A widget controls field presentation by generating HTML for a value; if no existing widget can produce the required structure, a new widget must be written and configured. Simple widgets typically replace the HTML for a single UIM FIELD inside a normal CLUSTER or LIST without changing page layout. Examples include an email address display widget and a text field editor without auto-completion."
+              },
+              {
+                "title": "Developing Complex Custom Widgets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000030",
+                "range": {
+                  "start_unit_id": "p000016",
+                  "end_unit_id": "p000016",
+                  "start_page": 16,
+                  "end_page": 16
+                },
+                "summary": "This section explains when reconfiguring existing widgets is enough and when a new custom widget is needed. It contrasts simple widgets, which mainly replace HTML for a single field value within a standard UIM cluster/list, with complex widgets, which may change page layout or render fields with embedded values such as XML. It notes there is no sharp boundary between simple and complex widgets: greater presentation control means greater implementation complexity."
+              },
+              {
+                "title": "Mixing Simple Custom Widgets with UIM",
+                "level": 3,
+                "children": [],
+                "node_id": "n000031",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to combine UIM with simple custom widgets to reduce complexity instead of building a full custom widget. UIM clusters, lists, and fields can form most of the page, while widgets replace the HTML for individual fields or even a cluster’s presentation. Emphasizes that a UIM FIELD can anchor a widget, including directly inside a PAGE without CLUSTER or LIST. Recommends choosing the simplest approach first and using custom widgets only when UIM alone cannot meet the requirement or when reusable domain-level customization is needed."
+              },
+              {
+                "title": "Responsibilities of the Widget Developer",
+                "level": 3,
+                "children": [],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "Explains the widget developer’s responsibilities when choosing more complex custom widget approaches. It stresses that simpler, reusable widgets are preferred, and that custom widgets must preserve Cúram UI consistency across releases, avoid HTML side effects and XSS/security issues, handle cross-browser styling, support internationalization/localization, and meet accessibility/legal requirements. It also notes that complex widgets can significantly increase development and maintenance effort and affect perceived application quality."
+              }
+            ],
+            "node_id": "n000024",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000018",
+              "start_page": 14,
+              "end_page": 18
+            },
+            "summary": "Explains how to choose among UIM-only pages, standard widget reconfiguration, simple custom widgets, complex custom widgets, or mixed approaches. UIM can handle most layouts and styling, but custom widgets are needed when field presentation or page structure exceeds UIM’s limits. It warns against emulating generated Cúram HTML/CSS because upgrades can break such widgets. Also highlights using VIM includes for reuse and stresses that widget developers must handle maintenance, security, cross-browser, localization, accessibility, and long-term consistency."
+          },
+          {
+            "title": "1.3 How Widgets Work",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Introduces prerequisites for working with Cúram widgets: basic knowledge of UIM and HTML web development. It then defines a widget from a developer perspective and outlines its main artifacts: renderer plug-in (required Java class that generates HTML, with mode-specific abstract base classes), domain configuration (DomainsConfig.xml mapping domain definitions to renderers), and JavaScript integration controlled by the renderer. Useful as an entry point for understanding widget structure and setup."
+              },
+              {
+                "title": "Anatomy of a Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Explains what a widget means to developers: a set of artifacts that together generate a specific data presentation in a given mode. The core required artifact is a renderer plug-in, a Java class that outputs HTML using DOM APIs and CDEJ base classes; it is stored under the client application’s javasource folder. The section also introduces Domain Configuration via DomainsConfig.xml, which maps domains to renderer plug-ins, and notes that JavaScript can be embedded directly or linked by the renderer."
+              },
+              {
+                "title": "How Widgets Work In Depth",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000022",
+                  "start_page": 21,
+                  "end_page": 22
+                },
+                "summary": "Explains how UIM widgets are selected and started based on field data type and mode: SOURCE means view mode, TARGET means edit mode, with domain definitions determining the renderer plug-in used. Covers renderer plug-ins generating HTML via DOM DocumentFragment, supporting cascaded renderers, and configuration merging where application settings override CDEJ defaults. Also notes view/edit renderers handle bound field data, while component-renderers handle layout unrelated to data."
+              }
+            ],
+            "node_id": "n000033",
+            "range": {
+              "start_unit_id": "p000019",
+              "end_unit_id": "p000022",
+              "start_page": 19,
+              "end_page": 22
+            },
+            "summary": "Explains how Cúram widgets are chosen and rendered from UIM fields. Mode is determined by TARGET (edit) vs SOURCE-only (view), and domain definitions select the appropriate renderer plug-in via DomainsConfig.xml. Describes the widget developer view: a widget includes a required Java renderer class, optional JavaScript/images/CSS/localized text, and may cascade multiple renderers. Also covers runtime flow: CDEJ builds a Field, passes it with a DOM DocumentFragment to the renderer, serializes the result to HTML, and allows application configs to override defaults."
+          },
+          {
+            "title": "1.4 An EMail Address Widget",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Prerequisites for the email address widget example: familiarity with UIM and Java development. The section introduces enhancing plain-text email addresses in a UIM page by rendering them as clickable HTML with an email icon, using a span container, a mailto: link, and custom CSS for icon alignment."
+              },
+              {
+                "title": "Defining the HTML",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "Explains how to define the HTML for a custom email address widget in UIM. Describes replacing plain text with a `<span>` containing an `<a href=\"mailto:...\">` link, an email icon image, and the email text, all wrapped in a custom CSS class. Notes that the HTML is generated without indentation or line breaks, and shows a simple CSS rule to vertically align the icon. Useful for understanding the widget’s rendered output and markup structure."
+              },
+              {
+                "title": "Defining the Renderer Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to define a custom renderer plug-in class for a widget, using the email address widget as an example. It introduces the DomainRenderer API, recommends extending the OOTB AbstractViewRenderer rather than implementing the interface directly, and shows the EMailAddressViewRenderer skeleton. The section also describes the render method’s inputs: Field, DocumentFragment, RendererContext, and the use of the W3C DOM Level 3 Core API to generate HTML nodes that the system serializes for the page."
+              },
+              {
+                "title": "Accessing the Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how a widget renderer accesses bound data via the field’s Binding source path and the context’s DataAccessor. For view renderers only the source path is used; the accessor returns a user-formatted string via domain converter plug-ins, handling locale/time zone formatting automatically. Also introduces generating HTML content with the DOM API, emphasizing creating nodes within the owning Document and appending them to the document fragment to produce safe, valid markup."
+              },
+              {
+                "title": "Generating the HTML Content",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how a widget renderer generates HTML after retrieving data. It covers accessing field values through the context’s DataAccessor using the field binding’s source path, and notes that the returned value is automatically formatted by domain converter plug-ins for the active user. It then describes using the DOM API to build markup safely: create nodes in the owning Document, append them into a document fragment, and rely on DOM escaping and tag generation to avoid invalid HTML."
+              },
+              {
+                "title": "Configuring the Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Explains how to configure the custom email address widget by assigning a view-renderer plug-in to the SAMPLE_EMAIL_ADDR domain in DomainsConfig.xml. Shows the XML mapping to sample.EMailAddressViewRenderer and notes that the widget is used when a UIM FIELD reads from a property in that domain. If the FIELD has a target connection, the edit-renderer is used instead, but none is defined here. Also briefly explains relative image paths in Cúram page URIs for loading the email icon."
+              }
+            ],
+            "node_id": "n000037",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000026",
+              "start_page": 23,
+              "end_page": 26
+            },
+            "summary": "Shows how to build a custom UIM email-address widget that renders plain text as clickable HTML with an email icon. Covers the required markup and CSS, implementing a view-renderer plug-in by extending AbstractViewRenderer, accessing the bound value through Field binding and RendererContext/DataAccessor, and generating safe HTML with the DOM API. Also explains configuring the widget via DomainsConfig.xml for the SAMPLE_EMAIL_ADDR domain and notes relative image paths in locale-based page URIs."
+          },
+          {
+            "title": "1.5 The Sample Context Panel Widgets",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Prerequisite for the sample context panel widgets: familiarity with the basic process of developing custom widgets covered earlier. This section introduces two advanced sample widgets for a person context panel, built in parts and then combined via custom renderers. It previews the widget’s content requirements: photograph with home-page link, name, ID, address, gender, date of birth, and telephone number, showing cases where ordinary UIM pages are insufficient."
+              },
+              {
+                "title": "The Sample Widgets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Introduces the first sample context panel widget: a person details widget with two parts. Part 1 shows a photograph above the person’s name and includes an icon link from the photo to the person’s home page. Part 2 presents additional person details with styled text and icons. The section explains that these parts can be developed and used independently, then combined into one widget, because ordinary UIM pages cannot satisfy the layout/content needs. It lists the displayed fields: photo, home page link, name, ID, address, gender, date of birth, and telephone."
+              }
+            ],
+            "node_id": "n000044",
+            "range": {
+              "start_unit_id": "p000027",
+              "end_unit_id": "p000027",
+              "start_page": 27,
+              "end_page": 27
+            },
+            "summary": "Introduces two advanced sample context panel widgets for custom widget development, built in parts and later combined with custom renderers. The first sample is a person details panel with a photo, home-page link, name, ID, address, gender, date of birth, and telephone number. It emphasizes that the parts can be developed and used independently, but ordinary UIM pages cannot satisfy the required layout and content. This section sets up later coverage of localization, formatting, and accessibility."
+          },
+          {
+            "title": "1.6 A Photograph Widget",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Prerequisites for developing custom widgets: familiarity with Java development and with building web page content using HTML and CSS. The section also introduces the recommended widget structure of a single root node with a specific CSS class, using a photo widget example to show a root container, child divs for link/photo/name, and static versus dynamic image resources (including the Cúram FileDownload servlet)."
+              },
+              {
+                "title": "Defining the HTML",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains how to define the HTML structure for a photo widget in a custom widget example. Recommends a single root node with a specific CSS class to clearly bound the widget and support targeted styling. Describes the widget’s nested divs for a details link, photo, and person name, each with its own class. Shows use of both static and dynamic image sources, including Cúram FileDownload. Notes that the generated HTML is compact and that layout requirements include a border, right-aligned link, and centered photo/name."
+              },
+              {
+                "title": "Defining Data in XML Form",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000030",
+                  "start_page": 30,
+                  "end_page": 30
+                },
+                "summary": "Explains why complex widgets should receive data as XML rather than simple values. Using a photograph widget as the example, it shows that both the person’s concern role ID and name must be combined into a single server interface property because the UIM FIELD can use only one SOURCE. Describes a sample XML structure with `<photo>`, `<id>`, and `<name>` elements, and notes that values are placed in element bodies to work well with Cúram support classes and are returned from a server facade as a string-based property."
+              },
+              {
+                "title": "Defining the Renderer Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Introduces the skeleton `PhotoViewRenderer` class for a photograph widget, extending `AbstractViewRenderer` and implementing `render(...)` to write HTML into a `DocumentFragment`. Explains that the widget’s data source is XML, so values like person ID and name must be retrieved by extending the binding’s source path with `photo/id` and `photo/name` before calling the data accessor. Clarifies that these paths mirror XML structure but are not full XPath."
+              },
+              {
+                "title": "Accessing Data in XML Form",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains how the photograph widget accesses XML data in a renderer. Unlike the email widget’s simple string value, the source is an XML document, so the binding’s source path is extended with `extendPath(\"photo/id\")` and `extendPath(\"photo/name\")` to retrieve individual values. Shows a `PhotoViewRenderer` extending `AbstractViewRenderer` and notes that directly calling `get()` on the unextended path would return the full XML document. Also clarifies these paths resemble XPath but are not XPath."
+              },
+              {
+                "title": "Generating the HTML Content",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Linking to a UIM Page",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Explains how Cúram generates HTML for a photograph widget using DOM elements, including a link, image, and description. Focuses on linking to a UIM page: application page URIs normally include a locale code (for example, en/Person_homePage.do), but when linking between UIM pages the locale is omitted because pages are treated as being in the same locale “folder.” Useful for understanding how to build relative links to UIM pages and why locale is excluded."
+                  },
+                  {
+                    "title": "Linking to a Static Image",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how a widget links to a static image in a Cúram UIM page: images live under the application’s Images folder at the context root, so relative URIs from locale-specific page folders need the ../ prefix (for example, ../Images/arrow-icon.png). Also contrasts this with linking through the FileDownload servlet (../servlet/FileDownload?pageID=...&id=...), used to fetch database-stored images. Notes that the servlet requires specific URI parameters and that photograph widgets need domain and marshal plug-in configuration in DomainsConfig.xml."
+                  },
+                  {
+                    "title": "Linking to the FileDownload Servlet",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how to link a widget to the Cúram FileDownload servlet to display an image stored in the database. The servlet path is servlet/FileDownload relative to the context root, so a ../ prefix is needed from locale-specific UIM pages. Shows example URI parameters (pageID and id) used to fetch the correct photograph. Also begins configuring the photograph widget, noting that the XML data must use a photo-specific domain and that DomainsConfig.xml must register both a view-renderer plug-in and a marshal plug-in."
+                  }
+                ],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Shows how a photograph widget’s HTML is built with DOM elements: a container div, details link, photo image, and text description. Explains that links to another UIM page omit the locale segment (for example, Person_homePage.do rather than en/Person_homePage.do) because UIM pages are treated as being in the same locale folder. Useful for understanding how Cúram generates relative UIM-page links and marks up widget output."
+              },
+              {
+                "title": "Configuring the Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how to configure a photograph widget in a custom widget UI. The widget’s data must be stored in a photo-specific XML domain (SAMPLE_PHOTO_XML), added via DomainsConfig.xml, with a view-renderer plug-in mapped to the domain and a marshal plug-in configured so XML path extension values can be accessed. Also reiterates URI rules for linking from locale-specific pages to static images and to the FileDownload servlet using the ../ prefix."
+              },
+              {
+                "title": "Configuring the FileDownload Servlet",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "Explains how to configure the FileDownload servlet for a custom photograph widget in curam-config.xml. Shows a FILE_DOWNLOAD_CONFIG example with PAGE_ID, CLASS, INPUT, FILE_NAME, and FILE_DATA, using the same URI mechanism as the standard FILE_DOWNLOAD widget but generating an HTML image tag instead of a download link. Notes that PAGE_ID only needs to be unique for custom widgets, not tied to an existing UIM page, and that the configuration defines the server facade plus its inputs/outputs."
+              }
+            ],
+            "node_id": "n000047",
+            "range": {
+              "start_unit_id": "p000028",
+              "end_unit_id": "p000034",
+              "start_page": 28,
+              "end_page": 34
+            },
+            "summary": "Introduces a custom photograph widget that displays a person’s photo, name, and a details link, illustrating how to build more complex widgets with XML-based data. Covers recommended HTML/CSS structure with a single root container, accessing XML values via path extension in a renderer, generating DOM markup, and linking correctly to UIM pages, static images, and the FileDownload servlet. Also explains widget configuration through a photo-specific XML domain, marshal/view-renderer plug-ins, and FileDownload setup in curam-config.xml."
+          },
+          {
+            "title": "1.7 A Details Widget Demonstrating Widget Reuse",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Prerequisites for the “Details Widget Demonstrating Widget Reuse” section are the previous sections in the guide. This section builds on earlier widget examples, including the email address widget and prior sample widgets, to show how to create a person details widget with custom HTML/CSS formatting and reused components."
+              },
+              {
+                "title": "Defining the HTML",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Explains the HTML structure for a “details widget” that enables CSS-based formatting beyond plain UIM pages. It wraps person details in a container, highlights the person’s name and reference number with a dedicated header class, and uses a contact-info section for phone/email. The email address is reused from the earlier email widget, shown with a mailto link and email icon. Useful if you need the exact HTML markup pattern for styling and widget reuse."
+              },
+              {
+                "title": "Defining Data in XML Form",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Explains how the details widget is driven by XML data, mirroring the earlier photograph widget. The XML uses a single root element containing one child element per value, with the content in each child’s body. An example `<details>` document is shown for a person, including name, reference, address, gender, date of birth, age, phone, and email. The section emphasizes that formatting such as indentation and line breaks is only for readability and not required."
+              },
+              {
+                "title": "Defining the Renderer Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "This section introduces the `PersonDetailsViewRenderer` skeleton, a view renderer extending `AbstractViewRenderer` and located in `component/sample/javasource/sample`. It explains how to access XML data via extended source paths such as `/details/name` and `/details/reference`, and notes that the email address is handled by reusing the existing email widget. It also begins describing how the renderer generates HTML using the DOM API and how one widget can start another by supplying the correct `Field` and binding parameters."
+              },
+              {
+                "title": "Accessing Data in XML Form",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how the details widget renderer accesses XML data and builds HTML. It shows extending the same view-renderer base class, then retrieving values such as person name and reference with `context.getDataAccessor().get(field.getBinding().getSourcePath().extendPath(...))`. It notes that most XML values are accessed this way, but the email address is rendered by reusing the existing email widget. It also introduces that one widget can start another by supplying the right `Field`, `Binding`, and source path parameters."
+              },
+              {
+                "title": "Generating the HTML Content",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000038",
+                  "start_page": 37,
+                  "end_page": 38
+                },
+                "summary": "Explains how to generate HTML in a custom details widget renderer using the DOM API, and how to reuse the existing email address widget inside it. Shows a `PersonDetailsViewRenderer` extending `AbstractViewRenderer`, accessing XML data via extended source paths for name/reference, and manually starting the email widget by creating a `FieldBuilder`, setting domain `SAMPLE_EMAIL`, setting the email source path, creating a `DocumentFragment`, and calling `context.render(...)`."
+              },
+              {
+                "title": "Configuring the Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "Explains how to configure the custom person details widget’s domain setup in DomainsConfig.xml. It shows adding a SAMPLE_DTLS_XML domain with a view-renderer plug-in (sample.PersonDetailsViewRenderer) and a marshal plug-in (curam.util.client.domain.marshal.SimpleXPathMarshal) so XML values can be accessed via path extensions. It also notes that the view-renderer starts for UIM FIELD elements with a source connection in SAMPLE_EMAIL_ADDR, while target connections use an inherited edit-renderer if none is defined."
+              }
+            ],
+            "node_id": "n000059",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000039",
+              "start_page": 35,
+              "end_page": 39
+            },
+            "summary": "Explains how to build a custom “person details” widget that uses CSS-based formatting and reuses the earlier email address widget. Covers the HTML structure and styling hooks, XML data format for the person record, the `PersonDetailsViewRenderer` class, accessing values via extended source paths, and starting another widget from within a renderer using `FieldBuilder`, `DocumentFragment`, and `context.render`. Also shows the required domain configuration in `DomainsConfig.xml`, including `view-renderer` and `marshal` plugins."
+          },
+          {
+            "title": "1.8 Tying Widgets Together in a Cascade",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Prerequisites for this section are the previous sections in the guide. It introduces the “Person Context Panel Widget” as a cascade of reused widgets: a horizontal layout widget combines the outputs of photograph and details widgets side by side. The section emphasizes component models, delegation between widgets, and reuse through a new XML root element that wraps the existing photograph and details XML so their renderers can be reused."
+              },
+              {
+                "title": "Defining Data in XML Form",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Explains how the “Person Context Panel Widget” is defined in XML by combining the XML used for the photograph and details widgets under a new root element, enabling reuse of existing renderers. It connects the broader “cascade” pattern: the person context panel delegates to a Horizontal Layout Widget, which delegates to the earlier photograph and details widgets. Useful for understanding component-model composition, widget reuse, and horizontal layout abstraction."
+              },
+              {
+                "title": "Defining the HTML",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "Explains the HTML structure for a “Person Context Panel Widget,” showing how photograph and details widgets are combined in a table for horizontal layout. Notes the use of a root CSS class (`sample-container`) even when unused, and how nested widget classes like `photo-container` enable scoped customization. Also introduces that two renderer classes are needed: one for the person context panel and one for the horizontal layout widget."
+              },
+              {
+                "title": "Defining the Renderer Classes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "This section explains the HTML structure for a “Person Context Panel Widget,” showing how photograph and details widgets are combined in a table for horizontal layout. It notes the usefulness of root CSS classes (e.g., `sample-container`, `photo-container`) for styling widget contents. It then introduces the need for two renderer classes: one for the Person Context Panel Widget and one for the Horizontal Layout Widget, likely as skeletons for implementation."
+              },
+              {
+                "title": "Generating the HTML Content",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Person Context Panel Widget",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000043",
+                      "start_page": 42,
+                      "end_page": 43
+                    },
+                    "summary": "Explains how the Person Context Panel Widget builds a component model and delegates rendering to the Horizontal Layout Widget. Shows sample renderer classes for a view renderer vs. component renderer, then demonstrates creating a Container, setting its horizontal-layout style, adding two Fields for photo and person details, and extending their source paths to the /person root. Also notes the use of domain definitions (SAMPLE_PHOTO_XML and SAMPLE_DTLS_XML) and subcontract rendering."
+                  },
+                  {
+                    "title": "Horizontal Layout Widget",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Explains how the Horizontal Layout Widget renders a container of child components as an HTML table. It creates a table/tbody/tr with the DOM API, then iterates through Container.getComponents(), creating a td for each child and delegating rendering to the appropriate widget via context.render(child, cellContent, contract.createSubcontract()). The section emphasizes use of a DocumentFragment supplied by Cúram infrastructure and that the component model is a Container cast from Component."
+                  }
+                ],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000044",
+                  "start_page": 42,
+                  "end_page": 44
+                },
+                "summary": "Explains how custom widgets generate HTML using two renderer types: view renderers for a single Field and component renderers for a collection of Components. The “Person Context Panel Widget” builds a Container model, sets the horizontal-layout style, adds photo and details Fields with extended /person source paths and domain definitions, then renders into a DocumentFragment via a subcontract. The “Horizontal Layout Widget” casts the Component to Container, iterates children, creates a table/tbody/tr/td structure, and delegates each child to its renderer."
+              },
+              {
+                "title": "Configuring the Widgets",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Person Context Panel Widget",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000076",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "Explains the Person Context Panel Widget as a custom widget that horizontally combines multiple child widget outputs by iterating over a component collection, creating table cells, and delegating rendering to each component’s widget via context.render. It notes the widget is abstract from the underlying components and can display different component sets, such as a photo and person details. Also covers configuration: it is tied to the SAMPLE_PERSON_XML domain and requires the marshal plug-in; the related horizontal-layout component renderer is configured separately in StylesConfig.xml."
+                  },
+                  {
+                    "title": "Horizontal Layout Widget",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000077",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "This section explains the Horizontal Layout Widget as a component renderer that combines multiple widgets side by side by generating an HTML table. It iterates over a collection with getComponents, creates a table cell and DocumentFragment for each item, renders the child widget via context.render, and appends the output to the cell. It emphasizes that the widget is abstracted from the underlying components and can display different collections, such as a photograph and person details. It also introduces configuration, contrasting domain-based widget setup with style-based component-renderer setup."
+                  }
+                ],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "This section explains how to configure two widget types. The Person Context Panel Widget is tied to the SAMPLE_PERSON_XML domain and requires both a view-renderer plug-in and a marshal plug-in for XML data access. The Horizontal Layout Widget is a component renderer, not domain-based; it is configured in StylesConfig.xml by associating its plug-in class with the horizontal-layout style. It also clarifies that the horizontal layout is achieved by iterating over components and rendering each child widget into an HTML table cell."
+              }
+            ],
+            "node_id": "n000067",
+            "range": {
+              "start_unit_id": "p000040",
+              "end_unit_id": "p000045",
+              "start_page": 40,
+              "end_page": 45
+            },
+            "summary": "Shows how to compose custom widgets in a cascade: a Person Context Panel combines photograph and details widgets side by side via a new Horizontal Layout Widget. Introduces reusable XML with a new root `<person>`, explains the HTML table layout, and distinguishes view renderers (for a single Field) from component renderers (for a collection of Components). Covers building the component model with Container/Field builders, delegating with `context.render`, and configuring the person widget via `SAMPLE_PERSON_XML` plus marshal/view-renderer plug-ins, and the horizontal layout via a style in `StylesConfig.xml`."
+          },
+          {
+            "title": "1.9 A Text Field Widget with No Auto-completion",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000079",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "This prerequisites section says you should already understand Cúram form pages and have read the first three sections of the guide. It introduces custom widget rendering by previewing the HTML needed for a sample text field and the structure of an edit renderer class. It also explains that form inputs are required when a UIM FIELD has a TARGET connection, and that the framework chooses the edit-renderer based on the target’s domain definition instead of the view-renderer."
+              },
+              {
+                "title": "Defining the HTML",
+                "level": 3,
+                "children": [],
+                "node_id": "n000080",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "This section explains the HTML needed for a sample custom text field widget: a single `<input type=\"text\">` with several renderer-supplied attributes like `id`, `name`, `value`, `title`, `tabindex`, and `style`, plus `autocomplete=\"no\"`. It also introduces the `NoAutoCompleteEditRenderer` class, showing it extends `AbstractEditRenderer`. Finally, it describes how form input controls are handled for UIM FIELD elements with TARGET connections, and how the system chooses an edit-renderer based on the target’s domain definition."
+              },
+              {
+                "title": "Defining the Renderer Class",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "This section explains how to define the `NoAutoCompleteEditRenderer` class for a custom widget. It shows that edit renderers extend `AbstractEditRenderer` (unlike view renderers) but still implement the shared `DomainRenderer.render` method. It also introduces form-item handling: when a `FIELD` has a `TARGET` connection, the system uses an edit-renderer to generate the HTML input control needed for user entry, based on the domain definition tied to the target server interface property."
+              },
+              {
+                "title": "Handling Form Items",
+                "level": 3,
+                "children": [],
+                "node_id": "n000082",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Explains how form pages handle input controls when a UIM FIELD has a TARGET connection. Such fields need an HTML input element so users can enter data before submission to the target server interface property. The section states that an edit-renderer must generate the appropriate control, and that the system chooses the renderer based on the domain definition linked to the target’s server interface property. If a target exists, the edit-renderer is used automatically instead of the view-renderer."
+              },
+              {
+                "title": "Accessing the Data",
+                "level": 3,
+                "children": [],
+                "node_id": "n000083",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Explains how form data is accessed and initialized for renderer plug-ins. View-renderers use only the binding source path to display values, while edit-renderers must define a target path for submitted values and may also define a source path for initial control values. It describes RendererContext.addFormItem, which registers form items, returns the HTML id/name target ID, and embeds metadata used to map submitted ID/value pairs back to server properties and validation labels. Also notes UIM FIELD USE_DEFAULT behavior when no source value exists."
+              },
+              {
+                "title": "Generating the HTML Content",
+                "level": 3,
+                "children": [],
+                "node_id": "n000084",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000050",
+                  "start_page": 49,
+                  "end_page": 50
+                },
+                "summary": "Explains how a custom renderer generates HTML for a form field input. It retrieves the field’s initial value via RendererContext, using the USE_DEFAULT parameter to choose between source, default plug-in, or user-entered values after validation errors. It then creates an `<input>` element with DOM Core, sets `type`, `autocomplete`, `id`, `name`, optional `title`, and `value`, and supports UIM features like `INITIAL_FOCUS` via `tabindex` and `WIDTH`/`WIDTH_UNITS` via inline style."
+              },
+              {
+                "title": "Configuring the Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000085",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "Explains how to configure a custom SSN text field widget by associating an edit-renderer plug-in with a specific domain in DomainsConfig.xml (example: SAMPLE_SSN mapped to `sample.NoAutoCompleteEditRenderer`). Describes how UIM `SCRIPT` elements become event parameters on the Field object and how `setScriptAttributes` applies them to HTML elements. Notes that the edit-renderer is used for `FIELD` elements targeting that domain, while view-renderer inheritance applies when no target exists. Also lists key limitations on supported custom edit-renderers."
+              },
+              {
+                "title": "Limitations on Support for Custom Edit Renderers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000086",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "This section explains how UIM `SCRIPT` elements map to event-handler parameters on a `Field` object and how a custom edit-renderer can be configured for a specific domain via `DomainsConfig.xml`. It also states the support limits for custom edit-renderer plug-ins: only direct `UIM FIELD` rendering is supported, not rendering cascades or `UIM LIST`, and the renderer may add only one form item, must not process code-table items, and must use only the demonstrated Renderer API features."
+              }
+            ],
+            "node_id": "n000078",
+            "range": {
+              "start_unit_id": "p000046",
+              "end_unit_id": "p000051",
+              "start_page": 46,
+              "end_page": 51
+            },
+            "summary": "Explains how to build a custom edit-renderer for a text field that disables browser auto-completion, using `NoAutoCompleteEditRenderer` extending `AbstractEditRenderer`. Covers the required `<input>` HTML, how `FIELD` elements with `TARGET` connections use edit-renderers instead of view-renderers, and how to register form items with `RendererContext.addFormItem`. Also shows retrieving initial values, supporting `INITIAL_FOCUS`, `WIDTH`, and `SCRIPT` handlers, configuring the renderer in `DomainsConfig.xml`, and the support limits for custom edit-renderers."
+          },
+          {
+            "title": "1.10 Internationalization and Localization",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000088",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "Prerequisites for the internationalization/localization section: you should already understand the concept of a locale and how it affects software behavior. The section explains i18n vs. L10n, why widgets must be internationalized to support multiple locales, and notes that some localization is handled automatically by CDEJ. It also previews CDEJ support such as locale/time zone access, locale-aware sorting, language/country handling, and locale-sensitive numeric formatting/parsing."
+              },
+              {
+                "title": "CDEJ Support for Internationalization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000089",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "Explains internationalization vs. localization (i18n/L10n) in widget development and why widgets must be internationalized to support multiple locales. Describes that localization usually happens after development via translated text resources. Summarizes CDEJ’s built-in locale support: text externalized to Java properties files, plug-ins exposing active user locale/time zone, locale-aware sorting via comparator plug-ins and Java Collator, country/language variations, and automatic locale-based number formatting/parsing."
+              },
+              {
+                "title": "Widget Internationalization",
+                "level": 3,
+                "children": [],
+                "node_id": "n000090",
+                "range": {
+                  "start_unit_id": "p000053",
+                  "end_unit_id": "p000053",
+                  "start_page": 53,
+                  "end_page": 53
+                },
+                "summary": "Widget localization needs beyond CDEJ’s automatic i18n: localized text retrieval, locale-specific images/icons, locale info and text for JavaScript, and layout that can handle longer translated strings. It points to paths for localized text resources and notes renderer plug-ins usually get locale-aware values automatically. For images, it recommends avoiding text in images, but if needed, storing locale-specific files in subfolders (for example en/es) and referencing them by locale in the renderer’s img src."
+              }
+            ],
+            "node_id": "n000087",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000053",
+              "start_page": 52,
+              "end_page": 53
+            },
+            "summary": "Explains internationalization (i18n) vs. localization (L10n) for widget development and why widgets must be internationalized to support multiple locales. Notes that localization typically happens after development via translated text resources. Describes CDEJ’s built-in locale support: text externalized to Java properties, access to user locale/time zone, locale-aware sorting, language/country handling, and automatic locale-sensitive number/date formatting/parsing. Also covers widget-specific needs not fully handled automatically: localized text/images, JavaScript locale data, and layouts that tolerate longer translated text."
+          },
+          {
+            "title": "1.11 Accessibility Concerns",
+            "level": 2,
+            "children": [
+              {
+                "title": "Prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000092",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "Prerequisites for developing custom widgets: basic HTML knowledge. The section introduces web accessibility, focusing on usability for people with disabilities and common needs such as higher contrast, color support, zooming, keyboard access, and screen-reader-compatible labels. It notes that accessibility regulations vary by jurisdiction and often reference W3C WAI/WCAG guidance. It emphasizes that form input controls must be properly labeled for screen readers, and explains that CDEJ uses an alternative to the HTML `label` element, which may affect automated validation."
+              },
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000093",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "This section introduces accessibility requirements for custom widgets. It explains common needs such as higher contrast, color-safe schemes, zoom and font scaling, keyboard-only access, and screen-reader support. It notes that accessibility regulations vary by jurisdiction and often draw from W3C WAI/WCAG guidance. It emphasizes that labeling form input controls is critical for screen readers and explains how labels must be associated with inputs, while noting CDEJ uses an alternative to the HTML label element."
+              },
+              {
+                "title": "Labels for Form Input Controls",
+                "level": 3,
+                "children": [],
+                "node_id": "n000094",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "Explains accessibility requirements for custom widgets, focusing on form input labels. It notes that screen readers need to associate a field’s label with its input control so users can hear prompts like “Date of Birth, edit.” The section says form labeling is a key accessibility concern, references WAI/WCAG as the main guidance source, and warns that although many standards show the HTML `label` element, CDEJ uses a different method, so HTML may fail some automated validation tools."
+              },
+              {
+                "title": "Font Sizes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000095",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000056",
+                  "start_page": 56,
+                  "end_page": 56
+                },
+                "summary": "This section recommends using relative font sizes when styling widget HTML output. Relative sizes are specified as a percentage of the browser’s base font size, helping content scale consistently with user/browser settings and improving accessibility."
+              }
+            ],
+            "node_id": "n000091",
+            "range": {
+              "start_unit_id": "p000054",
+              "end_unit_id": "p000056",
+              "start_page": 54,
+              "end_page": 56
+            },
+            "summary": "Introduces accessibility concerns for custom widgets. Covers common needs: higher contrast, color-safe design, zoom/font scaling, keyboard-only use, and screen-reader support. Notes accessibility rules vary by jurisdiction and often reference W3C WAI/WCAG. Emphasizes that form controls must be labeled for screen readers; CDEJ uses a title-attribute-based approach rather than HTML `label`, so some validator warnings are false. Also recommends relative font sizes for scalable, accessible widget output."
+          },
+          {
+            "title": "1.12 Overview of the Renderer Component Model",
+            "level": 2,
+            "children": [
+              {
+                "title": "Elements of the Model",
+                "level": 3,
+                "children": [],
+                "node_id": "n000097",
+                "range": {
+                  "start_unit_id": "p000057",
+                  "end_unit_id": "p000057",
+                  "start_page": 57,
+                  "end_page": 57
+                },
+                "summary": "Overview of the renderer component model’s “Elements of the Model.” It explains that the model is defined by Java interfaces in curam.util.client.model and groups elements into: page components, component metadata, and component creators. Key interfaces covered include Component, Field, Container, and Binding. It describes how Field adds binding/domain properties, how domain affects renderer selection, and how Container holds ordered child components. Useful for understanding how UIM components are represented and rendered."
+              },
+              {
+                "title": "Building Components",
+                "level": 3,
+                "children": [],
+                "node_id": "n000098",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000058",
+                  "start_page": 58,
+                  "end_page": 58
+                },
+                "summary": "This section explains how to build model components using the builder pattern. It covers the main builder interfaces—ComponentBuilder, FieldBuilder, and ContainerBuilder—and the ComponentBuilderFactory methods supported in Cúram: createComponentBuilder, createFieldBuilder, and createContainerBuilder. It also notes ComponentParameters as an immutable map of UIM-derived parameters, and Link objects for hyperlinks with path-based targets and parameters. The API is described as simple and flat, hiding internal component structure such as bindings, parameters, and links."
+              }
+            ],
+            "node_id": "n000096",
+            "range": {
+              "start_unit_id": "p000057",
+              "end_unit_id": "p000058",
+              "start_page": 57,
+              "end_page": 58
+            },
+            "summary": "This section introduces the renderer component model and its three categories: page components, metadata, and component creators. It explains the main interfaces in curam.util.client.model: Component, Field, Container, Binding, ComponentParameters, and Link. It notes that fields can be bound to data and may use domain to select view/edit renderers, while containers hold ordered children. It also covers the builder pattern via ComponentBuilderFactory and the supported builders for generic components, fields, and containers."
+          },
+          {
+            "title": "1.13 Design and Implementation Guidelines",
+            "level": 2,
+            "children": [
+              {
+                "title": "Guidelines for Writing Renderers",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Do Keep Things Simple",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000101",
+                    "range": {
+                      "start_unit_id": "p000060",
+                      "end_unit_id": "p000060",
+                      "start_page": 60,
+                      "end_page": 60
+                    },
+                    "summary": "Guidelines for widget development: keep new widgets as simple as possible, since complexity is harder to reduce later and widely used widgets should especially favor simplicity and efficiency. For more complex needs, divide widgets into smaller cooperating renderer plug-ins that can be reused and refined in stages, enabling early release and later enhancement. Also, check renderer plug-ins for nulls to avoid errors, especially for binding paths, parameters, and resolved values; null handling differs between view- and edit-renderers."
+                  },
+                  {
+                    "title": "Do Divide and Conquer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000102",
+                    "range": {
+                      "start_unit_id": "p000060",
+                      "end_unit_id": "p000060",
+                      "start_page": 60,
+                      "end_page": 60
+                    },
+                    "summary": "Advises splitting complex widgets into smaller cooperating renderer plug-ins rather than one large render method, to improve maintainability, reuse, and staged delivery. Describes a gradual development approach: start with a simple cluster-based page, refine field renderers, then, if needed, build a custom layout widget and reuse the smaller widgets in a rendering cascade. Also notes renderers must check for nulls in bindings, parameters, and resolved values; source/target path nullability differs in view vs edit renderers."
+                  },
+                  {
+                    "title": "Do Check for Nulls",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000103",
+                    "range": {
+                      "start_unit_id": "p000060",
+                      "end_unit_id": "p000060",
+                      "start_page": 60,
+                      "end_page": 60
+                    },
+                    "summary": "Renderer plug-ins may receive null values, so they should defensively check binding paths, parameters, and path-resolved values to avoid errors. The section notes that CDEJ does not pass nulls directly to render, but nested renderers can. It also distinguishes view-renderer and edit-renderer behavior: in views, source path is never null and target path is always null; in edits, target path is never null and source path may be null and should be checked."
+                  },
+                  {
+                    "title": "Do Take Shortcuts",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000104",
+                    "range": {
+                      "start_unit_id": "p000061",
+                      "end_unit_id": "p000061",
+                      "start_page": 61,
+                      "end_page": 61
+                    },
+                    "summary": "Advises practical shortcuts for custom widget renderers: you may introduce intermediate custom base classes to share code, as long as the required abstract base class remains an ancestor; but extending CDEJ renderer plug-ins is not supported in Cúram. Recommends utility classes for repetitive DOM tasks like null/empty checks and node creation. Also stresses “going with the flow” in rendering cascades: renderers should follow the renderer API, treat path data generically, and be designed for reuse in FIELD contexts, even if used only inside complex widget cascades."
+                  },
+                  {
+                    "title": "Do Go with the Flow",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000105",
+                    "range": {
+                      "start_unit_id": "p000061",
+                      "end_unit_id": "p000062",
+                      "start_page": 61,
+                      "end_page": 62
+                    },
+                    "summary": "Explains “going with the flow” in renderer cascades: custom widgets should be designed to work naturally with the CDEJ renderer API and UIM FIELD bindings, without special-casing path types or context. Such renderers should be reusable both inside cascades and directly. It illustrates this with a contact-details XML example where path-extension logic makes an address renderer context-dependent; rather than adding parameters and complexity, the better fix is to restructure the XML so renderers can use consistent path extensions."
+                  },
+                  {
+                    "title": "Do Not Introduce Concurrency Issues",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000106",
+                    "range": {
+                      "start_unit_id": "p000063",
+                      "end_unit_id": "p000065",
+                      "start_page": 63,
+                      "end_page": 65
+                    },
+                    "summary": "Renderer plug-ins are single instances shared across concurrent requests, even for one user’s tabbed pages. This section warns that storing per-request state in instance fields causes race conditions and data corruption, illustrated by an email renderer that can leak the wrong address between threads. The fix is to pass data through method arguments, not fields; avoid non-constant fields in plug-ins and be cautious about state in session/application attributes, caches, or helper classes."
+                  },
+                  {
+                    "title": "Do Not Convert Data in a Renderer",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000107",
+                    "range": {
+                      "start_unit_id": "p000066",
+                      "end_unit_id": "p000066",
+                      "start_page": 66,
+                      "end_page": 66
+                    },
+                    "summary": "Renderer plug-ins should only generate HTML markup; do not convert data in renderers. Use converter plug-ins for server property formatting, so locale, time zone, date format, and user preferences are applied consistently and without redundant logic. For XML-backed data, use SimpleXPathADCMarshal to invoke the right converter automatically. The section also warns that renderers should not do too much work: their DocumentFragment stays in memory until rendering completes, and expensive processing like XSLT can increase both memory and CPU use."
+                  },
+                  {
+                    "title": "Do Not Do Too Much",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000108",
+                    "range": {
+                      "start_unit_id": "p000066",
+                      "end_unit_id": "p000066",
+                      "start_page": 66,
+                      "end_page": 66
+                    },
+                    "summary": "Warns against doing too much work in renderer plug-ins. Keep rendering separate from data conversion: use converter plug-ins for locale/time zone/date formatting, or SimpleXPathADCMarshal for XML data, rather than formatting in the renderer. Also cautions that renderers hold their DocumentFragment in memory until return, so large HTML output can increase memory use under load. Heavy processing such as XSLT can also be expensive in both memory and CPU, so assess impact and minimize unnecessary work."
+                  }
+                ],
+                "node_id": "n000100",
+                "range": {
+                  "start_unit_id": "p000059",
+                  "end_unit_id": "p000066",
+                  "start_page": 59,
+                  "end_page": 66
+                },
+                "summary": "Guidelines for writing custom renderer plug-ins: keep widgets simple, split complex renderers into reusable cooperating pieces, and design bottom-up for rendering cascades. Defensively handle null binding paths, parameters, and resolved values, noting view/edit path differences. You may use custom intermediate base classes and utility helpers, but not extend CDEJ renderer plug-ins. Renderers must be stateless and thread-safe. Do not convert data in renderers; use converters or SimpleXPathADCMarshal. Avoid excessive memory/CPU work, especially large HTML output or XSLT."
+              },
+              {
+                "title": "Supporting Field-level Security",
+                "level": 3,
+                "children": [],
+                "node_id": "n000109",
+                "range": {
+                  "start_unit_id": "p000067",
+                  "end_unit_id": "p000068",
+                  "start_page": 67,
+                  "end_page": 68
+                },
+                "summary": "Explains Cúram’s page-level vs field-level security and what widget developers must do. Page-level security blocks rendering entirely, but field-level security allows the page to load while hiding unauthorized field values, often by showing a placeholder like ****. Renderer plug-ins must catch DataAccessSecurityException from DataAccessor when accessing secured properties and substitute safe output. This is mainly relevant to view-renderer plug-ins; edit-renderer plug-ins should not rely on field-level security for forms and should use page-level security or separate pages instead."
+              },
+              {
+                "title": "Adding New CSS Rules for Custom Widgets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000110",
+                "range": {
+                  "start_unit_id": "p000069",
+                  "end_unit_id": "p000069",
+                  "start_page": 69,
+                  "end_page": 69
+                },
+                "summary": "Explains how custom widgets should handle CSS: developers can either inherit default Cúram styling or define specific custom CSS. It recommends using the Custom Widget Development Framework to generate a unique widget ID and base CSS rules on it for better isolation from future application changes. Notes that all visual aspects should be evaluated case by case, but even specific CSS may need updates after major Cúram UI changes. Also introduces testing concerns for widgets, especially HTML structure, browser presentation, JavaScript behavior, and cross-browser support."
+              }
+            ],
+            "node_id": "n000099",
+            "range": {
+              "start_unit_id": "p000059",
+              "end_unit_id": "p000068",
+              "start_page": 59,
+              "end_page": 68
+            },
+            "summary": "Guidelines for custom widget renderers: keep designs simple, split complex widgets into reusable cooperating renderers, and follow the renderer API rather than special-casing paths. Check for null binding paths, parameters, and resolved values; use helper/base classes if needed, but do not extend CDEJ renderer plug-ins. Renderers must be stateless/thread-safe, avoid data conversion (use converters or SimpleXPathADCMarshal), and minimize memory/CPU use. Field-level security matters mainly for view renderers: catch DataAccessSecurityException and show masked output like ****; edit renderers should rely on page-level security."
+          },
+          {
+            "title": "1.14 Testing, Troubleshooting and Debugging",
+            "level": 2,
+            "children": [
+              {
+                "title": "Testing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000112",
+                "range": {
+                  "start_unit_id": "p000069",
+                  "end_unit_id": "p000069",
+                  "start_page": 69,
+                  "end_page": 69
+                },
+                "summary": "This section explains widget testing requirements in Cúram custom widget development. It says developers should verify the renderer’s HTML structure for all inputs, confirm correct browser presentation with CSS, test associated JavaScript behavior, and check CSS/JavaScript across supported browsers. It recommends starting with a UIM page to host the widget, and notes that multiple test pages may be needed for different use cases."
+              },
+              {
+                "title": "Troubleshooting",
+                "level": 3,
+                "children": [],
+                "node_id": "n000113",
+                "range": {
+                  "start_unit_id": "p000070",
+                  "end_unit_id": "p000070",
+                  "start_page": 70,
+                  "end_page": 70
+                },
+                "summary": "Troubleshooting renderer development focuses on checking error messages first, especially by enabling stack traces in HTML comments via `errorpage.stacktrace.output=true`. It explains how to use nested exception messages and error numbers from the Cúram Web Client Error Message Guide to diagnose issues. Common problems include domain/style configuration mistakes, component order priority, and custom style name clashes. The section also notes cross-browser testing, HTML/CSS/JavaScript behavior differences, and that renderer output is serialized as XHTML-compatible XML, which some browsers may handle differently."
+              },
+              {
+                "title": "Debugging",
+                "level": 3,
+                "children": [],
+                "node_id": "n000114",
+                "range": {
+                  "start_unit_id": "p000071",
+                  "end_unit_id": "p000071",
+                  "start_page": 71,
+                  "end_page": 71
+                },
+                "summary": "Explains debugging Cúram client widgets using Tomcat in Eclipse, renderer plug-in breakpoints, and tracing via System.out.println to verify debugger/configuration issues. Notes that many widget problems are in JavaScript or CSS and should be debugged in the browser, especially with Firefox and Firebug for DOM, styling, layout, and network inspection. Warns that Firefox may render differently from Edge, so changes should be checked in the target browser."
+              }
+            ],
+            "node_id": "n000111",
+            "range": {
+              "start_unit_id": "p000069",
+              "end_unit_id": "p000071",
+              "start_page": 69,
+              "end_page": 71
+            },
+            "summary": "Covers practical guidance for widget testing, troubleshooting, and debugging. Testing includes verifying renderer HTML structure, CSS presentation, JavaScript behavior, and cross-browser support, often via UIM test pages and tools like Canoo WebTest. Troubleshooting focuses on error pages, enabling stack traces with `errorpage.stacktrace.output=true`, using error numbers and nested messages, and checking configuration/order/style clashes and XHTML serialization issues. Debugging uses Tomcat in Eclipse, breakpoints, trace logging, and browser tools like Firefox/Firebug, with attention to browser-specific differences."
+          },
+          {
+            "title": "1.15 Configuring Renderers",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000116",
+                "range": {
+                  "start_unit_id": "p000072",
+                  "end_unit_id": "p000072",
+                  "start_page": 72,
+                  "end_page": 72
+                },
+                "summary": "Introduces renderer configuration in Cúram 8.1.2. Explains that edit/view renderers are associated with named domain definitions, while component renderers are configured separately for styles. Notes that styles are defined in configuration files rather than the UML model, and this section covers custom style configuration syntax. Emphasizes that renderer customization extends existing plug-in configuration, uses the same config file/process as domain plug-ins, and supports merging custom component configs with default CDEJ settings. Warns that purpose-based configuration is not supported; only class-based configuration may be used."
+              },
+              {
+                "title": "Configuring Domain Renderers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000117",
+                "range": {
+                  "start_unit_id": "p000073",
+                  "end_unit_id": "p000073",
+                  "start_page": 73,
+                  "end_page": 73
+                },
+                "summary": "This section explains how to configure domain renderers in `DomainsConfig.xml`, using `view-renderer` and `edit-renderer` plug-ins. It emphasizes partial customization: only override plug-ins you need, since unspecified ones inherit from CDEJ defaults or ancestor domains. It also warns that custom `select-renderer` and most `marshal` plug-ins are unsupported, and that legacy renderer classes should not be referenced because they are deprecated and can break rendering cascades."
+              },
+              {
+                "title": "Configuring Component Renderers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000118",
+                "range": {
+                  "start_unit_id": "p000074",
+                  "end_unit_id": "p000074",
+                  "start_page": 74,
+                  "end_page": 74
+                },
+                "summary": "This section explains how to configure component-renderer plug-ins for styles using a StylesConfig.xml file in an application component. It shows the XML structure, notes that each style has only one plug-in, and that style names can be any non-empty non-whitespace string. It also explains priority rules when the same style is defined in multiple components, and warns that styles do not inherit like domains. Finally, it cautions against copying unnecessary plug-in configs or overriding CDEJ default style names."
+              }
+            ],
+            "node_id": "n000115",
+            "range": {
+              "start_unit_id": "p000072",
+              "end_unit_id": "p000074",
+              "start_page": 72,
+              "end_page": 74
+            },
+            "summary": "Explains how Cúram 8.1.2 configures renderer plug-ins. Domain renderers use `view-renderer` and `edit-renderer` in `DomainsConfig.xml`, with partial override/inheritance from CDEJ defaults; only change needed plug-ins. Component renderers are style-based, defined in `StylesConfig.xml` with one `component-renderer` per style, no inheritance, and highest-priority component wins on duplicates. Notes styles are config-defined, not UML-modeled. Warns that purpose-based config, custom `select-renderer`/most `marshal` plug-ins, and legacy renderer classes are unsupported."
+          },
+          {
+            "title": "1.16 Accessing Data with Paths",
+            "level": 2,
+            "children": [
+              {
+                "title": "Overview Diagram",
+                "level": 3,
+                "children": [],
+                "node_id": "n000120",
+                "range": {
+                  "start_unit_id": "p000076",
+                  "end_unit_id": "p000076",
+                  "start_page": 76,
+                  "end_page": 76
+                },
+                "summary": "Explains the anatomy of a path expression used in Cúram. Defines prefix path, selector, predicate, step, and extended path, and shows how a sample path references a server interface property. Notes that the prefix identifies the data source type (/data/si), the next steps name the server interface and property, and predicates can filter values; numeric predicates are 1-based, like XPath."
+              },
+              {
+                "title": "Creating New Paths",
+                "level": 3,
+                "children": [],
+                "node_id": "n000121",
+                "range": {
+                  "start_unit_id": "p000077",
+                  "end_unit_id": "p000077",
+                  "start_page": 77,
+                  "end_page": 77
+                },
+                "summary": "Explains when a renderer plug-in must create new paths instead of just resolving paths from a Field’s Binding, such as fetching extra data like localized labels for generated HTML. It notes that renderer plug-ins should use DataAccessor methods to resolve paths without depending on path structure, and that paths may be standard or extended. Also references the Path and Step interfaces for deeper path manipulation details."
+              },
+              {
+                "title": "General Properties Resources",
+                "level": 3,
+                "children": [],
+                "node_id": "n000122",
+                "range": {
+                  "start_unit_id": "p000078",
+                  "end_unit_id": "p000078",
+                  "start_page": 78,
+                  "end_page": 78
+                },
+                "summary": "This section explains how to access general properties resources in custom renderers using `ClientPaths.GENERAL_RESOURCES_PATH`. It describes the path format: extend the prefix with a resource identifier and property key, where the resource maps to a Java properties file on the classpath. It gives an example using `sample.PersonDetails` and notes that only `get` is supported; missing properties raise `DataAccessException`. It also emphasizes that path objects are immutable and `extendPath` returns a new path."
+              },
+              {
+                "title": "Resource Store Properties Resources",
+                "level": 3,
+                "children": [],
+                "node_id": "n000123",
+                "range": {
+                  "start_unit_id": "p000079",
+                  "end_unit_id": "p000079",
+                  "start_page": 79,
+                  "end_page": 79
+                },
+                "summary": "Explains how to access properties from the Application Resource Store. Uploaded files become database-backed resources, not files, and are retrieved via paths built from ClientPaths.APP_PROP_RESOURCE_PATH with one step: resource name as selector and property key as predicate. The resource identifier must match the uploaded name exactly, including any “.properties” suffix if used. Resources are cached with locale fallback and de-duplication, enabling runtime-modifiable properties. Useful for renderer plug-ins needing locale-aware property values from stored resources."
+              },
+              {
+                "title": "Literal Values",
+                "level": 3,
+                "children": [],
+                "node_id": "n000124",
+                "range": {
+                  "start_unit_id": "p000080",
+                  "end_unit_id": "p000080",
+                  "start_page": 80,
+                  "end_page": 80
+                },
+                "summary": "Explains how to represent literal values as paths when widget APIs require paths instead of raw data. A literal is encoded with `ClientPaths.LITERAL_VALUE_PATH` and `PathUtils.escape(...)`, so `DataAccessor` returns the literal value on resolution. Notes that escaping is required because literal text may contain characters that conflict with path syntax. Useful for constructing paths that carry fixed values rather than resource properties."
+              }
+            ],
+            "node_id": "n000119",
+            "range": {
+              "start_unit_id": "p000075",
+              "end_unit_id": "p000080",
+              "start_page": 75,
+              "end_page": 80
+            },
+            "summary": "Explains how renderer plug-ins access data through Cúram paths, including path anatomy (prefix, selector, predicate, step, extended path) and 1-based numeric predicates. Shows that paths from a Field’s Binding are resolved via DataAccessor methods, with get always supported and other methods limited by source. Covers creating new paths for localized labels or other data using ClientPaths prefixes: GENERAL_RESOURCES_PATH for classpath properties, APP_PROP_RESOURCE_PATH for resource-store properties with locale fallback and exact resource names, and LITERAL_VALUE_PATH for escaped literal values."
+          },
+          {
+            "title": "1.17 Extending Paths for XML Data Access",
+            "level": 2,
+            "children": [
+              {
+                "title": "Simple XPath Expressions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000126",
+                "range": {
+                  "start_unit_id": "p000081",
+                  "end_unit_id": "p000082",
+                  "start_page": 81,
+                  "end_page": 82
+                },
+                "summary": "Describes “simple” XPath-like expressions supported by Cúram XML domain marshal plug-ins. Explains how paths are evaluated on a DOM from a server interface property, with root-first context, element/attribute selectors, optional index and attribute-value predicates, and wildcard forms (`*`, `@*`). Gives sample XML and examples of selecting nodes/attributes, including ordered multi-node results. Notes restrictions on allowed path forms and mentions `SimpleXPathMarshal` vs `SimpleXPathADCMarshal` for optional automatic data conversion/formatting."
+              },
+              {
+                "title": "Evaluating the Paths",
+                "level": 3,
+                "children": [],
+                "node_id": "n000127",
+                "range": {
+                  "start_unit_id": "p000083",
+                  "end_unit_id": "p000083",
+                  "start_page": 83,
+                  "end_page": 83
+                },
+                "summary": "Explains how paths are evaluated via the RendererContext’s DataAccessor and how results are marshaled by SimpleXPathMarshal. Covers supported path syntax beyond basic XPath, including attribute steps, empty predicates, and terminal functions like name() and local-name(). Notes that function calls use a nonstandard path/function notation and must appear last. Describes returned values for attribute nodes, element nodes, missing/null selections, and function results."
+              },
+              {
+                "title": "Automatic Data Conversion",
+                "level": 3,
+                "children": [],
+                "node_id": "n000128",
+                "range": {
+                  "start_unit_id": "p000084",
+                  "end_unit_id": "p000084",
+                  "start_page": 84,
+                  "end_page": 84
+                },
+                "summary": "This section explains SimpleXPathADCMarshal, which extends SimpleXPathMarshal to automatically convert XML string values into domain data types using domain converter plug-ins. It supports the same XPath location paths as the simpler marshal class, but requires values to be element body content with a domain attribute naming the domain definition. It is intended for XML values that represent dates, numbers, code-table items, and similar typed data rather than plain strings."
+              }
+            ],
+            "node_id": "n000125",
+            "range": {
+              "start_unit_id": "p000081",
+              "end_unit_id": "p000084",
+              "start_page": 81,
+              "end_page": 84
+            },
+            "summary": "Explains how server interface property XML values can be navigated with “simple” XPath-like paths via `SimpleXPathMarshal` and `SimpleXPathADCMarshal`. Covers DOM-based path evaluation from the document root, element/attribute selectors, indexes, attribute-value predicates, wildcards, empty predicates, and terminal `name()`/`local-name()` functions. Describes return behavior for `get`, `getRaw`, list, and count methods, including node ordering and null/empty handling. Also introduces automatic data conversion for typed XML values using domain attributes and converter plug-ins."
+          },
+          {
+            "title": "1.18 Source Code for the Sample Widgets",
+            "level": 2,
+            "children": [
+              {
+                "title": "Source Code for the E-Mail Address Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000130",
+                "range": {
+                  "start_unit_id": "p000086",
+                  "end_unit_id": "p000086",
+                  "start_page": 86,
+                  "end_page": 86
+                },
+                "summary": "Shows Java source for two custom view renderers in Cúram: EMailAddressViewRenderer and PhotoViewRenderer. The email widget renders a span containing a mailto link with an email icon and the address text, pulling the address from the bound source path. The photo widget begins a similar render method that reads person photo ID and name from extended source paths and builds a photo-container div. Useful for understanding how these widgets generate DOM output and access data."
+              },
+              {
+                "title": "Source Code for the Photograph Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000131",
+                "range": {
+                  "start_unit_id": "p000086",
+                  "end_unit_id": "p000086",
+                  "start_page": 86,
+                  "end_page": 86
+                },
+                "summary": "Shows Java source for a custom `PhotoViewRenderer` widget, following an email-address widget example. It renders a photo-related UI by pulling `photo/id` and `photo/name` from the bound data path, creating a `div`-based container (`photo-container`) and a `details-link` area in the DOM. Useful if you need the implementation pattern for rendering a photograph/person widget in Cúram, especially how it accesses data and builds HTML elements dynamically."
+              },
+              {
+                "title": "Source Code for the Details Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000132",
+                "range": {
+                  "start_unit_id": "p000087",
+                  "end_unit_id": "p000088",
+                  "start_page": 87,
+                  "end_page": 88
+                },
+                "summary": "Shows Java renderer code for a “PersonDetailsViewRenderer” custom widget. It retrieves person detail fields (name, reference, address, gender, date of birth, age, phone, email) from the data accessor, builds a DOM fragment, and assembles a details panel with header, address, gender, birth/age text, contact info, phone icon, and a nested email field rendered via a field builder/domain component. Useful for understanding how the details widget is populated and rendered in Cúram."
+              },
+              {
+                "title": "Source Code for the Person Context Panel Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000133",
+                "range": {
+                  "start_unit_id": "p000089",
+                  "end_unit_id": "p000089",
+                  "start_page": 89,
+                  "end_page": 89
+                },
+                "summary": "Shows the Java implementation of `PersonContextPanelViewRenderer`, a custom view renderer extending `AbstractViewRenderer`. It builds a horizontal layout container, creates two field components, copies the incoming component, and binds them to `SAMPLE_PHOTO_XML` and `SAMPLE_DTLS_XML` at the `person` path. The renderer then creates a `DocumentFragment` and renders the container via a subcontract. This section is useful for understanding how the Person Context Panel widget assembles and renders its UI."
+              },
+              {
+                "title": "Source Code for the Horizontal Layout Widget",
+                "level": 3,
+                "children": [],
+                "node_id": "n000134",
+                "range": {
+                  "start_unit_id": "p000089",
+                  "end_unit_id": "p000089",
+                  "start_page": 89,
+                  "end_page": 89
+                },
+                "summary": "Shows Java source for `PersonContextPanelViewRenderer`, a custom widget renderer extending `AbstractViewRenderer`. It builds a container with the `horizontal-layout` style, creates field builders for `SAMPLE_PHOTO_XML` and `SAMPLE_DTLS_XML`, sets both to the `person` subpath, and renders them into a document fragment using a subcontract. Useful for seeing how the horizontal layout widget composes and renders paired person fields."
+              },
+              {
+                "title": "Source Code for the Text Field Widget with No Auto-completion",
+                "level": 3,
+                "children": [],
+                "node_id": "n000135",
+                "range": {
+                  "start_unit_id": "p000090",
+                  "end_unit_id": "p000094",
+                  "start_page": 90,
+                  "end_page": 94
+                },
+                "summary": "Shows sample Java source for a custom text field widget renderer without auto-completion. The `NoAutoCompleteEditRenderer` extends `AbstractEditRenderer` and builds an HTML `<input type=\"text\">` with `autocomplete=\"no\"`, sets id/name/title/value, optional initial focus and width styling, and applies script attributes. Also includes surrounding sample code using `FieldBuilder`/`RendererContext` and then ends with Merative notices, copyright, sample program license, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000129",
+            "range": {
+              "start_unit_id": "p000085",
+              "end_unit_id": "p000094",
+              "start_page": 85,
+              "end_page": 94
+            },
+            "summary": "Shows sample Java source for custom widget renderers in Cúram: EMailAddressViewRenderer, PhotoViewRenderer, PersonDetailsViewRenderer, PersonContextPanelViewRenderer (horizontal layout), and NoAutoCompleteEditRenderer. The code demonstrates how widgets use RendererContext/DataAccessor, bind source paths, build DOM elements, create nested field builders, and set HTML attributes such as mailto links, image URLs, styles, and autocomplete=\"no\". The section ends with licensing, privacy, and trademark notices."
+          }
+        ],
+        "node_id": "n000016",
+        "range": {
+          "start_unit_id": "p000011",
+          "end_unit_id": "p000094",
+          "start_page": 11,
+          "end_page": 94
+        },
+        "summary": "Introduces Cúram custom widget development for UIM pages, covering when to use widgets versus UIM, how widgets are rendered and configured, and the tradeoffs of flexibility versus maintenance, styling, localization, accessibility, and cross-browser support. The section outlines the guide structure and provides sample widgets: email link, photo, person details, cascading context panel, and a no-auto-complete text edit renderer. It also includes internationalization, accessibility, renderer component model, design guidelines, testing/debugging, configuration, path access, XML path extension, and full source code for the samples."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

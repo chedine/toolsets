@@ -1,0 +1,1096 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "0f740d28496db2c2",
+    "title": "Cúram 8.1.2 Integrated Case Management Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramIntegratedCaseManagementConfigurationGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "0f740d28496db2c2b3a562eb288555fb40d43c3e666342b02d1aab417d4926ad",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T17:36:39+00:00",
+    "page_count": 68,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramIntegratedCaseManagementConfigurationGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Integrated Case Management Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000068",
+      "start_page": 1,
+      "end_page": 68
+    },
+    "summary": "Front matter and the main Chapter 1 of the Cúram 8.1.2 Integrated Case Management Configuration Guide. It explains how agencies configure integrated, product, screening, and assessment case types; common settings like names, home pages, dates, grouping, translator checks, display options, and ownership/workflow assignment; plus configuration of products, services/referrals, evidence types, CER/rules, ongoing case management behaviors, and special cautions. It also covers rate tables in depth, including simple vs. complex tables, entity structure, XML format, business processes, and worked examples for ranged tables and tables with subcolumns. The section ends with legal notices, privacy policy, and trademark information.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This section is a brief notice page. It tells readers to review the “Notices” information on page 67 before using the product or this document. It also includes the Merative US L.P. copyright statement (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter and start of “Configuring Integrated Case Management.” Covers edition/copyright info, table of contents, and the opening configuration topics for case management. Key sections introduce configuring case types, case ownership strategy, assessment and screening case types, and the start of product configuration. The detailed content explains common case settings, case display options, translator requirements, ownership assignment rules, assessment/screening rule-set assignment, and an overview of benefit, liability, and payment correction products."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Configuring Integrated Case Management product settings: case review frequency, supplier returns, eligibility determination, open-ended cases, determination comparison and decision summary strategies, reassessment behavior, eligible participant types, product categories, provisions and locations, certification requirements, product access and location-based security, and benefit product settings for over/underpayments and deductions. Also covers rerate/date list behavior for rules-based products and batch reassessment of system-wide changes. Useful as an overview of product configuration options affecting case creation, reassessment, eligibility, security, and payment handling."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section explains configuration for integrated case management across payments, deductions, liabilities, products, services, referrals, and evidence/rules. It covers rolled-up vs component-level reassessments, deduction limits and participant search properties, associating and prioritizing deductions on benefit/liability products, normal vs reconciled reassessment, over-allocation behavior, and payment correction products. It also describes service delivery settings, provider selection, inquiry/referral notifications and communication methods, payment groups, and the basics of configuring evidence types and linking them to rules for eligibility and entitlement."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section covers configuring integrated case management: defining and activating dynamic evidence types, associating evidence with cases, enabling evidence sharing, and setting evidence approval checks. It also explains CER rule design, rule set configuration, linking rules to evidence, assigning product structure, eligibility/entitlement, key decision factors, and decision details rules, plus publishing and versioning rules. The section ends with ongoing case management setup, especially case overview/Entitlements card configuration and navigation-file changes to show the Overview tab."
+          },
+          {
+            "title": "Edition — pages 45-54",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000054",
+              "start_page": 45,
+              "end_page": 54
+            },
+            "summary": "This section covers configuring Integrated Case Management, especially the Overview tab and case-level behaviors. It explains enabling GraphQL for Entitlements cards, creating and deploying overview-tab XML configs, build-time upload/download targets, and customizing data sources/cards. It also describes case approval checks, delayed processing status, suspension/closure properties, milestone setup and waiver approvals, recent case lists, transaction log limits, case-client display and hook points, and special caution code-table hierarchy/overlap settings."
+          },
+          {
+            "title": "Edition — pages 55-64",
+            "level": 2,
+            "children": [],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000064",
+              "start_page": 55,
+              "end_page": 64
+            },
+            "summary": "Covers Integrated Case Management rate tables and financial search settings. It explains the Display Financials Date Range application property (default 365 days) and then details rate tables: purpose, simple vs. complex structures, effective dating, and examples. It describes the RateHeader, RateColumn, RateRow, and RateCell entities and their key fields, plus RateTable and ParseRates business process methods for creating, modifying, cloning, reading, removing, and XML encoding. Includes XML format and example two-dimensional tables with ranges and subcolumns."
+          },
+          {
+            "title": "Edition — pages 65-66",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000065",
+              "end_unit_id": "p000066",
+              "start_page": 65,
+              "end_page": 66
+            },
+            "summary": "Explains a two-dimensional rate table with ranges and subcolumns used in Integrated Case Management. The example shows how account percentage and size of fund index combine to determine employer-specific rates (Normal, New Employer, Q Rate Employer, G Rate Employer, RESF). Includes a worked example and the corresponding XML structure for the rate table, with column, row, subcolumn, range, and cell definitions."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000066",
+          "start_page": 5,
+          "end_page": 66
+        },
+        "summary": "Front matter for Cúram 8.1–8.1.2, followed by “Configuring Integrated Case Management.” It covers configurable case types and common case settings, product setup, services and referrals, evidence types and rules, ongoing case management options, case overview/approval/suspension/closure behaviors, special cautions, financials date range, and rate tables. The rate-table material explains simple/complex tables, entity structure, XML format, business processes, and examples including ranges and subcolumns."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000068",
+              "end_unit_id": "p000068",
+              "start_page": 68,
+              "end_page": 68
+            },
+            "summary": "This section contains copyright and licensing notices, including permission to copy and modify sample source programs under the Merative Client Agreement, with an “as is” warranty disclaimer and liability limits. It also points to the Merative privacy policy URL and lists trademark ownership for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others. Suitable for checking legal, privacy, and brand/trademark information."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000012",
+            "range": {
+              "start_unit_id": "p000068",
+              "end_unit_id": "p000068",
+              "start_page": 68,
+              "end_page": 68
+            },
+            "summary": "This section lists trademark and copyright notices for the document. It states that sample names and data are fictitious, explains the copyright license for sample programs, links to Merative’s privacy policy, and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX. It also notes that other names may be trademarks of their owners and includes the Merative copyright years 2012, 2024."
+          }
+        ],
+        "node_id": "n000010",
+        "range": {
+          "start_unit_id": "p000067",
+          "end_unit_id": "p000067",
+          "start_page": 67,
+          "end_page": 67
+        },
+        "summary": "Copyright, use-permission, and legal notice page for the publication. Covers personal and enterprise reproduction limits, preservation of proprietary notices, no derivative works outside allowed use, and Merative’s right to withdraw permissions. States no extra licenses are granted, export-law compliance is required, and the content is provided “as-is” without warranty. Also disclaims liability for non-Merative products and external websites, and includes the Merative copyright years 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000013",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for Cúram 8.1.2. Lists front matter and Chapter 1, “Configuring Integrated Case Management,” with subsections on case types, products, services and referrals, case evidence and rules, ongoing case management, and rate tables. Includes page references for each topic plus notices, privacy policy, and trademarks. Useful for navigating to specific configuration topics in the guide."
+      },
+      {
+        "title": "1 Configuring Integrated Case Management",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Configuring case types",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring common case information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000011",
+                  "start_page": 9,
+                  "end_page": 11
+                },
+                "summary": "This section explains common configuration options shared by multiple case types in Integrated Case Management. It covers defining case type names, assigning case home pages, date settings, grouping related case types with Type associations, automatic translator-required evaluation, display settings for participant programs, Universal Access, My Cases, and case search filters, and restricting contact log concerning participants to members only. It also notes which options apply to integrated, product, screening, and assessment case types."
+              },
+              {
+                "title": "Configuring a case ownership strategy",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Explains how agencies configure initial case ownership strategies. Covers default and override options for assigning cases to a user, organization unit, position, or work queue, including workflow-based strategies per case type. Describes the built-in logic for integrated cases and product delivery cases, such as preferring the primary client’s administrator, then the current user, then fallback rules. Notes that workflow-based assignment temporarily places new cases in a Temporary Owner Assignment work queue until the workflow completes."
+              },
+              {
+                "title": "Configuring assessment case types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains assessment case type configuration in Cúram. It covers that admins can maintain, but not add, assessment case types in application administration, and that common case information also applies. It describes assigning eligibility rule sets to assessments, including selection from existing Cúram Rules rule sets, date-based assignment periods, no overlap between periods, and only one active rule set at a time. It also notes screening case types can be linked to one or more assessments, with at least one required and the same non-overlapping period rule."
+              },
+              {
+                "title": "Configuring screening case types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how to configure screening case types. Agencies can set up a screening case type and assign one or more assessments to it, reusing common case information settings. A screening cannot be created unless at least one assessment is assigned. Each assessment assignment must have a specified effective period, and assignment periods cannot overlap with existing ones."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000013",
+              "start_page": 9,
+              "end_page": 13
+            },
+            "summary": "Covers how agencies configure case types in Integrated Case Management. Includes common settings shared across integrated, product, screening, and assessment types: names, home pages, date settings, type groupings, translator-required evaluation, display/filter options, and contact log participant limits. Explains initial case ownership strategies, including default owner logic and workflow-based assignment via Temporary Owner Assignment. Also covers assessment case types (maintenance only, rule set assignment with non-overlapping periods) and screening case types (must link to at least one assessment, with effective periods that cannot overlap)."
+          },
+          {
+            "title": "1.2 Configuring products",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring benefit and liability products",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring general product details",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains the general configuration options for benefit and liability products in Cúram. It covers shared settings such as case name, home page, and display settings, and notes that these apply to multiple case types. It also introduces product-specific setup, including defining eligible participant types for product-based cases (for example, person, employer, utility, information provider, service supplier, and product provider)."
+                  },
+                  {
+                    "title": "Configuring eligibility determination and decisions",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000016",
+                      "start_page": 15,
+                      "end_page": 16
+                    },
+                    "summary": "Explains product-level settings for eligibility processing: how eligibility decisions are configured and displayed, how system-wide changes trigger batch reassessment of affected cases, when reassessment is skipped for closed or already-reassessed cases, how open-ended cases are allowed or forced to have an expected end date, and how determination comparison strategy controls when a new determination is stored after reassessment. Also notes that comparison behavior is driven by a code table and can be extended by administrators."
+                  },
+                  {
+                    "title": "Indicating eligible participant types",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000024",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "This section explains how to indicate which participant types are eligible for a product. By default, only Person participants are fully supported for benefit products; other types such as Employer, Utility, Information Provider, Service Supplier, and Product Provider can be selected but have no effect unless custom application processing is developed. It notes that enabling this setting allows product delivery cases for eligible participants."
+                  },
+                  {
+                    "title": "Assigning products to categories",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how products must be assigned to at least one integrated case category before cases can be created from an integrated case. Categories group similar products (for example, social assistance, illness, financial) and restrict which products can be added to a given integrated case. A product may belong to multiple categories, allowing it to be used in multiple integrated case types."
+                  },
+                  {
+                    "title": "Configuring product provisions and assigning them to locations",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Defining product provisions",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000027",
+                        "range": {
+                          "start_unit_id": "p000018",
+                          "end_unit_id": "p000018",
+                          "start_page": 18,
+                          "end_page": 18
+                        },
+                        "summary": "Explains how to define product provisions in Cúram by linking products to product providers and locations. Covers selecting a provider from registered participants (including the agency), setting start/end dates, currency, estimated cost, payment method, and payment frequency. Also describes associating locations with provisions, defining the active period at each location, and notes deletion constraints: products with active provisions and locations with active cases cannot be deleted."
+                      },
+                      {
+                        "title": "Associating a location with a product provision",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000028",
+                        "range": {
+                          "start_unit_id": "p000018",
+                          "end_unit_id": "p000018",
+                          "start_page": 18,
+                          "end_page": 18
+                        },
+                        "summary": "Explains how to associate a location with a product provision in Cúram. Product provisions (e.g., benefits or training) are configured with provider, dates, currency, estimated cost, payment method, and payment frequency, then linked to one or more delivery locations. Administrators search existing organization locations, and set start/end dates for when the provision is offered at that location. Notes that product provisions and provision locations cannot be deleted if active products or cases depend on them."
+                      }
+                    ],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how agencies configure product provisions and assign them to delivery locations. Covers choosing a product provider from registered participants (including the agency), setting active dates, currency, estimated cost, payment method, and payment frequency, then linking provisions to one or more locations with their own active period and cost. Notes that provision locations can be changed for a case, and deletion is restricted when active provisions or cases depend on the product or location."
+                  },
+                  {
+                    "title": "Assigning a delivery pattern or billing pattern",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how administrators assign delivery or billing patterns to products and what these patterns control. Delivery patterns apply to benefit products; billing patterns apply to liability products. Covers default assignment at case creation, selectable case-level use, and configurable fields such as effective-from date, maximum payment amount (benefits only), default pattern, cover pattern, delivery method, and frequency. Notes that payments over the maximum are suspended until manually approved, with approval controlled by security settings."
+                  },
+                  {
+                    "title": "Configuring case reassessment and adjustments financial processing",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000022",
+                      "start_page": 20,
+                      "end_page": 22
+                    },
+                    "summary": "This section explains product-level financial processing for case reassessment. It covers adjustment settings (whether taxes or surcharges are applied, and at what frequency), automatic underpayment case creation, and overpayment case processing options for benefits and liabilities. It also describes when reassessment creates cases versus tasks, how payment correction cases fit in, and an application property for checking live liabilities before creating benefit underpayment cases. The section begins a brief note on date list and rerate frequency settings for Cúram rules products."
+                  },
+                  {
+                    "title": "Configuring certification requirements",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Explains product certification requirements in Integrated Case Management. Covers when certification is required, noting non-certifiable products cannot record certifications and that enabling it requires a certification frequency. Describes certification frequency validation, where the system compares entered certification periods to the expected cadence and shows an informational warning if they differ. Also covers certification grace periods, which can extend eligibility for a set number of days after certification expires. These settings are not used by default in eligibility decisions unless customized rules reference them."
+                  },
+                  {
+                    "title": "Product access security settings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "This section explains product-level access security and related product settings. It covers certification requirements (whether certification is required, certification frequency, and grace period) and notes these settings are not used by default in eligibility processing unless referenced in custom rules. It also introduces product access security, which lets agencies restrict users’ ability to read, create, modify, or approve cases based on the product, using user security profiles organized by hierarchy."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000023",
+                  "start_page": 14,
+                  "end_page": 23
+                },
+                "summary": "Describes core setup for benefit, liability, and payment correction products in Cúram. Covers product wizard/general settings, eligible participant types, product categories, review and supplier return options, eligibility determination and reassessment behavior, open-ended cases, determination comparison and display strategies, adjustment/tax/surcharge rules, underpayment and overpayment case processing, rerate/date list settings for rules products, certification requirements/frequency/grace periods, and product access security."
+              },
+              {
+                "title": "Configuring benefit products",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000025",
+                  "start_page": 24,
+                  "end_page": 25
+                },
+                "summary": "Explains benefit-product configuration settings that control reassessment and deductions. Covers rolled-up reassessments versus detailed payment correction cases, how over/underpayments are created and displayed, and deduction limits including maximum deduction rate, minimum deduction amount, and minimum payment amount. These settings govern how much can be deducted from benefit payments and when deductions are processed."
+              },
+              {
+                "title": "Configuring liability products",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "This section explains liability product configuration settings. It covers two product-only options: whether over-allocation is allowed on cases based on the liability product, and whether reassessments are handled as normal or reconciled. It notes that these settings affect the actions taken during liability reassessment when overpayments or underpayments are found."
+              },
+              {
+                "title": "Configuring payment correction products",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains how to configure payment correction products used for overpayment and underpayment processing. Notes that payment correction is a preconfigured product not created via the product wizard and is maintained only in the administration application. It can be set so benefit and liability products automatically create a payment correction case when reassessment detects an overpayment or underpayment. This section sits alongside related settings for normal reassessment and over-allocation."
+              },
+              {
+                "title": "Configuring absence reasons",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "This section explains how to configure absence reasons for benefit and liability products. It describes defining program-specific lists of acceptable absence reasons, using them to mark client absences as payable or deductible, and notes that an absence reason can be both. It also covers the Acceptable setting and mentions that payable/deductible settings apply only to Cúram Provider Management processing."
+              },
+              {
+                "title": "Configuring appeal processes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000028",
+                  "end_unit_id": "p000028",
+                  "start_page": 28,
+                  "end_page": 28
+                },
+                "summary": "Describes configuring custom appeal processes for agency products. Appeals can escalate to higher decision-making bodies, with three appeal types: Hearing, Hearing Review, and Judicial Review. Agencies can also define the order in which these appeal types may be created for appeals against decisions on product delivery cases."
+              },
+              {
+                "title": "Configuring bonus payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "This section explains product configuration for bonus payments, time constraints, and service delivery. It covers how bonus payments are defined with bonus type, start/end dates, and amount; how time constraints use number of days, constraint type, and from date to enforce deadlines such as appeals; and how services can be set up to use product delivery processing, combining product features like eligibility and financial processing with service-specific functions such as provider selection and enquiries."
+              },
+              {
+                "title": "Configuring time constraints",
+                "level": 3,
+                "children": [],
+                "node_id": "n000039",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "Explains how to configure product time constraints: set the number of days, choose a constraint type from the ConstraintType code table (default “first appeal”), and define the effective From Date. It describes how the time limit determines whether an appeal is timely or untimely relative to the maximum period. The page also briefly follows with product-delivery services, noting that services can combine product delivery features (evidence, eligibility, financial processing) with service-specific functions like provider selection and enquiries."
+              },
+              {
+                "title": "Configuring products to deliver services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000030",
+                  "start_page": 29,
+                  "end_page": 30
+                },
+                "summary": "Explains how to configure a product so it can be used for service delivery processing in CPM. Covers the service-offering relationship, required product setup, and which standard product features still apply (evidence, eligibility, decisions, rate tables, financials). Also describes service-specific settings: hiding product delivery in case lists/search, choosing delivery patterns and nominee behavior, and controlling open-ended cases and end dates."
+              },
+              {
+                "title": "Configuring payment groups",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Payment groups let agencies roll up payments for selected products or programs during financial processing. Products in the same payment group are combined into one payment if roll-up conditions are met, while ungrouped products are rolled up separately. This is useful when an agency wants to keep certain program payments from being merged into a single payment instruction. Example: Child Support can remain separate while Income Support and Carer’s Allowance are combined into another payment."
+              }
+            ],
+            "node_id": "n000020",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000031",
+              "start_page": 14,
+              "end_page": 31
+            },
+            "summary": "Explains how to configure products for integrated case management, including benefit, liability, and payment correction products. Covers product wizard setup, eligible participant types, categories, review frequency, supplier returns, eligibility/determination settings, open-ended cases, comparison and display strategies, reassessment rules, deductions, absence reasons, appeal processes, bonus payments, time constraints, service-delivery use, visibility/display controls, and payment groups. Also notes payment correction products are administered separately and can auto-create correction cases."
+          },
+          {
+            "title": "1.3 Configuring services and referrals",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000043",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section explains how administrators configure service offerings for integrated case services and referrals. It covers settings that control service creation and management, including whether services can support multiple clients, automatic multiple service deliveries, required provider/provider type selection, service frequency and client participation frequency/duration, default and overrideable service frequency, required service units, authorized rate overrides, and delivery type for financial processing. It also summarizes provider selection options: provider mandatory, provider type mandatory, either required, or neither required."
+              },
+              {
+                "title": "Configuring referral services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains referral service configuration in Integrated Case Management. Covers defining referral details such as whether a service can be used for multiple clients, and configuring notification templates for client/provider referral letters. Notes default pro forma and system-default templates if none are set. Also describes follow-up notification properties (follow-up required, email notifications, supervisor warning days) and the notification mechanism strategy that chooses delivery based on preferred communication methods and communication exceptions."
+              }
+            ],
+            "node_id": "n000042",
+            "range": {
+              "start_unit_id": "p000032",
+              "end_unit_id": "p000033",
+              "start_page": 32,
+              "end_page": 33
+            },
+            "summary": "This section explains how Integrated Case Management services and referrals are configured via service offerings in Cúram Provider Management. It covers service-level options such as multiple clients, multiple deliveries, provider/provider type requirements, service frequency, client participation duration, units, authorized rate overrides, and delivery type for financial processing. It also describes provider selection modes. For referrals, it covers referral details, notification templates, follow-up and email properties, supervisor warning days, and the notification mechanism based on preferred communication methods and exceptions."
+          },
+          {
+            "title": "1.4 Configuring case evidence and rules",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring evidence types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000036",
+                  "start_page": 34,
+                  "end_page": 36
+                },
+                "summary": "This section explains how to configure evidence types in Integrated Case Management. It covers defining dynamic evidence type basics (name, logical name, effective period, security group), using the Dynamic Evidence Editor to build pages, validations, and parent/child relationships, and activating evidence to generate rule classes and security artifacts. It also describes associating evidence types with integrated case or product delivery case types, including category, quick link, and sort order settings, and how these affect evidence workspace display and capture."
+              },
+              {
+                "title": "Defining rules and configuring rule sets",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how Cúram Express Rules (CER) are used to convert legislation into entitlement rules, helping users design and understand complex eligibility logic. States that rules must first be created as CER rule classes in the CER Editor, then grouped into rule sets and linked to evidence types, non-evidence entities, and products to determine eligibility and entitlement. Notes that configuration options support rule set setup, rule design, and assigning rules to the relevant products and evidence."
+              },
+              {
+                "title": "Linking rules to evidence with a rules data configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Explains how Cúram links rules to evidence through rules data configurations. A rules data configuration maps a rule class to an evidence type or non-evidence entity in XML, can be created, copied, edited dynamically, and must be published to take effect. Changes are applied during case reassessment (for example, manual reassessment or financial generation). Also briefly notes the CER Editor for designing and validating rules, and rule set/category administration."
+              },
+              {
+                "title": "Assigning Cúram Express Rules to products",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Assigning rules to products",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000039",
+                      "start_page": 39,
+                      "end_page": 39
+                    },
+                    "summary": "Explains how Cúram Express Rules are assigned to products for eligibility and entitlement decisions in product delivery cases. Covers the three rule set types: eligibility/entitlement rules, decision details rules for explanations, and deprecated key decision factor rules. Describes using product periods to apply rules over a timeframe, including open-ended periods, and notes that each product must have at least one product period with an eligibility/entitlement rule assigned. Also mentions optional product attributes and that only published rules are used in cases."
+                  },
+                  {
+                    "title": "Assigning a product period to a product",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000051",
+                    "range": {
+                      "start_unit_id": "p000039",
+                      "end_unit_id": "p000040",
+                      "start_page": 39,
+                      "end_page": 40
+                    },
+                    "summary": "This section explains product periods as the mechanism for assigning rules to products. A product period defines the effective timeframe for eligibility and entitlement rule sets, and every product must have at least one product period. It may be open-ended or time-limited. Administrators must assign an eligibility and entitlement rule, may assign decision details or key decision factor rules, and can set product attributes used in determination. The table covers required fields such as name, start/end dates, and product structure rule."
+                  },
+                  {
+                    "title": "Assigning decision details rules to a product",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000041",
+                      "end_unit_id": "p000041",
+                      "start_page": 41,
+                      "end_page": 41
+                    },
+                    "summary": "This section explains how to assign decision details rules to a product. It describes decision details as optional rules that provide a user-friendly explanation of eligibility/entitlement results. It also introduces the first step: configuring product display categories, which control how decision information is grouped and ordered for viewing (for example, summary, household income, and medical expense categories). Each product can have multiple display categories."
+                  },
+                  {
+                    "title": "Publishing rules for products",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "Explains how product rules are published and versioned. Rules assigned to products start in an in-edit state and must be published before the system uses them for eligibility and entitlement in cases. Administrators can copy published rules, edit them, then publish or discard changes; publishing creates a snapshot of the previous version and saves a new one. Published changes affect the next reassessment or financial generation, and product configuration changes can trigger batch reassessment. Also mentions viewing rule history for a product."
+                  }
+                ],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000042",
+                  "start_page": 39,
+                  "end_page": 42
+                },
+                "summary": "Explains how to assign Cúram Express Rules to products via product periods. Covers rule set types: eligibility/entitlement (required), decision details (optional explanatory rules), and deprecated key decision factors. Product periods define effective timeframes, can be open-ended, and every product must have at least one; only published rules are used. Also describes product structure rules, product attributes, display categories for decision details, and publishing/versioning of product rules so changes take effect in reassessment."
+              },
+              {
+                "title": "Assigning Cúram Rules to products",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "Explains how to assign Cúram Rules rule sets to benefit or liability products. A product must have at least one assigned rule set before eligibility determination; assignments are selected from existing rule sets and recorded with an effective period that cannot overlap other assignments, with only one active at a time. Notes that rule sets are maintained in the Cúram Rules Editor. The excerpt then begins the next topic on configuring ongoing case management, including application properties, case search, approval, reassessment, closure, transaction logs, and milestones."
+              }
+            ],
+            "node_id": "n000045",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000042",
+              "start_page": 34,
+              "end_page": 42
+            },
+            "summary": "Explains how to configure case evidence and rules in Integrated Case Management. Covers creating and activating dynamic evidence types, using the Dynamic Evidence Editor, associating evidence with integrated or product delivery case types, enabling sharing and approval checks, and setting categories, sort order, and quick links for workspace display. Also describes CER rules and rule sets, rules data configurations that map rules to evidence/entities and must be published, and assigning/publishing rules to products via product periods, including eligibility/entitlement, decision details, and deprecated key decision factors."
+          },
+          {
+            "title": "1.5 Configuring ongoing case management",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring the case overview",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring the case overview tab and Entitlements card",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Explains how to configure the case overview tab and Entitlements card for selected case types, including showing entitlement/payments info from product delivery cases. Notes that the Overview tab appears as the second tab and requires updates to case navigation files plus overview-tab XML configuration files. Covers changing default tab/card text via properties files, then starts the procedure for updating .nav files: add a dynamic navigation-page for CaseOverview, register or reuse a DynamicNavStateLoader, and call CaseOverviewTabHelper.configureCaseOverviewTab()."
+                  },
+                  {
+                    "title": "Updating the tab navigation to include the Overview tab",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000044",
+                      "end_unit_id": "p000044",
+                      "start_page": 44,
+                      "end_page": 44
+                    },
+                    "summary": "Explains how to add the Overview tab to case navigation for each product category. It instructs updating each .nav file with a dynamic navigation-page for CaseOverview, adding or reusing a DynamicNavStateLoader, and calling CaseOverviewTabHelper.configureCaseOverviewTab(navigation, pageParameters) so the tab only appears when enabled for that product category."
+                  },
+                  {
+                    "title": "Enabling GraphQL",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000045",
+                      "start_page": 45,
+                      "end_page": 45
+                    },
+                    "summary": "Explains how to enable GraphQL so Entitlements card data appears: log in as system administrator, go to Property Administration, and set `curam.graphql.endpoint.enabled` to `true`. Also introduces creating overview tab XML configuration files for integrated case types, which control whether the case overview displays and which cards and linked destinations appear, including which product delivery cases are included on the Entitlements card."
+                  },
+                  {
+                    "title": "Creating overview tab configuration files",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000045",
+                      "end_unit_id": "p000046",
+                      "start_page": 45,
+                      "end_page": 46
+                    },
+                    "summary": "Explains how to create overview tab XML configuration files for integrated case types and upload them to the database. The config controls whether the Overview tab is shown and which cards appear, especially the Entitlements card, including product delivery cases and navigation link destinations. Provides an example XML with case-type code, product-category code, show-overview-tab, cards, product-delivery-cases, and links. Also notes GraphQL must be enabled separately via the `curam.graphql.endpoint.enabled` system property for Entitlements data to display."
+                  },
+                  {
+                    "title": "Configuring the overview tab with build targets",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000061",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Explains how to use overview tab build targets during development and test to manually upload or download case overview configurations via XML. Upload requires running SetEnvironment.bat, then case.overview.configuration.upload from EJBServer with an absolute -Dlocation path to the XML file. It notes these build targets provide some validation of configuration files and allow an existing configuration to be exported to XML, modified, and re-uploaded."
+                  },
+                  {
+                    "title": "Adding the final configuration to the build",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000062",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Explains how to add the final overview tab configuration to the build at runtime. It shows downloading a configuration from the database with `build.bat case.overview.configuration.download` and then setting up the EJBServer `components/custom/data/demo/initial/clob` folder structure. Place the completed XML config files in `clob`, and create an `OVERVIEWTABCONFIG.dmx` in `initial` with `CASETYPECODE` and `PRODUCTCATEGORYCODE` matching the values in the XML."
+                  },
+                  {
+                    "title": "Customizing data sources for the Entitlements card",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000063",
+                    "range": {
+                      "start_unit_id": "p000049",
+                      "end_unit_id": "p000049",
+                      "start_page": 49,
+                      "end_page": 49
+                    },
+                    "summary": "This section explains that Entitlements card data is populated by GraphQL queries and that the GraphQL schema itself cannot be customized because the card expects specific returned attributes. It notes that individual data sources for specific data items can be customized instead. It also briefly describes Overview tab cards as Carbon Design System JavaScript components supplied by GraphQL endpoints via data fetchers, with a related link for schema/data source customization."
+                  }
+                ],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000048",
+                  "start_page": 43,
+                  "end_page": 48
+                },
+                "summary": "Explains how to configure the case overview for selected integrated case types. Covers showing the Overview tab and Entitlements card, changing default labels, and using CaseOverviewTabHelper in case navigation files. Details enabling GraphQL (`curam.graphql.endpoint.enabled=true`), creating XML overview-tab configs that control which product delivery cases, links, and cards appear, and uploading/downloading them with build targets during test. Also describes adding final configs to the build via `clob` files and `OVERVIEWTABCONFIG.dmx`."
+              },
+              {
+                "title": "Configuring case approval",
+                "level": 3,
+                "children": [],
+                "node_id": "n000064",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "This section explains case approval configuration for product delivery cases. It notes that administrators can configure approval only for product delivery cases, and that approval checks can be set at the product level to apply to all cases for that product. It also describes the Percentage setting, which defines what proportion of cases require supervisor review versus automatic approval."
+              },
+              {
+                "title": "Configuring the delayed processing display",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "Explains how the Delayed Processing Pending status is controlled for product delivery cases. The `curam.custom.delayedprocessing.dpdisplayinstatushistory` property determines whether this status appears in Case Status History; the default is YES. Regardless of this setting, the status is always shown temporarily on the Product Delivery Home page while delayed processing is running, so users know the system is still processing and they can continue other work."
+              },
+              {
+                "title": "Configuring case suspension and case closure",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "This section explains how to configure case suspension and case closure using system application properties. It covers payment timing for suspended cases, whether cases with outstanding tasks can be closed, whether ineligible product delivery cases are auto-closed, and whether payments continue up to closure. It also introduces case milestones: associating milestone configurations with case types, tracking expected versus actual dates, controlling date changes for automatically created milestones, and using milestone waiver requests and approval checks to manage exceptions."
+              },
+              {
+                "title": "Configuring case milestones",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000051",
+                  "end_unit_id": "p000051",
+                  "start_page": 51,
+                  "end_page": 51
+                },
+                "summary": "This section explains how to configure case milestones in Integrated Case Management. It covers associating milestone configurations with case types to support manual and automatic milestone creation, and how milestones track expected and actual start/end dates. It also describes controls for changing dates on automatically created milestones, including waiver requests and approval check settings that route a percentage of requests to supervisor review."
+              },
+              {
+                "title": "Configuring recent case actions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "This section explains configuration for recent case-related UI behavior and logs. It covers application properties for how many days cases appear in users’ recently assigned, viewed, and approved lists (defaults: 7 days each), the case transaction log entry limit on the case home page (curam.casetransactionlog.nooftransactions, default 10), and a property to change case list pages from a Primary Client column to a Clients column."
+              },
+              {
+                "title": "Configuring the case transaction log",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000052",
+                  "start_page": 52,
+                  "end_page": 52
+                },
+                "summary": "This section explains how to configure case-related UI behavior. It covers recent case action lists via three application properties for assigned, viewed, and approved cases, each defaulting to 7 days. It then describes the case transaction log setting, using curam.casetransactionlog.nooftransactions to control the maximum entries shown on the case home page for both integrated case and product delivery logs; default is 10 and only the most recent transactions display when exceeded. It also begins a setting for displaying case clients on list pages."
+              },
+              {
+                "title": "Configuring how to display case clients on case list pages",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000052",
+                  "end_unit_id": "p000053",
+                  "start_page": 52,
+                  "end_page": 53
+                },
+                "summary": "Explains how to configure case list pages to show a Clients column instead of Primary Client using the Display Case Clients on Case List Pages property. Applies to recently assigned/approved/viewed cases, My Cases, and case search/query results. By default it is false; when true, multiple active case members with Member or Primary Client roles may display, sorted alphabetically, with no hyperlinks. Also notes a hook point, CaseClientsPopulationHook, for customizing which clients appear, including support for case groups in customized product delivery cases."
+              },
+              {
+                "title": "Configuring special cautions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000054",
+                  "end_unit_id": "p000054",
+                  "start_page": 54,
+                  "end_page": 54
+                },
+                "summary": "Explains how to configure special cautions in Cúram using the Special Caution Category and Special Caution Type code tables. By default, same-type special cautions cannot overlap for the same period; overlap can be allowed by disabling specific validation rules. Describes the hierarchy between category and type code tables and the procedure to create a new special caution type and assign its parent category through System Configurations and Code Table Hierarchies."
+              },
+              {
+                "title": "Configuring the display financials date range",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "Describes the Display Financials Date Range application property (curam.financial.generatefinancialsdaterange), which controls how far back case and participant financial searches look for transactions. The default is 365 days, calculated from the latest financial transaction effective date minus the configured number of days. Also briefly transitions into rate tables, noting their purpose for time-varying values, effective dates, and support for simple or complex structures."
+              }
+            ],
+            "node_id": "n000055",
+            "range": {
+              "start_unit_id": "p000043",
+              "end_unit_id": "p000054",
+              "start_page": 43,
+              "end_page": 54
+            },
+            "summary": "Explains ongoing case management configuration via application properties and setup steps. Covers case overview/Entitlements card setup, GraphQL enablement, and XML/build-target deployment; case approval checks and percentage-based supervisor review; delayed processing status display; suspension and closure properties; milestone configuration and waiver approvals; recent case actions and transaction log limits; displaying multiple case clients on list pages with hook-point customization; and special cautions code table hierarchy and overlap validation."
+          },
+          {
+            "title": "1.6 Implementing rate tables",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring rate tables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "Explains how rate tables are used to store values that change over time, such as income limits, and can be maintained independently from products. A rate table has a type and effective date; if multiple tables share a type, each remains effective until the day before the next one starts. Tables can be simple or complex, with rows, columns, subrows, subcolumns, and optional min/max per cell, and can be cloned for new tables."
+              },
+              {
+                "title": "Simple and complex rate tables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000055",
+                  "end_unit_id": "p000055",
+                  "start_page": 55,
+                  "end_page": 55
+                },
+                "summary": "This section explains rate tables as time-varying value stores used in Integrated Case Management. It covers how rate tables can be created and maintained independently, cloned, and organized with effective dates, rows, columns, subrows, and subcolumns. It distinguishes simple rate tables (single row/column) from complex ones (multiple rows, columns, and subcolumns), notes that cells may include minimum and maximum values, and explains that interpretation depends on context."
+              },
+              {
+                "title": "Rate table entities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000056",
+                  "end_unit_id": "p000057",
+                  "start_page": 56,
+                  "end_page": 57
+                },
+                "summary": "This section explains rate table entities used to model effective-dated rate tables. It introduces RateHeader, RateColumn, RateRow, and RateCell, and describes their roles and key fields. RateHeader stores effective date, rate table type, status, and comments. RateColumn defines column structure, optional parent/sub-column relationships, min/max/value keys, type, and index. RateRow identifies rows by header, type, and index. Rate tables are maintained in the administration app and accessed by code."
+              },
+              {
+                "title": "Rate table business processes",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "RateTable methods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000078",
+                    "range": {
+                      "start_unit_id": "p000058",
+                      "end_unit_id": "p000059",
+                      "start_page": 58,
+                      "end_page": 59
+                    },
+                    "summary": "This section lists the RateTable business process methods for maintaining rate tables. It covers creating, cloning, listing, reading, modifying, and removing rate table components such as headers, rows, columns, subcolumns, and cells. It also notes that RateTable read uses Rate Header read plus ParseRates.encodeRateTableData to assemble remaining details, and that ParseRates separately converts rate table records into XML for display."
+                  },
+                  {
+                    "title": "ParseRates methods",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000079",
+                    "range": {
+                      "start_unit_id": "p000060",
+                      "end_unit_id": "p000060",
+                      "start_page": 60,
+                      "end_page": 60
+                    },
+                    "summary": "Lists ParseRates class methods for rate table handling: encoding rate table data from the database into XML, and updating indexes for rate cells, rows, columns, subcolumns, and subrows after rate table modifications. Also introduces the rate table XML format used by the client, beginning with RATES_DATA (READ_ONLY) and containing COLUMN and ROW tags with attributes like INDEX, ID, TYPE, and NUM_SUB_ROWS."
+                  },
+                  {
+                    "title": "Rate table XML format",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000080",
+                    "range": {
+                      "start_unit_id": "p000060",
+                      "end_unit_id": "p000060",
+                      "start_page": 60,
+                      "end_page": 60
+                    },
+                    "summary": "Defines the XML structure used to encode rate table data for client display. Describes the main tags and attributes: RATES_DATA (with READ_ONLY), COLUMN (INDEX, ID, TYPE), and ROW (INDEX, ID, TYPE, NUM_SUB_ROWS). Explains that tables begin with RATES_DATA, columns contain rows or sub-columns, and rows contain cells. Useful for understanding how rate table data is serialized and interpreted."
+                  }
+                ],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000058",
+                  "end_unit_id": "p000060",
+                  "start_page": 58,
+                  "end_page": 60
+                },
+                "summary": "Describes the RateTable and ParseRates business processes for maintaining rate tables. RateTable supports cloning, creating, listing, reading, modifying, and removing headers, rows, columns, subcolumns, subrows, and cells; Read Rate Table combines Rate Header read with ParseRates.encodeRateTableData. ParseRates encodes database rate data into client XML and updates indexes after table changes. Also defines the rate table XML format: RATES_DATA (READ_ONLY), COLUMN (INDEX, ID, TYPE), and ROW (INDEX, ID, TYPE, NUM_SUB_ROWS)."
+              },
+              {
+                "title": "Example usage of rate tables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000081",
+                "range": {
+                  "start_unit_id": "p000061",
+                  "end_unit_id": "p000068",
+                  "start_page": 61,
+                  "end_page": 68
+                },
+                "summary": "Shows examples of Cúram rate table XML and display formats. Covers three variants: a basic two-dimensional rate table, one with ranges (min/max/value per cell), and one with both ranges and subcolumns. Explains how columns, rows, and cells map to employer types and rate values, with examples like account percentage and size-of-fund index used to select rates. Includes sample tables and XML snippets, plus notes on range syntax using colons."
+              }
+            ],
+            "node_id": "n000073",
+            "range": {
+              "start_unit_id": "p000055",
+              "end_unit_id": "p000068",
+              "start_page": 55,
+              "end_page": 68
+            },
+            "summary": "Explains how Integrated Case Management rate tables store time-varying values independently of rules/products. Covers effective-dated table types, cloning, and simple vs complex tables with rows, columns, subrows, subcolumns, and optional min/max/value per cell. Describes the core entities (RateHeader, RateColumn, RateRow, RateCell) and the RateTable/ParseRates business processes for creating, reading, modifying, removing, indexing, and XML encoding of rate tables. Includes examples of basic, ranged, and subcolumn-based rate table formats."
+          }
+        ],
+        "node_id": "n000014",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000068",
+          "start_page": 9,
+          "end_page": 68
+        },
+        "summary": "Covers Integrated Case Management configuration: case types (integrated, product, screening, assessment) with shared settings like names, home pages, dates, grouping, translator checks, display/filter options, contact log participant limits, and initial ownership/workflow assignment. Also covers configuring products, services/referrals, dynamic evidence and CER rules, ongoing case management properties, and rate tables. Includes effective-dated simple/complex rate table structures, XML/business processes, and examples of ranged and subcolumn-based tables."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,1044 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "a3c2e04620146b00",
+    "title": "Cúram 8.1.2 XML Infrastructure Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramXMLInfrastructureGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "a3c2e04620146b00cdd44dad7a46979b19eaefc327e149a9d3fe42577514ac31",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T21:02:03+00:00",
+    "page_count": 52,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramXMLInfrastructureGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 XML Infrastructure Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000052",
+      "start_page": 1,
+      "end_page": 52
+    },
+    "summary": "This guide introduces Cúram 8.1.2 XML infrastructure for generating, transforming, and printing application data. It covers the Cúram XML DTD and runtime XML tags for structs, fields, values, and lists, plus the core APIs XMLDocument and XMLPrintStream for creating, opening, adding to, closing, saving, loading, and streaming XML. It explains XML encoding handling and the available encoding constants, with UTF-8 as default. It also describes the XML server architecture, configuration, TLS security, startup/shutdown, load balancing/failover, and statistics. The latter part focuses on XML/XSL templates for PDF, RTF, HTML, and plain text output, including job/template types, an XSL template example, generating templates from RTF, and use of XSL-FO/Xalan/FOP/JFOR. Finally, it highlights globalization issues, especially locale-sensitive serialization of Date, DateTime, and Money, and how to enable locale-neutral serialization.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Introductory note for the document. It tells readers to review the Notices section before using the information or the product it supports, and includes the Merative US L.P. copyright notice (2012, 2024)."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Covers the Cúram 8.1/8.1.1/8.1.2 edition notice and the start of “Developing with the Cúram XML Infrastructure.” Introduces Cúram XML/DTD basics, the main classes XMLDocument and XMLPrintStream, XML encoding choices/constants, and the lifecycle for creating, opening, adding to, closing, saving, and loading XML documents. Also begins the XML Print Stream section, explaining that it submits XML/XSL jobs to the XML Server for formatted output such as PDF, RTF, HTML, or text."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Covers Cúram XML Infrastructure usage for XMLPrintStream and XMLDocument: default/configurable printer, tray, host/port, encoding, locale-neutral serialization, job types (PDF/RTF/HTML/text/custom), opening/closing streams, preview output, and encoding cautions. Includes sample code for saving XML to file, printing, archiving/loading documents, previewing print jobs, and building documents from lists. Also explains XML server load balancing/failover via XMLServerEndPoint or host/port properties and briefly introduces the XML server’s role in rendering XML+XSL to formatted output."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section explains the Cúram XML Server’s architecture, configuration, and security. It covers server startup XML settings for networking, defaults, server command execution, template cache, debugging, logging, RenderX, thread sizing, and custom job types. It details command token substitution, pipe vs temporary-file output handling, and FOP font configuration. It also describes extending rendering with custom DocumentGenerator implementations and securing remote XML server communication with TLS v1.2 using TLSKeystore.properties."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Configures and operates the Cúram XML Server. Covers TLS keystore/certificate properties and automatic generation, truststore issues, overriding port/config, increasing Java stack size, and disabling schema validation. Provides sample Windows and UNIX/z/OS print command/configuration patterns. Explains how to start the server with Ant, run it as a Windows service or UNIX daemon, shut it down cleanly, and collect/send runtime statistics. Ends by introducing the fixed Cúram XML format used for XML/XSL templates."
+          },
+          {
+            "title": "Edition — pages 45-50",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000050",
+              "start_page": 45,
+              "end_page": 50
+            },
+            "summary": "Cúram XML Infrastructure examples and template guidance. Covers the XML DTD for DOCUMENT/META/DATA/STRUCT/FIELD, with sample XML for a single struct and a struct list. Explains when fields can nest STRUCT or STRUCT_LIST. Describes job types and template standards: XSLT for transforming XML, XSL-FO for PDF/RTF layout, HTML and plain text templates, and an XSL template example. Also notes RTF template generation via conversion tools and globalization/locale issues for Date, DateTime, and Money serialization, including locale-neutral serialization settings."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000050",
+          "start_page": 5,
+          "end_page": 50
+        },
+        "summary": "Covers Cúram 8.1/8.1.1/8.1.2 XML Infrastructure. Introduces Cúram XML/DTD basics, XMLDocument and XMLPrintStream, encoding constants, document creation/open/add/close/save/load patterns, and printing via XML Server. Explains XML server architecture/configuration, TLS security, startup/shutdown, statistics, and rendering job types. Includes the Cúram XML DTD, sample XML for structs and struct lists, XSLT/XSL-FO/HTML/plain-text template guidance, an XSL example, RTF template generation, and locale-neutral serialization/globalization concerns."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "Contains legal notices: sample data and names are fictitious; sample programs are provided under the Merative Client Agreement and may be copied/modified/distributed for API-conforming development, but are “AS IS” with no warranty or liability. Includes the Merative privacy policy URL (merative.com/privacy) and a trademarks/copyright notice listing Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "Lists trademark and copyright notices for Merative and third-party products. It states that sample names in examples are fictitious, sample programs may be copied and modified under the Merative Client Agreement, and the examples are provided “AS IS” without warranty. Includes the privacy policy link and identifies trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX, plus a general notice that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000051",
+          "end_unit_id": "p000051",
+          "start_page": 51,
+          "end_page": 51
+        },
+        "summary": "Legal notices and usage terms for the publications: personal use is allowed with proprietary notices preserved; enterprise use is limited, and derivative works or external redistribution require Merative’s consent. No other rights or licenses are granted; Merative may withdraw permission and export laws apply. The content is provided “AS-IS” with no warranties, and Merative disclaims responsibility for non-Merative products or linked websites. Includes patent notice and copyright © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the document. It lists front matter (Note, Edition), then Chapter 1, “Developing with the Cúram XML Infrastructure,” with subsections on representing Cúram data as XML, XML development, the XMLDocument class, XML print stream, sample usage, load balancing/failover, XML server architecture/configuration/start/shutdown/statistics, and XML/XSL templates, including the Cúram DTD, examples, job/template types, XSL template example, RTF template generation, and globalization considerations. Also includes notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Developing with the Cúram XML Infrastructure",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Representing Cúram data as XML",
+            "level": 2,
+            "children": [],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Explains how Cúram represents application data as XML using runtime-generated tags from struct classes defined in the application model. Describes the Cúram-specific DTD for structs, fields, values, types, and lists, and notes the XML stack used: Xerces for parsing, Xalan for XSLT, FOP for PDF, and RTFLib/JFOR for RTF. Also mentions developers may need the XML format for XSL template development or direct XML manipulation."
+          },
+          {
+            "title": "1.2 Developing for XML",
+            "level": 2,
+            "children": [
+              {
+                "title": "The XMLDocument class",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "XML documents",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000016",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000010",
+                      "start_page": 10,
+                      "end_page": 10
+                    },
+                    "summary": "Explains the central XMLDocument class for Cúram XML operations and its basic workflow: create, open to create the root/context, add struct classes, and close. Describes XML document handling options, including storing in memory, writing directly to a stream, retrieving archived documents, and using streams for files, printing, network transfer, buffering, or custom processing. Also stresses specifying character encoding in the XML declaration to avoid ambiguity for non-ASCII data across different systems."
+                  },
+                  {
+                    "title": "Encoding",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000017",
+                    "range": {
+                      "start_unit_id": "p000010",
+                      "end_unit_id": "p000011",
+                      "start_page": 10,
+                      "end_page": 11
+                    },
+                    "summary": "Explains XML character encoding for Cúram XMLDocument usage. Covers why encoding must be specified for non-ASCII data, how the XML declaration communicates it, and the default UTF-8 behavior. Lists common encoding constants (UTF-8, ISO-8859 variants, UCS-2/UCS-4, Japanese encodings) and notes that the chosen constant/string should match database-stored data and be supplied when constructing XMLDocument; otherwise parsers assume UTF-8."
+                  },
+                  {
+                    "title": "Creating an XMLDocument",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000018",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to create an XMLDocument and choose its storage stream. By default it uses an internal stream so XML can later be saved to the database or written elsewhere; alternatively, a provided OutputStream can be used for large, transient documents. Shows the two constructors and notes encoding can be set with constants or a string. Also covers opening the document with open() for one struct or openForList() for multiple same-type structs, and describes the metadata parameters these methods accept."
+                  },
+                  {
+                    "title": "Opening an XMLDocument object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000019",
+                    "range": {
+                      "start_unit_id": "p000012",
+                      "end_unit_id": "p000012",
+                      "start_page": 12,
+                      "end_page": 12
+                    },
+                    "summary": "Explains how to open an XMLDocument after instantiation. Use open(generatedBy, generatedDate, version, comment) to write one struct class, or openForList(...) to write multiple struct classes of the same type as a list. Both methods set document metadata such as generator, date, version, and comments. This section is useful for deciding between single-record and list-based XML output and for understanding the required metadata before populating the document."
+                  },
+                  {
+                    "title": "Adding data to an XMLDocument object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000020",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to add content to an XMLDocument. Covers add(Object value) for struct-class instances, addFromXML(String xmlFragment) for inserting raw XML fragments, and the rules for open() vs openForList() (single add vs multiple adds of the same struct type). Notes that XML special characters must be escaped with XMLDocument.escape(). Also briefly describes close() behavior and saving closed documents to the database with save(String name, XSLTemplateInstanceKey) for archival and reprinting."
+                  },
+                  {
+                    "title": "Closing an XMLDocument object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000021",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to finish writing an XMLDocument: call close() with no parameters after adding data, and note that it does not close the underlying output stream. Once closed, remaining XML is flushed to produce a well-formed document; if using the internal string buffer, the document can then be saved to the database or written elsewhere."
+                  },
+                  {
+                    "title": "Saving an XMLDocument object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000013",
+                      "end_unit_id": "p000013",
+                      "start_page": 13,
+                      "end_page": 13
+                    },
+                    "summary": "Explains how to save a closed XMLDocument that uses the default internal string buffer to the database with save(String name, XSLTemplateInstanceKey templateKey). Notes that saving preserves a snapshot of printed data, useful for rerunning print jobs with the same data and template version. The saved document can be associated with a template instance, and the name parameter is user-defined up to 100 characters."
+                  },
+                  {
+                    "title": "Loading an XMLDocument object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000023",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "This section explains how to load an archived XML document by creating a default XMLDocument and calling load(XMLArchiveDocumentID key). It notes that loading returns the saved document details, including template metadata such as version and locale plus the XML data itself, and that the loaded object can then be used like any other document. It also introduces the XMLPrintStream class, which sends XML jobs to the Cúram XML Server for formatting and printing with XSL templates, and outlines the basic print-job workflow."
+                  }
+                ],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000013",
+                  "start_page": 9,
+                  "end_page": 13
+                },
+                "summary": "Explains the XMLDocument class as the core Cúram XML API for creating, opening, populating, closing, saving, and loading XML documents. Covers when to use internal buffering vs writing directly to an output stream, and the two open modes: open() for one struct and openForList() for multiple same-type structs. Also details metadata, escaping special characters, add()/addFromXML(), close() behavior, saving archived documents with template versions, and loading archived XML. Includes character encoding rules and constants, with UTF-8 default if unspecified."
+              },
+              {
+                "title": "The XML Print Stream",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "The XMLPrintStream class",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000025",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Introduces the XMLPrintStream class, the SDEJ interface for submitting print jobs to the Cúram XML Server. Explains that it works with XMLDocument objects and XSL templates to format XML into PDF, RTF, HTML, or plain text, and can be configured per server or per job. Notes preview support and outlines the basic usage pattern: create the stream, set options, open a secure connection, write XMLDocument data, then close to start processing."
+                  },
+                  {
+                    "title": "Default configuration for XMLPrintStream",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "Explains default XMLPrintStream configuration for print jobs. Lists project properties used as defaults: printer, tray, host, port, file encoding (default UTF-8), and locale-neutral serialization. Notes values are strings and XML special characters must be escaped. Describes how these defaults can be overridden with setter methods. Also covers XMLPrintStream instantiation, stating that although host/port constructors exist, they are not used and the empty constructor is recommended."
+                  },
+                  {
+                    "title": "Creating an XMLPrintStream object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000015",
+                      "end_unit_id": "p000015",
+                      "start_page": 15,
+                      "end_page": 15
+                    },
+                    "summary": "This section explains how to create an XMLPrintStream object. It notes that although constructors exist for host/port and endpoint arrays, the host and port parameters are not used, so the empty constructor is recommended. It also situates XMLPrintStream within the default XMLPrintServer configuration, where printer, tray, host, port, file encoding, and locale-neutral serialization settings can be supplied via project properties and overridden with setter methods."
+                  },
+                  {
+                    "title": "Configuring an XMLPrintStream object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000017",
+                      "start_page": 16,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how to configure an XMLPrintStream after instantiation: set printer name, paper tray, user/email, encoding, and job type. Notes encoding should match XMLDocument to avoid character issues, defaulting from curam.xmlserver.fileencoding or UTF-8. Covers XML escaping requirements. Describes default PDF rendering via XML Server/XSL, Right-to-Left language support and FOP limitations, and alternatives for RTF, HTML, and plain text output using XMLPrintStreamConstants, plus custom job types defined in XML Server config."
+                  },
+                  {
+                    "title": "Opening an XMLPrintStream object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains how to open an `XMLPrintStream`: it establishes a secure connection to the XML Server, sends job configuration and an XSL template, and then accepts XML data (typically written by an `XMLDocument`). Describes `open()` variants for using either a database XSL template key or a direct XSL string, with host/port or endpoint-based server configuration. Warns to write data immediately to avoid timeout. Also covers `close()` starting the print job and `setPreviewStream()` for previewing or capturing generated output before printing."
+                  },
+                  {
+                    "title": "Closing an XMLPrintStream object",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains that closing an XMLPrintStream starts the print job, and a well-formed XML document must be fully written first; close() takes no parameters. The section also notes that opening the stream establishes a secure XML Server connection, sends job configuration and an XSL template, and requires immediate writing to avoid timeout. It mentions preview support via setPreviewStream(OutputStream), allowing the generated PDF to be returned to the application server for preview or storage instead of being fully processed."
+                  },
+                  {
+                    "title": "Print preview",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains XMLPrintStream print preview. To preview output before printing, call setPreviewStream(OutputStream) when configuring the stream. The XML Server then generates the document (typically PDF) and returns it to the application server, which writes it to the provided stream instead of continuing to print or process it. If no preview stream is set, preview is disabled. Also notes that the stream can be a buffer, file, or other OutputStream."
+                  }
+                ],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000018",
+                  "start_page": 14,
+                  "end_page": 18
+                },
+                "summary": "Introduces XMLPrintStream, the SDEJ interface for sending XMLDocument jobs with XSL templates to the Cúram XML Server. Covers default project properties for printer, tray, host, port, file encoding (UTF-8), and locale-neutral serialization, plus overriding them via setters. Explains creation/configuration, including encoding, user/email, and job type (PDF default; also RTF, HTML, plain text, or custom). Describes opening a secure connection with template key or string, immediate writing to avoid timeout, closing to start the job, and optional preview output via setPreviewStream()."
+              },
+              {
+                "title": "Sample Usage",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Saving XML Data to a file",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000033",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Shows a sample for saving XML data to a file using `XMLDocument` and `FileWriter`. The method accepts a filename and a struct instance, creates an XML document with ISO Latin-1 encoding, opens it with document metadata, adds the struct data, closes the XML document, then writes the resulting XML string to the file and closes the file. Useful if you need a concrete example of generating XML output and persisting it to disk."
+                  },
+                  {
+                    "title": "Printing an XML document",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000034",
+                    "range": {
+                      "start_unit_id": "p000020",
+                      "end_unit_id": "p000020",
+                      "start_page": 20,
+                      "end_page": 20
+                    },
+                    "summary": "Shows how to print an XML document using Cúram XML utilities. The sample creates an `XMLPrintStream`, opens it with an XSL template instance key and default configuration, sets ISO Latin-1 encoding, wraps the stream in an `XMLDocument`, then opens the document with metadata, adds a `MyStruct` object, closes the document, and closes the stream. Useful if you need an example of generating XML from a struct and controlling encoding/output setup."
+                  },
+                  {
+                    "title": "Saving and loading XML documents",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000035",
+                    "range": {
+                      "start_unit_id": "p000021",
+                      "end_unit_id": "p000021",
+                      "start_page": 21,
+                      "end_page": 21
+                    },
+                    "summary": "Shows how to save and reload XML documents with the Cúram XML infrastructure. It contrasts direct streaming with the need to use an XMLDocument when the document must be archived. Example code creates an XMLDocument, opens it with metadata, adds a struct, closes it, and saves it to the database with a template key. It then loads the archived document, extracts template ID/version, locale, and XML content, reconstructs a new XMLDocument, and prints it via XMLPrintStream."
+                  },
+                  {
+                    "title": "Previewing an XML print job",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000036",
+                    "range": {
+                      "start_unit_id": "p000022",
+                      "end_unit_id": "p000022",
+                      "start_page": 22,
+                      "end_page": 22
+                    },
+                    "summary": "Shows how to preview an XML print job in Cúram by using `XMLPrintStream` with a preview stream and PDF job type. The sample opens an XSL template instance, builds an `XMLDocument`, and closes the stream to generate preview output. It then demonstrates three uses of the PDF preview: saving it to disk, storing it as a String, and converting it to a `Blob`. Useful for understanding XML-to-PDF print preview workflow and output handling."
+                  },
+                  {
+                    "title": "Building a document from a list",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000037",
+                    "range": {
+                      "start_unit_id": "p000023",
+                      "end_unit_id": "p000023",
+                      "start_page": 23,
+                      "end_page": 23
+                    },
+                    "summary": "Shows how to build an XML document from a list in the Cúram XML Infrastructure. It explains opening a list document with metadata, adding an entire `MyStructList` at once, or iterating through `dtls` to add only selected items (e.g., values > 100). Once closed, the list document can be manipulated like any other XML document."
+                  }
+                ],
+                "node_id": "n000032",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000023",
+                  "start_page": 19,
+                  "end_page": 23
+                },
+                "summary": "Examples of using Cúram XMLDocument and XMLPrintStream: writing XML to a file with FileWriter, printing a struct to an XML/XSL-driven stream, saving/loading archived XML documents, generating PDF previews and handling them as file/String/Blob, and building list-based XML documents (including filtering items). Shows open/add/close patterns, encoding setup, metadata, archive retrieval, and when direct streaming is unsuitable for archived documents."
+              },
+              {
+                "title": "Load balancing and failover",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "XMLPrintStream supports XML server load balancing and failover by treating multiple replicated XML servers as one virtual server. It can be configured either through XMLServerEndPoint objects passed to open()—each with server, port, and weight—or via curam.xmlserver.host and curam.xmlserver.port, using slash-separated host/port lists with optional weights. The section also notes that XML Server is a Java job-processing application for rendering XML plus XSL to PDF, RTF, HTML, or text, and can run on separate machines or multiple ports."
+              }
+            ],
+            "node_id": "n000014",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000023",
+              "start_page": 9,
+              "end_page": 23
+            },
+            "summary": "Covers Cúram XML development basics, centered on XMLDocument and XMLPrintStream. Explains XML generation from structs/lists, open/openForList patterns, add/addFromXML, close, save/load archived XML, and encoding rules (UTF-8 default; many constants). Shows when to buffer internally vs stream directly, and how XMLPrintStream sends XML/XSL jobs to the XML Server, including job types, secure connection setup, preview output, and sample code for files, printing, archives, previews, and list-based documents."
+          },
+          {
+            "title": "1.3 The XML server",
+            "level": 2,
+            "children": [
+              {
+                "title": "XML server architecture",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Describes the XML server’s role in Cúram’s XML processing architecture: application data is read via XMLDocument/XMLPrintStream, sent securely over TLS to a possibly remote XML server, processed into output formats, then submitted for commands such as print, email, transfer, or storage. Notes the server is fully threaded for multiple simultaneous jobs and is configured at startup via an XML configuration file that requires restarting to change. Begins the configurable areas with network settings."
+              },
+              {
+                "title": "Configuring the XML server",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuration options",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000026",
+                      "end_unit_id": "p000027",
+                      "start_page": 26,
+                      "end_page": 27
+                    },
+                    "summary": "This section lists XML Server configuration options in an XML config file, which is only read at startup and must be wrapped in `<XML_SERVER_CONFIG>`. It explains categories and defaults for network settings, default values, server command execution, temporary file handling, FOP/RenderX integration, template caching, debug logging, and thread pool sizing. It also notes required combinations such as `USE_PIPE` or `USE_TMP_FILE`, and related directory/file settings when temp files or template caching are enabled."
+                  },
+                  {
+                    "title": "Network configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Configures XML Server network settings: the secure TCP/IP listening port (<SERVER_PORT>) and socket timeout (<SO_TIMEOUT>, default 60000 ms, 0 = infinite). The port must be available, typically in the 1000–32767 range, or startup will report a conflict. Also covers default server values for printer, tray, email, and username (<DEFAULT_PRINTER>, <DEFAULT_TRAY>, <DEFAULT_EMAIL>, <DEFAULT_USERNAME>), which jobs can override."
+                  },
+                  {
+                    "title": "Default value configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Defines server-wide default values for XML Server jobs: default printer, paper tray, email address, and username. These are set with <DEFAULT_PRINTER>, <DEFAULT_TRAY>, <DEFAULT_EMAIL>, and <DEFAULT_USERNAME>, can be any values, and are overridden by values supplied in a job via XMLPrintStream."
+                  },
+                  {
+                    "title": "Print command configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Describes how the XML server executes a configurable server command after processing a job when no preview is requested. The command is free-form, set with `<SERVER_COMMAND>`, and cannot vary per invocation, so multiple XML servers are needed for different commands. Explains token substitution for command parameters: `%p` printer, `%t` tray, `%u` user, `%e` email, `%f` filename, `%d` temp directory, and `%%` for a literal percent. Includes an example using `%e` to email a print job."
+                  },
+                  {
+                    "title": "Template cache configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000046",
+                    "range": {
+                      "start_unit_id": "p000030",
+                      "end_unit_id": "p000030",
+                      "start_page": 30,
+                      "end_page": 30
+                    },
+                    "summary": "Explains how XML Server template caching works. Each job needs an XSL template and XML document; to avoid resending repeated templates, the server can cache template copies locally. Caching is enabled with `<USE_TEMPLATE_CACHE>`, and cached templates are stored in the directory set by `TEMPLATE_CACHE_DIR`. Only templates submitted to `XMLPrintStream` with both a template ID and template version number are eligible for caching."
+                  },
+                  {
+                    "title": "Debug configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000047",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Explains XML Server debug and related configuration options. You can enable `<TRACE_TRAFFIC>` to trace all received network traffic to standard output for diagnosing XSL/XML errors; notes extra leading periods in secure communications are expected and should be ignored. Also covers improved logging via Apache Log4j 2 using `log4j2.properties`, and RenderX support as an alternative rendering engine, including `<RENDERX_CONFIG_FILE>` and `<RENDERX_LOGGING>` settings (default, null, or file path)."
+                  },
+                  {
+                    "title": "Apache Log4j 2 logging",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000048",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "This section briefly notes that Apache Log4j 2 can be used to improve XML Server logging performance, with configuration handled through the log4j2.properties file in the XML Server directory. It points readers to Apache Log4j 2 documentation for setup details. The page also transitions to RenderX configuration, including required config/logging properties and logger options, so this node is useful if you need logging optimization or related XML Server rendering configuration."
+                  },
+                  {
+                    "title": "RenderX configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000049",
+                    "range": {
+                      "start_unit_id": "p000031",
+                      "end_unit_id": "p000031",
+                      "start_page": 31,
+                      "end_page": 31
+                    },
+                    "summary": "Configures XML Server support for RenderX as an alternative to Apache FOP. RenderX must be installed on the server before use. The section explains the `<RENDERX_CONFIG_FILE>` setting for locating the required RenderX configuration file and `<RENDERX_LOGGING>` for internal logging, with options `default`, `null`, or a file path redirect. Default logging uses `default`."
+                  },
+                  {
+                    "title": "Custom configuration",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Custom job type",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000051",
+                        "range": {
+                          "start_unit_id": "p000032",
+                          "end_unit_id": "p000032",
+                          "start_page": 32,
+                          "end_page": 32
+                        },
+                        "summary": "Explains how to add a custom XML Server rendering job type. A new `<JOB>` is defined under `<JOBS>` using a non-case-sensitive `type` attribute and a `class` attribute naming a `curam.util.xmlserver.DocumentGenerator` implementation. Notes that any number of job types can be configured. Also references the default HTML, RTF, TEXT, and PDF generators, the ability to replace the default FOP-based implementation, and PDF `direction` support for RTL/LTR rendering."
+                      }
+                    ],
+                    "node_id": "n000050",
+                    "range": {
+                      "start_unit_id": "p000032",
+                      "end_unit_id": "p000032",
+                      "start_page": 32,
+                      "end_page": 32
+                    },
+                    "summary": "Describes XML Server custom rendering configuration. You can add new rendering job types or replace the default implementations for HTML, RTF, TEXT, and PDF by providing a class that implements `curam.util.xmlserver.DocumentGenerator`. New jobs are defined as `<JOB>` elements under `<JOBS>` with a non-case-sensitive, space-free `type` and a `class` name. Notes that any number of jobs can be configured. Also covers the optional PDF `direction` attribute for RTL/LTR rendering, defaulting to `ltr`."
+                  },
+                  {
+                    "title": "Font configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000052",
+                    "range": {
+                      "start_unit_id": "p000033",
+                      "end_unit_id": "p000033",
+                      "start_page": 33,
+                      "end_page": 33
+                    },
+                    "summary": "Explains how to configure fonts for the XML Server’s default FOP rendering. Describes the `<FOP_CONFIG_FILE>` option for pointing to a FOP config file using absolute or relative paths, including references inside the file. Gives a sample configuration adding a Chinese font (`PMingLiu`) via font metrics and embedded TrueType collection files, and notes that Apache utilities can generate required font files."
+                  },
+                  {
+                    "title": "Securing the XML server",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000053",
+                    "range": {
+                      "start_unit_id": "p000034",
+                      "end_unit_id": "p000035",
+                      "start_page": 34,
+                      "end_page": 35
+                    },
+                    "summary": "Explains how to secure a remotely located XML server using TLS v1.2. Covers configuring TLSKeystore.properties to define keystore and certificate settings, or pointing to an existing Base64-encoded certificate. Describes default values for keystore/certificate properties, generating a self-signed keystore and certificate with Java keytool when none exists, and adding the certificate authority/public certificate to the truststore. Also notes this setup is used during WebSphere and WebLogic server configuration for XML server-client communication."
+                  },
+                  {
+                    "title": "Overriding the default port",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000054",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to override Cúram XML Server defaults. Covers setting a custom port with `-Dxmlserver.port` in the Ant command, using a custom configuration file via `-Dxmlserver.config.file`, and increasing Java thread stack size with `-Djava.thread.stack.size` to avoid stack overflow on large XML/XSL files. Includes brief troubleshooting notes about `cacerts` write permissions, fixing corrupted `keystore.p12`/`server.cer`, and the default truststore password `changeit`."
+                  },
+                  {
+                    "title": "Overriding the default configuration",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000055",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to override Cúram XML Server defaults. Covers troubleshooting notes for truststore permissions, corrupted keystore.p12/server.cer, and the default “changeit” password. Describes overriding the default port with -Dxmlserver.port, using a custom xmlserverconfig.xml via -Dxmlserver.config.file, and increasing Java thread stack size with -Djava.thread.stack.size (default -Xss4m) to avoid stack overflow on large XML/XSL files."
+                  },
+                  {
+                    "title": "Overriding the Java thread stack size",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000056",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "Explains how to increase the XML Server’s Java thread stack size to avoid stack overflow when processing large XML or XSL files. The stack size is controlled by the `java.thread.stack.size` property in `xmlserver.xml`; the default is `-Xss4m` (4 MB). To override it at startup, use the `-Djava.thread.stack.size` build command syntax."
+                  },
+                  {
+                    "title": "Disabling configuration file schema validation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000057",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000037",
+                      "start_page": 37,
+                      "end_page": 37
+                    },
+                    "summary": "Explains how to disable XML configuration file schema validation by adding the `-novalidation` option via Ant, e.g. `ant -file xmlserver.xml -Dadditional.args=-novalidation`. This page then begins sample XML Server configuration guidance, noting platform-specific examples and that server commands must be on one line in the config file. It introduces Windows printing setup, including running the server command through `cmd.exe` and using a batch file to handle printing and command-line parameters."
+                  },
+                  {
+                    "title": "Sample configuration files",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Windows printing",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000059",
+                        "range": {
+                          "start_unit_id": "p000037",
+                          "end_unit_id": "p000038",
+                          "start_page": 37,
+                          "end_page": 38
+                        },
+                        "summary": "Explains Windows XML Server print configuration. Notes that server commands aren’t run in a shell unless invoked via cmd.exe, so batch files are recommended for printing and can receive parameters via command tokens (%1, %2, etc.). Emphasizes using backslashes in paths, fully qualified command paths, and redirecting any console output to the null device to avoid blocking. Includes a sample batch file and a SimplePrintService Java Print Service example for printing documents, including PDF if the printer supports direct PDF printing."
+                      },
+                      {
+                        "title": "Displaying a document for testing on Windows",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000060",
+                        "range": {
+                          "start_unit_id": "p000039",
+                          "end_unit_id": "p000039",
+                          "start_page": 39,
+                          "end_page": 39
+                        },
+                        "summary": "Explains how to display PDF output on Windows for testing XML/XSL templates by configuring XML Server to launch Adobe Reader instead of printing. Shows sample XML_SERVER_CONFIG using a temp file and notes that spaces in the server command path are unsupported, so DOS short names like PROGRA~1 must be used. Also begins guidance on installing RenderX for right-to-left PDF processing, which XML Server can use instead of Apache FOP for RTL documents."
+                      },
+                      {
+                        "title": "Installing RenderX for RTL PDF processing on Windows",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000061",
+                        "range": {
+                          "start_unit_id": "p000039",
+                          "end_unit_id": "p000039",
+                          "start_page": 39,
+                          "end_page": 39
+                        },
+                        "summary": "Explains how to install and configure RenderX on Windows so the XML Server can generate RTL PDF documents, since Apache FOP does not support RTL languages. Notes that RenderX is a third-party rendering engine and, when enabled in the XML Server, is used automatically for all RTL PDF output. The visible instruction is to install RenderX following its installation guide."
+                      },
+                      {
+                        "title": "UNIX and z/OS printing",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000062",
+                        "range": {
+                          "start_unit_id": "p000040",
+                          "end_unit_id": "p000041",
+                          "start_page": 40,
+                          "end_page": 41
+                        },
+                        "summary": "Explains how to configure and implement document printing on UNIX and z/OS using an XML Server-invoked shell script. Covers passing command tokens/arguments, logging, and platform-specific handling such as direct lp/lpr printing, z/OS InfoPrint Server, and AIX PDF-to-PostScript conversion needs. Includes a sample shell script and notes that z/OS scripts must be converted from ASCII to EBCDIC. Also briefly mentions RenderX setup for RTL PDF processing and relative image path requirements."
+                      }
+                    ],
+                    "node_id": "n000058",
+                    "range": {
+                      "start_unit_id": "p000037",
+                      "end_unit_id": "p000041",
+                      "start_page": 37,
+                      "end_page": 41
+                    },
+                    "summary": "Sample XML Server configuration files for Windows and UNIX/z/OS printing, testing, and RTL PDF setup. Covers using cmd.exe and batch files on Windows, command tokens, path/backslash rules, null redirection, and sample SimplePrintService printing. Shows launching Adobe Reader for PDF preview on Windows and notes DOS short names for paths with spaces. Also explains configuring RenderX for RTL PDF output. For UNIX/z/OS, describes shell-script-based printing, lp/lpr/InfoPrint usage, z/OS ASCII-to-EBCDIC conversion, and platform-specific print handling."
+                  }
+                ],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000041",
+                  "start_page": 25,
+                  "end_page": 41
+                },
+                "summary": "Explains how to configure the XML Server via an XML config file read only at startup. Covers secure TCP/IP listening port and timeout, default printer/tray/email/user values, server command execution with tokens, temp-file vs pipe output, template cache settings, logging/debug options, thread pool sizing, FOP/RenderX integration, and custom job types. Also includes security/TLS setup, overriding defaults via Ant/Java properties, disabling schema validation, and platform-specific sample configs for Windows and UNIX/z/OS printing and PDF preview/testing."
+              },
+              {
+                "title": "Starting the XML server",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Running the XML server as a Windows service or UNIX daemon",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000064",
+                    "range": {
+                      "start_unit_id": "p000042",
+                      "end_unit_id": "p000042",
+                      "start_page": 42,
+                      "end_page": 42
+                    },
+                    "summary": "Explains how to run the XML server as a Windows service or UNIX daemon for production availability and to avoid accidental shutdowns. Notes that Windows service support requires external infrastructure, with Tanuki Java Service Wrapper given as an example. Describes integrating the XML server via WrapperStartStopApp and highlights required setup: include Ant libraries on the classpath, set ANT_HOME in the environment, allocate sufficient memory (e.g., 768 MB), and pass parameters to start the XML Server Ant script."
+                  }
+                ],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000042",
+                  "start_page": 42,
+                  "end_page": 42
+                },
+                "summary": "Explains how to start the XML server from its installation directory using Apache Ant (`ant -file xmlserver.xml`), including optional startup flags for schema validation and statistics. Notes that a default `xmlserver_config.xml` is supplied and that startup prints loaded configuration and job status. Also covers running the server in the background as a Windows service or UNIX daemon for production availability, including use of Tanuki Java Service Wrapper and required setup: Ant libraries on the classpath, `ANT_HOME`, sufficient memory, and wrapper parameters."
+              },
+              {
+                "title": "Shutting down the XML server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "Explains how to shut down the XML Server safely. Recommends using the XMLServerShutdown Ant command (`ant -file xmlserver.xml stop`) so the server stops accepting new jobs, finishes outstanding work, and exits cleanly; Ctrl-C is only suggested when the server is idle. Notes that shutdown may take time if jobs are in progress. Also mentions XML server statistics collection in the configured statistics folder, including support for Kubernetes metrics monitoring."
+              },
+              {
+                "title": "Statistics",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "This section explains XML Server shutdown and statistics handling. It recommends using the XMLServerShutdown Ant command for orderly shutdown instead of Control-C, and notes the server can be run as a UNIX daemon via Java Service Wrapper. It also states that XML Server statistics are collected in the configured statistics folder on shutdown, and can be sent to a metrics tool when deployed on Kubernetes. The section leads into the statistics log columns."
+              }
+            ],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000024",
+              "end_unit_id": "p000043",
+              "start_page": 24,
+              "end_page": 43
+            },
+            "summary": "Cúram’s XML server is a threaded Java service that takes XML plus an XSL template and renders output such as PDF, RTF, HTML, or text, then runs a configured command to print, email, transfer, or store it. It communicates with XMLPrintStream over secure TLS and can run remotely or on different hosts/ports. This section covers startup-only XML config, network/default values, server command and temp-file options, template cache, logging/debugging, FOP/RenderX, custom job types, load balancing/failover, and starting/shutting down the server plus daemon/service operation and statistics."
+          },
+          {
+            "title": "1.4 XML and XSL templates",
+            "level": 2,
+            "children": [
+              {
+                "title": "Cúram DTD",
+                "level": 3,
+                "children": [],
+                "node_id": "n000068",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "Defines the Cúram XML DTD and where it is located in the SDEJ (/lib). Describes the document structure: DOCUMENT contains optional META and mandatory DATA; META may include generated date/by, version, and comment; DATA contains either STRUCT_LIST or STRUCT; STRUCT_LIST contains one or more STRUCTs; STRUCT contains optional SNAME and one or more FIELDs; FIELD contains FNAME plus either TYPE and VALUE, or nested STRUCT_LIST/STRUCT. Notes all text elements are PCDATA and TYPE may have an optional SIZE attribute."
+              },
+              {
+                "title": "Examples",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000046",
+                  "end_unit_id": "p000046",
+                  "start_page": 46,
+                  "end_page": 46
+                },
+                "summary": "Shows example XML output for simple structs and lists of structs. Demonstrates the document structure with <DOCUMENT>, <META>, and <DATA>, then a single <STRUCT> containing fields like ticketID and subject, and a <STRUCT_LIST> containing multiple <STRUCT> entries. Notes that field types are shown as basic types (for example, SVR_INT64 and SVR_STRING), not domain definitions, and that string fields may include a SIZE attribute."
+              },
+              {
+                "title": "Job types and template types",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Templates for PDF documents",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000071",
+                    "range": {
+                      "start_unit_id": "p000047",
+                      "end_unit_id": "p000047",
+                      "start_page": 47,
+                      "end_page": 47
+                    },
+                    "summary": "Explains how PDF templates are built and rendered in the Cúram XML infrastructure. PDF generation is a two-stage process: XSLT uses XML data to produce an XSL-FO document, then Apache FOP renders that XSL-FO into PDF. The section notes that PDF templates are mostly XSL-FO with XSLT inserts for dynamic values, and briefly distinguishes XSLT from XSL-FO as standards used for transformation versus page layout."
+                  },
+                  {
+                    "title": "Templates for RTF documents",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000072",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "This section explains template formats for generating RTF, HTML, and plain text documents. It notes that RTF templates are the same as PDF templates, using mostly XSL-FO with XSLT, and that the JFOR library renders RTF with some XSL-FO limitations. HTML templates use HTML markup plus XSLT and are simpler because they do not require XSL-FO or a rendering step. Plain text templates use plain text with embedded XSLT, strip XML elements, and require <text> for preserving whitespace."
+                  },
+                  {
+                    "title": "Templates for HTML documents",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000073",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "HTML document templates use HTML markup plus XSLT to insert XML values into the right places, producing an HTML document directly. They are simpler than PDF/RTF templates because they do not use XSL-FO and require no rendering step. The system strips any XML elements from the output automatically, and the generated HTML is indented."
+                  },
+                  {
+                    "title": "Templates for plain text documents",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000074",
+                    "range": {
+                      "start_unit_id": "p000048",
+                      "end_unit_id": "p000048",
+                      "start_page": 48,
+                      "end_page": 48
+                    },
+                    "summary": "Explains how plain text templates are structured and generated. Unlike PDF/RTF templates, they contain no XSL-FO and no rendering step; they are plain text with embedded XSLT values inserted from the XML source. It also notes that XML elements are stripped from output and that whitespace is not reliably preserved, so the <text> element should be used to keep line breaks and indentation."
+                  }
+                ],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000048",
+                  "start_page": 47,
+                  "end_page": 48
+                },
+                "summary": "Describes job types for XMLPrintStream and the template formats they require. Explains the two XSL standards used: XSLT for transforming XML data into output, and XSL-FO for page layout. PDF generation is a two-stage process: XSLT builds XSL-FO, then Apache FOP renders PDF. RTF templates are the same as PDF templates, rendered by JFOR with some XSL-FO limits. HTML templates use HTML plus XSLT with no rendering step. Plain text templates use plain text plus XSLT, strip XML elements, and use `<text>` to preserve whitespace."
+              },
+              {
+                "title": "XSL template example",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000049",
+                  "end_unit_id": "p000049",
+                  "start_page": 49,
+                  "end_page": 49
+                },
+                "summary": "Shows an XSLT 1.0 example that extracts data from an XML document with a single struct and formats it using XSL-FO. The templates navigate DOCUMENT → DATA → STRUCT where SNAME='DPTicketDtls', then output FIELD values for ticketID and subject. It defines an A4 page layout with 30mm margins and demonstrates the expected formatted result: “Ticket ID: 12796” and “Subject: This is the subject.”"
+              },
+              {
+                "title": "Generating templates from RTF documents",
+                "level": 3,
+                "children": [],
+                "node_id": "n000076",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000050",
+                  "start_page": 50,
+                  "end_page": 50
+                },
+                "summary": "RTF documents cannot be used to generate templates directly; they must first be converted to XSL-FO, then XSLT markup can be added to make a usable template. The section also explains globalization issues when transmitting data to the XML Server for printing: Date, DateTime, and Money default to locale-dependent serialization via `toString()`, which can break locale-neutral parsing. It recommends either sending preformatted string fields or enabling `curam.xmlserver.serializelocaleneutral` for locale-neutral formats."
+              },
+              {
+                "title": "Globalization considerations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000050",
+                  "end_unit_id": "p000052",
+                  "start_page": 50,
+                  "end_page": 52
+                },
+                "summary": "Explains globalization issues when sending data to the XML server for printing. Date, DateTime, and Money fields are serialized via toString(), which depends on locale settings and can break XSLT parsing. Recommends either using preformatted string fields or enabling locale-neutral serialization with curam.xmlserver.serializelocaleneutral=true (Date: yyyyMMdd, DateTime: yyyyMMddTHHmmss, Money: floating-point style). The rest of the section contains publication notices, copyright/license terms, privacy policy, and trademarks."
+              }
+            ],
+            "node_id": "n000067",
+            "range": {
+              "start_unit_id": "p000044",
+              "end_unit_id": "p000052",
+              "start_page": 44,
+              "end_page": 52
+            },
+            "summary": "Explains the fixed Cúram XML format used by the XML infrastructure and how to write XSL templates for printing. Covers the DTD structure (DOCUMENT/META/DATA/STRUCT/FIELD), example XML for structs and struct lists, and how job types map to template types: PDF/RTF via XSLT + XSL-FO, HTML via HTML + XSLT, and plain text via XSLT with whitespace handling. Includes an XSLT example, notes RTF-to-template conversion via XSL-FO, and warns about locale-sensitive serialization for Date/DateTime/Money."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000052",
+          "start_page": 9,
+          "end_page": 52
+        },
+        "summary": "Introduces Cúram’s XML infrastructure for generating, transforming, and printing application data. Covers the Cúram XML DTD and runtime tags for structs/fields/lists, core APIs XMLDocument and XMLPrintStream, XML creation/open/add/close patterns, buffering vs streaming, and encoding rules (UTF-8 by default, many constants). Also explains the XML server, secure transfer, rendering to PDF/RTF/HTML/text via Xalan/FOP/JFOR, template structure, sample XSLT, and locale-sensitive serialization concerns for Date/DateTime/Money."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

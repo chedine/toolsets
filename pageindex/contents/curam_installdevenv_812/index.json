@@ -1,0 +1,929 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "e342da47ba3a47c3",
+    "title": "Cúram 8.1.2 Development Environment Installation Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/Curam_InstallDevEnv_812.pdf",
+    "source_type": "pdf",
+    "sha256": "e342da47ba3a47c3f0a0ed288a319c7754f7b65736a7a928b30c849178199546",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:22:22+00:00",
+    "page_count": 48,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/Curam_InstallDevEnv_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Development Environment Installation Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000048",
+      "start_page": 1,
+      "end_page": 48
+    },
+    "summary": "Front matter and the full “Installing a development environment” guide for Cúram 8.1/8.1.1/8.1.2. It covers supported development setups (light, full, build, and supplemental front-end), Windows development support and Linux build support, and prerequisites such as Ant, Java SE/EE, IBM Installation Manager, application servers (WebSphere/WebLogic), and databases (H2, Db2, Oracle). It explains installing Cúram software, applying fixes, postinstallation configuration, environment variables, database setup, build/test steps, and security-related configuration. It also includes Eclipse/Tomcat setup, Rational Software Architect Designer plug-ins and workspace setup, starting the server/Tomcat/RMILoginClient, logging in, deployment URLs and roles, and upgrade guidance via the Cúram Upgrade Helper Pack and UI Upgrade Helper. The section ends with legal notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "Preliminary note advising readers to review the Notices section on page 47 before using the document or the supported product. Includes Merative US L.P. copyright information for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Front matter and start of the setup guide. Covers edition/copyright pages, table of contents, and the opening of “Installing a development environment.” Introduces supported Cúram editions (8.1/8.1.1/8.1.2), development environment types (light, full, build, supplemental front-end), and prerequisites. Begins installation steps for Ant, Java SE/EE, IBM Installation Manager, and application servers, including WebSphere and WebLogic setup notes, environment variables, and WebLogic transaction timeout configuration."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "This section covers installing a Cúram development environment: database setup and encoding considerations for H2, Db2, and Oracle; Db2 logging configuration; Oracle roles and redo log space; installing the Cúram platform and application modules; and applying maintenance/fix updates. It explains DB sizing risks with multibyte characters, H2 limitations, installer prerequisites and steps, licensing-dependent modules, and postinstallation checks. Open this node for end-to-end setup guidance and database-specific configuration details."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "Cúram installation and postinstallation tasks for development environments. Covers replacing Flash-based editors with the Editor Applications asset, uninstalling Cúram, setting environment variables, H2 database setup (credentials, encryption, embedded/remote modes, MVCC, Web Console), Db2 configuration (license, database creation, driver replacement, pureScale), Oracle JDBC driver replacement, configuration testing, required build commands, starting the XML server, and security-related settings like cryptography customization and curam.referer.domains for CSRF protection. Also introduces Eclipse and Apache Tomcat prerequisites."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "Covers Cúram development environment setup in Eclipse/Tomcat: required Tomcat edits (UTF-8 URI handling, POST size, reloadable context, keepgenerated), Eclipse Java/JRE and VM settings, classpath variables, Tomcat plugin configuration, and project import/build steps for Curam, CitizenPortal, and BIRT Viewer. Also includes validation of XML/tabbed artifacts, supported text encoding, installing Rational Software Architect Designer and Cúram plug-ins, and starting server/Tomcat/RMILoginClient to log in. Ends with browser URLs, roles, and deployment targets."
+          },
+          {
+            "title": "Edition — pages 45-46",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000046",
+              "start_page": 45,
+              "end_page": 46
+            },
+            "summary": "Explains how to upgrade a custom Cúram application. It recommends using the Cúram Upgrade Helper Pack, which includes tools and an upgrade guide describing the recommended upgrade process and significant migrations; the pack is available from the Merative Software Downloads site for technical contacts. It also notes the Cúram UI Upgrade Helper for upgrading the UI from version 7 to version 8, with a reference to its documentation site."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000046",
+          "start_page": 5,
+          "end_page": 46
+        },
+        "summary": "Front matter and the full “Installing a development environment” chapter for Cúram 8.1/8.1.1/8.1.2. Covers supported environment types (light, full, build, supplemental front-end), prerequisites (Ant, Java, IBM Installation Manager), application servers (WebSphere, WebLogic), databases (H2, Db2, Oracle), installation and postinstall configuration, Eclipse/Tomcat and RSA Designer setup, starting/logging in to the system, deployment URLs/roles, and upgrade guidance via the Upgrade Helper Pack and UI Upgrade Helper."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "This section covers legal notices for the document: fictitious example data, copyright and sample program license terms, warranty/liability disclaimers, a link to Merative’s privacy policy, and a list of trademarks and ownership acknowledgments. It is mainly administrative/reference material rather than product guidance."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000048",
+              "end_unit_id": "p000048",
+              "start_page": 48,
+              "end_page": 48
+            },
+            "summary": "This section contains legal notices: fictitious names disclaimer, sample code copyright/license terms, privacy policy link, and trademark attributions. It states Merative sample programs may be copied, modified, and distributed under the Merative Client Agreement, but are provided “AS IS” without warranty. It also lists trademarks for Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX, plus the copyright notice © Merative US L.P. 2012, 2024."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000047",
+          "end_unit_id": "p000047",
+          "start_page": 47,
+          "end_page": 47
+        },
+        "summary": "Legal notices and reuse terms for the publication. Covers personal and enterprise copying limits, required preservation of proprietary notices, no derivative works or external redistribution without consent, export-law compliance, and Merative’s right to withdraw permission. States the content is provided “AS IS” with no warranties, no patent license granted, and third-party product/site references are informational only. Includes the copyright notice © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the guide, listing front matter and Chapter 1 topics on setting up a Cúram development environment. It covers prerequisites, Installation Manager, application servers, databases, installing Cúram, postinstallation configuration, Eclipse/Tomcat setup, Rational Software Architect Designer setup, getting started, and upgrading Cúram, plus notices, privacy policy, and trademarks."
+      },
+      {
+        "title": "1 Installing a development environment",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Installing prerequisites",
+            "level": 2,
+            "children": [
+              {
+                "title": "8.1.1 prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section lists prerequisites for Cúram 8.1.1. It points to supported operating systems and software, then gives setup steps for Apache Ant (download, extract, set ANT_HOME, update PATH, and set ANT_OPTS memory values). It also explains Java SE/EE options: install standalone Oracle Java or use the versions bundled with supported application servers, in which case the server itself becomes a prerequisite."
+              },
+              {
+                "title": "8.1 prerequisites",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Prerequisites for installing Cúram 8.1, including supported operating systems and software references. It covers installing Apache Ant (download, extract, set ANT_HOME, add Ant to PATH, and set ANT_OPTS memory values) and notes Java SE/EE options: either install standalone Oracle Java or use the versions bundled with a supported application server, in which case the application server becomes a prerequisite."
+              },
+              {
+                "title": "Installing and configuring Apache Ant",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how to install and configure Apache Ant for Cúram development: download and extract the Ant distribution, set ANT_HOME to the install directory, add the Ant bin folder to PATH, and define ANT_OPTS with memory settings (-Xmx1400m -Dcmp.maxmemory=1400m). Also notes that Java SE/EE can be installed separately or used from a supported application server, with no extra steps if bundled."
+              },
+              {
+                "title": "Installing and configuring Java™ SE and Java™ EE",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "This section explains Java SE and Java EE setup for the development environment. It notes you can install standalone Oracle Java SE/EE or use the versions bundled with supported application servers; if you use the bundled versions, the application server becomes a prerequisite and no extra Java installation steps are needed. It points readers to Oracle documentation for the Java install."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000011",
+              "end_unit_id": "p000011",
+              "start_page": 11,
+              "end_page": 11
+            },
+            "summary": "This section says prerequisites must be installed before Cúram software. It points to supported operating systems/software and explains setup for Apache Ant: download and extract it, set ANT_HOME, add Ant to PATH, and define ANT_OPTS (-Xmx1400m -Dcmp.maxmemory=1400m). It also covers Java SE/EE installation: use standalone Oracle Java or the versions bundled with a supported application server; if bundled, the application server itself becomes a prerequisite and no extra Java install steps are needed."
+          },
+          {
+            "title": "1.2 Installing IBM® Installation Manager",
+            "level": 2,
+            "children": [],
+            "node_id": "n000018",
+            "range": {
+              "start_unit_id": "p000012",
+              "end_unit_id": "p000012",
+              "start_page": 12,
+              "end_page": 12
+            },
+            "summary": "Explains how to install IBM Installation Manager on Windows for installing IBM WebSphere Application Server or Db2. It provides step-by-step instructions to download the correct version from IBM Fix Central, extract the compressed file, run Install.exe as administrator, choose the latest package version, and accept the license agreement. Useful if you need IBM Installation Manager setup details or want to determine whether this node contains installation prerequisites for IBM software."
+          },
+          {
+            "title": "1.3 Installing an application server",
+            "level": 2,
+            "children": [
+              {
+                "title": "Installing and configuring IBM® WebSphere® Application Server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains how to install IBM WebSphere Application Server (or Network Deployment) using IBM Installation Manager and set the required Windows environment variable. Notes prerequisites such as having Installation Manager already installed and creating an administrator account if installing as a service. Warns not to install in paths with spaces or on hosts with underscores, and advises not to install sample applications due to Derby classpath conflicts. Also instructs setting WAS_HOME to the WebSphere server directory."
+              },
+              {
+                "title": "Installing and configuring Oracle WebLogic Server",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Configuring the Oracle WebLogic Server application transaction timeout settings",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000022",
+                    "range": {
+                      "start_unit_id": "p000014",
+                      "end_unit_id": "p000014",
+                      "start_page": 14,
+                      "end_page": 14
+                    },
+                    "summary": "Sets Oracle WebLogic Server’s minimum application transaction timeout to 120 seconds. The section warns these are test/development settings and should be tuned for production. It notes the recommended minimum applies to Cúram Child Welfare, Income Support, Income Support for Medical Assistance, Workers Compensation, and Youth Services. It also gives the console path: log in to https://localhost:7002/console, open the domain, go to Configuration > JTA, and set Timeout Seconds to 120."
+                  }
+                ],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "Instructions for installing Oracle WebLogic Server for Cúram: run the Oracle installer, select WebLogic Server, and do not auto-launch the configuration wizard. Set the WLS_HOME environment variable to the WebLogic server directory. It also directs you to configure WebLogic application transaction timeout settings, with a separate procedure to set the JTA Timeout Seconds to 120 in the localhost console."
+              }
+            ],
+            "node_id": "n000019",
+            "range": {
+              "start_unit_id": "p000013",
+              "end_unit_id": "p000014",
+              "start_page": 13,
+              "end_page": 14
+            },
+            "summary": "Explains how to install an application server for development/build use, focusing on IBM WebSphere Application Server and Oracle WebLogic Server. For WebSphere, it requires IBM Installation Manager, may need an admin service account, warns against spaces in install paths and hostnames with underscores, advises not to install sample applications, and sets WAS_HOME. For WebLogic, it covers running the Oracle installer, selecting WebLogic Server, disabling auto-launch of the configuration wizard, setting WLS_HOME, and configuring JTA transaction timeout to 120 seconds in the console."
+          },
+          {
+            "title": "1.4 Installing a database",
+            "level": 2,
+            "children": [
+              {
+                "title": "H2 database",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000015",
+                  "start_page": 15,
+                  "end_page": 15
+                },
+                "summary": "Explains H2 database support for Cúram development: H2 is a Java SQL database engine with a browser console and is preinstalled with Cúram in `h2.jar`. To use it, install as if using Db2, then edit `Bootstrap.properties` for H2. Important limitations are that H2 is for development only, not supported at runtime, EAR files cannot be built, and the `configure` target cannot run while H2 is in use."
+              },
+              {
+                "title": "IBM® Db2® database",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Db2® database encoding options",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000026",
+                    "range": {
+                      "start_unit_id": "p000016",
+                      "end_unit_id": "p000016",
+                      "start_page": 16,
+                      "end_page": 16
+                    },
+                    "summary": "Explains Db2 encoding choices for Cúram installs and why byte-length storage matters for MBCS/UTF-8. In Db2, CHAR/VARCHAR/CLOB columns are constrained by bytes, so multibyte text can overflow even when character counts fit, causing SQL code -302 and web client “unhandled server exception” errors. Cúram mitigates this with modeling/build-time column resizing and defaults for MBCS support with maximum expansion. The section advises evaluating SBCS vs MBCS carefully based on application data and environment."
+                  },
+                  {
+                    "title": "Installing IBM® Db2®",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains Db2 installation for Cúram/IBM platform: use a default Db2 install with admin privileges, no need to manually create the database, and use postinstall Ant scripts for a basic test database. Notes key installer choices: administrator account requirements, selecting single-partition database server instead of partition-owning mode, and choosing MBCS vs SBCS encoding based on data needs. Also warns about circular transaction logging and log file sizing, especially for prepare.application.data, which can fail with SQLCODE -964 if logs are too small."
+                  },
+                  {
+                    "title": "Configuring for circular transaction logging",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000017",
+                      "end_unit_id": "p000017",
+                      "start_page": 17,
+                      "end_page": 17
+                    },
+                    "summary": "Explains how circular transaction logging can cause transactions to exceed log space and fail. Recommends either using archive logging or increasing log file size/quantity to match transaction needs. Notes a common failure point is the prepare.application.data Ant target, which publishes all CER rule sets after a clean database build, and that too-small logs may trigger SQLCODE -964."
+                  }
+                ],
+                "node_id": "n000025",
+                "range": {
+                  "start_unit_id": "p000015",
+                  "end_unit_id": "p000017",
+                  "start_page": 15,
+                  "end_page": 17
+                },
+                "summary": "Cúram supports IBM Db2 as a database server and explains how to install it with a default admin-level setup, using Ant scripts afterward to create a basic test database. The section highlights Db2 encoding choices (SBCS vs MBCS) and byte-based column limits that can cause SQLCODE -302/unhandled server exceptions unless sizing is adjusted. It also warns that circular transaction logging may exhaust logs during prepare.application.data, causing SQLCODE -964 unless archive logging or larger logs are used."
+              },
+              {
+                "title": "Oracle database",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Oracle database encoding options",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains Oracle database character set configuration for Cúram. It highlights two key Oracle parameters: NLS_CHARACTERSET, which controls the allowable database character set and is generally recommended to be AL32UTF8, and NLS_LENGTH_SEMANTICS, which affects how Oracle interprets CHAR and VARCHAR length limits. The section focuses on planning for multilingual or supplementary characters to avoid storage/length issues when installing Oracle."
+                  },
+                  {
+                    "title": "Postinstallation configuration for the Oracle database",
+                    "level": 4,
+                    "children": [
+                      {
+                        "title": "Creating an Oracle role for application servers",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000032",
+                        "range": {
+                          "start_unit_id": "p000019",
+                          "end_unit_id": "p000019",
+                          "start_page": 19,
+                          "end_page": 19
+                        },
+                        "summary": "Explains how to create an Oracle role for application servers so the application can use the Oracle XA interface. It recommends bundling required privileges into a role, then granting that role to the Oracle username used by the server. The example creates a CURAM_SERVER role, grants needed privileges, and assigns it to a CURAM_USER account with password PASSWORD. It also notes the commands are run in an Oracle SQL*Plus session as SYSDBA."
+                      },
+                      {
+                        "title": "Configuring for circular transaction logging",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000033",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "Explains how to avoid transaction failures on Oracle when circular transaction logging is enabled: use archive logging or increase log file size/quantity, especially for the prepare.application.data Ant target, which can exhaust log space after a clean build. Also notes redo log space may need to be increased for insert-heavy Cúram transactions, with Oracle documentation referenced for sizing. Includes related Oracle setup commands and user/grant creation for Cúram database access."
+                      },
+                      {
+                        "title": "Configuring redo log space",
+                        "level": 5,
+                        "children": [],
+                        "node_id": "n000034",
+                        "range": {
+                          "start_unit_id": "p000020",
+                          "end_unit_id": "p000020",
+                          "start_page": 20,
+                          "end_page": 20
+                        },
+                        "summary": "Explains that Cúram transactions with heavy insert activity can require more redo log space, or they may fail—often during the prepare.application.data Ant target after a clean database build. Advises allocating sufficient redo log space for the system and consulting Oracle documentation for sizing guidance, since required space varies by environment."
+                      }
+                    ],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains Oracle postinstallation setup for the application server connection. It says the app needs XA privileges, recommends bundling them into an Oracle role, and shows creating a CURAM_SERVER role, granting required privileges, and assigning it to a CURAM_USER account (password PASSWORD). The commands are run in SQL*Plus as SYSDBA. The section sits alongside notes on Oracle extended data types and character semantics, but its main focus is role-based database privilege setup for Cúram/application server access."
+                  }
+                ],
+                "node_id": "n000029",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000019",
+                  "start_page": 18,
+                  "end_page": 19
+                },
+                "summary": "Covers Oracle support for Cúram, focusing on database character set and postinstallation setup. It recommends AL32UTF8 for NLS_CHARACTERSET and setting NLS_LENGTH_SEMANTICS to CHAR to avoid issues with supplementary/multibyte characters. It also warns that Oracle extended data types (MAX_STRING_SIZE=EXTENDED) are one-way and require regression testing. For application server access, it describes creating an Oracle role (CURAM_SERVER) with XA-related privileges and assigning it to a user (CURAM_USER) via SQL*Plus as SYSDBA."
+              }
+            ],
+            "node_id": "n000023",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000019",
+              "start_page": 15,
+              "end_page": 19
+            },
+            "summary": "This section explains how to install and configure supported databases for Cúram: H2 for development only, IBM Db2, and Oracle. It covers H2 setup via Db2 installation values then editing Bootstrap.properties, plus key limits (no runtime support, no EAR builds, no configure target). For Db2 it addresses SBCS/MBCS encoding, byte-based column sizing, and circular transaction log issues during prepare.application.data. For Oracle it covers character set settings, extended data types, and postinstallation XA role/user setup."
+          },
+          {
+            "title": "1.5 Installing the Cúram software",
+            "level": 2,
+            "children": [
+              {
+                "title": "Installing fixes and maintainance updates",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "Explains how to install Cúram maintenance updates after an LTS or CD release. Covers where updates come from, the difference between LTS fix packs and CD releases, and notes that CD releases may add optional features while remaining cumulative. Warns about obsolete JAR files after delta updates. Includes the installation procedure: read release notes, download from Cúram Support, extract the installer, make files writable, run the installer, move obsolete files, finish, and complete postinstallation steps."
+              },
+              {
+                "title": "Installing the Editor Applications asset to remove browser Flash dependencies",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "Explains how to replace browser Flash-based Cúram editors with stand-alone Adobe Air versions by installing the Editor Applications asset. Covers why it is needed, the requirement to reinstall after certain Cúram upgrades, and what the asset contains: EditorApplications.jar for development environment updates, EditorApplicationsClient.msi for editor installation, and Readme.txt. Also lists the editors affected, including CER, Data Mapping, Data Store, IEG, Decision Matrix, and Dynamic Evidence editors."
+              },
+              {
+                "title": "Uninstalling Cúram",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000026",
+                  "end_unit_id": "p000026",
+                  "start_page": 26,
+                  "end_page": 26
+                },
+                "summary": "Describes how to uninstall Cúram using the uninstaller.jar created in <install>\\Uninstaller\\. Explains that if JARs are associated with a launcher, the uninstaller may be started by the OS default method (for example, double-clicking). Notes that the uninstaller does not reset system variables set by a previous installation. Procedure: go to the Uninstaller directory and run uninstaller.jar to remove Cúram."
+              }
+            ],
+            "node_id": "n000035",
+            "range": {
+              "start_unit_id": "p000020",
+              "end_unit_id": "p000026",
+              "start_page": 20,
+              "end_page": 26
+            },
+            "summary": "Covers installing the Cúram software: full vs delta installers for LTS/CD releases, required download info, and the base platform plus licensed application modules installation flow. Also explains installing maintenance updates/fix packs, including reading release notes, using Cúram Support downloads, handling obsolete JARs, and postinstall/build steps. Includes installing the Editor Applications asset to replace Flash-based editors with Adobe Air stand-alone versions, and uninstalling Cúram via <install>\\Uninstaller\\uninstaller.jar."
+          },
+          {
+            "title": "1.6 Cúram postinstallation configuration",
+            "level": 2,
+            "children": [
+              {
+                "title": "Setting the Cúram environment variables",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000027",
+                  "start_page": 27,
+                  "end_page": 27
+                },
+                "summary": "Explains a required postinstallation step: setting Cúram environment variables by changing to the %CURAM_DIR% installation directory and running SetEnvironment.bat or SetEnvironment.sh. Also introduces H2 database configuration in Bootstrap.properties, including credentials, encrypted password, and typical H2 settings (directory, embedded/remote mode, server port/name, lock timeout, MVCC). Notes that after updating Bootstrap.properties and rebuilding the server and database, development proceeds like Oracle or Db2."
+              },
+              {
+                "title": "Configuring the H2 database",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Encrypting passwords",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000042",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how to encrypt database passwords before placing them in Bootstrap.properties. It instructs users to run `build encrypt -Dpassword=...` from `%CURAM_DIR%\\EJBServer`, then copy the encrypted output into properties such as `curam.db.password`. The section also introduces H2 development modes, describing embedded vs remote mode and showing how to set `curam.db.h2.mode` in Bootstrap.properties."
+                  },
+                  {
+                    "title": "Setting the H2 mode",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000043",
+                    "range": {
+                      "start_unit_id": "p000028",
+                      "end_unit_id": "p000028",
+                      "start_page": 28,
+                      "end_page": 28
+                    },
+                    "summary": "Explains how to set H2 database mode in Bootstrap.properties for Cúram development. Covers the two supported modes: embedded (fastest, single JVM/class loader) and remote/client-server (multiple applications, slower over TCP/IP). Includes the file path to edit and the curam.db.h2.mode property example. Also notes that passwords must be encrypted before being added to Bootstrap.properties, with a command-line build encrypt procedure and example use of the encrypted value in curam.db.password."
+                  },
+                  {
+                    "title": "Setting Multi-Version Concurrency Control (MVCC)",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000044",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how to enable or disable H2 MVCC in Cúram by editing `Bootstrap.properties` and setting `curam.db.h2.mvcc` (default `true`). Describes MVCC behavior: higher concurrency, shared locks for insert/update/delete, exclusive locks for schema changes and `SELECT...FOR UPDATE`, and read-committed visibility. Also gives the procedure to start the H2 Web Console (`org.h2.tools.Server -tcp -web`) and shows how the JDBC URL is formed from `curam.db.name`, `curam.db.username`, and `curam.db.h2.directory`."
+                  },
+                  {
+                    "title": "Starting the H2 Web Console",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000045",
+                    "range": {
+                      "start_unit_id": "p000029",
+                      "end_unit_id": "p000029",
+                      "start_page": 29,
+                      "end_page": 29
+                    },
+                    "summary": "Explains how to start the H2 Web Console for Cúram development by running `org.h2.tools.Server` from `h2.jar` with `-tcp -web`, then accessing `http://localhost:8082/`. It also gives the JDBC login URL format based on `curam.db.name`, `curam.db.username`, and `curam.db.h2.directory`, with examples for default home-directory storage and a custom `C:/H2` directory. This section sits alongside MVCC configuration details on the same page."
+                  }
+                ],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000029",
+                  "start_page": 27,
+                  "end_page": 29
+                },
+                "summary": "Explains how to configure Cúram to use the H2 database by editing `%CURAM_DIR%\\EJBServer\\project\\properties\\Bootstrap.properties`. Covers required database settings, encrypting passwords with `build encrypt -Dpassword=...`, and choosing H2 embedded or remote mode via `curam.db.h2.mode`. Also describes MVCC control with `curam.db.h2.mvcc` (default true), its concurrency/locking behavior, and how to start the H2 Web Console with `org.h2.tools.Server -tcp -web`, including JDBC URL examples for default and custom database locations."
+              },
+              {
+                "title": "Configuring the IBM® Db2® database",
+                "level": 3,
+                "children": [],
+                "node_id": "n000046",
+                "range": {
+                  "start_unit_id": "p000030",
+                  "end_unit_id": "p000031",
+                  "start_page": 30,
+                  "end_page": 31
+                },
+                "summary": "This section covers post-installation IBM Db2 configuration for Cúram. It explains how to replace the empty Db2 license JAR with the real license file, create and configure a test database using Ant scripts on Windows and Linux, and drop/recreate the database if needed. It also describes replacing packaged Db2 JDBC drivers and how to set up Db2 pureScale by generating a .bindings file from Bootstrap.properties and running the configtest target."
+              },
+              {
+                "title": "Configuring the Oracle Database",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section covers postinstallation Oracle Database configuration for Cúram, including replacing packaged JDBC drivers in `<CURAMSDEJ>/drivers` with Oracle client versions if needed. It also introduces Cúram’s configuration test tool, which verifies installation and third-party setup, with steps to build the server/database for H2 if applicable and run `build configtest` from `%Curam%/EJBServer` to check application server configuration and database connectivity."
+              },
+              {
+                "title": "Testing the configuration",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section explains how to test a Cúram installation’s configuration using the built-in configuration test tool. It covers prerequisites for H2 users (build the server and database, and start the H2 Web Console in remote mode), then instructs running `build configtest` from the `%Curam%/EJBServer` directory. The test checks application server configuration and database connectivity, helping detect setup problems."
+              },
+              {
+                "title": "Running build commands for the server and client applications",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "This section explains the required build steps before logging on to Cúram or the Universal Access home page. It covers running server-side and client-side build commands in the correct directories (%CURAM_DIR%/EJBServer and %Curam%/webclient), including clean, database, application data, classpath, and client build targets. It also notes verifying successful builds and starting the XML server from %CURAM_DIR%/CuramSDEJ/xmlserver using ant. The section begins a new topic on customizing cryptography for production security."
+              },
+              {
+                "title": "Starting the XML server",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "Explains how to start the XML server before running the Cúram application. It instructs you to change to `%CURAM_DIR%\\CuramSDEJ\\xmlserver` and run `ant -f xmlserver.xml`. The section sits after build steps for server/client applications, which must complete successfully first, and before production cryptography customization guidance."
+              },
+              {
+                "title": "Customizing cryptography for production environment protection",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "This section states that Cúram’s default cryptography settings are intended only for development and testing, and should be customized for production to improve security. It flags production protection as the key concern and indicates that stronger cryptography configuration is recommended before deploying live environments."
+              },
+              {
+                "title": "Configuring curam.referer.domains for Cross-Site Request Forgery (CSRF) protection",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000034",
+                  "end_unit_id": "p000034",
+                  "start_page": 34,
+                  "end_page": 34
+                },
+                "summary": "This section explains how Cúram uses the HTTP referrer header to add CSRF protection and how trusted domains are configured through the dynamic system property `curam.referer.domains`. By default it is set to `localhost`, which limits access to the server host administrator. It also describes two post-installation configuration options: setting the property directly in system administration, or overriding `Application.prx` via a custom component to specify allowed domains."
+              }
+            ],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000027",
+              "end_unit_id": "p000033",
+              "start_page": 27,
+              "end_page": 33
+            },
+            "summary": "Postinstallation setup for Cúram development environments: set environment variables, configure the chosen database (H2, Db2, or Oracle), encrypt H2 passwords, choose H2 embedded/remote mode and MVCC, and optionally start the H2 Web Console. It also covers Db2 license/driver replacement, Db2 database creation and pureScale bindings, and Oracle JDBC driver replacement. The section includes the built-in config test (`build configtest`), required server/client build commands, starting the XML server, and notes that default cryptography should be customized for production, with CSRF referrer-domain configuration following."
+          },
+          {
+            "title": "1.7 Installing and configuring Eclipse and Apache Tomcat",
+            "level": 2,
+            "children": [
+              {
+                "title": "Configuring Tomcat",
+                "level": 3,
+                "children": [],
+                "node_id": "n000054",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "This section explains how to adjust Tomcat after installation for Cúram development. It covers enabling UTF-8 request handling by setting useBodyEncodingForURI=\"true\", removing the default 2 MB POST limit with maxPostSize=\"-1\", and handling non-ASCII characters in generated Java source files by setting keepgenerated to avoid Eclipse compiler errors. It is useful if you need Tomcat configuration fixes for character encoding, large POST requests, or JSP-to-servlet source generation issues."
+              },
+              {
+                "title": "Configuring the Java™ SE for Eclipse",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "Configures Eclipse to use the correct Java SE and set JVM memory arguments. It advises ensuring Eclipse starts with the right JRE (via Windows PATH or the -vm option), then in Eclipse selecting the default installed JRE and setting default VM arguments to -Xmx4096M -Xms512m. The section also includes Tomcat configuration updates: change the HTTP connector to port 9080, enable useBodyEncodingForURI, optionally set maxPostSize=-1 for rule sets, make the context reloadable, and set Jasper keepgenerated to false."
+              },
+              {
+                "title": "Configuring the Eclipse class path variables and the Eclipse Tomcat Plugin",
+                "level": 3,
+                "children": [],
+                "node_id": "n000056",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Explains how to configure Eclipse for Java EE and Tomcat. It instructs users to set Eclipse class path variables J2EE_JAR and JAVAMAIL_HOME, including example paths and a note to download JavaMail/JAF if missing. It also covers configuring the Eclipse Tomcat Plugin: opening Tomcat preferences, selecting the correct Tomcat version, setting Tomcat home, and adding the JVM parameter -Xmx1024m."
+              },
+              {
+                "title": "Importing and configuring the Cúram projects in Eclipse",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "Explains how to import Cúram projects into Eclipse using Existing Projects into Workspace, with Copy projects into workspace left unchecked, and notes the automatic build error that requires manually importing CuramBITransforms from the Reporting/components/BIBuildTools path. Also covers configuring Tomcat settings for the Curam project and updating server.xml via CitizenPortal, then begins CitizenPortal Tomcat configuration (Context Name /CitizenPortal, server.xml updates enabled)."
+              },
+              {
+                "title": "Starting the Tomcat server and the Cúram servers",
+                "level": 3,
+                "children": [],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "Instructions for starting the Tomcat and Cúram servers after configuring projects. It notes that, once running, the Cúram client is available at http://localhost:8080/Curam/AppController.do and the CitizenPortal application at http://localhost:8080/CitizenPortal/application.do. This section is mainly a pointer to related startup instructions and confirms the post-start access URLs."
+              },
+              {
+                "title": "Using Eclipse to validate the tabbed configuration artifacts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000059",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Explains how to configure Eclipse to validate Cúram tabbed configuration artifacts against the correct XML schemas. It covers adding schema files to the XML Catalog, associating tabbed file extensions like *.tab with the XML Editor, and updating XML content types. It also notes that changing the default Eclipse project text encoding is unsupported for Cúram projects, though per-file encodings are allowed."
+              },
+              {
+                "title": "Supported Eclipse text file encoding",
+                "level": 3,
+                "children": [],
+                "node_id": "n000060",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Eclipse project-level text file encoding should remain at the default for Cúram projects; changing it is unsupported. File-by-file saving in different encodings is still allowed."
+              }
+            ],
+            "node_id": "n000053",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000040",
+              "start_page": 34,
+              "end_page": 40
+            },
+            "summary": "This section covers post-install setup for a Cúram Eclipse/Tomcat development environment. It explains required software (Eclipse, Apache Tomcat, Tomcat plugin, Java SE/EE), Tomcat tuning for UTF-8, large POSTs, reloadable contexts, and suppressing JSP source generation errors, plus Eclipse JVM memory settings, classpath variables, and Tomcat plugin configuration. It also shows how to import Cúram projects, fix the CuramBITransforms build issue, configure Tomcat contexts for Curam/CitizenPortal/CuramBIRTViewer, start the servers, and set Eclipse XML validation for tabbed config files."
+          },
+          {
+            "title": "1.8 Installing and configuring Rational® Software Architect Designer",
+            "level": 2,
+            "children": [
+              {
+                "title": "Installing the Cúram plug-ins",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000041",
+                  "start_page": 41,
+                  "end_page": 41
+                },
+                "summary": "Explains how to install the Cúram plug-ins required for modeling support in Rational Software Architect Designer. The key steps are creating a dropins folder in the RSA installation directory and adding an rsa_plugin.link file that points to the plug-ins path using forward slashes. This follows a prior section on installing RSA Designer itself and is useful if you need to enable Cúram modeling in Eclipse-based RSA."
+              },
+              {
+                "title": "Setting up your Rational® Software Architect Designer workspace",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000042",
+                  "start_page": 42,
+                  "end_page": 42
+                },
+                "summary": "This section explains how to set up the Rational Software Architect Designer workspace. It includes editing the RSA shortcut to use the -clean option, launching RSA Designer, choosing a workspace location, switching to the Workbench, and importing existing projects. Specifically, it imports the %CURAM_DIR%\\EJBServer project and then repeats the process for the %CURAMSDEJ% root directory. It concludes that the workspace is ready for use and transitions into getting started with the development environment."
+              }
+            ],
+            "node_id": "n000061",
+            "range": {
+              "start_unit_id": "p000041",
+              "end_unit_id": "p000041",
+              "start_page": 41,
+              "end_page": 41
+            },
+            "summary": "Explains how to install IBM Rational Software Architect Designer with IBM Installation Manager for server development, including selecting the repository, package version, install location, translations, and the Rational Rose model import feature. Also covers enabling Cúram modeling support by creating a dropins folder in the RSA installation directory and adding an rsa_plugin.link file that points to the plug-ins path using forward slashes. Useful if you need the base RSA Designer installation or the extra Cúram plug-ins."
+          },
+          {
+            "title": "1.9 Getting started with the development environment",
+            "level": 2,
+            "children": [
+              {
+                "title": "Starting the server, Tomcat, and the RMILoginClient",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000042",
+                  "end_unit_id": "p000043",
+                  "start_page": 42,
+                  "end_page": 43
+                },
+                "summary": "Explains how to start the development environment after installation: launch the server from core.jar as the StartServer Java application, verify tnameserv, RMI Server, and JMSLite start correctly, start Tomcat from the Eclipse Tomcat plugin and confirm a clean startup, then run RMILoginClient and enter credentials to log in. Useful for users who need the exact startup sequence and expected console messages."
+              },
+              {
+                "title": "Logging on to Cúram",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Explains how to log on to Cúram or Citizen Portal from a supported browser using the application URLs and default ports for Tomcat, WebSphere, and WebLogic. Lists the available roles and what each role can access (sysadmin, admin, caseworker, supervisor). Also briefly notes deployment testing with supported enterprise application server/database combinations."
+              },
+              {
+                "title": "Deploying Cúram",
+                "level": 3,
+                "children": [],
+                "node_id": "n000067",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Explains how to log on to Cúram or Citizen Portal from a supported browser using the application URLs, including default ports for Tomcat, WebSphere, and WebLogic. Lists role-based access levels for sysadmin, admin, caseworker, and supervisor. Introduces deployment testing on supported enterprise server/database combinations: WebSphere + Db2, WebSphere + Oracle Database, and WebLogic + Oracle Database."
+              }
+            ],
+            "node_id": "n000064",
+            "range": {
+              "start_unit_id": "p000042",
+              "end_unit_id": "p000044",
+              "start_page": 42,
+              "end_page": 44
+            },
+            "summary": "Covers initial development-environment setup after installation: starting the server from core.jar as StartServer, confirming tnameserv, RMI Server, and JMSLite, starting Tomcat, and launching RMILoginClient to log in. Also explains logging on to Cúram or Citizen Portal via browser URLs and default ports for Tomcat, WebSphere, and WebLogic, with role-based access for sysadmin, admin, caseworker, and supervisor. Notes deployment testing on supported server/database combinations: WebSphere+Db2, WebSphere+Oracle, and WebLogic+Oracle."
+          },
+          {
+            "title": "1.10 Upgrading Cúram",
+            "level": 2,
+            "children": [],
+            "node_id": "n000068",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000048",
+              "start_page": 45,
+              "end_page": 48
+            },
+            "summary": "Explains how to upgrade a custom Cúram application using the Cúram Upgrade Helper Pack and the UI Upgrade Helper tool. The Upgrade Helper Pack includes tools and an upgrade guide covering the recommended upgrade process and major migrations, and is available from Merative Software Downloads for technical contacts. The UI Upgrade Helper is specifically for upgrading Cúram UI from version 7 to version 8, with more information at the listed project site."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000048",
+          "start_page": 9,
+          "end_page": 48
+        },
+        "summary": "Covers setting up a Cúram development environment on Windows (builds also on Linux): choosing light, full, or build setups; installing prerequisites like Apache Ant, Java SE/EE, IBM Installation Manager, application servers, and databases; installing Cúram software and postinstallation configuration; and configuring Eclipse/Tomcat or Rational Software Architect Designer. It also explains starting and logging into the environment, supported server/database combinations, and upgrade helpers for later migrations."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "8e687a9a54835d1e",
+    "title": "Cúram 8.1.2 Creating Datastore Schemas Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CreatingDatastoreSchemas_812.pdf",
+    "source_type": "pdf",
+    "sha256": "8e687a9a54835d1e6c776db535911e74fe68be8d233f1174d6214c9b1af03081",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T04:09:29+00:00",
+    "page_count": 16,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CreatingDatastoreSchemas_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Creating Datastore Schemas Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000016",
+      "start_page": 1,
+      "end_page": 16
+    },
+    "summary": "Guide to creating Cúram 8.1–8.1.2 datastore schemas for intake/screening data. Explains what a datastore is, how XML data is shredded into entities, and that datastores must be accessed only through `curam.datastore.impl` (other `curam.datastore.*` packages are not API). Covers schema rules: single XML namespace or none, global-level entity/domain definitions, included schema fragments, allowed datatypes based on `BaseDomains`, supported XML and annotation constraints, entity/attribute structure, and identity constraints using `SVR_KEY` with `key`/`keyref`. Also includes compliance guidance on using only documented public API, plus front matter, notices, privacy policy, and trademarks.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note directs readers to review the “Notices” section before using the information or the supported product. It includes Merative US L.P. copyright information for 2012 and 2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000014",
+          "start_page": 5,
+          "end_page": 14
+        },
+        "summary": "This section introduces datastore schema creation in Cúram 8.1–8.1.2. It explains what datastores are, how data is shredded and accessed via the `curam.datastore.impl` API, and the rules for defining schemas: single namespace, global-level entities/domains, allowed datatypes/domains, supported constraints and annotations, entity/attribute structure, and XML identity constraints using `SVR_KEY`. It also covers compliance guidance and which datastore classes are truly part of the public API."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "This section contains legal notices: fictitious sample data/examples, copyright and licensing terms for sample programs, an “AS IS” warranty disclaimer, Merative’s privacy policy link, and a trademarks list covering Merative, IBM, Adobe, Oracle, Linux, Microsoft, and UNIX. It is useful for locating usage rights, liability limits, privacy policy access, and trademark acknowledgments."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000016",
+              "end_unit_id": "p000016",
+              "start_page": 16,
+              "end_page": 16
+            },
+            "summary": "This section lists trademark and copyright notices for the document. It identifies Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft, and UNIX trademarks, notes that other company/product names may belong to others, and includes a Merative privacy policy link. It also states that sample programs may be copied and modified under the Merative Client Agreement, are provided “AS IS,” and carry no warranty."
+          }
+        ],
+        "node_id": "n000003",
+        "range": {
+          "start_unit_id": "p000015",
+          "end_unit_id": "p000015",
+          "start_page": 15,
+          "end_page": 15
+        },
+        "summary": "Merative legal notices for this publication: permissions for personal and enterprise use, requirements to preserve proprietary notices, and restrictions on redistribution or derivative works without consent. It also states no additional rights are granted, export laws apply, and Merative may withdraw permission. The section includes an “AS-IS” warranty disclaimer, no patent license notice, a disclaimer about non-Merative products and websites, and the © Merative US L.P. 2012, 2024 copyright."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000006",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Cúram 8.1.2 document. Lists front matter (Note, Edition), Chapter 1 “Creating Datastore Schemas” with sections on datastore purpose/access, schema overview, namespaces, datatypes, entity and attribute definitions, identity constraints, and compliancy/public API guidance, plus notices, privacy policy, and trademarks. Useful as a navigation map rather than substantive content."
+      },
+      {
+        "title": "1 Creating Datastore Schemas",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Important Information Before Creating Datastore Schemas",
+            "level": 2,
+            "children": [
+              {
+                "title": "The Purpose of Datastores",
+                "level": 3,
+                "children": [],
+                "node_id": "n000009",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Explains the datastore’s role in online screening and intake: it stores citizen-collected application data, defined dynamically by a datastore schema. The section notes that screening/intake scripts and rules depend on the schema, so required fixed elements must be present. It also describes that datastore data is stored in XML and shredded across multiple database rows for efficiency. Finally, it states that datastores should be accessed only through the Java API in `curam.datastore.impl`, not other `curam.datastore.*` packages."
+              },
+              {
+                "title": "How to Properly Access Datastores",
+                "level": 3,
+                "children": [],
+                "node_id": "n000010",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "This section explains that datastores are dynamically defined XML data stores used to hold citizen intake and screening data, with data shredded across multiple database rows for efficiency. It describes datastore schemas as W3C XML Schema–based definitions that must also meet datastore-specific rules and remain compatible with dependent scripts and screening rules. It also states that datastores should be accessed only through the Java API in `curam.datastore.impl`, while other `curam.datastore.*` packages are not part of the supported API."
+              }
+            ],
+            "node_id": "n000008",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "Datastores hold citizen intake/screening data defined dynamically by a datastore schema. Their contents must stay compatible with dependent screening/intake scripts and rules, including required fixed elements. Data is stored as XML and shredded across multiple database rows for efficiency, with each shredded row type called a datastore entity. Schemas must conform to W3C XML Schema plus datastore-specific rules. Datastores should be accessed only through the Java API in `curam.datastore.impl`; other `curam.datastore.*` packages are unsupported."
+          },
+          {
+            "title": "1.2 Creating a Datastore Schema",
+            "level": 2,
+            "children": [
+              {
+                "title": "Datastore Schema Overview",
+                "level": 3,
+                "children": [],
+                "node_id": "n000012",
+                "range": {
+                  "start_unit_id": "p000009",
+                  "end_unit_id": "p000009",
+                  "start_page": 9,
+                  "end_page": 9
+                },
+                "summary": "Introduces datastore schemas for intake data storage. Explains that datastores hold citizen-collected application data, with schemas defining entities, fields, and relationships, and that schema-compatible screening/intake scripts and rules may depend on fixed elements. Notes datastore data is stored in XML and shredded across multiple database rows for efficiency. States schemas must conform to W3C XML Schema plus datastore-specific rules. Also points to the supported Java API package curam.datastore.impl for accessing datastores, and warns other curam.datastore.* packages are not API."
+              },
+              {
+                "title": "Namespaces",
+                "level": 3,
+                "children": [],
+                "node_id": "n000013",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "This section explains XML datastore schema namespace rules and datatype constraints. A datastore schema must be in one XML namespace or none, and cannot span multiple namespaces. Schema fragments may include each other, but only the BaseDomains namespace may be imported. It also states that datastore attributes cannot use W3C built-in datatypes directly; they must use Cúram domain simple types, either from the BaseDomains namespace or schema-defined types derived from them. Built-in Cúram domains such as SVR_INT32, SVR_DATE, and SVR_STRING are listed."
+              },
+              {
+                "title": "Datatypes",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000011",
+                  "start_page": 10,
+                  "end_page": 11
+                },
+                "summary": "Explains datastore schema datatypes/domains. Attributes cannot use W3C built-in types directly; they must use Cúram domain definitions from the BaseDomains namespace or schema-defined simple types derived from them. Lists built-in domains such as SVR_BOOLEAN, SVR_INT32, SVR_DATE, SVR_STRING, and code table types, with their XML equivalents and constraints. Also covers allowed domain constraints (min/max length, min/max inclusive) and Cúram-specific annotation options like default, compress, trim, and code-table-name, noting these are mainly metadata for tools like IEG."
+              },
+              {
+                "title": "Entity and Attribute Definitions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000015",
+                "range": {
+                  "start_unit_id": "p000012",
+                  "end_unit_id": "p000012",
+                  "start_page": 12,
+                  "end_page": 12
+                },
+                "summary": "Defines datastore entity and attribute rules. Entities are global-level complexType elements; if one entity contains another, both still must be defined globally and linked with element ref. Only sequence compositors are allowed (not all/choice), with minOccurs=0 on sequences and elements; maxOccurs is unrestricted. Entity attributes must use domain simpleTypes defined elsewhere in the schema. Attribute default values are stored in the datastore if not explicitly set. All simpleType domain and complexType entity definitions must be global, not nested."
+              },
+              {
+                "title": "Identity Constraints",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Explains XML identity constraints in datastore schemas using a Person/Address/Relationship example. A Person may contain an optional Address and multiple Relationship elements that reference, rather than contain, other Persons. Shows how uniqueness and referential integrity are enforced with xs:key on @personID (PersonKey) and xs:keyref from Relationship/@personID to PersonKey. Notes that identity constraints have additional restrictions in datastore schemas beyond standard XML specification behavior."
+              }
+            ],
+            "node_id": "n000011",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000013",
+              "start_page": 9,
+              "end_page": 13
+            },
+            "summary": "This section explains how to create a datastore schema for intake data. It covers the schema’s role in shredding XML application data into entities, attributes, domains, and key relationships; the requirement to use one XML namespace (or none); and the rule that attributes must use Cúram domain types, not W3C built-ins directly. It also describes supported domain constraints and annotations, global-level entity/domain definitions, sequence-only compositors, and XML identity constraints for keys and keyrefs."
+          },
+          {
+            "title": "1.3 Compliancy for datastore schemas",
+            "level": 2,
+            "children": [
+              {
+                "title": "Public API",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "The Datastore exposes a public API for application code with stability guarantees under Cúram change-impact standards. The JavaDoc is the only source for identifying public classes, interfaces, and methods. Other public-looking Datastore classes or methods are not part of the API and may change or be removed without notice. To remain compliant, do not depend on non-API classes or interfaces, and only call methods documented in the JavaDoc. Unless the JavaDoc says otherwise, do not place your own classes or interfaces in the Datastore package."
+              },
+              {
+                "title": "Identifying the API",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "The section explains how to identify the Datastore public API: the included JavaDoc is the only authoritative source for which public classes, interfaces, and methods are part of the API. It warns that other public-looking classes, interfaces, and methods are outside the API, may change or be removed without notice, and must not be depended on. It also states that, unless the JavaDoc says otherwise, customer classes should not be placed in the same package as the Datastore."
+              },
+              {
+                "title": "Outside the API",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000016",
+                  "start_page": 14,
+                  "end_page": 16
+                },
+                "summary": "Explains datastore schema compliance and a warning about using classes outside the public API. The public API is identified only by Javadoc; dependencies on non-API classes/interfaces are disallowed, and their methods may change or be removed without notice. Also notes you should not place custom classes in the Datastore package unless Javadoc says otherwise. The rest of the pages are legal notices: usage permissions, copyright/license terms, warranty disclaimers, privacy policy link, sample code terms, and trademarks."
+              }
+            ],
+            "node_id": "n000017",
+            "range": {
+              "start_unit_id": "p000014",
+              "end_unit_id": "p000016",
+              "start_page": 14,
+              "end_page": 16
+            },
+            "summary": "Guidance for compliant datastore schemas. It states that the Datastore public API may be used in application code and is protected by Cúram change-impact standards, but the JavaDoc is the only authoritative source for API classes, interfaces, and methods. Do not depend on non-API classes/methods, and do not add your own classes or interfaces to the Datastore package unless JavaDoc allows it. The remaining pages are legal notices, licensing, warranty disclaimers, privacy policy, sample code terms, and trademarks."
+          }
+        ],
+        "node_id": "n000007",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000016",
+          "start_page": 9,
+          "end_page": 16
+        },
+        "summary": "Explains how to create Cúram Datastore schemas for intake/screening data. Covers datastore purpose, XML shredding into entities, and accessing datastores only through `curam.datastore.impl`. Describes schema rules: single namespace or none, global-level entity/domain definitions, sequence-only compositors, domain types based on BaseDomains, supported constraints/annotations, and XML key/keyref identity constraints with `SVR_KEY`. Includes compliance guidance on using only documented public API; remaining pages are notices and legal terms."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

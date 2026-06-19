@@ -1,0 +1,1059 @@
+{
+  "schema_version": "vectorless-pageindex-lite/v1",
+  "document": {
+    "doc_id": "33779fcb4801398c",
+    "title": "Cúram 8.1.2 Provider Management Configuration Guide",
+    "source_path": "/Users/chedine/d/p/toolsets/pageindex/inbox/CuramProviderManagementGuide_812.pdf",
+    "source_type": "pdf",
+    "sha256": "33779fcb4801398c57b9fddef2e25bd5fd6b2a0c2afc021d3f16a8a1555182ea",
+    "content_file": "content.jsonl",
+    "created_at": "2026-06-16T19:16:24+00:00",
+    "page_count": 52,
+    "content_unit_type": "page",
+    "archived_path": "/Users/chedine/d/p/toolsets/pageindex/archive/CuramProviderManagementGuide_812.pdf"
+  },
+  "root": {
+    "title": "Cúram 8.1.2 Provider Management Configuration Guide",
+    "level": 0,
+    "range": {
+      "start_unit_id": "p000001",
+      "end_unit_id": "p000052",
+      "start_page": 1,
+      "end_page": 52
+    },
+    "summary": "Front matter for the Cúram 8.1.2 Provider Management Configuration Guide. It includes the title page, edition note, and legal notices/copyright information, plus the table of contents and the main Chapter 1 overview.\n\nThe section introduces CPM provider management and its scope: provider lifecycle and stored information, service registry/service offerings, financial settings and approval criteria, provider and group maintenance, fitness checks (licenses, accreditations, home studies, background checks), facilities and placements, contracts, training/certifications, attendance rosters, incidents/investigations, provider payments and deductions, and provider self-service for inquiries, login, invoices, and rosters.\n\nAlso includes detailed notices on reproduction rights, export compliance, “AS IS” warranty/liability disclaimers, third-party product/web references, privacy policy, and trademarks. Useful as an entry point and for locating the guide’s major topics and page numbers.",
+    "children": [
+      {
+        "title": "Note",
+        "level": 1,
+        "children": [],
+        "node_id": "n000001",
+        "range": {
+          "start_unit_id": "p000003",
+          "end_unit_id": "p000004",
+          "start_page": 3,
+          "end_page": 4
+        },
+        "summary": "This note instructs readers to review the Notices section on page 51 before using the information or the supported product. It also includes the copyright notice for Merative US L.P. spanning 2012–2024."
+      },
+      {
+        "title": "Edition",
+        "level": 1,
+        "children": [
+          {
+            "title": "Edition — pages 5-14",
+            "level": 2,
+            "children": [],
+            "node_id": "n000003",
+            "range": {
+              "start_unit_id": "p000005",
+              "end_unit_id": "p000014",
+              "start_page": 5,
+              "end_page": 14
+            },
+            "summary": "Introductory pages for Cúram Provider Management (CPM) 8.1/8.1.1/8.1.2. Includes edition/legal info, table of contents, and the start of Chapter 1, “Provider Management Overview.” Covers CPM purpose, provider lifecycle/information management, and key features: service registry, provider details/contracts, placements, attendance tracking, incidents/investigations, financials, and self-service. Also begins configuration guidance for service offerings: payment methods, rates, payment options, preventing incidental authorizations, attendance tracking, approval criteria/checks, and service delivery types."
+          },
+          {
+            "title": "Edition — pages 15-24",
+            "level": 2,
+            "children": [],
+            "node_id": "n000004",
+            "range": {
+              "start_unit_id": "p000015",
+              "end_unit_id": "p000024",
+              "start_page": 15,
+              "end_page": 24
+            },
+            "summary": "Cúram Provider Management overview covering service delivery configuration and provider lifecycle. Describes delivery types, service parameters, evaluation criteria, training requirements, absence reasons, and payment/nominee settings. Explains provider and provider group management: inquiries, enrollment, approval, suspension, provider services, members/participants, unassigned members, wait lists, and service inquiries. Also covers provider fitness controls: accreditations, licensing, home studies, assessments, home visits, supporting documents, and approval workflows."
+          },
+          {
+            "title": "Edition — pages 25-34",
+            "level": 2,
+            "children": [],
+            "node_id": "n000005",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000034",
+              "start_page": 25,
+              "end_page": 34
+            },
+            "summary": "This section covers provider management in CPM: background checks; facility and placement management (capacity, compartments, out-of-use places, reservations, placements, emergency placements, transfers); contract management (rates, place limits, licenses, provider groups, lifecycle, issuing/activating, amending, renewing, terminating); training and certifications for provider members; and recording client attendance for service delivery, payments, and participation tracking."
+          },
+          {
+            "title": "Edition — pages 35-44",
+            "level": 2,
+            "children": [],
+            "node_id": "n000006",
+            "range": {
+              "start_unit_id": "p000035",
+              "end_unit_id": "p000044",
+              "start_page": 35,
+              "end_page": 44
+            },
+            "summary": "This section covers provider management for client attendance and payment processing, plus incident management. It explains roster creation (automatic/manual), roster line items, daily attendance, absences, submission, matching/validation, exceptions, and corrections. It also describes managing provider incidents, including types, participants, injuries, and restraints. The payment chapters compare paying through service invoices, attendance rosters, and placements, including validation rules, exception handling, rate priority, custom product-delivery rates, and payment timing based on configured frequencies."
+          },
+          {
+            "title": "Edition — pages 45-50",
+            "level": 2,
+            "children": [],
+            "node_id": "n000007",
+            "range": {
+              "start_unit_id": "p000045",
+              "end_unit_id": "p000050",
+              "start_page": 45,
+              "end_page": 50
+            },
+            "summary": "Covers provider payment calculation and reassessment rules in CPM, including rate priority (placement, utilization contract, provider, service offering), flat-rate contract payment scheduling, and reassessment triggers for invoices, rosters, placements, utilization contracts, and service authorizations. Also explains provider deductions (applied, unapplied, third-party) and provider self-service: enquiries, login credential setup/password reset, viewing details, submitting service invoices, and submitting attendance rosters for validation and processing."
+          }
+        ],
+        "node_id": "n000002",
+        "range": {
+          "start_unit_id": "p000005",
+          "end_unit_id": "p000050",
+          "start_page": 5,
+          "end_page": 50
+        },
+        "summary": "Introductory CPM edition pages and Chapter 1 overview. Defines provider management scope: lifecycle and service information, service registry, provider details/contracts, placements, attendance, incidents/investigations, payments/deductions, and self-service. Also outlines configuration and management topics covered in the chapter: service offerings, financial settings, approval criteria, delivery types, provider/group maintenance, fitness checks, facilities/placements, contracts, training/certifications, attendance rosters, incidents, provider payments, reassessment, deductions, and provider self-service for enquiries, login, invoices, and rosters."
+      },
+      {
+        "title": "Notices",
+        "level": 1,
+        "children": [
+          {
+            "title": "Privacy policy",
+            "level": 2,
+            "children": [],
+            "node_id": "n000009",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "Contains legal and licensing notices for the document: fictitious example data disclaimer, sample code copyright/license terms, warranty and liability disclaimer, link to Merative privacy policy, and trademark acknowledgments for Merative, IBM, Adobe, Oracle, Linux, Microsoft, UNIX, and others."
+          },
+          {
+            "title": "Trademarks",
+            "level": 2,
+            "children": [],
+            "node_id": "n000010",
+            "range": {
+              "start_unit_id": "p000052",
+              "end_unit_id": "p000052",
+              "start_page": 52,
+              "end_page": 52
+            },
+            "summary": "States that sample names in the document are fictitious and that sample programs may be copied, modified, and distributed under the Merative Client Agreement, but are provided “AS IS” without warranty or liability. Includes the Merative privacy policy URL and a trademarks notice listing Merative, IBM, Adobe, Oracle/Java, Linux, Microsoft/Windows, and UNIX as protected marks, plus a general note that other names may be trademarks."
+          }
+        ],
+        "node_id": "n000008",
+        "range": {
+          "start_unit_id": "p000051",
+          "end_unit_id": "p000051",
+          "start_page": 51,
+          "end_page": 51
+        },
+        "summary": "Legal notices and permissions for using the publication. Covers personal and internal enterprise copying limits, prohibition on derivative works without Merative consent, and no extra rights beyond those stated. Includes Merative’s right to withdraw permission, export-law compliance, and a broad “AS IS” warranty/liability disclaimer. Also notes patents may apply, third-party product/web content is not endorsed or guaranteed, and identifies © Merative US L.P. 2012, 2024."
+      },
+      {
+        "title": "Contents",
+        "level": 1,
+        "children": [],
+        "node_id": "n000011",
+        "range": {
+          "start_unit_id": "p000007",
+          "end_unit_id": "p000008",
+          "start_page": 7,
+          "end_page": 8
+        },
+        "summary": "Table of contents for the Provider Management manual. Lists major chapters and subtopics covering provider lifecycle management, service offerings, provider and group maintenance, accreditations and checks, placements and contracts, training and certifications, attendance rostering, incidents and investigations, provider payments and deductions, and provider self-service. Also includes front matter, notices, privacy policy, and trademarks. Useful for locating specific provider management procedures and page numbers."
+      },
+      {
+        "title": "1 Provider Management Overview",
+        "level": 1,
+        "children": [
+          {
+            "title": "1.1 Summary of Provider Lifecycle and Information Management",
+            "level": 2,
+            "children": [
+              {
+                "title": "Provider Management Roles",
+                "level": 3,
+                "children": [],
+                "node_id": "n000014",
+                "range": {
+                  "start_unit_id": "p000010",
+                  "end_unit_id": "p000010",
+                  "start_page": 10,
+                  "end_page": 10
+                },
+                "summary": "Defines CPM provider management user roles and their responsibilities. Covers Administrator (service offerings, training courses, configuration), Resource Manager (full provider management, inquiries, enrollments, approvals), Facility Manager (similar but narrower, often single-provider and placement-focused), Financial User (creates/processes service invoices and is the only role that can approve them), and Provider self-service access for details and online invoices/rosters. Useful for understanding who can do what in provider administration."
+              }
+            ],
+            "node_id": "n000013",
+            "range": {
+              "start_unit_id": "p000009",
+              "end_unit_id": "p000009",
+              "start_page": 9,
+              "end_page": 9
+            },
+            "summary": "This section explains CPM’s focus on managing the full provider lifecycle and related information. It covers provider facilities, services, staff, licenses, accreditations, certifications, and contracts, as well as service delivery data such as client placements, payment requests, and incidents or investigations. It is useful for understanding what provider information CPM stores and manages across operational, financial, and compliance areas."
+          },
+          {
+            "title": "1.2 Registering and Maintaining Service Offerings",
+            "level": 2,
+            "children": [
+              {
+                "title": "Managing Service Offerings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000016",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000011",
+                  "start_page": 11,
+                  "end_page": 11
+                },
+                "summary": "Explains how administrators manage service offerings in the services registry, including setting a required rate and unit of measure. Notes that residential placement services must use the unit “place,” while other services may use units like doses, treatments, sessions, or visits. Describes grouping similar services into service groups and searching offerings by name or unit of measure. Also introduces evidence recording and financial settings, including payment methods such as invoices, attendance rosters, placement data, and flat-rate contracts, with attendance/placement flags set at creation and not editable later."
+              },
+              {
+                "title": "Configuring Financial Settings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000017",
+                "range": {
+                  "start_unit_id": "p000011",
+                  "end_unit_id": "p000012",
+                  "start_page": 11,
+                  "end_page": 12
+                },
+                "summary": "This section explains financial configuration for service offerings. It covers payment methods (invoices, attendance/rosters, placement data, or flat-rate contracts), including the fixed “Pay based on attendance” and “Pay based on placement” indicators. It also describes configuring service rates as fixed amounts or min/max ranges, with only one active rate per period. Payment options define how to handle billed amounts outside configured rates. Finally, it covers the “Prevent Authorization via Placement” setting to avoid duplicate service authorizations."
+              },
+              {
+                "title": "Configuring Attendance Tracking",
+                "level": 3,
+                "children": [],
+                "node_id": "n000018",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "This section explains how to configure attendance tracking for provider services. It covers roster generation frequency, daily attendance reporting, attendance as a payment requirement, and separate attendance payment frequency. It also distinguishes roster reporting methods: Utilization (units of service, required for attendance-based payment) and Attendance (presence by day, supports daily tracking and optional hours, but cannot be used for attendance-based payment). It briefly introduces approval criteria that warn managers when prerequisites like licenses or background checks are unmet."
+              },
+              {
+                "title": "Configuring Approval Criteria",
+                "level": 3,
+                "children": [],
+                "node_id": "n000019",
+                "range": {
+                  "start_unit_id": "p000013",
+                  "end_unit_id": "p000013",
+                  "start_page": 13,
+                  "end_page": 13
+                },
+                "summary": "Defines approval criteria for service offerings, used to specify prerequisites a provider must meet before a service can be approved. When approving a service offering, the system shows informational warnings if required criteria are unmet, helping resource managers review missing requirements. Example criteria include license and background checks."
+              },
+              {
+                "title": "Setting Up Approval Checks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000020",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000014",
+                  "start_page": 14,
+                  "end_page": 14
+                },
+                "summary": "This section explains how to configure approval checks for service offerings, including percentage-based manual review at service, organization unit, and user levels, with options for all services or individual provider services. It also introduces service delivery configuration, describing how default settings control delivery behavior and processing. The excerpt highlights delivery types and begins with Product Delivery, used for services delivered directly to clients and paid to clients or nominees, without invoice or attendance roster processing."
+              },
+              {
+                "title": "Configuring Service Deliveries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000021",
+                "range": {
+                  "start_unit_id": "p000014",
+                  "end_unit_id": "p000016",
+                  "start_page": 14,
+                  "end_page": 16
+                },
+                "summary": "Explains how to configure service deliveries in CPM. Covers approval checks by service, organization unit, user, and provider level, including percentages for manual review. Describes four delivery types—Product Delivery, Service Delivery, Product Delivery with Invoicing, and Service Delivery with Eligibility—and when each uses product delivery or CPM financial processing. Lists configurable service parameters such as product, delivery frequency, client count, multiple deliveries, authorized rate, nominee, participation, units, manual completion, provider selection, owner, and progress applicability."
+              },
+              {
+                "title": "Configuring Evaluation Criteria for a Service Offering",
+                "level": 3,
+                "children": [],
+                "node_id": "n000022",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section explains how evaluation criteria are configured for a service offering. It says only a subset of the available criteria is linked to a given offering, depending on the offering type, and responses are recorded on the service delivery. The surrounding page also covers related service-offering setup such as nominee type, referral templates, security rights, page defaults, estimated cost rules, training requirements, and payable/deductible absence reasons."
+              },
+              {
+                "title": "Adding Training Requirements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000023",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "This section explains how to add a training requirement to a service offering. If a service requires provider training, a training course can be attached as a requirement. All training marked required must be completed or waived for every active provider member before the service can be added to a provider, otherwise the resource manager is warned."
+              },
+              {
+                "title": "Recording Absence Reasons for Service Offerings",
+                "level": 3,
+                "children": [],
+                "node_id": "n000024",
+                "range": {
+                  "start_unit_id": "p000017",
+                  "end_unit_id": "p000017",
+                  "start_page": 17,
+                  "end_page": 17
+                },
+                "summary": "Explains how to configure absence reasons for a service offering based on what should happen when a client misses a planned service. Absence reasons can be marked payable, meaning the provider is still paid for the missed unit, or deductible, meaning the client can reschedule and does not lose the service units. Useful for understanding payment and entitlement rules tied to service absences."
+              }
+            ],
+            "node_id": "n000015",
+            "range": {
+              "start_unit_id": "p000010",
+              "end_unit_id": "p000017",
+              "start_page": 10,
+              "end_page": 17
+            },
+            "summary": "This section covers registering and maintaining service offerings in CPM. It explains service setup in the services registry, including required rate and unit of measure, service groups, and searching offerings. It details financial settings: payment methods (invoice, attendance/roster, placement, flat rate), service rates and payment options, and preventing duplicate authorization via placement. It also covers attendance tracking, approval criteria/checks, delivery types and configuration parameters, evaluation criteria, training requirements, and payable/deductible absence reasons."
+          },
+          {
+            "title": "1.3 Maintaining Providers and Provider Groups",
+            "level": 2,
+            "children": [
+              {
+                "title": "Provider Lifecycle",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Receiving Provider Inquiries",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000027",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains the provider lifecycle in Provider Management (CPM), focusing on how organizations receive provider inquiries as a first step toward enrollment. Providers or provider groups can contact the organization directly or via provider self-service to offer services. The organization reviews inquiries, then resource managers may enroll the provider, capture key details, and complete post-enrollment checks. Providers must be approved before delivering services, and may be rejected if checks fail."
+                  },
+                  {
+                    "title": "Enrolling Providers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000028",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains provider enrollment in Cúram Provider Management (CPM). Providers are individuals or organizations that deliver services, while provider groups manage providers but do not deliver services directly. Enrollment is handled by resource managers, either directly or from a provider inquiry, and captures core details such as name, address, language, and preferred communication/payment methods. After enrollment, managers can add locations, staff, services, and accreditations. Enrolled providers must pass post-enrollment checks before being approved to deliver services."
+                  },
+                  {
+                    "title": "Approving Providers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000029",
+                    "range": {
+                      "start_unit_id": "p000018",
+                      "end_unit_id": "p000018",
+                      "start_page": 18,
+                      "end_page": 18
+                    },
+                    "summary": "Explains that after enrollment, providers must pass post-enrollment checks before they can deliver services. These checks may be informal or part of a formal approval process. If they pass, the provider is approved; if not, they can be rejected. This section sits within provider lifecycle and follows enrollment, where resource managers register providers and capture details such as locations, staff, services, and accreditations."
+                  },
+                  {
+                    "title": "Suspending Providers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000030",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how Provider Management (CPM) handles provider status changes after approval. Providers can be suspended for reasons such as license suspension or complaints; the suspension reason must be recorded and suspended providers cannot be authorized to deliver services. It also describes closing providers when they stop or are terminated from service delivery, and reopening closed providers, which requires reapproval before they can serve again. The excerpt ends as it transitions into provider group lifecycle and enrollment."
+                  },
+                  {
+                    "title": "Closing Providers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000031",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Explains how Provider Management (CPM) lets a resource manager close a provider so no further clients can be authorized for services, typically when the provider or organization ends the relationship. Gives an example of a daycare closing due to staff shortages. Notes that closed providers can later be reopened, but must re-enter the approval process before delivering services again."
+                  },
+                  {
+                    "title": "Reopening Providers",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000032",
+                    "range": {
+                      "start_unit_id": "p000019",
+                      "end_unit_id": "p000019",
+                      "start_page": 19,
+                      "end_page": 19
+                    },
+                    "summary": "Closed providers can be reopened by the organization when they are ready to deliver services again. Reopening restores the provider record, but the provider must go through the approval process again before being approved to serve clients. Example: after a closure caused by staffing shortages, a provider may notify the resource manager, who reopens the provider and rechecks the facility before approval."
+                  }
+                ],
+                "node_id": "n000026",
+                "range": {
+                  "start_unit_id": "p000018",
+                  "end_unit_id": "p000018",
+                  "start_page": 18,
+                  "end_page": 18
+                },
+                "summary": "This section explains the provider lifecycle in Cúram Provider Management (CPM): providers and provider groups, provider inquiries, enrollment, and approval. It describes how organizations receive inquiries, resource managers enroll providers and capture core details, and then complete post-enrollment checks before approval. Providers must be approved before delivering services and may be rejected if checks fail."
+              },
+              {
+                "title": "Provider Group Lifecycle",
+                "level": 3,
+                "children": [],
+                "node_id": "n000033",
+                "range": {
+                  "start_unit_id": "p000019",
+                  "end_unit_id": "p000019",
+                  "start_page": 19,
+                  "end_page": 19
+                },
+                "summary": "This section explains the lifecycle of provider groups in CPM. Provider groups are managed differently from providers because they do not deliver services directly. It introduces direct enrollment by a resource manager without an inquiry, capturing basic details such as name, address, preferred language, and communication preferences. Use this node for guidance on how provider groups are enrolled and managed as distinct organizational entities."
+              },
+              {
+                "title": "Maintaining Provider Details",
+                "level": 3,
+                "children": [],
+                "node_id": "n000034",
+                "range": {
+                  "start_unit_id": "p000020",
+                  "end_unit_id": "p000020",
+                  "start_page": 20,
+                  "end_page": 20
+                },
+                "summary": "Provider Management lets users maintain core provider details such as phone numbers, addresses, payment details, and preferred communication methods. It also covers linked configuration for provider categories and types, specialties, service centers, and payment options. Categories and types classify provider services, specialties support matching providers to client needs, service centers define delivery locations for non-placement services, and provider-level payment options can override service offering settings when invoice and service rates differ."
+              },
+              {
+                "title": "Maintaining Provider Services",
+                "level": 3,
+                "children": [],
+                "node_id": "n000035",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "This section explains how to maintain provider services and related staff records. It covers selecting services from the services registry, enforcing approval criteria, setting provider-specific service rates that override registry rates, and defining place limits for placement providers. It also describes recording provider members and participants, including staff relationships, contacts, roles, service delivery details, training, certifications, employment history, background checks, and association periods."
+              },
+              {
+                "title": "Maintaining Provider Members and Participants",
+                "level": 3,
+                "children": [],
+                "node_id": "n000036",
+                "range": {
+                  "start_unit_id": "p000021",
+                  "end_unit_id": "p000021",
+                  "start_page": 21,
+                  "end_page": 21
+                },
+                "summary": "Explains how CPM records and maintains provider and provider group staff relationships. Covers associating members with providers, tracking their role and active period, and storing details such as services delivered, training/certifications, prior employment, and background checks. Also notes that provider-group payment direction can be configured and historically tracked, and that provider services can be approved against criteria, priced by provider-specific rates, and limited by placement capacity."
+              },
+              {
+                "title": "Maintaining Wait Lists",
+                "level": 3,
+                "children": [],
+                "node_id": "n000037",
+                "range": {
+                  "start_unit_id": "p000022",
+                  "end_unit_id": "p000022",
+                  "start_page": 22,
+                  "end_page": 22
+                },
+                "summary": "Describes how clients are managed on provider wait lists when no suitable provider is available. Covers placing clients on wait lists for non-placement or placement services, for a provider or specific offering, automatic position assignment and manual reordering by priority, expiry dates, search criteria, and periodic review dates. Also notes removing the first client when resources become available and allocating a placement when a place opens."
+              },
+              {
+                "title": "Maintaining Service Inquiries",
+                "level": 3,
+                "children": [],
+                "node_id": "n000038",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section explains how service inquiries are handled: users check whether a provider can deliver a specified service for a given time period, using phone, email, web, or post based on provider preference. The provider’s response is recorded, and it may enable authorization for service delivery. It begins the broader topic of ensuring providers are fit for purpose, leading into provider accreditations and licensing."
+              }
+            ],
+            "node_id": "n000025",
+            "range": {
+              "start_unit_id": "p000018",
+              "end_unit_id": "p000022",
+              "start_page": 18,
+              "end_page": 22
+            },
+            "summary": "Covers how CPM manages providers and provider groups: provider inquiries, enrollment by resource managers, approval/rejection, suspension, closing, and reopening. Provider groups are enrolled directly without inquiry and can have providers added as associates. Also explains maintaining provider details (contacts, addresses, payment, categories/types, specialties, service centers, payment overrides), provider services and place limits, members/participants and unassigned members, payment direction to provider groups, and wait lists for unavailable services."
+          },
+          {
+            "title": "1.4 Ensuring that Providers are Fit for Purpose",
+            "level": 2,
+            "children": [
+              {
+                "title": "Maintaining Provider Accreditations and Licensing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000040",
+                "range": {
+                  "start_unit_id": "p000023",
+                  "end_unit_id": "p000023",
+                  "start_page": 23,
+                  "end_page": 23
+                },
+                "summary": "This section explains how CPM manages provider accreditations and licenses. It covers adding accreditation start and expiry dates, and notes that accreditations can indicate suitability or formal qualification. It also describes licensing workflows: licenses may be issued by the organization or third parties, cover one or more services, require resource manager approval, and can later be renewed, rejected, suspended, or marked with a non-compliance reason. Approval may depend on required training being completed or waived for all active provider members."
+              },
+              {
+                "title": "Conducting Home Studies",
+                "level": 3,
+                "children": [],
+                "node_id": "n000041",
+                "range": {
+                  "start_unit_id": "p000024",
+                  "end_unit_id": "p000024",
+                  "start_page": 24,
+                  "end_page": 24
+                },
+                "summary": "This section explains how home studies are used to verify whether provider facilities meet requirements for requested services. It covers home study approval and repeat reviews, assessment types and outcomes (pass, fail, conditional pass with corrective actions), home visits and interview documentation, attaching supporting documents via Word templates, and supervisor review of the final result. It also notes that home study status history tracks lifecycle states and records reasons for non-compliance or approval failure."
+              },
+              {
+                "title": "Conducting Background Checks",
+                "level": 3,
+                "children": [],
+                "node_id": "n000042",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000025",
+                  "start_page": 25,
+                  "end_page": 25
+                },
+                "summary": "This section explains how provider members can undergo background checks such as criminal, child protective services, and firearm checks. It notes that checks can be time-limited, after which the resource manager can rerun them and update the provider record with new results, including pass/fail status and failure reasons."
+              }
+            ],
+            "node_id": "n000039",
+            "range": {
+              "start_unit_id": "p000023",
+              "end_unit_id": "p000024",
+              "start_page": 23,
+              "end_page": 24
+            },
+            "summary": "This section explains how CPM helps resource managers ensure providers are fit to deliver services. It covers maintaining provider accreditations and licenses, including start/expiry dates, approval workflows, renewals, suspensions, and non-compliance reasons. It also describes home studies used to verify provider facilities, including assessments with pass/fail/conditional pass outcomes, home visits, interview documentation, supporting Word templates, and supervisor approval. Background checks on provider members are also mentioned, with time-limited checks that can be rerun and recorded with results and failure reasons."
+          },
+          {
+            "title": "1.5 Managing Placement Facilities and Client Placements",
+            "level": 2,
+            "children": [
+              {
+                "title": "Managing Facilities",
+                "level": 3,
+                "children": [],
+                "node_id": "n000044",
+                "range": {
+                  "start_unit_id": "p000025",
+                  "end_unit_id": "p000026",
+                  "start_page": 25,
+                  "end_page": 26
+                },
+                "summary": "Explains how CPM manages facilities and placements for providers. Covers setting physical vs designated capacity during enrolment, defining facility layout with compartments and places, and using nested compartments to model buildings, floors, rooms, and beds. Describes compartment characteristics used to match clients to places, including gang affiliation, language, ethnicity, religion, age, gender, and placement service offering. Notes that ethnicity and religion characteristics require administrator-enabled application properties."
+              },
+              {
+                "title": "Managing Reservations and Placements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000045",
+                "range": {
+                  "start_unit_id": "p000027",
+                  "end_unit_id": "p000028",
+                  "start_page": 27,
+                  "end_page": 28
+                },
+                "summary": "Explains how CPM manages client reservations, placements, emergency placements, and transfers. Reservations are future allocations that cannot start in the past, can be canceled or converted into placements, and expire based on the reservation end date or grace-period expiry. Placements record current service delivery and can be updated by users or resource managers. Emergency placements create an over-capacity place when no standard place is available, then close once a regular place opens. Also covers marking places or compartments out of use for repairs or other unavailability."
+              }
+            ],
+            "node_id": "n000043",
+            "range": {
+              "start_unit_id": "p000025",
+              "end_unit_id": "p000028",
+              "start_page": 25,
+              "end_page": 28
+            },
+            "summary": "Explains how CPM manages facility-based client placements. Covers setting provider physical vs designated capacity, modeling layouts with nested compartments and places, and using compartment characteristics to match clients by gang, language, ethnicity, religion, age, gender, and service offering; ethnicity and religion require enabled application properties. Also describes marking places out of use. For reservations and placements, it covers future reservations, conversion to placements, conflict checks, cancellation/expiry rules, emergency over-capacity placements, and client transfers between compartments."
+          },
+          {
+            "title": "1.6 Managing Contracts",
+            "level": 2,
+            "children": [
+              {
+                "title": "Contract Types",
+                "level": 3,
+                "children": [],
+                "node_id": "n000047",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000029",
+                  "start_page": 29,
+                  "end_page": 29
+                },
+                "summary": "This section explains contract types in CPM for provider management. It covers why agencies contract with providers, the role of resource managers, and the two supported contract types: flat-rate contracts (fixed payment regardless of service volume) and utilization contracts (payment based on units delivered at defined rates). It also introduces common contract elements, such as contract period, covered services, and rates, to help assess whether to open the section for details on contract setup and lifecycle."
+              },
+              {
+                "title": "Contract Elements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000048",
+                "range": {
+                  "start_unit_id": "p000029",
+                  "end_unit_id": "p000030",
+                  "start_page": 29,
+                  "end_page": 30
+                },
+                "summary": "Explains contract elements in CPM for provider service agreements. Covers contract period with start/end dates, approved provider requirement, and why finite terms matter for review and budgeting. Describes services covered, noting only active services can be included and services may be contracted or provided outside a contract. Details flat-rate payments, utilization unit rates, and how contract rates override service/provider offering rates. Also explains place limits for placement services, reserving a set number of client spots for agency-authorized clients."
+              },
+              {
+                "title": "Contract Lifecycle",
+                "level": 3,
+                "children": [],
+                "node_id": "n000049",
+                "range": {
+                  "start_unit_id": "p000031",
+                  "end_unit_id": "p000031",
+                  "start_page": 31,
+                  "end_page": 31
+                },
+                "summary": "Explains contract lifecycle states and when they apply. A contract starts as In Edit before signing/activation, becomes Issued when generated and sent to the provider, and moves to Live once signed and activated. Contracts may be reissued after changes, terminated early before the end date, amended by creating a new In Edit version that supersedes the previous one, or canceled if deleted; canceled status is permanent."
+              },
+              {
+                "title": "Issuing and Activating Contracts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000050",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains the contract lifecycle after details are entered: generating the contract as a PDF, issuing it to the provider for review/signature, and activating it in the system so it becomes live on the start date. Covers amending activated contracts for changes such as rate updates, including versioning and reissuing/activating the amended contract. Also describes renewing contracts before expiration and terminating live contracts, with responsibilities assigned to the resource manager or supervisor."
+              },
+              {
+                "title": "Amending Contracts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000051",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains how to amend an already activated contract when terms change, especially provider rates. Flat-rate contracts cannot have rates edited; they must be terminated and recreated if the rate changes. Utilization contracts can be amended to change rates across different periods without changing the contract period. Amending creates a new contract version, which must be issued and activated, and the new terms supersede the previous ones."
+              },
+              {
+                "title": "Renewing Contracts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000052",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "Explains how active contracts are renewed before they expire. A contract has a finite term and must be renewed before its end date; the renewed contract starts the day after the previous end date. The resource manager or resource manager supervisor is responsible for renewal. Includes nearby context on issuing/activating contracts, amending activated contracts for changes such as rates, and terminating live contracts."
+              },
+              {
+                "title": "Terminating Contracts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000053",
+                "range": {
+                  "start_unit_id": "p000032",
+                  "end_unit_id": "p000032",
+                  "start_page": 32,
+                  "end_page": 32
+                },
+                "summary": "This section explains that the agency can terminate a live contract at any time, typically for reasons such as provider contract violations or poor performance. It notes that only live contracts can be terminated, and that the resource manager or resource manager supervisor performs the termination."
+              }
+            ],
+            "node_id": "n000046",
+            "range": {
+              "start_unit_id": "p000029",
+              "end_unit_id": "p000032",
+              "start_page": 29,
+              "end_page": 32
+            },
+            "summary": "Explains why agencies contract with providers, the role of the resource manager, and CPM contract types: flat-rate and utilization. Covers core contract elements such as contract period, approved providers, covered services, rates, place limits, licenses, and provider groups. Describes the lifecycle states (In Edit, Issued, Live, Amended, Terminated, Canceled), plus issuing/activating contracts as PDFs, amending rate changes, renewing before expiry, and terminating live contracts."
+          },
+          {
+            "title": "1.7 Managing Training and Certifications",
+            "level": 2,
+            "children": [
+              {
+                "title": "Provider Member Training",
+                "level": 3,
+                "children": [],
+                "node_id": "n000055",
+                "range": {
+                  "start_unit_id": "p000033",
+                  "end_unit_id": "p000033",
+                  "start_page": 33,
+                  "end_page": 33
+                },
+                "summary": "This section explains how CPM tracks provider member training and certifications. It covers setting up training courses in the administration app, including validity periods and training credits/units/points, and notes that credits can vary by provider category/type. It also describes provider member training management: managed vs. non-managed training, adding participants or individuals, setting required completion dates, marking training as required or recommended, approving training, recording completion details and units, and waiving training when exempt."
+              }
+            ],
+            "node_id": "n000054",
+            "range": {
+              "start_unit_id": "p000033",
+              "end_unit_id": "p000033",
+              "start_page": 33,
+              "end_page": 33
+            },
+            "summary": "This section explains how CPM tracks provider training and certifications for service-delivery staff. It covers setting up training courses in the administration app, including course type, validity period, and configurable training credits/units/points that may vary by provider category/type. It also describes provider member training management, including managed vs. non-managed training, adding participants or individuals, setting required completion dates, marking training as required or recommended, approving training, recording completion details and units, and waiving training when exempt."
+          },
+          {
+            "title": "1.8 Recording Client Attendance",
+            "level": 2,
+            "children": [
+              {
+                "title": "Recording Attendance Rosters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000057",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Explains how rosters are used to record client attendance for a period and can also list clients scheduled for upcoming services. Covers roster line items for period-level attendance, daily attendance for per-day present/absent and hours/units detail, and recording absences with reasons. Notes that absences may be payable in some cases. Describes roster generation, either automatically for authorized clients or manually by a resource manager, with automatic generation triggered by schedule frequency or new service authorizations."
+              },
+              {
+                "title": "Generating Rosters",
+                "level": 3,
+                "children": [
+                  {
+                    "title": "Automatic Roster Generation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000059",
+                    "range": {
+                      "start_unit_id": "p000035",
+                      "end_unit_id": "p000035",
+                      "start_page": 35,
+                      "end_page": 35
+                    },
+                    "summary": "Explains how attendance rosters are used to record client service attendance for a period, including roster line items, daily attendance, and absences. Notes that attendance can be tracked at the roster-line or daily level, with optional hours/units and absence reasons. For automatic roster generation, rosters are created by the system either on a regular schedule defined by roster generation frequency or when a service authorization is created for the current period."
+                  },
+                  {
+                    "title": "Manual Roster Generation",
+                    "level": 4,
+                    "children": [],
+                    "node_id": "n000060",
+                    "range": {
+                      "start_unit_id": "p000036",
+                      "end_unit_id": "p000036",
+                      "start_page": 36,
+                      "end_page": 36
+                    },
+                    "summary": "This section explains when attendance rosters must be generated manually instead of automatically. It covers cases where the provider is unknown at authorization time, such as voucher-based services, so the client cannot be added to a provider roster automatically. It also notes that blank paper rosters can be generated for a selected service and period, or providers can create rosters through self-service. The section then introduces attendance entry at roster line-item or daily level and notes that future-date attendance cannot be submitted."
+                  }
+                ],
+                "node_id": "n000058",
+                "range": {
+                  "start_unit_id": "p000035",
+                  "end_unit_id": "p000035",
+                  "start_page": 35,
+                  "end_page": 35
+                },
+                "summary": "Explains how rosters are used to record client attendance for a period, including roster line items, daily attendance, and absences. Attendance may be tracked at the roster-line or daily level, with optional hours/units and absence reasons. Rosters can be generated automatically by the system either on a scheduled roster-generation frequency or when a service authorization is created for the current period, or they can be created manually by a resource manager."
+              },
+              {
+                "title": "Entering Attendance",
+                "level": 3,
+                "children": [],
+                "node_id": "n000061",
+                "range": {
+                  "start_unit_id": "p000036",
+                  "end_unit_id": "p000036",
+                  "start_page": 36,
+                  "end_page": 36
+                },
+                "summary": "This section explains how attendance rosters are generated and how client attendance is entered. It covers automatic roster generation based on configured frequency, creation from new service authorizations, and manual roster generation when a provider is unknown. It also describes entering attendance at the roster line-item or daily level, using planned attendance to mark whether the client attended, and notes that future dates cannot be submitted. Completed rosters can be returned on paper or submitted online for processing."
+              },
+              {
+                "title": "Roster Processing",
+                "level": 3,
+                "children": [],
+                "node_id": "n000062",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "Describes roster submission processing: rosters are matched and validated against client registrations, cases, and service authorizations. If successful, lines are approved automatically or manually, then payments are issued when attendance-based. Failed lines enter exception processing for a resource manager to correct and resubmit. Also covers correcting roster data after submission, including resubmission, reapproval, and payment reevaluation if already paid."
+              },
+              {
+                "title": "Correcting Errors",
+                "level": 3,
+                "children": [],
+                "node_id": "n000063",
+                "range": {
+                  "start_unit_id": "p000037",
+                  "end_unit_id": "p000037",
+                  "start_page": 37,
+                  "end_page": 37
+                },
+                "summary": "This section explains how roster line items are corrected in CPM. It covers updating attendance data before submission or through exception processing after validation failures, and notes that submitted, approved, and paid items must be resubmitted and reapproved if changed, with payment reevaluation required. It also introduces roster processing: matching clients and service authorizations, validation, manual approval, payment issuance, and exception handling when errors occur."
+              }
+            ],
+            "node_id": "n000056",
+            "range": {
+              "start_unit_id": "p000034",
+              "end_unit_id": "p000036",
+              "start_page": 34,
+              "end_page": 36
+            },
+            "summary": "Explains why client attendance is recorded (service tracking, attendance-based payment, client participation) and how CPM supports attendance rosters. Covers roster line items, optional daily attendance with present/absent and hours/units, and absences with reasons, including cases where absences may be payable. Describes roster generation, automatic for authorized clients based on frequency or new authorizations, or manual when no provider is known. Also notes entering attendance from paper or self-service rosters and that future dates cannot be submitted."
+          },
+          {
+            "title": "1.9 Managing Provider Incidents",
+            "level": 2,
+            "children": [
+              {
+                "title": "Maintaining Incident Information",
+                "level": 3,
+                "children": [],
+                "node_id": "n000065",
+                "range": {
+                  "start_unit_id": "p000038",
+                  "end_unit_id": "p000038",
+                  "start_page": 38,
+                  "end_page": 38
+                },
+                "summary": "This section explains how caseworkers maintain incident details: incident type, category, severity, participants, injuries, and restraints. It notes that provider members and clients can be participants, and provider groups are only involved in limited cases. It also covers recording injury details such as injured party, severity, source, responsible person, and actions taken, including restraint-related injuries. Restraints may be physical, mechanical, or chemical, imposed for a defined time period to contain an incident."
+              },
+              {
+                "title": "Closing Incidents",
+                "level": 3,
+                "children": [],
+                "node_id": "n000066",
+                "range": {
+                  "start_unit_id": "p000039",
+                  "end_unit_id": "p000039",
+                  "start_page": 39,
+                  "end_page": 39
+                },
+                "summary": "This section explains how caseworkers close incidents after gathering sufficient information, using closure reasons such as Substantiated, Withdrawn, Referred for Investigation, or Unsubstantiated. It notes that incidents may also trigger provider investigations based on findings. The example shows a false bullying allegation against a warden being closed as Unsubstantiated after interviews. The section also briefly connects incident handling to staff actions, such as reprimands or suspension when a staff member contributed to the incident."
+              }
+            ],
+            "node_id": "n000064",
+            "range": {
+              "start_unit_id": "p000037",
+              "end_unit_id": "p000038",
+              "start_page": 37,
+              "end_page": 38
+            },
+            "summary": "This section explains how CPM manages provider incidents that may affect client safety and service quality. It defines incident contexts, including provider members, clients, and provider facilities, and notes limited provider group involvement. It covers recording incident type, category, severity, participants, injuries, and restraints. Injuries include injured party, severity, source, responsible person, and actions taken. Restraints may be physical, mechanical, or chemical and are recorded with duration. The section also shows an example of a staff-applied physical restraint during a client fight."
+          },
+          {
+            "title": "1.10 Managing Provider Investigations",
+            "level": 2,
+            "children": [],
+            "node_id": "n000067",
+            "range": {
+              "start_unit_id": "p000039",
+              "end_unit_id": "p000039",
+              "start_page": 39,
+              "end_page": 39
+            },
+            "summary": "This section explains how CPM manages provider investigations: an investigation is an inquiry into circumstances around an allegation or incident involving a provider or associated person. It emphasizes the organizational need to investigate suspected wrongdoing promptly and efficiently. It notes support for multiple investigation types, including child welfare and licensing violations, and that allegations may come from public, family members, or provider members. Investigation details are examined to determine whether the allegation is founded, and investigations can be linked to related incidents as references."
+          },
+          {
+            "title": "1.11 Paying Providers",
+            "level": 2,
+            "children": [
+              {
+                "title": "Service Authorizations",
+                "level": 3,
+                "children": [],
+                "node_id": "n000069",
+                "range": {
+                  "start_unit_id": "p000040",
+                  "end_unit_id": "p000040",
+                  "start_page": 40,
+                  "end_page": 40
+                },
+                "summary": "Service authorizations let organizations approve specific services for specific clients, defining the service, delivery period, authorized units, and optionally the provider. They are created from assessed needs/outcome plans and can include line items with schedules, multiple clients, and nominee payment details. Providers are paid only up to authorized units, with delivery tracked via invoices or rosters; if no provider is named, any registered provider can deliver. This mechanism does not apply to flat-rate contracts."
+              },
+              {
+                "title": "Paying through Service Invoices",
+                "level": 3,
+                "children": [],
+                "node_id": "n000070",
+                "range": {
+                  "start_unit_id": "p000041",
+                  "end_unit_id": "p000042",
+                  "start_page": 41,
+                  "end_page": 42
+                },
+                "summary": "Explains how providers get paid through itemized service invoices. Covers what invoices and line items contain, who can submit them, and that certain placement/attendance-based services are not invoice-paid. Describes invoice submission triggering processing, validation, and matching against authorized service delivery; failed items go to exception processing and stay open until corrected. Notes processing stops if a flat-rate contract exists to avoid double payment. Also outlines how payment amounts are determined by rate priority: authorization line item, utilization contract, provider rate, then service offering rate."
+              },
+              {
+                "title": "Paying through Attendance Rosters",
+                "level": 3,
+                "children": [],
+                "node_id": "n000071",
+                "range": {
+                  "start_unit_id": "p000043",
+                  "end_unit_id": "p000043",
+                  "start_page": 43,
+                  "end_page": 43
+                },
+                "summary": "Describes how attendance-roster-based payments work. Providers can submit rosters via self-service or paper entry, but only services configured for attendance can use rosters; placement-based services cannot. Roster line items are validated by checking client registration, case validity, provider approval, and matching service authorization/schedule. Failed items go to a roster exception queue for correction, resubmission, or denial. Also notes placement-based payment timing uses configured payment frequency and illustrates payment based on days of placement."
+              },
+              {
+                "title": "Paying through Placements",
+                "level": 3,
+                "children": [],
+                "node_id": "n000072",
+                "range": {
+                  "start_unit_id": "p000044",
+                  "end_unit_id": "p000044",
+                  "start_page": 44,
+                  "end_page": 44
+                },
+                "summary": "Explains placement-based payments, where no invoice or roster is submitted; instead, client placement information drives payment calculation. Payment processing starts when the configured placement payment frequency due date arrives. Example: with monthly frequency, a placement beginning 5 January for one month is paid on 1 February for 25 days in January. Useful for understanding how CPM handles services paid from placement records rather than external payment triggers."
+              },
+              {
+                "title": "Paying through Flat-rate Contracts",
+                "level": 3,
+                "children": [],
+                "node_id": "n000073",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000045",
+                  "start_page": 45,
+                  "end_page": 45
+                },
+                "summary": "This section explains flat-rate contract payments. It covers how organizations pay providers or provider groups a defined recurring amount or a total contract amount spread over a set frequency, regardless of service volume. It notes that payment processing starts when a contract is created and activated, using contract details to build the schedule. It also explains how total amounts are split into sub-payments or paid as recurring fixed amounts, and briefly introduces reassessment as a retrospective recalculation to detect overpayments or liabilities."
+              },
+              {
+                "title": "Reassessing Payments",
+                "level": 3,
+                "children": [],
+                "node_id": "n000074",
+                "range": {
+                  "start_unit_id": "p000045",
+                  "end_unit_id": "p000046",
+                  "start_page": 45,
+                  "end_page": 46
+                },
+                "summary": "Explains when CPM recalculates payments retrospectively (“reassessment”) after changes to rates, periods, payment options, invoices, rosters, placements, utilization contracts, or service authorizations. Reassessment compares original vs. recalculated amounts to detect overpayments or liabilities, handled by the Cúram Eligibility and Entitlement Engine. Also notes that flat-rate contract payments are not reassessed for over/underpayments, but termination amends the payment schedule."
+              },
+              {
+                "title": "Managing Provider Deductions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000075",
+                "range": {
+                  "start_unit_id": "p000047",
+                  "end_unit_id": "p000047",
+                  "start_page": 47,
+                  "end_page": 47
+                },
+                "summary": "Explains how provider deductions work against provider payments. Deductions can recoup money owed to the organization or pay a third party, and can be set up for provider invoices, placements, contracts, or attendance. Deductions are entered as a variable percentage and apply to all payment components, including payments made to nominees. It defines three deduction types: applied deductions (recover provider overpayments), un-applied deductions (general refunds to the organization), and third party deductions (pay another participant, e.g., a utility bill)."
+              }
+            ],
+            "node_id": "n000068",
+            "range": {
+              "start_unit_id": "p000039",
+              "end_unit_id": "p000046",
+              "start_page": 39,
+              "end_page": 46
+            },
+            "summary": "Explains how CPM pays providers: service invoices, attendance rosters, placements, and flat-rate contracts. Covers service authorizations as the basis for approved services, unit limits, multiple clients, nominee payees, and the distinction from flat-rate payments. Describes submission, validation, matching, exception handling, and rate priority for invoices/rosters/placements. Also covers flat-rate scheduling, payment calculation, and retrospective reassessment triggers for changes to rates, periods, units, payments, or placements, plus the note that flat-rate contracts are not reassessed for over/underpayments."
+          },
+          {
+            "title": "1.12 Using Provider Self-Service",
+            "level": 2,
+            "children": [
+              {
+                "title": "Getting Started with Self-Service",
+                "level": 3,
+                "children": [],
+                "node_id": "n000077",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000048",
+                  "start_page": 48,
+                  "end_page": 48
+                },
+                "summary": "Explains how providers get started with Self-Service: potential providers submit enquiries as guest users, which go to an enquiry work queue for the resource manager to convert or close. Registered providers can request login credentials using a username and organization-issued reference number; passwords are emailed, and forgotten passwords can be reset similarly. Also covers provider self-service functions: viewing details, submitting service invoices for review, and submitting attendance rosters, including blank rosters for authorized clients not prelisted."
+              },
+              {
+                "title": "Self-Service Functions",
+                "level": 3,
+                "children": [],
+                "node_id": "n000078",
+                "range": {
+                  "start_unit_id": "p000048",
+                  "end_unit_id": "p000052",
+                  "start_page": 48,
+                  "end_page": 52
+                },
+                "summary": "Explains provider self-service functions in Cúram: how individuals or organizations can submit enquiries as guest users to become registered providers, request login credentials using a reference number, and reset forgotten passwords. Describes provider capabilities after login, including viewing credentials, associated people, and financial details. Covers submitting service invoices as requests reviewed by a resource manager before financial processing, and submitting attendance rosters directly for validation and matching, including handling blank rosters for authorized clients not prelisted."
+              }
+            ],
+            "node_id": "n000076",
+            "range": {
+              "start_unit_id": "p000047",
+              "end_unit_id": "p000052",
+              "start_page": 47,
+              "end_page": 52
+            },
+            "summary": "Explains provider self-service in Cúram. Providers can access the application after login credentials are issued; potential providers submit guest enquiries that go to a work queue for the resource manager to convert or close. Registered providers request credentials using a username and organization reference number, and can reset forgotten passwords. After login, providers can view their details, submit service invoices for review by a resource manager, and submit attendance rosters directly for validation and matching, including blank rosters for authorized clients not prelisted."
+          }
+        ],
+        "node_id": "n000012",
+        "range": {
+          "start_unit_id": "p000009",
+          "end_unit_id": "p000052",
+          "start_page": 9,
+          "end_page": 52
+        },
+        "summary": "Overview of CPM provider management: it explains the provider lifecycle and stored information, service registry setup, provider and provider-group maintenance, fit-for-purpose checks (licenses, accreditations, home studies, background checks), placements and capacity, contracts, training/certifications, attendance rosters, incidents/investigations, provider payment methods and deductions, and provider self-service for inquiries, credentials, invoices, and rosters. Useful as the entry point for understanding how CPM manages provider operations end to end."
+      }
+    ],
+    "node_id": "n000000"
+  }
+}

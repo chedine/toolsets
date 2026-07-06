@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="data:," />
+    <title>Bullet</title>
+  </head>
+  <body>
+    <div id="app">
+      <aside id="sidebar"></aside>
+      <div id="divider" title="Drag to resize · double-click or Cmd+\ to hide"></div>
+      <main id="editor"></main>
+    </div>
+    <footer id="status">
+      <span id="status-left"></span>
+      <span id="command-prompt">&gt;</span>
+      <input id="command-input" spellcheck="false" autocomplete="off" />
+      <span id="command-hint"></span>
+      <span id="status-right"></span>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

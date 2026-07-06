@@ -1,0 +1,433 @@
+/* Monochrome, two moods. Every color on this page derives from these
+   four. The OS picks the mood by default; the `theme` command pins it
+   with data-theme on the root. */
+:root {
+  --bg: #eeeeee;
+  --fg: #222222;
+  --dim: #999999;
+  --faint: #d6d6d6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="paper"]) {
+    --bg: #222222;
+    --fg: #eeeeee;
+    --dim: #777777;
+    --faint: #3a3a3a;
+    --heading-weight: 800;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #222222;
+  --fg: #eeeeee;
+  --dim: #777777;
+  --faint: #3a3a3a;
+  --heading-weight: 800;
+}
+
+/* Paper: warm cream and ink, Left's reading mood. */
+:root[data-theme="paper"] {
+  --bg: #ece5d6;
+  --fg: #3b3427;
+  --dim: #988c76;
+  --faint: #d9cfba;
+}
+
+/* On dark backgrounds macOS subpixel rendering fattens regular text,
+   flattening the bold/regular hierarchy. Grayscale antialiasing
+   restores it. Light/paper keep the default (subpixel) rendering. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="paper"]) body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+:root[data-theme="dark"] body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    "SF Mono", ui-monospace, "Cascadia Mono", "JetBrains Mono", Menlo,
+    Consolas, monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- App shell: sidebar | editor, statusbar below ---- */
+
+#app {
+  flex: 1;
+  display: flex;
+  min-height: 0; /* let the editor scroll instead of growing the page */
+}
+
+#sidebar {
+  width: var(--sidebar-width, 200px);
+  flex-shrink: 0;
+  padding: 1.5rem 0;
+  overflow-y: auto;
+  user-select: none;
+}
+
+body.sidebar-hidden #sidebar {
+  display: none;
+}
+
+/* The divider is the resize handle; the line itself stays invisible
+   until hovered, so the panes read as one surface. */
+#divider {
+  width: 7px;
+  margin-left: -6px; /* only the 1px line takes visual space */
+  flex-shrink: 0;
+  border-right: 1px solid transparent;
+  cursor: col-resize;
+  position: relative;
+  z-index: 1;
+}
+
+#divider:hover,
+body.resizing #divider {
+  border-right-color: var(--dim);
+}
+
+body.sidebar-hidden #divider {
+  margin-left: 0;
+}
+
+body.resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+#sidebar .entry {
+  display: block;
+  width: 100%;
+  padding: 0.35rem 1.5rem;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--dim);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#sidebar .entry:hover {
+  color: var(--fg);
+}
+
+#sidebar .entry.active {
+  color: var(--fg);
+}
+
+/* Left-style marker: a small dash in front of the active file. */
+#sidebar .entry.active::before {
+  content: "> ";
+}
+
+#sidebar .entry.folder.selected {
+  color: var(--fg);
+}
+
+#sidebar .entry.action {
+  font-style: italic;
+}
+
+#editor {
+  flex: 1;
+  min-width: 0;
+}
+
+.cm-editor {
+  height: 100%;
+}
+
+.cm-editor.cm-focused {
+  outline: none;
+}
+
+/* ---- Status bar ---- */
+
+#status {
+  flex-shrink: 0;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  border-top: 1px solid var(--faint);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+  user-select: none;
+}
+
+/* ---- Command bar: the status bar becomes a prompt (Cmd+K) ---- */
+
+#command-prompt,
+#command-input,
+#command-hint {
+  display: none;
+}
+
+body.command-mode #status-left,
+body.command-mode #status-right {
+  display: none;
+}
+
+body.command-mode #command-prompt {
+  display: inline;
+  color: var(--fg);
+  margin-right: 0.6rem;
+}
+
+body.command-mode #command-input {
+  display: block;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--fg);
+  caret-color: var(--fg);
+}
+
+body.command-mode #command-hint {
+  display: inline;
+  color: var(--dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+}
+
+/* ---- Help popup: dismissed by any key or click ---- */
+
+#help-popup {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(28px + 1rem);
+  max-width: min(560px, calc(100vw - 2rem));
+  padding: 1rem 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--faint);
+  font-size: 0.75rem;
+  line-height: 2;
+  cursor: default;
+  user-select: none;
+  z-index: 10;
+}
+
+#help-popup .help-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+#help-popup .help-name {
+  width: 11ch;
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: var(--fg);
+}
+
+#help-popup .help-usage {
+  color: var(--dim);
+}
+
+/* ---- Search results popup ---- */
+
+#search-popup {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(28px + 1rem);
+  width: min(640px, calc(100vw - 2rem));
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--faint);
+  font-size: 0.75rem;
+  cursor: default;
+  user-select: none;
+  z-index: 10;
+}
+
+#search-popup .result-row {
+  padding: 0.55rem 1.25rem;
+  border-bottom: 1px solid var(--faint);
+}
+
+#search-popup .result-row:last-child {
+  border-bottom: none;
+}
+
+#search-popup .result-row.selected {
+  background: var(--faint);
+}
+
+#search-popup .result-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#search-popup .result-title {
+  color: var(--fg);
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#search-popup .result-path {
+  color: var(--dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#search-popup .result-snippet {
+  margin-top: 0.15rem;
+  color: var(--dim);
+  line-height: 1.6;
+}
+
+#search-popup .result-snippet b {
+  color: var(--fg);
+  font-weight: bold;
+}
+
+/* ---- Ask popup: streamed local-model answer + clickable sources ---- */
+
+#ask-popup {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(28px + 1rem);
+  width: min(640px, calc(100vw - 2rem));
+  max-height: 70vh;
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--faint);
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  z-index: 10;
+}
+
+#ask-popup .ask-question {
+  color: var(--dim);
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+
+#ask-popup .ask-answer {
+  color: var(--fg);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+#ask-popup .ask-sources {
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--faint);
+}
+
+#ask-popup .ask-source {
+  color: var(--dim);
+  font-size: 0.72rem;
+  line-height: 1.9;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#ask-popup .ask-source:hover,
+#ask-popup .ask-source.selected {
+  color: var(--fg);
+  background: var(--faint);
+}
+
+/* ---- Scrollbars: visible, quiet, monochrome ----
+   Styled via ::-webkit-scrollbar only: setting the standard
+   scrollbar-width/color props makes Chrome ignore these rules and
+   fall back to auto-hiding overlay scrollbars. */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--faint);
+  border: 3px solid var(--bg);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dim);
+}
+
+::selection {
+  background: var(--faint);
+}
+
+/* Pasted images, rendered below their markdown reference. */
+.cm-image-wrap {
+  position: relative;
+  display: inline-block;
+  margin: 0.4rem 0;
+}
+
+.cm-pasted-image {
+  display: block;
+  max-width: 100%;
+  border: 1px solid var(--faint);
+}
+
+/* width unset -> sensible default until the user resizes */
+.cm-pasted-image:not([style*="width"]) {
+  max-width: min(100%, 480px);
+  max-height: 320px;
+}
+
+.cm-image-handle {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 14px;
+  height: 14px;
+  cursor: nwse-resize;
+  border-right: 2px solid var(--dim);
+  border-bottom: 2px solid var(--dim);
+  opacity: 0;
+  touch-action: none;
+}
+
+.cm-image-wrap:hover .cm-image-handle {
+  opacity: 1;
+}

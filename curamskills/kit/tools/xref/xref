@@ -1,0 +1,153 @@
+#!/usr/bin/env python3
+"""Query the cross-reference index. Agent-facing CLI.
+
+The index holds two views: `source` (files under */components/ — where you
+edit) and `live` (the build's merged/generated output — what actually runs).
+Rebuild after a build: build_index.py.
+
+  xref find <type|any> <name-fragment>   locate artifacts in both views.
+                                         Live rows show `<= component` when a
+                                         source file's content hash matches
+                                         (identifies the winning version of
+                                         overwrite-type artifacts; merge-type
+                                         live files match nothing — they are
+                                         combined from several sources).
+  xref refs-to <type> <name>             who references this artifact.
+                                         Answered from the live view when
+                                         available (reflects build merge
+                                         resolution), else from source.
+  xref refs-from <type> <name>           what this artifact references
+  xref show <type> <name>                declarations in both views + refs
+  xref stats                             index contents summary
+
+Names are exact for refs-to/refs-from/show; use `find` first if unsure.
+facade_op names are Facade.operation.
+"""
+import sqlite3
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from common import find_repo_root, load_config  # noqa: E402
+
+
+def open_db():
+    repo = find_repo_root()
+    cfg = load_config(repo)
+    db_path = repo / cfg.get("xref_db", "agent-kit/xref.db")
+    if not db_path.is_file():
+        raise SystemExit(f"{db_path} missing — run build_index.py first")
+    return sqlite3.connect(db_path)
+
+
+def provenance(db, live_path: str) -> str:
+    """Source components whose file content matches this live file's hash."""
+    rows = db.execute(
+        """SELECT s.component FROM files l JOIN files s ON s.sha = l.sha
+           WHERE l.path=? AND s.view='source'""", (live_path,)).fetchall()
+    comps = sorted({r[0] for r in rows})
+    return f"<= {','.join(comps)}" if comps else ""
+
+
+def print_decl_rows(db, rows):
+    for t, n, c, v, p in rows:
+        origin = provenance(db, p) if v == "live" else ""
+        who = c if v == "source" else "live"
+        print(f"  {t:12} {n:40} {who:16} {p} {origin}")
+
+
+def cmd_find(db, typ, frag):
+    q = ("SELECT type,name,component,view,path FROM artifacts "
+         "WHERE name LIKE ?")
+    args = [f"%{frag}%"]
+    if typ != "any":
+        q += " AND type=?"
+        args.append(typ)
+    rows = db.execute(q + " ORDER BY type,name,view DESC", args).fetchall()
+    if not rows:
+        print("no matches")
+        return
+    print_decl_rows(db, rows)
+
+
+def pick_view(db, where_sql, params) -> str:
+    """Prefer the live view when it has rows for this query."""
+    n = db.execute(
+        f"SELECT COUNT(*) FROM refs r JOIN artifacts a ON a.id=r.src_id "
+        f"WHERE {where_sql} AND a.view='live'", params).fetchone()[0]
+    return "live" if n else "source"
+
+
+def cmd_refs_to(db, typ, name):
+    view = pick_view(db, "r.to_type=? AND r.to_name=?", (typ, name))
+    rows = db.execute(
+        """SELECT a.type,a.name,a.component,a.path,r.kind FROM refs r
+           JOIN artifacts a ON a.id=r.src_id
+           WHERE r.to_type=? AND r.to_name=? AND a.view=?
+           ORDER BY a.type,a.name""", (typ, name, view)).fetchall()
+    if not rows:
+        print(f"nothing in the index references {typ} {name} "
+              "(check name with `xref find`; non-indexed surfaces — Java "
+              "string refs, DB-held config — need manual checks, see the "
+              "impact-analysis skill)")
+        return
+    print(f"[{view} view]")
+    for t, n, c, p, k in rows:
+        origin = provenance(db, p) if view == "live" else ""
+        print(f"  {t:12} {n:40} [{k}] {p} {origin}")
+
+
+def cmd_refs_from(db, typ, name):
+    view = pick_view(db, "a.type=? AND a.name=?", (typ, name))
+    rows = db.execute(
+        """SELECT DISTINCT r.to_type,r.to_name,r.kind FROM refs r
+           JOIN artifacts a ON a.id=r.src_id
+           WHERE a.type=? AND a.name=? AND a.view=?
+           ORDER BY r.to_type,r.to_name""", (typ, name, view)).fetchall()
+    if not rows:
+        print("no outgoing references recorded")
+        return
+    print(f"[{view} view]")
+    for t, n, k in rows:
+        print(f"  {t:12} {n:40} [{k}]")
+
+
+def cmd_show(db, typ, name):
+    rows = db.execute(
+        "SELECT type,name,component,view,path FROM artifacts "
+        "WHERE type=? AND name=? ORDER BY view DESC", (typ, name)).fetchall()
+    if not rows:
+        print("not found — try `xref find`")
+        return
+    print("declared in:")
+    print_decl_rows(db, rows)
+    print("references out:")
+    cmd_refs_from(db, typ, name)
+    print("referenced by:")
+    cmd_refs_to(db, typ, name)
+
+
+def cmd_stats(db, *_):
+    for t, v, c in db.execute(
+            "SELECT type,view,COUNT(*) FROM artifacts GROUP BY type,view "
+            "ORDER BY type,view"):
+        print(f"  {t:12} [{v}] {c}")
+
+
+def main():
+    cmds = {"find": (cmd_find, 2), "refs-to": (cmd_refs_to, 2),
+            "refs-from": (cmd_refs_from, 2), "show": (cmd_show, 2),
+            "stats": (cmd_stats, 0)}
+    if len(sys.argv) < 2 or sys.argv[1] not in cmds:
+        print(__doc__)
+        sys.exit(1)
+    fn, nargs = cmds[sys.argv[1]]
+    args = sys.argv[2:2 + nargs]
+    if len(args) < nargs:
+        print(__doc__)
+        sys.exit(1)
+    fn(open_db(), *args)
+
+
+if __name__ == "__main__":
+    main()

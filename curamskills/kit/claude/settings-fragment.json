@@ -1,0 +1,16 @@
+{
+  "_comment": "Merged into the agency repo's .claude/settings.json by install.py (or by hand if one already exists).",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 agent-kit/claude/hooks/block-ootb-edits.py"
+          }
+        ]
+      }
+    ]
+  }
+}

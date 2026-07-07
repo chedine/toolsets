@@ -1,0 +1,50 @@
+# Per-agency configuration for the curamskills agent kit.
+# This is the ONLY file an agency must fill in. Lives at the agency repo root.
+# Deliberately flat (key: value, and key: followed by "- item" lists) — parsed
+# by a minimal reader, no YAML library needed.
+
+agency_name: MyAgency
+
+# Custom components, in precedence order, HIGHEST first. Used for xref
+# precedence resolution and by the OOTB-edit guard/validator (anything under
+# */components/ not in this list is treated as read-only product code).
+component_order:
+  - myagency
+custom_components:
+  - myagency
+
+# The component agents should put new artifacts in by default.
+primary_component: myagency
+
+# Build commands, verbatim as a developer would run them.
+build_command: "build clean server && build client"
+build_server_command: "build server"
+build_client_command: "build client"
+build_codetable_command: "build ctgen database"
+
+# Codetable conventions
+codetable_package: "curam.codetable"
+code_prefix_rule: "custom code values start with the MA prefix, range MA1000+"
+
+# Where the xref index lives (relative to repo root)
+xref_db: agent-kit/xref.db
+
+# Build output roots for the xref "live view" (relative to repo root).
+# The indexer scans these for merged/generated artifacts after a build —
+# reverse-reference queries trust this view because it reflects the build's
+# merge/overwrite resolution. List every output dir that holds parseable
+# artifacts; adjust to your build layout.
+live_roots:
+  - EJBServer/build/svr
+  - EJBServer/build/datamanager/data/initial
+  - webclient/build
+
+# XML schema validation: extension=path-to-xsd (relative to repo root).
+# Point these at the XSDs shipped with your Curam version, then
+# validate_xml.py enforces schema, not just well-formedness.
+xsd_map:
+  - uim=webclient/CuramCDEJ/lib/curam/xml/schema/UIMSchema.xsd
+
+# Product manuals search service
+manuals_endpoint: ""
+manuals_api_key_env: MANUALS_API_KEY

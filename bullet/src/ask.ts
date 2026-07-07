@@ -16,15 +16,48 @@ that the notes don't cover it.`;
 
 let enginePromise: Promise<MLCEngine> | null = null;
 
+// If the model was vendored into public/models/ (scripts/fetch-models.mjs),
+// serve it from our own origin — works on networks that block
+// HuggingFace. Otherwise WebLLM's default HuggingFace config applies.
+async function selfHostedConfig() {
+  // Vendored files mirror HuggingFace's layout under resolve/main/
+  // because WebLLM appends "resolve/main/" to every model URL.
+  const base = `${location.origin}/models/${MODEL}`;
+  try {
+    // GET + parse, not HEAD: servers with SPA fallback answer missing
+    // files with index.html and status 200.
+    const res = await fetch(`${base}/resolve/main/mlc-chat-config.json`);
+    if (!res.ok) return undefined;
+    const config = await res.json();
+    if (!config.model_type && !config.tokenizer_files) return undefined;
+  } catch {
+    return undefined;
+  }
+  return {
+    model_list: [
+      {
+        model: `${base}/`,
+        model_id: MODEL,
+        model_lib: `${base}/resolve/main/lib.wasm`,
+      },
+    ],
+  };
+}
+
 function ensureEngine(notify: (msg: string) => void): Promise<MLCEngine> {
-  enginePromise ??= CreateMLCEngine(MODEL, {
-    initProgressCallback: (p) => {
-      notify(`loading model… ${Math.round(p.progress * 100)}%`);
-    },
-  }).catch((err) => {
-    enginePromise = null; // allow retry
-    throw err;
-  });
+  enginePromise ??= selfHostedConfig()
+    .then((appConfig) =>
+      CreateMLCEngine(MODEL, {
+        appConfig,
+        initProgressCallback: (p) => {
+          notify(`loading model… ${Math.round(p.progress * 100)}%`);
+        },
+      }),
+    )
+    .catch((err) => {
+      enginePromise = null; // allow retry
+      throw err;
+    });
   return enginePromise;
 }
 

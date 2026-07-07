@@ -15,6 +15,27 @@ npm run build   # production build in dist/
 Requires a Chromium browser (File System Access API); `ask` also
 requires WebGPU.
 
+### Blocked/offline networks
+
+Search embeddings and the `ask` model normally download from
+HuggingFace once and are then cached by the browser. On networks where
+HuggingFace is blocked, vendor the models into the app itself — run
+this once from any machine with access:
+
+```
+node scripts/fetch-models.mjs   # ~900MB into public/models/
+```
+
+Then copy/deploy the project including `public/models` (gitignored).
+The app probes for vendored models at startup and serves them from its
+own origin; without them it falls back to HuggingFace. Two hard-won
+subtleties live in the code: transformers.js skips its local-path
+check when `localModelPath` parses as a URL (it must stay relative),
+and WebLLM appends `resolve/main/` to every model URL, so the vendored
+layout mirrors HuggingFace's. Both probes GET-and-parse rather than
+HEAD, because dev/static servers with SPA fallback answer missing
+files with `index.html` and status 200.
+
 ## Using it
 
 Everything is driven from the command bar — press **Cmd+K**, type,
@@ -57,7 +78,9 @@ picks via `prefers-color-scheme`, the `theme` command pins via a
 expressed through weight and shade, never hue. Dark mode additionally
 uses grayscale font antialiasing and weight-800 headings because
 light-on-dark subpixel rendering optically flattens the bold/regular
-hierarchy.
+hierarchy. The font stack is SF Mono on macOS with a bundled JetBrains
+Mono variable font everywhere else, so Windows/Linux don't fall back
+to poorly hinted system monospaces.
 
 ### Vault: real files, browser only
 

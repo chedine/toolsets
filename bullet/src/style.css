@@ -1,3 +1,6 @@
+/* Bundled fallback font — keeps Windows/Linux from ugly system monos. */
+@import "@fontsource-variable/jetbrains-mono";
+
 /* Monochrome, two moods. Every color on this page derives from these
    four. The OS picks the mood by default; the `theme` command pins it
    with data-theme on the root. */
@@ -64,9 +67,11 @@ body {
 body {
   background: var(--bg);
   color: var(--fg);
+  /* SF Mono on macOS; bundled JetBrains Mono everywhere else, so
+     Windows/Linux don't fall back to poorly-hinted system monos. */
   font-family:
-    "SF Mono", ui-monospace, "Cascadia Mono", "JetBrains Mono", Menlo,
-    Consolas, monospace;
+    "SF Mono", "JetBrains Mono Variable", ui-monospace, "Cascadia Mono",
+    Menlo, Consolas, monospace;
   display: flex;
   flex-direction: column;
 }

@@ -87,11 +87,18 @@ export LLM_PROVIDER=copilot-cli
 export COPILOT_CLI_COMMAND='your-copilot-wrapper'
 ```
 
-The command should print the answer to stdout. If the command string does **not** contain `{prompt}`, the full prompt is piped to stdin. If it contains `{prompt}`, the prompt is shell-quoted and substituted:
+The command should print the answer to stdout. If the command string does **not** contain `{prompt}`, the full prompt is piped to stdin. If it contains `{prompt}`, `{prompt}` is passed as a single command argument:
 
 ```bash
 export LLM_PROVIDER=command
 export LLM_COMMAND='my-llm-cli --prompt {prompt}'
+```
+
+Do not include quotes around the entire command inside the environment variable. On Windows, set it like:
+
+```powershell
+$env:LLM_PROVIDER = "copilot-cli"
+$env:COPILOT_CLI_COMMAND = "copilot -p {prompt}"
 ```
 
 This makes it easy to use workstation-approved wrappers around Copilot CLI.

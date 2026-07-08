@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import shlex
 import subprocess
 from abc import ABC, abstractmethod
@@ -94,10 +95,14 @@ class CommandProvider(LLMProvider):
     def answer(self, question: str, contexts: list[dict]) -> str:
         prompt = build_prompt(question, contexts)
         if "{prompt}" in self.command:
-            command = self.command.replace("{prompt}", shlex.quote(prompt))
+            # Treat {prompt} as an argv placeholder instead of shell-quoting it.
+            # This avoids cmd.exe/PowerShell issues with POSIX single quotes on Windows.
+            argv = [part.replace("{prompt}", prompt) for part in shlex.split(self.command, posix=(os.name != "nt"))]
+            if not argv:
+                raise RuntimeError("LLM command is empty")
             completed = subprocess.run(
-                command,
-                shell=True,
+                argv,
+                shell=False,
                 text=True,
                 capture_output=True,
                 timeout=180,

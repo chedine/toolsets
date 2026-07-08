@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sqlite3
 import threading
@@ -10,11 +11,53 @@ from pathlib import Path
 from typing import Any
 
 import zvec
-from zvec import DataType, Doc, FieldSchema, Fts, FtsIndexParam, HnswIndexParam, Query, RrfReRanker, VectorSchema
+from zvec import DataType, Doc, FieldSchema, Fts, FtsIndexParam, HnswIndexParam, Query, VectorSchema
 
 from .config import Settings
 from .embeddings import EmbeddingProvider
 from .pdf import chunk_text, extract_pdf_pages
+
+
+_TOKEN_RE = re.compile(r"[A-Za-z0-9_]+")
+_STOP_WORDS = {
+    "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are",
+    "as", "at", "be", "because", "been", "before", "being", "below", "between", "both", "but",
+    "by", "can", "could", "did", "do", "does", "doing", "down", "during", "each", "few", "for",
+    "from", "further", "had", "has", "have", "having", "he", "her", "here", "hers", "herself",
+    "him", "himself", "his", "how", "i", "if", "in", "into", "is", "it", "its", "itself", "just",
+    "me", "more", "most", "my", "myself", "no", "nor", "not", "now", "of", "off", "on", "once",
+    "only", "or", "other", "our", "ours", "ourselves", "out", "over", "own", "s", "same", "she",
+    "should", "so", "some", "such", "t", "than", "that", "the", "their", "theirs", "them",
+    "themselves", "then", "there", "these", "they", "this", "those", "through", "to", "too",
+    "under", "until", "up", "very", "was", "we", "were", "what", "when", "where", "which", "while",
+    "who", "whom", "why", "will", "with", "you", "your", "yours", "yourself", "yourselves",
+}
+
+
+def _query_terms(text: str) -> list[str]:
+    seen: set[str] = set()
+    terms: list[str] = []
+    for match in _TOKEN_RE.finditer(text.lower()):
+        token = match.group(0)
+        if len(token) < 3 or token in _STOP_WORDS or token in seen:
+            continue
+        seen.add(token)
+        terms.append(token)
+    return terms
+
+
+def _lexical_score(question_terms: list[str], text: str) -> float:
+    if not question_terms:
+        return 0.0
+    lowered = text.lower()
+    text_terms = set(_TOKEN_RE.findall(lowered))
+    overlap = sum(1 for term in question_terms if term in text_terms) / len(question_terms)
+    phrase_hits = 0
+    for left, right in zip(question_terms, question_terms[1:]):
+        if f"{left} {right}" in lowered:
+            phrase_hits += 1
+    phrase_bonus = phrase_hits / max(1, len(question_terms) - 1)
+    return overlap + 0.35 * phrase_bonus
 
 
 class PdfQaStore:
@@ -223,43 +266,76 @@ class PdfQaStore:
     def search(self, question: str, top_k: int = 5) -> list[dict[str, Any]]:
         if not self.list_documents():
             return []
+
+        requested_top_k = max(1, min(top_k, 20))
+        candidate_k = max(30, requested_top_k * 8)
+        output_fields = ["doc_id", "filename", "page", "chunk_index", "text"]
+        terms = _query_terms(question)
+        fts_text = " ".join(terms) or question
         vector = self.embedder.embed_one(question)
+        candidates: dict[str, dict[str, Any]] = {}
+
+        def add_results(route: str, docs) -> None:
+            for rank, doc in enumerate(docs, start=1):
+                item = candidates.setdefault(
+                    doc.id,
+                    {
+                        "chunk_id": doc.id,
+                        "doc_id": doc.field("doc_id"),
+                        "filename": doc.field("filename"),
+                        "page": doc.field("page"),
+                        "chunk_index": doc.field("chunk_index"),
+                        "text": doc.field("text") or "",
+                        "vector_rank_score": 0.0,
+                        "fts_rank_score": 0.0,
+                        "zvec_score": 0.0,
+                    },
+                )
+                # Rank-based scores are stable across distance metrics and FTS scoring.
+                item[f"{route}_rank_score"] = max(item[f"{route}_rank_score"], 1.0 / rank)
+                item["zvec_score"] = max(item["zvec_score"], float(doc.score or 0.0))
+
         with self.lock:
+            # Query vector and FTS independently, then merge/rerank. In the default
+            # local hash-embedding mode, vector neighbors can be too similar across
+            # questions; native FTS + lexical reranking makes results question-specific.
             try:
-                # Exercise zvec's hybrid retrieval: vector similarity + native FTS.
-                results = self.collection.query(
-                    queries=[
-                        Query(field_name="embedding", vector=vector),
-                        Query(field_name="text", fts=Fts(match_string=question)),
-                    ],
-                    topk=max(1, min(top_k, 20)),
-                    include_vector=False,
-                    output_fields=["doc_id", "filename", "page", "chunk_index", "text"],
-                    reranker=RrfReRanker(rank_constant=60),
+                add_results(
+                    "vector",
+                    self.collection.query(
+                        queries=Query(field_name="embedding", vector=vector),
+                        topk=candidate_k,
+                        include_vector=False,
+                        output_fields=output_fields,
+                    ),
                 )
             except Exception:
-                # Keep the demo usable even if a particular zvec build/provider setup
-                # cannot run FTS for the query text.
-                results = self.collection.query(
-                    queries=Query(field_name="embedding", vector=vector),
-                    topk=max(1, min(top_k, 20)),
-                    include_vector=False,
-                    output_fields=["doc_id", "filename", "page", "chunk_index", "text"],
+                pass
+            try:
+                add_results(
+                    "fts",
+                    self.collection.query(
+                        queries=Query(field_name="text", fts=Fts(match_string=fts_text)),
+                        topk=candidate_k,
+                        include_vector=False,
+                        output_fields=output_fields,
+                    ),
                 )
-        contexts: list[dict[str, Any]] = []
-        for doc in results:
-            contexts.append(
-                {
-                    "chunk_id": doc.id,
-                    "score": float(doc.score or 0.0),
-                    "doc_id": doc.field("doc_id"),
-                    "filename": doc.field("filename"),
-                    "page": doc.field("page"),
-                    "chunk_index": doc.field("chunk_index"),
-                    "text": doc.field("text"),
-                }
+            except Exception:
+                pass
+
+        contexts = list(candidates.values())
+        for item in contexts:
+            lexical = _lexical_score(terms, item["text"])
+            item["score"] = (
+                lexical
+                + 0.35 * item.pop("vector_rank_score")
+                + 0.45 * item.pop("fts_rank_score")
             )
-        return contexts
+            item.pop("zvec_score", None)
+
+        contexts.sort(key=lambda item: item["score"], reverse=True)
+        return contexts[:requested_top_k]
 
     def add_chat_message(self, role: str, content: str) -> None:
         with self.db:

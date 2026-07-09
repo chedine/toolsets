@@ -1,0 +1,1874 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CER Trace Explorer</title>
+<style>
+  :root {
+    --surface: #fcfcfb;
+    --plane: #f9f9f7;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --hairline: #e1e0d9;
+    --border: rgba(11, 11, 11, 0.10);
+    --accent: #2a78d6;          /* SPECIFIED / links */
+    --accent-soft: rgba(42, 120, 214, 0.10);
+    --error: #d03b3b;           /* ERROR */
+    --error-soft: rgba(208, 59, 59, 0.09);
+    --calc: #898781;            /* CALCULATED chip ink */
+    --calc-soft: rgba(11, 11, 11, 0.05);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface: #1a1a19; --plane: #0d0d0d;
+      --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+      --hairline: #2c2c2a; --border: rgba(255,255,255,0.10);
+      --accent: #3987e5; --accent-soft: rgba(57,135,229,0.16);
+      --error: #e66767; --error-soft: rgba(230,103,103,0.13);
+      --calc: #898781; --calc-soft: rgba(255,255,255,0.06);
+    }
+  }
+  :root[data-theme="light"] {
+    --surface: #fcfcfb; --plane: #f9f9f7;
+    --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+    --hairline: #e1e0d9; --border: rgba(11,11,11,0.10);
+    --accent: #2a78d6; --accent-soft: rgba(42,120,214,0.10);
+    --error: #d03b3b; --error-soft: rgba(208,59,59,0.09);
+    --calc: #898781; --calc-soft: rgba(11,11,11,0.05);
+  }
+  :root[data-theme="dark"] {
+    --surface: #1a1a19; --plane: #0d0d0d;
+    --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+    --hairline: #2c2c2a; --border: rgba(255,255,255,0.10);
+    --accent: #3987e5; --accent-soft: rgba(57,135,229,0.16);
+    --error: #e66767; --error-soft: rgba(230,103,103,0.13);
+    --calc: #898781; --calc-soft: rgba(255,255,255,0.06);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font: 14px/1.45 var(--sans);
+    background: var(--plane); color: var(--ink);
+    display: flex; flex-direction: column;
+  }
+  #topbar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px; background: var(--surface);
+    border-bottom: 1px solid var(--hairline); flex: none;
+  }
+  #topbar .brand { font-weight: 650; font-size: 14px; white-space: nowrap; }
+  #topbar .brand .dim { color: var(--muted); font-weight: 400; }
+  #backBtn {
+    border: 1px solid var(--border); background: none; color: var(--ink-2);
+    border-radius: 6px; padding: 3px 10px; cursor: pointer; font: inherit;
+  }
+  #backBtn:disabled { opacity: .35; cursor: default; }
+  #searchWrap { position: relative; flex: 1; max-width: 560px; }
+  #search {
+    width: 100%; padding: 6px 10px; font: inherit;
+    border: 1px solid var(--hairline); border-radius: 8px;
+    background: var(--plane); color: var(--ink); outline: none;
+  }
+  #search:focus { border-color: var(--accent); }
+  #searchHint {
+    position: absolute; right: 8px; top: 6px; color: var(--muted);
+    font-size: 11px; pointer-events: none;
+  }
+  #results {
+    position: absolute; top: 34px; left: 0; right: 0; z-index: 30;
+    background: var(--surface); border: 1px solid var(--hairline);
+    border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,.14);
+    max-height: 60vh; overflow-y: auto; display: none;
+  }
+  #results .r {
+    padding: 7px 12px; cursor: pointer; display: flex; gap: 8px;
+    align-items: baseline; border-bottom: 1px solid var(--hairline);
+  }
+  #results .r:last-child { border-bottom: 0; }
+  #results .r:hover, #results .r.sel { background: var(--accent-soft); }
+  #results .r .name { font-weight: 600; }
+  #results .r .sub {
+    color: var(--muted); font-size: 12px; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; flex: 1;
+  }
+  #asofWrap { display: flex; align-items: center; gap: 6px; color: var(--ink-2); font-size: 12px; white-space: nowrap; }
+  #asof {
+    font: inherit; padding: 3px 6px; border: 1px solid var(--hairline);
+    border-radius: 6px; background: var(--plane); color: var(--ink);
+  }
+  #main { flex: 1; overflow-y: auto; padding: 18px 20px 60px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  /* chips */
+  .chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10.5px; font-weight: 650; letter-spacing: .04em;
+    padding: 1px 7px; border-radius: 999px; flex: none;
+  }
+  .chip.CALCULATED { color: var(--calc); background: var(--calc-soft); }
+  .chip.SPECIFIED { color: var(--accent); background: var(--accent-soft); }
+  .chip.ERROR { color: var(--error); background: var(--error-soft); }
+  .chip.other { color: var(--ink-2); background: var(--calc-soft); }
+
+  /* home */
+  .tiles { display: flex; gap: 12px; flex-wrap: wrap; margin: 6px 0 22px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--hairline);
+    border-radius: 12px; padding: 12px 18px; min-width: 130px;
+  }
+  .tile .v { font-size: 26px; font-weight: 650; }
+  .tile .k { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .tile.err .v { color: var(--error); }
+  h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
+           color: var(--muted); font-weight: 650; margin: 26px 0 8px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--hairline);
+    border-radius: 12px; overflow: hidden;
+  }
+  .rowline {
+    display: flex; gap: 10px; align-items: baseline; padding: 8px 14px;
+    border-bottom: 1px solid var(--hairline); cursor: pointer;
+  }
+  .rowline:last-child { border-bottom: 0; }
+  .rowline:hover { background: var(--accent-soft); }
+  .rowline .name { font-weight: 600; white-space: nowrap; }
+  .rowline .sub { color: var(--muted); font-size: 12px; overflow: hidden;
+                  text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+  .rowline .cnt { color: var(--muted); font-size: 12px; }
+  .rowline .val { font-family: var(--mono); font-size: 12px; color: var(--ink-2);
+                  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+  /* object view */
+  .objhead { padding: 14px 16px; border-bottom: 1px solid var(--hairline); }
+  .objhead .desc { font-size: 17px; font-weight: 650; }
+  .objhead .meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .objhead .meta b { color: var(--ink-2); font-weight: 550; }
+
+  /* breadcrumb trail */
+  #crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
+            margin: 0 0 12px; font-size: 12.5px; color: var(--muted); }
+  #crumbs .c { color: var(--accent); cursor: pointer; padding: 2px 6px;
+               border-radius: 6px; max-width: 30ch; overflow: hidden;
+               text-overflow: ellipsis; white-space: nowrap; }
+  #crumbs .c:hover { background: var(--accent-soft); }
+  #crumbs .c.here { color: var(--ink); font-weight: 650; cursor: default; }
+  #crumbs .c.here:hover { background: none; }
+
+  /* focus card */
+  .focus { background: var(--surface); border: 1px solid var(--hairline);
+           border-radius: 14px; overflow: hidden; }
+  .fhead { padding: 16px 20px 14px; border-bottom: 1px solid var(--hairline); }
+  .fhead .top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .fhead .aname { font-size: 20px; font-weight: 700; }
+  .fhead .objlink { color: var(--muted); font-size: 12.5px; cursor: pointer;
+                    margin-left: auto; max-width: 44ch; overflow: hidden;
+                    text-overflow: ellipsis; white-space: nowrap; }
+  .fhead .objlink:hover { color: var(--accent); }
+  .fhead .dtype { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .fval { padding: 14px 20px; border-bottom: 1px solid var(--hairline); }
+  .fval .lbl, .fbody .lbl, .fdeps .lbl {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .07em;
+    color: var(--muted); font-weight: 650; margin-bottom: 6px; }
+  .fval .v { font-family: var(--mono); font-size: 16px; word-break: break-word; }
+  .fval .v.err { color: var(--error); }
+  .fbody { padding: 14px 20px; }
+  .fbody .deriv { font-size: 13.5px; color: var(--ink-2); line-height: 1.75;
+                  overflow-x: auto; }
+  .fbody .deriv ul { margin: 2px 0; padding-left: 20px; }
+  .fbody .deriv li { list-style: none; position: relative; }
+  .fbody .deriv li::before { content: ""; position: absolute; left: -12px; top: 0.85em;
+                             width: 6px; height: 1px; background: var(--hairline); }
+  .tok {
+    color: var(--accent); cursor: pointer; font-family: var(--mono);
+    font-size: 12.5px; background: var(--accent-soft);
+    border-radius: 5px; padding: 0 4px;
+  }
+  .tok:hover { text-decoration: underline; }
+  .tok.err { color: var(--error); background: var(--error-soft); }
+  .tokval { color: var(--muted); font-family: var(--mono); font-size: 11.5px; }
+  /* inline-block: baseline = the token line, so neighbors stay aligned
+     while the probe value floats above */
+  .tokwrap { display: inline-block; margin: 0 2px; }
+  .tokv { display: block; font: 9.5px/1.3 var(--mono); color: var(--muted);
+          padding-left: 4px; max-width: 30ch; overflow: hidden;
+          text-overflow: ellipsis; white-space: nowrap; user-select: none; }
+  .tokv.err { color: var(--error); }
+
+  /* decision tables inside fx */
+  .dtbl { margin: 6px 0; display: flex; flex-direction: column; gap: 8px; }
+  .dtrow { border: 1px solid var(--hairline); border-left: 3px solid var(--accent);
+           border-radius: 8px; padding: 8px 12px; background: var(--plane); }
+  .dtcell { margin: 2px 0; }
+  .dtcell .dtlbl { font-size: 10px; text-transform: uppercase; letter-spacing: .08em;
+                   color: var(--muted); font-weight: 700; }
+  .dtcell > ul { margin: 2px 0 4px !important; padding-left: 4px !important; }
+
+  /* rule-object value block */
+  .refblock { margin-top: 4px; }
+  .refhead { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+  .refhead .tok { font-size: 14px; padding: 1px 7px; }
+  .refdesc { color: var(--muted); font-size: 12px; overflow: hidden;
+             text-overflow: ellipsis; white-space: nowrap; }
+  .miniattrs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+               gap: 6px; }
+  .mini { display: flex; align-items: baseline; gap: 7px; padding: 5px 10px;
+          border: 1px solid var(--hairline); border-radius: 9px; cursor: pointer;
+          overflow: hidden; }
+  .mini:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .mini .dot { align-self: center; }
+  .mini .name { font-weight: 600; font-size: 12px; white-space: nowrap; }
+  .mini .val { font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+               overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; display: inline-block; }
+  .fdeps { padding: 12px 20px 16px; border-top: 1px solid var(--hairline); }
+  .fdeps .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                 gap: 6px; }
+  .dep {
+    display: flex; align-items: baseline; gap: 7px; padding: 6px 10px;
+    border: 1px solid var(--hairline); border-radius: 9px; cursor: pointer;
+    overflow: hidden;
+  }
+  .dep:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .dep .dot { width: 8px; height: 8px; border-radius: 50%; flex: none;
+              align-self: center; }
+  .dot.CALCULATED { background: var(--calc); }
+  .dot.SPECIFIED { background: var(--accent); }
+  .dot.ERROR { background: var(--error); }
+  .dep .name { font-weight: 600; font-size: 12.5px; white-space: nowrap; }
+  .dep .val { font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+              overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+              flex: 1; min-width: 0; }
+  .usedby-toggle { background: none; border: none; color: var(--accent);
+                   cursor: pointer; font: inherit; font-size: 12.5px; padding: 0; }
+  .usedby-toggle:hover { text-decoration: underline; }
+
+  /* timeline table */
+  .tltable { margin-top: 8px; border-collapse: collapse; font: 12.5px var(--mono); }
+  .tltable td, .tltable th { border: 1px solid var(--hairline); padding: 3px 10px; text-align: left; }
+  .tltable th { font-family: var(--sans); color: var(--muted); font-weight: 600; }
+  .tltable tr.hit { background: var(--accent-soft); }
+  .tlwrap { overflow-x: auto; }
+  .tlchip { color: var(--accent); background: var(--accent-soft);
+            border-radius: 999px; padding: 0 7px; font: 650 10.5px var(--sans);
+            cursor: pointer; border: none; vertical-align: 1px; }
+
+  .empty { color: var(--muted); padding: 30px 0; text-align: center; }
+  a.plain { color: var(--accent); cursor: pointer; text-decoration: none; }
+  a.plain:hover { text-decoration: underline; }
+
+  /* ------------------------------------------------ graph view */
+  .gtoolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+              font-size: 12.5px; color: var(--ink-2); }
+  .gtoolbar select { font: inherit; padding: 2px 6px; border: 1px solid var(--hairline);
+                     border-radius: 6px; background: var(--surface); color: var(--ink); }
+  .gtoolbar .btn { border: 1px solid var(--hairline); background: var(--surface);
+                   color: var(--ink-2); border-radius: 6px; padding: 3px 10px;
+                   cursor: pointer; font: inherit; font-size: 12.5px; }
+  .gtoolbar .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .gtoolbar .hint { color: var(--muted); margin-left: auto; }
+  .gdirs { display: inline-flex; border: 1px solid var(--hairline); border-radius: 6px;
+    overflow: hidden; }
+  .gdir { border: none; background: var(--surface); color: var(--muted);
+    padding: 3px 10px; cursor: pointer; font: inherit; font-size: 12px; }
+  .gdir + .gdir { border-left: 1px solid var(--hairline); }
+  .gdir.on { background: var(--accent); color: #fff; }
+  .gdir:not(.on):hover { color: var(--accent); }
+  /* timeline lanes */
+  .lanes { border: 1px solid var(--hairline); border-radius: 10px; background: var(--surface);
+    position: relative; overflow: hidden; cursor: crosshair; }
+  .lrow { display: flex; align-items: stretch; border-top: 1px solid var(--hairline);
+    min-height: 34px; }
+  .lrow.root { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+  .lrow.laxis { border-top: none; min-height: 24px; }
+  .llabel { width: 230px; flex: none; padding: 4px 8px 4px 10px; cursor: pointer;
+    overflow: hidden; border-right: 1px solid var(--hairline); }
+  .llabel .ln { font-size: 12px; font-weight: 600; white-space: nowrap;
+    text-overflow: ellipsis; overflow: hidden; }
+  .llabel:hover .ln { color: var(--accent); }
+  .llabel .lo { font-size: 10px; color: var(--muted); white-space: nowrap; }
+  .ltrack { flex: 1; position: relative; overflow: hidden; }
+  .lcurcol { width: 118px; flex: none; padding: 8px 10px 0 8px; font: 11px var(--mono);
+    text-align: right; border-left: 1px solid var(--hairline); white-space: nowrap;
+    overflow: hidden; }
+  .ltick { position: absolute; top: 5px; transform: translateX(-50%); font-size: 10px;
+    color: var(--muted); }
+  .lgrid { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--hairline);
+    opacity: .5; }
+  .lseg { position: absolute; top: 50%; transform: translateY(-50%); height: 20px;
+    border-radius: 4px; background: color-mix(in srgb, var(--c) 24%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 60%, transparent);
+    font: 10.5px/18px var(--mono); padding: 0 5px; overflow: hidden;
+    white-space: nowrap; box-sizing: border-box; }
+  .lseg.off { background: none; color: var(--muted); }
+  .lflat { position: absolute; inset: 0; font: 10.5px/34px var(--mono);
+    color: var(--muted); padding: 0 6px; }
+  .loverlay { position: absolute; left: 231px; right: 119px; top: 24px; bottom: 0;
+    pointer-events: none; }
+  .lmark { position: absolute; top: 0; bottom: 0; width: 0;
+    border-left: 1px dashed var(--accent); opacity: .55; }
+  .lcursor { position: absolute; top: 0; bottom: 0; width: 0;
+    border-left: 1px solid var(--ink); opacity: .6; }
+  /* what-if */
+  .wibar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center;
+    padding: 8px 12px; border: 1px solid var(--accent); border-radius: 8px;
+    margin: 10px 14px 0; font-size: 12px;
+    background: color-mix(in srgb, var(--accent) 7%, transparent); }
+  .wibar .sub { color: var(--muted); font-size: 11px; }
+  .wiov { font: 11px var(--mono); }
+  .wix { border: none; background: none; color: var(--muted); cursor: pointer;
+    font-size: 11px; }
+  .wix:hover { color: var(--error); }
+  .wipencil { border: 1px solid var(--hairline); border-radius: 5px;
+    background: var(--surface); color: var(--accent); cursor: pointer;
+    font-size: 11px; line-height: 1.4; flex: none; padding: 0 5px;
+    align-self: center; }
+  .wipencil:hover { border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .wichip { font: 10px var(--mono); padding: 1px 6px; border-radius: 8px; flex: none; }
+  .wichip.ov { background: var(--accent); color: #fff; }
+  .wichip.now { border: 1px solid var(--accent); color: var(--accent); }
+  .wichip.stale { border: 1px solid #eda100; color: #b97f00; }
+  .winote { margin-top: 8px; font: 12px var(--mono); padding: 6px 10px;
+    border-radius: 6px; width: fit-content; }
+  .winote.now { border: 1px solid var(--accent); color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .winote.same { color: var(--muted); border: 1px dashed var(--hairline); }
+  .winote.stale { border: 1px solid #eda100; color: #b97f00; }
+  .wiinput { font: 12px var(--mono); padding: 2px 6px; border: 1px solid var(--accent);
+    border-radius: 5px; background: var(--surface); color: var(--ink); width: 150px; }
+  .wibtn { border: 1px solid var(--hairline); background: none; color: var(--accent);
+    border-radius: 6px; padding: 2px 8px; cursor: pointer; font: inherit;
+    font-size: 11px; flex: none; }
+  .gwrap { position: relative; height: calc(100vh - 150px); overflow: hidden;
+           background: var(--surface); border: 1px solid var(--hairline);
+           border-radius: 14px; cursor: grab; }
+  .gwrap.panning { cursor: grabbing; }
+  .gcanvas { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .gcanvas svg { position: absolute; left: 0; top: 0; overflow: visible; }
+  .gedge { fill: none; stroke: var(--hairline); stroke-width: 1.4; }
+  .gedge.hl { stroke: var(--accent); stroke-width: 2; }
+  .gnode { position: absolute; width: 210px; padding: 6px 10px 7px 12px;
+           background: var(--plane); border: 1px solid var(--hairline);
+           border-left: 3px solid var(--calc); border-radius: 9px;
+           cursor: pointer; user-select: none; }
+  .gnode:hover { border-color: var(--accent); }
+  .gnode.SPECIFIED { border-left-color: var(--accent); }
+  .gnode.ERROR { border-left-color: var(--error); }
+  .gnode.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+  .gnode .gv { font: 10px/1.3 var(--mono); color: var(--muted); white-space: nowrap;
+               overflow: hidden; text-overflow: ellipsis; }
+  .gnode.ERROR .gv { color: var(--error); }
+  .gnode .gn { font-weight: 650; font-size: 12.5px; white-space: nowrap;
+               overflow: hidden; text-overflow: ellipsis; }
+  .gnode .go { font-size: 10.5px; color: var(--muted); white-space: nowrap;
+               overflow: hidden; text-overflow: ellipsis; }
+  .gnode .gmore { position: absolute; right: 6px; top: 6px; font-size: 10px;
+                  color: var(--muted); background: var(--calc-soft);
+                  border-radius: 999px; padding: 0 6px; }
+  .gpanel { position: absolute; right: 10px; top: 10px; bottom: 10px; width: 400px;
+            background: var(--surface); border: 1px solid var(--hairline);
+            border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,.16);
+            overflow-y: auto; padding: 14px 16px; cursor: auto; }
+  .gpanel .aname { font-size: 16px; font-weight: 700; }
+  .gpanel .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .07em;
+                 color: var(--muted); font-weight: 650; margin: 12px 0 4px; }
+  .gpanel .deriv { font-size: 12.5px; color: var(--ink-2); line-height: 1.7;
+                   overflow-x: auto; }
+  .gpanel .deriv ul { margin: 2px 0; padding-left: 16px; }
+  .gpanel .deriv li { list-style: none; }
+  .gpanel .v { font-family: var(--mono); font-size: 13px; word-break: break-word; }
+  .gpanel .row { display: flex; gap: 8px; align-items: center; margin-top: 4px;
+                 flex-wrap: wrap; }
+  .gpanel .close { position: absolute; right: 10px; top: 8px; border: none;
+                   background: none; color: var(--muted); font-size: 16px;
+                   cursor: pointer; }
+  .gpanel .close:hover { color: var(--ink); }
+</style>
+
+<div id="topbar">
+  <span class="brand">CER <span class="dim">trace explorer</span></span>
+  <button id="backBtn" title="Back">&#8592;</button>
+  <div id="searchWrap">
+    <input id="search" type="text" placeholder="Search objects &amp; attributes&hellip;" autocomplete="off">
+    <span id="searchHint">&#8984;K</span>
+    <div id="results"></div>
+  </div>
+  <span id="asofWrap">as of <input id="asof" type="date" title="Collapse timeline values to this date"></span>
+</div>
+<div id="main"><div class="wrap" id="view"></div></div>
+
+<script>
+"use strict";
+const DATA = /*__DATA__*/null;
+
+/* ---------------------------------------------------------- helpers */
+function h(tag, props, ...kids) {
+  const el = document.createElement(tag);
+  if (props) for (const [k, v] of Object.entries(props)) {
+    if (k === "class") el.className = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) {
+    if (k == null) continue;
+    el.append(k.nodeType ? k : document.createTextNode(k));
+  }
+  return el;
+}
+const key = (o, a) => o + " " + a;
+const getAttr = (o, a) => (DATA.objects[o] || { attrs: {} }).attrs[a];
+const objDesc = o => {
+  const ob = DATA.objects[o];
+  if (!ob) return o;
+  return ob.desc || ob.type || o;
+};
+/* devs navigate by rule class (Type), not by description */
+const shortType = o => {
+  const ob = DATA.objects[o];
+  if (!ob || !ob.type) return o;
+  const t = ob.type;
+  return t.includes(".") ? t.slice(t.lastIndexOf(".") + 1) : t;
+};
+const objLabel = o => shortType(o) + (String(o).length <= 8 ? " · " + o : "");
+function stateChip(st) {
+  const cls = ["CALCULATED", "SPECIFIED", "ERROR"].includes(st) ? st : "other";
+  const label = st === "ERROR" ? "⚠ ERROR" : (st || "—");
+  return h("span", { class: "chip " + cls }, label);
+}
+
+/* ------------------------------------------------- derived indexes */
+const usedBy = {};           // key -> [[obj, attr], ...]
+const errAttrs = [];         // [[obj, attr], ...]
+for (const [oid, ob] of Object.entries(DATA.objects)) {
+  for (const [an, at] of Object.entries(ob.attrs)) {
+    if (at.state === "ERROR") errAttrs.push([oid, an]);
+    for (const [dO, dA] of at.deps) {
+      (usedBy[key(dO, dA)] ||= []).push([oid, an]);
+    }
+  }
+}
+const errRoots = errAttrs.filter(([o, a]) => {
+  const at = getAttr(o, a);
+  return !at.deps.some(([dO, dA]) => {
+    const d = getAttr(dO, dA);
+    return d && d.state === "ERROR" && !(dO === o && dA === a);
+  });
+});
+
+/* search index */
+const sidx = [];
+for (const [oid, ob] of Object.entries(DATA.objects)) {
+  // label by rule class; description stays searchable via hay and shown as sub
+  sidx.push({ o: oid, a: null, label: objLabel(oid),
+              sub: ob.desc || ob.type,
+              hay: ((ob.desc || "") + " " + ob.type + " " + oid).toLowerCase() });
+  for (const an of Object.keys(ob.attrs)) {
+    sidx.push({ o: oid, a: an, label: an, sub: objLabel(oid) + " — " + (ob.desc || ""),
+                hay: (an + " " + (ob.desc || "") + " " + ob.type).toLowerCase() });
+  }
+}
+function doSearch(q) {
+  const toks = q.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!toks.length) return [];
+  const out = [];
+  for (const e of sidx) {
+    let score = 0, ok = true;
+    for (const t of toks) {
+      const i = e.hay.indexOf(t);
+      if (i < 0) { ok = false; break; }
+      score += (e.label.toLowerCase().startsWith(t) ? 100 : 0) +
+               (i === 0 || e.hay[i - 1] === " " ? 30 : 0) - i * 0.01;
+    }
+    if (ok) { out.push([score + (e.a ? 5 : 0), e]); }
+  }
+  out.sort((x, y) => y[0] - x[0]);
+  return out.slice(0, 50).map(x => x[1]);
+}
+
+/* ------------------------------------------------- timeline values */
+function parseDate(s) {
+  const m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(s.trim());
+  return m ? new Date(+m[3], +m[1] - 1, +m[2]) : null;
+}
+function tlValueAt(tl, when) {
+  for (const [from, to, v] of tl) {
+    const f = parseDate(from), t = parseDate(to);
+    if ((f === null || f <= when) && (t === null || when <= t)) return v;
+  }
+  return null;
+}
+let asOf = new Date();
+asOf.setHours(0, 0, 0, 0);
+
+function isTL(val) { return val && typeof val === "object" && val.tl; }
+const isRef = val => val && typeof val === "object" && val.ref;
+const isRefList = val => val && typeof val === "object" && val.list;
+function shortVal(val, max) {
+  max = max || 36;
+  let s;
+  if (isRef(val)) s = "→ " + shortType(val.ref);
+  else if (isRefList(val)) s = "List (" + val.list.length + " objects)";
+  else if (isTL(val)) {
+    if (asOf) {
+      const v = tlValueAt(val.tl, asOf);
+      s = v === null ? "(no interval)" : v;
+    } else {
+      const vs = [...new Set(val.tl.map(r => r[2]))];
+      s = vs.length === 1 ? vs[0] : vs.join(" → ");
+    }
+  } else s = String(val ?? "");
+  return s.length > max ? s.slice(0, max - 1) + "…" : s;
+}
+function tlTable(tl) {
+  return h("div", { class: "tlwrap" },
+    h("table", { class: "tltable" },
+      h("tr", null, h("th", null, "From"), h("th", null, "To"), h("th", null, "Value")),
+      tl.map(([f, t, v]) => {
+        const hit = asOf && tlValueAt([[f, t, v]], asOf) !== null;
+        return h("tr", { class: hit ? "hit" : "" },
+          h("td", null, f), h("td", null, t), h("td", null, v));
+      })));
+}
+
+/* ------------------------------------------------- derivation (fx) */
+const IDENT_RE = /[A-Za-z_][A-Za-z0-9_]*/g;
+
+function tokenEl(name, ref) {
+  const at = getAttr(ref[0], ref[1]);
+  const err = at && at.state === "ERROR";
+  const tok = h("span", {
+    class: "tok" + (err ? " err" : ""),
+    title: objLabel(ref[0]) + (at ? " = " + shortVal(at.value, 60) : ""),
+    onclick: () => go({ v: "trace", o: ref[0], a: ref[1], ext: 1 }) }, name);
+  if (!at) return tok;
+  // live-probe style: the current value floats just above the token
+  let sv = isRef(at.value) || isRefList(at.value) ? "" : shortVal(at.value, 26);
+  if (/^Undescribed instance/.test(sv)) sv = "";
+  return h("span", { class: "tokwrap" },
+    h("span", { class: "tokv" + (err ? " err" : "") }, sv || " "),
+    tok);
+}
+
+function linkifyText(text, depMap) {
+  const frag = document.createDocumentFragment();
+  let last = 0, m;
+  IDENT_RE.lastIndex = 0;
+  while ((m = IDENT_RE.exec(text))) {
+    const ref = depMap[m[0]];
+    if (!ref) continue;
+    frag.append(text.slice(last, m.index));
+    frag.append(tokenEl(m[0], ref));
+    last = m.index + m[0].length;
+  }
+  frag.append(text.slice(last));
+  return frag;
+}
+
+function renderDerivTable(tbl, depMap) {
+  const hs = tbl.h.length ? tbl.h : ["If", "Then"];
+  const box = h("div", { class: "dtbl" });
+  for (const row of tbl.rows) {
+    const r = h("div", { class: "dtrow" });
+    row.forEach((cell, i) => {
+      r.append(h("div", { class: "dtcell" },
+        h("div", { class: "dtlbl" }, (hs[i] || "…").toLowerCase()),
+        renderDeriv(cell, depMap)));
+    });
+    box.append(r);
+  }
+  return box;
+}
+
+function renderDeriv(items, depMap) {
+  const ul = h("ul");
+  for (const it of items) {
+    const li = h("li");
+    if (it.tbl) { li.append(renderDerivTable(it.tbl, depMap)); ul.append(li); continue; }
+    if (it.ref) li.append(tokenEl(it.t, it.ref));
+    else if (it.t) li.append(linkifyText(it.t, depMap));
+    if (it.c && it.c.length) li.append(renderDeriv(it.c, depMap));
+    ul.append(li);
+  }
+  return ul;
+}
+
+/* ------------------------------------------------- focus card view */
+let trail = [];   // breadcrumb path of (o, a) walked within one investigation
+
+function renderFocus(oid, an) {
+  const at = getAttr(oid, an);
+  if (!at) {
+    view.append(h("div", { class: "empty" }, an + " — not found in dump (" + oid + ")"));
+    return;
+  }
+
+  /* breadcrumb */
+  const crumbs = h("div", { id: "crumbs" });
+  trail.forEach((t, i) => {
+    if (i) crumbs.append(h("span", null, "›"));
+    const here = i === trail.length - 1;
+    crumbs.append(h("span", { class: "c" + (here ? " here" : ""), title: objDesc(t.o),
+      onclick: here ? null : () => go({ v: "trace", o: t.o, a: t.a, ext: 1 }) }, t.a));
+  });
+  if (trail.length > 1) view.append(crumbs);
+
+  /* dep name -> ref map for linkifying derivation text */
+  const depMap = {};
+  for (const [dO, dA] of at.deps) if (!depMap[dA]) depMap[dA] = [dO, dA];
+
+  const card = h("div", { class: "focus" });
+
+  /* header */
+  card.append(h("div", { class: "fhead" },
+    h("div", { class: "top" },
+      h("span", { class: "aname" }, an),
+      stateChip(at.state),
+      h("button", { class: "usedby-toggle", title: "switch to graph view",
+        onclick: () => go({ v: "graph", o: oid, a: an }) }, "⊞ graph"),
+      h("button", { class: "usedby-toggle", title: "timeline lanes — inputs over time",
+        onclick: () => go({ v: "lanes", o: oid, a: an }) }, "⧗ lanes"),
+      h("span", { class: "objlink", title: objDesc(oid),
+        onclick: () => go({ v: "obj", o: oid }) }, objLabel(oid))),
+    h("div", { class: "dtype" }, at.type || "")));
+
+  /* what-if: shared eval context for this render, banner when active */
+  const wiCtx = wiOverrides.size ? WI.newCtx(wiWhen(), wiOverrides) : null;
+  if (wiCtx) {
+    card.append(h("div", { class: "wibar" },
+      h("b", null, "⚗ what-if"),
+      h("span", { class: "sub" }, "at " + wiCtx.when.toLocaleDateString()),
+      [...wiOverrides].map(([k, v]) => {
+        const o2 = k.slice(0, k.indexOf(" ")), a2 = k.slice(k.indexOf(" ") + 1);
+        return h("span", { class: "wiov" },
+          h("a", { class: "plain", onclick: () => go({ v: "trace", o: o2, a: a2, ext: 1 }) }, a2),
+          " := " + v + " ",
+          h("button", { class: "wix", title: "remove override",
+            onclick: () => { wiOverrides.delete(k); render(current); } }, "✕"));
+      }),
+      h("button", { class: "wibtn", onclick: () => { wiOverrides.clear(); render(current); } },
+        "clear all")));
+  }
+
+  /* value */
+  const fval = h("div", { class: "fval" });
+  fval.append(h("div", { class: "lbl" }, asOf && isTL(at.value)
+    ? "value as of " + asOf.toLocaleDateString() : "value"));
+  if (isRef(at.value)) {
+    fval.append(objRefBlock(at.value.ref, at.value.t));
+  } else if (isRefList(at.value)) {
+    fval.append(h("div", { class: "v" }, "List · " + at.value.list.length + " objects"));
+    for (const [rid, t] of at.value.list) fval.append(objRefBlock(rid, t));
+  } else {
+    fval.append(h("div", { class: "v" + (at.state === "ERROR" ? " err" : "") },
+      shortVal(at.value, 400)));
+    if (isTL(at.value)) {
+      const tbl = tlTable(at.value.tl);
+      if (at.value.tl.length > 12) {
+        tbl.style.display = "none";
+        fval.append(h("div", null, h("button", { class: "tlchip",
+          onclick: e => { tbl.style.display = tbl.style.display === "none" ? "" : "none"; } },
+          "timeline · " + at.value.tl.length + " intervals")), tbl);
+      } else fval.append(tbl);
+    }
+  }
+  if (wiCtx) {
+    const res = WI.evalAttr(oid, an, wiCtx);
+    const base = WI.scalarize(at.value, wiCtx.when);
+    const rv = res.v ?? "null", bv = base ?? "null";
+    if (!res.known && res.tainted)
+      fval.append(h("div", { class: "winote stale" },
+        "⚗ what-if: unknown — an override flows through a step the interpreter can't evaluate"));
+    else if (res.known && res.tainted)
+      fval.append(h("div", { class: "winote " + (String(rv) !== String(bv) ? "now" : "same") },
+        String(rv) !== String(bv)
+          ? "⚗ what-if: " + rv + "   (session: " + bv + ")"
+          : "⚗ what-if: " + rv + " — unchanged"));
+  }
+  card.append(fval);
+
+  /* inputs (deps) — above the fx so values are read top-down */
+  if (at.deps.length) {
+    const finputs = h("div", { class: "fdeps" });
+    finputs.append(h("div", { class: "lbl" }, "inputs (" + at.deps.length + ")"));
+    const grid = h("div", { class: "grid" });
+    for (const [dO, dA] of at.deps) {
+      const dAt = getAttr(dO, dA);
+      const row = h("div", { class: "dep", title: objLabel(dO) },
+        h("span", { class: "dot " + (dAt ? dAt.state : "") }),
+        h("span", { class: "name" }, dA),
+        h("span", { class: "val" }, dAt ? shortVal(dAt.value, 40) : "?"),
+        wiChip(dO, dA, wiCtx),
+        h("button", { class: "wipencil", title: "what-if: override this value",
+          onclick: ev => { ev.stopPropagation(); wiEdit(row, dO, dA); } }, "✎"));
+      row.addEventListener("click", () => {
+        if (!row.dataset.editing) go({ v: "trace", o: dO, a: dA, ext: 1 });
+      });
+      grid.append(row);
+    }
+    finputs.append(grid);
+    card.append(finputs);
+  }
+
+  /* fx */
+  card.append(h("div", { class: "fbody" },
+    h("div", { class: "lbl" }, "ƒx — how this value is computed"),
+    h("div", { class: "deriv" },
+      at.deriv.length ? renderDeriv(at.deriv, depMap)
+                      : h("i", null, "No derivation recorded — " +
+                          (at.state === "SPECIFIED" ? "specified externally." : "n/a.")))));
+
+  /* used by: first three visible, the rest behind a link */
+  const ubList = usedBy[key(oid, an)] || [];
+  if (ubList.length) {
+    const fub = h("div", { class: "fdeps" });
+    fub.append(h("div", { class: "lbl" },
+      "↑ used by " + ubList.length + " attribute" + (ubList.length > 1 ? "s" : "")));
+    const panel = h("div", { class: "card", style: "margin-top:2px" });
+    const row = ([uO, uA]) => {
+      const uAt = getAttr(uO, uA);
+      return h("div", { class: "rowline",
+        onclick: () => go({ v: "trace", o: uO, a: uA, ext: 1 }) },
+        stateChip(uAt ? uAt.state : ""), h("span", { class: "name" }, uA),
+        h("span", { class: "sub" }, objLabel(uO)));
+    };
+    for (const e of ubList.slice(0, 3)) panel.append(row(e));
+    if (ubList.length > 3) {
+      const moreRow = h("div", { class: "rowline" },
+        h("a", { class: "plain" }, "show " + (ubList.length - 3) + " more →"));
+      moreRow.addEventListener("click", () => {
+        moreRow.remove();
+        for (const e of ubList.slice(3)) panel.append(row(e));
+      });
+      panel.append(moreRow);
+    }
+    fub.append(panel);
+    card.append(fub);
+  }
+  view.append(card);
+}
+
+/* a rule-object value: clickable, and inlined when the object is small */
+function objRefBlock(rid, label) {
+  const ob = DATA.objects[rid];
+  const box = h("div", { class: "refblock" });
+  box.append(h("div", { class: "refhead" },
+    h("span", { class: "tok", onclick: () => go({ v: "obj", o: rid }) },
+      shortType(rid)),
+    h("span", { class: "refdesc" }, label || objDesc(rid))));
+  if (ob) {
+    const names = Object.keys(ob.attrs).filter(a => a !== "description");
+    if (names.length <= 8) {
+      const mini = h("div", { class: "miniattrs" });
+      for (const a2 of names) {
+        const at2 = ob.attrs[a2];
+        mini.append(h("div", { class: "mini",
+          onclick: () => go({ v: "trace", o: rid, a: a2, ext: 1 }) },
+          h("span", { class: "dot " + at2.state }),
+          h("span", { class: "name" }, a2),
+          h("span", { class: "val" }, shortVal(at2.value, 44))));
+      }
+      box.append(mini);
+    }
+  }
+  return box;
+}
+
+/* ====================================================================
+   what-if interpreter (modular)
+
+   A rough evaluator over parsed derivation trees. It works on SCALARS
+   AT A POINT IN TIME: timeline values collapse via tlValueAt(asOf), so
+   boolean/comparison logic needs no interval algebra. Everything it
+   does not recognize is OPAQUE: an opaque attr keeps its dump value
+   unless an override taints its inputs, in which case it goes STALE
+   (unknown) rather than silently wrong.
+
+   Self-contained: touches the host only through the api object.
+   ==================================================================== */
+const WI = (api => {
+  const { getAttr, key, parseDate, tlValueAt, isTL, isRef, isRefList, objects } = api;
+  const OPAQUE = Symbol("opaque");
+
+  const scalarize = (val, when) => {
+    if (isTL(val)) return tlValueAt(val.tl, when);
+    if (isRef(val) || isRefList(val)) return val;
+    return val == null ? null : String(val);
+  };
+  const num = s => {
+    if (s == null || typeof s === "object") return null;
+    const n = Number(String(s).replace(/,/g, ""));
+    return isNaN(n) ? null : n;
+  };
+  const known = (v, tainted) => ({ v, known: true, tainted });
+  const unknown = tainted => ({ known: false, tainted });
+  const txt = it => (it.t || "").trim();
+  const meaningful = items =>
+    (items || []).filter(it => it.tbl || it.ref || it.c || txt(it) !== "");
+
+  const newCtx = (when, overrides) =>
+    ({ when, overrides: overrides || new Map(), memo: new Map(), stack: new Set() });
+
+  function evalAttr(o, a, ctx) {
+    const k = key(o, a);
+    if (ctx.overrides.has(k))
+      return { v: ctx.overrides.get(k), known: true, tainted: true, why: "override" };
+    if (ctx.memo.has(k)) return ctx.memo.get(k);
+    if (ctx.stack.has(k)) return { ...unknown(false), why: "cycle" };
+    const at = getAttr(o, a);
+    if (!at) return { ...unknown(false), why: "missing" };
+    ctx.stack.add(k);
+    let res;
+    if (at.state === "SPECIFIED" || !at.deriv.length) {
+      res = { ...known(scalarize(at.value, ctx.when), false), why: "leaf" };
+    } else if (isIdentityDeriv(at.deriv)) {
+      // the value is a constructed object reference (or external constant):
+      // its identity never changes under what-if — the instance's attrs
+      // re-evaluate through their own derivations
+      res = { ...known(scalarize(at.value, ctx.when), false), why: "identity" };
+    } else {
+      const depMap = {};
+      for (const [dO, dA] of at.deps) if (!depMap[dA]) depMap[dA] = [dO, dA];
+      const r = evalSeq(at.deriv, { o, depMap, ctx, items: [] });
+      if (r === OPAQUE) {
+        let tainted = false;
+        for (const [dO, dA] of at.deps)
+          if (evalAttr(dO, dA, ctx).tainted) { tainted = true; break; }
+        const dumpV = scalarize(at.value, ctx.when);
+        res = tainted ? { ...unknown(true), why: "stale" }
+            : dumpV === "?" ? { ...unknown(false), why: "error" }   // CER never computed it
+            : { ...known(dumpV, false), why: "opaque" };
+      } else {
+        res = { ...r, why: r.known ? "computed" : "stale" };
+      }
+    }
+    ctx.stack.delete(k);
+    ctx.memo.set(k, res);
+    return res;
+  }
+
+  function isIdentityDeriv(deriv) {
+    const ms = meaningful(deriv);
+    if (ms.length !== 1) return false;
+    const t = txt(ms[0]);
+    if (/^Create an instance of \w+, setting:?$/.test(t)) return true;
+    // rate lookup with fixed coordinates = external constant
+    if (/^Get rate from:?$/.test(t))
+      return meaningful(ms[0].c).every(x => /^Rate (table|row|column): /.test(txt(x)));
+    return false;
+  }
+
+  function evalSeq(items, env) {
+    const ms = meaningful(items);
+    if (!ms.length) return known(null, false);
+    if (ms.length === 1) return evalItem(ms[0], env);
+    return OPAQUE;
+  }
+
+  function evalItem(it, env) {
+    if (it.tbl) return evalTable(it.tbl, env);
+    if (it.ref) return evalAttr(it.ref[0], it.ref[1], env.ctx);
+    const t = txt(it);
+    const c = meaningful(it.c);
+    if (/^All of:?$/.test(t)) return evalBool(c, env, true);
+    if (/^Any of:?$/.test(t)) return evalBool(c, env, false);
+    if (/^Not$/.test(t)) {
+      const r = evalSeq(c, env);
+      if (r === OPAQUE || !r.known) return r;
+      if (r.v === "true" || r.v === "false")
+        return known(r.v === "true" ? "false" : "true", r.tainted);
+      return OPAQUE;
+    }
+    if (/^Equality check:?$/.test(t)) return evalCompare(c, env);
+    if (/^Comparison:?$/.test(t)) return evalCompare(c, env);
+    if (/^Arithmetic:?$/.test(t)) return evalArith(c, env);
+    // wrappers that are identity at a point in time
+    if (/^(Value from an interval in|Get:?$|Create a timeline from values returned|Get code value from code table)/.test(t))
+      return evalSeq(c, env);
+    const mProp = /^Retrieve the property '([^']+)' from:?$/.exec(t);
+    if (mProp) return evalProp(mProp[1], c, env);
+    if (/^Create an existence timeline:?$/.test(t)) return evalExistence(c, env);
+    if (/^Get a single item .* from ?:?$/.test(t)) {
+      const src = c.length === 1 ? evalList(c[0], env) : OPAQUE;
+      if (src === OPAQUE || !src.known) return src;
+      return known(src.members.length ? { ref: src.members[0] } : null, src.tainted);
+    }
+    // CER's age function: age bumps on the 1st of the month after the birthday
+    if (/^Invoke the Java method \S*\.createAgeTimeline, passing$/.test(t)) {
+      const d = evalSeq(c, env);
+      if (d === OPAQUE || !d.known) return d;
+      const start = d.v && parseDate(String(d.v));
+      if (!start) return OPAQUE;
+      const w = env.ctx.when;
+      let age = w.getFullYear() - start.getFullYear();
+      if (w < new Date(w.getFullYear(), start.getMonth() + 1, 1)) age -= 1;
+      return known(String(Math.max(age, 0)), d.tainted);
+    }
+    if (c.length) return OPAQUE;      // unrecognized head with children
+    return evalText(t, env);
+  }
+
+  /* -------- list machinery: sources, loops, member bindings -------- */
+  const typeOf = oid => {
+    const ob = objects[oid];
+    return ob && ob.type ? ob.type.split(".").pop() : "";
+  };
+  const listFromVal = v => {
+    if (isRefList(v)) return v.list.map(x => x[0]);
+    if (isRef(v)) return [v.ref];
+    if (v == null) return [];
+    if (typeof v === "string" && (/^List: ?\(No entries\.\)$/.test(v) || v === "(No items.)"))
+      return [];
+    return null;
+  };
+
+  // evaluate an item to a LIST of member object ids
+  function evalList(it, env) {
+    const t = txt(it);
+    let c = meaningful(it.c).filter(x => !/^According to the order:?$/.test(txt(x)));
+    if (/^(A list containing:?|Join together the lists within:?)$/.test(t)) {
+      const out = []; let tainted = false;
+      for (const ch of c) {
+        const sub = evalList(ch, env);
+        if (sub === OPAQUE || !sub.known) return sub;
+        tainted = tainted || sub.tainted;
+        out.push(...sub.members);
+      }
+      return { known: true, members: out, tainted };
+    }
+    if (/^(List:?|Remove duplicates from:?|Get list:?)$/.test(t))
+      return c.length === 1 ? evalList(c[0], env)
+           : c.length === 2 && /^For each entry in the list:?$/.test(txt(c[0]))
+             ? evalListMap(c[0], c[1], env) : OPAQUE;
+    if (/^Filter:?$/.test(t) && c.length === 2 &&
+        /^For each entry in the list:?$/.test(txt(c[0])) &&
+        /^Find all records where:?$/.test(txt(c[1]))) {
+      const src = evalLoopSrc(c[0], env);
+      if (src === OPAQUE || !src.known) return src;
+      const kept = []; let tainted = src.tainted;
+      for (const oid of src.members) {
+        env.items.push({ oid, type: typeOf(oid), name: src.name });
+        const r = evalSeq(meaningful(c[1].c), env);
+        env.items.pop();
+        if (r === OPAQUE) return OPAQUE;
+        tainted = tainted || r.tainted;
+        if (!r.known) return { ...unknown(tainted) };
+        if (r.v === "true") kept.push(oid);
+        else if (r.v !== "false") return OPAQUE;
+      }
+      return { known: true, members: kept, tainted, name: src.name };
+    }
+    // plain expression whose value is a (possibly empty) reference list
+    const r = evalItem(it, env);
+    if (r === OPAQUE || !r.known) return r;
+    const ms = listFromVal(r.v);
+    if (ms === null) return OPAQUE;
+    const ident = /^[A-Za-z_]\w*$/.test(t) ? t : undefined;
+    return { known: true, members: ms, tainted: r.tainted, name: ident };
+  }
+  const evalLoopSrc = (forEachItem, env) => {
+    const c = meaningful(forEachItem.c);
+    return c.length === 1 ? evalList(c[0], env) : OPAQUE;
+  };
+  // "For each ... / Get:" producing a list of members (map that yields refs)
+  function evalListMap(loopIt, getIt, env) {
+    const src = evalLoopSrc(loopIt, env);
+    if (src === OPAQUE || !src.known) return src;
+    const out = []; let tainted = src.tainted;
+    for (const oid of src.members) {
+      env.items.push({ oid, type: typeOf(oid), name: src.name });
+      const r = evalSeq(meaningful(getIt.c), env);
+      env.items.pop();
+      if (r === OPAQUE) return OPAQUE;
+      tainted = tainted || r.tainted;
+      if (!r.known) return { ...unknown(tainted) };
+      if (isRef(r.v)) out.push(r.v.ref);
+      else { const ms = listFromVal(r.v); if (ms === null) return OPAQUE; out.push(...ms); }
+    }
+    return { known: true, members: out, tainted };
+  }
+
+  function evalText(t, env) {
+    if (t === "true" || t === "false") return known(t, false);
+    if (t === "null") return known(null, false);
+    if (/^-?\d[\d,]*(\.\d+)?$/.test(t)) return known(t, false);
+    const q = /^"(.*)"$/.exec(t) || /^'(.*)'$/.exec(t);
+    if (q) return known(q[1], false);
+    if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(t)) return known(t, false);
+    // identifier or dotted path rooted at a dependency of this attr
+    const path = /^[A-Za-z_]\w*(\.[A-Za-z_]\w*)*$/.test(t) ? t.split(".") : null;
+    if (path && env.depMap[path[0]]) {
+      let cur = evalAttr(...env.depMap[path[0]], env.ctx);
+      for (const seg of path.slice(1)) {
+        if (!cur.known) return cur;
+        if (!isRef(cur.v)) return OPAQUE;
+        const next = evalAttr(cur.v.ref, seg, env.ctx);
+        cur = { ...next, tainted: next.tainted || cur.tainted };
+      }
+      return cur;
+    }
+    // member reference inside a list loop: (List item[ name]: Type).path
+    const li = /^\(List item(?: (\w+))?: (\w+)\)((?:\.\w+)+)$/.exec(t);
+    if (li) {
+      const bind = [...env.items].reverse().find(b =>
+        li[1] ? (b.name === li[1] || (!b.name && b.type === li[2])) : b.type === li[2]);
+      if (!bind) return OPAQUE;
+      let cur = known({ ref: bind.oid }, false);
+      for (const seg of li[3].slice(1).split(".")) {
+        if (!cur.known) return cur;
+        if (!isRef(cur.v)) return OPAQUE;
+        const next = evalAttr(cur.v.ref, seg, env.ctx);
+        cur = { ...next, tainted: next.tainted || cur.tainted };
+      }
+      return cur;
+    }
+    // dump values render code-table values as the bare label, so strip the
+    // "CodeTable: " prefix off literals to compare in the same currency
+    const code = /^[A-Za-z][\w ]*: (.+)$/.exec(t);
+    if (code) return known(code[1], false);
+    return OPAQUE;
+  }
+
+  function evalBool(cs, env, isAnd) {
+    let tainted = false, undecided = false;
+    const decide = r => {          // short-circuit result, or undefined
+      if (r === OPAQUE) { undecided = true; return; }
+      tainted = tainted || r.tainted;
+      if (!r.known || (r.v !== "true" && r.v !== "false")) { undecided = true; return; }
+      if (isAnd && r.v === "false") return known("false", r.tainted);
+      if (!isAnd && r.v === "true") return known("true", r.tainted);
+    };
+    for (let i = 0; i < cs.length; i++) {
+      // "For each … / Get:" sibling pair = exists (Any of) / forall (All of)
+      if (/^For each entry in the list:?$/.test(txt(cs[i])) &&
+          i + 1 < cs.length && /^Get:?$/.test(txt(cs[i + 1]))) {
+        const src = evalLoopSrc(cs[i], env);
+        i++;
+        if (src === OPAQUE) { undecided = true; continue; }
+        tainted = tainted || src.tainted;
+        if (!src.known) { undecided = true; continue; }
+        for (const oid of src.members) {
+          env.items.push({ oid, type: typeOf(oid), name: src.name });
+          const r = evalSeq(meaningful(cs[i].c), env);
+          env.items.pop();
+          const short = decide(r);
+          if (short) return short;
+        }
+      } else {
+        const short = decide(evalItem(cs[i], env));
+        if (short) return short;
+      }
+    }
+    if (undecided) return OPAQUE;
+    return known(isAnd ? "true" : "false", tainted);
+  }
+
+  const OPS = {
+    "equal to": (a, b) => cmp(a, b) === 0, "not equal to": (a, b) => cmp(a, b) !== 0,
+    "<": (a, b) => cmp(a, b) < 0, ">": (a, b) => cmp(a, b) > 0,
+    "<=": (a, b) => cmp(a, b) <= 0, ">=": (a, b) => cmp(a, b) >= 0,
+  };
+  function cmp(a, b) {
+    const na = num(a), nb = num(b);
+    if (na !== null && nb !== null) return na < nb ? -1 : na > nb ? 1 : 0;
+    const da = a != null && parseDate(String(a)), db = b != null && parseDate(String(b));
+    if (da && db) return da < db ? -1 : da > db ? 1 : 0;
+    const sa = String(a ?? "null"), sb = String(b ?? "null");
+    return sa < sb ? -1 : sa > sb ? 1 : 0;
+  }
+  function evalCompare(cs, env) {
+    const i = cs.findIndex(x => OPS[txt(x)]);
+    if (i < 1 || i === cs.length - 1) return OPAQUE;
+    const op = OPS[txt(cs[i])];
+    const l = evalSeq(cs.slice(0, i), env), r = evalSeq(cs.slice(i + 1), env);
+    if (l === OPAQUE || r === OPAQUE) return OPAQUE;
+    const tainted = l.tainted || r.tainted;
+    if (!l.known || !r.known) return unknown(tainted);
+    // comparing objects makes no sense scalar-wise
+    if (typeof l.v === "object" && l.v || typeof r.v === "object" && r.v) return OPAQUE;
+    return known(String(op(l.v, r.v)), tainted);
+  }
+
+  const ARITH = { "+": (a, b) => a + b, "-": (a, b) => a - b,
+                  "*": (a, b) => a * b, "/": (a, b) => b === 0 ? null : a / b };
+  function evalArith(cs, env) {
+    const i = cs.findIndex(x => ARITH[txt(x)]);
+    if (i < 1 || i === cs.length - 1) return OPAQUE;
+    const l = evalSeq(cs.slice(0, i), env), r = evalSeq(cs.slice(i + 1), env);
+    if (l === OPAQUE || r === OPAQUE) return OPAQUE;
+    const tainted = l.tainted || r.tainted;
+    if (!l.known || !r.known) return unknown(tainted);
+    const nl = num(l.v), nr = num(r.v);
+    if (nl === null || nr === null) return OPAQUE;
+    const v = ARITH[txt(cs[i])](nl, nr);
+    return v === null ? OPAQUE : known(String(v), tainted);
+  }
+
+  function evalProp(p, cs, env) {
+    if (p === "size" && cs.length === 1) {
+      const src = evalList(cs[0], env);
+      if (src !== OPAQUE && src.known && src.members)
+        return known(String(src.members.length), src.tainted);
+      if (src !== OPAQUE && src.known === false) return src;
+    }
+    const base = evalSeq(cs, env);
+    if (base === OPAQUE) return OPAQUE;
+    if (!base.known) return base;
+    if (p === "getCode") return base;               // code value passthrough
+    if (p === "size" && isRefList(base.v)) return known(String(base.v.list.length), base.tainted);
+    if (isRef(base.v)) {
+      const next = evalAttr(base.v.ref, p, env.ctx);
+      return { ...next, tainted: next.tainted || base.tainted };
+    }
+    return OPAQUE;
+  }
+
+  function evalExistence(cs, env) {
+    const part = {};
+    for (const it of cs) {
+      const t = txt(it), sub = meaningful(it.c);
+      if (/^Initial pre-existence/.test(t)) part.v0 = evalSeq(sub, env);
+      else if (/^Until the start/.test(t)) part.d1 = evalSeq(sub, env);
+      else if (/^Then value during/.test(t)) part.v1 = evalSeq(sub, env);
+      else if (/^Until the end/.test(t)) part.d2 = evalSeq(sub, env);
+      else if (/^Then value post/.test(t)) part.v2 = evalSeq(sub, env);
+    }
+    const ps = [part.v0, part.d1, part.v1, part.d2, part.v2];
+    if (ps.some(p => !p || p === OPAQUE)) return OPAQUE;
+    const tainted = ps.some(p => p.tainted);
+    if (ps.some(p => !p.known)) return unknown(tainted);
+    const D1 = part.d1.v && parseDate(String(part.d1.v));
+    const D2 = part.d2.v && parseDate(String(part.d2.v));
+    if (!D1 && !D2) return OPAQUE;
+    if (D1 && env.ctx.when < D1) return known(part.v0.v, tainted);
+    if (!D2 || env.ctx.when <= D2) return known(part.v1.v, tainted);
+    return known(part.v2.v, tainted);
+  }
+
+  function evalTable(tbl, env) {
+    let tainted = false;
+    for (const row of tbl.rows) {
+      if (row.length < 2) continue;
+      const condItems = meaningful(row[0]);
+      const isElse = condItems.length === 1 && /^Otherwise\.?$/.test(txt(condItems[0]));
+      const cond = isElse ? known("true", false) : evalSeq(condItems, env);
+      if (cond === OPAQUE) return OPAQUE;
+      tainted = tainted || cond.tainted;
+      if (!cond.known) return unknown(tainted);
+      if (cond.v === "true") {
+        const then = evalSeq(row[row.length - 1], env);
+        if (then === OPAQUE) return OPAQUE;
+        return { ...then, tainted: then.tainted || tainted };
+      }
+      if (cond.v !== "false") return OPAQUE;
+    }
+    return known(null, tainted);        // no row matched
+  }
+
+  /* replay the whole dump with no overrides and compare against it */
+  function selfTest(when) {
+    const ctx = newCtx(when);
+    const stats = { computed: 0, match: 0, mismatch: 0, opaque: 0, leaf: 0,
+                    stale: 0, other: 0, examples: [] };
+    for (const [oid, ob] of Object.entries(objects)) {
+      for (const an of Object.keys(ob.attrs)) {
+        const res = evalAttr(oid, an, ctx);
+        if (res.why === "leaf") stats.leaf++;
+        else if (res.why === "opaque") stats.opaque++;
+        else if (res.why === "computed") {
+          const at = getAttr(oid, an);
+          if (at.state === "ERROR") { stats.other++; continue; }  // dump has no truth to compare
+          stats.computed++;
+          const base = scalarize(at.value, when);
+          const same = typeof res.v === "object" || typeof base === "object"
+            ? true   // object refs: structural identity not meaningful here
+            : String(res.v ?? "null") === String(base ?? "null");
+          if (same) stats.match++;
+          else {
+            stats.mismatch++;
+            if (stats.examples.length < 12)
+              stats.examples.push([oid, an, String(res.v), String(base)]);
+          }
+        }
+        else if (res.why === "stale") stats.stale++;
+        else stats.other++;
+      }
+    }
+    return stats;
+  }
+
+  return { evalAttr, scalarize, newCtx, selfTest, OPAQUE };
+})({ getAttr, key, parseDate, tlValueAt, isTL, isRef, isRefList, objects: DATA.objects });
+
+/* what-if UI state */
+const wiOverrides = new Map();     // key(o,a) -> scalar string
+function wiWhen() {
+  const d = asOf ? new Date(asOf) : new Date();
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+window.__wiSelfTest = () => JSON.stringify(WI.selfTest(wiWhen()));
+
+function wiChip(o, a, ctx) {
+  if (!ctx) return null;
+  const res = WI.evalAttr(o, a, ctx);
+  if (wiOverrides.has(key(o, a)))
+    return h("span", { class: "wichip ov" }, "✎ " + (res.v ?? "null"));
+  if (!res.known) return res.tainted ? h("span", { class: "wichip stale" }, "stale") : null;
+  const at = getAttr(o, a);
+  const base = at ? WI.scalarize(at.value, ctx.when) : null;
+  if (typeof res.v !== "object" && typeof base !== "object" &&
+      String(res.v ?? "null") !== String(base ?? "null"))
+    return h("span", { class: "wichip now" }, "→ " + (res.v ?? "null"));
+  return null;
+}
+
+function wiEdit(row, o, a) {
+  const k = key(o, a);
+  const at = getAttr(o, a);
+  const cur = wiOverrides.has(k) ? wiOverrides.get(k)
+    : String((at && WI.scalarize(at.value, wiWhen())) ?? "");
+  const commit = v => {
+    if (v === "" || v === cur && !wiOverrides.has(k)) wiOverrides.delete(k);
+    else wiOverrides.set(k, v);
+    render(current);
+  };
+  const inp = h("input", { class: "wiinput", value: cur,
+    onclick: ev => ev.stopPropagation(),
+    onkeydown: ev => {
+      if (ev.key === "Enter") commit(inp.value);
+      else if (ev.key === "Escape") render(current);
+    } });
+  row.dataset.editing = "1";
+  row.replaceChildren(
+    h("span", { class: "name" }, a + " :="), inp,
+    h("button", { class: "wibtn", onclick: ev => { ev.stopPropagation(); commit(inp.value); } },
+      "try it"),
+    wiOverrides.has(k)
+      ? h("button", { class: "wibtn", onclick: ev => { ev.stopPropagation(); commit(""); } },
+          "reset")
+      : null);
+  inp.focus(); inp.select();
+}
+
+/* ------------------------------------------------------- graph view */
+let gDepth = 3;
+let gDir = "deps";           // "deps" = what root depends on; "used" = what uses root
+
+function gNeighbors(o, a) {
+  if (gDir === "deps") {
+    const at = getAttr(o, a);
+    return at ? at.deps : [];
+  }
+  return usedBy[key(o, a)] || [];
+}
+
+/* shared toolbar controls for graph + lanes */
+function depthSelect() {
+  const sel = h("select", null, [3, 5, 10, 15, 20].map(n => {
+    const opt = h("option", { value: n }, n + " levels");
+    if (n === gDepth) opt.selected = true;
+    return opt;
+  }));
+  sel.addEventListener("change", () => { gDepth = +sel.value; render(current); });
+  return sel;
+}
+function dirButtons() {
+  const b = (label, val) => {
+    const on = gDir === val;
+    return h("button", { class: "gdir" + (on ? " on" : ""),
+      onclick: () => { if (gDir !== val) { gDir = val; render(current); } } }, label);
+  };
+  return h("span", { class: "gdirs" }, b("depends on", "deps"), b("used by", "used"));
+}
+
+function buildGraph(rootO, rootA, depth, cap) {
+  cap = cap || 400;
+  const nodes = new Map();   // key -> {o, a, d}
+  const edges = [];          // {from: parentKey, to: depKey}
+  const seenEdge = new Set();
+  const q = [[rootO, rootA, 0]];
+  nodes.set(key(rootO, rootA), { o: rootO, a: rootA, d: 0 });
+  let truncated = false;
+  while (q.length) {
+    const [o, a, d] = q.shift();
+    if (d >= depth) continue;
+    for (const [dO, dA] of gNeighbors(o, a)) {
+      const dk = key(dO, dA);
+      if (!nodes.has(dk)) {
+        if (nodes.size >= cap) { truncated = true; continue; }
+        nodes.set(dk, { o: dO, a: dA, d: d + 1 });
+        q.push([dO, dA, d + 1]);
+      }
+      const ek = key(o, a) + "→" + dk;
+      if (!seenEdge.has(ek)) { seenEdge.add(ek); edges.push({ from: key(o, a), to: dk }); }
+    }
+  }
+  return { nodes, edges, truncated };
+}
+
+function layoutGraph(g) {
+  const COLW = 260, ROWH = 72, PAD = 30;
+  const layers = [];
+  for (const [k, n] of g.nodes) (layers[n.d] ||= []).push(k);
+  const pos = new Map();
+  // initial order = insertion; then 3 barycenter passes on parent y
+  const parentsOf = new Map();
+  for (const e of g.edges) (parentsOf.get(e.to) || parentsOf.set(e.to, []).get(e.to)).push(e.from);
+  layers.forEach((layer, d) => {
+    if (d > 0) {
+      const prevY = k => {
+        const ps = (parentsOf.get(k) || []).map(p => pos.get(p)).filter(Boolean);
+        return ps.length ? ps.reduce((s, p) => s + p.y, 0) / ps.length : 1e9;
+      };
+      layer.sort((a, b) => prevY(a) - prevY(b));
+    }
+    layer.forEach((k, i) => pos.set(k, { x: PAD + d * COLW, y: PAD + i * ROWH }));
+  });
+  const width = PAD * 2 + layers.length * COLW;
+  const height = PAD * 2 + Math.max(...layers.map(l => l.length), 1) * ROWH;
+  return { pos, width, height };
+}
+
+function renderGraph(rootO, rootA) {
+  const at = getAttr(rootO, rootA);
+  if (!at) { view.append(h("div", { class: "empty" }, "not found")); return; }
+  view.style.maxWidth = "none";      // graph uses full width
+  const g = buildGraph(rootO, rootA, gDepth);
+  const { pos, width, height } = layoutGraph(g);
+
+  /* toolbar */
+  view.append(h("div", { class: "gtoolbar" },
+    h("span", null, h("b", null, rootA), " —"),
+    dirButtons(),
+    depthSelect(),
+    h("button", { class: "btn", onclick: () => go({ v: "trace", o: rootO, a: rootA }) },
+      "☰ card view"),
+    h("button", { class: "btn", onclick: () => go({ v: "lanes", o: rootO, a: rootA }) },
+      "⧗ lanes"),
+    h("span", { class: "hint" },
+      g.nodes.size + " nodes · " + g.edges.length + " edges" +
+      (g.truncated ? " · truncated" : "") + " · drag to pan, wheel to zoom, click a node")));
+
+  /* canvas */
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("width", width); svg.setAttribute("height", height);
+  const edgeEls = new Map();
+  const NODE_W = 210, NODE_H = 52;
+  for (const e of g.edges) {
+    const p1 = pos.get(e.from), p2 = pos.get(e.to);
+    if (!p1 || !p2) continue;
+    const x1 = p1.x + NODE_W, y1 = p1.y + NODE_H / 2,
+          x2 = p2.x, y2 = p2.y + NODE_H / 2, mx = (x1 + x2) / 2;
+    const path = document.createElementNS(svgNS, "path");
+    path.setAttribute("d", `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`);
+    path.setAttribute("class", "gedge");
+    svg.append(path);
+    (edgeEls.get(e.from) || edgeEls.set(e.from, []).get(e.from)).push(path);
+    (edgeEls.get(e.to) || edgeEls.set(e.to, []).get(e.to)).push(path);
+  }
+
+  const canvas = h("div", { class: "gcanvas" });
+  canvas.append(svg);
+  const wrap = h("div", { class: "gwrap" });
+  let selK = null;
+  const nodeEls = new Map();
+  for (const [k, n] of g.nodes) {
+    const p = pos.get(k);
+    const nAt = getAttr(n.o, n.a);
+    const st = nAt ? nAt.state : "";
+    let sv = nAt ? shortVal(nAt.value, 30) : "?";
+    if (/^Undescribed instance/.test(sv)) sv = "";
+    const nNext = gNeighbors(n.o, n.a).length;
+    const hidden = n.d === gDepth && nNext > 0;   // frontier with unexpanded neighbors
+    const el = h("div", { class: "gnode " + st + (k === key(rootO, rootA) ? " sel" : ""),
+      style: `left:${p.x}px; top:${p.y}px;` },
+      hidden ? h("span", { class: "gmore" }, "+" + nNext) : null,
+      h("div", { class: "gv" }, sv || " "),
+      h("div", { class: "gn" }, n.a),
+      h("div", { class: "go" }, shortType(n.o)));
+    el.addEventListener("click", ev => { ev.stopPropagation(); select(k); });
+    nodeEls.set(k, el);
+    canvas.append(el);
+  }
+  wrap.append(canvas);
+
+  /* selection panel */
+  let panel = null;
+  function select(k) {
+    if (selK) {
+      nodeEls.get(selK)?.classList.remove("sel");
+      (edgeEls.get(selK) || []).forEach(p => p.classList.remove("hl"));
+    }
+    selK = k;
+    const n = g.nodes.get(k);
+    nodeEls.get(k)?.classList.add("sel");
+    (edgeEls.get(k) || []).forEach(p => p.classList.add("hl"));
+    panel?.remove();
+    const pAt = getAttr(n.o, n.a);
+    const depMap = {};
+    if (pAt) for (const [dO, dA] of pAt.deps) if (!depMap[dA]) depMap[dA] = [dO, dA];
+    panel = h("div", { class: "gpanel", onclick: ev => ev.stopPropagation() },
+      h("button", { class: "close", onclick: () => { panel.remove(); panel = null; } }, "✕"),
+      h("div", { class: "aname" }, n.a),
+      h("div", { class: "row" }, stateChip(pAt ? pAt.state : ""),
+        h("span", { class: "objlink", style: "cursor:pointer; color:var(--muted); font-size:12px",
+          onclick: () => go({ v: "obj", o: n.o }) }, objLabel(n.o))),
+      h("div", { class: "lbl" }, "value"),
+      pAt && isRef(pAt.value)
+        ? h("div", { class: "v" }, h("span", { class: "tok",
+            onclick: () => go({ v: "obj", o: pAt.value.ref }) }, shortType(pAt.value.ref)))
+        : h("div", { class: "v" }, pAt ? shortVal(pAt.value, 300) : "?"),
+      pAt && isTL(pAt.value) ? tlTable(pAt.value.tl) : null,
+      h("div", { class: "lbl" }, "ƒx"),
+      h("div", { class: "deriv" },
+        pAt && pAt.deriv.length ? renderDeriv(pAt.deriv, depMap)
+          : h("i", null, "No derivation — " +
+              (pAt && pAt.state === "SPECIFIED" ? "specified externally." : "n/a."))),
+      h("div", { class: "row", style: "margin-top:14px" },
+        h("button", { class: "btn", style: "border:1px solid var(--hairline); background:none; color:var(--accent); border-radius:6px; padding:3px 10px; cursor:pointer; font:inherit; font-size:12px",
+          onclick: () => go({ v: "trace", o: n.o, a: n.a }) }, "☰ open card"),
+        h("button", { class: "btn", style: "border:1px solid var(--hairline); background:none; color:var(--accent); border-radius:6px; padding:3px 10px; cursor:pointer; font:inherit; font-size:12px",
+          onclick: () => go({ v: "graph", o: n.o, a: n.a }) }, "⊞ re-root graph here")));
+    wrap.append(panel);
+  }
+  wrap.addEventListener("click", () => { if (panel) { panel.remove(); panel = null; } });
+
+  /* pan & zoom */
+  let tx = 20, ty = 20, scale = 1;
+  const apply = () => canvas.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+  apply();
+  let drag = null;
+  wrap.addEventListener("mousedown", ev => {
+    if (ev.target.closest(".gnode") || ev.target.closest(".gpanel")) return;
+    drag = { x: ev.clientX - tx, y: ev.clientY - ty };
+    wrap.classList.add("panning");
+  });
+  window.addEventListener("mousemove", ev => {
+    if (drag) { tx = ev.clientX - drag.x; ty = ev.clientY - drag.y; apply(); }
+  });
+  window.addEventListener("mouseup", () => { drag = null; wrap.classList.remove("panning"); });
+  wrap.addEventListener("wheel", ev => {
+    ev.preventDefault();
+    const r = wrap.getBoundingClientRect();
+    const cx = ev.clientX - r.left, cy = ev.clientY - r.top;
+    const s2 = Math.min(2, Math.max(0.25, scale * Math.exp(-ev.deltaY * 0.0015)));
+    tx = cx - (cx - tx) * (s2 / scale); ty = cy - (cy - ty) * (s2 / scale);
+    scale = s2; apply();
+  }, { passive: false });
+
+  view.append(wrap);
+  select(key(rootO, rootA));
+}
+
+/* ---------------------------------------------------- timeline lanes */
+const LANE_COLORS = ["#1baf7a", "#eda100", "#9085e9", "#e87ba4", "#eb6834",
+                     "#0ca30c", "#d03b3b", "#2a78d6"];
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+let gRange = "4y";           // "4y" = ±2 years around today; "full" = every boundary
+
+function collectLanes(rootO, rootA, maxLanes) {
+  // BFS in the active direction; every attr is a lane (fixed values included)
+  const lanes = [];
+  const seen = new Set([key(rootO, rootA)]);
+  const q = [[rootO, rootA, 0]];
+  let truncated = false;
+  while (q.length) {
+    if (lanes.length >= maxLanes) { truncated = true; break; }
+    const [o, a, d] = q.shift();
+    const at = getAttr(o, a);
+    if (!at) continue;
+    lanes.push({ o, a, d, at });
+    if (d < gDepth) for (const [dO, dA] of gNeighbors(o, a)) {
+      const k = key(dO, dA);
+      if (!seen.has(k)) { seen.add(k); q.push([dO, dA, d + 1]); }
+    }
+  }
+  return { lanes, truncated };
+}
+
+function renderLanes(rootO, rootA) {
+  const rootAt = getAttr(rootO, rootA);
+  if (!rootAt) { view.append(h("div", { class: "empty" }, "not found")); return; }
+  view.style.maxWidth = "none";
+  const { lanes, truncated } = collectLanes(rootO, rootA, 40);
+
+  /* shared time domain from every finite interval boundary */
+  const bounds = [];
+  for (const l of lanes) if (isTL(l.at.value))
+    for (const [f, t] of l.at.value.tl)
+      for (const d of [parseDate(f), parseDate(t)])
+        if (d) bounds.push(d);
+  bounds.sort((a, b) => a - b);
+  if (!bounds.length) {
+    view.append(h("div", { class: "empty" },
+      "No timeline values among these attributes — nothing to plot. ",
+      h("a", { class: "plain", onclick: () => go({ v: "trace", o: rootO, a: rootA }) },
+        "open card view →")));
+    return;
+  }
+  let min, max, clipped = false;
+  if (gRange === "4y") {
+    // eligibility work lives around "now" — last 2 + next 2 years by default
+    const now = new Date();
+    min = new Date(now.getFullYear() - 2, now.getMonth(), 1);
+    max = new Date(now.getFullYear() + 2, now.getMonth(), 1);
+    clipped = bounds[0] < min || bounds[bounds.length - 1] > max;
+  } else {
+    min = bounds[0]; max = bounds[bounds.length - 1];
+    // frame the ROOT's own boundaries — dep intervals often span decades of
+    // sentinel dates and would crush the busy region
+    const rootBounds = isTL(rootAt.value)
+      ? rootAt.value.tl.flatMap(([f, t]) => [parseDate(f), parseDate(t)]).filter(Boolean)
+      : [];
+    if (rootBounds.length >= 2) {
+      const rMin = new Date(Math.min(...rootBounds)), rMax = new Date(Math.max(...rootBounds));
+      const pad = Math.max((rMax - rMin) * 0.15, 90 * 864e5);
+      const fMin = new Date(Math.max(+rMin - pad, +min)), fMax = new Date(Math.min(+rMax + pad, +max));
+      clipped = +fMin > +min || +fMax < +max;
+      min = fMin; max = fMax;
+    }
+    if (+min === +max) { min = new Date(+min - 180 * 864e5); max = new Date(+max + 180 * 864e5); }
+  }
+  const span = max - min;
+  const t0 = new Date(+min - span * 0.05), t1 = new Date(+max + span * 0.07);
+  const X = d => ((d - t0) / (t1 - t0)) * 100;
+
+  view.append(h("div", { class: "gtoolbar" },
+    h("span", null, h("b", null, rootA), " —"),
+    dirButtons(),
+    depthSelect(),
+    h("button", { class: "btn",
+      onclick: () => { gRange = gRange === "4y" ? "full" : "4y"; render(current); } },
+      gRange === "4y" ? "⟷ full range" : "⟷ ±2 years"),
+    h("button", { class: "btn", onclick: () => go({ v: "trace", o: rootO, a: rootA }) },
+      "☰ card view"),
+    h("button", { class: "btn", onclick: () => go({ v: "graph", o: rootO, a: rootA }) },
+      "⊞ graph"),
+    h("span", { class: "hint" }, lanes.length + " lanes" + (truncated ? " (capped)" : "") +
+      (clipped ? " · clipped, intervals run off the edges" : "") +
+      " · dashed = " + rootA +
+      " changes · hover to inspect · click to pin as-of date")));
+
+  /* axis ticks: months up to ~5y spans (decimated below), years otherwise */
+  const step = (t1 - t0) / 864e5 <= 1900 ? "m" : "y";
+  const tickDates = [];
+  let cd = step === "m" ? new Date(t0.getFullYear(), t0.getMonth(), 1)
+                        : new Date(t0.getFullYear(), 0, 1);
+  while (cd <= t1) {
+    if (cd >= t0) tickDates.push(new Date(cd));
+    cd = step === "m" ? new Date(cd.getFullYear(), cd.getMonth() + 1, 1)
+                      : new Date(cd.getFullYear() + 1, 0, 1);
+  }
+  if (tickDates.length > 14) {
+    const k = Math.ceil(tickDates.length / 14);
+    for (let i = tickDates.length - 1; i >= 0; i--)
+      if ((step === "m" ? tickDates[i].getMonth() : tickDates[i].getFullYear()) % k)
+        tickDates.splice(i, 1);
+  }
+  const fmtTick = d => step === "m"
+    ? MONTHS[d.getMonth()] + (d.getMonth() === 0 ? " " + d.getFullYear() : "")
+    : String(d.getFullYear());
+
+  const box = h("div", { class: "lanes" });
+  const dateCell = h("div", { class: "lcurcol", style: "font-weight:600" });
+  box.append(h("div", { class: "lrow laxis" },
+    h("div", { class: "llabel", style: "cursor:default" }),
+    h("div", { class: "ltrack" },
+      tickDates.map(d => h("span", { class: "ltick", style: "left:" + X(d) + "%" }, fmtTick(d)))),
+    dateCell));
+
+  const valCells = [];
+  for (const l of lanes) {
+    const track = h("div", { class: "ltrack" });
+    for (const d of tickDates)
+      track.append(h("i", { class: "lgrid", style: "left:" + X(d) + "%" }));
+    if (isTL(l.at.value)) {
+      const vmap = new Map();
+      for (const [f, t, v] of l.at.value.tl) {
+        const df = parseDate(f), dt = parseDate(t);
+        const x1 = df ? Math.max(X(df), 0) : 0;
+        const x2 = dt ? Math.min(X(dt), 100) : 100;
+        if (x1 >= 100 || x2 <= 0) continue;   // interval entirely outside the axis
+        let color;
+        if (v === "true") color = "var(--accent)";
+        else if (v === "false" || v === "null") color = "#898781";
+        else {
+          if (!vmap.has(v)) vmap.set(v, LANE_COLORS[vmap.size % LANE_COLORS.length]);
+          color = vmap.get(v);
+        }
+        track.append(h("div", { class: "lseg" + (v === "false" || v === "null" ? " off" : ""),
+          title: f + " → " + t + " : " + v,
+          style: `left:${x1}%; width:${Math.max(x2 - x1, 0.4)}%; --c:${color}` },
+          h("span", null, v)));
+      }
+    } else {
+      track.append(h("div", { class: "lflat" }, shortVal(l.at.value, 44) + " · fixed"));
+    }
+    const vc = h("div", { class: "lcurcol" });
+    valCells.push([l, vc]);
+    box.append(h("div", { class: "lrow" + (l.d === 0 ? " root" : "") },
+      h("div", { class: "llabel", style: "padding-left:" + (10 + Math.min(l.d, 3) * 12) + "px",
+        title: objDesc(l.o),
+        onclick: ev => { ev.stopPropagation(); go({ v: "trace", o: l.o, a: l.a }); } },
+        h("div", { class: "ln" }, l.a), h("div", { class: "lo" }, shortType(l.o))),
+      track, vc));
+  }
+
+  /* overlay spanning the track column: root-change markers + hover cursor */
+  const overlay = h("div", { class: "loverlay" });
+  if (isTL(rootAt.value)) {
+    const seenD = new Set();
+    for (const [f] of rootAt.value.tl) {
+      const d = parseDate(f);
+      if (d && !seenD.has(+d) && X(d) >= 0 && X(d) <= 100)
+        { seenD.add(+d); overlay.append(h("i", { class: "lmark", style: "left:" + X(d) + "%" })); }
+    }
+  }
+  const cursor = h("i", { class: "lcursor", style: "display:none" });
+  overlay.append(cursor);
+  box.append(overlay);
+
+  const today0 = new Date();
+  today0.setHours(0, 0, 0, 0);
+  function setCursor(d) {
+    d = d || today0;   // resting state is always a real date, never blank
+    dateCell.textContent = d.toLocaleDateString();
+    for (const [l, vc] of valCells)
+      vc.textContent = d
+        ? (isTL(l.at.value) ? (tlValueAt(l.at.value.tl, d) ?? "—") : shortVal(l.at.value, 14))
+        : "";
+    if (d && d >= t0 && d <= t1) { cursor.style.display = ""; cursor.style.left = X(d) + "%"; }
+    else cursor.style.display = "none";
+  }
+  const frAt = ev => {
+    const r = overlay.getBoundingClientRect();
+    return r.width ? (ev.clientX - r.left) / r.width : NaN;
+  };
+  box.addEventListener("mousemove", ev => {
+    const fr = frAt(ev);
+    if (!isFinite(fr) || fr < 0 || fr > 1) { setCursor(asOf); return; }
+    setCursor(new Date(+t0 + fr * (t1 - t0)));
+  });
+  box.addEventListener("mouseleave", () => setCursor(asOf));
+  box.addEventListener("click", ev => {
+    const fr = frAt(ev);
+    if (!isFinite(fr) || fr < 0 || fr > 1) return;
+    asOf = new Date(+t0 + fr * (t1 - t0));
+    asOf.setHours(0, 0, 0, 0);
+    document.getElementById("asof").value =
+      asOf.getFullYear() + "-" + String(asOf.getMonth() + 1).padStart(2, "0") +
+      "-" + String(asOf.getDate()).padStart(2, "0");
+    render(current);
+  });
+
+  view.append(box);
+  setCursor(asOf);
+}
+
+/* ------------------------------------------------------- views */
+const view = document.getElementById("view");
+const history = [];
+let current = null;
+
+function locHash(loc) {
+  if (loc.v === "graph") return "#g/" + encodeURIComponent(loc.o) + "/" + encodeURIComponent(loc.a);
+  if (loc.v === "lanes") return "#l/" + encodeURIComponent(loc.o) + "/" + encodeURIComponent(loc.a);
+  if (loc.v === "trace") return "#t/" + encodeURIComponent(loc.o) + "/" + encodeURIComponent(loc.a);
+  if (loc.v === "obj") return "#o/" + encodeURIComponent(loc.o);
+  if (loc.v === "ruleset") return "#r/" + encodeURIComponent(loc.name);
+  if (loc.v === "errors") return "#e";
+  return "#";
+}
+function parseHash(hash) {
+  const p = (hash || "").replace(/^#/, "").split("/").map(decodeURIComponent);
+  if (p[0] === "g" && p[2]) return { v: "graph", o: p[1], a: p[2] };
+  if (p[0] === "l" && p[2]) return { v: "lanes", o: p[1], a: p[2] };
+  if (p[0] === "t" && p[2]) return { v: "trace", o: p[1], a: p[2] };
+  if (p[0] === "o" && p[1]) return { v: "obj", o: p[1] };
+  if (p[0] === "r" && p[1]) return { v: "ruleset", name: p[1] };
+  if (p[0] === "e") return { v: "errors" };
+  return { v: "home" };
+}
+function go(loc, replace) {
+  if (current && !replace) history.push(current);
+  current = loc;
+  document.getElementById("backBtn").disabled = history.length === 0;
+  window.history.replaceState(null, "", locHash(loc));
+  render(loc);
+}
+document.getElementById("backBtn").addEventListener("click", () => {
+  if (history.length) { current = history.pop(); render(current); }
+  document.getElementById("backBtn").disabled = history.length === 0;
+});
+
+function render(loc) {
+  view.replaceChildren();
+  view.style.maxWidth = "";
+  document.getElementById("main").scrollTop = 0;
+  if (loc.v === "trace") {
+    const i = trail.findIndex(t => t.o === loc.o && t.a === loc.a);
+    if (i >= 0) trail = trail.slice(0, i + 1);
+    else if (loc.ext) trail.push({ o: loc.o, a: loc.a });
+    else trail = [{ o: loc.o, a: loc.a }];
+    renderFocus(loc.o, loc.a);
+  }
+  else if (loc.v === "graph") renderGraph(loc.o, loc.a);
+  else if (loc.v === "lanes") renderLanes(loc.o, loc.a);
+  else if (loc.v === "home") renderHome();
+  else if (loc.v === "obj") renderObject(loc.o);
+  else if (loc.v === "ruleset") renderRuleset(loc.name);
+  else if (loc.v === "errors") renderErrors();
+}
+
+function renderHome() {
+  const m = DATA.meta;
+  view.append(
+    h("div", { class: "tiles" },
+      tile(m.objects, "rule objects"),
+      tile(m.attributes, "attributes"),
+      tile(m.edges, "dependency edges"),
+      h("div", { class: "tile err", onclick: () => go({ v: "errors" }), style: "cursor:pointer" },
+        h("div", { class: "v" }, String(errAttrs.length)),
+        h("div", { class: "k" }, errRoots.length + " root causes — view →"))));
+
+  if (errRoots.length) {
+    view.append(h("h2", { class: "sec" }, "Error root causes"));
+    const card = h("div", { class: "card" });
+    for (const [o, a] of errRoots.slice(0, 12)) {
+      card.append(h("div", { class: "rowline", onclick: () => go({ v: "trace", o, a }) },
+        stateChip("ERROR"), h("span", { class: "name" }, a),
+        h("span", { class: "sub", title: objDesc(o) }, objLabel(o))));
+    }
+    if (errRoots.length > 12) {
+      card.append(h("div", { class: "rowline", onclick: () => go({ v: "errors" }) },
+        h("a", { class: "plain" }, "all " + errRoots.length + " root causes →")));
+    }
+    view.append(card);
+  }
+
+  view.append(h("h2", { class: "sec" }, "Rule sets"));
+  const card = h("div", { class: "card" });
+  for (const name of Object.keys(DATA.rulesets).sort()) {
+    card.append(h("div", { class: "rowline", onclick: () => go({ v: "ruleset", name }) },
+      h("span", { class: "name" }, name),
+      h("span", { class: "sub" }, ""),
+      h("span", { class: "cnt" }, DATA.rulesets[name].length + " objects")));
+  }
+  view.append(card);
+  function tile(v, k) {
+    return h("div", { class: "tile" }, h("div", { class: "v" }, String(v)),
+             h("div", { class: "k" }, k));
+  }
+}
+
+function renderErrors() {
+  view.append(h("h2", { class: "sec" }, "Error root causes (" + errRoots.length + ")"),
+    listCard(errRoots),
+    h("h2", { class: "sec" }, "All ERROR attributes (" + errAttrs.length + ")"),
+    listCard(errAttrs));
+  function listCard(list) {
+    const card = h("div", { class: "card" });
+    for (const [o, a] of list) {
+      card.append(h("div", { class: "rowline", onclick: () => go({ v: "trace", o, a }) },
+        stateChip("ERROR"), h("span", { class: "name" }, a),
+        h("span", { class: "sub", title: objDesc(o) }, objLabel(o))));
+    }
+    if (!list.length) card.append(h("div", { class: "empty" }, "none"));
+    return card;
+  }
+}
+
+function renderRuleset(name) {
+  view.append(h("h2", { class: "sec" }, name));
+  const card = h("div", { class: "card" });
+  for (const oid of DATA.rulesets[name] || []) {
+    const ob = DATA.objects[oid];
+    const nErr = Object.values(ob.attrs).filter(a => a.state === "ERROR").length;
+    card.append(h("div", { class: "rowline", onclick: () => go({ v: "obj", o: oid }) },
+      h("span", { class: "name" }, objLabel(oid)),
+      h("span", { class: "sub" }, ob.desc || ""),
+      nErr ? h("span", { class: "chip ERROR" }, nErr + " errors") : null,
+      h("span", { class: "cnt" }, Object.keys(ob.attrs).length + " attrs")));
+  }
+  view.append(card);
+}
+
+function renderObject(oid) {
+  const ob = DATA.objects[oid];
+  if (!ob) { view.append(h("div", { class: "empty" }, "Unknown object " + oid)); return; }
+  const card = h("div", { class: "card" });
+  card.append(h("div", { class: "objhead" },
+    h("div", { class: "desc" }, objLabel(oid)),
+    h("div", { class: "meta" },
+      h("b", null, ob.type), " · ", ob.ruleset || "", " · ",
+      ob.creation, " · ", ob.action),
+    ob.desc ? h("div", { class: "meta" }, ob.desc) : null));
+  for (const [an, at] of Object.entries(ob.attrs)) {
+    card.append(h("div", { class: "rowline", onclick: () => go({ v: "trace", o: oid, a: an }) },
+      stateChip(at.state),
+      h("span", { class: "name" }, an),
+      h("span", { class: "val" }, shortVal(at.value, 90))));
+  }
+  view.append(card);
+}
+
+/* ------------------------------------------------------- search UI */
+const searchEl = document.getElementById("search");
+const resultsEl = document.getElementById("results");
+let sel = -1, hits = [];
+function showResults() {
+  hits = doSearch(searchEl.value); sel = -1;
+  resultsEl.replaceChildren();
+  if (!hits.length) { resultsEl.style.display = "none"; return; }
+  hits.forEach((e, i) => {
+    resultsEl.append(h("div", { class: "r", "data-i": i,
+      onclick: () => pick(e) },
+      e.a ? stateChip(getAttr(e.o, e.a).state) : h("span", { class: "chip other" }, "OBJECT"),
+      h("span", { class: "name" }, e.label),
+      h("span", { class: "sub" }, e.sub)));
+  });
+  resultsEl.style.display = "block";
+}
+function pick(e) {
+  resultsEl.style.display = "none"; searchEl.blur();
+  go(e.a ? { v: "trace", o: e.o, a: e.a } : { v: "obj", o: e.o });
+}
+searchEl.addEventListener("input", showResults);
+searchEl.addEventListener("focus", () => { if (searchEl.value) showResults(); });
+searchEl.addEventListener("keydown", ev => {
+  if (ev.key === "Escape") { resultsEl.style.display = "none"; searchEl.blur(); }
+  else if (ev.key === "ArrowDown" || ev.key === "ArrowUp") {
+    ev.preventDefault();
+    sel = Math.max(0, Math.min(hits.length - 1, sel + (ev.key === "ArrowDown" ? 1 : -1)));
+    [...resultsEl.children].forEach((c, i) => c.classList.toggle("sel", i === sel));
+    resultsEl.children[sel] && resultsEl.children[sel].scrollIntoView({ block: "nearest" });
+  } else if (ev.key === "Enter" && sel >= 0) pick(hits[sel]);
+  else if (ev.key === "Enter" && hits.length) pick(hits[0]);
+});
+document.addEventListener("keydown", ev => {
+  if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "k") {
+    ev.preventDefault(); searchEl.focus(); searchEl.select();
+  }
+});
+document.addEventListener("click", ev => {
+  if (!document.getElementById("searchWrap").contains(ev.target))
+    resultsEl.style.display = "none";
+});
+document.getElementById("asof").value =
+  asOf.getFullYear() + "-" + String(asOf.getMonth() + 1).padStart(2, "0") +
+  "-" + String(asOf.getDate()).padStart(2, "0");
+document.getElementById("asof").addEventListener("change", ev => {
+  asOf = ev.target.value ? new Date(ev.target.value + "T00:00:00") : null;
+  render(current);
+});
+
+go(parseHash(location.hash), true);
+window.addEventListener("hashchange", () => {
+  const loc = parseHash(location.hash);
+  if (locHash(loc) !== locHash(current)) go(loc);
+});
+</script>

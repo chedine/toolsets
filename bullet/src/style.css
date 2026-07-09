@@ -1,5 +1,20 @@
 /* Bundled fallback font — keeps Windows/Linux from ugly system monos. */
 @import "@fontsource-variable/jetbrains-mono";
+/* Left's serif and sans pair (Zilla Slab, Inter) for the `font` command. */
+@import "@fontsource/zilla-slab/400.css";
+@import "@fontsource/zilla-slab/700.css";
+@import "@fontsource-variable/inter";
+
+/* Left's mono is Input Mono, which isn't freely redistributable —
+   scripts/fetch-fonts.mjs vendors it into public/fonts/ (gitignored).
+   When absent this face fails to load and the stack falls through to
+   SF Mono / JetBrains Mono. */
+@font-face {
+  font-family: "Input Mono";
+  src: local("Input Mono"), url("/fonts/input-mono.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Monochrome, two moods. Every color on this page derives from these
    four. The OS picks the mood by default; the `theme` command pins it
@@ -9,6 +24,22 @@
   --fg: #222222;
   --dim: #999999;
   --faint: #d6d6d6;
+
+  /* Left's three faces; the `font` command picks via data-font. */
+  --font-mono:
+    "Input Mono", "SF Mono", "JetBrains Mono Variable", ui-monospace,
+    "Cascadia Mono", Menlo, Consolas, monospace;
+  --font-serif: "Zilla Slab", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, "Segoe UI", sans-serif;
+  --app-font: var(--font-mono);
+}
+
+:root[data-font="serif"] {
+  --app-font: var(--font-serif);
+}
+
+:root[data-font="sans"] {
+  --app-font: var(--font-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -67,11 +98,7 @@ body {
 body {
   background: var(--bg);
   color: var(--fg);
-  /* SF Mono on macOS; bundled JetBrains Mono everywhere else, so
-     Windows/Linux don't fall back to poorly-hinted system monos. */
-  font-family:
-    "SF Mono", "JetBrains Mono Variable", ui-monospace, "Cascadia Mono",
-    Menlo, Consolas, monospace;
+  font-family: var(--app-font);
   display: flex;
   flex-direction: column;
 }

@@ -1,5 +1,6 @@
 import "./style.css";
 import { initTheme } from "./colorscheme";
+import { initFont } from "./fonts";
 import { createEditor } from "./editor";
 import { createSidebar } from "./sidebar";
 import { setupSidebarResize } from "./resize";
@@ -12,6 +13,7 @@ import { showSearchResults } from "./searchui";
 import { ask } from "./ask";
 
 initTheme();
+initFont();
 
 const statusLeft = document.getElementById("status-left")!;
 

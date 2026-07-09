@@ -49,6 +49,7 @@ Tab completes, Enter runs. `help` lists all commands. The highlights:
 | `search <query>` | ranked hybrid search, Enter opens at the matching section |
 | `ask <question>` | local LLM answers from your notes, with clickable sources |
 | `theme [dark\|light\|paper\|auto]` | switch palette; bare `theme` cycles |
+| `font [mono\|serif\|sans]` | Left's font trio; bare `font` cycles |
 | `sidebar` (or Cmd+\\) | hide/show the file tree |
 
 Relative paths in commands resolve against the folder selected in the
@@ -78,9 +79,16 @@ picks via `prefers-color-scheme`, the `theme` command pins via a
 expressed through weight and shade, never hue. Dark mode additionally
 uses grayscale font antialiasing and weight-800 headings because
 light-on-dark subpixel rendering optically flattens the bold/regular
-hierarchy. The font stack is SF Mono on macOS with a bundled JetBrains
-Mono variable font everywhere else, so Windows/Linux don't fall back
-to poorly hinted system monospaces.
+hierarchy.
+
+Typography follows Left literally: the `font` command cycles the same
+trio Left ships — Input Mono, Zilla Slab, Inter — via one CSS variable
+(`--app-font`) that everything inherits. Zilla Slab and Inter are OFL
+and bundled from npm; Input Mono is not redistributable, so
+`node scripts/fetch-fonts.mjs` vendors it into `public/fonts/`
+(gitignored) — without it the mono stack falls back to SF Mono on
+macOS and bundled JetBrains Mono elsewhere, so Windows/Linux never see
+poorly hinted system monospaces.
 
 ### Vault: real files, browser only
 

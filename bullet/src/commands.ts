@@ -6,6 +6,7 @@ import {
   renameByPath,
 } from "./vault";
 import { applyTheme, effectiveTheme, THEMES } from "./colorscheme";
+import { applyFont, currentFont, FONTS, type FontMode } from "./fonts";
 
 // A single command line instead of menus: Cmd+K turns the status bar
 // into a prompt. Commands are word-prefixed ("new file notes/todo"),
@@ -196,6 +197,20 @@ const COMMANDS: Command[] = [
         THEMES[(THEMES.indexOf(effectiveTheme()) + 1) % THEMES.length];
       applyTheme(next);
       return `theme: ${next}`;
+    },
+  },
+  {
+    name: "font",
+    usage: "font [mono|serif|sans]  (no arg: cycle, like Left)",
+    async run(args) {
+      if ((FONTS as readonly string[]).includes(args)) {
+        applyFont(args as FontMode);
+        return `font: ${args}`;
+      }
+      if (args) throw new Error("usage: font [mono|serif|sans]");
+      const next = FONTS[(FONTS.indexOf(currentFont()) + 1) % FONTS.length];
+      applyFont(next);
+      return `font: ${next}`;
     },
   },
   {

@@ -186,6 +186,16 @@ body.resizing {
   font-style: italic;
 }
 
+/* Drag-and-drop reorganize: highlight the folder about to receive. */
+#sidebar .entry.drop-target {
+  background: var(--faint);
+  color: var(--fg);
+}
+
+#sidebar.drop-target {
+  background: var(--faint);
+}
+
 #editor {
   flex: 1;
   min-width: 0;

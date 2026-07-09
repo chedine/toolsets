@@ -54,6 +54,10 @@ Tab completes, Enter runs. `help` lists all commands. The highlights:
 
 Relative paths in commands resolve against the folder selected in the
 sidebar, else the open file's folder; a leading `/` pins to the vault
+root. **Ctrl+N** and **Ctrl+R** open the bar prefilled with `new file`
+and `rename` (the current name pre-selected). Files and folders can
+also be dragged in the sidebar to reorganize — onto a folder, onto a
+file (meaning that file's folder), or onto empty space for the vault
 root. Paste an image and it becomes a real file under `blobs/` with a
 markdown reference; drag its corner to resize (the width is written
 back into the reference text).

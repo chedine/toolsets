@@ -12,6 +12,8 @@ export interface SidebarCallbacks {
   onOpenFile(node: TreeNode | null): void | Promise<void>;
   // fired once whenever a (different) vault becomes available
   onVaultOpen?(root: FileSystemDirectoryHandle): void;
+  // drag-and-drop reorganize: move path into destFolder ("" = root)
+  onMove?(path: string, destFolder: string): Promise<void>;
 }
 
 export interface SidebarApi {
@@ -105,13 +107,57 @@ export function createSidebar(
     render();
   }
 
+  // ---- Drag-and-drop reorganize. Entries carry their vault path in a
+  // custom data type so stray drags (text, files from the OS) are
+  // ignored. Folders and the sidebar background (= vault root) accept
+  // drops. ----
+  const DRAG_TYPE = "application/x-bullet-path";
+
+  function makeDraggable(el: HTMLElement, node: TreeNode): void {
+    el.draggable = true;
+    el.addEventListener("dragstart", (e) => {
+      e.dataTransfer!.setData(DRAG_TYPE, node.path);
+      e.dataTransfer!.effectAllowed = "move";
+    });
+  }
+
+  // Moving a folder into itself/its descendants would eat it; into its
+  // own parent is a no-op.
+  function validDrop(src: string, destFolder: string): boolean {
+    if (!src) return false;
+    if (destFolder === src || destFolder.startsWith(src + "/")) return false;
+    const dir = src.includes("/") ? src.slice(0, src.lastIndexOf("/")) : "";
+    return dir !== destFolder;
+  }
+
+  function makeDropTarget(el: HTMLElement, destFolder: string): void {
+    el.addEventListener("dragover", (e) => {
+      if (!e.dataTransfer?.types.includes(DRAG_TYPE)) return;
+      e.preventDefault();
+      e.stopPropagation();
+      e.dataTransfer.dropEffect = "move";
+      el.classList.add("drop-target");
+    });
+    el.addEventListener("dragleave", () => el.classList.remove("drop-target"));
+    el.addEventListener("drop", (e) => {
+      el.classList.remove("drop-target");
+      const src = e.dataTransfer?.getData(DRAG_TYPE) ?? "";
+      if (!e.dataTransfer?.types.includes(DRAG_TYPE)) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (validDrop(src, destFolder)) void callbacks.onMove?.(src, destFolder);
+    });
+  }
+
   function renderNodes(container: HTMLElement, nodes: TreeNode[], depth: number): void {
     for (const node of nodes) {
       const b = entryButton("", depth);
+      makeDraggable(b, node);
       if (node.kind === "dir") {
         const open = expanded.has(node.path);
         b.textContent = `${open ? "▾" : "▸"} ${node.name}`;
         b.classList.add("folder");
+        makeDropTarget(b, node.path);
         if (selectedDir?.path === node.path) b.classList.add("selected");
         b.addEventListener("click", () => {
           if (expanded.has(node.path)) expanded.delete(node.path);
@@ -124,6 +170,11 @@ export function createSidebar(
         if (open) renderNodes(container, node.children ?? [], depth + 1);
       } else {
         b.textContent = node.name;
+        // dropping on a file means "into this file's folder"
+        const dir = node.path.includes("/")
+          ? node.path.slice(0, node.path.lastIndexOf("/"))
+          : "";
+        makeDropTarget(b, dir);
         if (node.path === activePath) b.classList.add("active");
         b.addEventListener("click", () => {
           selectedDir = null; // relative paths follow the file's folder now
@@ -168,6 +219,7 @@ export function createSidebar(
     renderNodes(parent, tree, 0);
   }
 
+  makeDropTarget(parent, ""); // sidebar background = vault root
   render();
 
   // If a vault was opened in a past session and permission survived,

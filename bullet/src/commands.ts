@@ -67,7 +67,7 @@ function resolve(ctx: CommandContext, path: string): string {
 const COMMANDS: Command[] = [
   {
     name: "new file",
-    usage: "new file <path>  (relative to selection; /path for vault root)",
+    usage: "new file <path>  (Ctrl+N; relative to selection, /path for root)",
     async run(args, ctx) {
       if (!args) throw new Error("usage: new file <path>");
       const path = await ensureFile(needVault(ctx), resolve(ctx, args));
@@ -99,7 +99,7 @@ const COMMANDS: Command[] = [
   },
   {
     name: "rename",
-    usage: "rename <new name>  (current file)",
+    usage: "rename <new name>  (Ctrl+R; current file)",
     async run(args, ctx) {
       if (!args) throw new Error("usage: rename <new name>");
       const vault = needVault(ctx);
@@ -279,10 +279,16 @@ export function setupCommands(ctx: CommandContext): void {
     ctx.focusEditor();
   };
 
-  const open = () => {
+  // Open the bar, optionally prefilled ("new file ") so shortcuts drop
+  // the user straight into typing the interesting part.
+  const open = (prefill = "", selectFrom = prefill.length) => {
     document.body.classList.add("command-mode");
+    pending = null;
+    input.value = prefill;
     showSuggestions();
     input.focus();
+    // selecting the argument part lets typing replace it outright
+    input.setSelectionRange(selectFrom, prefill.length);
   };
 
   function showSuggestions(): void {
@@ -302,6 +308,14 @@ export function setupCommands(ctx: CommandContext): void {
       e.preventDefault();
       if (document.body.classList.contains("command-mode")) close();
       else open();
+    } else if (e.key === "n" && e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      open("new file ");
+    } else if (e.key === "r" && e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      // prefill the current name so renaming is an edit, not a retype
+      const path = ctx.currentPath();
+      open(`rename ${path ? path.split("/").pop() : ""}`, "rename ".length);
     }
   });
 

@@ -7,7 +7,7 @@ import { setupSidebarResize } from "./resize";
 import { setupCommands } from "./commands";
 import { setImageVault } from "./images";
 import { load as loadScratch, save as saveScratch } from "./storage";
-import { readFile, splitPath, writeFile } from "./vault";
+import { moveByPath, readFile, splitPath, writeFile } from "./vault";
 import { initSearch, query, rescan, updateFile } from "./search";
 import { showSearchResults } from "./searchui";
 import { ask } from "./ask";
@@ -92,6 +92,27 @@ const sidebar = createSidebar(document.getElementById("sidebar")!, {
   },
   onVaultOpen(root) {
     void initSearch(root, notify);
+  },
+  async onMove(path, destFolder) {
+    const vault = sidebar.vault();
+    if (!vault) return;
+    await flushSave();
+    try {
+      const newPath = await moveByPath(vault, path, destFolder);
+      const openWasInside =
+        currentPath !== null &&
+        (currentPath === path || currentPath.startsWith(path + "/"));
+      await sidebar.refresh();
+      void rescan();
+      if (openWasInside) {
+        // follow the open file to its new home
+        await sidebar.openPath(newPath + currentPath!.slice(path.length));
+      }
+      notify(`moved to ${newPath}`);
+    } catch (err) {
+      console.error(err);
+      notify(`move failed: ${(err as Error).message}`);
+    }
   },
 });
 

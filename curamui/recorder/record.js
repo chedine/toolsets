@@ -28,6 +28,22 @@ function loadConfig() {
     headless: args.includes('--headless'),
     extraHTTPHeaders: cfg.extraHTTPHeaders || {},
     viewport: cfg.viewport || { width: 1800, height: 1000 },
+    // headed windows open maximized unless "maximized": false in config;
+    // headless always uses the fixed viewport
+    maximized: cfg.maximized !== false,
+  };
+}
+
+// Launch options honoring maximized-vs-viewport (shared with replay.js).
+function browserOptions(cfg, headless) {
+  const maximized = !headless && cfg.maximized !== false;
+  return {
+    launch: { headless, args: maximized ? ['--start-maximized'] : [] },
+    context: {
+      viewport: maximized ? null : (cfg.viewport || { width: 1800, height: 1000 }),
+      ignoreHTTPSErrors: true,
+      extraHTTPHeaders: cfg.extraHTTPHeaders || {},
+    },
   };
 }
 
@@ -192,8 +208,9 @@ async function main() {
   if (!cfg.url) { console.error('No URL configured. Set "url" in config.json or pass --url.'); process.exit(1); }
   fs.mkdirSync(cfg.dataDir, { recursive: true });
 
-  const browser = await chromium.launch({ headless: cfg.headless });
-  const ctx = await browser.newContext({ viewport: cfg.viewport, ignoreHTTPSErrors: true, extraHTTPHeaders: cfg.extraHTTPHeaders });
+  const opts = browserOptions(cfg, cfg.headless);
+  const browser = await chromium.launch(opts.launch);
+  const ctx = await browser.newContext(opts.context);
   const page = await ctx.newPage();
   const state = await setupRecorder(page, cfg);
 
@@ -223,5 +240,5 @@ async function main() {
   await browser.close().catch(() => {});
 }
 
-module.exports = { setupRecorder, closeAllTabs, loadConfig, toDsl };
+module.exports = { setupRecorder, closeAllTabs, loadConfig, toDsl, browserOptions };
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });

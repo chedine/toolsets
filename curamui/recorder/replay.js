@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 const { CuramDriver } = require('./curam-driver');
-const { closeAllTabs } = require('./record');
+const { closeAllTabs, browserOptions } = require('./record');
 
 // Parse a hand-editable .dsl file back into steps. One step per line;
 // blank lines and #-comments ignored. `param name = "default"` lines
@@ -108,8 +108,9 @@ async function main() {
   applyParams(rec.steps, params);
   if (Object.keys(params).length) console.log('Parameters:', JSON.stringify(params));
 
-  const browser = await chromium.launch({ headless: args.includes('--headless') });
-  const ctx = await browser.newContext({ viewport: cfg.viewport || { width: 1800, height: 1000 }, ignoreHTTPSErrors: true, extraHTTPHeaders: cfg.extraHTTPHeaders || {} });
+  const opts = browserOptions(cfg, args.includes('--headless'));
+  const browser = await chromium.launch(opts.launch);
+  const ctx = await browser.newContext(opts.context);
   const page = await ctx.newPage();
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await page.waitForSelector('#app-sections-container-dc', { timeout: 60000 });

@@ -18,7 +18,9 @@ node replay.js scenario.dsl --param firstName=fra --param person="Francis Mertz"
 ```
 
 Config defaults live in `config.json` (`url`, `dataDir`, `cleanTabsOnStart`,
-`extraHTTPHeaders`, `viewport`). CLI flags override.
+`maximized`, `extraHTTPHeaders`, `viewport`). CLI flags override. Headed
+windows open maximized by default (`"maximized": false` to use the fixed
+`viewport` instead); headless runs always use the `viewport`.
 
 ## How it works
 

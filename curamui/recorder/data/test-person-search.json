@@ -1,0 +1,70 @@
+{
+  "name": "test-person-search",
+  "url": "https://pending-overpass-bridged.ngrok-free.dev/Curam/AppController.do",
+  "recordedAt": "2026-07-10T05:29:27.030Z",
+  "steps": [
+    {
+      "verb": "click section",
+      "args": [
+        "HCR Cases and Outcomes"
+      ],
+      "frame": "top",
+      "ts": 1783661345347,
+      "dsl": "click section \"HCR Cases and Outcomes\""
+    },
+    {
+      "verb": "toggle shortcuts panel",
+      "args": [],
+      "frame": "top",
+      "ts": 1783661348360,
+      "dsl": "toggle shortcuts panel "
+    },
+    {
+      "verb": "click shortcutgroup",
+      "args": [
+        "Searches"
+      ],
+      "frame": "top",
+      "ts": 1783661349879,
+      "dsl": "click shortcutgroup \"Searches\""
+    },
+    {
+      "verb": "click shortcutitem",
+      "args": [
+        "Searches",
+        "Person"
+      ],
+      "frame": "top",
+      "ts": 1783661349912,
+      "dsl": "click shortcutitem Searches > Person"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "Mertz",
+        "Last Name"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783661353948,
+      "dsl": "enter \"Mertz\" as Last Name"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Search"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783661353948,
+      "dsl": "click button \"Search\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "Francis Mertz - 527247609"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783661359981,
+      "dsl": "click link \"Francis Mertz - 527247609\""
+    }
+  ]
+}

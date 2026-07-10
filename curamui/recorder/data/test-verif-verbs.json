@@ -1,0 +1,258 @@
+{
+  "name": "test-verif-verbs",
+  "url": "https://pending-overpass-bridged.ngrok-free.dev/Curam/AppController.do",
+  "recordedAt": "2026-07-10T15:35:26.294Z",
+  "steps": [
+    {
+      "verb": "click section",
+      "args": [
+        "HCR Cases and Outcomes"
+      ],
+      "frame": "top",
+      "ts": 1783697678127,
+      "dsl": "click section \"HCR Cases and Outcomes\""
+    },
+    {
+      "verb": "toggle shortcuts panel",
+      "args": [],
+      "frame": "top",
+      "ts": 1783697680635,
+      "dsl": "toggle shortcuts panel "
+    },
+    {
+      "verb": "click shortcutgroup",
+      "args": [
+        "Searches"
+      ],
+      "frame": "top",
+      "ts": 1783697682159,
+      "dsl": "click shortcutgroup \"Searches\""
+    },
+    {
+      "verb": "click shortcutitem",
+      "args": [
+        "Searches",
+        "Person"
+      ],
+      "frame": "top",
+      "ts": 1783697682194,
+      "dsl": "click shortcutitem Searches > Person"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "bo",
+        "First Name"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783697685746,
+      "dsl": "enter \"bo\" as First Name"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Search"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783697685746,
+      "dsl": "click button \"Search\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "Bo Stokes - 091551122",
+        "Search Results"
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "Person",
+        "rowValues": {
+          "Person": "Bo Stokes - 091551122",
+          "Address": "14kl, Dakota, Minnesota, 55124",
+          "Date of Birth": "1/1/1980",
+          "Actions": "▼"
+        }
+      },
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783697687878,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Address": "14kl, Dakota, Minnesota, 55124"
+        }
+      },
+      "dsl": "click link in \"Search Results\" where Address = \"14kl, Dakota, Minnesota, 55124\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "10000401",
+        "Current Cases"
+      ],
+      "ctx": {
+        "row": 2,
+        "rowCount": 2,
+        "column": "Reference",
+        "rowValues": {
+          "Reference": "10000401",
+          "Type": "Insurance Affordability",
+          "Status": "Open",
+          "Applicant": "Yes",
+          "Start Date": "1/1/2027"
+        }
+      },
+      "frame": "Content Panel - Home",
+      "ts": 1783697690861,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Type": "Insurance Affordability"
+        }
+      },
+      "dsl": "click link in \"Current Cases\" where Type = \"Insurance Affordability\""
+    },
+    {
+      "verb": "select nav",
+      "args": [
+        "Evidence"
+      ],
+      "frame": "top",
+      "ts": 1783697693620,
+      "dsl": "select nav \"Evidence\""
+    },
+    {
+      "verb": "select navitem",
+      "args": [
+        "Verifications"
+      ],
+      "frame": "top",
+      "ts": 1783697698655,
+      "dsl": "select navitem \"Verifications\""
+    },
+    {
+      "verb": "select pagetab",
+      "args": [
+        "Verified"
+      ],
+      "frame": "Content Panel - Verifications",
+      "ts": 1783697705195,
+      "dsl": "select pagetab \"Verified\""
+    },
+    {
+      "verb": "select pagetab",
+      "args": [
+        "Outstanding"
+      ],
+      "frame": "Content Panel - Verifications",
+      "ts": 1783697707728,
+      "dsl": "select pagetab \"Outstanding\""
+    },
+    {
+      "verb": "expand row",
+      "args": [
+        "",
+        ""
+      ],
+      "ctx": {
+        "row": 4,
+        "rowCount": 6,
+        "column": "Expand/Collapse Item",
+        "rowValues": {
+          "Items for Verification": "Income Type",
+          "Evidence Type": "Income",
+          "Participant": "Gwendolyn Morar",
+          "Mandatory": "Bypassed",
+          "Date Created": "1/1/2027",
+          "Actions": "▼"
+        }
+      },
+      "frame": "Content Panel - Verifications",
+      "ts": 1783697710271,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Evidence Type": "Income"
+        }
+      },
+      "dsl": "expand row where Evidence Type = \"Income\""
+    },
+    {
+      "verb": "expect",
+      "args": [
+        "Description",
+        "Receives Wages before taxes of $789 Monthly"
+      ],
+      "frame": " Verification Details",
+      "ts": 1783697716811,
+      "dsl": "expect \"Description\" is \"Receives Wages before taxes of $789 Monthly\""
+    },
+    {
+      "verb": "collapse row",
+      "args": [
+        "",
+        ""
+      ],
+      "ctx": {
+        "row": 4,
+        "rowCount": 6,
+        "column": "Expand/Collapse Item",
+        "rowValues": {
+          "Items for Verification": "Income Type",
+          "Evidence Type": "Income",
+          "Participant": "Gwendolyn Morar",
+          "Mandatory": "Bypassed",
+          "Date Created": "1/1/2027",
+          "Actions": "▼"
+        }
+      },
+      "frame": "Content Panel - Verifications",
+      "ts": 1783697716835,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Evidence Type": "Income"
+        }
+      },
+      "dsl": "collapse row where Evidence Type = \"Income\""
+    },
+    {
+      "verb": "click rowmenu",
+      "args": [
+        "Add Proof",
+        ""
+      ],
+      "ctx": {
+        "row": 4,
+        "rowCount": 6,
+        "column": "Actions",
+        "rowValues": {
+          "Items for Verification": "Income Type",
+          "Evidence Type": "Income",
+          "Participant": "Gwendolyn Morar",
+          "Mandatory": "Bypassed",
+          "Date Created": "1/1/2027",
+          "Actions": "▼"
+        }
+      },
+      "frame": "Content Panel - Verifications",
+      "ts": 1783697720386,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Evidence Type": "Income"
+        }
+      },
+      "dsl": "click rowmenu \"Add Proof\" where Evidence Type = \"Income\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Cancel"
+      ],
+      "frame": "top",
+      "ts": 1783697722803,
+      "dsl": "click button \"Cancel\""
+    }
+  ]
+}

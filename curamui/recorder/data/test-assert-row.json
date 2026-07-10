@@ -1,0 +1,232 @@
+{
+  "name": "test-assert-row",
+  "url": "https://pending-overpass-bridged.ngrok-free.dev/Curam/AppController.do",
+  "recordedAt": "2026-07-10T16:03:28.123Z",
+  "steps": [
+    {
+      "verb": "click section",
+      "args": [
+        "HCR Cases and Outcomes"
+      ],
+      "frame": "top",
+      "ts": 1783699367303,
+      "dsl": "click section \"HCR Cases and Outcomes\""
+    },
+    {
+      "verb": "toggle shortcuts panel",
+      "args": [],
+      "frame": "top",
+      "ts": 1783699369811,
+      "dsl": "toggle shortcuts panel "
+    },
+    {
+      "verb": "click shortcutgroup",
+      "args": [
+        "Searches"
+      ],
+      "frame": "top",
+      "ts": 1783699371337,
+      "dsl": "click shortcutgroup \"Searches\""
+    },
+    {
+      "verb": "click shortcutitem",
+      "args": [
+        "Searches",
+        "Person"
+      ],
+      "frame": "top",
+      "ts": 1783699371376,
+      "dsl": "click shortcutitem Searches > Person"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "bo",
+        "First Name"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783699374928,
+      "dsl": "enter \"bo\" as First Name"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Search"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783699374929,
+      "dsl": "click button \"Search\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "Bo Stokes - 091551122",
+        "Search Results"
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "Person",
+        "rowValues": {
+          "Person": "Bo Stokes - 091551122",
+          "Address": "14kl, Dakota, Minnesota, 55124",
+          "Date of Birth": "1/1/1980",
+          "Actions": "▼"
+        }
+      },
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1783699377045,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Address": "14kl, Dakota, Minnesota, 55124"
+        }
+      },
+      "dsl": "click link in \"Search Results\" where Address = \"14kl, Dakota, Minnesota, 55124\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "10000401",
+        "Current Cases"
+      ],
+      "ctx": {
+        "row": 2,
+        "rowCount": 2,
+        "column": "Reference",
+        "rowValues": {
+          "Reference": "10000401",
+          "Type": "Insurance Affordability",
+          "Status": "Open",
+          "Applicant": "Yes",
+          "Start Date": "1/1/2027"
+        }
+      },
+      "frame": "Content Panel - Home",
+      "ts": 1783699379427,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Type": "Insurance Affordability"
+        }
+      },
+      "dsl": "click link in \"Current Cases\" where Type = \"Insurance Affordability\""
+    },
+    {
+      "verb": "select nav",
+      "args": [
+        "Home"
+      ],
+      "frame": "top",
+      "ts": 1783699382217,
+      "dsl": "select nav \"Home\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "10000402",
+        "Cases"
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "Reference",
+        "rowValues": {
+          "Reference": "10000402",
+          "Name": "Medical Assistance",
+          "Primary Client": "Bo Stokes",
+          "Start Date": "1/1/2027",
+          "Case Status": "Active"
+        }
+      },
+      "frame": "Content Panel - Home",
+      "ts": 1783699387271,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Name": "Medical Assistance"
+        }
+      },
+      "dsl": "click link in \"Cases\" where Name = \"Medical Assistance\""
+    },
+    {
+      "verb": "select nav",
+      "args": [
+        "Determinations"
+      ],
+      "frame": "top",
+      "ts": 1783699389635,
+      "dsl": "select nav \"Determinations\""
+    },
+    {
+      "verb": "select navitem",
+      "args": [
+        "Current Determination"
+      ],
+      "frame": "top",
+      "ts": 1783699394662,
+      "dsl": "select navitem \"Current Determination\""
+    },
+    {
+      "verb": "expect row",
+      "args": [
+        "",
+        ""
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "Decision",
+        "rowValues": {
+          "Coverage Period": "1/1/2027 - 12/31/2027",
+          "Decision": "Eligible"
+        }
+      },
+      "frame": "Content Panel - Current Determination",
+      "ts": 1783699401193,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Coverage Period": "1/1/2027 - 12/31/2027",
+          "Decision": "Eligible"
+        }
+      },
+      "dsl": "expect row where Coverage Period = \"1/1/2027 - 12/31/2027\" and Decision = \"Eligible\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "1/1/2027 - 12/31/2027",
+        ""
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "Coverage Period",
+        "rowValues": {
+          "Coverage Period": "1/1/2027 - 12/31/2027",
+          "Decision": "Eligible"
+        }
+      },
+      "frame": "Content Panel - Current Determination",
+      "ts": 1783699402035,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Decision": "Eligible"
+        }
+      },
+      "dsl": "click link in \"\" where Decision = \"Eligible\""
+    },
+    {
+      "verb": "expect",
+      "args": [
+        "Decision",
+        "Eligible"
+      ],
+      "frame": "Context Panel - Decision - Medical Assistance 10000402",
+      "ts": 1783699406270,
+      "dsl": "expect \"Decision\" is \"Eligible\""
+    }
+  ]
+}

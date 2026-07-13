@@ -262,6 +262,35 @@ Also: `_rowOp` failures now aggregate errors from every frame swept, so an
 "ambiguous: matches 2 rows" isn't shadowed by another frame's
 "no matching row".
 
+### Person registration (use case 1, 2026-07-13)
+
+`data/register-person.dsl` — parameterized (firstName, lastName, dob, ssn)
+registration through the Register Person wizard, verified 25/25 including
+a post-save search + person-tab open. What the flow taught us:
+
+- The wizard is a top-document Carbon modal: page 1 duplicate-check search
+  (in-frame Search button), footer Next/Back/Save in the top document.
+- **Carbon comboboxes** (Gender, Preferred Language, Preferred
+  Communication, State — `input[role="combobox"]`): `selectOption` clicks
+  the input then the `[role="option"]` with matching text (wildcards ok);
+  the recorder maps their change events to `select option`. Native selects
+  still handled.
+- **Date pickers** (flatpickr): fill then **Tab** to commit — never
+  Escape, which closes the enclosing modal.
+- Mandatory with no defaults: Preferred Language, Preferred Communication.
+- **SSN must be digits-only** ("091556700"); dashed input fails server
+  validation with "not valid". Area must also be SSA-plausible (728/9xx
+  rejected). After a successful save the wizard closes and the new
+  person's tab opens automatically.
+- Wizard buttons navigate INSIDE the modal frame — the nav signature must
+  track the modal frame's document identity or every wizard click eats the
+  full 20s nav timeout.
+- **Fast-fail on empty workspaces**: `_activePanel`/`_navSignature`/
+  `contentFrame` must use short explicit timeouts. With zero tabs open
+  (wizard over a clean workspace) Playwright's default 30s auto-wait on
+  the active-tab lookup made every step take 60s+ — the framework looked
+  hung when it was just waiting.
+
 ### Known limitations / next ideas
 
 - Variable binding (capture a value from one step into a parameter for a

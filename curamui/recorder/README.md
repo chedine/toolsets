@@ -57,6 +57,7 @@ windows open maximized by default (`"maximized": false` to use the fixed
 | click link | `click link "10000401" in "Current Cases"` (`in <list/cluster title>` scopes the search) |
 | click link (row) | `click link in "Cases" at row 1` |
 | click link (predicate) | `click link in "Current Cases" where Type = "Insurance Affordability"` (combine: `at row 2 where Status = "Open" and …`) |
+| select (combobox) | `select "Minnesota" for State` (native selects and Carbon comboboxes) |
 | check / uncheck | `check "Show Nicknames"` |
 | expand / collapse row | `expand row where Participant = "Bo Stokes"` (row expander ">") |
 | check / uncheck row | `check row where Type = "Income"` (row-selection checkbox) |
@@ -142,4 +143,6 @@ Hand-written id-free scenarios: `node replay.js bo-stokes-generic.dsl`,
 `bo-verifications.dsl` (Add Proof flow), `bo-evidence-edit.dsl` (evidence
 edit modal → save → apply changes, with an `expect` assertion),
 `bo-determination.dsl` (current determination → coverage-period assert →
-decision tab Summary/Income validation).
+decision tab Summary/Income validation), `register-person.dsl`
+(parameterized person registration wizard: name/dob/ssn params, MN
+address, post-save search verification; SSN must be digits-only).

@@ -253,6 +253,12 @@ module.exports = function curamRecorderInit() {
       report('select option', [opt ? txt(opt) : el.value, fieldLabel(el)]);
       return;
     }
+    // Carbon combobox dropdowns are text inputs with role=combobox; date
+    // pickers share the role but should replay as plain value entry
+    if (el.getAttribute('role') === 'combobox' && !((el.className || '').toString().includes('date-picker'))) {
+      report('select option', [el.value, fieldLabel(el)]);
+      return;
+    }
     report('enter', [el.value, fieldLabel(el)]);
   }
 

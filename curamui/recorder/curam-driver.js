@@ -73,9 +73,11 @@ class CuramDriver {
 
   // Panel of the tab that is selected RIGHT NOW. Resolved fresh on every call
   // because content clicks (e.g. a case link) open and activate new tabs.
-  async _activePanel() {
+  // Short timeout: with no tabs open (e.g. a wizard over a clean workspace)
+  // this must fail fast, not eat Playwright's default 30s auto-wait.
+  async _activePanel(timeout = 2000) {
     const active = this._tabStrip().locator('span[role="tab"][aria-selected="true"]').first();
-    const paneId = ((await active.getAttribute('id')) || '').split('_tablist_')[1];
+    const paneId = ((await active.getAttribute('id', { timeout })) || '').split('_tablist_')[1];
     if (!paneId) throw new Error('no active tab in section');
     return this.page.locator(`[id="${paneId}"]`);
   }
@@ -101,7 +103,8 @@ class CuramDriver {
   async _navSignature() {
     try {
       const active = this._tabStrip().locator('span[role="tab"][aria-selected="true"]').first();
-      const tabId = (await active.getAttribute('id')) || '';
+      let tabId = '';
+      try { tabId = (await active.getAttribute('id', { timeout: 1500 })) || ''; } catch {}
       let doc = '';
       try {
         const panel = this.page.locator(`[id="${tabId.split('_tablist_')[1]}"]`);
@@ -109,8 +112,18 @@ class CuramDriver {
         const f = await (await el.elementHandle({ timeout: 1500 })).contentFrame();
         if (f) doc = f.url() + '#' + await f.evaluate(() => performance.timeOrigin);
       } catch {}
-      const modal = await this._modalFrameEl().isVisible().catch(() => false);
-      return tabId + '||' + doc + '||' + modal;
+      // wizard buttons (Search/Next/Save) navigate INSIDE the modal frame —
+      // track its document identity too, or every modal click waits the
+      // full nav timeout
+      let modalDoc = '';
+      try {
+        const el = this._modalFrameEl();
+        if (await el.isVisible().catch(() => false)) {
+          const f = await (await el.elementHandle()).contentFrame();
+          if (f) modalDoc = f.url() + '#' + await f.evaluate(() => performance.timeOrigin);
+        }
+      } catch { modalDoc = 'modal'; }
+      return tabId + '||' + doc + '||' + modalDoc;
     } catch { return ''; }
   }
 
@@ -131,10 +144,10 @@ class CuramDriver {
       const el = this._modalFrameEl();
       if (await el.isVisible({ timeout: 200 }).catch(() => false)) push(await (await el.elementHandle()).contentFrame());
     } catch {}
-    try { push(await this.contentFrame()); } catch {}
+    try { push(await this.contentFrame(2500)); } catch {}
     // context panel (banner fields like Decision / Coverage Start Date)
     try {
-      const el = (await this._activePanel()).locator('iframe[title^="Context Panel"]').last();
+      const el = (await this._activePanel(1500)).locator('iframe[title^="Context Panel"]').last();
       if (await el.count()) push(await (await el.elementHandle()).contentFrame());
     } catch {}
     return frames;
@@ -151,14 +164,14 @@ class CuramDriver {
       const sig = await this._navSignature();
       if (sig && sig !== pre) break;
     }
-    try { const f = await this.contentFrame(); await f.waitForLoadState('domcontentloaded'); } catch {}
+    try { const f = await this.contentFrame(2500); await f.waitForLoadState('domcontentloaded'); } catch {}
     await this._settle(1500);
   }
 
   // ---- content frame of the active tab ----
-  async contentFrame() {
-    const el = (await this._activePanel()).locator('iframe[title^="Content Panel"]').last();
-    await el.waitFor({ state: 'attached', timeout: 15000 });
+  async contentFrame(timeout = 15000) {
+    const el = (await this._activePanel(Math.min(timeout, 2000))).locator('iframe[title^="Content Panel"]').last();
+    await el.waitFor({ state: 'attached', timeout });
     return await (await el.elementHandle()).contentFrame();
   }
 
@@ -171,9 +184,66 @@ class CuramDriver {
     for (;;) {
       for (const f of await this._candidateFrames()) {
         const input = f.locator(sel).first();
-        if (await input.isVisible().catch(() => false)) { await input.fill(value); return this; }
+        if (await input.isVisible().catch(() => false)) {
+          await input.fill(value);
+          // date pickers (flatpickr) parse on blur — Tab commits the value
+          // (never Escape: that closes an enclosing modal)
+          const cls = (await input.getAttribute('class')) || '';
+          if (cls.includes('date-picker')) await input.press('Tab');
+          return this;
+        }
       }
       if (Date.now() > deadline) throw new Error(`no input "${label}"`);
+      await this.page.waitForTimeout(500);
+    }
+  }
+
+  // ---- select "<option>" for <field label> ----
+  // Native <select> or a Carbon combobox (role="combobox" input): click to
+  // open the list box, then click the option with matching text.
+  async selectOption(value, label) {
+    const key = label.replace(/ /g, '');
+    const nat = `select[title="${label}"], select[title="${label} Mandatory"], select[data-testid$=".${key}"]`;
+    const combo = `input[role="combobox"][title="${label}"], input[role="combobox"][title="${label} Mandatory"], input[role="combobox"][data-testid$=".${key}"]`;
+    const deadline = Date.now() + 10000;
+    let lastErr = `no field "${label}"`;
+    for (;;) {
+      for (const f of await this._candidateFrames()) {
+        const sel = f.locator(nat).first();
+        if (await sel.isVisible().catch(() => false)) { await sel.selectOption({ label: value }); return this; }
+        const input = f.locator(combo).first();
+        if (!(await input.isVisible().catch(() => false))) continue;
+        await input.click();
+        // options render into a list box (sometimes portaled); poll for them
+        const optDeadline = Date.now() + 5000;
+        for (;;) {
+          const found = await f.evaluate(want => {
+            const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+            const eq = (a, b) => a.includes('*')
+              ? new RegExp('^' + a.split('*').map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$').test(b)
+              : a === b;
+            for (const m of document.querySelectorAll('[role="listbox"], .cds--list-box__menu')) {
+              if (!m.offsetParent) continue;
+              for (const o of m.querySelectorAll('[role="option"], li')) {
+                if (eq(norm(want), norm(o.textContent))) {
+                  document.querySelectorAll('[data-curam-replay-target]').forEach(e => e.removeAttribute('data-curam-replay-target'));
+                  o.setAttribute('data-curam-replay-target', '1');
+                  return true;
+                }
+              }
+            }
+            return false;
+          }, value).catch(() => false);
+          if (found) {
+            await f.locator('[data-curam-replay-target]').click();
+            await this.page.waitForTimeout(400);
+            return this;
+          }
+          if (Date.now() > optDeadline) { lastErr = `no option "${value}" for "${label}"`; break; }
+          await this.page.waitForTimeout(400);
+        }
+      }
+      if (Date.now() > deadline) throw new Error(lastErr);
       await this.page.waitForTimeout(500);
     }
   }

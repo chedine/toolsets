@@ -153,7 +153,7 @@ async function main() {
         case 'uncheck':             { const f = await c.contentFrame(); const cb = f.locator(`input[type=checkbox][title="${a0}"]`).first(); step.verb === 'check' ? await cb.check({ force: true }) : await cb.uncheck({ force: true }); break; }
         case 'close tab':           { const strip = c._tabStrip(); const tab = strip.locator(`.dijitTab:has(span[role="tab"])`).filter({ hasText: a0.replace(/\*/g, '') }).first(); await tab.hover(); await tab.locator('button.dijitTabCloseButton').click(); await c._settle(2000); break; }
         case 'toggle shortcuts panel': break; // handled implicitly by driver
-        case 'select option':       { const f = await c.contentFrame(); await f.locator(`select[title="${a1}"]`).selectOption({ label: a0 }); break; }
+        case 'select option':       await c.selectOption(a0, a1); break;
         default: console.log('  ?? skipping unknown verb:', step.dsl); continue;
       }
       ok++; console.log('  ok :', step.dsl);

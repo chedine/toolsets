@@ -25,7 +25,7 @@ npm run build
 npm start                # UI and API at http://127.0.0.1:4174
 ```
 
-The server binds only to `127.0.0.1` by default. On both macOS and Windows, configuration remains in the current user's `.dbc` directory for compatibility. Set `ACID_TRIP_HOME` (or legacy `DBC_HOME`) to override it.
+The server binds only to `127.0.0.1` by default. ACID Trip first loads `config.yaml` from the directory where it is launched. If that file is absent, it falls back to `~/.dbc/config.yaml`. Notebooks and templates remain under `~/.dbc`. `ACID_TRIP_CONFIG` can optionally point to a specific config file.
 
 ## Local Oracle XE test database
 
@@ -47,7 +47,7 @@ username: dbc
 password: dbc_test_123
 ```
 
-Copy `config.example.yaml` to `~/.dbc/config.yaml`, then set the password and launch the client:
+Copy `config.example.yaml` to `config.yaml` in the project directory, then set the password and launch the client:
 
 ```sh
 export DBC_XE_PASSWORD=dbc_test_123       # PowerShell: $env:DBC_XE_PASSWORD="dbc_test_123"
@@ -78,7 +78,7 @@ Complete standalone examples are checked in under `examples/connections/`:
 - `tcps.yaml` — TCPS connection with server trust or mutual TLS
 - `tnsnames.ora.example` — matching TCP and TCPS aliases
 
-Use an example directly by copying it to `~/.dbc/config.yaml` and replacing its paths and environment-variable names.
+Use an example directly by copying it to `config.yaml` in the project directory and replacing its paths and environment-variable names.
 
 
 Host, port, and service:

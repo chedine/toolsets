@@ -63,6 +63,7 @@ windows open maximized by default (`"maximized": false` to use the fixed
 | check / uncheck row | `check row where Type = "Income"` (row-selection checkbox) |
 | click rowmenu | `click rowmenu "Add Proof" where Items for Verification = "Income Type"` (row "…" menu → item) |
 | click pagemenu | `click pagemenu "Apply Changes"` (page-level "…" action menu → item) |
+| click tabmenu | `click tabmenu "New Application"` (tab actions "…" menu, top right of a tab) |
 | expect | `expect "Amount" is "$589.00"` (assert a read-only display field, incl. context-panel banner fields) |
 | expect row | `expect row in "Coverage Information" where Name = "Bo Stokes" and Category = "Adult"` (assert a matching table row exists) |
 | close tab | `close tab "Person Search"` |
@@ -100,6 +101,12 @@ Notes:
 - When a table sits behind an in-page tab or an expanded row (no list title),
   prefer `where` predicates over `at row N` — positional selection can match
   a row in an outer table first.
+- IEG application wizards (New Application etc.) work with the same verbs:
+  `select ... for ...` drives their dijit FilteringSelect dropdowns,
+  `check` matches long agreement labels by prefix/wildcard, and
+  `click button "Next"` / `"Save & Exit"` hit the in-frame wizard buttons.
+  Questions appear **conditionally** as earlier answers are set — order the
+  script by reveal order, and note Save & Exit validates the current page.
 - Link clicks capture the containing list/cluster title; replay matches that
   title exactly (ignoring dynamic suffixes like "(Number of Items: 3)"), so
   "Cases" never falls into "Pending Cases".

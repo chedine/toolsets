@@ -40,9 +40,28 @@ module.exports = function curamRecorderInit() {
   }
 
   // ---------- classification: top frame (application chrome) ----------
+  // tab actions "..." menu: the dropdown click arms this, the following
+  // top-document .dijitMenuItem click becomes `click tabmenu "<item>"`.
+  let pendingTabMenu = 0;
+
   function classifyTopClick(e) {
     const el = e.target;
     if (el.closest && el.closest('#__curam_rec_overlay')) return; // our own UI
+
+    const dd = el.closest && el.closest('.dijitDropDownButton');
+    if (dd) {
+      const w = dd.getAttribute('widgetid') || '';
+      if (w.startsWith('actionsButton') || /tab-widget-id/.test(dd.className)) pendingTabMenu = Date.now();
+      return;
+    }
+    const topMenuItem = el.closest && el.closest('.dijitMenuItem');
+    if (topMenuItem) {
+      if (pendingTabMenu && Date.now() - pendingTabMenu < 15000) {
+        report('click tabmenu', [txt(topMenuItem).replace(/\s*\+$/, '').replace(/…$/, '')]);
+      }
+      pendingTabMenu = 0;
+      return;
+    }
 
     // Carbon modal (evidence edit etc.): footer Save/Cancel live in the top
     // document, outside the modal's iframe.
@@ -172,7 +191,7 @@ module.exports = function curamRecorderInit() {
       return;
     }
 
-    const actionBtn = el.closest && el.closest('.action-set a');
+    const actionBtn = el.closest && el.closest('.action-set a, a.buttonLink');
     if (actionBtn) { report('click button', [txt(actionBtn)]); return; }
     const link = el.closest && el.closest('a');
     if (link && txt(link)) { report('click link', [txt(link), containerLabel(link)], rowContext(link)); return; }
@@ -254,8 +273,10 @@ module.exports = function curamRecorderInit() {
       return;
     }
     // Carbon combobox dropdowns are text inputs with role=combobox; date
-    // pickers share the role but should replay as plain value entry
-    if (el.getAttribute('role') === 'combobox' && !((el.className || '').toString().includes('date-picker'))) {
+    // pickers share the role but should replay as plain value entry.
+    // dijit FilteringSelects (IEG wizards) are inputs inside .dijitComboBox.
+    if ((el.getAttribute('role') === 'combobox' || (el.closest && el.closest('.dijitComboBox')))
+        && !((el.className || '').toString().includes('date-picker'))) {
       report('select option', [el.value, fieldLabel(el)]);
       return;
     }

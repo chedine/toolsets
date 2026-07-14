@@ -291,6 +291,44 @@ a post-save search + person-tab open. What the flow taught us:
   the active-tab lookup made every step take 60s+ — the framework looked
   hung when it was just waiting.
 
+### New Application / IEG wizards (use case 2, 2026-07-14)
+
+`data/new-application.dsl` — person tab → tab actions "…" menu → New
+Application → first five IEG pages filled minimally → Save & Exit (verified
+28/28 chained after `register-person.dsl` on a fresh person). Findings:
+
+- **Tab actions menu**: a dijit DropDownButton in the top document
+  (`[widgetid^="actionsButton"]` in the active tab panel); its popup opens
+  in the top document. New verb: `click tabmenu "New Application"`.
+- **IEG player** runs in a modal (`Screening.do` frame) with its own
+  markup: buttons are `a.buttonLink` (in-frame Next / Save & Exit — no
+  top-document footer), dropdowns are **dijit FilteringSelects**
+  (`.dijitComboBox` + titled `.dijitInputInner`, `.dijitComboBoxMenu`
+  popup in-frame, "Previous/More choices" pager rows skipped), checkboxes
+  have no title — matched via `label[for]` with prefix/wildcard
+  (`check "I agree*"`). All folded into the existing verbs.
+- **Questions reveal conditionally** on earlier answers' change events
+  ("Are you homeless?" appears only after "Are you temporarily absent from
+  Minnesota?" is answered; "Have you applied for an SSN?" appears when
+  "Do you have an SSN?" = No). Scripts must follow reveal order; the
+  page-level error banner after Next names any missed mandatory exactly.
+- **Save & Exit validates the current page** — answer its mandatories
+  before parking an application.
+- **Application Filing Date**: prefill = server-now at first entry, saved
+  in the wizard state; it goes stale if the server clock moves backwards
+  (app restarts reset the simulated 2027 clock). Set it explicitly
+  (`param appDate`), on/before the server clock.
+- "New Application" **resumes** a person's in-progress application at page
+  1 (answers persist only for pages committed with Next). A resumed app
+  whose saved dates conflict with the current clock can render blank pages
+  — chain register-person → new-application on a fresh person for
+  deterministic runs.
+- Environment: ngrok free-tier bandwidth ran out; now reached via SSH
+  reverse tunnel (`ssh -N -R 18081:localhost:8081 <mac>` from the Curam
+  host; config url `http://localhost:18081/...`). Port 8081 on that host
+  serves TWO instances by path/session — verify the caseworker app
+  (HCR Cases and Outcomes section) is what answers.
+
 ### Known limitations / next ideas
 
 - Variable binding (capture a value from one step into a parameter for a

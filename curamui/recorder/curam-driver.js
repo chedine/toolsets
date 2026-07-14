@@ -199,12 +199,13 @@ class CuramDriver {
   }
 
   // ---- select "<option>" for <field label> ----
-  // Native <select> or a Carbon combobox (role="combobox" input): click to
-  // open the list box, then click the option with matching text.
+  // Three dialects: native <select>, Carbon combobox (role="combobox"
+  // input), and dijit FilteringSelect (IEG wizards: .dijitComboBox wrapper,
+  // titled .dijitInputInner, .dijitComboBoxMenu popup).
   async selectOption(value, label) {
     const key = label.replace(/ /g, '');
     const nat = `select[title="${label}"], select[title="${label} Mandatory"], select[data-testid$=".${key}"]`;
-    const combo = `input[role="combobox"][title="${label}"], input[role="combobox"][title="${label} Mandatory"], input[role="combobox"][data-testid$=".${key}"]`;
+    const combo = `input[role="combobox"][title="${label}"], input[role="combobox"][title="${label} Mandatory"], input[role="combobox"][data-testid$=".${key}"], .dijitComboBox input.dijitInputInner[title="${label}"], .dijitComboBox input.dijitInputInner[title="${label} Mandatory"]`;
     const deadline = Date.now() + 10000;
     let lastErr = `no field "${label}"`;
     for (;;) {
@@ -213,7 +214,9 @@ class CuramDriver {
         if (await sel.isVisible().catch(() => false)) { await sel.selectOption({ label: value }); return this; }
         const input = f.locator(combo).first();
         if (!(await input.isVisible().catch(() => false))) continue;
-        await input.click();
+        // dijit FilteringSelect opens via its arrow button
+        const arrow = input.locator('xpath=ancestor::*[contains(@class,"dijitComboBox")][1]//*[contains(@class,"dijitDownArrowButton")]').first();
+        if (await arrow.count()) await arrow.click(); else await input.click();
         // options render into a list box (sometimes portaled); poll for them
         const optDeadline = Date.now() + 5000;
         for (;;) {
@@ -222,10 +225,12 @@ class CuramDriver {
             const eq = (a, b) => a.includes('*')
               ? new RegExp('^' + a.split('*').map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$').test(b)
               : a === b;
-            for (const m of document.querySelectorAll('[role="listbox"], .cds--list-box__menu')) {
+            for (const m of document.querySelectorAll('[role="listbox"], .cds--list-box__menu, .dijitComboBoxMenu')) {
               if (!m.offsetParent) continue;
-              for (const o of m.querySelectorAll('[role="option"], li')) {
-                if (eq(norm(want), norm(o.textContent))) {
+              for (const o of m.querySelectorAll('[role="option"], li, .dijitMenuItem')) {
+                const t = norm(o.textContent);
+                if (/^(Previous choices|More choices)$/.test(t)) continue;
+                if (eq(norm(want), t)) {
                   document.querySelectorAll('[data-curam-replay-target]').forEach(e => e.removeAttribute('data-curam-replay-target'));
                   o.setAttribute('data-curam-replay-target', '1');
                   return true;
@@ -262,7 +267,8 @@ class CuramDriver {
         return this;
       }
       for (const f of await this._candidateFrames()) {
-        const b = f.locator(`.action-set a.first-action-control:has-text("${label}"), .action-set a:has-text("${label}")`).first();
+        // .action-set = normal Curam pages; a.buttonLink = IEG wizards
+        const b = f.locator(`.action-set a.first-action-control:has-text("${label}"), .action-set a:has-text("${label}"), a.buttonLink:text-is("${label}")`).first();
         if (await b.isVisible().catch(() => false)) {
           await b.click();
           await this._waitForNav(pre);
@@ -482,6 +488,49 @@ class CuramDriver {
     const { frame } = await this._rowOp(container, opt);
     await frame.locator('[data-curam-replay-target]').click();
     await this._clickMenuItem(frame, item);
+    await this._waitForNav(pre);
+    return this;
+  }
+
+  // ---- check/uncheck "<label>" ----
+  // Checkbox by title or associated <label for>. Long labels (IEG agreement
+  // text) match by prefix; '*' wildcards allowed.
+  async setCheckbox(label, on = true) {
+    const deadline = Date.now() + 10000;
+    for (;;) {
+      for (const f of await this._candidateFrames()) {
+        const found = await f.evaluate(([want, on]) => {
+          const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+          const w = norm(want);
+          const match = t => {
+            t = norm(t);
+            if (w.includes('*')) return new RegExp('^' + w.split('*').map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$').test(t);
+            return t === w || t.startsWith(w);
+          };
+          for (const cb of document.querySelectorAll('input[type="checkbox"]')) {
+            if (!cb.offsetParent) continue;
+            let t = cb.title || '';
+            if (!match(t) && cb.id) { const l = document.querySelector(`label[for="${CSS.escape(cb.id)}"]`); t = l ? l.textContent : ''; }
+            if (!match(t)) continue;
+            if (cb.checked !== on) cb.click();
+            return true;
+          }
+          return false;
+        }, [label, on]).catch(() => false);
+        if (found) { await this._settle(800); return this; }
+      }
+      if (Date.now() > deadline) throw new Error(`no checkbox "${label}"`);
+      await this.page.waitForTimeout(500);
+    }
+  }
+
+  // ---- click tabmenu <item> (tab actions "..." menu, top right of tab) ----
+  async clickTabMenu(item) {
+    const pre = await this._navSignature();
+    const panel = await this._activePanel();
+    const btn = panel.locator('[widgetid^="actionsButton"] .dijitButtonNode, .dijitDropDownButton .dijitButtonNode').first();
+    await btn.click();
+    await this._clickMenuItem(this.page, item); // popup renders in the top document
     await this._waitForNav(pre);
     return this;
   }

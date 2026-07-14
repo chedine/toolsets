@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
-import { autocompletion, closeBrackets, closeBracketsKeymap, completionKeymap } from "@codemirror/autocomplete";
+import { autocompletion, closeBrackets, closeBracketsKeymap, completionKeymap, type CompletionSource } from "@codemirror/autocomplete";
 import { defaultKeymap, history, historyKeymap } from "@codemirror/commands";
 import { sql } from "@codemirror/lang-sql";
 import { bracketMatching, HighlightStyle, syntaxHighlighting } from "@codemirror/language";
 import { EditorState } from "@codemirror/state";
 import { drawSelection, EditorView, keymap } from "@codemirror/view";
 import { tags } from "@lezer/highlight";
+import { sqlSuggestions } from "../../src/core/sql-intellisense";
 import type { DatabaseCatalog } from "../../src/core/types";
 
 const highlight = HighlightStyle.define([
@@ -43,6 +44,19 @@ export function SqlEditor({
       table.name,
       table.columns.map((column) => column.name),
     ]));
+    const acidCompletion: CompletionSource = (context) => {
+      const suggestions = sqlSuggestions(context.state.doc.toString(), context.pos, catalog ?? { tables: [] });
+      if (!suggestions.length) return null;
+      return {
+        from: suggestions[0].from,
+        options: suggestions.map((suggestion) => ({
+          label: suggestion.label,
+          detail: suggestion.detail,
+          type: suggestion.kind === "column" ? "property" : suggestion.kind === "table" ? "class" : "keyword",
+        })),
+        validFor: /^[A-Za-z0-9_$#]*$/,
+      };
+    };
     const instance = new EditorView({
       parent: host.current,
       state: EditorState.create({
@@ -52,7 +66,7 @@ export function SqlEditor({
           drawSelection(),
           bracketMatching(),
           closeBrackets(),
-          autocompletion({ activateOnTyping: true }),
+          autocompletion({ activateOnTyping: true, override: [acidCompletion] }),
           sql({ schema, upperCaseKeywords: true }),
           syntaxHighlighting(highlight),
           EditorView.lineWrapping,

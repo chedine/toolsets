@@ -43,6 +43,10 @@ function parseDsl(text) {
       steps.push({ verb: `click ${m[1]}`, args: [m[2]], dsl: line });
     } else if ((m = line.match(/^expect "([^"]*)" is "([^"]*)"$/))) {
       steps.push({ verb: 'expect', args: [m[1], m[2]], dsl: line });
+    } else if (line === 'check all') {
+      steps.push({ verb: 'check all', args: [], dsl: line });
+    } else if ((m = line.match(/^advance to "([^"]+)"$/))) {
+      steps.push({ verb: 'advance to', args: [m[1]], dsl: line });
     } else if ((m = line.match(/^click (link|button) "([^"]+)"(?: in "([^"]+)")?$/))) {
       steps.push({ verb: `click ${m[1]}`, args: [m[2], m[3] || ''], dsl: line });
     } else if ((m = line.match(/^enter "([^"]*)" as (.+)$/))) {
@@ -150,6 +154,8 @@ async function main() {
         case 'expect':              await c.expectField(a0, a1); break;
         case 'expect row':          await c.expectRow(a1, step); break;
         case 'click menuitem':      { const f = await c.contentFrame(); await f.click(`.dijitMenuItem:has-text("${a0}")`); await c._settle(3000); break; }
+        case 'check all':           await c.checkAll(); break;
+        case 'advance to':          await c.advanceTo(a0); break;
         case 'check':
         case 'uncheck':             await c.setCheckbox(a0, step.verb === 'check'); break;
         case 'close tab':           { const strip = c._tabStrip(); const tab = strip.locator(`.dijitTab:has(span[role="tab"])`).filter({ hasText: a0.replace(/\*/g, '') }).first(); await tab.hover(); await tab.locator('button.dijitTabCloseButton').click(); await c._settle(2000); break; }

@@ -64,6 +64,8 @@ windows open maximized by default (`"maximized": false` to use the fixed
 | click rowmenu | `click rowmenu "Add Proof" where Items for Verification = "Income Type"` (row "…" menu → item) |
 | click pagemenu | `click pagemenu "Apply Changes"` (page-level "…" action menu → item) |
 | click tabmenu | `click tabmenu "New Application"` (tab actions "…" menu, top right of a tab) |
+| advance to | `advance to "Income Information"` (click wizard Next until the named IEG page is reached — skips variable intro/summary pages) |
+| check all | `check all` (tick every visible checkbox — consent/signature pages where labels repeat) |
 | expect | `expect "Amount" is "$589.00"` (assert a read-only display field, incl. context-panel banner fields) |
 | expect row | `expect row in "Coverage Information" where Name = "Bo Stokes" and Category = "Adult"` (assert a matching table row exists) |
 | close tab | `close tab "Person Search"` |
@@ -107,6 +109,12 @@ Notes:
   `click button "Next"` / `"Save & Exit"` hit the in-frame wizard buttons.
   Questions appear **conditionally** as earlier answers are set — order the
   script by reveal order, and note Save & Exit validates the current page.
+  IEG interleaves data pages with intro/summary/pass-through pages whose
+  count varies with earlier answers, so navigate to each data page with
+  `advance to "<page heading>"` rather than counting `click button "Next"`.
+  A submitted application ends in two Carbon consent dialogs (`check all` +
+  `click button "Submit"`, twice). See `data/new-application.dsl` for the
+  full single-person, no-income Insurance Affordability application.
 - Link clicks capture the containing list/cluster title; replay matches that
   title exactly (ignoring dynamic suffixes like "(Number of Items: 3)"), so
   "Cases" never falls into "Pending Cases".

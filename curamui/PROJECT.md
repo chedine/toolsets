@@ -329,6 +329,50 @@ Application → first five IEG pages filled minimally → Save & Exit (verified
   serves TWO instances by path/session — verify the caseworker app
   (HCR Cases and Outcomes section) is what answers.
 
+### Application submission through IEG (2026-07-14)
+
+`data/new-application.dsl` drives the whole Insurance Affordability
+application wizard to **submission** (verified 62/62 for a single-person,
+no-income, US-citizen applicant). Submission creates an "Insurance
+Affordability Application" case (Pending Application Cases) + an "Insurance
+Affordability" case (Current Cases) on the person — confirmed by re-opening
+the person on a fresh load (the in-session person tab is cached and doesn't
+refresh, so verify by reopening).
+
+Hard-won IEG mechanics:
+
+- **`advance to "<page heading>"`** is the key robustness verb. IEG
+  interleaves data pages with intro / section / summary / pass-through
+  pages whose count varies with earlier answers (e.g. income=No still
+  routes through Additional Income Details / Annual Income). Counting
+  `click button "Next"` is fragile — `advance to` clicks Next until the
+  target page heading matches (exact, case-insensitive; substring would
+  stop on a "… Section" intro), with a stuck-guard for unfilled
+  mandatories. This was the fix for the "[none] visible fields" failures:
+  the selects were firing on an intro page because the fixed Next count
+  didn't match the actual page sequence.
+- IEG swaps page content **in place** (same Screening.do frame/URL/
+  timeOrigin), so the nav-signature can't see a page change. `clickButton`
+  is now IEG-aware: for Next/Back it waits until the wizard **heading
+  changes** (or an error banner appears), via `_waitForIegAdvance`.
+- The IEG player frame is added to `_candidateFrames` by URL
+  (`Screening.do`), since resolving it via the modal-iframe element lags
+  after rapid navigation.
+- `selectOption` matches field titles **in-page (normalized)** rather than
+  by CSS `[title="…"]` (brittle with parens/periods like "(HCBS)",
+  "Medical Assistance(MA)"), and self-diagnoses on failure by listing the
+  field titles it did see.
+- Two Carbon consent dialogs close the flow (`check all` + Submit, twice):
+  "Submit Application Form" (4 consent checkboxes) then "Submit
+  Application" (tax-renewal duration, defaults "5 Years", + 1 checkbox).
+  `check all` ticks every visible checkbox, including top-document Carbon
+  modal ones (labels repeat, so per-label matching can't disambiguate).
+- Reaching the consent dialogs: community-engagement page → **Summary**
+  (IEG review page, needs a Next) → the Carbon modals. `advance to
+  "Summary"` then `click button "Next"` crosses the IEG→Carbon boundary.
+- The agreement checkbox on "Applying for Assistance" does **not** persist
+  across a wizard resume — a resumed app restarts there needing a re-check.
+
 ### Known limitations / next ideas
 
 - Variable binding (capture a value from one step into a parameter for a

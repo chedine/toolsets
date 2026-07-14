@@ -144,6 +144,13 @@ class CuramDriver {
       const el = this._modalFrameEl();
       if (await el.isVisible({ timeout: 200 }).catch(() => false)) push(await (await el.elementHandle()).contentFrame());
     } catch {}
+    // IEG wizard player (Register Person / New Application) — the live frame
+    // is reliably in page.frames() by URL; resolving it via the modal iframe
+    // element can lag or point at a transitioning frame after rapid Next
+    // clicks, so include it directly.
+    for (const f of this.page.frames()) {
+      if (/Screening\.do|IEGPlayer|_ieg|\/ieg\//i.test(f.url())) push(f);
+    }
     try { push(await this.contentFrame(2500)); } catch {}
     // context panel (banner fields like Decision / Coverage Start Date)
     try {
@@ -203,17 +210,36 @@ class CuramDriver {
   // input), and dijit FilteringSelect (IEG wizards: .dijitComboBox wrapper,
   // titled .dijitInputInner, .dijitComboBoxMenu popup).
   async selectOption(value, label) {
-    const key = label.replace(/ /g, '');
-    const nat = `select[title="${label}"], select[title="${label} Mandatory"], select[data-testid$=".${key}"]`;
-    const combo = `input[role="combobox"][title="${label}"], input[role="combobox"][title="${label} Mandatory"], input[role="combobox"][data-testid$=".${key}"], .dijitComboBox input.dijitInputInner[title="${label}"], .dijitComboBox input.dijitInputInner[title="${label} Mandatory"]`;
-    const deadline = Date.now() + 10000;
+    // Title/label matching happens in-page (normalized, tolerant of the
+    // " Mandatory" suffix and special chars like parens/periods) rather than
+    // via brittle CSS `[title="…"]` selectors. Marks the field, then Playwright
+    // clicks the mark.
+    const deadline = Date.now() + 18000;
     let lastErr = `no field "${label}"`;
     for (;;) {
       for (const f of await this._candidateFrames()) {
-        const sel = f.locator(nat).first();
-        if (await sel.isVisible().catch(() => false)) { await sel.selectOption({ label: value }); return this; }
-        const input = f.locator(combo).first();
-        if (!(await input.isVisible().catch(() => false))) continue;
+        const kind = await f.evaluate(want => {
+          const norm = s => (s || '').replace(/\s+/g, ' ').trim().replace(/ Mandatory$/, '');
+          const w = norm(want);
+          const key = w.replace(/ /g, '');
+          document.querySelectorAll('[data-curam-select-target]').forEach(e => e.removeAttribute('data-curam-select-target'));
+          // native <select>
+          for (const s of document.querySelectorAll('select')) {
+            if (!s.offsetParent) continue;
+            const tid = s.getAttribute('data-testid') || '';
+            if (norm(s.title) === w || tid.endsWith('.' + key)) { s.setAttribute('data-curam-select-target', '1'); return 'native'; }
+          }
+          // combobox (Carbon role=combobox or dijit FilteringSelect inner input)
+          for (const i of document.querySelectorAll('input[role="combobox"], .dijitComboBox input.dijitInputInner')) {
+            if (!i.offsetParent) continue;
+            const tid = i.getAttribute('data-testid') || '';
+            if (norm(i.title) === w || tid.endsWith('.' + key)) { i.setAttribute('data-curam-select-target', '1'); return 'combo'; }
+          }
+          return null;
+        }, label).catch(() => null);
+        if (kind === 'native') { await f.locator('[data-curam-select-target]').selectOption({ label: value }); return this; }
+        if (kind !== 'combo') continue;
+        const input = f.locator('[data-curam-select-target]');
         // dijit FilteringSelect opens via its arrow button
         const arrow = input.locator('xpath=ancestor::*[contains(@class,"dijitComboBox")][1]//*[contains(@class,"dijitDownArrowButton")]').first();
         if (await arrow.count()) await arrow.click(); else await input.click();
@@ -248,16 +274,73 @@ class CuramDriver {
           await this.page.waitForTimeout(400);
         }
       }
-      if (Date.now() > deadline) throw new Error(lastErr);
+      if (Date.now() > deadline) {
+        // self-diagnosis: what fields WERE visible?
+        const seen = [];
+        for (const f of await this._candidateFrames()) {
+          const ts = await f.evaluate(() => Array.from(document.querySelectorAll('select, input[role="combobox"], .dijitComboBox input.dijitInputInner')).filter(i => i.offsetParent).map(i => (i.title || '').replace(/ Mandatory$/, '')).filter(Boolean)).catch(() => []);
+          seen.push(...ts);
+        }
+        throw new Error(`${lastErr} — visible fields: [${[...new Set(seen)].map(s => `"${s.slice(0, 45)}"`).join(', ') || 'none'}]`);
+      }
       await this.page.waitForTimeout(500);
+    }
+  }
+
+  // The IEG wizard player frame + its current page heading, if a wizard is
+  // open. IEG swaps page content in place, so the frame's URL/timeOrigin
+  // signature doesn't change between pages — the heading text is the only
+  // reliable "did we advance?" signal.
+  _iegFrame() { return this.page.frames().find(f => /Screening\.do|IEGPlayer|_ieg|\/ieg\//i.test(f.url())); }
+  async _iegHeading() {
+    const f = this._iegFrame();
+    if (!f) return null;
+    return f.evaluate(() => (document.querySelector('#ieg-root h1, .page-title-bar .title, h1, h2') || {}).textContent || '').then(s => s.replace(/\s+/g, ' ').trim()).catch(() => null);
+  }
+
+  // ---- advance to "<page heading>" ----
+  // IEG wizards interleave data pages with intro/summary/pass-through pages
+  // whose count varies with earlier answers. Rather than hardcode Next
+  // clicks, click Next until the target page heading is reached. Every
+  // page in between must have no unfilled mandatory fields (intros/summaries
+  // don't) or it will stall.
+  async advanceTo(target, timeout = 90000) {
+    // exact (normalized, case-insensitive) heading match — substring would
+    // stop early on e.g. "... Section" intro pages that contain the target
+    const want = target.replace(/\s+/g, ' ').trim().toLowerCase();
+    const deadline = Date.now() + timeout;
+    let last = null, sameCount = 0;
+    for (;;) {
+      const h = await this._iegHeading();
+      if (h == null) throw new Error(`advance to "${target}": no IEG wizard open`);
+      if (h.toLowerCase() === want) return this;
+      if (h === last) {
+        if (++sameCount > 3) throw new Error(`advance to "${target}": stuck on "${h}" (unfilled mandatory?)`);
+      } else { sameCount = 0; last = h; }
+      if (Date.now() > deadline) throw new Error(`advance to "${target}": not reached (last "${h}")`);
+      // click the IEG Next and wait for the heading to change
+      const f = this._iegFrame();
+      const clicked = await f.evaluate(() => {
+        const n = s => (s || '').replace(/\s+/g, ' ').trim();
+        document.querySelectorAll('[data-curam-replay-target]').forEach(e => e.removeAttribute('data-curam-replay-target'));
+        const b = Array.from(document.querySelectorAll('a.buttonLink, button, input[type=submit]')).filter(x => x.offsetParent).find(x => /^next$/i.test(n(x.textContent) || x.value || ''));
+        if (!b) return false;
+        b.setAttribute('data-curam-replay-target', '1');
+        return true;
+      }).catch(() => false);
+      if (!clicked) throw new Error(`advance to "${target}": no Next on "${h}"`);
+      await f.locator('[data-curam-replay-target]').click();
+      await this._waitForIegAdvance(h);
     }
   }
 
   // ---- click button <label> ----
   // Modal footer buttons (Save/Cancel of Carbon modals) live in the TOP
-  // document; page action buttons live in .action-set inside content frames.
+  // document; page action buttons live in .action-set inside content frames;
+  // IEG wizard buttons are a.buttonLink inside the player frame.
   async clickButton(label) {
     const pre = await this._navSignature();
+    const iegBefore = await this._iegHeading();
     const deadline = Date.now() + 15000;
     for (;;) {
       const modalBtn = this.page.locator('.cds--modal-container button.cds--btn', { hasText: label }).last();
@@ -271,13 +354,39 @@ class CuramDriver {
         const b = f.locator(`.action-set a.first-action-control:has-text("${label}"), .action-set a:has-text("${label}"), a.buttonLink:text-is("${label}")`).first();
         if (await b.isVisible().catch(() => false)) {
           await b.click();
-          await this._waitForNav(pre);
+          // IEG Next/Back: wait until the page heading changes (content
+          // swaps in place) or a validation banner appears, since the nav
+          // signature can't see an in-place content swap.
+          if (iegBefore !== null && /^(next|back|continue)$/i.test(label)) await this._waitForIegAdvance(iegBefore);
+          else await this._waitForNav(pre);
           return this;
         }
       }
       if (Date.now() > deadline) throw new Error(`no button "${label}"`);
       await this.page.waitForTimeout(500);
     }
+  }
+
+  // Wait for an IEG page transition to complete: the heading changes (moved
+  // to a new page) or an error notification appears (validation blocked us
+  // on the same page). Falls through after the timeout.
+  async _waitForIegAdvance(before, timeout = 15000) {
+    const deadline = Date.now() + timeout;
+    while (Date.now() < deadline) {
+      await this.page.waitForTimeout(400);
+      const f = this._iegFrame();
+      if (!f) break; // wizard closed (submitted / exited)
+      const state = await f.evaluate(() => {
+        const n = s => (s || '').replace(/\s+/g, ' ').trim();
+        const h = document.querySelector('#ieg-root h1, .page-title-bar .title, h1, h2');
+        const err = document.querySelector('[class*="error"]');
+        return { title: h ? n(h.textContent) : '', hasErr: !!(err && err.offsetParent) };
+      }).catch(() => null);
+      if (!state) break;
+      if (state.title && state.title !== before) break; // advanced
+      if (state.hasErr) break; // blocked by validation on the same page
+    }
+    await this._settle(1500);
   }
 
   // Resolve the list/cluster whose OWN heading is `container`. Two traps:
@@ -520,6 +629,37 @@ class CuramDriver {
         if (found) { await this._settle(800); return this; }
       }
       if (Date.now() > deadline) throw new Error(`no checkbox "${label}"`);
+      await this.page.waitForTimeout(500);
+    }
+  }
+
+  // ---- check all [checkboxes] ----
+  // Ticks every visible checkbox in content (consent/signature pages where
+  // labels repeat, so per-label matching can't disambiguate). Returns the
+  // count so callers can assert something was actually checked.
+  async checkAll() {
+    const deadline = Date.now() + 8000;
+    for (;;) {
+      let total = 0;
+      // top-document Carbon modal checkboxes (submit/consent dialogs)
+      total += await this.page.evaluate(() => {
+        let n = 0;
+        for (const cb of document.querySelectorAll('.cds--modal-container input[type="checkbox"]')) {
+          if (cb.offsetParent && !cb.checked) { cb.click(); n++; }
+        }
+        return n;
+      }).catch(() => 0);
+      for (const f of await this._candidateFrames()) {
+        total += await f.evaluate(() => {
+          let n = 0;
+          for (const cb of document.querySelectorAll('input[type="checkbox"]')) {
+            if (cb.offsetParent && !cb.checked) { cb.click(); n++; }
+          }
+          return n;
+        }).catch(() => 0);
+      }
+      if (total > 0) { await this._settle(800); return this; }
+      if (Date.now() > deadline) throw new Error('no checkboxes to check');
       await this.page.waitForTimeout(500);
     }
   }

@@ -12,7 +12,7 @@ connections:
   secure-production:
     type: oracle
     tnsAlias: PROD_TCPS
-    tnsAdmin: /path/to/oracle/network/admin
+    tnsAdmin: ./examples/connections
     username: app_user
     passwordEnv: ACID_TRIP_PROD_PASSWORD
     # walletLocation: /path/to/oracle/wallet

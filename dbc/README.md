@@ -76,7 +76,7 @@ Complete standalone examples are checked in under `examples/connections/`:
 - `regular.yaml` — direct host/port/service connection
 - `tns.yaml` — TCP connection using a TNS alias
 - `tcps.yaml` — TCPS connection with server trust or mutual TLS
-- `tnsnames.ora.example` — matching TCP and TCPS aliases
+- `tnsnames.ora` — matching TCP and TCPS aliases (the filename must remain exact)
 
 Use an example directly by copying it to `config.yaml` in the project directory and replacing its paths and environment-variable names.
 

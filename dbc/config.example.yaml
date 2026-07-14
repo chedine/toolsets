@@ -1,0 +1,10 @@
+defaultConnection: xe
+fetchLimit: 100
+connections:
+  xe:
+    type: oracle
+    host: 127.0.0.1
+    port: 1521
+    service: XEPDB1
+    username: dbc
+    passwordEnv: DBC_XE_PASSWORD

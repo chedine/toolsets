@@ -1,0 +1,24 @@
+services:
+  oracle-xe:
+    image: gvenzl/oracle-xe:21-slim
+    platform: linux/amd64
+    container_name: dbc-oracle-xe
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: dbc_sys_test_123
+      APP_USER: dbc
+      APP_USER_PASSWORD: dbc_test_123
+    volumes:
+      - oracle-xe-data:/opt/oracle/oradata
+      - ./docker/oracle/init:/container-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 90s
+    restart: unless-stopped
+
+volumes:
+  oracle-xe-data:

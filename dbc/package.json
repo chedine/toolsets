@@ -1,0 +1,58 @@
+{
+  "name": "acid-trip",
+  "version": "0.1.0",
+  "description": "A local-first Oracle notebook and database client",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "acid-trip": "dist/index.js",
+    "dbc": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"tsx watch src/server/index.ts\" \"vite web --config web/vite.config.ts\"",
+    "dev:tui": "tsx src/index.tsx",
+    "acid-trip:init": "tsx src/index.tsx init",
+    "dbc:init": "tsx src/index.tsx init",
+    "build": "tsc -p tsconfig.json && vite build web --config web/vite.config.ts",
+    "start": "node dist/server/index.js",
+    "start:tui": "node dist/index.js",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p web/tsconfig.json",
+    "oracle:up": "docker compose up -d oracle-xe",
+    "oracle:down": "docker compose down",
+    "oracle:reset": "docker compose down -v && docker compose up -d oracle-xe",
+    "oracle:smoke": "node scripts/oracle-smoke-test.mjs"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.20.3",
+    "@codemirror/commands": "^6.10.4",
+    "@codemirror/lang-sql": "^6.10.0",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/state": "^6.7.1",
+    "@codemirror/view": "^6.43.6",
+    "@fastify/multipart": "^10.1.0",
+    "@fastify/static": "^10.1.0",
+    "@lezer/highlight": "^1.2.0",
+    "fastify": "^5.10.0",
+    "ink": "^5.2.1",
+    "oracledb": "^6.9.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/oracledb": "^7.0.1",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^5.2.0",
+    "concurrently": "^10.0.3",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^7.3.6",
+    "vitest": "^3.0.8"
+  }
+}

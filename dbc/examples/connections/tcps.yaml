@@ -1,0 +1,19 @@
+# ACID Trip — Oracle TCPS connection resolved through tnsnames.ora
+#
+# Server authentication:
+#   Start with NODE_EXTRA_CA_CERTS=/path/to/company-ca.pem
+#   or NODE_OPTIONS=--use-system-ca on a recent Node.js release.
+#
+# Mutual TLS:
+#   walletLocation must contain ewallet.pem. Uncomment wallet settings below.
+defaultConnection: secure-production
+fetchLimit: 100
+connections:
+  secure-production:
+    type: oracle
+    tnsAlias: PROD_TCPS
+    tnsAdmin: /path/to/oracle/network/admin
+    username: app_user
+    passwordEnv: ACID_TRIP_PROD_PASSWORD
+    # walletLocation: /path/to/oracle/wallet
+    # walletPasswordEnv: ACID_TRIP_WALLET_PASSWORD

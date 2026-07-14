@@ -1,0 +1,11 @@
+# ACID Trip — direct Oracle TCP connection (Easy Connect)
+defaultConnection: development
+fetchLimit: 100
+connections:
+  development:
+    type: oracle
+    host: db.example.internal
+    port: 1521
+    service: APPPDB1
+    username: app_user
+    passwordEnv: ACID_TRIP_DEV_PASSWORD

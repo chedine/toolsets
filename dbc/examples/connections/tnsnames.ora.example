@@ -1,0 +1,28 @@
+# Referenced by tns.yaml
+PROD_TCP =
+  (DESCRIPTION =
+    (ADDRESS =
+      (PROTOCOL = TCP)
+      (HOST = db.example.internal)
+      (PORT = 1521)
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = APPPDB1)
+    )
+  )
+
+# Referenced by tcps.yaml
+PROD_TCPS =
+  (DESCRIPTION =
+    (ADDRESS =
+      (PROTOCOL = TCPS)
+      (HOST = secure-db.example.internal)
+      (PORT = 2484)
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = APPPDB1)
+    )
+    (SECURITY =
+      (SSL_SERVER_DN_MATCH = YES)
+    )
+  )

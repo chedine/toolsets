@@ -1,0 +1,11 @@
+# ACID Trip — Oracle TCP connection resolved through tnsnames.ora
+# tnsAdmin must be the directory containing tnsnames.ora.
+defaultConnection: production
+fetchLimit: 100
+connections:
+  production:
+    type: oracle
+    tnsAlias: PROD_TCP
+    tnsAdmin: /path/to/oracle/network/admin
+    username: app_user
+    passwordEnv: ACID_TRIP_PROD_PASSWORD

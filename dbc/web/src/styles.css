@@ -352,6 +352,26 @@ button:disabled { opacity: .35; cursor: default; }
   text-align: left;
   white-space: nowrap;
 }
+.result-grid th.resizable-column { padding-right: 28px; }
+.column-resizer {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 5px;
+  width: 9px;
+  height: 100%;
+  cursor: col-resize;
+}
+.column-resizer::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  left: 4px;
+  border-left: 1px solid transparent;
+}
+.column-resizer:hover::after, body.column-resizing .column-resizer::after { border-left-color: var(--accent); }
+body.column-resizing, body.column-resizing * { cursor: col-resize !important; user-select: none !important; }
 .result-grid td {
   max-width: 380px;
   padding: 2px 24px 2px 0;
@@ -365,6 +385,8 @@ button:disabled { opacity: .35; cursor: default; }
 .result-grid th.num, .result-grid td.num { text-align: right; }
 .result-grid .null { color: var(--faint); font-style: italic; }
 .result-grid .changed-row td { background: var(--accent-soft); }
+.result-grid td.copyable-cell { cursor: copy; }
+.result-grid td.copied-cell { box-shadow: inset 0 -2px var(--accent); }
 .result-grid .duplicate-row td { background: var(--amber-soft); border-bottom-color: var(--amber); }
 .result-grid input {
   width: 100%;

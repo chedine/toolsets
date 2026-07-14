@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 import { resolveEditableTable, sameIdentifier } from "../../src/core/result-editing";
 import type { DatabaseCatalog, LobReference, LobValue, QueryResult } from "../../src/core/types";
 import { api } from "./api";
@@ -28,6 +28,9 @@ export function ResultGrid({
   const [duplicates, setDuplicates] = useState<DuplicateDraft[]>([]);
   const [openLob, setOpenLob] = useState<OpenLob>();
   const [saving, setSaving] = useState(false);
+  const [columnWidths, setColumnWidths] = useState<Record<number, number>>({});
+  const [copiedCell, setCopiedCell] = useState<string>();
+  const copyTimer = useRef<ReturnType<typeof setTimeout>>();
   const [notice, setNotice] = useState<string>();
   const [error, setError] = useState<string>();
   const columnNames = result.columns.map((column) => column.name);
@@ -46,6 +49,44 @@ export function ResultGrid({
   const lobReference = (rowIndex: number, columnIndex: number, value: LobValue): LobReference | undefined => {
     if (!table || !hasKeys) return undefined;
     return { table: table.name, column: result.columns[columnIndex].name, keys: keysFor(rowIndex), kind: value.kind };
+  };
+
+  const resizeColumn = (columnIndex: number, event: ReactMouseEvent<HTMLSpanElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const header = event.currentTarget.parentElement;
+    if (!header) return;
+    const startX = event.clientX;
+    const startWidth = header.getBoundingClientRect().width;
+    document.body.classList.add("column-resizing");
+    const move = (moveEvent: MouseEvent) => {
+      const width = Math.min(1400, Math.max(60, startWidth + moveEvent.clientX - startX));
+      setColumnWidths((current) => ({ ...current, [columnIndex]: width }));
+    };
+    const stop = () => {
+      document.body.classList.remove("column-resizing");
+      document.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseup", stop);
+    };
+    document.addEventListener("mousemove", move);
+    document.addEventListener("mouseup", stop);
+  };
+
+  const copyCell = async (key: string, value: unknown) => {
+    const text = display(value);
+    try {
+      await writeClipboard(text);
+      setCopiedCell(key);
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopiedCell(undefined), 800);
+    } catch (cause) {
+      setError(`Could not copy cell: ${(cause as Error).message}`);
+    }
+  };
+
+  const columnStyle = (columnIndex: number) => {
+    const width = columnWidths[columnIndex];
+    return width ? { width, minWidth: width, maxWidth: width } : undefined;
   };
 
   const duplicate = (rowIndex: number) => {
@@ -148,7 +189,12 @@ export function ResultGrid({
       </div>
       <div className="grid-scroll">
         <table className="result-grid">
-          <thead><tr>{editable && <th className="row-actions" />}{result.columns.map((column, index) => <th key={column.name} className={numeric[index] ? "num" : ""}>{column.name}</th>)}</tr></thead>
+          <thead><tr>{editable && <th className="row-actions" />}{result.columns.map((column, index) => (
+            <th key={column.name} className={`${numeric[index] ? "num" : ""} resizable-column`} style={columnStyle(index)}>
+              <span>{column.name}</span>
+              <span className="column-resizer" role="separator" aria-label={`Resize ${column.name}`} onMouseDown={(event) => resizeColumn(index, event)} />
+            </th>
+          ))}</tr></thead>
           <tbody>
             {result.rows.map((row, rowIndex) => (
               <tr key={rowIndex} className={changedRows.has(rowIndex) ? "changed-row" : ""}>
@@ -162,8 +208,13 @@ export function ResultGrid({
                   return (
                     <td
                       key={columnIndex}
-                      className={`${value == null && !lobValue ? "null" : ""} ${lobValue ? "lob-cell" : ""} ${lobDrafts[key] ? "staged-lob" : ""} ${numeric[columnIndex] && !lobValue ? "num" : ""}`}
-                      onClick={() => { if (lobValue && reference) setOpenLob({ rowIndex, columnIndex, value: lobValue, reference }); }}
+                      className={`${value == null && !lobValue ? "null" : ""} ${lobValue ? "lob-cell" : "copyable-cell"} ${lobDrafts[key] ? "staged-lob" : ""} ${numeric[columnIndex] && !lobValue ? "num" : ""} ${copiedCell === key ? "copied-cell" : ""}`}
+                      style={columnStyle(columnIndex)}
+                      title={lobValue ? undefined : copiedCell === key ? "Copied" : "Click to copy full value"}
+                      onClick={(event) => {
+                        if (lobValue && reference) setOpenLob({ rowIndex, columnIndex, value: lobValue, reference });
+                        else if (!(event.target instanceof HTMLInputElement)) void copyCell(key, value);
+                      }}
                       onDoubleClick={() => {
                         if (lobValue && reference) setOpenLob({ rowIndex, columnIndex, value: lobValue, reference });
                         else if (editable && column && !column.primaryKey) setEditing(true);
@@ -239,6 +290,22 @@ function display(value: unknown): string {
   if (isLobValue(value)) return `${value.kind} · ${formatBytes(value.size)}`;
   if (typeof value === "object") return JSON.stringify(value);
   return String(value);
+}
+
+async function writeClipboard(text: string): Promise<void> {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  if (!copied) throw new Error("Clipboard access is unavailable");
 }
 
 function coerce(value: string, dataType?: string): unknown {

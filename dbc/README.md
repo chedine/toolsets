@@ -78,6 +78,8 @@ Complete standalone examples are checked in under `examples/connections/`:
 - `tcps.yaml` — TCPS connection with server trust or mutual TLS
 - `tnsnames.ora` — matching TCP and TCPS aliases (the filename must remain exact)
 
+See [`docs/tcps-certificates.md`](docs/tcps-certificates.md) for Windows trust configuration, PEM bundles, hostname matching, and mutual TLS wallets.
+
 Use an example directly by copying it to `config.yaml` in the project directory and replacing its paths and environment-variable names.
 
 

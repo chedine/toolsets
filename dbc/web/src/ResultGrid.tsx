@@ -71,16 +71,18 @@ export function ResultGrid({
       let committed = false;
       for (const rowIndex of changedRows) {
         const changes: Record<string, unknown> = {};
+        const columnTypes: Record<string, string> = {};
         for (const [draftKey, value] of Object.entries(drafts)) {
           const [draftRow, columnIndex] = draftKey.split(":").map(Number);
           if (draftRow !== rowIndex) continue;
           const column = result.columns[columnIndex];
           const metadata = table.columns.find((candidate) => sameIdentifier(candidate.name, column.name));
           changes[column.name] = coerce(value, metadata?.dataType);
+          if (metadata?.dataType) columnTypes[column.name] = metadata.dataType;
           rows[rowIndex][columnIndex] = changes[column.name];
         }
         if (Object.keys(changes).length) {
-          const response = await api.updateRow(connection, { table: table.name, keys: keysFor(rowIndex), changes });
+          const response = await api.updateRow(connection, { table: table.name, keys: keysFor(rowIndex), changes, columnTypes });
           if (response.kind === "mutation") committed = response.committed;
         }
       }
@@ -98,18 +100,23 @@ export function ResultGrid({
       }
       for (const draft of duplicates) {
         const overrides: Record<string, unknown> = {};
+        const columnTypes: Record<string, string> = {};
         for (const [columnName, value] of Object.entries(draft.values)) {
           const columnIndex = result.columns.findIndex((column) => sameIdentifier(column.name, columnName));
           const original = display(result.rows[draft.sourceRow][columnIndex]);
           const metadata = table.columns.find((column) => sameIdentifier(column.name, columnName));
           if (metadata?.primaryKey && !value.trim()) throw new Error(`${columnName} is required for the duplicated row`);
-          if (value !== original) overrides[columnName] = coerce(value, metadata?.dataType);
+          if (value !== original) {
+            overrides[columnName] = coerce(value, metadata?.dataType);
+            if (metadata?.dataType) columnTypes[columnName] = metadata.dataType;
+          }
         }
         const response = await api.duplicateRow(connection, {
           table: table.name,
           keys: keysFor(draft.sourceRow),
           columns: table.columns.filter((column) => !column.identity).map((column) => column.name),
           overrides,
+          columnTypes,
         });
         if (response.kind === "mutation") committed = response.committed;
       }
@@ -136,7 +143,7 @@ export function ResultGrid({
       <div className="result-meta">
         <span><b>{result.rows.length} rows</b> · {result.elapsedMs} ms{result.truncated ? " · limited" : ""}</span>
         <span className="grow" />
-        {editable && <button className={`edit-rows-button ${editing ? "active" : ""}`} title={editing ? "Stop editing" : `Edit rows of ${table?.name}`} onClick={() => setEditing((value) => !value)}>{editing ? `✎ editing ${table?.name}` : "✎ edit"}</button>}
+        {editable && <button className={`edit-rows-button ${editing ? "active" : ""}`} title={editing ? "Stop editing" : `Edit rows of ${table?.name}`} onClick={() => setEditing((value) => !value)}>✎</button>}
         {!editable && <span className="read-only-reason" title="Use a simple single-table SELECT and include every primary-key column">read-only</span>}
       </div>
       <div className="grid-scroll">

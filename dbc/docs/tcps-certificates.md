@@ -1,6 +1,6 @@
 # TCPS certificates on Windows
 
-ACID Trip uses `node-oracledb` Thin mode. It does not read the JDK truststore. Node.js validates the Oracle server certificate using its own trusted CAs, the Windows certificate store when enabled, or a PEM CA bundle supplied at process startup.
+Acid uses `node-oracledb` Thin mode. It does not read the JDK truststore. Node.js validates the Oracle server certificate using its own trusted CAs, the Windows certificate store when enabled, or a PEM CA bundle supplied at process startup.
 
 ## TNS configuration
 
@@ -68,7 +68,7 @@ Expected output:
 3
 ```
 
-Stop the currently running ACID Trip process. Set the CA bundle in the same PowerShell session and start ACID Trip with portable Node 24:
+Stop the currently running Acid process. Set the CA bundle in the same PowerShell session and start Acid with portable Node 24:
 
 ```powershell
 $env:NODE_EXTRA_CA_CERTS = $bundle
@@ -123,4 +123,4 @@ The wallet normally includes the client private key, client certificate, and tru
   & $node -e "const o=require('oracledb'); o.getNetworkServiceNames('C:/Oracle/network/admin').then(console.log).catch(console.error)"
   ```
 
-- Restart ACID Trip after changing TNS files, certificate variables, or connection configuration.
+- Restart Acid after changing TNS files, certificate variables, or connection configuration.

@@ -8,7 +8,7 @@ import { PromptInput } from "./PromptInput.js";
 export function InkApp({ application, defaultConnection }: { application: DbcApplication; defaultConnection?: string }): React.JSX.Element {
   const { exit } = useApp();
   const [blocks, setBlocks] = useState<OutputBlock[]>([
-    { type: "message", tone: "muted", text: "ACID Trip · /help for commands" },
+    { type: "message", tone: "muted", text: "Acid · /help for commands" },
   ]);
   const [input, setInput] = useState("");
   const [cursorOffset, setCursorOffset] = useState(0);
@@ -121,7 +121,7 @@ export function InkApp({ application, defaultConnection }: { application: DbcApp
   return (
     <Box flexDirection="column">
       <Box justifyContent="space-between">
-        <Text bold> ACID Trip </Text>
+        <Text bold> Acid </Text>
         <Text dimColor>
           {context ? `${context.name} · autocommit ${context.autoCommit ? "ON" : "OFF"}${context.dirty ? " · UNCOMMITTED" : ""}` : "not connected"}
         </Text>

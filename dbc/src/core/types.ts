@@ -68,6 +68,7 @@ export type RowUpdate = {
   table: string;
   keys: Record<string, unknown>;
   changes: Record<string, unknown>;
+  columnTypes?: Record<string, string>;
 };
 
 export type RowInsert = {
@@ -80,6 +81,7 @@ export type RowDuplicate = {
   keys: Record<string, unknown>;
   columns: string[];
   overrides: Record<string, unknown>;
+  columnTypes?: Record<string, string>;
 };
 
 export type LobValue = {

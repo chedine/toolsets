@@ -103,8 +103,9 @@ class OracleSession implements DatabaseSession {
     if (!keys.length) throw new Error("A primary key is required to update a row");
     const binds: Record<string, unknown> = {};
     const setSql = changes.map(([name, value], index) => {
-      binds[`set${index}`] = value;
-      return `${oracleIdentifier(name)} = :set${index}`;
+      const bindName = `set${index}`;
+      const expression = typedBind(bindName, value, update.columnTypes?.[name], binds);
+      return `${oracleIdentifier(name)} = ${expression}`;
     }).join(", ");
     const whereSql = keys.map(([name, value], index) => {
       binds[`key${index}`] = value;
@@ -141,11 +142,12 @@ class OracleSession implements DatabaseSession {
     if (!duplicate.columns.length) throw new Error("No duplicate columns supplied");
     const { clause, binds } = whereClause(duplicate.keys);
     const overrideEntries = Object.entries(duplicate.overrides);
-    overrideEntries.forEach(([, value], index) => { binds[`override${index}`] = value; });
     const overrideIndexes = new Map(overrideEntries.map(([name], index) => [name.toUpperCase(), index]));
     const selectValues = duplicate.columns.map((column) => {
       const index = overrideIndexes.get(column.toUpperCase());
-      return index === undefined ? oracleIdentifier(column) : `:override${index}`;
+      if (index === undefined) return oracleIdentifier(column);
+      const [, value] = overrideEntries[index];
+      return typedBind(`override${index}`, value, duplicate.columnTypes?.[column], binds);
     });
     const started = performance.now();
     const result = await this.connection.execute(
@@ -211,6 +213,23 @@ async function replaceLobsWithMetadata(
       row[index] = placeholder;
     }
   }
+}
+
+export function typedBind(
+  bindName: string,
+  value: unknown,
+  dataType: string | undefined,
+  binds: Record<string, unknown>,
+): string {
+  const normalizedType = dataType?.toUpperCase();
+  if (typeof value === "string" && (normalizedType === "DATE" || normalizedType?.startsWith("TIMESTAMP"))) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) throw new Error(`Invalid ${dataType} value: ${value}`);
+    binds[bindName] = date;
+    return `:${bindName}`;
+  }
+  binds[bindName] = value;
+  return `:${bindName}`;
 }
 
 function whereClause(keys: Record<string, unknown>): { clause: string; binds: Record<string, unknown> } {

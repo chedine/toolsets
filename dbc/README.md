@@ -1,6 +1,6 @@
-# ACID Trip
+# Acid
 
-A local-first Oracle web notebook and database client. ACID Trip provides a dense sidebar, CodeMirror SQL editing and IntelliSense, inline results, editable rows, transactions, and reusable positional SQL templates.
+A local-first Oracle web notebook and database client. Acid provides a dense sidebar, CodeMirror SQL editing and IntelliSense, inline results, editable rows, transactions, and reusable positional SQL templates.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ A local-first Oracle web notebook and database client. ACID Trip provides a dens
 - macOS or Windows
 - Oracle Database reachable over TCP, TNS, or TCPS/wallet
 
-ACID Trip uses `node-oracledb` Thin mode, so Oracle Instant Client is not normally required.
+Acid uses `node-oracledb` Thin mode, so Oracle Instant Client is not normally required.
 
 ## Install and run
 
@@ -25,7 +25,7 @@ npm run build
 npm start                # UI and API at http://127.0.0.1:4174
 ```
 
-The server binds only to `127.0.0.1` by default. ACID Trip first loads `config.yaml` from the directory where it is launched. If that file is absent, it falls back to `~/.dbc/config.yaml`. Notebooks and templates remain under `~/.dbc`. `ACID_TRIP_CONFIG` can optionally point to a specific config file.
+The server binds only to `127.0.0.1` by default. Acid first loads `config.yaml` from the directory where it is launched. If that file is absent, it falls back to `~/.dbc/config.yaml`. Notebooks and templates remain under `~/.dbc`. `ACID_TRIP_CONFIG` can optionally point to a specific config file.
 
 ## Local Oracle XE test database
 

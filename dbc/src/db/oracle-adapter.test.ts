@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { makeConnectString } from "./oracle-adapter.js";
+import { makeConnectString, typedBind } from "./oracle-adapter.js";
 
 describe("makeConnectString", () => {
   it("builds an Easy Connect service string", () => {
@@ -14,5 +14,18 @@ describe("makeConnectString", () => {
 
   it("uses a TNS alias directly", () => {
     expect(makeConnectString({ type: "oracle", tnsAlias: "prod_high" })).toBe("prod_high");
+  });
+});
+
+describe("typedBind", () => {
+  it("converts ISO timestamp strings to Date binds", () => {
+    const binds: Record<string, unknown> = {};
+    expect(typedBind("created", "2018-11-01T05:00:00.000Z", "TIMESTAMP", binds)).toBe(":created");
+    expect(binds.created).toBeInstanceOf(Date);
+    expect((binds.created as Date).toISOString()).toBe("2018-11-01T05:00:00.000Z");
+  });
+
+  it("rejects invalid timestamp values before Oracle execution", () => {
+    expect(() => typedBind("created", "not-a-date", "TIMESTAMP", {})).toThrow("Invalid TIMESTAMP value");
   });
 });

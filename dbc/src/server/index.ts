@@ -144,7 +144,7 @@ process.once("SIGINT", () => void stop().finally(() => process.exit(0)));
 process.once("SIGTERM", () => void stop().finally(() => process.exit(0)));
 
 await app.listen({ host, port });
-console.log(`ACID Trip · http://${host}:${port}`);
+console.log(`Acid · http://${host}:${port}`);
 
 function fieldValue(field: unknown): string {
   if (!field || typeof field !== "object" || !("value" in field)) throw new Error("Missing multipart reference");

@@ -345,7 +345,7 @@ export function App() {
       </main>
 
       <footer className="statusbar">
-        <strong className="product-name">ACID Trip</strong>
+        <strong className="product-name">Acid</strong>
         <button title="Toggle sidebar" onClick={() => setSidebarOpen((value) => !value)}>▤</button>
         <span>
           <span className={activeSession ? "ok" : ""}>● </span>

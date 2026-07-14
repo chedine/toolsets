@@ -232,7 +232,7 @@ button:disabled { opacity: .35; cursor: default; }
 }
 .global-error button { color: var(--red); }
 
-.notebook { max-width: 980px; padding: 32px 48px 90px; }
+.notebook { width: 95%; max-width: none; margin: 0 auto; padding: 32px 0 90px; }
 .notebook-heading { margin-bottom: 34px; }
 .doc-title {
   width: 100%;
@@ -242,7 +242,7 @@ button:disabled { opacity: .35; cursor: default; }
   outline: none;
   padding: 0;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 16px;
 }
 .doc-title:hover { border-bottom-color: var(--hair); }
 .doc-title:focus { border-bottom-color: var(--accent); }
@@ -338,12 +338,12 @@ button:disabled { opacity: .35; cursor: default; }
   position: sticky;
   z-index: 2;
   top: 0;
-  padding: 2px 24px 5px 0;
+  padding: 4px 24px 6px 0;
   color: var(--faint);
   background: var(--paper);
   border-bottom: 1px solid var(--hair);
-  font-weight: 400;
-  font-size: 10px;
+  font-weight: 500;
+  font-size: 11px;
   letter-spacing: .1em;
   text-transform: uppercase;
   text-align: left;
@@ -357,7 +357,8 @@ button:disabled { opacity: .35; cursor: default; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.result-grid tr:hover td { background: var(--accent-soft); }
+.result-grid tbody tr:nth-child(even) td { background: var(--panel); }
+.result-grid tbody tr:hover td { background: var(--accent-soft); }
 .result-grid th.num, .result-grid td.num { text-align: right; }
 .result-grid .null { color: var(--faint); font-style: italic; }
 .result-grid .changed-row td { background: var(--accent-soft); }

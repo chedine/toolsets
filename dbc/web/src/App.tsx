@@ -3,6 +3,7 @@ import type { DatabaseCatalog, ExecutionResult, NotebookDocument, NotebookSummar
 import { api, type AppState } from "./api";
 import { ResultGrid } from "./ResultGrid";
 import { SqlEditor } from "./SqlEditor";
+import { applyTypography, loadTypography, saveTypography, TypographySettings } from "./TypographySettings";
 
 type Cell = {
   id: string;
@@ -30,7 +31,14 @@ export function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [globalError, setGlobalError] = useState<string>();
   const [theme, setTheme] = useState<"auto" | "light" | "dark">(() => (localStorage.getItem("dbc-theme") as "light" | "dark" | null) ?? "auto");
+  const [typography, setTypography] = useState(loadTypography);
+  const [typographyOpen, setTypographyOpen] = useState(false);
   const focusCell = useRef<string>();
+
+  useEffect(() => {
+    applyTypography(typography);
+    saveTypography(typography);
+  }, [typography]);
 
   useEffect(() => {
     if (theme === "auto") {
@@ -365,11 +373,19 @@ export function App() {
           </>
         )}
         <span className="grow" />
+        <button title="Typography" onClick={() => setTypographyOpen(true)}>Aa</button>
         <button title="Theme (follows system on auto)" onClick={() => setTheme((current) => current === "auto" ? "light" : current === "light" ? "dark" : "auto")}>◐ {theme}</button>
         <span className={saveStatus === "error" ? "err" : ""}>{saveStatus === "saving" ? "saving…" : saveStatus === "error" ? "save failed" : "saved"}</span>
         <span className="hint"><kbd>⌘</kbd><kbd>↩</kbd> run</span>
         <span className="hint"><kbd>⌘</kbd><kbd>⇧</kbd><kbd>↩</kbd> run + new cell</span>
       </footer>
+
+      <TypographySettings
+        open={typographyOpen}
+        value={typography}
+        onApply={setTypography}
+        onClose={() => setTypographyOpen(false)}
+      />
     </div>
   );
 }

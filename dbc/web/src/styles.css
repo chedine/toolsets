@@ -16,6 +16,9 @@
   --amber: #A07C2E;
   --amber-soft: #A07C2E14;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --ui-font-size: 12.5px;
+  --editor-font-size: 12.5px;
+  --table-font-size: 12px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -78,7 +81,7 @@ html, body, #root { width: 100%; min-height: 100%; margin: 0; }
 body {
   background: var(--paper);
   color: var(--ink);
-  font: 12.5px/1.5 var(--mono);
+  font: var(--ui-font-size)/1.5 var(--mono);
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
 }
@@ -331,7 +334,7 @@ button:disabled { opacity: .35; cursor: default; }
   min-width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 12px;
+  font-size: var(--table-font-size);
   line-height: 1.45;
 }
 .result-grid th {
@@ -495,6 +498,48 @@ kbd {
 .file-button:hover, .button-link:hover, .lob-modal > footer button:hover:not(:disabled) { color: var(--ink); }
 .lob-modal > footer button.primary { color: var(--accent); }
 .file-button input { display: none; }
+
+/* ---------- typography modal ---------- */
+.typography-modal {
+  width: min(560px, 94vw);
+  background: var(--paper);
+  border: 1px solid var(--hair);
+}
+.typography-modal > header {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px 0 16px;
+  border-bottom: 1px solid var(--hair);
+}
+.typography-modal > header div { display: flex; align-items: baseline; gap: 10px; }
+.typography-modal > header strong { font-weight: 500; }
+.typography-modal > header span { color: var(--faint); font-size: 11px; }
+.typography-modal > header button { font-size: 16px; }
+.typography-form { display: grid; gap: 24px; padding: 22px 20px; }
+.typography-form label > span { display: block; margin-bottom: 6px; color: var(--dim); font-size: 11px; }
+.typography-form input {
+  width: 100%;
+  padding: 6px 0;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--hair);
+  outline: none;
+}
+.typography-form input:focus { border-bottom-color: var(--accent); }
+.font-family-field small { display: block; margin-top: 5px; color: var(--faint); font-size: 10px; }
+.type-size-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.type-number-field div { display: flex; align-items: baseline; gap: 5px; }
+.type-number-field small { color: var(--faint); }
+.typography-preview { padding: 12px 14px; overflow: hidden; color: var(--dim); background: var(--panel); white-space: nowrap; }
+.typography-preview span { color: var(--accent); }
+.typography-modal > footer { height: 46px; display: flex; align-items: center; gap: 18px; padding: 0 16px; border-top: 1px solid var(--hair); }
+.typography-modal > footer .spacer { flex: 1; }
+.typography-modal > footer button { color: var(--dim); font-size: 11px; }
+.typography-modal > footer button:hover { color: var(--ink); }
+.typography-modal > footer button.primary { color: var(--accent); }
 
 @media (max-width: 760px) {
   .app-shell { grid-template-columns: 190px minmax(0, 1fr); }

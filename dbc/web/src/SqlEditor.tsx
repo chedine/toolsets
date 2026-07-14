@@ -82,7 +82,7 @@ export function SqlEditor({
             ...defaultKeymap,
           ]),
           EditorView.theme({
-            "&": { backgroundColor: "transparent", fontSize: "12.5px" },
+            "&": { backgroundColor: "transparent", fontSize: "var(--editor-font-size)" },
             ".cm-content": { padding: "10px 14px", minHeight: "42px", fontFamily: "var(--mono)", lineHeight: "1.65" },
             ".cm-focused": { outline: "none" },
             ".cm-tooltip": { backgroundColor: "var(--paper)", border: "1px solid var(--hair)", color: "var(--dim)", fontFamily: "var(--mono)" },

@@ -192,7 +192,9 @@ async function setupRecorder(page, cfg) {
   const flaggedSteps = () => state.steps
     .map((s, i) => ({ s, i }))
     .filter(({ s }) => (s.verb === 'click link' && s.ctx && /\d{4,}/.test(s.args[0]))
-      || (ROW_VERBS.includes(s.verb) && s.ctx))
+      // row verbs only need review when there's actually a row to disambiguate;
+      // a single-row table (row 1 of 1) has no choice, so keep the default
+      || (ROW_VERBS.includes(s.verb) && s.ctx && s.ctx.rowCount > 1))
     .map(({ s, i }) => ({ i, verb: s.verb, text: s.args[0], container: s.args[1] || '', row: s.ctx.row, rowCount: s.ctx.rowCount, column: s.ctx.column, rowValues: s.ctx.rowValues }));
 
   const applyStrategies = choices => {

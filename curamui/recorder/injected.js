@@ -35,6 +35,19 @@ module.exports = function curamRecorderInit() {
     return input.name || input.id || 'unknown field';
   }
 
+  // A checkbox's meaningful label (title / testid / associated <label> /
+  // aria-label), or '' if it has none (a pure row-selection checkbox). Unlike
+  // fieldLabel it never falls back to name/id.
+  function checkboxLabel(el) {
+    if (el.title) return el.title.replace(/\s+Mandatory$/, '');
+    const tid = el.getAttribute('data-testid') || el.getAttribute('data-rawtestid') || '';
+    const m = tid.match(/Label\.([A-Za-z0-9]+)$/);
+    if (m) return m[1].replace(/([a-z])([A-Z])/g, '$1 $2');
+    if (el.id) { const l = document.querySelector(`label[for="${CSS.escape(el.id)}"]`); if (l && txt(l)) return txt(l); }
+    if (el.getAttribute('aria-label')) return el.getAttribute('aria-label');
+    return '';
+  }
+
   function report(verb, args, ctx) {
     if (window.__curamRecEvent) window.__curamRecEvent({ verb, args, ctx: ctx || undefined, frame: IS_TOP ? 'top' : frameTitle(), ts: Date.now() });
   }
@@ -313,8 +326,13 @@ module.exports = function curamRecorderInit() {
     // aria-hidden; a real user can only change visible fields.
     if (el.offsetParent === null || el.getAttribute('aria-hidden') === 'true') return;
     if (el.type === 'checkbox') {
-      // row-selection checkboxes have no meaningful label — record them as
-      // row verbs with table context instead
+      // Prefer a real label (title / associated <label> / aria-label) even
+      // inside a table row — consent checkboxes ("I agree…") live in rows but
+      // are best identified by their text. Only a genuinely label-less
+      // row-selection checkbox falls back to `check row` (its identity is the
+      // row, not a label).
+      const label = checkboxLabel(el);
+      if (label) { report(el.checked ? 'check' : 'uncheck', [label]); return; }
       const row = el.closest('tbody tr');
       if (row && !IS_TOP) { report(el.checked ? 'check row' : 'uncheck row', ['', containerLabel(el)], rowContext(el)); return; }
       report(el.checked ? 'check' : 'uncheck', [fieldLabel(el)]);

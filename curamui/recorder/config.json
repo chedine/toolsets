@@ -11,9 +11,16 @@
     "height": 1000
   },
   "generate": {
-    "First Name": { "type": "firstName" },
-    "Last Name": { "type": "lastName", "unique": true },
-    "Social Security Number": { "type": "ssn", "area": "091" },
-    "SSN.Reenter": { "ref": "Social Security Number" }
+    "^First Name$": {
+      "type": "firstName"
+    },
+    "^Last Name$": {
+      "type": "lastName",
+      "unique": true
+    },
+    "^Social Security Number$": {
+      "type": "ssn",
+      "area": "091"
+    }
   }
 }

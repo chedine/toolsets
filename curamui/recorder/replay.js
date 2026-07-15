@@ -112,34 +112,43 @@ async function main() {
       params[args[i + 1].slice(0, eqi)] = args[i + 1].slice(eqi + 1);
     }
   }
-  // --generate: mint fresh values for the identity fields listed under
-  // "generate" in config.json (e.g. First Name, SSN), once per run, so a
-  // recording made with concrete data creates a distinct person each replay.
-  // A { "ref": "<field>" } spec reuses another field's value (SSN re-enter).
-  // Generated values are also exposed as ${<field label>} so later steps that
-  // reference the identity resolve to the same value.
+  // --generate: mint fresh identity values so a recording made with concrete
+  // data creates a distinct person each replay. config.json "generate" maps a
+  // field-label REGEX (case-insensitive) to a generator spec; the value is
+  // generated once per rule and shared by every field it matches. The recorded
+  // value of each matched field is then replaced by the generated one across
+  // ALL steps — so the SSN re-enter (same recorded value, different label) and
+  // later person-search / link steps (which embed the recorded name) update
+  // too, without needing a label match for each.
   const genOn = args.includes('--generate') || args.includes('--gen');
-  const genVals = {};
   if (genOn) {
     const { generate } = require('./generators');
+    const { toDsl } = require('./record');
     const genCfg = cfg.generate || {};
     if (!Object.keys(genCfg).length) { console.error('--generate given but config.json has no "generate" section'); process.exit(1); }
-    const resolve = label => {
-      if (label in genVals) return genVals[label];
-      const spec = genCfg[label];
-      genVals[label] = spec && spec.ref ? resolve(spec.ref) : generate(spec);
-      return genVals[label];
-    };
-    for (const label of Object.keys(genCfg)) resolve(label);
-    Object.assign(params, genVals);
-    // convenience aliases so scenarios that reference identity by the usual
-    // param names (${firstName}, ${lastName}, ${person}) resolve to the
-    // generated values without knowing field labels. Generate wins over
-    // scenario defaults for its configured fields.
-    const camel = s => s.replace(/\s+(\w)/g, (_, c) => c.toUpperCase()).replace(/^(\w)/, (_, c) => c.toLowerCase());
-    for (const [label, val] of Object.entries(genVals)) params[camel(label)] = val;
-    if ('First Name' in genVals && 'Last Name' in genVals) params.person = `${genVals['First Name']} ${genVals['Last Name']}`;
-    console.log('Generated:', JSON.stringify(genVals));
+    const rules = Object.entries(genCfg).map(([pat, spec]) => ({ re: new RegExp(pat, 'i'), spec, value: undefined }));
+    const byType = {};
+    const replace = []; // { from: recordedValue, to: generatedValue }
+    for (const step of rec.steps) {
+      if (step.verb !== 'enter' && step.verb !== 'select option') continue;
+      const rule = rules.find(r => r.re.test(step.args[1]));
+      if (!rule) continue;
+      if (rule.value === undefined) { rule.value = generate(rule.spec); byType[(rule.spec.type || '').toLowerCase()] = rule.value; }
+      const recorded = step.args[0];
+      if (recorded && recorded.length >= 2 && recorded !== rule.value) replace.push({ from: recorded, to: rule.value });
+    }
+    const sub = s => { for (const { from, to } of replace) s = s.split(from).join(to); return s; };
+    for (const step of rec.steps) {
+      const before = JSON.stringify(step.args);
+      step.args = step.args.map(a => typeof a === 'string' ? sub(a) : a);
+      if (JSON.stringify(step.args) !== before) step.dsl = toDsl(step) + '  (generated)';
+    }
+    // expose the generated identity under the usual param names too, for
+    // recordings/scenarios that reference it via ${firstName}/${person}
+    if (byType.firstname) params.firstName = byType.firstname;
+    if (byType.lastname) params.lastName = byType.lastname;
+    if (params.firstName && params.lastName) params.person = `${params.firstName} ${params.lastName}`;
+    console.log('Generated:', JSON.stringify(byType));
   }
 
   applyParams(rec.steps, params);
@@ -164,11 +173,6 @@ async function main() {
   const c = new CuramDriver(page);
   let ok = 0, failed = 0;
   for (const step of rec.steps) {
-    // override recorded identity values with the generated ones
-    if (genOn && (step.verb === 'enter' || step.verb === 'select option') && step.args[1] in genVals) {
-      step.args = [genVals[step.args[1]], step.args[1]];
-      step.dsl = (step.verb === 'enter' ? `enter "${step.args[0]}" as ${step.args[1]}` : `select "${step.args[0]}" for ${step.args[1]}`) + '  (generated)';
-    }
     const [a0, a1] = step.args;
     try {
       switch (step.verb) {

@@ -20,7 +20,8 @@ class CuramDriver {
     await tab.click();
     this.sectionId = (await tab.getAttribute('id')).split('_tablist_')[1];
     this.section = this.page.locator(`[id="${this.sectionId}"]`);
-    await this._settle(2500);
+    // observable transition: the section's content panel becomes visible
+    await this.section.waitFor({ state: 'visible', timeout: 15000 });
     return this;
   }
 
@@ -31,7 +32,8 @@ class CuramDriver {
     const sc = this._shortcuts();
     if ((await sc.getAttribute('class')).includes('dojoxExpandoClosed')) {
       await sc.locator('.dojoxExpandoIcon').click({ force: true });
-      await this._settle();
+      // observable transition: the panel expanded, so its accordion titles show
+      await sc.locator('.dijitAccordionText').first().waitFor({ state: 'visible', timeout: 10000 });
     }
     const groupTitle = sc.locator(`.dijitAccordionText[title="${title}"]`);
     const pane = sc.locator(`[data-dojo-type="dijit/layout/AccordionPane"][aria-label="${title}"]`);
@@ -48,8 +50,9 @@ class CuramDriver {
     const scope = group ? this._shortcuts().locator(`[aria-label="${group}"]`) : this._shortcuts();
     // titles in DOM end with the ellipsis char '…' when abbreviated; accept both
     const link = scope.locator(`a.curam-content-pane-single-link[title="${title}"], a.curam-content-pane-single-link[title="${title}…"]`).first();
+    const pre = await this._navSignature();
     await link.click();
-    await this._settle(3500);
+    await this._waitForNav(pre); // opens a new content tab
     return this;
   }
 
@@ -61,10 +64,13 @@ class CuramDriver {
     const tabs = this._tabStrip().locator('span[role="tab"]');
     const n = await tabs.count();
     for (let i = 0; i < n; i++) {
-      const t = (await tabs.nth(i).getAttribute('title')) || '';
+      const tab = tabs.nth(i);
+      const t = (await tab.getAttribute('title')) || '';
       if (re.test(t.replace(/\s+/g, ' ').trim())) {
-        await tabs.nth(i).click();
-        await this._settle(3000);
+        if ((await tab.getAttribute('aria-selected')) === 'true') return this; // already active
+        const pre = await this._navSignature();
+        await tab.click();
+        await this._waitForNav(pre);
         return this;
       }
     }
@@ -84,15 +90,17 @@ class CuramDriver {
 
   // ---- select nav <title> (navigation bar within active tab) ----
   async selectNav(title) {
+    const pre = await this._navSignature();
     await (await this._activePanel()).locator(`.navigation-bar-tabs span[role="tab"][title="${title}"]`).click();
-    await this._settle(3000);
+    await this._waitForNav(pre); // reloads the tab's content document
     return this;
   }
 
   // ---- select navitem <title> (navigation group item in sidebar) ----
   async selectNavItem(title) {
+    const pre = await this._navSignature();
     await (await this._activePanel()).locator(`.child-nav .dijitVisible .child-nav-items li .link[title="${title}"]`).click();
-    await this._settle(3500);
+    await this._waitForNav(pre); // reloads the tab's content document
     return this;
   }
 
@@ -171,13 +179,20 @@ class CuramDriver {
   // actions that legitimately don't navigate.
   async _waitForNav(pre, timeout = 20000) {
     const deadline = Date.now() + timeout;
+    // The observable transition is not "signature differs from pre" — that
+    // fires on the transient mid-navigation state (old frame detaching) too.
+    // Wait until the signature settles to a NEW, STABLE value (unchanged
+    // across consecutive polls), i.e. the new document has actually arrived.
+    let last = null, stable = 0;
     while (Date.now() < deadline) {
-      await this.page.waitForTimeout(400);
+      await this.page.waitForTimeout(200);
       const sig = await this._navSignature();
-      if (sig && sig !== pre) break;
+      if (!sig || sig === pre) { last = null; stable = 0; continue; }
+      if (sig === last) { if (++stable >= 2) break; } else { last = sig; stable = 0; }
     }
+    // new DOM parsed; downstream actions poll for their target element, so no
+    // fixed settle is needed after this.
     try { const f = await this.contentFrame(2500); await f.waitForLoadState('domcontentloaded'); } catch {}
-    await this._settle(1500);
   }
 
   // ---- content frame of the active tab ----
@@ -391,7 +406,8 @@ class CuramDriver {
       if (state.title && state.title !== before) break; // advanced
       if (state.hasErr) break; // blocked by validation on the same page
     }
-    await this._settle(1500);
+    // IEG swaps the whole page DOM in place, so a changed heading means the
+    // new fields are already present — downstream passes read them directly.
   }
 
   // ===================================================================
@@ -437,7 +453,6 @@ class CuramDriver {
       }
       return c;
     }, profile.checks).catch(() => 0);
-    if (n) await this._settle(500);
   }
 
   // First-name slot empty on a Household Member Details page?
@@ -900,13 +915,15 @@ class CuramDriver {
           return false;
         }, title).catch(() => false);
         if (found) {
-          await f.locator('[data-curam-replay-target]').click();
-          await this._settle(2500);
+          const tab = f.locator('[data-curam-replay-target]');
+          await tab.click();
+          // observable: the clicked in-page tab becomes selected
+          await tab.and(f.locator('[aria-selected="true"]')).waitFor({ timeout: 8000 }).catch(() => {});
           return this;
         }
       }
       if (Date.now() > deadline) throw new Error(`no page tab "${title}"`);
-      await this.page.waitForTimeout(500);
+      await this.page.waitForTimeout(300);
     }
   }
 
@@ -916,8 +933,12 @@ class CuramDriver {
     opt.expand = expand;
     const { frame, res } = await this._rowOp(container, opt);
     if (res.noop) return this; // already in the desired state
-    await frame.locator('[data-curam-replay-target]').click();
-    await this._settle(3500); // details row lazy-loads its own iframe
+    const toggle = frame.locator('[data-curam-replay-target]');
+    await toggle.click();
+    // observable: the toggle reaches the target expanded state. On expand the
+    // details row lazy-loads a nested iframe; downstream actions poll that
+    // frame, so we only need the state flip here, not a fixed wait.
+    await frame.locator(`[data-curam-replay-target][aria-expanded="${expand}"]`).waitFor({ state: 'attached', timeout: 10000 }).catch(() => {});
     return this;
   }
 
@@ -926,8 +947,8 @@ class CuramDriver {
     const opt = this._rowOpt(step, 'checkbox');
     const { frame } = await this._rowOp(container, opt);
     const cb = frame.locator('[data-curam-replay-target]');
+    // check()/uncheck() resolve once the box is in the target state; no wait
     on ? await cb.check({ force: true }) : await cb.uncheck({ force: true });
-    await this._settle(800);
     return this;
   }
 
@@ -967,7 +988,7 @@ class CuramDriver {
           }
           return false;
         }, [label, on]).catch(() => false);
-        if (found) { await this._settle(800); return this; }
+        if (found) return this;
       }
       if (Date.now() > deadline) throw new Error(`no checkbox "${label}"`);
       await this.page.waitForTimeout(500);
@@ -999,7 +1020,7 @@ class CuramDriver {
           return n;
         }).catch(() => 0);
       }
-      if (total > 0) { await this._settle(800); return this; }
+      if (total > 0) return this;
       if (Date.now() > deadline) throw new Error('no checkboxes to check');
       await this.page.waitForTimeout(500);
     }

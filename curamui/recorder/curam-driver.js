@@ -140,23 +140,28 @@ class CuramDriver {
       frames.push(f);
       for (const ch of f.childFrames()) push(ch);
     };
+    let modal = false;
     try {
       const el = this._modalFrameEl();
-      if (await el.isVisible({ timeout: 200 }).catch(() => false)) push(await (await el.elementHandle()).contentFrame());
+      if (await el.isVisible().catch(() => false)) { push(await (await el.elementHandle()).contentFrame()); modal = true; }
     } catch {}
-    // IEG wizard player (Register Person / New Application) — the live frame
-    // is reliably in page.frames() by URL; resolving it via the modal iframe
-    // element can lag or point at a transitioning frame after rapid Next
-    // clicks, so include it directly.
+    // IEG wizard player + registration wizard — the live frame is reliably in
+    // page.frames() by URL; resolving it via the modal iframe element can lag
+    // after rapid Next clicks, so include it directly.
     for (const f of this.page.frames()) {
-      if (/Screening\.do|IEGPlayer|_ieg|\/ieg\//i.test(f.url())) push(f);
+      if (/Screening\.do|IEGPlayer|_ieg|\/ieg\/|RegisterPerson_/i.test(f.url())) { push(f); modal = true; }
     }
-    try { push(await this.contentFrame(2500)); } catch {}
-    // context panel (banner fields like Decision / Coverage Start Date)
-    try {
-      const el = (await this._activePanel(1500)).locator('iframe[title^="Context Panel"]').last();
-      if (await el.count()) push(await (await el.elementHandle()).contentFrame());
-    } catch {}
+    // A modal/wizard owns the form, so the content & context panels behind it
+    // aren't involved — skip their active-tab lookups, which otherwise wait
+    // out a ~2s timeout PER FIELD when no case tab is open (the wizard case).
+    if (!modal) {
+      try { push(await this.contentFrame(2500)); } catch {}
+      // context panel (banner fields like Decision / Coverage Start Date)
+      try {
+        const el = (await this._activePanel(1500)).locator('iframe[title^="Context Panel"]').last();
+        if (await el.count()) push(await (await el.elementHandle()).contentFrame());
+      } catch {}
+    }
     return frames;
   }
 

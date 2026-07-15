@@ -599,71 +599,29 @@ class CuramDriver {
     } catch { return false; }
   }
 
-  // Relationships page: set each profile relationship's dropdown, switching
-  // person tabs as needed to reach dropdowns that aren't on the active tab.
+  // Relationships page: set each dropdown the page shows, matched to a profile
+  // relationship by the two names in its title. IEG only asks the applicant's
+  // relationship to each member (member-to-member is inferred) and renders all
+  // those dropdowns on the applicant's tab, so no tab-walking is needed. If a
+  // larger household ever splits dropdowns across person tabs, re-add tab
+  // iteration here with an observable wait for the switch.
   async _fillRelationships(profile) {
     const rels = profile.relationships || [];
     if (!rels.length) return;
     const f = this._iegFrame();
-    // Page-driven: IEG only asks the applicant's relationship to each member
-    // (it infers member-to-member), so fill exactly the dropdowns the page
-    // shows and match each to a profile relationship by the two names in its
-    // title. Walk person tabs in case some dropdowns render only on a tab.
-    const tabs = await this._personTabNames(f);
     const relRe = ([A, B]) => {
       const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       return new RegExp(`\\b${esc(A)}\\b.*\\b${esc(B)}\\b|\\b${esc(B)}\\b.*\\b${esc(A)}\\b`, 'i');
     };
-    const seen = new Set();
-    const fillVisible = async () => {
-      const titles = await f.evaluate(() => Array.from(document.querySelectorAll('.dijitComboBox input.dijitInputInner')).filter(i => i.offsetParent && /between .* and /i.test(i.title || '')).map(i => (i.title || '').replace(/ Mandatory$/, ''))).catch(() => []);
-      for (const title of titles) {
-        if (seen.has(title)) continue;
-        seen.add(title);
-        const rel = rels.find(r => relRe(r.between).test(title));
-        if (!rel) {
-          if (profile.strict !== false) throw new Error(`no profile relationship for "${title}" — add it to relationships`);
-          continue;
-        }
-        try { await this.selectOption(rel.value, title); } catch (e) { throw new Error(`could not set "${title}" = "${rel.value}": ${e.message.split('\n')[0]}`); }
+    const titles = await f.evaluate(() => Array.from(document.querySelectorAll('.dijitComboBox input.dijitInputInner')).filter(i => i.offsetParent && /between .* and /i.test(i.title || '')).map(i => (i.title || '').replace(/ Mandatory$/, ''))).catch(() => []);
+    for (const title of titles) {
+      const rel = rels.find(r => relRe(r.between).test(title));
+      if (!rel) {
+        if (profile.strict !== false) throw new Error(`no profile relationship for "${title}" — add it to relationships`);
+        continue;
       }
-    };
-    await fillVisible();
-    for (const name of tabs) { await this._clickPersonTab(f, name); await fillVisible(); }
-  }
-
-  // Click a person tab in the IEG "personTabs" strip (Relationships page etc).
-  // The name text also appears in the dropdown rows (.imageCell), so scope the
-  // match to the tab strip itself.
-  async _clickPersonTab(f, name) {
-    const marked = await f.evaluate(nm => {
-      document.querySelectorAll('[data-curam-ptab]').forEach(e => e.removeAttribute('data-curam-ptab'));
-      const norm = s => (s || '').replace(/\s+/g, ' ').trim();
-      const strip = document.querySelector('.personTabsDiv, .personTabsTable');
-      const scope = strip || document;
-      const cells = Array.from(scope.querySelectorAll('td, .dijitTab, [role=tab], div, span, a')).filter(e => e.offsetParent && norm(e.textContent) === nm);
-      // prefer the smallest matching (the tab label/cell itself)
-      cells.sort((a, b) => a.textContent.length - b.textContent.length);
-      const t = cells[0];
-      if (t) { (t.closest('td, .dijitTab, [role=tab]') || t).setAttribute('data-curam-ptab', '1'); return true; }
-      return false;
-    }, name).catch(() => false);
-    if (marked) { try { await f.locator('[data-curam-ptab]').first().click(); await this._settle(900); } catch {} }
-  }
-
-  // Names of the person tabs currently in the Relationships strip.
-  async _personTabNames(f) {
-    return f.evaluate(() => {
-      const norm = s => (s || '').replace(/\s+/g, ' ').trim();
-      const strip = document.querySelector('.personTabsTable, .personTabsDiv');
-      if (!strip) return [];
-      const out = [];
-      for (const c of strip.querySelectorAll('td, .dijitTab, [role=tab]')) {
-        const t = norm(c.textContent);
-        if (t && !out.includes(t)) out.push(t);
-      }
-      return out;
-    }).catch(() => []);
+      try { await this.selectOption(rel.value, title); } catch (e) { throw new Error(`could not set "${title}" = "${rel.value}": ${e.message.split('\n')[0]}`); }
+    }
   }
 
   // Click Next; if blocked, resolve every "must be entered" field from the

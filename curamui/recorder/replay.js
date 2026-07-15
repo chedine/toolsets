@@ -112,6 +112,36 @@ async function main() {
       params[args[i + 1].slice(0, eqi)] = args[i + 1].slice(eqi + 1);
     }
   }
+  // --generate: mint fresh values for the identity fields listed under
+  // "generate" in config.json (e.g. First Name, SSN), once per run, so a
+  // recording made with concrete data creates a distinct person each replay.
+  // A { "ref": "<field>" } spec reuses another field's value (SSN re-enter).
+  // Generated values are also exposed as ${<field label>} so later steps that
+  // reference the identity resolve to the same value.
+  const genOn = args.includes('--generate') || args.includes('--gen');
+  const genVals = {};
+  if (genOn) {
+    const { generate } = require('./generators');
+    const genCfg = cfg.generate || {};
+    if (!Object.keys(genCfg).length) { console.error('--generate given but config.json has no "generate" section'); process.exit(1); }
+    const resolve = label => {
+      if (label in genVals) return genVals[label];
+      const spec = genCfg[label];
+      genVals[label] = spec && spec.ref ? resolve(spec.ref) : generate(spec);
+      return genVals[label];
+    };
+    for (const label of Object.keys(genCfg)) resolve(label);
+    Object.assign(params, genVals);
+    // convenience aliases so scenarios that reference identity by the usual
+    // param names (${firstName}, ${lastName}, ${person}) resolve to the
+    // generated values without knowing field labels. Generate wins over
+    // scenario defaults for its configured fields.
+    const camel = s => s.replace(/\s+(\w)/g, (_, c) => c.toUpperCase()).replace(/^(\w)/, (_, c) => c.toLowerCase());
+    for (const [label, val] of Object.entries(genVals)) params[camel(label)] = val;
+    if ('First Name' in genVals && 'Last Name' in genVals) params.person = `${genVals['First Name']} ${genVals['Last Name']}`;
+    console.log('Generated:', JSON.stringify(genVals));
+  }
+
   applyParams(rec.steps, params);
   if (Object.keys(params).length) console.log('Parameters:', JSON.stringify(params));
 
@@ -134,6 +164,11 @@ async function main() {
   const c = new CuramDriver(page);
   let ok = 0, failed = 0;
   for (const step of rec.steps) {
+    // override recorded identity values with the generated ones
+    if (genOn && (step.verb === 'enter' || step.verb === 'select option') && step.args[1] in genVals) {
+      step.args = [genVals[step.args[1]], step.args[1]];
+      step.dsl = (step.verb === 'enter' ? `enter "${step.args[0]}" as ${step.args[1]}` : `select "${step.args[0]}" for ${step.args[1]}`) + '  (generated)';
+    }
     const [a0, a1] = step.args;
     try {
       switch (step.verb) {

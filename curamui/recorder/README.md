@@ -15,6 +15,7 @@ node record.js --url https://host/Curam/AppController.do --data ./data
 node replay.js <name>          # replay data/<name>.json
 node replay.js <name> --headless
 node replay.js scenario.dsl --param firstName=fra --param person="Francis Mertz"
+node replay.js register-person.dsl --generate   # mint a fresh person each run
 ```
 
 Config defaults live in `config.json` (`url`, `dataDir`, `cleanTabsOnStart`,
@@ -73,6 +74,30 @@ windows open maximized by default (`"maximized": false` to use the fixed
 Row verbs (`expand/collapse/check/uncheck row`, `click rowmenu`, and the row
 forms of `click link`) all accept the same row selection: `in "<container>"`,
 `at row N`, `where Col = "Val" and ...`.
+
+## Auto-generated identity (`--generate`)
+
+Replaying with `--generate` mints fresh values for the identity fields listed
+under `generate` in `config.json`, once per run, so a recording captured with
+concrete data creates a distinct person on every replay — no `--param`
+editing:
+
+```json
+"generate": {
+  "First Name": { "type": "firstName" },
+  "Last Name":  { "type": "lastName", "unique": true },
+  "Social Security Number": { "type": "ssn", "area": "091" },
+  "SSN.Reenter": { "ref": "Social Security Number" }
+}
+```
+
+- Keys are **field labels** (what the recorder captures). Generator types
+  live in `generators.js` (`firstName`, `lastName`, `ssn`, `digits`, `text`);
+  `{ "ref": "<field>" }` reuses another field's value (SSN re-enter).
+- Generated values are exposed as `${<field label>}` and the aliases
+  `${firstName}`/`${lastName}`/`${person}`, so later reference steps (search,
+  verify links) resolve to the generated identity.
+- SSNs are digits-only (Curam rejects dashes); area defaults to a valid one.
 
 ## Profile-driven application filling
 

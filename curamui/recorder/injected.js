@@ -153,8 +153,32 @@ module.exports = function curamRecorderInit() {
   // classified against this pending opener.
   let pendingMenu = null;
 
+  // Carbon list-box comboboxes (registration Gender/State) and dijit
+  // FilteringSelects (IEG forms) don't fire a native `change` when you pick
+  // an option, so the change handler never sees them. We instead track the
+  // combobox being edited and record the option click / type-then-Enter.
+  let activeCombo = null;
+  function comboInputOf(el) {
+    return el.closest && el.closest('input[role="combobox"], .dijitComboBox input.dijitInputInner, .cds--combo-box input, .cds--list-box input');
+  }
+  function comboOptionOf(el) {
+    return el.closest && el.closest('.cds--list-box__menu-item, [role="option"], .dijitComboBoxMenu .dijitMenuItem');
+  }
+
   function classifyFrameClick(e) {
     const el = e.target;
+
+    // combobox option pick (Carbon list-box or dijit FilteringSelect menu).
+    // Attribute it to the combobox that was last focused, since the option
+    // menu is portaled outside the input and can't be climbed to.
+    const opt = comboOptionOf(el);
+    if (opt) {
+      const val = txt(opt).replace(/…$/, '');
+      if (activeCombo && val && !/^(Previous choices|More choices|--Please Select--)$/.test(val)) {
+        report('select option', [val, fieldLabel(activeCombo)]);
+      }
+      return; // never fall through to the menuitem/link handlers
+    }
 
     // in-page navigation tabs (Outstanding / Verified / Not Applicable, ...)
     const pageTab = el.closest && el.closest('.dijitTab');
@@ -240,6 +264,15 @@ module.exports = function curamRecorderInit() {
   function classifyFrameKeydown(e) {
     if (e.key !== 'Enter') return;
     const el = e.target;
+    // Enter in a combobox commits the highlighted/typed option (type-to-
+    // narrow: "m" -> Enter -> Minnesota) — record the settled value, not a
+    // form submit.
+    const ci = comboInputOf(el);
+    if (ci) {
+      const label = fieldLabel(ci);
+      setTimeout(() => { const v = ci.value; if (v && v !== '--Please Select--') report('select option', [v, label]); }, 80);
+      return;
+    }
     if (!el || el.tagName !== 'INPUT' || ['checkbox', 'radio', 'button', 'submit'].includes(el.type)) return;
     const def = document.querySelector('input.curam-default-action[type="submit"]');
     if (!def) return;
@@ -288,6 +321,9 @@ module.exports = function curamRecorderInit() {
   if (!IS_TOP) {
     document.addEventListener('keydown', classifyFrameKeydown, true);
     document.addEventListener('contextmenu', classifyFrameContextMenu, true);
+    // remember which combobox is being edited so an option pick (which
+    // happens in a portaled menu) can be attributed to the right field
+    document.addEventListener('focusin', e => { const ci = comboInputOf(e.target); if (ci) activeCombo = ci; }, true);
   }
 
   // ---------- overlay UI (top frame only) ----------
@@ -323,6 +359,15 @@ module.exports = function curamRecorderInit() {
       <div id="__rec_last" style="margin-top:6px;color:#a8a8a8;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div>`;
     for (const b of box.querySelectorAll('button')) {
       b.style.cssText += ';background:#393939;color:#f4f4f4;border:none;border-radius:4px;padding:4px 8px;cursor:pointer';
+    }
+    // disabled buttons need visible feedback (inline styles can't do
+    // :disabled) — a disabled Start while recording / Stop while idle should
+    // clearly read as inactive
+    if (!document.getElementById('__curam_rec_style')) {
+      const st = document.createElement('style');
+      st.id = '__curam_rec_style';
+      st.textContent = '#__curam_rec_overlay button:disabled{opacity:.35;cursor:not-allowed}';
+      document.documentElement.appendChild(st);
     }
     document.documentElement.appendChild(box);
 

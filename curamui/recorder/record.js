@@ -86,6 +86,13 @@ function toDsl(step) {
 // (there is no literal text to fall back on).
 const ROW_VERBS = ['expand row', 'collapse row', 'click rowmenu', 'check row', 'uncheck row'];
 
+// Steps that change the page/form context — a same-labelled field after one
+// of these is a different field, so field coalescing must not cross them.
+const NAV_VERBS = new Set(['click button', 'click link', 'click section', 'click shortcutgroup',
+  'click shortcutitem', 'select tab', 'select pagetab', 'select nav', 'select navitem',
+  'click tabmenu', 'click rowmenu', 'click pagemenu', 'click menuitem', 'expand row',
+  'collapse row', 'toggle shortcuts panel']);
+
 // Deduplicate noise: a click on a link/button often also fires a change right
 // before it; identical consecutive steps within 500ms are collapsed.
 function pushStep(steps, step) {
@@ -93,6 +100,19 @@ function pushStep(steps, step) {
   // then the input's native change event re-fires the same "enter".
   for (const prev of steps.slice(-2)) {
     if (prev.verb === step.verb && JSON.stringify(prev.args) === JSON.stringify(step.args) && step.ts - prev.ts < 1500) return;
+  }
+  // Coalesce repeated edits to the SAME field: re-typing a field (or coming
+  // back to it later on the same form) should keep only the final value, not
+  // every intermediate one (e.g. "1" then "01/01/1984" in a date field).
+  // Only within the same form — stop at any navigation/context change.
+  if (step.verb === 'enter' || step.verb === 'select option') {
+    for (let i = steps.length - 1; i >= 0; i--) {
+      if (NAV_VERBS.has(steps[i].verb)) break;
+      if ((steps[i].verb === 'enter' || steps[i].verb === 'select option') && steps[i].args[1] === step.args[1]) {
+        steps[i] = step; // last write wins, keeping the field's original position
+        return;
+      }
+    }
   }
   // Row verbs default to position; the review UI can switch to a predicate.
   if (ROW_VERBS.includes(step.verb) && step.ctx && !step.strategy) step.strategy = { type: 'row', row: step.ctx.row };
@@ -240,5 +260,5 @@ async function main() {
   await browser.close().catch(() => {});
 }
 
-module.exports = { setupRecorder, closeAllTabs, loadConfig, toDsl, browserOptions };
+module.exports = { setupRecorder, closeAllTabs, loadConfig, toDsl, browserOptions, pushStep };
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });

@@ -1,6 +1,8 @@
-// Headless: recorder armed + CuramDriver navigates the registration wizard.
-// Gender is picked via a real option click; State via type-narrow + Enter.
-// Verify both emit `select option` steps.
+// Headless regression for combobox-selection recording. Reproduces the bug
+// where selections were misattributed to the last focused field ("Date of
+// Death"): touch a date field, then open Gender/State via the CHEVRON (which
+// doesn't focus the input) and pick options. Each must record under its own
+// field label, not the date field.
 const fs=require('fs'),path=require('path'),{chromium}=require('playwright');
 const {setupRecorder,closeAllTabs,loadConfig}=require('./record');
 const {CuramDriver}=require('./curam-driver');
@@ -21,31 +23,31 @@ const {CuramDriver}=require('./curam-driver');
   await c.clickShortcutItem('Person','Registration');
   await page.waitForTimeout(3500);
   await c.enter('Combo','First Name');
-  await c.clickButton('Search');
-  await c.clickButton('Next');
-  await page.waitForTimeout(1500);
+  await c.clickButton('Search');await c.clickButton('Next');await page.waitForTimeout(1500);
 
   const f=page.frames().find(fr=>/RegisterPerson_registerForPDCWizardPage/.test(fr.url()));
-  console.log("register frame:",!!f);
-  // --- Gender: user path = click field, click the "Male" option
-  const gender=f.locator('[data-testid="dropdown_Field.Label.Gender"]');
-  await gender.click();await page.waitForTimeout(800);
-  await f.getByRole('option',{name:'Male',exact:true}).click();
+  // touch Date of Birth first (this is what polluted activeCombo before)
+  await f.locator('[data-testid="date_Field.Label.DateofBirth"]').click();
+  await f.locator('[data-testid="date_Field.Label.DateofBirth"]').fill('01/01/1984');
+  await f.locator('[data-testid="date_Field.Label.DateofBirth"]').press('Tab');
+  await page.waitForTimeout(500);
+  // Gender: open via the chevron button (does NOT focus the input), pick option
+  const genderBox=f.locator('.cds--list-box').filter({has:f.locator('[data-testid="dropdown_Field.Label.Gender"]')});
+  await genderBox.locator('.cds--list-box__menu-icon, button').first().click();
   await page.waitForTimeout(700);
-  console.log('gender value:',await gender.inputValue());
-  // --- State: type "min" then Enter
-  const st=f.locator('[data-testid="dropdown-5_Field.Label.PrimaryAddressData"]');
-  await st.click();await st.type('min',{delay:60});await page.waitForTimeout(900);await st.press('Enter');
-  await page.waitForTimeout(900);
-  console.log('state value:',await st.inputValue());
-  await page.waitForTimeout(600);
+  await f.getByRole('option',{name:'Female',exact:true}).click();await page.waitForTimeout(600);
+  // State: chevron open, pick
+  const stateBox=f.locator('.cds--list-box').filter({has:f.locator('[data-testid="dropdown-5_Field.Label.PrimaryAddressData"]')});
+  await stateBox.locator('.cds--list-box__menu-icon, button').first().click();await page.waitForTimeout(700);
+  await f.getByRole('option',{name:'Minnesota',exact:true}).click();await page.waitForTimeout(700);
 
-  console.log('--- recorded steps ---');
-  for(const s of state.steps) console.log('  ',s.verb,JSON.stringify(s.args));
+  console.log('--- recorded select-option steps ---');
   const sel=state.steps.filter(s=>s.verb==='select option');
-  const gOk=sel.some(s=>/Gender/i.test(s.args[1])&&s.args[0]==='Male');
-  const sOk=sel.some(s=>/State/i.test(s.args[1])&&/Minnesota/i.test(s.args[0]));
-  console.log('\nGender=Male recorded:',gOk,'| State=Minnesota recorded:',sOk);
-  console.log(gOk&&sOk?'PASS':'FAIL');
+  for(const s of sel) console.log('  ',JSON.stringify(s.args));
+  const gOk=sel.some(s=>s.args[1]==='Gender'&&s.args[0]==='Female');
+  const sOk=sel.some(s=>s.args[1]==='State'&&s.args[0]==='Minnesota');
+  const noDeath=!sel.some(s=>/Death/i.test(s.args[1]));
+  console.log('\nGender->Gender:',gOk,'| State->State:',sOk,'| none misattributed to Date of Death:',noDeath);
+  console.log(gOk&&sOk&&noDeath?'PASS':'FAIL');
   await browser.close();
 })().catch(e=>{console.error('TEST FAILED:',e.message);process.exit(1)});

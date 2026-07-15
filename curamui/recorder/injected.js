@@ -159,10 +159,30 @@ module.exports = function curamRecorderInit() {
   // combobox being edited and record the option click / type-then-Enter.
   let activeCombo = null;
   function comboInputOf(el) {
-    return el.closest && el.closest('input[role="combobox"], .dijitComboBox input.dijitInputInner, .cds--combo-box input, .cds--list-box input');
+    const ci = el.closest && el.closest('input[role="combobox"], .dijitComboBox input.dijitInputInner, .cds--combo-box input, .cds--list-box input');
+    // date pickers share role="combobox" but are calendars, not option
+    // dropdowns — they must not be tracked as the active combobox (their
+    // changes are recorded as `enter` by the change handler)
+    if (ci && /date-picker|flatpickr/i.test((ci.className || '').toString())) return null;
+    return ci;
   }
   function comboOptionOf(el) {
     return el.closest && el.closest('.cds--list-box__menu-item, [role="option"], .dijitComboBoxMenu .dijitMenuItem');
+  }
+  // Which field an option belongs to. Derived from the option itself (not
+  // focus, which is unreliable — e.g. opening a Carbon dropdown via its
+  // chevron doesn't focus the input). Carbon nests the option list inside the
+  // same list-box as the input; dijit portals its menu, so fall back to the
+  // currently-open combobox, then to the focus-tracked one.
+  function comboFieldForOption(opt) {
+    const box = opt.closest('.cds--combo-box, .cds--list-box, .cds--dropdown, .cds--multi-select');
+    if (box) {
+      const inp = box.querySelector('input[role="combobox"]') || box.querySelector('input[title]');
+      if (inp) return inp;
+    }
+    const open = document.querySelector('.dijitComboBox.dijitHasDropDown input.dijitInputInner')
+      || document.querySelector('input[role="combobox"][aria-expanded="true"]');
+    return open || activeCombo;
   }
 
   function classifyFrameClick(e) {
@@ -174,8 +194,9 @@ module.exports = function curamRecorderInit() {
     const opt = comboOptionOf(el);
     if (opt) {
       const val = txt(opt).replace(/…$/, '');
-      if (activeCombo && val && !/^(Previous choices|More choices|--Please Select--)$/.test(val)) {
-        report('select option', [val, fieldLabel(activeCombo)]);
+      const field = comboFieldForOption(opt);
+      if (field && val && !/^(Previous choices|More choices|--Please Select--)$/.test(val)) {
+        report('select option', [val, fieldLabel(field)]);
       }
       return; // never fall through to the menuitem/link handlers
     }

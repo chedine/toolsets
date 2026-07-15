@@ -389,6 +389,342 @@ class CuramDriver {
     await this._settle(1500);
   }
 
+  // ===================================================================
+  // IEG application wizard: profile-driven filler (`fill application ...`)
+  //
+  // Drives an already-open New Application wizard to submission from a
+  // declarative profile:
+  //   answers:       { "<question regex>": "<value>" }  (dropdowns & text)
+  //   checks:        [ "<checkbox regex>" ]             (checkboxes to tick)
+  //   members:       [ { firstName, lastName, gender, maritalStatus, dob } ]
+  //   relationships: [ { between: [A, B], value } ]
+  //   strict:        true (default) -> error on any unmapped mandatory field
+  // Questions embed member names ("Does Mara have any income?"), so answer
+  // keys are regexes matched name-agnostically.
+  // ===================================================================
+
+  _norm(s) { return (s || '').replace(/[​‌‍]/g, '').replace(/\s+/g, ' ').trim().replace(/[.?!:;]+$/, ''); }
+
+  // profile answer for a field label (regex keys, first match wins)
+  _profileAnswer(profile, label) {
+    const L = this._norm(label);
+    for (const [pat, val] of Object.entries(profile.answers || {})) {
+      let ok = false;
+      try { ok = new RegExp(pat, 'i').test(L); } catch { ok = L.toLowerCase().includes(pat.toLowerCase()); }
+      if (ok) return String(val);
+    }
+    return null;
+  }
+
+  // tick any checkbox matching a profile.checks pattern (in-page, fast)
+  async _tickChecks(profile) {
+    if (!(profile.checks || []).length) return;
+    const f = this._iegFrame(); if (!f) return;
+    const n = await f.evaluate(pats => {
+      const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+      let c = 0;
+      for (const cb of document.querySelectorAll('input[type="checkbox"]')) {
+        if (!cb.offsetParent || cb.checked) continue;
+        let t = cb.title || '';
+        if (!t && cb.id) { const l = document.querySelector(`label[for="${CSS.escape(cb.id)}"]`); t = l ? l.textContent : ''; }
+        t = norm(t);
+        if (pats.some(p => { try { return new RegExp(p, 'i').test(t); } catch { return t.toLowerCase().includes(p.toLowerCase()); } })) { cb.click(); c++; }
+      }
+      return c;
+    }, profile.checks).catch(() => 0);
+    if (n) await this._settle(500);
+  }
+
+  // First-name slot empty on a Household Member Details page?
+  async _memberSlotEmpty() {
+    const f = this._iegFrame(); if (!f) return false;
+    return f.evaluate(() => { const i = document.querySelector('input.dijitInputInner[title^="First Name"]') || document.querySelector('input[title^="First Name"]'); return i ? !i.value.trim() : false; }).catch(() => false);
+  }
+
+  async _fillMemberIdentity(m) {
+    await this.enter(m.firstName, 'First Name');
+    if (m.lastName) await this.enter(m.lastName, 'Last Name');
+    if (m.gender) await this.selectOption(m.gender, 'Gender');
+    if (m.maritalStatus) await this.selectOption(m.maritalStatus, 'Marital Status');
+    if (m.dob) await this.enter(m.dob, 'Date of Birth');
+  }
+
+  // Answer the household add-loop combo if present: Yes while members remain.
+  async _answerAddLoop(hasMore) {
+    const f = this._iegFrame(); if (!f) return;
+    const q = await f.evaluate(() => {
+      for (const i of document.querySelectorAll('.dijitComboBox input.dijitInputInner')) {
+        if (!i.offsetParent) continue;
+        const t = (i.title || '').replace(/ Mandatory$/, '');
+        if (/anyone else in the household|add any more people/i.test(t)) return t;
+      }
+      return null;
+    }).catch(() => null);
+    if (q) await this.selectOption(hasMore ? 'Yes' : 'No', q);
+  }
+
+  // Fill visible text/date inputs (e.g. Application Date) from the profile.
+  async _answerVisibleTexts(profile) {
+    const f = this._iegFrame(); if (!f) return;
+    const fields = await f.evaluate(() => Array.from(document.querySelectorAll('input[type=text]:not(.dijitInputInner), textarea')).filter(i => i.offsetParent && i.title).map(i => (i.title || '').replace(/ Mandatory$/, ''))).catch(() => []);
+    for (const label of fields) {
+      const val = this._profileAnswer(profile, label);
+      if (val != null) { try { await this.enter(val, label); } catch {} }
+    }
+  }
+
+  // Fill every visible uncommitted mandatory dropdown from the profile.
+  // Multi-pass to handle dependent dropdowns (County depends on State) that
+  // reset when their parent changes.
+  async _answerVisibleDropdowns(profile) {
+    for (let pass = 0; pass < 4; pass++) {
+      const f = this._iegFrame(); if (!f) return;
+      const pending = await f.evaluate(() => {
+        const out = [];
+        for (const box of document.querySelectorAll('.dijitComboBox')) {
+          const disp = box.querySelector('input.dijitInputInner');
+          if (!disp || !disp.offsetParent) continue;
+          const row = box.closest('tr') || box.parentElement;
+          const mand = (!!row && !!(row.querySelector('.mandatory') || row.querySelector('img[alt="Mandatory"]'))) || / Mandatory$/.test(disp.title || '');
+          if (!mand) continue;
+          const hidden = box.querySelector('input[type=hidden]');
+          const committed = hidden ? !!(hidden.value || '').trim() : !!(disp.value || '').trim();
+          if (!committed) out.push((disp.title || '').replace(/ Mandatory$/, ''));
+        }
+        return out;
+      }).catch(() => []);
+      if (!pending.length) return;
+      let did = 0;
+      for (const label of pending) {
+        const val = this._profileAnswer(profile, label);
+        if (val != null) { try { await this.selectOption(val, label); did++; } catch {} }
+      }
+      if (!did) return;
+    }
+  }
+
+  // Resolve a field named in a "must be entered" error, given its value.
+  // Locates by title, then by visible label text -> table row -> control.
+  async _resolveNamedField(label, value) {
+    const f = this._iegFrame(); if (!f) return false;
+    const kind = await f.evaluate(lbl => {
+      const strip = t => (t || '').replace(/[​‌‍]/g, '').replace(/\s+/g, ' ').trim().replace(/ Mandatory$/, '').replace(/[.?!:;]+$/, '');
+      const L = strip(lbl);
+      document.querySelectorAll('[data-curam-resolve]').forEach(e => e.removeAttribute('data-curam-resolve'));
+      const byTitle = sel => Array.from(document.querySelectorAll(sel)).find(i => i.offsetParent && strip(i.title) === L);
+      let el = byTitle('.dijitComboBox input.dijitInputInner');
+      if (el) { el.closest('.dijitComboBox').setAttribute('data-curam-resolve', '1'); return 'combo'; }
+      el = byTitle('select'); if (el) { el.setAttribute('data-curam-resolve', '1'); return 'select'; }
+      el = byTitle('input[type=text]:not(.dijitInputInner), textarea'); if (el) { el.setAttribute('data-curam-resolve', '1'); return /date/i.test(el.title) ? 'date' : 'text'; }
+      // by label element -> row -> control
+      let lblEl = null;
+      for (const e of document.querySelectorAll('label,span,td,div,legend')) if (strip(e.textContent) === L) lblEl = e;
+      if (!lblEl) return null;
+      const row = lblEl.closest('tr') || lblEl.parentElement; if (!row) return null;
+      const combo = row.querySelector('.dijitComboBox'); if (combo) { combo.setAttribute('data-curam-resolve', '1'); return 'combo'; }
+      const sel = row.querySelector('select'); if (sel) { sel.setAttribute('data-curam-resolve', '1'); return 'select'; }
+      const cb = row.querySelector('input[type=checkbox]'); if (cb) { cb.setAttribute('data-curam-resolve', '1'); return 'checkbox'; }
+      const txt = row.querySelector('input[type=text], textarea'); if (txt) { txt.setAttribute('data-curam-resolve', '1'); return /date/i.test(txt.title || '') ? 'date' : 'text'; }
+      return null;
+    }, label).catch(() => null);
+    if (!kind) return false;
+    try {
+      if (kind === 'combo') return await this._selectMarkedCombo(value);
+      if (kind === 'select') { await f.locator('[data-curam-resolve]').selectOption({ label: value }); return true; }
+      if (kind === 'checkbox') { await f.locator('[data-curam-resolve]').check({ force: true }); return true; }
+      if (kind === 'date') { await f.locator('[data-curam-resolve]').fill(value); await f.locator('[data-curam-resolve]').press('Tab'); return true; }
+      if (kind === 'text') { await f.locator('[data-curam-resolve]').fill(value); return true; }
+    } catch { return false; }
+    return false;
+  }
+
+  // Open the marked dijit combo and pick the option whose text matches value
+  // ('*' wildcard supported).
+  async _selectMarkedCombo(value) {
+    const f = this._iegFrame();
+    const arrow = f.locator('[data-curam-resolve] .dijitDownArrowButton');
+    if (await arrow.count()) await arrow.click(); else await f.locator('[data-curam-resolve] input.dijitInputInner').click();
+    await this.page.waitForTimeout(500);
+    const found = await f.evaluate(want => {
+      const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+      const eq = (a, b) => a.includes('*') ? new RegExp('^' + a.split('*').map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$', 'i').test(b) : a.toLowerCase() === b.toLowerCase();
+      document.querySelectorAll('[data-curam-opt]').forEach(e => e.removeAttribute('data-curam-opt'));
+      for (const m of document.querySelectorAll('.dijitComboBoxMenu')) {
+        if (!m.offsetParent) continue;
+        for (const o of m.querySelectorAll('.dijitMenuItem')) {
+          const t = norm(o.textContent);
+          if (/^(Previous choices|More choices|--Please Select--)$/.test(t)) continue;
+          if (eq(norm(want), t)) { o.setAttribute('data-curam-opt', '1'); return true; }
+        }
+      }
+      return false;
+    }, value).catch(() => false);
+    if (found) {
+      await f.locator('[data-curam-opt]').click();
+      await this.page.waitForTimeout(300);
+      return true;
+    }
+    // fallback: type the value into the FilteringSelect input and commit with
+    // Enter (robust when the option menu is paged/virtualized or the label is
+    // very long). Verify the hidden value committed.
+    try {
+      const inp = f.locator('[data-curam-resolve] input.dijitInputInner');
+      await inp.click();
+      await inp.fill(value);
+      await this.page.waitForTimeout(400);
+      await inp.press('Enter');
+      await this.page.waitForTimeout(300);
+      const committed = await f.evaluate(() => { const b = document.querySelector('[data-curam-resolve]'); const h = b && b.querySelector('input[type=hidden]'); return h ? !!(h.value || '').trim() : true; }).catch(() => false);
+      return committed;
+    } catch { return false; }
+  }
+
+  // Relationships page: set each profile relationship's dropdown, switching
+  // person tabs as needed to reach dropdowns that aren't on the active tab.
+  async _fillRelationships(profile) {
+    const rels = profile.relationships || [];
+    if (!rels.length) return;
+    const f = this._iegFrame();
+    // Page-driven: IEG only asks the applicant's relationship to each member
+    // (it infers member-to-member), so fill exactly the dropdowns the page
+    // shows and match each to a profile relationship by the two names in its
+    // title. Walk person tabs in case some dropdowns render only on a tab.
+    const tabs = await this._personTabNames(f);
+    const relRe = ([A, B]) => {
+      const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return new RegExp(`\\b${esc(A)}\\b.*\\b${esc(B)}\\b|\\b${esc(B)}\\b.*\\b${esc(A)}\\b`, 'i');
+    };
+    const seen = new Set();
+    const fillVisible = async () => {
+      const titles = await f.evaluate(() => Array.from(document.querySelectorAll('.dijitComboBox input.dijitInputInner')).filter(i => i.offsetParent && /between .* and /i.test(i.title || '')).map(i => (i.title || '').replace(/ Mandatory$/, ''))).catch(() => []);
+      for (const title of titles) {
+        if (seen.has(title)) continue;
+        seen.add(title);
+        const rel = rels.find(r => relRe(r.between).test(title));
+        if (!rel) {
+          if (profile.strict !== false) throw new Error(`no profile relationship for "${title}" — add it to relationships`);
+          continue;
+        }
+        try { await this.selectOption(rel.value, title); } catch (e) { throw new Error(`could not set "${title}" = "${rel.value}": ${e.message.split('\n')[0]}`); }
+      }
+    };
+    await fillVisible();
+    for (const name of tabs) { await this._clickPersonTab(f, name); await fillVisible(); }
+  }
+
+  // Click a person tab in the IEG "personTabs" strip (Relationships page etc).
+  // The name text also appears in the dropdown rows (.imageCell), so scope the
+  // match to the tab strip itself.
+  async _clickPersonTab(f, name) {
+    const marked = await f.evaluate(nm => {
+      document.querySelectorAll('[data-curam-ptab]').forEach(e => e.removeAttribute('data-curam-ptab'));
+      const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+      const strip = document.querySelector('.personTabsDiv, .personTabsTable');
+      const scope = strip || document;
+      const cells = Array.from(scope.querySelectorAll('td, .dijitTab, [role=tab], div, span, a')).filter(e => e.offsetParent && norm(e.textContent) === nm);
+      // prefer the smallest matching (the tab label/cell itself)
+      cells.sort((a, b) => a.textContent.length - b.textContent.length);
+      const t = cells[0];
+      if (t) { (t.closest('td, .dijitTab, [role=tab]') || t).setAttribute('data-curam-ptab', '1'); return true; }
+      return false;
+    }, name).catch(() => false);
+    if (marked) { try { await f.locator('[data-curam-ptab]').first().click(); await this._settle(900); } catch {} }
+  }
+
+  // Names of the person tabs currently in the Relationships strip.
+  async _personTabNames(f) {
+    return f.evaluate(() => {
+      const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+      const strip = document.querySelector('.personTabsTable, .personTabsDiv');
+      if (!strip) return [];
+      const out = [];
+      for (const c of strip.querySelectorAll('td, .dijitTab, [role=tab]')) {
+        const t = norm(c.textContent);
+        if (t && !out.includes(t)) out.push(t);
+      }
+      return out;
+    }).catch(() => []);
+  }
+
+  // Click Next; if blocked, resolve every "must be entered" field from the
+  // profile. Strict: an unmapped mandatory field aborts with a clear error.
+  async _advanceApplication(profile) {
+    for (let tri = 0; tri < 8; tri++) {
+      const before = await this._iegHeading();
+      await this.clickButton('Next');
+      const after = await this._iegHeading();
+      if (after === null) return 'closed';
+      if (after !== before) return true;
+      const missing = await this._iegFrame().evaluate(() => {
+        const clean = s => (s || '').replace(/[​‌‍]/g, '').replace(/\s+/g, ' ').trim();
+        return [...new Set((document.body.textContent.match(/'[^']+' must be entered/g) || []).map(m => clean(m.replace(/^'/, '').replace(/' must be entered$/, ''))))];
+      }).catch(() => []);
+      if (!missing.length) return false;
+      let progress = false;
+      const unmapped = [];
+      for (const label of missing) {
+        const val = this._profileAnswer(profile, label);
+        if (val == null) { unmapped.push(label); continue; }
+        if (await this._resolveNamedField(label, val)) progress = true;
+      }
+      // a "Select all the reasons..." style requirement is satisfied by the
+      // profile's checkboxes, not a value — tick them and treat as progress
+      if (unmapped.length) {
+        const before = unmapped.length;
+        await this._answerVisibleDropdowns(profile);
+        await this._tickChecks(profile);
+        const still = await this._iegFrame().evaluate(() => {
+          const clean = s => (s || '').replace(/[​‌‍]/g, '').replace(/\s+/g, ' ').trim();
+          return [...new Set((document.body.textContent.match(/'[^']+' must be entered/g) || []).map(m => clean(m.replace(/^'/, '').replace(/' must be entered$/, ''))))];
+        }).catch(() => unmapped);
+        const stillUnmapped = still.filter(l => this._profileAnswer(profile, l) == null);
+        if (stillUnmapped.length < before || still.length < missing.length) { progress = true; unmapped.length = 0; unmapped.push(...stillUnmapped); }
+      }
+      if (unmapped.length && profile.strict !== false) {
+        throw new Error(`unmapped mandatory field(s) on "${before}": ${unmapped.map(l => `"${l}"`).join(', ')} — add to the profile's answers`);
+      }
+      if (!progress) return false;
+    }
+    return false;
+  }
+
+  // The two Carbon consent dialogs after the IEG wizard closes.
+  async _submitApplicationDialogs() {
+    for (let i = 0; i < 2; i++) {
+      await this.checkAll();
+      await this.clickButton('Submit');
+    }
+  }
+
+  // ---- fill application from <profile> ----
+  async fillApplication(profile) {
+    const queue = [...(profile.members || [])];
+    let prev = null, sameCount = 0;
+    for (let step = 0; step < 120; step++) {
+      const h = await this._iegHeading();
+      if (h == null) { await this._submitApplicationDialogs(); return this; }
+      // structural handlers for the current page
+      if (/Household Member Details/i.test(h) && await this._memberSlotEmpty() && queue.length) {
+        await this._fillMemberIdentity(queue.shift());
+      }
+      await this._answerAddLoop(queue.length > 0);
+      if (/^Relationships$/i.test(h)) await this._fillRelationships(profile);
+      await this._answerVisibleTexts(profile);
+      await this._answerVisibleDropdowns(profile);
+      // checks after dropdowns: a dropdown answer can reveal a checkbox group
+      // (e.g. "meet an exception = Yes" -> "Select all the reasons that apply")
+      await this._tickChecks(profile);
+      // advance (error-driven, strict)
+      const res = await this._advanceApplication(profile);
+      if (res === 'closed') { await this._submitApplicationDialogs(); return this; }
+      if (!res) {
+        if (h === prev && ++sameCount > 2) throw new Error(`stuck on IEG page "${h}"`);
+      } else sameCount = 0;
+      prev = h;
+    }
+    throw new Error('fillApplication: exceeded page limit');
+  }
+
   // Resolve the list/cluster whose OWN heading is `container`. Two traps:
   // substring matches ("Cases" vs "Pending Cases") and :has() matching
   // ancestor wrappers that merely contain the titled list — so we require

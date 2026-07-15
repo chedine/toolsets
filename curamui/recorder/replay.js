@@ -5,6 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
+const yaml = require('js-yaml');
 const { CuramDriver } = require('./curam-driver');
 const { closeAllTabs, browserOptions } = require('./record');
 
@@ -47,6 +48,8 @@ function parseDsl(text) {
       steps.push({ verb: 'check all', args: [], dsl: line });
     } else if ((m = line.match(/^advance to "([^"]+)"$/))) {
       steps.push({ verb: 'advance to', args: [m[1]], dsl: line });
+    } else if ((m = line.match(/^fill application from ([\w./-]+)$/))) {
+      steps.push({ verb: 'fill application', args: [m[1]], dsl: line });
     } else if ((m = line.match(/^click (link|button) "([^"]+)"(?: in "([^"]+)")?$/))) {
       steps.push({ verb: `click ${m[1]}`, args: [m[2], m[3] || ''], dsl: line });
     } else if ((m = line.match(/^enter "([^"]*)" as (.+)$/))) {
@@ -156,6 +159,15 @@ async function main() {
         case 'click menuitem':      { const f = await c.contentFrame(); await f.click(`.dijitMenuItem:has-text("${a0}")`); await c._settle(3000); break; }
         case 'check all':           await c.checkAll(); break;
         case 'advance to':          await c.advanceTo(a0); break;
+        case 'fill application':    {
+          const pf = a0.endsWith('.yaml') || a0.endsWith('.yml') || a0.includes('/') ? a0 : path.join(dataDir, 'profiles', a0 + '.yaml');
+          const profile = yaml.load(fs.readFileSync(fs.existsSync(pf) ? pf : a0, 'utf8'));
+          // substitute ${param} placeholders throughout the profile
+          const sub = v => typeof v === 'string' ? v.replace(/\$\{([^}]+)\}/g, (_, k) => k in params ? params[k] : (() => { throw new Error(`profile uses undefined parameter \${${k}}`); })())
+            : Array.isArray(v) ? v.map(sub) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, sub(x)])) : v;
+          await c.fillApplication(sub(profile));
+          break;
+        }
         case 'check':
         case 'uncheck':             await c.setCheckbox(a0, step.verb === 'check'); break;
         case 'close tab':           { const strip = c._tabStrip(); const tab = strip.locator(`.dijitTab:has(span[role="tab"])`).filter({ hasText: a0.replace(/\*/g, '') }).first(); await tab.hover(); await tab.locator('button.dijitTabCloseButton').click(); await c._settle(2000); break; }

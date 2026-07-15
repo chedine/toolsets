@@ -373,6 +373,56 @@ Hard-won IEG mechanics:
 - The agreement checkbox on "Applying for Assistance" does **not** persist
   across a wizard resume — a resumed app restarts there needing a re-check.
 
+### Profile-driven application filling (2026-07-15)
+
+Recording every application shape (income yes/no, household size) is
+impractical, so IEG applications are driven from a declarative YAML profile:
+`fill application from <profile>` (`data/profiles/*.yaml`).
+`CuramDriver.fillApplication(profile)` walks the wizard to submission,
+answering each mandatory field from the profile; **strict** — an unmapped
+mandatory field aborts naming the field.
+
+The engine (productized from the discovery walker):
+- `answers`: question-regex -> value; matched name-agnostically (member
+  questions embed the member's name). First match wins, so **anchor** keys
+  that would otherwise over-match: `^Application Date$` (the MA question also
+  says "application date"); `^Does .* have a Social Security Number` (the
+  "Reason why ... does not have" question also contains "does ... have").
+- `checks`: checkbox regexes; ticked **after** dropdowns (a dropdown answer
+  can reveal a checkbox group, e.g. exception=Yes -> "Select all the reasons
+  that apply").
+- Proactive passes (text, then multi-pass dropdowns for dependent fields like
+  County←State) + **error-driven** advance: click Next, read the "'X' must be
+  entered" banner, resolve exactly those from the profile.
+- dijit combo selection uses menu-click with a **type-value + Enter** fallback
+  (robust for long/paged option lists) and verifies the hidden value committed.
+- Members: a queue fills each Household Member Details identity; the add-loop
+  ("anyone else" / "add any more people") answers Yes while members remain.
+- Relationships: per-member tabs, one titled dropdown per pair; set from
+  `relationships` (switching tabs to reach off-tab dropdowns).
+- `${param}` substituted into the loaded profile.
+
+Multi-member flow (mapped via `explore-hh2.js`): applicant pages -> Other
+Household Members(Yes) -> per member {Household Member Details, Household
+Member Extra Details} -> More People?(Yes loops) -> Relationships -> downstream
+-> submit. Member SSN=No routes through applied?/reason. Agreement checkbox
+does not persist across a wizard resume.
+
+Multi-member specifics learned building family3: member questions embed the
+member's name (regex keys), so anchor SSN keys (`^Does .* have a Social
+Security Number` vs the "Reason why ... does not have" question). The
+Relationships page only collects the **applicant→each-member** relationship
+(member↔member is inferred) — fill exactly the dropdowns the page shows
+(page-driven), matching each by the two names in its title; relationship
+values are full phrases ("Is the Spouse of", "Is the Parent of"). A child in
+the household reveals extra mandatories ("child on active duty?", "child
+under court order?"). Person tabs live in `.personTabsTable`.
+
+Verified: `apply-single.dsl` submits (Denning Fisk — Pending App Case +
+Current Case). `apply-family3.dsl` (2 parents + under-19 child) submits
+(Ellery Pryce — Pending App Case 10001416). Both drive the whole wizard from
+a YAML profile with `--param` applicant substitution.
+
 ### Known limitations / next ideas
 
 - Variable binding (capture a value from one step into a parameter for a

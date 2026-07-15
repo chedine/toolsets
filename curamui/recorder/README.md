@@ -74,6 +74,52 @@ Row verbs (`expand/collapse/check/uncheck row`, `click rowmenu`, and the row
 forms of `click link`) all accept the same row selection: `in "<container>"`,
 `at row N`, `where Col = "Val" and ...`.
 
+## Profile-driven application filling
+
+Recording every application shape is impractical, so IEG applications can be
+driven from a declarative **YAML profile** instead:
+
+```
+click tabmenu "New Application"
+fill application from family3        # loads data/profiles/family3.yaml
+```
+
+The filler walks the wizard to submission, answering each mandatory field
+from the profile. It is **strict**: any mandatory field with no profile
+answer aborts with a clear error naming the field (so you add it and rerun).
+
+Profile shape (`data/profiles/*.yaml`):
+
+```yaml
+answers:                 # question-regex -> value (dropdowns & text fields)
+  "^Application Date$": "1/1/2026"
+  "Marital Status": "Married"
+  "^Does .* have a Social Security Number": "No"   # member questions embed
+  "Reason why .* does not have a Social Security Number": "Not eligible for SSN"
+  "have any income": "No"
+checks:                  # checkbox regexes to tick (agreement, reasons, ...)
+  - "I agree"
+  - "Family Caregiver of Disabled Individual"
+members:                 # each adds a household member + its per-member pages
+  - { firstName: Mara, lastName: "${lastName}", gender: Female, maritalStatus: Married, dob: 7/7/1987 }
+  - { firstName: Kip,  lastName: "${lastName}", gender: Male,   maritalStatus: "Never Married", dob: 5/5/2015 }
+relationships:           # one entry per household pair
+  - { between: ["${firstName}", Mara], value: Spouse }
+  - { between: ["${firstName}", Kip],  value: Parent }
+  - { between: [Mara, Kip],            value: Parent }
+strict: true
+```
+
+- Answer keys are **regexes** (case-insensitive, first match wins). Member
+  questions embed the member's name, so use `.*` where a name appears.
+  Anchor keys (`^...`) when a short phrase would match a longer question —
+  e.g. `^Application Date$` (not the MA question that mentions "application
+  date"), `^Does .* have a Social Security Number` (not the "Reason why ...
+  does not have" question).
+- `${param}` placeholders in the profile are substituted from `--param`.
+- Registering the applicant is a separate step (see `apply-single.dsl` /
+  `apply-family3.dsl`, which register then `fill application`).
+
 ## Parameters & wildcards
 
 Recordings are taken against concrete data and generalized by editing the

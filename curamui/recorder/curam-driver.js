@@ -112,12 +112,15 @@ class CuramDriver {
     try {
       const active = this._tabStrip().locator('span[role="tab"][aria-selected="true"]').first();
       let tabId = '';
-      try { tabId = (await active.getAttribute('id', { timeout: 1500 })) || ''; } catch {}
+      // short timeouts: a present tab/panel resolves in a few ms; during a
+      // wizard (no case content tab) these are ABSENT, and a long timeout here
+      // is paid on every snapshot — including the poll loop in _waitForNav
+      try { tabId = (await active.getAttribute('id', { timeout: 400 })) || ''; } catch {}
       let doc = '';
       try {
         const panel = this.page.locator(`[id="${tabId.split('_tablist_')[1]}"]`);
         const el = panel.locator('iframe[title^="Content Panel"]').last();
-        const f = await (await el.elementHandle({ timeout: 1500 })).contentFrame();
+        const f = await (await el.elementHandle({ timeout: 400 })).contentFrame();
         if (f) doc = f.url() + '#' + await f.evaluate(() => performance.timeOrigin);
       } catch {}
       // wizard buttons (Search/Next/Save) navigate INSIDE the modal frame —
@@ -191,8 +194,12 @@ class CuramDriver {
       if (sig === last) { if (++stable >= 2) break; } else { last = sig; stable = 0; }
     }
     // new DOM parsed; downstream actions poll for their target element, so no
-    // fixed settle is needed after this.
-    try { const f = await this.contentFrame(2500); await f.waitForLoadState('domcontentloaded'); } catch {}
+    // fixed settle is needed after this. When a modal/wizard owns the form
+    // there is no content panel to wait on — skip it, else contentFrame() burns
+    // its full timeout every wizard nav.
+    const modalUp = await this._modalFrameEl().isVisible().catch(() => false)
+      || this.page.frames().some(f => /Screening\.do|IEGPlayer|_ieg|\/ieg\/|RegisterPerson_/i.test(f.url()));
+    if (!modalUp) { try { const f = await this.contentFrame(2500); await f.waitForLoadState('domcontentloaded'); } catch {} }
   }
 
   // ---- content frame of the active tab ----
@@ -359,8 +366,10 @@ class CuramDriver {
   // document; page action buttons live in .action-set inside content frames;
   // IEG wizard buttons are a.buttonLink inside the player frame.
   async clickButton(label) {
-    const pre = await this._navSignature();
     const iegBefore = await this._iegHeading();
+    // IEG Next/Back settle on the heading change, not the nav signature — skip
+    // the signature snapshot (a few costly timeouts) when we won't use it
+    const pre = iegBefore === null ? await this._navSignature() : null;
     const deadline = Date.now() + 15000;
     for (;;) {
       const modalBtn = this.page.locator('.cds--modal-container button.cds--btn', { hasText: label }).last();

@@ -211,9 +211,11 @@ async function main() {
   }
 
   const c = new CuramDriver(page);
+  const keepGoing = args.includes('--keep-going');
   let ok = 0, failed = 0;
   for (const step of rec.steps) {
     const [a0, a1] = step.args;
+    const t0 = Date.now();
     try {
       switch (step.verb) {
         case 'click section':       await c.clickSection(a0); break;
@@ -254,9 +256,14 @@ async function main() {
         case 'select option':       await c.selectOption(a0, a1); break;
         default: console.log('  ?? skipping unknown verb:', step.dsl); continue;
       }
-      ok++; console.log('  ok :', step.dsl);
+      const secs = (Date.now() - t0) / 1000;
+      ok++; console.log('  ok :', step.dsl, secs > 1 ? `(${secs.toFixed(1)}s)` : '');
     } catch (e) {
       failed++; console.log('  FAIL:', step.dsl, '—', e.message.split('\n')[0]);
+      // a wizard flow is sequential — every later step depends on this one, so
+      // barrelling on just produces a cascade of noise. Stop at the first
+      // failure (screenshot captures the offending page) unless --keep-going.
+      if (!keepGoing) { console.log('  (stopping — pass --keep-going to continue past failures)'); break; }
     }
   }
   console.log(`\nReplay finished: ${ok} ok, ${failed} failed.`);

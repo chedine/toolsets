@@ -1,0 +1,1254 @@
+{
+  "name": "MA_DepFather_AdultChild",
+  "url": "http://localhost:8081/Curam/AppController.do",
+  "recordedAt": "2026-07-22T18:25:07.196Z",
+  "steps": [
+    {
+      "verb": "click section",
+      "args": [
+        "HCR Cases and Outcomes"
+      ],
+      "frame": "top",
+      "ts": 1784743977997,
+      "dsl": "click section \"HCR Cases and Outcomes\""
+    },
+    {
+      "verb": "toggle shortcuts panel",
+      "args": [],
+      "frame": "top",
+      "ts": 1784743979132,
+      "dsl": "toggle shortcuts panel "
+    },
+    {
+      "verb": "click shortcutgroup",
+      "args": [
+        "Registration"
+      ],
+      "frame": "top",
+      "ts": 1784743980266,
+      "dsl": "click shortcutgroup \"Registration\""
+    },
+    {
+      "verb": "click shortcutitem",
+      "args": [
+        "Registration",
+        "Person"
+      ],
+      "frame": "top",
+      "ts": 1784743981612,
+      "dsl": "click shortcutitem Registration > Person"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "Jason",
+        "First Name"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784743989792,
+      "dsl": "enter \"Jason\" as First Name"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "top",
+      "ts": 1784743989854,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "Singleton",
+        "Last Name"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784743999078,
+      "dsl": "enter \"Singleton\" as Last Name"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "152323223",
+        "Social Security Number"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744006482,
+      "dsl": "enter \"152323223\" as Social Security Number"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "152323223",
+        "Enter the Social Security number again to confirm. Numbers must match."
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744016356,
+      "dsl": "enter \"152323223\" as Enter the Social Security number again to confirm. Numbers must match."
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Male",
+        "Gender"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744017564,
+      "dsl": "select \"Male\" for Gender"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "01/01/1966",
+        "Dateof Birth"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744036812,
+      "dsl": "enter \"01/01/1966\" as Dateof Birth"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "English",
+        "Preferred Language"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744041189,
+      "dsl": "select \"English\" for Preferred Language"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Mail",
+        "Preferred Communication"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744043972,
+      "dsl": "select \"Mail\" for Preferred Communication"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "123",
+        "Apt/Suite"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744047490,
+      "dsl": "enter \"123\" as Apt/Suite"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "ABC Street",
+        "Street 1"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744051063,
+      "dsl": "enter \"ABC Street\" as Street 1"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "eagan",
+        "City"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744055218,
+      "dsl": "enter \"eagan\" as City"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Dakota",
+        "County"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744056365,
+      "dsl": "select \"Dakota\" for County"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Minnesota",
+        "State"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744058314,
+      "dsl": "select \"Minnesota\" for State"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "55124",
+        "Zip"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784744060993,
+      "dsl": "enter \"55124\" as Zip"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Save"
+      ],
+      "frame": "top",
+      "ts": 1784744066365,
+      "dsl": "click button \"Save\""
+    },
+    {
+      "verb": "click tabmenu",
+      "args": [
+        "New Application"
+      ],
+      "frame": "top",
+      "ts": 1784744112467,
+      "dsl": "click tabmenu \"New Application\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744133578,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "check",
+      "args": [
+        "I agree that I have read and understand my rights and responsibilities described in the warning. I understand that if I do not want to provide income information, I can apply for insurance coverage without income assistance or tax credits by signing out and using the \"Apply for health coverage WITHOUT financial help\" link. "
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744137113,
+      "dsl": "check \"I agree that I have read and understand my rights and responsibilities described in the warning. I understand that if I do not want to provide income information, I can apply for insurance coverage without income assistance or tax credits by signing out and using the \"Apply for health coverage WITHOUT financial help\" link. \""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744138901,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744144855,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Divorced",
+        "Marital Status"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744164058,
+      "dsl": "select \"Divorced\" for Marital Status"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Do you live in Minnesota?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744168140,
+      "dsl": "select \"Yes\" for Do you live in Minnesota?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Do you plan to make Minnesota your home?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744170211,
+      "dsl": "select \"Yes\" for Do you plan to make Minnesota your home?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Are you temporarily absent from Minnesota?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744172644,
+      "dsl": "select \"No\" for Are you temporarily absent from Minnesota?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Are you homeless?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744174298,
+      "dsl": "select \"No\" for Are you homeless?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Is the mailing address the same as your home address?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744179702,
+      "dsl": "select \"Yes\" for Is the mailing address the same as your home address?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Did you move to Minnesota in the last three months?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744182092,
+      "dsl": "select \"No\" for Did you move to Minnesota in the last three months?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Mail",
+        "Preferred Contact Method"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744186022,
+      "dsl": "select \"Mail\" for Preferred Contact Method"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Do you want us to send you a voter registration card?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744188899,
+      "dsl": "select \"No\" for Do you want us to send you a voter registration card?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Mail",
+        "How would you prefer to receive notices?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744190969,
+      "dsl": "select \"Mail\" for How would you prefer to receive notices?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Do you want us to send you a form to name someone as your authorized representative?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744194010,
+      "dsl": "select \"No\" for Do you want us to send you a form to name someone as your authorized representative?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744195574,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Do you have a Social Security Number?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744206336,
+      "dsl": "select \"Yes\" for Do you have a Social Security Number?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Are you a US Citizen?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744214836,
+      "dsl": "select \"Yes\" for Are you a US Citizen?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744219400,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Is this the correct Social Security Number?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744225156,
+      "dsl": "select \"Yes\" for Is this the correct Social Security Number?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744226160,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744232694,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Is there anyone else in the household?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744239248,
+      "dsl": "select \"Yes\" for Is there anyone else in the household?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744241696,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Are you applying for the person highlighted?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744269300,
+      "dsl": "select \"Yes\" for Are you applying for the person highlighted?"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "Junior",
+        "First Name"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744281366,
+      "dsl": "enter \"Junior\" as First Name"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "Singleton",
+        "Last Name"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744291252,
+      "dsl": "enter \"Singleton\" as Last Name"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Male",
+        "Gender"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744292797,
+      "dsl": "select \"Male\" for Gender"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "1/1/1995",
+        "Date of Birth"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744310269,
+      "dsl": "enter \"1/1/1995\" as Date of Birth"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Does this person live with you?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744311388,
+      "dsl": "select \"Yes\" for Does this person live with you?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Does this person plan to make Minnesota his/her home?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744317530,
+      "dsl": "select \"Yes\" for Does this person plan to make Minnesota his/her home?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is this person temporarily absent from Minnesota?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744320344,
+      "dsl": "select \"No\" for Is this person temporarily absent from Minnesota?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Did this person move to Minnesota in the last three months?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744322959,
+      "dsl": "select \"No\" for Did this person move to Minnesota in the last three months?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744326653,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Never Married",
+        "Marital Status"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744337729,
+      "dsl": "select \"Never Married\" for Marital Status"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744348712,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Does Junior have a Social Security Number?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744356330,
+      "dsl": "select \"Yes\" for Does Junior have a Social Security Number?"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "152323224",
+        "Social Security Number"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744363967,
+      "dsl": "enter \"152323224\" as Social Security Number"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "152323224",
+        "Enter the Social Security number again to confirm. Numbers must match."
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744368927,
+      "dsl": "enter \"152323224\" as Enter the Social Security number again to confirm. Numbers must match."
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Is Junior a US Citizen?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744370213,
+      "dsl": "select \"Yes\" for Is Junior a US Citizen?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744371554,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Is this the correct Social Security Number?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744376158,
+      "dsl": "select \"Yes\" for Is this the correct Social Security Number?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744377608,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Do you need to add any more people?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744381640,
+      "dsl": "select \"No\" for Do you need to add any more people?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744382676,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Is the Parent of",
+        "Please choose a relationship between Jason and Junior"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744393092,
+      "dsl": "select \"Is the Parent of\" for Please choose a relationship between Jason and Junior"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744395002,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "check row",
+      "args": [
+        "",
+        ""
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "",
+        "rowValues": {}
+      },
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744397633,
+      "strategy": {
+        "type": "row",
+        "row": 1
+      },
+      "dsl": "check row at row 1"
+    },
+    {
+      "verb": "check row",
+      "args": [
+        "",
+        ""
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "",
+        "rowValues": {}
+      },
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744423340,
+      "strategy": {
+        "type": "row",
+        "row": 1
+      },
+      "dsl": "check row at row 1"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744424396,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Will Jason be claimed as a tax dependent by anyone else in the household on their tax return ?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744430388,
+      "dsl": "select \"Yes\" for Will Jason be claimed as a tax dependent by anyone else in the household on their tax return ?"
+    },
+    {
+      "verb": "select radio",
+      "args": [
+        "Junior"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744431669,
+      "dsl": "select radio \"Junior\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744432892,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744457366,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744459968,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Does Jason have any income?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744484038,
+      "dsl": "select \"No\" for Does Jason have any income?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744486562,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744492450,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744503553,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Does Junior have any income?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744510784,
+      "dsl": "select \"Yes\" for Does Junior have any income?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744512602,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Wages before taxes",
+        "Income Type"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744525462,
+      "dsl": "select \"Wages before taxes\" for Income Type"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "7Brew",
+        "What is the name of your Employer?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744533102,
+      "dsl": "enter \"7Brew\" as What is the name of your Employer?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is Junior seasonally employed?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744534079,
+      "dsl": "select \"No\" for Is Junior seasonally employed?"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "5000",
+        "Amount"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744538258,
+      "dsl": "enter \"5000\" as Amount"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yearly",
+        "Frequency"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744539671,
+      "dsl": "select \"Yearly\" for Frequency"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Does Junior have any more income?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744541980,
+      "dsl": "select \"No\" for Does Junior have any more income?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744544040,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744546518,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744548888,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744551566,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744563747,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744569121,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744572082,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Is anyone applying blind?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744577870,
+      "dsl": "select \"Yes\" for Is anyone applying blind?"
+    },
+    {
+      "verb": "check row",
+      "args": [
+        "",
+        ""
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "",
+        "rowValues": {}
+      },
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744579300,
+      "strategy": {
+        "type": "row",
+        "row": 1
+      },
+      "dsl": "check row at row 1"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Does anyone applying have a physical, mental or emotional health condition that limits the ability to perform daily activities?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744582569,
+      "dsl": "select \"No\" for Does anyone applying have a physical, mental or emotional health condition that limits the ability to perform daily activities?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone applying as an American Indian or Alaska Native?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744584112,
+      "dsl": "select \"No\" for Is anyone applying as an American Indian or Alaska Native?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone visiting Minnesota to get medical care or for personal reasons?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744587286,
+      "dsl": "select \"No\" for Is anyone visiting Minnesota to get medical care or for personal reasons?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone applying living in a long-term care facility?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744588969,
+      "dsl": "select \"No\" for Is anyone applying living in a long-term care facility?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone applying in a residential treatment program for mental illness or drug or alcohol dependency?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744590256,
+      "dsl": "select \"No\" for Is anyone applying in a residential treatment program for mental illness or drug or alcohol dependency?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Does anyone applying have Medicare or other non-employer health insurance?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744591412,
+      "dsl": "select \"No\" for Does anyone applying have Medicare or other non-employer health insurance?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone applying getting services from the Center for Victims of Torture?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744592550,
+      "dsl": "select \"No\" for Is anyone applying getting services from the Center for Victims of Torture?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Does anyone applying want to request a full Medicaid eligibility determination?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744593769,
+      "dsl": "select \"No\" for Does anyone applying want to request a full Medicaid eligibility determination?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone applying seeking services and supports to help with activities of daily living to stay in their home or community through a home and community-based services (HCBS) waiver?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744594908,
+      "dsl": "select \"No\" for Is anyone applying seeking services and supports to help with activities of daily living to stay in their home or community through a home and community-based services (HCBS) waiver?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone applying seeking Medicaid payment of long-term care services to reside in a long term care facility?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744596033,
+      "dsl": "select \"No\" for Is anyone applying seeking Medicaid payment of long-term care services to reside in a long term care facility?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Is anyone getting medical care for an accident or injury?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744597187,
+      "dsl": "select \"No\" for Is anyone getting medical care for an accident or injury?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "The start date for Medical Assistance(MA) can go back up to three months from your application date if you have medical bills from that time and meet the MA eligibility requirements. Is anyone applying seeking MA for past months?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744598328,
+      "dsl": "select \"No\" for The start date for Medical Assistance(MA) can go back up to three months from your application date if you have medical bills from that time and meet the MA eligibility requirements. Is anyone applying seeking MA for past months?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744601192,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Has Jason been determined blind or disabled by the Social Security Administration (SSA) or the State Medical Review Team (SMRT)?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744610302,
+      "dsl": "select \"Yes\" for Has Jason been determined blind or disabled by the Social Security Administration (SSA) or the State Medical Review Team (SMRT)?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744612082,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Yes",
+        "Did Jason meet an exception to the federal work or community engagement requirement last month?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744625256,
+      "dsl": "select \"Yes\" for Did Jason meet an exception to the federal work or community engagement requirement last month?"
+    },
+    {
+      "verb": "check",
+      "args": [
+        "Medically Frail or Special Medical Needs"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744641817,
+      "dsl": "check \"Medically Frail or Special Medical Needs\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744643015,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Did Junior meet an exception to the federal work or community engagement requirement last month?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744646811,
+      "dsl": "select \"No\" for Did Junior meet an exception to the federal work or community engagement requirement last month?"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "No",
+        "Did Junior complete a qualifying activity last month?"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744648991,
+      "dsl": "select \"No\" for Did Junior complete a qualifying activity last month?"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744649770,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784744658760,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "check",
+      "args": [
+        "Confirmed that the client agrees to this renewal policy"
+      ],
+      "frame": "Modal Frame - Submit Application Form",
+      "ts": 1784744669390,
+      "dsl": "check \"Confirmed that the client agrees to this renewal policy\""
+    },
+    {
+      "verb": "check",
+      "args": [
+        "Confirmed that the client agrees to adhere to this policy"
+      ],
+      "frame": "Modal Frame - Submit Application Form",
+      "ts": 1784744670218,
+      "dsl": "check \"Confirmed that the client agrees to adhere to this policy\""
+    },
+    {
+      "verb": "check",
+      "args": [
+        "Confirmed that the client agrees to report changes"
+      ],
+      "frame": "Modal Frame - Submit Application Form",
+      "ts": 1784744670997,
+      "dsl": "check \"Confirmed that the client agrees to report changes\""
+    },
+    {
+      "verb": "check",
+      "args": [
+        "Confirmed that the client has read or been made aware of the penalty of perjury"
+      ],
+      "frame": "Modal Frame - Submit Application Form",
+      "ts": 1784744671715,
+      "dsl": "check \"Confirmed that the client has read or been made aware of the penalty of perjury\""
+    },
+    {
+      "verb": "check",
+      "args": [
+        "Confirmed that the client agrees to adhere to this policy"
+      ],
+      "frame": "Modal Frame - Submit Application Form",
+      "ts": 1784744672645,
+      "dsl": "check \"Confirmed that the client agrees to adhere to this policy\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Submit"
+      ],
+      "frame": "top",
+      "ts": 1784744675235,
+      "dsl": "click button \"Submit\""
+    },
+    {
+      "verb": "check",
+      "args": [
+        "Confirmed that the client has been made aware of the renewal options and has selected the same."
+      ],
+      "frame": "Modal Frame - Submit Application",
+      "ts": 1784744677819,
+      "dsl": "check \"Confirmed that the client has been made aware of the renewal options and has selected the same.\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Submit"
+      ],
+      "frame": "top",
+      "ts": 1784744679172,
+      "dsl": "click button \"Submit\""
+    }
+  ]
+}

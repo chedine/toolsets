@@ -113,46 +113,86 @@ async function main() {
     }
   }
   // --generate: mint fresh identity values so a recording made with concrete
-  // data creates a distinct person each replay. config.json "generate" maps a
-  // field-label REGEX (case-insensitive) to a generator spec; the value is
-  // generated once per rule and shared by every field it matches. The recorded
-  // value of each matched field is then replaced by the generated one across
-  // ALL steps — so the SSN re-enter (same recorded value, different label) and
-  // later person-search / link steps (which embed the recorded name) update
-  // too, without needing a label match for each.
+  // data creates distinct people each replay. config.json "generate" maps a
+  // field-label REGEX (case-insensitive) to a generator spec.
+  //
+  // A recording may register several applicants. We split it into per-applicant
+  // blocks — a rule-matching field label that REPEATS marks the start of the
+  // next applicant — and generate each applicant's identity INDEPENDENTLY. No
+  // correlation is drawn between applicants: if two happen to share a recorded
+  // value (e.g. a coincidentally identical last name), each still gets its own
+  // freshly generated value, resolved positionally within its own block. Within
+  // one applicant's block the recorded value is substituted across every step,
+  // so the SSN re-enter (same value, different label) updates too. Cross-block
+  // references (a relationship/search label naming another applicant) are
+  // resolved by a global pass over values that are unique across the recording.
   const genOn = args.includes('--generate') || args.includes('--gen');
   if (genOn) {
     const { generate } = require('./generators');
     const { toDsl } = require('./record');
     const genCfg = cfg.generate || {};
     if (!Object.keys(genCfg).length) { console.error('--generate given but config.json has no "generate" section'); process.exit(1); }
-    const rules = Object.entries(genCfg).map(([pat, spec]) => ({ re: new RegExp(pat, 'i'), spec, value: undefined }));
-    const byType = {};
-    const replace = []; // { from: recordedValue, to: generatedValue }
-    for (const step of rec.steps) {
-      if (step.verb !== 'enter' && step.verb !== 'select option') continue;
+    const rules = Object.entries(genCfg).map(([pat, spec]) => ({ re: new RegExp(pat, 'i'), spec }));
+
+    const persons = [];               // { start, end, labels:Set, map:Map(recorded->gen), byType:{} }
+    let cur = null;
+    rec.steps.forEach((step, i) => {
+      if (step.verb !== 'enter' && step.verb !== 'select option') return;
       const rule = rules.find(r => r.re.test(step.args[1]));
-      if (!rule) continue;
-      if (rule.value === undefined) { rule.value = generate(rule.spec); byType[(rule.spec.type || '').toLowerCase()] = rule.value; }
+      if (!rule) return;
       const recorded = step.args[0];
-      if (recorded && recorded.length >= 2 && recorded !== rule.value) replace.push({ from: recorded, to: rule.value });
-    }
-    const sub = s => { for (const { from, to } of replace) s = s.split(from).join(to); return s; };
-    for (const step of rec.steps) {
+      if (!recorded || recorded.length < 2) return;
+      if (!cur || cur.labels.has(step.args[1])) { cur = { start: i, labels: new Set(), map: new Map(), byType: {} }; persons.push(cur); }
+      cur.labels.add(step.args[1]);
+      if (!cur.map.has(recorded)) {
+        const val = generate(rule.spec);
+        cur.map.set(recorded, val);
+        const t = (rule.spec.type || '').toLowerCase();
+        if (!(t in cur.byType)) cur.byType[t] = val;
+      }
+    });
+    persons.forEach((p, k) => { p.end = k + 1 < persons.length ? persons[k + 1].start : rec.steps.length; });
+
+    // global map for cross-block references: only recorded values that are
+    // unique across the whole recording (an ambiguous value is left to the
+    // per-block pass, which knows which applicant it belongs to)
+    const count = new Map();
+    for (const p of persons) for (const from of p.map.keys()) count.set(from, (count.get(from) || 0) + 1);
+    const globalPairs = [];
+    for (const p of persons) for (const [from, to] of p.map) if (count.get(from) === 1 && from !== to) globalPairs.push([from, to]);
+    globalPairs.sort((a, b) => b[0].length - a[0].length);
+
+    const personAt = i => persons.find(p => i >= p.start && i < p.end);
+    const apply = (s, pairs) => { for (const [from, to] of pairs) if (from !== to) s = s.split(from).join(to); return s; };
+    for (let i = 0; i < rec.steps.length; i++) {
+      const step = rec.steps[i];
+      const pm = personAt(i);
+      const pmPairs = pm ? [...pm.map].sort((a, b) => b[0].length - a[0].length) : [];
       const before = JSON.stringify(step.args);
-      step.args = step.args.map(a => typeof a === 'string' ? sub(a) : a);
+      step.args = step.args.map(a => typeof a === 'string' ? apply(apply(a, pmPairs), globalPairs) : a);
       if (JSON.stringify(step.args) !== before) step.dsl = toDsl(step) + '  (generated)';
     }
-    // expose the generated identity under the usual param names too, for
+
+    // expose the PRIMARY applicant's identity under the usual param names, for
     // recordings/scenarios that reference it via ${firstName}/${person}
-    if (byType.firstname) params.firstName = byType.firstname;
-    if (byType.lastname) params.lastName = byType.lastname;
-    if (params.firstName && params.lastName) params.person = `${params.firstName} ${params.lastName}`;
-    console.log('Generated:', JSON.stringify(byType));
+    const primary = persons[0];
+    if (primary) {
+      if (primary.byType.firstname) params.firstName = primary.byType.firstname;
+      if (primary.byType.lastname) params.lastName = primary.byType.lastname;
+      if (params.firstName && params.lastName) params.person = `${params.firstName} ${params.lastName}`;
+    }
+    console.log('Generated:', JSON.stringify(persons.map(p => Object.fromEntries(p.map))));
   }
 
   applyParams(rec.steps, params);
   if (Object.keys(params).length) console.log('Parameters:', JSON.stringify(params));
+
+  if (args.includes('--dry')) {
+    const { toDsl } = require('./record');
+    console.log('\n--- transformed steps (dry run, no browser) ---');
+    for (const step of rec.steps) console.log(step.dsl || toDsl(step));
+    process.exit(0);
+  }
 
   const opts = browserOptions(cfg, args.includes('--headless'));
   const browser = await chromium.launch(opts.launch);

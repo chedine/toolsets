@@ -753,6 +753,18 @@ class CuramDriver {
         if (!want.includes('*')) return want === got;
         return new RegExp('^' + want.split('*').map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$').test(got);
       };
+      const mark = t => { document.querySelectorAll('[data-curam-replay-target]').forEach(e => e.removeAttribute('data-curam-replay-target')); t.setAttribute('data-curam-replay-target', '1'); };
+      // Positional checkbox (no column predicate): pick the Nth VISIBLE
+      // checkbox in the scope directly. IEG agreement/confirmation checkboxes
+      // sit in a tbody tr among several layout tables, so resolving "row N" via
+      // the first table misses them.
+      if (opt.target === 'checkbox' && !opt.where) {
+        const cbs = Array.from(box.querySelectorAll('input[type="checkbox"]')).filter(c => c.offsetParent !== null);
+        const target = cbs[(opt.row || 1) - 1];
+        if (!target) return { error: `no visible checkbox at position ${opt.row || 1}` };
+        mark(target);
+        return { ok: true };
+      }
       const table = box.querySelector('table');
       if (!table) return { error: 'no table in container' };
       const headers = Array.from(table.querySelectorAll('thead th')).map(h => norm(h.textContent));

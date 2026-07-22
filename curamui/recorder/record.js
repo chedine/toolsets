@@ -164,7 +164,7 @@ async function closeAllTabs(page) {
 // Wires the recorder bindings + injected script onto a page. Returns the
 // mutable recorder state (also used by the headless test harness).
 async function setupRecorder(page, cfg) {
-  const state = { recording: false, paused: false, steps: [], savedAs: null };
+  const state = { recording: false, paused: false, steps: [], savedAs: null, ready: false };
 
   const save = name => {
     fs.mkdirSync(cfg.dataDir, { recursive: true });
@@ -216,7 +216,7 @@ async function setupRecorder(page, cfg) {
     if (cmd === 'applyStrategies') applyStrategies(arg);
     if (cmd === 'save') save(arg);
     if (cmd === 'discard') { state.steps = []; console.log('recording discarded'); }
-    const res = { recording: state.recording, paused: state.paused, steps: state.steps.length };
+    const res = { recording: state.recording, paused: state.paused, steps: state.steps.length, ready: state.ready };
     if (cmd === 'stop') res.flagged = flaggedSteps();
     return res;
   });
@@ -248,6 +248,11 @@ async function main() {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForSelector('#app-sections-container-dc', { timeout: 60000 });
   }
+  // cleanup done — enable the overlay's Start button (it stays disabled until
+  // now so a recording can't begin mid-cleanup and capture the reload/tab-close)
+  state.ready = true;
+  await page.evaluate(st => window.__curamRecRender && window.__curamRecRender(st),
+    { recording: false, paused: false, steps: 0, ready: true }).catch(() => {});
   console.log('Ready. Use the overlay panel (bottom right) to start recording.');
 
   await new Promise(resolve => { browser.on('disconnected', resolve); page.on('close', resolve); });

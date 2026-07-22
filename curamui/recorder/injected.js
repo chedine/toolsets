@@ -412,13 +412,17 @@ module.exports = function curamRecorderInit() {
 
     const $ = id => document.getElementById(id);
     function render(st) {
+      // `ready` is the startup gate (false only while the driver is cleaning up
+      // tabs); render payloads that omit it are treated as ready
+      const ready = st.ready !== false;
       $('__rec_dot').style.background = st.recording ? (st.paused ? '#f1c21b' : '#fa4d56') : '#525252';
       $('__rec_count').textContent = st.steps + ' steps';
-      $('__rec_start').disabled = st.recording && !st.paused;
+      $('__rec_start').disabled = !ready || (st.recording && !st.paused);
       $('__rec_start').textContent = st.paused ? 'Resume' : 'Start';
       $('__rec_pause').disabled = !st.recording || st.paused;
       $('__rec_stop').disabled = !st.recording;
       if (st.last) $('__rec_last').textContent = st.last;
+      else if (!ready) $('__rec_last').textContent = 'Preparing… (cleaning up tabs)';
     }
     window.__curamRecRender = render;
 

@@ -48,6 +48,10 @@ function browserOptions(cfg, headless) {
 }
 
 function toDsl(step) {
+  // `try ` marks a step whose failure replay ignores (step-level optionality)
+  return (step.optional ? 'try ' : '') + toDslBody(step);
+}
+function toDslBody(step) {
   const q = s => `"${s}"`;
   const a = step.args;
   // row-selection suffix from a strategy: " at row N" / " where Col = ..."

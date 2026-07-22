@@ -21,12 +21,17 @@ function parseDsl(text) {
     return [m[1], m[2]];
   }));
   for (const raw of text.split(/\r?\n/)) {
-    const line = raw.trim();
+    let line = raw.trim();
     if (!line || line.startsWith('#')) continue;
+    // `try <step>`: replay ignores a failure in this step (step-level optional)
+    let optional = false;
+    const tm = line.match(/^try\s+(.+)$/);
+    if (tm) { optional = true; line = tm[1]; }
     // shared "at row N [where ...]" strategy builder
     const rowStrategy = (row, where) => where
       ? { type: 'predicate', where: parseWhere(where), ...(row ? { row: +row } : {}) }
       : row ? { type: 'row', row: +row } : undefined;
+    const n = steps.length;
     let m;
     if ((m = line.match(/^param ([\w.-]+)\s*=\s*"([^"]*)"$/))) {
       params[m[1]] = m[2];
@@ -56,14 +61,23 @@ function parseDsl(text) {
       steps.push({ verb: 'enter', args: [m[1], m[2]], dsl: line });
     } else if ((m = line.match(/^select "([^"]*)" for (.+)$/))) {
       steps.push({ verb: 'select option', args: [m[1], m[2]], dsl: line });
+    } else if ((m = line.match(/^select radio "(.+)"$/))) {
+      steps.push({ verb: 'select radio', args: [m[1]], dsl: line });
     } else if ((m = line.match(/^click shortcutitem (.+?) > (.+)$/))) {
       steps.push({ verb: 'click shortcutitem', args: [m[1], m[2]], dsl: line });
-    } else if ((m = line.match(/^(click section|click shortcutgroup|click menuitem|select tab|select pagetab|select nav|select navitem|check|uncheck|close tab) "([^"]+)"$/))) {
+      // greedy "(.+)" so a label containing embedded quotes (e.g. a consent
+      // checkbox that quotes a link name) still parses — the arg is line-final
+    } else if ((m = line.match(/^(click section|click shortcutgroup|click menuitem|select tab|select pagetab|select nav|select navitem|check|uncheck|close tab) "(.+)"$/))) {
       steps.push({ verb: m[1], args: [m[2]], dsl: line });
     } else if (line === 'toggle shortcuts panel') {
       steps.push({ verb: 'toggle shortcuts panel', args: [], dsl: line });
     } else {
       throw new Error(`cannot parse DSL line: ${line}`);
+    }
+    if (optional && steps.length > n) {
+      const s = steps[steps.length - 1];
+      s.optional = true;
+      s.dsl = 'try ' + s.dsl;
     }
   }
   return { steps, params };
@@ -93,13 +107,17 @@ async function main() {
 
   const dataDir = path.join(__dirname, cfg.dataDir || './data');
   let rec;
-  if (nameArg.endsWith('.dsl')) {
+  if (nameArg.endsWith('.json')) {
+    // explicit .json: the full-fidelity capture (only needed for exact ctx)
     const p = fs.existsSync(nameArg) ? nameArg : path.join(dataDir, nameArg);
-    const parsed = parseDsl(fs.readFileSync(p, 'utf8'));
-    rec = { name: nameArg, steps: parsed.steps, params: parsed.params };
-  } else {
-    const p = nameArg.endsWith('.json') ? nameArg : path.join(dataDir, nameArg + '.json');
     rec = JSON.parse(fs.readFileSync(p, 'utf8'));
+  } else {
+    // default to the hand-editable .dsl (params, ${}, `try`); a bare name
+    // resolves to <name>.dsl under the data dir
+    const name = nameArg.endsWith('.dsl') ? nameArg : nameArg + '.dsl';
+    const p = fs.existsSync(name) ? name : path.join(dataDir, name);
+    const parsed = parseDsl(fs.readFileSync(p, 'utf8'));
+    rec = { name, steps: parsed.steps, params: parsed.params };
   }
   // config is the current environment (e.g. a tunnel URL); the recording's
   // stored url is only a fallback — a recording is portable across environments
@@ -213,8 +231,7 @@ async function main() {
   }
 
   const c = new CuramDriver(page);
-  const keepGoing = args.includes('--keep-going');
-  let ok = 0, failed = 0;
+  let ok = 0, failed = 0, skipped = 0;
   for (const step of rec.steps) {
     const [a0, a1] = step.args;
     const t0 = Date.now();
@@ -262,14 +279,17 @@ async function main() {
       const secs = (Date.now() - t0) / 1000;
       ok++; console.log('  ok :', step.dsl, secs > 1 ? `(${secs.toFixed(1)}s)` : '');
     } catch (e) {
-      failed++; console.log('  FAIL:', step.dsl, '—', e.message.split('\n')[0]);
-      // a wizard flow is sequential — every later step depends on this one, so
-      // barrelling on just produces a cascade of noise. Stop at the first
-      // failure (screenshot captures the offending page) unless --keep-going.
-      if (!keepGoing) { console.log('  (stopping — pass --keep-going to continue past failures)'); break; }
+      const msg = e.message.split('\n')[0];
+      // a `try` step is optional — its failure is expected/tolerated, so log
+      // and move on without failing the run
+      if (step.optional) { skipped++; console.log('  skip:', step.dsl, '—', msg); continue; }
+      // otherwise a wizard flow is sequential: every later step depends on this
+      // one, so stop here (the screenshot captures the offending page).
+      failed++; console.log('  FAIL:', step.dsl, '—', msg);
+      break;
     }
   }
-  console.log(`\nReplay finished: ${ok} ok, ${failed} failed.`);
+  console.log(`\nReplay finished: ${ok} ok, ${failed} failed${skipped ? `, ${skipped} optional skipped` : ''}.`);
   await page.screenshot({ path: path.join(__dirname, 'replay-final.png') });
   await browser.close();
   process.exit(failed ? 1 : 0);

@@ -10,10 +10,13 @@ const UNTIL_TIMEOUT = 600000;  // 10 min — async case processing can take a wh
 const UNTIL_INTERVAL = 15000;  // 15 s between refresh+recheck
 
 class CuramDriver {
-  constructor(page) {
+  constructor(page, opts = {}) {
     this.page = page;
     this.section = null; // locator of current section content panel (…-sbc or plain stc)
     this.sectionId = null;
+    // `until` polling defaults from config (ms); per-step opts still override
+    this.untilTimeout = opts.untilTimeout;
+    this.untilInterval = opts.untilInterval;
   }
 
   async _settle(ms = 1500) { await this.page.waitForTimeout(ms); }
@@ -1168,8 +1171,8 @@ class CuramDriver {
   // refresh between polls (async server processing doesn't push updates). Fails
   // if the page has no refresh control, or on timeout.
   async until(label, value, opts = {}) {
-    const timeout = opts.timeout || UNTIL_TIMEOUT;
-    const interval = opts.interval || UNTIL_INTERVAL;
+    const timeout = opts.timeout || this.untilTimeout || UNTIL_TIMEOUT;
+    const interval = opts.interval || this.untilInterval || UNTIL_INTERVAL;
     const deadline = Date.now() + timeout;
     for (;;) {
       const res = await this._readDisplayField(label);
@@ -1189,8 +1192,8 @@ class CuramDriver {
   async untilRow(container, step = {}, opts = {}) {
     const opt = this._rowOpt(step, 'assert');
     if (!opt.where && !opt.row) throw new Error('until row needs "at row N" and/or "where ..."');
-    const timeout = opts.timeout || UNTIL_TIMEOUT;
-    const interval = opts.interval || UNTIL_INTERVAL;
+    const timeout = opts.timeout || this.untilTimeout || UNTIL_TIMEOUT;
+    const interval = opts.interval || this.untilInterval || UNTIL_INTERVAL;
     const deadline = Date.now() + timeout;
     for (;;) {
       try { await this._rowOp(container, opt, 3000); return this; }

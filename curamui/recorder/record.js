@@ -124,9 +124,10 @@ function pushStep(steps, step) {
   }
   // Row verbs default to position; the review UI can switch to a predicate.
   if (ROW_VERBS.includes(step.verb) && step.ctx && !step.strategy) step.strategy = { type: 'row', row: step.ctx.row };
-  // Row assertions capture the whole row as a predicate (minus junk columns
-  // like the actions "▼"); trim the where clause in the .dsl if too strict.
-  if (step.verb === 'expect row' && step.ctx && !step.strategy) {
+  // Row assertions and row waits capture the whole row as a predicate (minus
+  // junk columns like the actions "▼"); trim the where clause in the .dsl if
+  // too strict.
+  if ((step.verb === 'expect row' || step.verb === 'until row') && step.ctx && !step.strategy) {
     const where = {};
     for (const [k, v] of Object.entries(step.ctx.rowValues || {})) {
       if (/^(actions|expand\/collapse item)$/i.test(k) || v === '▼') continue;

@@ -251,7 +251,10 @@ async function main() {
     await page.waitForTimeout(4000);
   }
 
-  const c = new CuramDriver(page);
+  const c = new CuramDriver(page, {
+    untilTimeout: cfg.until && cfg.until.timeout ? cfg.until.timeout * 1000 : undefined,
+    untilInterval: cfg.until && cfg.until.interval ? cfg.until.interval * 1000 : undefined,
+  });
   let ok = 0, failed = 0, skipped = 0;
   for (const step of rec.steps) {
     const [a0, a1] = step.args;

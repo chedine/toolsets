@@ -260,14 +260,19 @@ module.exports = function curamRecorderInit() {
   // Right-click on a read-only display field records an assertion on its
   // current value. The native context menu is suppressed and the field is
   // flashed as feedback.
-  function flash(el) {
+  function flash(el, color = '#24a148') {
     const prev = el.style.outline;
-    el.style.outline = '2px solid #24a148';
+    el.style.outline = '2px solid ' + color;
     setTimeout(() => { el.style.outline = prev; }, 700);
   }
 
   function classifyFrameContextMenu(e) {
-    // display field -> expect "<label>" is "<value>"
+    // right-click asserts the value now (expect); shift+right-click waits for
+    // the value to appear (until), refreshing until it does — the intent for a
+    // status/decision that resolves after async processing.
+    const wait = e.shiftKey;
+    const okColor = wait ? '#0f62fe' : '#24a148';
+    // display field -> expect / until "<label>" is "<value>"
     const item = e.target.closest && e.target.closest('.cds--cluster__item--read-only-field');
     if (item) {
       // group wrappers nest further fields; only leaf fields are assertable
@@ -277,19 +282,19 @@ module.exports = function curamRecorderInit() {
       const label = txt(item.querySelector('label'));
       const value = txt(item.querySelector('.cds--field'));
       if (!label) return;
-      report('expect', [label, value]);
-      flash(item);
+      report(wait ? 'until' : 'expect', [label, value]);
+      flash(item, okColor);
       return;
     }
-    // table row -> expect row [in "<container>"] where <all row values>
+    // table row -> expect row / until row [in "<container>"] where <row values>
     const cell = e.target.closest && e.target.closest('tbody td');
     if (cell && !cell.closest('tr.list-details-row')) {
       e.preventDefault();
       e.stopPropagation();
       const ctx = rowContext(cell);
       if (!ctx || !Object.keys(ctx.rowValues).length) return;
-      report('expect row', ['', containerLabel(cell)], ctx);
-      flash(cell.closest('tr'));
+      report(wait ? 'until row' : 'expect row', ['', containerLabel(cell)], ctx);
+      flash(cell.closest('tr'), okColor);
     }
   }
 
@@ -407,7 +412,8 @@ module.exports = function curamRecorderInit() {
           <button id="__rec_discard" style="flex:1">Discard</button>
         </div>
       </div>
-      <div id="__rec_last" style="margin-top:6px;color:#a8a8a8;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div>`;
+      <div id="__rec_last" style="margin-top:6px;color:#a8a8a8;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div>
+      <div style="margin-top:6px;color:#6f6f6f;font-size:11px;line-height:1.4">right-click = assert value<br>shift+right-click = wait until value</div>`;
     for (const b of box.querySelectorAll('button')) {
       b.style.cssText += ';background:#393939;color:#f4f4f4;border:none;border-radius:4px;padding:4px 8px;cursor:pointer';
     }

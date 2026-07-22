@@ -5,6 +5,10 @@ function globToRegex(pattern) {
   return new RegExp('^' + pattern.split('*').map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$');
 }
 
+// `until` polling defaults (ms) — overridable per step via "timeout N interval N"
+const UNTIL_TIMEOUT = 600000;  // 10 min — async case processing can take a while
+const UNTIL_INTERVAL = 15000;  // 15 s between refresh+recheck
+
 class CuramDriver {
   constructor(page) {
     this.page = page;
@@ -1097,35 +1101,107 @@ class CuramDriver {
   }
 
   // ---- expect "<label>" is "<value>" (read-only display field) ----
+  // Read a read-only display field's value from the current content, once.
+  async _readDisplayField(label) {
+    for (const f of await this._candidateFrames()) {
+      const res = await f.evaluate(want => {
+        const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+        for (const item of document.querySelectorAll('.cds--cluster__item--read-only-field')) {
+          if (!item.offsetParent) continue;
+          // group wrappers nest further read-only fields and would match with a
+          // concatenated garbage value — leaf fields only
+          if (item.querySelector('.cds--cluster__item--read-only-field')) continue;
+          const l = item.querySelector('label');
+          if (l && norm(l.textContent) === want) {
+            const v = item.querySelector('.cds--field');
+            return { found: true, actual: norm(v ? v.textContent : '') };
+          }
+        }
+        return { found: false };
+      }, label).catch(() => ({ found: false }));
+      if (res.found) return res;
+    }
+    return { found: false, actual: '' };
+  }
+
+  _valueMatches(want, actual) {
+    want = (want || '').replace(/\s+/g, ' ').trim();
+    return want.includes('*') ? globToRegex(want).test(actual) : actual === want;
+  }
+
   async expectField(label, value) {
     const deadline = Date.now() + 10000;
     let lastErr = `no display field "${label}"`;
     for (;;) {
-      for (const f of await this._candidateFrames()) {
-        const res = await f.evaluate(want => {
-          const norm = s => (s || '').replace(/\s+/g, ' ').trim();
-          for (const item of document.querySelectorAll('.cds--cluster__item--read-only-field')) {
-            if (!item.offsetParent) continue;
-            // group wrappers nest further read-only fields and would match
-            // with a concatenated garbage value — leaf fields only
-            if (item.querySelector('.cds--cluster__item--read-only-field')) continue;
-            const l = item.querySelector('label');
-            if (l && norm(l.textContent) === want) {
-              const v = item.querySelector('.cds--field');
-              return { found: true, actual: norm(v ? v.textContent : '') };
-            }
-          }
-          return { found: false };
-        }, label).catch(() => ({ found: false }));
-        if (res.found) {
-          const want = value.replace(/\s+/g, ' ').trim();
-          const pass = want.includes('*') ? globToRegex(want).test(res.actual) : res.actual === want;
-          if (pass) return this;
-          lastErr = `"${label}" expected "${value}" but is "${res.actual}"`;
-        }
+      const res = await this._readDisplayField(label);
+      if (res.found) {
+        if (this._valueMatches(value, res.actual)) return this;
+        lastErr = `"${label}" expected "${value}" but is "${res.actual}"`;
       }
       if (Date.now() > deadline) throw new Error(lastErr);
       await this.page.waitForTimeout(500);
+    }
+  }
+
+  // Click the content-panel refresh control (Curam pageRefresh) and wait for
+  // the content document to reload. Returns false if the page has none.
+  async _refreshContent() {
+    const pre = await this._navSignature();
+    for (const f of await this._candidateFrames()) {
+      const clicked = await f.evaluate(() => {
+        const vis = e => e.offsetParent !== null || (e.getClientRects && e.getClientRects().length > 0);
+        const cands = Array.from(document.querySelectorAll('a.refresh')).filter(vis);
+        // the active control carries the pageRefresh handler; a disabled twin
+        // may share the class
+        const hit = cands.find(a => /pageRefresh/.test(a.getAttribute('onclick') || '')) || cands[0];
+        if (!hit) return false;
+        hit.click();
+        return true;
+      }).catch(() => false);
+      if (clicked) { await this._waitForNav(pre); return true; }
+    }
+    return false;
+  }
+
+  // ---- until "<label>" is "<value>" ----
+  // Poll a display field until it reaches the value, clicking the content-panel
+  // refresh between polls (async server processing doesn't push updates). Fails
+  // if the page has no refresh control, or on timeout.
+  async until(label, value, opts = {}) {
+    const timeout = opts.timeout || UNTIL_TIMEOUT;
+    const interval = opts.interval || UNTIL_INTERVAL;
+    const deadline = Date.now() + timeout;
+    for (;;) {
+      const res = await this._readDisplayField(label);
+      if (res.found && this._valueMatches(value, res.actual)) return this;
+      if (Date.now() >= deadline) {
+        throw new Error(res.found
+          ? `until "${label}" is "${value}" timed out after ${Math.round(timeout / 1000)}s (last: "${res.actual}")`
+          : `until: no display field "${label}"`);
+      }
+      await this.page.waitForTimeout(Math.min(interval, Math.max(0, deadline - Date.now())));
+      if (!await this._refreshContent()) throw new Error('until: no content-panel refresh control on this page');
+    }
+  }
+
+  // ---- until row [in "<container>"] [at row N] where Col = "V" ... ----
+  // Poll until a row matching the selection exists, refreshing between polls.
+  async untilRow(container, step = {}, opts = {}) {
+    const opt = this._rowOpt(step, 'assert');
+    if (!opt.where && !opt.row) throw new Error('until row needs "at row N" and/or "where ..."');
+    const timeout = opts.timeout || UNTIL_TIMEOUT;
+    const interval = opts.interval || UNTIL_INTERVAL;
+    const deadline = Date.now() + timeout;
+    for (;;) {
+      try { await this._rowOp(container, opt, 3000); return this; }
+      catch (e) {
+        if (Date.now() >= deadline) {
+          const want = Object.entries(opt.where || {}).map(([k, v]) => `${k} = "${v}"`).join(' and ');
+          throw new Error(`until row${container ? ` in "${container}"` : ''}${opt.row ? ` at row ${opt.row}` : ''}${want ? ` where ${want}` : ''} timed out after ${Math.round(timeout / 1000)}s (${e.message})`);
+        }
+      }
+      await this.page.waitForTimeout(Math.min(interval, Math.max(0, deadline - Date.now())));
+      if (!await this._refreshContent()) throw new Error('until: no content-panel refresh control on this page');
     }
   }
 

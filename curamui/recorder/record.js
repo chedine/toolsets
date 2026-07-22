@@ -64,6 +64,8 @@ function toDslBody(step) {
     }
     return '';
   };
+  // "timeout N interval N" suffix for until steps (ms stored -> seconds)
+  const untilSuffix = st => { const o = st.opts || {}; return (o.timeout ? ` timeout ${Math.round(o.timeout / 1000)}` : '') + (o.interval ? ` interval ${Math.round(o.interval / 1000)}` : ''); };
   switch (step.verb) {
     case 'enter': return `enter ${q(a[0])} as ${a[1]}`;
     case 'select option': return `select ${q(a[0])} for ${a[1]}`;
@@ -79,6 +81,8 @@ function toDslBody(step) {
     case 'uncheck row': return step.verb + (a[1] ? ` in ${q(a[1])}` : '') + suffix(step.strategy);
     case 'click rowmenu': return `click rowmenu ${q(a[0])}` + (a[1] ? ` in ${q(a[1])}` : '') + suffix(step.strategy);
     case 'expect row': return 'expect row' + (a[1] ? ` in ${q(a[1])}` : '') + suffix(step.strategy);
+    case 'until': return `until ${q(a[0])} is ${q(a[1])}` + untilSuffix(step);
+    case 'until row': return 'until row' + (a[1] ? ` in ${q(a[1])}` : '') + suffix(step.strategy) + untilSuffix(step);
     case 'click pagemenu': return `click pagemenu ${q(a[0])}`;
     case 'expect': return `expect ${q(a[0])} is ${q(a[1])}`;
     case 'click button': return `click button ${q(a[0])}` + (a[1] ? ` in ${q(a[1])}` : '');

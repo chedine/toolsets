@@ -63,6 +63,27 @@ function parseDsl(text) {
       steps.push({ verb: 'select option', args: [m[1], m[2]], dsl: line });
     } else if ((m = line.match(/^select radio "(.+)"$/))) {
       steps.push({ verb: 'select radio', args: [m[1]], dsl: line });
+    } else if (/^until\s+/.test(line)) {
+      // poll a field/row until it matches, refreshing between polls. Optional
+      // trailing "timeout <sec>" / "interval <sec>" override the defaults.
+      let body = line.replace(/^until\s+/, '');
+      const opts = {};
+      for (let stripped = true; stripped;) {
+        stripped = false;
+        body = body.replace(/\s+timeout\s+(\d+)\s*$/i, (_, n) => { opts.timeout = +n * 1000; stripped = true; return ''; });
+        body = body.replace(/\s+interval\s+(\d+)\s*$/i, (_, n) => { opts.interval = +n * 1000; stripped = true; return ''; });
+      }
+      body = body.trim();
+      const optField = Object.keys(opts).length ? { opts } : {};
+      let mm;
+      if ((mm = body.match(/^"([^"]*)" is "(.*)"$/))) {
+        steps.push({ verb: 'until', args: [mm[1], mm[2]], dsl: line, ...optField });
+      } else if ((mm = body.match(/^row(?: in "([^"]*)")?(?: at row (\d+))?(?: where (.+))?$/))) {
+        if (!mm[2] && !mm[3]) throw new Error(`until row needs "at row N" and/or "where ...": ${line}`);
+        steps.push({ verb: 'until row', args: ['', mm[1] || ''], dsl: line, strategy: rowStrategy(mm[2], mm[3]), ...optField });
+      } else {
+        throw new Error(`cannot parse until: ${line}`);
+      }
     } else if ((m = line.match(/^click shortcutitem (.+?) > (.+)$/))) {
       steps.push({ verb: 'click shortcutitem', args: [m[1], m[2]], dsl: line });
       // greedy "(.+)" so a label containing embedded quotes (e.g. a consent
@@ -274,6 +295,8 @@ async function main() {
         case 'toggle shortcuts panel': break; // handled implicitly by driver
         case 'select option':       await c.selectOption(a0, a1); break;
         case 'select radio':        await c.selectRadio(a0); break;
+        case 'until':               await c.until(a0, a1, step.opts); break;
+        case 'until row':           await c.untilRow(a1, step, step.opts); break;
         default: console.log('  ?? skipping unknown verb:', step.dsl); continue;
       }
       const secs = (Date.now() - t0) / 1000;

@@ -334,7 +334,19 @@ module.exports = function curamRecorderInit() {
       const label = checkboxLabel(el);
       if (label) { report(el.checked ? 'check' : 'uncheck', [label]); return; }
       const row = el.closest('tbody tr');
-      if (row && !IS_TOP) { report(el.checked ? 'check row' : 'uncheck row', ['', containerLabel(el)], rowContext(el)); return; }
+      if (row && !IS_TOP) {
+        const ctx = rowContext(el) || { row: 1, rowCount: 1, column: '', rowValues: {} };
+        // several label-less checkboxes can share one row (e.g. two applicants
+        // selected as tax filers in a single layout row) — the row index can't
+        // tell them apart. Also record this checkbox's ordinal among the frame's
+        // visible checkboxes (the scope replay searches when there's no
+        // container), so each distinct box replays to itself.
+        const cbs = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(c => c.offsetParent !== null);
+        const cbIndex = cbs.indexOf(el) + 1;
+        if (cbIndex) ctx.cbIndex = cbIndex;
+        report(el.checked ? 'check row' : 'uncheck row', ['', containerLabel(el)], ctx);
+        return;
+      }
       report(el.checked ? 'check' : 'uncheck', [fieldLabel(el)]);
       return;
     }

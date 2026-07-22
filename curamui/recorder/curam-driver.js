@@ -769,8 +769,20 @@ class CuramDriver {
       // the first table misses them.
       if (opt.target === 'checkbox' && !opt.where) {
         const cbs = Array.from(box.querySelectorAll('input[type="checkbox"]')).filter(c => c.offsetParent !== null);
-        const target = cbs[(opt.row || 1) - 1];
-        if (!target) return { error: `no visible checkbox at position ${opt.row || 1}` };
+        let target;
+        if (opt.cbIndex) {
+          // recorder captured this checkbox's ordinal among the scope's boxes
+          target = cbs[opt.cbIndex - 1];
+        } else {
+          // legacy recordings (no cbIndex): several steps can target the same
+          // position to select multiple boxes in one row. A box already in the
+          // desired state makes check()/uncheck() a no-op, so count only boxes
+          // still needing the toggle and take the Nth of those.
+          const want = opt.on !== false;
+          const pending = cbs.filter(c => c.checked !== want);
+          target = pending[(opt.row || 1) - 1] || cbs[(opt.row || 1) - 1];
+        }
+        if (!target) return { error: `no visible checkbox at position ${opt.cbIndex || opt.row || 1}` };
         mark(target);
         return { ok: true };
       }
@@ -844,6 +856,7 @@ class CuramDriver {
     const s = step.strategy || {};
     const ctx = step.ctx || {};
     const opt = { target };
+    if (ctx.cbIndex) opt.cbIndex = ctx.cbIndex;
     if (s.type === 'row') opt.row = s.row;
     else if (s.type === 'predicate') { opt.where = s.where; if (s.row) opt.row = s.row; }
     else if (ctx.row) opt.row = ctx.row;
@@ -924,6 +937,7 @@ class CuramDriver {
   // ---- check/uncheck row [in <container>] [at row N] [where ...] ----
   async checkRow(container, step = {}, on = true) {
     const opt = this._rowOpt(step, 'checkbox');
+    opt.on = on; // lets legacy positional resolution skip already-set boxes
     const { frame } = await this._rowOp(container, opt);
     const cb = frame.locator('[data-curam-replay-target]');
     // check()/uncheck() resolve once the box is in the target state; no wait

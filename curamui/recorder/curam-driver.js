@@ -314,6 +314,41 @@ class CuramDriver {
     }
   }
 
+  // ---- select radio "<label>" ----
+  // A radio is identified by its own label (a person name on a tax-dependent
+  // page, or an option). The recorded input is a native radio, so check() it.
+  // Match title / associated <label> / wrapping label / aria-label, normalized;
+  // fall back to a contained-text match.
+  async selectRadio(label) {
+    const deadline = Date.now() + 12000;
+    let lastErr = `no radio "${label}"`;
+    for (;;) {
+      for (const f of await this._candidateFrames()) {
+        const marked = await f.evaluate(want => {
+          const norm = s => (s || '').replace(/\s+/g, ' ').trim().replace(/ Mandatory$/, '');
+          const w = norm(want);
+          const labelOf = r => {
+            if (r.title) return norm(r.title);
+            if (r.id) { const l = document.querySelector(`label[for="${CSS.escape(r.id)}"]`); if (l) return norm(l.textContent); }
+            const wrap = r.closest('label'); if (wrap) return norm(wrap.textContent);
+            return norm(r.getAttribute('aria-label'));
+          };
+          const radios = Array.from(document.querySelectorAll('input[type="radio"]'));
+          const vis = radios.filter(r => r.offsetParent !== null);
+          const pool = vis.length ? vis : radios; // dijit may hide the input
+          const hit = pool.find(r => labelOf(r) === w) || pool.find(r => labelOf(r).includes(w));
+          if (!hit) return false;
+          document.querySelectorAll('[data-curam-replay-target]').forEach(e => e.removeAttribute('data-curam-replay-target'));
+          hit.setAttribute('data-curam-replay-target', '1');
+          return true;
+        }, label).catch(e => { lastErr = e.message.split('\n')[0]; return false; });
+        if (marked) { await f.locator('[data-curam-replay-target]').check({ force: true }); return this; }
+      }
+      if (Date.now() > deadline) throw new Error(lastErr);
+      await this.page.waitForTimeout(500);
+    }
+  }
+
   // The IEG wizard player frame + its current page heading, if a wizard is
   // open. IEG swaps page content in place, so the frame's URL/timeOrigin
   // signature doesn't change between pages — the heading text is the only
@@ -971,15 +1006,27 @@ class CuramDriver {
             if (w.includes('*')) return new RegExp('^' + w.split('*').map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$').test(t);
             return t === w || t.startsWith(w);
           };
-          for (const cb of document.querySelectorAll('input[type="checkbox"]')) {
-            if (!cb.offsetParent) continue;
-            let t = cb.title || '';
-            if (!match(t) && cb.id) { const l = document.querySelector(`label[for="${CSS.escape(cb.id)}"]`); t = l ? l.textContent : ''; }
-            if (!match(t)) continue;
-            if (cb.checked !== on) cb.click();
-            return true;
-          }
-          return false;
+          // resolve a checkbox's label the same way the recorder does
+          // (checkboxLabel): title / testid Label.X / label[for] / wrapping
+          // label / aria-label
+          const labelOf = cb => {
+            if (cb.title) return cb.title.replace(/\s+Mandatory$/, '');
+            const tid = cb.getAttribute('data-testid') || cb.getAttribute('data-rawtestid') || '';
+            const m = tid.match(/Label\.([A-Za-z0-9]+)$/);
+            if (m) return m[1].replace(/([a-z])([A-Z])/g, '$1 $2');
+            if (cb.id) { const l = document.querySelector(`label[for="${CSS.escape(cb.id)}"]`); if (l && l.textContent.trim()) return l.textContent; }
+            const wrap = cb.closest('label'); if (wrap && wrap.textContent.trim()) return wrap.textContent;
+            return cb.getAttribute('aria-label') || '';
+          };
+          const matches = Array.from(document.querySelectorAll('input[type="checkbox"]'))
+            .filter(cb => cb.offsetParent && match(labelOf(cb)));
+          if (!matches.length) return false;
+          // several checkboxes can share a label (repeated consent lines on a
+          // submit page) — one already in the desired state would no-op, so tick
+          // the first still needing the toggle
+          const target = matches.find(cb => cb.checked !== on) || matches[0];
+          if (target.checked !== on) target.click();
+          return true;
         }, [label, on]).catch(() => false);
         if (found) return this;
       }

@@ -101,7 +101,9 @@ async function main() {
     const p = nameArg.endsWith('.json') ? nameArg : path.join(dataDir, nameArg + '.json');
     rec = JSON.parse(fs.readFileSync(p, 'utf8'));
   }
-  const url = get('--url') || rec.url || cfg.url;
+  // config is the current environment (e.g. a tunnel URL); the recording's
+  // stored url is only a fallback — a recording is portable across environments
+  const url = get('--url') || cfg.url || rec.url;
 
   // parameters: .dsl/.json defaults overridden by --param name=value flags
   const params = { ...(rec.params || {}) };
@@ -254,6 +256,7 @@ async function main() {
         case 'close tab':           { const strip = c._tabStrip(); const tab = strip.locator(`.dijitTab:has(span[role="tab"])`).filter({ hasText: a0.replace(/\*/g, '') }).first(); await tab.hover(); await tab.locator('button.dijitTabCloseButton').click(); await c._settle(2000); break; }
         case 'toggle shortcuts panel': break; // handled implicitly by driver
         case 'select option':       await c.selectOption(a0, a1); break;
+        case 'select radio':        await c.selectRadio(a0); break;
         default: console.log('  ?? skipping unknown verb:', step.dsl); continue;
       }
       const secs = (Date.now() - t0) / 1000;

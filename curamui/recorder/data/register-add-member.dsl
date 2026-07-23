@@ -1,7 +1,7 @@
 # Y — the new household member, minted fresh each replay
-param gen memberFName as firstName
-param gen memberLName as lastName unique
-param gen memberSSN  as ssn
+param memberFName = gen firstName
+param memberLName = gen lastName unique
+param memberSSN  = gen ssn
 
 click section "HCR Cases and Outcomes"
 toggle shortcuts panel

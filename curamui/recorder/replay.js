@@ -2,8 +2,8 @@
 // Replay a saved recording:
 //   node replay.js <name|path.json|path.dsl> [--headless] [--url <url>]
 //                  [--param name=value ...] [--dry]
-// `param gen` lines in the .dsl mint fresh identity values each run; a
-// --param override pins one for the run.
+// `param x = gen <type>` lines mint fresh values each run (a --param override
+// pins one); `replace "literal" with x` swaps that value in across the steps.
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
@@ -11,7 +11,7 @@ const yaml = require('js-yaml');
 const { CuramDriver } = require('./curam-driver');
 const { closeAllTabs, browserOptions } = require('./record');
 
-// `param gen <name> as <type> [<modifier> [<value>]]...` declares a parameter
+// `param <name> = gen <type> [<modifier> [<value>]]...` declares a parameter
 // whose value is minted fresh each replay by generators.js. Modifiers are
 // generator-spec options: boolean flags (unique) or key/value pairs
 // (area 091, length 9). Numeric-looking values are coerced except where a
@@ -32,13 +32,18 @@ function parseGenSpec(type, rest) {
 }
 
 // Parse a hand-editable .dsl file back into steps. One step per line;
-// blank lines and #-comments ignored. `param name = "default"` lines declare
-// fixed parameters; `param gen <name> as <type>` declares generated ones. Both
-// are usable as ${name} anywhere in the steps.
+// blank lines and #-comments ignored. Declarations (not steps):
+//   param <name> = "value"        fixed parameter
+//   param <name> = gen <type> …   generated parameter (minted each replay)
+//   replace "<literal>" with <name>   swap every occurrence of the literal for
+//                                     the param's value (values, labels, radios,
+//                                     predicates) — zero-edit substitution
+// Params are also usable as ${name} anywhere in the steps.
 function parseDsl(text) {
   const steps = [];
   const params = {};
   const genParams = {};
+  const replacements = [];
   const parseWhere = s => Object.fromEntries(s.split(' and ').map(p => {
     const m = p.trim().match(/^(.+?)\s*=\s*"([^"]*)"$/);
     if (!m) throw new Error(`bad where clause: ${p}`);
@@ -57,10 +62,12 @@ function parseDsl(text) {
       : row ? { type: 'row', row: +row } : undefined;
     const n = steps.length;
     let m;
-    if ((m = line.match(/^param gen\s+([\w.-]+)\s+as\s+(\w+)(?:\s+(.*))?$/))) {
+    if ((m = line.match(/^param ([\w.-]+)\s*=\s*gen\s+(\w+)(?:\s+(.*))?$/))) {
       genParams[m[1]] = parseGenSpec(m[2], m[3]);
     } else if ((m = line.match(/^param ([\w.-]+)\s*=\s*"([^"]*)"$/))) {
       params[m[1]] = m[2];
+    } else if ((m = line.match(/^replace "(.*)" with ([\w.-]+)$/))) {
+      replacements.push({ literal: m[1], name: m[2] });
     } else if ((m = line.match(/^click link(?: in "([^"]*)")? at row (\d+)(?: where (.+))?$/))) {
       steps.push({ verb: 'click link', args: ['', m[1] || ''], dsl: line, strategy: rowStrategy(m[2], m[3]) });
     } else if ((m = line.match(/^click link(?: in "([^"]*)")? where (.+)$/))) {
@@ -129,7 +136,29 @@ function parseDsl(text) {
       s.dsl = 'try ' + s.dsl;
     }
   }
-  return { steps, params, genParams };
+  return { steps, params, genParams, replacements };
+}
+
+// `replace "<literal>" with <name>`: swap every occurrence of each literal for
+// its param's value, across step args (values AND labels), row predicates and
+// the display DSL. Longer literals first so an overlapping shorter one can't
+// clobber part of a longer match. Blunt substring replace by design — the
+// author lists the exact literals, so it covers a name embedded in a dynamic
+// question label (e.g. "Will Jason be claimed…") that ${} can't reach cheaply.
+function applyReplacements(steps, replacements, params) {
+  const pairs = replacements.map(({ literal, name }) => {
+    if (!(name in params)) throw new Error(`replace "${literal}" with ${name} — no param named "${name}"`);
+    return [literal, String(params[name])];
+  }).filter(([l, v]) => l && l !== v).sort((a, b) => b[0].length - a[0].length);
+  if (!pairs.length) return;
+  const subst = s => { for (const [from, to] of pairs) s = s.split(from).join(to); return s; };
+  for (const st of steps) {
+    st.args = st.args.map(a => (typeof a === 'string' ? subst(a) : a));
+    if (st.strategy && st.strategy.where) {
+      st.strategy.where = Object.fromEntries(Object.entries(st.strategy.where).map(([k, v]) => [subst(k), subst(v)]));
+    }
+    if (typeof st.dsl === 'string') st.dsl = subst(st.dsl);
+  }
 }
 
 // Substitute ${name} placeholders in step args, predicates and display DSL.
@@ -166,7 +195,7 @@ async function main() {
     const name = nameArg.endsWith('.dsl') ? nameArg : nameArg + '.dsl';
     const p = fs.existsSync(name) ? name : path.join(dataDir, name);
     const parsed = parseDsl(fs.readFileSync(p, 'utf8'));
-    rec = { name, steps: parsed.steps, params: parsed.params, genParams: parsed.genParams };
+    rec = { name, steps: parsed.steps, params: parsed.params, genParams: parsed.genParams, replacements: parsed.replacements };
   }
   // config is the current environment (e.g. a tunnel URL); the recording's
   // stored url is only a fallback — a recording is portable across environments
@@ -199,6 +228,9 @@ async function main() {
     console.log('Generated:', JSON.stringify(minted));
   }
 
+  // zero-edit substitution: `replace "literal" with name` swaps literals for
+  // param values everywhere (covers names embedded in dynamic question labels)
+  applyReplacements(rec.steps, rec.replacements || [], params);
   applyParams(rec.steps, params);
   if (Object.keys(params).length) console.log('Parameters:', JSON.stringify(params));
 

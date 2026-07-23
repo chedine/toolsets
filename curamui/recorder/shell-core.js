@@ -16,8 +16,8 @@ function listRecordings() {
     const p = path.join(DATA, f);
     const txt = fs.readFileSync(p, 'utf8');
     const lines = txt.split(/\r?\n/).map(l => l.trim());
-    const steps = lines.filter(l => l && !l.startsWith('#') && !/^param /.test(l)).length;
-    const params = lines.filter(l => /^param /.test(l)).map(l => (l.match(/^param (?:gen )?([\w.-]+)/) || [])[1]).filter(Boolean);
+    const steps = lines.filter(l => l && !l.startsWith('#') && !/^(param |replace )/.test(l)).length;
+    const params = lines.filter(l => /^param /.test(l)).map(l => (l.match(/^param ([\w.-]+)/) || [])[1]).filter(Boolean);
     return { name: f.replace(/\.dsl$/, ''), steps, params, mtime: fs.statSync(p).mtimeMs };
   }).sort((a, b) => b.mtime - a.mtime);
 }
@@ -29,7 +29,7 @@ function readRecording(name) {
 }
 
 function stepCount(text) {
-  return text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith('#') && !/^param /.test(l)).length;
+  return text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith('#') && !/^(param |replace )/.test(l)).length;
 }
 
 // Run history — the last MAX_RUNS sessions with their output, kept on disk so

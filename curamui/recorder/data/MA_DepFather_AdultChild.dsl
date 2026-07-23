@@ -1,5 +1,18 @@
+# fresh identities each run, substituted across all 127 steps (incl. the
+# names Curam injects into question labels and the radio option)
+param jasonFName  = gen firstName
+param jasonLName  = gen lastName
+param jasonSSN    = gen ssn
+param juniorFName = gen firstName
+param juniorSSN   = gen ssn
+replace "Jason" with jasonFName
+replace "Singleton" with jasonLName
+replace "152323223" with jasonSSN
+replace "Junior" with juniorFName
+replace "152323224" with juniorSSN
+
 click section "HCR Cases and Outcomes"
-toggle shortcuts panel 
+toggle shortcuts panel
 click shortcutgroup "Registration"
 click shortcutitem Registration > Person
 enter "Jason" as First Name

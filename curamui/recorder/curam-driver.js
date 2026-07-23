@@ -97,8 +97,13 @@ class CuramDriver {
 
   // ---- select nav <title> (navigation bar within active tab) ----
   async selectNav(title) {
+    const tab = (await this._activePanel()).locator(`.navigation-bar-tabs span[role="tab"][title="${title}"]`).first();
+    // Already on this nav folder: Curam won't re-navigate, so clicking is a
+    // no-op and waiting for a transition burns the full timeout. (It can also
+    // be covered by a lingering modal, making the click itself hang.) Skip.
+    if ((await tab.getAttribute('aria-selected').catch(() => null)) === 'true') return this;
     const pre = await this._navSignature();
-    await (await this._activePanel()).locator(`.navigation-bar-tabs span[role="tab"][title="${title}"]`).click();
+    await tab.click();
     await this._waitForNav(pre); // reloads the tab's content document
     return this;
   }
@@ -128,15 +133,7 @@ class CuramDriver {
         const panel = this.page.locator(`[id="${tabId.split('_tablist_')[1]}"]`);
         const el = panel.locator('iframe[title^="Content Panel"]').last();
         const f = await (await el.elementHandle({ timeout: 400 })).contentFrame();
-        // url+timeOrigin catches an iframe reload (e.g. Evidence); a nav-bar
-        // switch like Participants swaps content via AJAX in the SAME document,
-        // so also fingerprint the page heading + a coarse element count — one
-        // of these changes on any content switch, making it observable.
-        if (f) doc = f.url() + '#' + await f.evaluate(() => {
-          const h = document.querySelector('.page-title-bar .title, .page-title-bar h1, .page-title-bar, h1, h2');
-          const heading = (h && h.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
-          return performance.timeOrigin + '#' + heading + '#' + document.querySelectorAll('tr,li,section,.cds--tile').length;
-        });
+        if (f) doc = f.url() + '#' + await f.evaluate(() => performance.timeOrigin);
       } catch {}
       // wizard buttons (Search/Next/Save) navigate INSIDE the modal frame —
       // track its document identity too, or every modal click waits the

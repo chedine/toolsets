@@ -171,6 +171,21 @@ module.exports = function curamRecorderInit() {
   // an option, so the change handler never sees them. We instead track the
   // combobox being edited and record the option click / type-then-Enter.
   let activeCombo = null;
+  // The date input whose calendar is currently open. A calendar day pick sets
+  // the input's value programmatically and (for flatpickr / dijit) does not
+  // reliably fire a native `change` our listener can read — so we capture the
+  // day click and read the settled value off this tracked input instead.
+  let activeDateInput = null;
+  function dateInputOf(el) {
+    if (!el || !el.closest) return null;
+    // Carbon flatpickr: the visible input carries the date-picker classes
+    const fp = el.closest('input.flatpickr-input, input.cds--date-picker__input, input.bx--date-picker__input');
+    if (fp) return fp;
+    // dijit DateTextBox: the widget wrapper holds the real (visible) input
+    const box = el.closest('.dijitDateTextBox, .dijitDateBox');
+    if (box) return box.querySelector('input.dijitInputInner') || box.querySelector('input:not([type=hidden])');
+    return null;
+  }
   function comboInputOf(el) {
     const ci = el.closest && el.closest('input[role="combobox"], .dijitComboBox input.dijitInputInner, .cds--combo-box input, .cds--list-box input');
     // date pickers share role="combobox" but are calendars, not option
@@ -201,6 +216,11 @@ module.exports = function curamRecorderInit() {
   function classifyFrameClick(e) {
     const el = e.target;
 
+    // opening a date picker (clicking its input or calendar icon) may not fire
+    // a focusin on the input — remember it here too so the day pick can read it
+    const di = dateInputOf(el);
+    if (di) activeDateInput = di;
+
     // combobox option pick (Carbon list-box or dijit FilteringSelect menu).
     // Attribute it to the combobox that was last focused, since the option
     // menu is portaled outside the input and can't be climbed to.
@@ -212,6 +232,18 @@ module.exports = function curamRecorderInit() {
         report('select option', [val, fieldLabel(field)]);
       }
       return; // never fall through to the menuitem/link handlers
+    }
+
+    // calendar day pick (Carbon flatpickr popup or dijit calendar dropdown).
+    // The widget sets the input's value programmatically without a native
+    // change our listener can use, so read the settled value off the tracked
+    // date input. Coalescing collapses any duplicate the `enter`/change path
+    // may also emit.
+    const day = el.closest && el.closest('.flatpickr-day, .dijitCalendarDateLabel, td.dijitCalendarDateTemplate');
+    if (day && !(day.classList.contains('flatpickr-disabled') || day.classList.contains('dijitCalendarDisabledDate'))) {
+      const input = activeDateInput;
+      if (input) setTimeout(() => { const v = input.value; if (v) report('enter', [v, fieldLabel(input)]); }, 120);
+      return;
     }
 
     // in-page navigation tabs (Outstanding / Verified / Not Applicable, ...)
@@ -379,7 +411,10 @@ module.exports = function curamRecorderInit() {
     document.addEventListener('contextmenu', classifyFrameContextMenu, true);
     // remember which combobox is being edited so an option pick (which
     // happens in a portaled menu) can be attributed to the right field
-    document.addEventListener('focusin', e => { const ci = comboInputOf(e.target); if (ci) activeCombo = ci; }, true);
+    document.addEventListener('focusin', e => {
+      const ci = comboInputOf(e.target); if (ci) activeCombo = ci;
+      const di = dateInputOf(e.target); if (di) activeDateInput = di;
+    }, true);
   }
 
   // ---------- overlay UI (top frame only) ----------

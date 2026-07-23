@@ -180,7 +180,6 @@
           <div id="detail-title" class="dim">select a recording</div>
           <div id="detail-actions">
             <span id="stepcount"></span>
-            <label class="toggle" id="genWrap"><input type="checkbox" id="gen"> generate</label>
             <button class="ico" id="playBtn" title="Play" disabled><svg viewBox="0 0 16 16"><path d="M4 3l9 5-9 5z" fill="currentColor"/></svg></button>
             <button class="ico" id="stopBtn" title="Stop" disabled><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" fill="currentColor"/></svg></button>
             <button class="ico" id="editBtn" title="Edit" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M11.3 2.6l2.1 2.1L5.6 12.5 3 13l.5-2.6z"/></svg></button>
@@ -246,7 +245,7 @@
     </section>
   </main>
 
-  <footer id="hint"><kbd>↑↓</kbd> select &nbsp;·&nbsp; <kbd>⏎</kbd> play &nbsp;·&nbsp; <kbd>g</kbd> play+generate &nbsp;·&nbsp; <kbd>r</kbd> record &nbsp;·&nbsp; <kbd>d</kbd> delete &nbsp;·&nbsp; <kbd>esc</kbd> stop</footer>
+  <footer id="hint"><kbd>↑↓</kbd> select &nbsp;·&nbsp; <kbd>⏎</kbd> play &nbsp;·&nbsp; <kbd>r</kbd> record &nbsp;·&nbsp; <kbd>d</kbd> delete &nbsp;·&nbsp; <kbd>esc</kbd> stop</footer>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -358,7 +357,7 @@ function renderHistory() {
     const name = document.createElement('span'); name.className = 'run-name';
     name.textContent = r.name || (r.kind === 'record' ? 'new recording' : r.label || '—');
     const meta = document.createElement('span'); meta.className = 'run-meta';
-    meta.textContent = [r.kind, r.generate ? 'generate' : null, relTime(r.startedAt), runDuration(r), runOutcome(r)]
+    meta.textContent = [r.kind, relTime(r.startedAt), runDuration(r), runOutcome(r)]
       .filter(Boolean).join('  ·  ');
     head.append(caret, name, meta);
 
@@ -389,7 +388,7 @@ function renderList() {
     const params = r.params.length ? ` · ${r.params.length}p` : '';
     row.innerHTML = `<div class="name">${r.name}</div><div class="meta">${r.steps} steps${params} · ${relTime(r.mtime)}</div>`;
     row.onclick = () => selectRow(i);
-    row.ondblclick = () => play(false);
+    row.ondblclick = () => play();
     el.appendChild(row);
   });
 }
@@ -441,7 +440,6 @@ function move(d) {
 function setEditing(on) {
   editing = on;
   $('#editBtn').hidden = on; $('#playBtn').hidden = on; $('#delBtn').hidden = on;
-  $('#genWrap').style.visibility = on ? 'hidden' : 'visible';
   // save/cancel only exist (and only act) while editing
   $('#saveBtn').hidden = !on; $('#saveBtn').disabled = !on;
   $('#cancelBtn').hidden = !on; $('#cancelBtn').disabled = !on;
@@ -457,10 +455,10 @@ $('#saveBtn').onclick = async () => {
 };
 
 // ---- run ----
-async function play(generate) {
+async function play() {
   if (running || sel < 0 || editing) return;
   $('#log').textContent = ''; setView('log');
-  const res = await api.play({ name: recs[sel].name, generate });
+  const res = await api.play({ name: recs[sel].name });
   if (res && res.error) { appendLog({ line: res.error }); setView('steps'); }
 }
 async function record() { if (!running) await api.record(); }
@@ -500,7 +498,6 @@ function onRunning({ kind, label }) {
   $('#status').textContent = label + ' …'; $('#status').className = 'run';
   $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
   $('#recBtn').disabled = true; $('#stopBtn').disabled = false;
-  $('#genWrap').style.visibility = 'hidden';
   // a record session isn't about the selected recording — clear its step count
   if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = ''; }
   // show the live output for the duration of the run, whoever started it
@@ -513,7 +510,7 @@ function onDone({ kind, code }) {
   $('#status').textContent = kind === 'record' ? 'recording ended' : (ok ? 'done' : `exited (${code})`);
   $('#status').className = ok ? '' : 'fail';
   $('#stopBtn').disabled = true; // only enabled while a session runs
-  $('#recBtn').disabled = false; $('#genWrap').style.visibility = 'visible';
+  $('#recBtn').disabled = false;
   setProgress(1, false);
   renderList();
   restoreDetail(); // back to the steps; the run's output is kept in History
@@ -593,7 +590,7 @@ $('#confirmYes').onclick = async () => {
   $('#status').textContent = `deleted ${name} (${(res.removed || []).join(', ')})`; $('#status').className = '';
 };
 
-$('#playBtn').onclick = () => play($('#gen').checked);
+$('#playBtn').onclick = () => play();
 $('#recBtn').onclick = record;
 $('#stopBtn').onclick = () => api.stop();
 document.addEventListener('keydown', e => {
@@ -607,8 +604,7 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
   else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
-  else if (e.key === 'Enter') { e.preventDefault(); play($('#gen').checked); }
-  else if (e.key === 'g') { play(true); }
+  else if (e.key === 'Enter') { e.preventDefault(); play(); }
   else if (e.key === 'r') { record(); }
   else if (e.key === 'd' || e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); askDelete(); }
   else if (e.key === 'Escape') { if (running) api.stop(); }

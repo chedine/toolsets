@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 // Replay a saved recording:
 //   node replay.js <name|path.json|path.dsl> [--headless] [--url <url>]
-//                  [--param name=value ...]
+//                  [--param name=value ...] [--dry]
+// `param gen` lines in the .dsl mint fresh identity values each run; a
+// --param override pins one for the run.
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
@@ -9,12 +11,34 @@ const yaml = require('js-yaml');
 const { CuramDriver } = require('./curam-driver');
 const { closeAllTabs, browserOptions } = require('./record');
 
+// `param gen <name> as <type> [<modifier> [<value>]]...` declares a parameter
+// whose value is minted fresh each replay by generators.js. Modifiers are
+// generator-spec options: boolean flags (unique) or key/value pairs
+// (area 091, length 9). Numeric-looking values are coerced except where a
+// leading zero matters (e.g. ssn area), which stays a string.
+const GEN_BOOL = new Set(['unique']);
+const GEN_NUM = new Set(['length', 'suffixLen']);
+function parseGenSpec(type, rest) {
+  const spec = { type };
+  const toks = (rest || '').trim().split(/\s+/).filter(Boolean);
+  for (let i = 0; i < toks.length; i++) {
+    const key = toks[i];
+    if (GEN_BOOL.has(key)) { spec[key] = true; continue; }
+    const val = toks[++i];
+    if (val === undefined) throw new Error(`gen modifier "${key}" needs a value`);
+    spec[key] = GEN_NUM.has(key) ? Number(val) : val;
+  }
+  return spec;
+}
+
 // Parse a hand-editable .dsl file back into steps. One step per line;
-// blank lines and #-comments ignored. `param name = "default"` lines
-// declare parameters usable as ${name} anywhere in the steps.
+// blank lines and #-comments ignored. `param name = "default"` lines declare
+// fixed parameters; `param gen <name> as <type>` declares generated ones. Both
+// are usable as ${name} anywhere in the steps.
 function parseDsl(text) {
   const steps = [];
   const params = {};
+  const genParams = {};
   const parseWhere = s => Object.fromEntries(s.split(' and ').map(p => {
     const m = p.trim().match(/^(.+?)\s*=\s*"([^"]*)"$/);
     if (!m) throw new Error(`bad where clause: ${p}`);
@@ -33,7 +57,9 @@ function parseDsl(text) {
       : row ? { type: 'row', row: +row } : undefined;
     const n = steps.length;
     let m;
-    if ((m = line.match(/^param ([\w.-]+)\s*=\s*"([^"]*)"$/))) {
+    if ((m = line.match(/^param gen\s+([\w.-]+)\s+as\s+(\w+)(?:\s+(.*))?$/))) {
+      genParams[m[1]] = parseGenSpec(m[2], m[3]);
+    } else if ((m = line.match(/^param ([\w.-]+)\s*=\s*"([^"]*)"$/))) {
       params[m[1]] = m[2];
     } else if ((m = line.match(/^click link(?: in "([^"]*)")? at row (\d+)(?: where (.+))?$/))) {
       steps.push({ verb: 'click link', args: ['', m[1] || ''], dsl: line, strategy: rowStrategy(m[2], m[3]) });
@@ -103,7 +129,7 @@ function parseDsl(text) {
       s.dsl = 'try ' + s.dsl;
     }
   }
-  return { steps, params };
+  return { steps, params, genParams };
 }
 
 // Substitute ${name} placeholders in step args, predicates and display DSL.
@@ -140,91 +166,37 @@ async function main() {
     const name = nameArg.endsWith('.dsl') ? nameArg : nameArg + '.dsl';
     const p = fs.existsSync(name) ? name : path.join(dataDir, name);
     const parsed = parseDsl(fs.readFileSync(p, 'utf8'));
-    rec = { name, steps: parsed.steps, params: parsed.params };
+    rec = { name, steps: parsed.steps, params: parsed.params, genParams: parsed.genParams };
   }
   // config is the current environment (e.g. a tunnel URL); the recording's
   // stored url is only a fallback — a recording is portable across environments
   const url = get('--url') || cfg.url || rec.url;
 
-  // parameters: .dsl/.json defaults overridden by --param name=value flags
+  // parameters: .dsl defaults, then --param name=value overrides
   const params = { ...(rec.params || {}) };
+  const cliParams = {};
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--param' && args[i + 1]) {
       const eqi = args[i + 1].indexOf('=');
       if (eqi < 1) { console.error(`bad --param (want name=value): ${args[i + 1]}`); process.exit(1); }
-      params[args[i + 1].slice(0, eqi)] = args[i + 1].slice(eqi + 1);
+      cliParams[args[i + 1].slice(0, eqi)] = args[i + 1].slice(eqi + 1);
     }
   }
-  // --generate: mint fresh identity values so a recording made with concrete
-  // data creates distinct people each replay. config.json "generate" maps a
-  // field-label REGEX (case-insensitive) to a generator spec.
-  //
-  // A recording may register several applicants. We split it into per-applicant
-  // blocks — a rule-matching field label that REPEATS marks the start of the
-  // next applicant — and generate each applicant's identity INDEPENDENTLY. No
-  // correlation is drawn between applicants: if two happen to share a recorded
-  // value (e.g. a coincidentally identical last name), each still gets its own
-  // freshly generated value, resolved positionally within its own block. Within
-  // one applicant's block the recorded value is substituted across every step,
-  // so the SSN re-enter (same value, different label) updates too. Cross-block
-  // references (a relationship/search label naming another applicant) are
-  // resolved by a global pass over values that are unique across the recording.
-  const genOn = args.includes('--generate') || args.includes('--gen');
-  if (genOn) {
+  Object.assign(params, cliParams);
+
+  // `param gen` values are minted fresh every replay (so each run registers a
+  // distinct person and avoids duplicate-key collisions), unless the CLI pinned
+  // one with --param name=value. Referenced via ${name} like any parameter, so
+  // one gen param used in several steps binds them all to the same value.
+  const genNames = Object.keys(rec.genParams || {});
+  if (genNames.length) {
     const { generate } = require('./generators');
-    const { toDsl } = require('./record');
-    const genCfg = cfg.generate || {};
-    if (!Object.keys(genCfg).length) { console.error('--generate given but config.json has no "generate" section'); process.exit(1); }
-    const rules = Object.entries(genCfg).map(([pat, spec]) => ({ re: new RegExp(pat, 'i'), spec }));
-
-    const persons = [];               // { start, end, labels:Set, map:Map(recorded->gen), byType:{} }
-    let cur = null;
-    rec.steps.forEach((step, i) => {
-      if (step.verb !== 'enter' && step.verb !== 'select option') return;
-      const rule = rules.find(r => r.re.test(step.args[1]));
-      if (!rule) return;
-      const recorded = step.args[0];
-      if (!recorded || recorded.length < 2) return;
-      if (!cur || cur.labels.has(step.args[1])) { cur = { start: i, labels: new Set(), map: new Map(), byType: {} }; persons.push(cur); }
-      cur.labels.add(step.args[1]);
-      if (!cur.map.has(recorded)) {
-        const val = generate(rule.spec);
-        cur.map.set(recorded, val);
-        const t = (rule.spec.type || '').toLowerCase();
-        if (!(t in cur.byType)) cur.byType[t] = val;
-      }
-    });
-    persons.forEach((p, k) => { p.end = k + 1 < persons.length ? persons[k + 1].start : rec.steps.length; });
-
-    // global map for cross-block references: only recorded values that are
-    // unique across the whole recording (an ambiguous value is left to the
-    // per-block pass, which knows which applicant it belongs to)
-    const count = new Map();
-    for (const p of persons) for (const from of p.map.keys()) count.set(from, (count.get(from) || 0) + 1);
-    const globalPairs = [];
-    for (const p of persons) for (const [from, to] of p.map) if (count.get(from) === 1 && from !== to) globalPairs.push([from, to]);
-    globalPairs.sort((a, b) => b[0].length - a[0].length);
-
-    const personAt = i => persons.find(p => i >= p.start && i < p.end);
-    const apply = (s, pairs) => { for (const [from, to] of pairs) if (from !== to) s = s.split(from).join(to); return s; };
-    for (let i = 0; i < rec.steps.length; i++) {
-      const step = rec.steps[i];
-      const pm = personAt(i);
-      const pmPairs = pm ? [...pm.map].sort((a, b) => b[0].length - a[0].length) : [];
-      const before = JSON.stringify(step.args);
-      step.args = step.args.map(a => typeof a === 'string' ? apply(apply(a, pmPairs), globalPairs) : a);
-      if (JSON.stringify(step.args) !== before) step.dsl = toDsl(step) + '  (generated)';
+    const minted = {};
+    for (const name of genNames) {
+      if (!(name in cliParams)) params[name] = generate(rec.genParams[name]);
+      minted[name] = params[name];
     }
-
-    // expose the PRIMARY applicant's identity under the usual param names, for
-    // recordings/scenarios that reference it via ${firstName}/${person}
-    const primary = persons[0];
-    if (primary) {
-      if (primary.byType.firstname) params.firstName = primary.byType.firstname;
-      if (primary.byType.lastname) params.lastName = primary.byType.lastname;
-      if (params.firstName && params.lastName) params.person = `${params.firstName} ${params.lastName}`;
-    }
-    console.log('Generated:', JSON.stringify(persons.map(p => Object.fromEntries(p.map))));
+    console.log('Generated:', JSON.stringify(minted));
   }
 
   applyParams(rec.steps, params);

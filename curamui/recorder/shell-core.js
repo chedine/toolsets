@@ -17,7 +17,7 @@ function listRecordings() {
     const txt = fs.readFileSync(p, 'utf8');
     const lines = txt.split(/\r?\n/).map(l => l.trim());
     const steps = lines.filter(l => l && !l.startsWith('#') && !/^param /.test(l)).length;
-    const params = lines.filter(l => /^param /.test(l)).map(l => (l.match(/^param ([\w.-]+)/) || [])[1]).filter(Boolean);
+    const params = lines.filter(l => /^param /.test(l)).map(l => (l.match(/^param (?:gen )?([\w.-]+)/) || [])[1]).filter(Boolean);
     return { name: f.replace(/\.dsl$/, ''), steps, params, mtime: fs.statSync(p).mtimeMs };
   }).sort((a, b) => b.mtime - a.mtime);
 }
@@ -65,7 +65,7 @@ function createRunner(push) {
     let done = 0;
     const entry = {
       id: Date.now(), kind, label, total: total || 0,
-      name: meta.name || null, generate: !!meta.generate,
+      name: meta.name || null,
       startedAt: Date.now(), finishedAt: null, code: null, lines: [],
     };
     runs.unshift(entry);
@@ -93,10 +93,10 @@ function createRunner(push) {
   }
   const api = {
     play: arg => run('play',
-      ['replay.js', arg.name, ...(arg.generate ? ['--generate'] : []), ...(arg.headless ? ['--headless'] : [])],
-      `replay ${arg.name}${arg.generate ? ' --generate' : ''}`,
+      ['replay.js', arg.name, ...(arg.headless ? ['--headless'] : [])],
+      `replay ${arg.name}`,
       stepCount(readRecording(arg.name).text),
-      { name: arg.name, generate: arg.generate }),
+      { name: arg.name }),
     record: () => run('record', ['record.js', '--no-prompt'], 'recording a new session'),
     stop: () => { if (child) child.kill('SIGTERM'); return { ok: true }; },
     kill: () => { try { child && child.kill('SIGTERM'); } catch {} },

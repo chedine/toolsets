@@ -13,18 +13,5 @@
   "until": {
     "timeout": 600,
     "interval": 15
-  },
-  "generate": {
-    "^First Name$": {
-      "type": "firstName"
-    },
-    "^Last Name$": {
-      "type": "lastName",
-      "unique": true
-    },
-    "^Social Security Number$": {
-      "type": "ssn",
-      "area": "091"
-    }
   }
 }

@@ -1,10 +1,9 @@
-// Value generators for `--generate` replay mode (see replay.js). Backed by
-// @faker-js/faker. Runs in a normal node process.
+// Value generators for `param gen <name> as <type>` params (see replay.js).
+// Backed by @faker-js/faker. Runs in a normal node process.
 //
-// A recording captured with concrete identity data (a specific name/SSN) can
-// be replayed repeatedly, each run minting fresh values for the fields listed
-// under `generate` in config.json, so every replay creates a distinct person
-// without hand-editing params.
+// A recording that declares generated params mints fresh values for them on
+// every replay, so each run creates a distinct person (unique name/SSN) with
+// no hand-editing — a --param override pins one for the run.
 
 const { faker } = require('@faker-js/faker');
 

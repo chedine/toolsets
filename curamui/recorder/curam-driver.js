@@ -141,7 +141,17 @@ class CuramDriver {
           if (f) modalDoc = f.url() + '#' + await f.evaluate(() => performance.timeOrigin);
         }
       } catch { modalDoc = 'modal'; }
-      return tabId + '||' + doc + '||' + modalDoc;
+      // in-page navigation-bar switch (Participants/Evidence/…) swaps content
+      // via AJAX without changing the iframe document — track the selected
+      // nav-bar tab so the switch is observable (else _waitForNav times out)
+      let navSel = '';
+      try {
+        // count() is instantaneous (no implicit wait) so a page without a
+        // nav-bar — every wizard — costs nothing here
+        const nav = this.page.locator('.navigation-bar-tabs span[role="tab"][aria-selected="true"]:visible');
+        if (await nav.count()) navSel = (await nav.first().getAttribute('title')) || '';
+      } catch {}
+      return tabId + '||' + doc + '||' + modalDoc + '||' + navSel;
     } catch { return ''; }
   }
 
@@ -448,8 +458,19 @@ class CuramDriver {
         return this;
       }
       for (const f of await this._candidateFrames()) {
-        // .action-set = normal Curam pages; a.buttonLink = IEG wizards
-        const b = f.locator(`.action-set a.first-action-control:has-text("${label}"), .action-set a:has-text("${label}"), a.buttonLink:text-is("${label}")`).first();
+        // .action-set = normal Curam pages; a.buttonLink = IEG wizards. Also
+        // match by accessible name (title / aria-label / inner icon alt|title)
+        // so an icon-only button — e.g. the "Name Search" magnifier, whose text
+        // is visually hidden or absent — is still found.
+        const b = f.locator([
+          `.action-set a.first-action-control:has-text("${label}")`,
+          `.action-set a:has-text("${label}")`,
+          `a.buttonLink:has-text("${label}")`,
+          `a[title="${label}"]`, `button[title="${label}"]`, `input[type=submit][value="${label}"]`,
+          `a[aria-label="${label}"]`, `button[aria-label="${label}"]`,
+          `a:has(img[alt="${label}"])`, `button:has(img[alt="${label}"])`,
+          `a:has([title="${label}"])`, `button:has([title="${label}"])`,
+        ].join(', ')).first();
         if (await b.isVisible().catch(() => false)) {
           await b.click();
           // IEG Next/Back: wait until the page heading changes (content

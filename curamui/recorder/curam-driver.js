@@ -239,6 +239,33 @@ class CuramDriver {
     }
   }
 
+  // ---- press enter in <field label> ----
+  // Submits the field's form via a real Enter key press, firing Curam's
+  // curam-default-action. This is distinct from clickButton: on the
+  // registration person-search page, Enter searches AND auto-advances to the
+  // next wizard page when there's no match, while the visible Search button
+  // only searches in place — so a recorded Enter must replay as an Enter.
+  async pressEnter(label) {
+    const key = label.replace(/ /g, '');
+    const sel = `input[title="${label}"], textarea[title="${label}"], input[title="${label} Mandatory"], textarea[title="${label} Mandatory"], [data-testid$=".${key}"], input[data-testid*="${key}"]`;
+    const iegBefore = await this._iegHeading();
+    const pre = iegBefore === null ? await this._navSignature() : null;
+    const deadline = Date.now() + 10000;
+    for (;;) {
+      for (const f of await this._candidateFrames()) {
+        const input = f.locator(sel).first();
+        if (await input.isVisible().catch(() => false)) {
+          await input.press('Enter');
+          if (iegBefore !== null) await this._waitForIegAdvance(iegBefore);
+          else await this._waitForNav(pre);
+          return this;
+        }
+      }
+      if (Date.now() > deadline) throw new Error(`no input "${label}" to press Enter in`);
+      await this.page.waitForTimeout(500);
+    }
+  }
+
   // ---- select "<option>" for <field label> ----
   // Three dialects: native <select>, Carbon combobox (role="combobox"
   // input), and dijit FilteringSelect (IEG wizards: .dijitComboBox wrapper,

@@ -350,7 +350,13 @@ module.exports = function curamRecorderInit() {
     // The change event for the field fires after this keydown (on submit), so
     // record the pending field value first; the later change dedupes away.
     if (el.value) report('enter', [el.value, fieldLabel(el)]);
-    report('click button', [def.title || def.value || 'Enter']);
+    // Record the Enter as a real key press on this field, not as a button
+    // click. Pressing Enter fires the form's curam-default-action, which can
+    // behave differently from clicking a same-named visible button — e.g. the
+    // registration person-search submits AND auto-advances to the next wizard
+    // page when there is no match, whereas the on-screen Search button just
+    // searches in place. Replaying the actual key press reproduces this.
+    report('press enter', [fieldLabel(el)]);
   }
 
   function classifyChange(e) {
@@ -476,6 +482,7 @@ module.exports = function curamRecorderInit() {
       $('__rec_stop').disabled = !st.recording;
       if (st.last) $('__rec_last').textContent = st.last;
       else if (!ready) $('__rec_last').textContent = 'Preparing… (cleaning up tabs)';
+      else $('__rec_last').textContent = ''; // ready with nothing recorded yet — clear the "Preparing…" text
     }
     window.__curamRecRender = render;
 

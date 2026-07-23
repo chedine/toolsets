@@ -86,6 +86,7 @@ function toDslBody(step) {
     case 'click pagemenu': return `click pagemenu ${q(a[0])}`;
     case 'expect': return `expect ${q(a[0])} is ${q(a[1])}`;
     case 'click button': return `click button ${q(a[0])}` + (a[1] ? ` in ${q(a[1])}` : '');
+    case 'press enter': return `press enter in ${q(a[0])}`;
     default: return `${step.verb} ${a.map(q).join(' ')}`;
   }
 }
@@ -99,7 +100,7 @@ const ROW_VERBS = ['expand row', 'collapse row', 'click rowmenu', 'check row', '
 const NAV_VERBS = new Set(['click button', 'click link', 'click section', 'click shortcutgroup',
   'click shortcutitem', 'select tab', 'select pagetab', 'select nav', 'select navitem',
   'click tabmenu', 'click rowmenu', 'click pagemenu', 'click menuitem', 'expand row',
-  'collapse row', 'toggle shortcuts panel']);
+  'collapse row', 'toggle shortcuts panel', 'press enter']);
 
 // Deduplicate noise: a click on a link/button often also fires a change right
 // before it; identical consecutive steps within 500ms are collapsed.

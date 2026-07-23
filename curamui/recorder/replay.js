@@ -59,6 +59,8 @@ function parseDsl(text) {
       steps.push({ verb: `click ${m[1]}`, args: [m[2], m[3] || ''], dsl: line });
     } else if ((m = line.match(/^enter "([^"]*)" as (.+)$/))) {
       steps.push({ verb: 'enter', args: [m[1], m[2]], dsl: line });
+    } else if ((m = line.match(/^press enter in "([^"]*)"$/))) {
+      steps.push({ verb: 'press enter', args: [m[1]], dsl: line });
     } else if ((m = line.match(/^select "([^"]*)" for (.+)$/))) {
       steps.push({ verb: 'select option', args: [m[1], m[2]], dsl: line });
     } else if ((m = line.match(/^select radio "(.+)"$/))) {
@@ -269,6 +271,7 @@ async function main() {
         case 'select nav':          await c.selectNav(a0); break;
         case 'select navitem':      await c.selectNavItem(a0); break;
         case 'enter':               await c.enter(a0, a1); break;
+        case 'press enter':         await c.pressEnter(a0); break;
         case 'click button':        await c.clickButton(a0); break;
         case 'click link':          await c.clickContentLink(a0, a1, step); break;
         case 'expand row':          await c.expandRow(a1, step, true); break;

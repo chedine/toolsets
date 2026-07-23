@@ -61,6 +61,19 @@ function startServer({ port = 0 } = {}) {
         broadcast('list', listRecordings());
         return json(res, 200, { ok: true });
       }
+      if (u.pathname === '/api/delete') {
+        const { name } = await readBody(req);
+        const safe = String(name || '').replace(/[^\w.-]+/g, '-');
+        if (!safe) return json(res, 400, { error: 'bad name' });
+        const removed = [];
+        for (const ext of ['.dsl', '.json']) { // .json sidecar if present
+          const fp = path.join(DATA, safe + ext);
+          if (fs.existsSync(fp)) { fs.unlinkSync(fp); removed.push(safe + ext); }
+        }
+        if (!removed.length) return json(res, 404, { error: 'not found' });
+        broadcast('list', listRecordings());
+        return json(res, 200, { ok: true, removed });
+      }
       if (u.pathname === '/api/config') {
         if (req.method === 'POST') {
           const patch = await readBody(req);

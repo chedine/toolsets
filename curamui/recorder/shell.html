@@ -76,6 +76,18 @@
   #progress { height:2px; background:var(--hair); opacity:0; transition:opacity .2s; }
   #progress.on { opacity:1; }
   #bar { height:100%; width:0; background:var(--ink); transition:width .25s ease; }
+  #confirm {
+    display:flex; align-items:center; gap:14px; padding:9px var(--pad);
+    border-bottom:1px solid var(--hair); background:var(--panel);
+    font-size:calc(var(--ui-size) - 1px);
+  }
+  #confirm[hidden] { display:none; }
+  button.link {
+    font:inherit; font-size:calc(var(--ui-size) - 1px); color:var(--ink);
+    background:none; border:0; padding:0; cursor:pointer; border-bottom:1px solid transparent;
+  }
+  button.link:hover { border-bottom-color:currentColor; }
+  button.link.danger { font-weight:600; }
   #status { padding:6px var(--pad) 0; color:var(--muted); font-size:calc(var(--ui-size) - 2px); min-height:20px; }
   #status.run { color:var(--ink); }
   #status.fail { color:var(--ink); font-weight:600; }
@@ -149,13 +161,19 @@
             <span id="stepcount"></span>
             <label class="toggle" id="genWrap"><input type="checkbox" id="gen"> generate</label>
             <button class="ico" id="playBtn" title="Play" disabled><svg viewBox="0 0 16 16"><path d="M4 3l9 5-9 5z" fill="currentColor"/></svg></button>
-            <button class="ico" id="stopBtn" title="Stop" disabled hidden><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" fill="currentColor"/></svg></button>
+            <button class="ico" id="stopBtn" title="Stop" disabled><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" fill="currentColor"/></svg></button>
             <button class="ico" id="editBtn" title="Edit" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M11.3 2.6l2.1 2.1L5.6 12.5 3 13l.5-2.6z"/></svg></button>
+            <button class="ico" id="delBtn" title="Delete" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h10M6.5 4.5V3h3v1.5M4.5 4.5l.6 8.2h5.8l.6-8.2M6.8 7v3.4M9.2 7v3.4"/></svg></button>
             <button class="ico" id="saveBtn" title="Save" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13.5h10"/></svg></button>
             <button class="ico" id="cancelBtn" title="Cancel" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
           </div>
         </div>
         <div id="progress"><div id="bar"></div></div>
+        <div id="confirm" hidden>
+          <span id="confirm-text"></span>
+          <button class="link danger" id="confirmYes">delete</button>
+          <button class="link" id="confirmNo">cancel</button>
+        </div>
         <div id="status"></div>
         <div id="body">
           <div id="steps"></div>
@@ -218,6 +236,7 @@ const api = {
   record: () => fetch('/api/record', { method: 'POST' }).then(r => r.json()),
   stop:   () => fetch('/api/stop', { method: 'POST' }),
   save:   (name, text) => fetch('/api/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, text }) }).then(r => r.json()),
+  del:    name => fetch('/api/delete', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) }).then(r => r.json()),
   config: () => fetch('/api/config').then(r => r.json()),
   setConfig: patch => fetch('/api/config', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch) }).then(r => r.json()),
 };
@@ -334,7 +353,7 @@ async function selectRow(i) {
   $('#stepcount').textContent = r.steps + ' steps';
   $('#status').textContent = r.params.length ? 'params: ' + r.params.join(', ') : '';
   $('#status').className = '';
-  $('#playBtn').disabled = false; $('#editBtn').disabled = false;
+  $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
   const { text } = await api.open(r.name);
   $('#editor').value = text;
   renderSteps(text); setView('steps');
@@ -349,7 +368,8 @@ function move(d) {
 // ---- edit ----
 function setEditing(on) {
   editing = on;
-  $('#editBtn').hidden = on; $('#playBtn').hidden = on; $('#genWrap').style.visibility = on ? 'hidden' : 'visible';
+  $('#editBtn').hidden = on; $('#playBtn').hidden = on; $('#delBtn').hidden = on;
+  $('#genWrap').style.visibility = on ? 'hidden' : 'visible';
   $('#saveBtn').hidden = !on; $('#cancelBtn').hidden = !on;
   setView(on ? 'editor' : 'steps');
   if (on) $('#editor').focus();
@@ -391,20 +411,22 @@ function restoreDetail() {
     const r = recs[sel];
     $('#detail-title').textContent = r.name; $('#detail-title').classList.remove('dim');
     $('#stepcount').textContent = r.steps + ' steps';
-    $('#playBtn').disabled = false; $('#editBtn').disabled = false;
+    $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
     api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView('steps'); });
   } else {
     selName = null;
     $('#detail-title').textContent = 'select a recording'; $('#detail-title').classList.add('dim');
-    $('#stepcount').textContent = ''; $('#playBtn').disabled = true; $('#editBtn').disabled = true;
+    $('#stepcount').textContent = '';
+    $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
     $('#steps').innerHTML = ''; setView('steps');
   }
 }
 function onRunning({ kind, label }) {
   running = true;
   $('#status').textContent = label + ' …'; $('#status').className = 'run';
-  $('#playBtn').hidden = true; $('#editBtn').disabled = true; $('#recBtn').disabled = true;
-  $('#stopBtn').hidden = false; $('#stopBtn').disabled = false; $('#genWrap').style.visibility = 'hidden';
+  $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
+  $('#recBtn').disabled = true; $('#stopBtn').disabled = false;
+  $('#genWrap').style.visibility = 'hidden';
   // a record session isn't about the selected recording — clear its step count
   if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = ''; $('#log').textContent = ''; setView('log'); }
   setProgress(0, kind === 'play');
@@ -414,14 +436,14 @@ function onDone({ kind, code }) {
   const ok = code === 0 || code === null;
   $('#status').textContent = kind === 'record' ? 'recording ended' : (ok ? 'done' : `exited (${code})`);
   $('#status').className = ok ? '' : 'fail';
-  $('#stopBtn').hidden = true; $('#playBtn').hidden = false;
+  $('#stopBtn').disabled = true; // only enabled while a session runs
   $('#recBtn').disabled = false; $('#genWrap').style.visibility = 'visible';
   setProgress(1, false);
   renderList();
-  restoreDetail();
+  restoreDetail(); // re-enables play/edit/delete per selection
 }
 const handlers = {
-  list: data => { recs = data; if (selName) sel = recs.findIndex(r => r.name === selName); if (!running) renderList(); },
+  list: data => { recs = data; sel = selName ? recs.findIndex(r => r.name === selName) : -1; if (!running) renderList(); },
   log: appendLog,
   running: onRunning,
   done: onDone,
@@ -470,6 +492,29 @@ $('#settings-form').onsubmit = async e => {
 };
 
 // ---- wiring ----
+// ---- delete (two-step confirm; no native dialog) ----
+let pendingDelete = null;
+function hideConfirm() { pendingDelete = null; $('#confirm').hidden = true; }
+function askDelete() {
+  if (sel < 0 || running || editing) return;
+  pendingDelete = recs[sel].name;
+  $('#confirm-text').textContent = `Delete "${pendingDelete}" from disk?`;
+  $('#confirm').hidden = false;
+}
+$('#delBtn').onclick = askDelete;
+$('#confirmNo').onclick = hideConfirm;
+$('#confirmYes').onclick = async () => {
+  const name = pendingDelete; hideConfirm();
+  if (!name) return;
+  const res = await api.del(name);
+  if (res && res.error) { $('#status').textContent = 'delete failed: ' + res.error; $('#status').className = 'fail'; return; }
+  if (selName === name) { selName = null; sel = -1; }
+  recs = await api.list();
+  sel = selName ? recs.findIndex(r => r.name === selName) : -1;
+  renderList(); restoreDetail();
+  $('#status').textContent = `deleted ${name} (${(res.removed || []).join(', ')})`; $('#status').className = '';
+};
+
 $('#playBtn').onclick = () => play($('#gen').checked);
 $('#recBtn').onclick = record;
 $('#stopBtn').onclick = () => api.stop();
@@ -481,7 +526,7 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'Enter') { e.preventDefault(); play($('#gen').checked); }
   else if (e.key === 'g') { play(true); }
   else if (e.key === 'r') { record(); }
-  else if (e.key === 'Escape') { if (running) api.stop(); }
+  else if (e.key === 'Escape') { if (!$('#confirm').hidden) hideConfirm(); else if (running) api.stop(); }
 });
 
 (function init() {

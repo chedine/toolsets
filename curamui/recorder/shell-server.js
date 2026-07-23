@@ -18,7 +18,10 @@ const deepMerge = (base, patch) => {
   return out;
 };
 
-function startServer() {
+// port: 0 (default) lets the OS pick a free port — used by the window hosts so
+// they never clash. `node shell-server.js` pins a stable port (PORT env or
+// 4599) so you can bookmark the URL while editing shell.html's CSS.
+function startServer({ port = 0 } = {}) {
   const clients = new Set(); // open SSE responses
   const broadcast = (type, data) => {
     const payload = `data: ${JSON.stringify({ type, data })}\n\n`;
@@ -72,7 +75,7 @@ function startServer() {
   });
 
   return new Promise(resolve => {
-    server.listen(0, '127.0.0.1', () => {
+    server.listen(port, '127.0.0.1', () => {
       const port = server.address().port;
       resolve({
         server, port, runner,
@@ -88,5 +91,5 @@ module.exports = { startServer };
 // `node shell-server.js` runs just the backend (open the URL in any browser to
 // test the UI without a native/Chromium window host)
 if (require.main === module) {
-  startServer().then(s => console.log('recorder shell UI:', s.url));
+  startServer({ port: Number(process.env.PORT) || 4599 }).then(s => console.log('recorder shell UI:', s.url));
 }

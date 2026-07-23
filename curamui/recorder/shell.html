@@ -113,7 +113,10 @@
 
   #body { flex:1; min-height:0; overflow:auto; }
   #steps { padding:10px 0; }
-  .sline { display:flex; padding:0 var(--pad); }
+  /* subtle per-step separator — delete these 3 rules to go back to a flat list */
+  .sline { display:flex; padding:3px var(--pad); border-top:1px solid var(--hair); }
+  .sline:first-child, .sline.blank { border-top:0; }
+  .sline.blank { padding:0 var(--pad); }
   .sline:hover { background:var(--panel); }
   .gutter { width:34px; flex:none; text-align:right; padding-right:12px; color:var(--faint); user-select:none; }
   .code { white-space:pre-wrap; word-break:break-word; }
@@ -408,7 +411,7 @@ function renderSteps(text) {
     const isStep = !cmt && !prm && !blank;
     if (isStep) n++;
     const row = document.createElement('div');
-    row.className = 'sline' + (cmt ? ' cmt' : '') + (prm ? ' prm' : '');
+    row.className = 'sline' + (cmt ? ' cmt' : '') + (prm ? ' prm' : '') + (blank ? ' blank' : '');
     const g = document.createElement('span'); g.className = 'gutter'; g.textContent = isStep ? n : '';
     const c = document.createElement('span'); c.className = 'code'; c.textContent = line || ' ';
     row.append(g, c); host.appendChild(row);

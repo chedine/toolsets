@@ -92,9 +92,21 @@
   button.link:hover:not(:disabled) { border-bottom-color:currentColor; }
   button.link:disabled { color:var(--faint); cursor:default; }
   button.link.danger { font-weight:600; }
-  #viewTabs { display:flex; gap:14px; flex:none; }
-  .vt { color:var(--muted); }
-  .vt.active { color:var(--ink); border-bottom-color:var(--ink); }
+  /* history */
+  #pane-history { flex-direction:column; overflow:auto; padding:8px 0; }
+  .run { border-bottom:1px solid var(--hair); }
+  .run-head { display:flex; align-items:baseline; gap:10px; padding:9px var(--pad); cursor:pointer; }
+  .run-head:hover { background:var(--panel); }
+  .caret { color:var(--muted); width:10px; flex:none; }
+  .run-name { flex:none; }
+  .run-head.failed .run-name { font-weight:700; color:#000; }
+  .run-meta { color:var(--muted); font-size:calc(var(--ui-size) - 2px); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .run-log {
+    margin:0; padding:10px var(--pad) 14px; white-space:pre-wrap; word-break:break-word;
+    font:inherit; font-size:calc(var(--ui-size) - 1px); color:#575752; user-select:text;
+    background:var(--panel); max-height:50vh; overflow:auto;
+  }
+  .run-log .fail { color:#000; font-weight:700; }
   #status { padding:6px var(--pad) 0; color:var(--muted); font-size:calc(var(--ui-size) - 2px); min-height:20px; }
   #status.run { color:var(--ink); }
   #status.fail { color:var(--ink); font-weight:600; }
@@ -150,6 +162,7 @@
     <nav id="tabs">
       <button class="tab active" data-tab="case">Case Portal</button>
       <button class="tab" data-tab="citizen">Citizen Portal</button>
+      <button class="tab" data-tab="history">History</button>
       <button class="tab" data-tab="settings">Settings</button>
     </nav>
     <div class="actions">
@@ -165,10 +178,6 @@
       <div id="detail">
         <div id="detail-head">
           <div id="detail-title" class="dim">select a recording</div>
-          <div id="viewTabs">
-            <button class="link vt active" data-view="steps">steps</button>
-            <button class="link vt" data-view="log" disabled>output</button>
-          </div>
           <div id="detail-actions">
             <span id="stepcount"></span>
             <label class="toggle" id="genWrap"><input type="checkbox" id="gen"> generate</label>
@@ -198,6 +207,8 @@
     <section class="pane" id="pane-citizen">
       <div class="placeholder">Citizen Portal<br><span class="dim">coming soon</span></div>
     </section>
+
+    <section class="pane" id="pane-history"><div class="empty">no runs yet</div></section>
 
     <section class="pane" id="pane-settings">
       <form id="settings-form">
@@ -240,9 +251,8 @@
 <script>
 const $ = s => document.querySelector(s);
 let recs = [], sel = -1, selName = null, running = false, editing = false, tab = 'case';
-// which recording the current output belongs to, so it isn't shown for another
-let logOwner = null;
-const RECORD_LOG = ' record';
+let history = [];       // last runs, newest first (from the server)
+let expandedRun = null; // id of the expanded history row
 
 const api = {
   list:   () => fetch('/api/list').then(r => r.json()),
@@ -252,6 +262,7 @@ const api = {
   stop:   () => fetch('/api/stop', { method: 'POST' }),
   save:   (name, text) => fetch('/api/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, text }) }).then(r => r.json()),
   del:    name => fetch('/api/delete', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) }).then(r => r.json()),
+  history: () => fetch('/api/history').then(r => r.json()),
   config: () => fetch('/api/config').then(r => r.json()),
   setConfig: patch => fetch('/api/config', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch) }).then(r => r.json()),
 };
@@ -318,8 +329,54 @@ function showTab(name) {
   $('#recBtn').style.visibility = name === 'case' ? 'visible' : 'hidden';
   $('#hint').style.visibility = name === 'case' ? 'visible' : 'hidden';
   if (name === 'settings') loadSettings();
+  if (name === 'history') loadHistory();
 }
 document.querySelectorAll('.tab').forEach(t => t.onclick = () => showTab(t.dataset.tab));
+
+// ---- history (last runs, collapsible) ----
+function runDuration(r) {
+  if (!r.finishedAt) return 'running';
+  const s = Math.round((r.finishedAt - r.startedAt) / 1000);
+  return s < 60 ? s + 's' : Math.floor(s / 60) + 'm ' + (s % 60) + 's';
+}
+function runOutcome(r) {
+  if (r.code === null || r.code === undefined) return 'running';
+  return r.code === 0 ? 'ok' : `failed (${r.code})`;
+}
+function renderHistory() {
+  const host = $('#pane-history');
+  if (!history.length) { host.innerHTML = '<div class="empty">no runs yet</div>'; return; }
+  host.innerHTML = '';
+  for (const r of history) {
+    const failed = r.code !== 0 && r.code !== null && r.code !== undefined;
+    const open = expandedRun === r.id;
+    const row = document.createElement('div'); row.className = 'run';
+
+    const head = document.createElement('div');
+    head.className = 'run-head' + (failed ? ' failed' : '');
+    const caret = document.createElement('span'); caret.className = 'caret'; caret.textContent = open ? '▾' : '▸';
+    const name = document.createElement('span'); name.className = 'run-name';
+    name.textContent = r.name || (r.kind === 'record' ? 'new recording' : r.label || '—');
+    const meta = document.createElement('span'); meta.className = 'run-meta';
+    meta.textContent = [r.kind, r.generate ? 'generate' : null, relTime(r.startedAt), runDuration(r), runOutcome(r)]
+      .filter(Boolean).join('  ·  ');
+    head.append(caret, name, meta);
+
+    const log = document.createElement('pre'); log.className = 'run-log'; log.hidden = !open;
+    for (const line of r.lines || []) {
+      const span = document.createElement('span');
+      if (/^\s*FAIL:/.test(line)) span.className = 'fail';
+      else if (/^\s*(skip:|\(|ok :|Cleaning|Parameters:|Generated:)/.test(line)) span.className = 'mut';
+      span.textContent = line + '\n';
+      log.appendChild(span);
+    }
+    if (!(r.lines || []).length) log.textContent = '(no output)';
+
+    head.onclick = () => { expandedRun = open ? null : r.id; renderHistory(); };
+    row.append(head, log); host.appendChild(row);
+  }
+}
+async function loadHistory() { history = await api.history(); renderHistory(); }
 
 // ---- recordings list ----
 function renderList() {
@@ -341,11 +398,7 @@ function setView(which) { // steps | editor | log
   $('#steps').hidden = which !== 'steps';
   $('#editor').hidden = which !== 'editor';
   $('#log').hidden = which !== 'log';
-  $('#viewTabs').hidden = which === 'editor';
-  document.querySelectorAll('.vt').forEach(b => b.classList.toggle('active', b.dataset.view === which));
-  $('.vt[data-view="log"]').disabled = !$('#log').textContent.trim();
 }
-document.querySelectorAll('.vt').forEach(b => b.onclick = () => { if (!editing) setView(b.dataset.view); });
 
 function renderSteps(text) {
   const host = $('#steps'); host.innerHTML = '';
@@ -375,8 +428,6 @@ async function selectRow(i) {
   $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
   const { text } = await api.open(r.name);
   $('#editor').value = text;
-  // output belongs to whichever recording produced it — drop it on a switch
-  if (logOwner !== r.name) { $('#log').textContent = ''; logOwner = null; }
   renderSteps(text); setView('steps');
   document.querySelector('.row.sel')?.scrollIntoView({ block: 'nearest' });
 }
@@ -408,12 +459,11 @@ $('#saveBtn').onclick = async () => {
 // ---- run ----
 async function play(generate) {
   if (running || sel < 0 || editing) return;
-  logOwner = recs[sel].name; // this output belongs to the recording we're playing
   $('#log').textContent = ''; setView('log');
   const res = await api.play({ name: recs[sel].name, generate });
   if (res && res.error) { appendLog({ line: res.error }); setView('steps'); }
 }
-async function record() { if (!running) { logOwner = RECORD_LOG; await api.record(); } }
+async function record() { if (!running) await api.record(); }
 
 function appendLog({ line }) {
   const isFail = /^\s*FAIL:/.test(line);
@@ -422,7 +472,6 @@ function appendLog({ line }) {
   span.className = isFail ? 'fail' : (isMut ? 'mut' : '');
   span.textContent = line + '\n';
   const log = $('#log'); log.appendChild(span); log.parentElement.scrollTop = log.parentElement.scrollHeight;
-  $('.vt[data-view="log"]').disabled = false; // output is now viewable
 }
 
 function setProgress(frac, on) {
@@ -431,23 +480,19 @@ function setProgress(frac, on) {
 }
 
 // ---- SSE ----
-// keepView: leave the current pane (i.e. the run output) on screen instead of
-// snapping back to the steps — otherwise a failure vanishes the moment it ends
-function restoreDetail(keepView) {
+function restoreDetail() {
   if (sel >= 0 && recs[sel]) {
     const r = recs[sel];
     $('#detail-title').textContent = r.name; $('#detail-title').classList.remove('dim');
     $('#stepcount').textContent = r.steps + ' steps';
     $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
-    api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView(keepView ? 'log' : 'steps'); });
+    api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView('steps'); });
   } else {
     selName = null;
     $('#detail-title').textContent = 'select a recording'; $('#detail-title').classList.add('dim');
     $('#stepcount').textContent = '';
     $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
-    // nothing selected and not showing a just-finished run: drop stale output
-    if (!keepView) { $('#log').textContent = ''; logOwner = null; }
-    $('#steps').innerHTML = ''; setView(keepView ? 'log' : 'steps');
+    $('#steps').innerHTML = ''; setView('steps');
   }
 }
 function onRunning({ kind, label }) {
@@ -457,7 +502,9 @@ function onRunning({ kind, label }) {
   $('#recBtn').disabled = true; $('#stopBtn').disabled = false;
   $('#genWrap').style.visibility = 'hidden';
   // a record session isn't about the selected recording — clear its step count
-  if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = ''; $('#log').textContent = ''; setView('log'); }
+  if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = ''; }
+  // show the live output for the duration of the run, whoever started it
+  if (!editing) { $('#log').textContent = ''; setView('log'); }
   setProgress(0, kind === 'play');
 }
 function onDone({ kind, code }) {
@@ -469,12 +516,8 @@ function onDone({ kind, code }) {
   $('#recBtn').disabled = false; $('#genWrap').style.visibility = 'visible';
   setProgress(1, false);
   renderList();
-  // keep the run output on screen so a failure can actually be read
-  restoreDetail(true); // re-enables play/edit/delete per selection
-  if (!ok) {
-    const firstFail = $('#log').querySelector('.fail');
-    if (firstFail) firstFail.scrollIntoView({ block: 'center' });
-  }
+  restoreDetail(); // back to the steps; the run's output is kept in History
+  if (!ok) $('#status').textContent += ' — see History';
 }
 const handlers = {
   list: data => { recs = data; sel = selName ? recs.findIndex(r => r.name === selName) : -1; if (!running) renderList(); },
@@ -482,6 +525,7 @@ const handlers = {
   running: onRunning,
   done: onDone,
   progress: ({ done, total }) => setProgress(done / total, true),
+  history: data => { history = data; if (tab === 'history') renderHistory(); },
 };
 function connectEvents() {
   const es = new EventSource('/events');

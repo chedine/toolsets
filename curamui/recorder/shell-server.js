@@ -53,6 +53,7 @@ function startServer({ port = 0 } = {}) {
       if (u.pathname === '/api/play')   return json(res, 200, runner.play(await readBody(req)));
       if (u.pathname === '/api/record') return json(res, 200, runner.record());
       if (u.pathname === '/api/stop')   return json(res, 200, runner.stop());
+      if (u.pathname === '/api/history') return json(res, 200, runner.history());
       if (u.pathname === '/api/save') {
         const { name, text } = await readBody(req);
         const safe = String(name || '').replace(/[^\w.-]+/g, '-');

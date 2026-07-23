@@ -40,6 +40,14 @@ function startServer({ port = 0 } = {}) {
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         return res.end(fs.readFileSync(HTML));
       }
+      if (u.pathname.startsWith('/fonts/')) {
+        const fp = path.join(__dirname, 'assets', 'fonts', path.basename(u.pathname));
+        if (fs.existsSync(fp)) {
+          res.writeHead(200, { 'Content-Type': 'font/woff2', 'Cache-Control': 'max-age=86400' });
+          return res.end(fs.readFileSync(fp));
+        }
+        res.writeHead(404); return res.end('not found');
+      }
       if (u.pathname === '/api/list')   return json(res, 200, listRecordings());
       if (u.pathname === '/api/open')   return json(res, 200, readRecording(u.searchParams.get('name')));
       if (u.pathname === '/api/play')   return json(res, 200, runner.play(await readBody(req)));

@@ -89,8 +89,12 @@
     font:inherit; font-size:calc(var(--ui-size) - 1px); color:var(--ink);
     background:none; border:0; padding:0; cursor:pointer; border-bottom:1px solid transparent;
   }
-  button.link:hover { border-bottom-color:currentColor; }
+  button.link:hover:not(:disabled) { border-bottom-color:currentColor; }
+  button.link:disabled { color:var(--faint); cursor:default; }
   button.link.danger { font-weight:600; }
+  #viewTabs { display:flex; gap:14px; flex:none; }
+  .vt { color:var(--muted); }
+  .vt.active { color:var(--ink); border-bottom-color:var(--ink); }
   #status { padding:6px var(--pad) 0; color:var(--muted); font-size:calc(var(--ui-size) - 2px); min-height:20px; }
   #status.run { color:var(--ink); }
   #status.fail { color:var(--ink); font-weight:600; }
@@ -161,6 +165,10 @@
       <div id="detail">
         <div id="detail-head">
           <div id="detail-title" class="dim">select a recording</div>
+          <div id="viewTabs">
+            <button class="link vt active" data-view="steps">steps</button>
+            <button class="link vt" data-view="log" disabled>output</button>
+          </div>
           <div id="detail-actions">
             <span id="stepcount"></span>
             <label class="toggle" id="genWrap"><input type="checkbox" id="gen"> generate</label>
@@ -330,7 +338,11 @@ function setView(which) { // steps | editor | log
   $('#steps').hidden = which !== 'steps';
   $('#editor').hidden = which !== 'editor';
   $('#log').hidden = which !== 'log';
+  $('#viewTabs').hidden = which === 'editor';
+  document.querySelectorAll('.vt').forEach(b => b.classList.toggle('active', b.dataset.view === which));
+  $('.vt[data-view="log"]').disabled = !$('#log').textContent.trim();
 }
+document.querySelectorAll('.vt').forEach(b => b.onclick = () => { if (!editing) setView(b.dataset.view); });
 
 function renderSteps(text) {
   const host = $('#steps'); host.innerHTML = '';
@@ -404,6 +416,7 @@ function appendLog({ line }) {
   span.className = isFail ? 'fail' : (isMut ? 'mut' : '');
   span.textContent = line + '\n';
   const log = $('#log'); log.appendChild(span); log.parentElement.scrollTop = log.parentElement.scrollHeight;
+  $('.vt[data-view="log"]').disabled = false; // output is now viewable
 }
 
 function setProgress(frac, on) {
@@ -412,19 +425,21 @@ function setProgress(frac, on) {
 }
 
 // ---- SSE ----
-function restoreDetail() {
+// keepView: leave the current pane (i.e. the run output) on screen instead of
+// snapping back to the steps — otherwise a failure vanishes the moment it ends
+function restoreDetail(keepView) {
   if (sel >= 0 && recs[sel]) {
     const r = recs[sel];
     $('#detail-title').textContent = r.name; $('#detail-title').classList.remove('dim');
     $('#stepcount').textContent = r.steps + ' steps';
     $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
-    api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView('steps'); });
+    api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView(keepView ? 'log' : 'steps'); });
   } else {
     selName = null;
     $('#detail-title').textContent = 'select a recording'; $('#detail-title').classList.add('dim');
     $('#stepcount').textContent = '';
     $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
-    $('#steps').innerHTML = ''; setView('steps');
+    $('#steps').innerHTML = ''; setView(keepView ? 'log' : 'steps');
   }
 }
 function onRunning({ kind, label }) {
@@ -446,7 +461,12 @@ function onDone({ kind, code }) {
   $('#recBtn').disabled = false; $('#genWrap').style.visibility = 'visible';
   setProgress(1, false);
   renderList();
-  restoreDetail(); // re-enables play/edit/delete per selection
+  // keep the run output on screen so a failure can actually be read
+  restoreDetail(true); // re-enables play/edit/delete per selection
+  if (!ok) {
+    const firstFail = $('#log').querySelector('.fail');
+    if (firstFail) firstFail.scrollIntoView({ block: 'center' });
+  }
 }
 const handlers = {
   list: data => { recs = data; sel = selName ? recs.findIndex(r => r.name === selName) : -1; if (!running) renderList(); },

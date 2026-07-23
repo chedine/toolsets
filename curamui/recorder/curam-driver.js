@@ -128,7 +128,15 @@ class CuramDriver {
         const panel = this.page.locator(`[id="${tabId.split('_tablist_')[1]}"]`);
         const el = panel.locator('iframe[title^="Content Panel"]').last();
         const f = await (await el.elementHandle({ timeout: 400 })).contentFrame();
-        if (f) doc = f.url() + '#' + await f.evaluate(() => performance.timeOrigin);
+        // url+timeOrigin catches an iframe reload (e.g. Evidence); a nav-bar
+        // switch like Participants swaps content via AJAX in the SAME document,
+        // so also fingerprint the page heading + a coarse element count — one
+        // of these changes on any content switch, making it observable.
+        if (f) doc = f.url() + '#' + await f.evaluate(() => {
+          const h = document.querySelector('.page-title-bar .title, .page-title-bar h1, .page-title-bar, h1, h2');
+          const heading = (h && h.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+          return performance.timeOrigin + '#' + heading + '#' + document.querySelectorAll('tr,li,section,.cds--tile').length;
+        });
       } catch {}
       // wizard buttons (Search/Next/Save) navigate INSIDE the modal frame —
       // track its document identity too, or every modal click waits the
@@ -141,17 +149,7 @@ class CuramDriver {
           if (f) modalDoc = f.url() + '#' + await f.evaluate(() => performance.timeOrigin);
         }
       } catch { modalDoc = 'modal'; }
-      // in-page navigation-bar switch (Participants/Evidence/…) swaps content
-      // via AJAX without changing the iframe document — track the selected
-      // nav-bar tab so the switch is observable (else _waitForNav times out)
-      let navSel = '';
-      try {
-        // count() is instantaneous (no implicit wait) so a page without a
-        // nav-bar — every wizard — costs nothing here
-        const nav = this.page.locator('.navigation-bar-tabs span[role="tab"][aria-selected="true"]:visible');
-        if (await nav.count()) navSel = (await nav.first().getAttribute('title')) || '';
-      } catch {}
-      return tabId + '||' + doc + '||' + modalDoc + '||' + navSel;
+      return tabId + '||' + doc + '||' + modalDoc;
     } catch { return ''; }
   }
 
@@ -179,6 +177,15 @@ class CuramDriver {
     for (const f of this.page.frames()) {
       if (/Screening\.do|IEGPlayer|_ieg|\/ieg\/|RegisterPerson_/i.test(f.url())) { push(f); modal = true; }
     }
+    // A wizard launched from a row menu (e.g. Add Household Member Wizard) can
+    // open in a SEPARATE browser window — a popup Page, not an iframe. Include
+    // every other open page's frame tree so enter/click can reach it.
+    try {
+      for (const pg of this.page.context().pages()) {
+        if (pg === this.page || pg.isClosed()) continue;
+        for (const f of pg.frames()) push(f);
+      }
+    } catch {}
     // A modal/wizard owns the form, so the content & context panels behind it
     // aren't involved — skip their active-tab lookups, which otherwise wait
     // out a ~2s timeout PER FIELD when no case tab is open (the wizard case).
@@ -466,6 +473,9 @@ class CuramDriver {
           `.action-set a.first-action-control:has-text("${label}")`,
           `.action-set a:has-text("${label}")`,
           `a.buttonLink:has-text("${label}")`,
+          // Carbon / plain HTML buttons (e.g. a Carbon wizard's Next not inside
+          // a .cds--modal-container) — matched by their own text
+          `button.cds--btn:has-text("${label}")`, `button:has-text("${label}")`,
           `a[title="${label}"]`, `button[title="${label}"]`, `input[type=submit][value="${label}"]`,
           `a[aria-label="${label}"]`, `button[aria-label="${label}"]`,
           `a:has(img[alt="${label}"])`, `button:has(img[alt="${label}"])`,

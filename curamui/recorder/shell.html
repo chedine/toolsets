@@ -8,12 +8,14 @@
   :root {
     --bg:#e9e9e7; --panel:#e2e2df; --ink:#232322; --muted:#8f8f8a;
     --faint:#c2c2bd; --hair:#d8d8d3; --sel:#232322; --selink:#e9e9e7; --pad:16px;
+    --ui-font: ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --ui-size: 13px;
   }
   * { box-sizing:border-box; }
   html,body { height:100%; margin:0; }
   body {
     background:var(--bg); color:var(--ink);
-    font:13px/1.55 ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    font:var(--ui-size)/1.55 var(--ui-font);
     -webkit-font-smoothing:antialiased; user-select:none;
     display:flex; flex-direction:column; height:100vh; overflow:hidden;
   }
@@ -24,22 +26,22 @@
   }
   nav#tabs { display:flex; gap:26px; flex:1; }
   .tab {
-    font:inherit; font-size:15px; letter-spacing:.3px; background:none; border:0;
+    font:inherit; font-size:calc(var(--ui-size) + 2px); letter-spacing:.3px; background:none; border:0;
     color:var(--muted); padding:2px 0 5px; cursor:pointer; border-bottom:2px solid transparent;
   }
   .tab:hover { color:var(--ink); }
   .tab.active { color:var(--ink); border-bottom-color:var(--ink); }
   .actions { display:flex; align-items:center; gap:16px; }
   button.ico {
-    font:inherit; font-size:12px; letter-spacing:.3px; color:var(--ink);
+    font:inherit; font-size:calc(var(--ui-size) - 1px); letter-spacing:.3px; color:var(--ink);
     background:none; border:0; padding:2px; cursor:pointer;
     display:inline-flex; align-items:center; gap:7px;
   }
   button.ico svg { width:15px; height:15px; display:block; }
   button.ico:hover:not(:disabled) { color:#000; }
   button.ico:disabled { color:var(--faint); cursor:default; }
-  button.ico.rec span { font-size:12px; }
-  .toggle { color:var(--muted); cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:12px; }
+  button.ico.rec span { font-size:calc(var(--ui-size) - 1px); }
+  .toggle { color:var(--muted); cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:calc(var(--ui-size) - 1px); }
   .toggle input { accent-color:var(--ink); margin:0; }
 
   main { flex:1; min-height:0; display:flex; }
@@ -53,17 +55,17 @@
   .row.sel { background:var(--sel); color:var(--selink); border-left-color:var(--selink); }
   .row.sel .meta { color:#a7a7a2; }
   .name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .meta { color:var(--muted); font-size:11px; letter-spacing:.2px; }
+  .meta { color:var(--muted); font-size:calc(var(--ui-size) - 2px); letter-spacing:.2px; }
 
   #detail { flex:1; display:flex; flex-direction:column; min-width:0; }
   #detail-head { padding:11px var(--pad); display:flex; align-items:center; gap:14px; border-bottom:1px solid var(--hair); }
-  #detail-title { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12px; letter-spacing:.3px; }
+  #detail-title { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:calc(var(--ui-size) - 1px); letter-spacing:.3px; }
   #detail-actions { display:flex; align-items:center; gap:14px; white-space:nowrap; }
-  #stepcount { color:var(--muted); font-size:11px; }
+  #stepcount { color:var(--muted); font-size:calc(var(--ui-size) - 2px); }
   #progress { height:2px; background:var(--hair); opacity:0; transition:opacity .2s; }
   #progress.on { opacity:1; }
   #bar { height:100%; width:0; background:var(--ink); transition:width .25s ease; }
-  #status { padding:6px var(--pad) 0; color:var(--muted); font-size:11px; min-height:20px; }
+  #status { padding:6px var(--pad) 0; color:var(--muted); font-size:calc(var(--ui-size) - 2px); min-height:20px; }
   #status.run { color:var(--ink); }
   #status.fail { color:var(--ink); font-weight:600; }
 
@@ -78,7 +80,7 @@
     width:100%; height:100%; border:0; outline:0; resize:none; background:var(--bg);
     color:var(--ink); font:inherit; padding:12px var(--pad); tab-size:2;
   }
-  #log { margin:0; padding:12px var(--pad); white-space:pre-wrap; word-break:break-word; font:inherit; font-size:12px; color:#575752; user-select:text; }
+  #log { margin:0; padding:12px var(--pad); white-space:pre-wrap; word-break:break-word; font:inherit; font-size:calc(var(--ui-size) - 1px); color:#575752; user-select:text; }
   #log .fail { color:var(--ink); font-weight:600; }
   #log .mut { color:var(--muted); }
   .empty, .placeholder { padding:24px var(--pad); color:var(--muted); }
@@ -88,19 +90,25 @@
   #pane-settings { padding:22px var(--pad); overflow:auto; }
   #settings-form { max-width:560px; display:flex; flex-direction:column; gap:18px; }
   .field { display:flex; flex-direction:column; gap:5px; }
-  .field label { font-size:11px; color:var(--muted); letter-spacing:.4px; }
+  .field label { font-size:calc(var(--ui-size) - 2px); color:var(--muted); letter-spacing:.4px; }
   .field input {
     font:inherit; color:var(--ink); background:var(--bg); border:0; border-bottom:1px solid var(--faint);
     padding:5px 0; outline:0;
   }
   .field input:focus { border-bottom-color:var(--ink); }
+  .field select {
+    font:inherit; color:var(--ink); background:var(--bg); border:0;
+    border-bottom:1px solid var(--faint); padding:5px 0; outline:0; max-width:260px;
+  }
+  .field input[type=range] { accent-color:var(--ink); max-width:220px; padding:0; }
+  #font-preview { padding:12px 14px; border:1px solid var(--hair); font-size:calc(var(--ui-size) + 3px); }
   .field.row2 { flex-direction:row; gap:28px; }
   .field.row2 > div { display:flex; flex-direction:column; gap:5px; }
   .set-actions { display:flex; align-items:center; gap:16px; margin-top:4px; }
-  #set-note { color:var(--muted); font-size:11px; }
-  .hint { color:var(--muted); font-size:11px; line-height:1.7; }
+  #set-note { color:var(--muted); font-size:calc(var(--ui-size) - 2px); }
+  .hint { color:var(--muted); font-size:calc(var(--ui-size) - 2px); line-height:1.7; }
 
-  footer { padding:9px var(--pad); border-top:1px solid var(--hair); color:var(--muted); font-size:11px; letter-spacing:.3px; }
+  footer { padding:9px var(--pad); border-top:1px solid var(--hair); color:var(--muted); font-size:calc(var(--ui-size) - 2px); letter-spacing:.3px; }
   footer kbd { color:var(--ink); font:inherit; }
   ::-webkit-scrollbar { width:8px; height:8px; }
   ::-webkit-scrollbar-thumb { background:var(--faint); }
@@ -165,6 +173,18 @@
           <label>until — interval (seconds)</label>
           <input id="set-interval" type="number" min="1">
         </div>
+        <div class="field">
+          <label>UI font</label>
+          <select id="set-font"></select>
+        </div>
+        <div class="field">
+          <label>UI font size (px)</label>
+          <input id="set-fontsize" type="range" min="11" max="20" step="1">
+        </div>
+        <div class="field">
+          <label>Preview <span id="fontsize-val" class="dim"></span></label>
+          <div id="font-preview">The quick brown fox jumps — 0123456789 {}[]()&lt;&gt;</div>
+        </div>
         <div class="set-actions">
           <button class="ico rec" type="submit" title="Save">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13.5h10"/></svg><span>Save</span>
@@ -191,6 +211,45 @@ const api = {
   config: () => fetch('/api/config').then(r => r.json()),
   setConfig: patch => fetch('/api/config', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch) }).then(r => r.json()),
 };
+
+// ---- appearance (font playground) ----
+const FONTS = {
+  'System Mono':     { stack: 'ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace' },
+  'JetBrains Mono':  { web: 'JetBrains Mono', stack: '"JetBrains Mono",monospace' },
+  'IBM Plex Mono':   { web: 'IBM Plex Mono', stack: '"IBM Plex Mono",monospace' },
+  'Fira Code':       { web: 'Fira Code', stack: '"Fira Code",monospace' },
+  'Space Mono':      { web: 'Space Mono', stack: '"Space Mono",monospace' },
+  'Source Code Pro': { web: 'Source Code Pro', stack: '"Source Code Pro",monospace' },
+  'Inconsolata':     { web: 'Inconsolata', stack: '"Inconsolata",monospace' },
+  'Inter':           { web: 'Inter', stack: '"Inter",system-ui,sans-serif' },
+};
+let appearance = { font: 'System Mono', size: 13 };
+function ensureWebFont(web) {
+  const id = 'wf-' + web.replace(/\s+/g, '-');
+  if (document.getElementById(id)) return;
+  const l = document.createElement('link'); l.id = id; l.rel = 'stylesheet';
+  l.href = 'https://fonts.googleapis.com/css2?family=' + web.replace(/\s+/g, '+') + ':wght@400;600&display=swap';
+  document.head.appendChild(l);
+}
+function applyFont(name) {
+  const f = FONTS[name] || FONTS['System Mono'];
+  if (f.web) ensureWebFont(f.web);
+  document.documentElement.style.setProperty('--ui-font', f.stack);
+}
+function applySize(px) {
+  px = Math.max(11, Math.min(20, +px || 13));
+  document.documentElement.style.setProperty('--ui-size', px + 'px');
+  const v = $('#fontsize-val'); if (v) v.textContent = px + 'px';
+}
+function applyAppearance(a) {
+  appearance = { font: a.font || 'System Mono', size: a.size || 13 };
+  applyFont(appearance.font); applySize(appearance.size);
+}
+function populateFontSelect() {
+  const sel = $('#set-font');
+  if (sel.options.length) return;
+  for (const name of Object.keys(FONTS)) { const o = document.createElement('option'); o.value = name; o.textContent = name; sel.appendChild(o); }
+}
 
 function relTime(ms) {
   const s = (Date.now() - ms) / 1000;
@@ -362,7 +421,14 @@ async function loadSettings() {
   $('#set-url').value = cfg.url || '';
   $('#set-timeout').value = (cfg.until && cfg.until.timeout) ?? '';
   $('#set-interval').value = (cfg.until && cfg.until.interval) ?? '';
+  populateFontSelect();
+  $('#set-font').value = appearance.font;
+  $('#set-fontsize').value = appearance.size;
+  $('#fontsize-val').textContent = appearance.size + 'px';
 }
+// live preview while playing with fonts
+$('#set-font').onchange = () => applyFont($('#set-font').value);
+$('#set-fontsize').oninput = () => applySize($('#set-fontsize').value);
 $('#settings-form').onsubmit = async e => {
   e.preventDefault();
   const patch = { url: $('#set-url').value.trim() };
@@ -370,6 +436,8 @@ $('#settings-form').onsubmit = async e => {
   patch.until = {};
   if (to > 0) patch.until.timeout = to;
   if (iv > 0) patch.until.interval = iv;
+  appearance = { font: $('#set-font').value, size: +$('#set-fontsize').value };
+  patch.ui = appearance;
   await api.setConfig(patch);
   $('#set-note').textContent = 'saved'; setTimeout(() => ($('#set-note').textContent = ''), 1500);
 };
@@ -391,6 +459,7 @@ document.addEventListener('keydown', e => {
 
 (function init() {
   connectEvents();
+  api.config().then(cfg => applyAppearance(cfg.ui || {})).catch(() => {});
   api.list().then(items => { recs = items; renderList(); });
 })();
 </script>

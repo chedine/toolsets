@@ -68,18 +68,4 @@ function createRunner(push) {
   return api;
 }
 
-// Dispatch a page IPC call to the right handler.
-function makeDispatch(runner) {
-  return (method, arg) => {
-    switch (method) {
-      case 'list':   return listRecordings();
-      case 'open':   return readRecording(arg);
-      case 'play':   return runner.play(arg);
-      case 'record': return runner.record();
-      case 'stop':   return runner.stop();
-      default:       return { error: 'unknown method: ' + method };
-    }
-  };
-}
-
-module.exports = { DIR, DATA, listRecordings, readRecording, createRunner, makeDispatch };
+module.exports = { DIR, DATA, listRecordings, readRecording, createRunner };

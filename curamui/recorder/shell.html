@@ -100,7 +100,13 @@
 const $ = s => document.querySelector(s);
 let recs = [], sel = -1, running = false;
 
-const call = (m, a) => window.shellCall(m, a);
+const api = {
+  list:   () => fetch('/api/list').then(r => r.json()),
+  open:   name => fetch('/api/open?name=' + encodeURIComponent(name)).then(r => r.json()),
+  play:   arg => fetch('/api/play', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(arg) }).then(r => r.json()),
+  record: () => fetch('/api/record', { method: 'POST' }).then(r => r.json()),
+  stop:   () => fetch('/api/stop', { method: 'POST' }),
+};
 
 function relTime(ms) {
   const s = (Date.now() - ms) / 1000;
@@ -135,7 +141,7 @@ async function selectRow(i) {
   $('#status').textContent = `${r.steps} steps` + (r.params.length ? ` · params: ${r.params.join(', ')}` : '');
   $('#status').className = '';
   $('#playBtn').disabled = false;
-  const { text } = await call('open', r.name);
+  const { text } = await api.open(r.name);
   const body = $('#detail-body'); body.textContent = text || '(empty)';
   $('.row.sel')?.scrollIntoView({ block:'nearest' });
 }
@@ -149,7 +155,7 @@ async function play(generate) {
   if (running || sel < 0) return;
   const r = recs[sel];
   $('#detail-body').textContent = '';
-  const res = await call('play', { name: r.name, generate });
+  const res = await api.play({ name: r.name, generate });
   if (res && res.error) appendLog({ line: res.error, kind: 'err' });
 }
 
@@ -158,7 +164,7 @@ async function record() {
   $('#detail-title').textContent = 'new recording';
   $('#detail-title').classList.remove('dim');
   $('#detail-body').textContent = '';
-  const res = await call('record');
+  const res = await api.record();
   if (res && res.error) appendLog({ line: res.error, kind: 'err' });
 }
 
@@ -173,25 +179,34 @@ function appendLog({ line, kind }) {
   body.scrollTop = body.scrollHeight;
 }
 
-// ---- pushed from Node ----
-window.__list = items => { recs = items; if (!running) renderList(); };
-window.__log = appendLog;
-window.__running = ({ label }) => {
+// ---- server-sent events (log stream + state) ----
+function onRunning({ label }) {
   running = true;
   $('#status').textContent = label + ' …'; $('#status').className = 'run';
   $('#playBtn').disabled = true; $('#recBtn').disabled = true; $('#stopBtn').disabled = false;
-};
-window.__done = ({ kind, code }) => {
+}
+function onDone({ kind, code }) {
   running = false;
   const ok = code === 0 || code === null;
   $('#status').textContent = kind === 'record' ? 'recording ended' : (ok ? 'done' : `exited (${code})`);
   $('#status').className = ok ? '' : 'fail';
   $('#playBtn').disabled = sel < 0; $('#recBtn').disabled = false; $('#stopBtn').disabled = true;
+}
+const handlers = {
+  list: data => { recs = data; if (!running) renderList(); },
+  log: appendLog,
+  running: onRunning,
+  done: onDone,
 };
+function connectEvents() {
+  const es = new EventSource('/events');
+  es.onmessage = ev => { const { type, data } = JSON.parse(ev.data); (handlers[type] || (() => {}))(data); };
+  es.onerror = () => {}; // EventSource auto-reconnects
+}
 
 $('#playBtn').onclick = () => play($('#gen').checked);
 $('#recBtn').onclick = record;
-$('#stopBtn').onclick = () => call('stop');
+$('#stopBtn').onclick = () => api.stop();
 
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
@@ -199,12 +214,12 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'Enter') { e.preventDefault(); play($('#gen').checked); }
   else if (e.key === 'g') { play(true); }
   else if (e.key === 'r') { record(); }
-  else if (e.key === 'Escape') { if (running) call('stop'); }
+  else if (e.key === 'Escape') { if (running) api.stop(); }
 });
 
 (function init() {
-  if (!window.shellCall) return void setTimeout(init, 40);
-  call('list').then(items => { recs = items; renderList(); });
+  connectEvents();
+  api.list().then(items => { recs = items; renderList(); });
 })();
 </script>
 </body>

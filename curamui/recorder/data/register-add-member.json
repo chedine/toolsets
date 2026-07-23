@@ -1,0 +1,484 @@
+{
+  "name": "register-add-member",
+  "url": "http://localhost:8081/Curam/AppController.do",
+  "recordedAt": "2026-07-23T21:42:47.096Z",
+  "steps": [
+    {
+      "verb": "click section",
+      "args": [
+        "HCR Cases and Outcomes"
+      ],
+      "frame": "top",
+      "ts": 1784842624240,
+      "dsl": "click section \"HCR Cases and Outcomes\""
+    },
+    {
+      "verb": "toggle shortcuts panel",
+      "args": [],
+      "frame": "top",
+      "ts": 1784842625395,
+      "dsl": "toggle shortcuts panel "
+    },
+    {
+      "verb": "click shortcutgroup",
+      "args": [
+        "Searches"
+      ],
+      "frame": "top",
+      "ts": 1784842627555,
+      "dsl": "click shortcutgroup \"Searches\""
+    },
+    {
+      "verb": "click shortcutitem",
+      "args": [
+        "Searches",
+        "Person"
+      ],
+      "frame": "top",
+      "ts": 1784842628714,
+      "dsl": "click shortcutitem Searches > Person"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "jason",
+        "First Name"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1784842631612,
+      "dsl": "enter \"jason\" as First Name"
+    },
+    {
+      "verb": "press enter",
+      "args": [
+        "First Name"
+      ],
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1784842631612,
+      "dsl": "press enter in \"First Name\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "Jason Singleton - 30000001",
+        "Search Results"
+      ],
+      "ctx": {
+        "row": 1,
+        "rowCount": 1,
+        "column": "Person",
+        "rowValues": {
+          "Person": "Jason Singleton - 30000001",
+          "Address": "123, ABC Street, eagan, Minnesota, 55124",
+          "Date of Birth": "1/1/1966",
+          "Actions": "▼"
+        }
+      },
+      "frame": "Content Panel - HCR Cases and Outcomes",
+      "ts": 1784842661830,
+      "strategy": {
+        "type": "row",
+        "row": 1
+      },
+      "dsl": "click link in \"Search Results\" at row 1"
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "10000131",
+        "Current Cases"
+      ],
+      "ctx": {
+        "row": 2,
+        "rowCount": 2,
+        "column": "Reference",
+        "rowValues": {
+          "Reference": "10000131",
+          "Type": "Insurance Affordability",
+          "Status": "Open",
+          "Applicant": "Yes",
+          "Start Date": "1/1/2027"
+        }
+      },
+      "frame": "Content Panel - Home",
+      "ts": 1784842674294,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Type": "Insurance Affordability"
+        }
+      },
+      "dsl": "click link in \"Current Cases\" where Type = \"Insurance Affordability\""
+    },
+    {
+      "verb": "select nav",
+      "args": [
+        "Participants"
+      ],
+      "frame": "top",
+      "ts": 1784842689364,
+      "dsl": "select nav \"Participants\""
+    },
+    {
+      "verb": "click shortcutgroup",
+      "args": [
+        "Registration"
+      ],
+      "frame": "top",
+      "ts": 1784842693839,
+      "dsl": "click shortcutgroup \"Registration\""
+    },
+    {
+      "verb": "click shortcutitem",
+      "args": [
+        "Registration",
+        "Person"
+      ],
+      "frame": "top",
+      "ts": 1784842694761,
+      "dsl": "click shortcutitem Registration > Person"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "Junior",
+        "First Name"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842703976,
+      "dsl": "enter \"Junior\" as First Name"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "top",
+      "ts": 1784842704070,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "Test",
+        "Last Name"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842709784,
+      "dsl": "enter \"Test\" as Last Name"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "152323240",
+        "Social Security Number"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842733215,
+      "dsl": "enter \"152323240\" as Social Security Number"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "152323240",
+        "Enter the Social Security number again to confirm. Numbers must match."
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842739736,
+      "dsl": "enter \"152323240\" as Enter the Social Security number again to confirm. Numbers must match."
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Male",
+        "Gender"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842740636,
+      "dsl": "select \"Male\" for Gender"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "01/01/2000",
+        "Dateof Birth"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842746890,
+      "dsl": "enter \"01/01/2000\" as Dateof Birth"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Mail",
+        "Preferred Communication"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842748476,
+      "dsl": "select \"Mail\" for Preferred Communication"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "English",
+        "Preferred Language"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842750647,
+      "dsl": "select \"English\" for Preferred Language"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "abc street",
+        "Apt/Suite"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842760902,
+      "dsl": "enter \"abc street\" as Apt/Suite"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "street 1",
+        "Street 1"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842764050,
+      "dsl": "enter \"street 1\" as Street 1"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Dakota",
+        "County"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842773180,
+      "dsl": "select \"Dakota\" for County"
+    },
+    {
+      "verb": "select option",
+      "args": [
+        "Minnesota",
+        "State"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842776176,
+      "dsl": "select \"Minnesota\" for State"
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "55124",
+        "Zip"
+      ],
+      "frame": "Modal Frame - Register Person",
+      "ts": 1784842779608,
+      "dsl": "enter \"55124\" as Zip"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Save"
+      ],
+      "frame": "top",
+      "ts": 1784842781523,
+      "dsl": "click button \"Save\""
+    },
+    {
+      "verb": "select tab",
+      "args": [
+        "Insurance Affordability * - Jason Singleton"
+      ],
+      "frame": "top",
+      "ts": 1784842790119,
+      "dsl": "select tab \"Insurance Affordability * - Jason Singleton\""
+    },
+    {
+      "verb": "select nav",
+      "args": [
+        "Participants"
+      ],
+      "frame": "top",
+      "ts": 1784842800991,
+      "dsl": "select nav \"Participants\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "New…",
+        ""
+      ],
+      "frame": "Content Panel - Case Members",
+      "ts": 1784842804554,
+      "dsl": "click link \"New…\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Name Search",
+        ""
+      ],
+      "frame": "Modal Frame - New Member",
+      "ts": 1784842806474,
+      "dsl": "click button \"Name Search\""
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "junior",
+        "First Name"
+      ],
+      "frame": "Modal Frame - Person Search",
+      "ts": 1784842813036,
+      "dsl": "enter \"junior\" as First Name"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Search"
+      ],
+      "frame": "Modal Frame - Person Search",
+      "ts": 1784842813077,
+      "dsl": "click button \"Search\""
+    },
+    {
+      "verb": "click link",
+      "args": [
+        "Select",
+        "Search Results"
+      ],
+      "ctx": {
+        "row": 3,
+        "rowCount": 3,
+        "column": "Action",
+        "rowValues": {
+          "Action": "Select",
+          "Person": "Junior Test - 30000011",
+          "Address": "abc street, street 1, Minnesota, 55124",
+          "Date of Birth": "1/1/2000"
+        }
+      },
+      "frame": "Modal Frame - Person Search",
+      "ts": 1784842826998,
+      "dsl": "click link \"Select\" in \"Search Results\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Save"
+      ],
+      "frame": "top",
+      "ts": 1784842829157,
+      "dsl": "click button \"Save\""
+    },
+    {
+      "verb": "enter",
+      "args": [
+        "01/01/2027",
+        "Start Date"
+      ],
+      "frame": "Modal Frame - New Member (messages present)",
+      "ts": 1784842862514,
+      "dsl": "enter \"01/01/2027\" as Start Date"
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Save"
+      ],
+      "frame": "top",
+      "ts": 1784842865155,
+      "dsl": "click button \"Save\""
+    },
+    {
+      "verb": "select nav",
+      "args": [
+        "Evidence"
+      ],
+      "frame": "top",
+      "ts": 1784842878369,
+      "dsl": "select nav \"Evidence\""
+    },
+    {
+      "verb": "select navitem",
+      "args": [
+        "Life Events"
+      ],
+      "frame": "top",
+      "ts": 1784842881091,
+      "dsl": "select navitem \"Life Events\""
+    },
+    {
+      "verb": "expand row",
+      "args": [
+        "",
+        ""
+      ],
+      "ctx": {
+        "row": 3,
+        "rowCount": 3,
+        "column": "Expand/Collapse Item",
+        "rowValues": {
+          "Name": "Junior Test",
+          "Start Date": "1/1/2027"
+        }
+      },
+      "frame": "Content Panel - Life Events For Case Members",
+      "ts": 1784842883284,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Name": "Junior Test"
+        }
+      },
+      "dsl": "expand row where Name = \"Junior Test\""
+    },
+    {
+      "verb": "click rowmenu",
+      "args": [
+        "Launch",
+        ""
+      ],
+      "ctx": {
+        "row": 3,
+        "rowCount": 3,
+        "column": "Actions",
+        "rowValues": {
+          "Wizard Name": "Add Household Member Wizard",
+          "Description": "The Add Household Member wizard allows entry of evidence for a participant newly",
+          "Status": "Not Started",
+          "Actions": "▼"
+        }
+      },
+      "frame": " ",
+      "ts": 1784842905906,
+      "strategy": {
+        "type": "predicate",
+        "where": {
+          "Wizard Name": "Add Household Member Wizard"
+        }
+      },
+      "dsl": "click rowmenu \"Launch\" where Wizard Name = \"Add Household Member Wizard\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Next"
+      ],
+      "frame": "Modal Frame - C�ram Health & Human Services Exchange",
+      "ts": 1784842920734,
+      "dsl": "click button \"Next\""
+    },
+    {
+      "verb": "click button",
+      "args": [
+        "Close Modal"
+      ],
+      "frame": "top",
+      "ts": 1784842927587,
+      "dsl": "click button \"Close Modal\""
+    }
+  ]
+}

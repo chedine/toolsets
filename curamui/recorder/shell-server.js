@@ -6,9 +6,17 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { listRecordings, readRecording, createRunner } = require('./shell-core');
+const { listRecordings, readRecording, createRunner, DATA } = require('./shell-core');
 
 const HTML = path.join(__dirname, 'shell.html');
+const CONFIG = path.join(__dirname, 'config.json');
+
+const isObj = v => v && typeof v === 'object' && !Array.isArray(v);
+const deepMerge = (base, patch) => {
+  const out = { ...base };
+  for (const [k, v] of Object.entries(patch || {})) out[k] = isObj(v) && isObj(out[k]) ? deepMerge(out[k], v) : v;
+  return out;
+};
 
 function startServer() {
   const clients = new Set(); // open SSE responses
@@ -34,6 +42,24 @@ function startServer() {
       if (u.pathname === '/api/play')   return json(res, 200, runner.play(await readBody(req)));
       if (u.pathname === '/api/record') return json(res, 200, runner.record());
       if (u.pathname === '/api/stop')   return json(res, 200, runner.stop());
+      if (u.pathname === '/api/save') {
+        const { name, text } = await readBody(req);
+        const safe = String(name || '').replace(/[^\w.-]+/g, '-');
+        if (!safe) return json(res, 400, { error: 'bad name' });
+        fs.writeFileSync(path.join(DATA, safe + '.dsl'), text.endsWith('\n') ? text : text + '\n');
+        broadcast('list', listRecordings());
+        return json(res, 200, { ok: true });
+      }
+      if (u.pathname === '/api/config') {
+        if (req.method === 'POST') {
+          const patch = await readBody(req);
+          const cfg = JSON.parse(fs.readFileSync(CONFIG, 'utf8'));
+          const merged = deepMerge(cfg, patch);
+          fs.writeFileSync(CONFIG, JSON.stringify(merged, null, 2) + '\n');
+          return json(res, 200, merged);
+        }
+        return json(res, 200, JSON.parse(fs.readFileSync(CONFIG, 'utf8')));
+      }
       if (u.pathname === '/events') {
         res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', Connection: 'keep-alive', 'X-Accel-Buffering': 'no' });
         res.write('retry: 2000\n\n');

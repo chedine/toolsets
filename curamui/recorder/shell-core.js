@@ -28,28 +28,34 @@ function readRecording(name) {
   catch { return { name, text: '' }; }
 }
 
-// One child session at a time; streams its output to the page line by line.
+function stepCount(text) {
+  return text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith('#') && !/^param /.test(l)).length;
+}
+
+// One child session at a time; streams its output to the page line by line and,
+// for a replay, emits progress as each step reports ok/FAIL/skip.
 function createRunner(push) {
   let child = null;
-  function stream(proc) {
+  function stream(proc, onLine) {
     let buf = '';
     const onData = d => {
       buf += d.toString();
       let i;
-      while ((i = buf.indexOf('\n')) >= 0) {
-        const line = buf.slice(0, i); buf = buf.slice(i + 1);
-        push('__log', { line });
-      }
+      while ((i = buf.indexOf('\n')) >= 0) { const line = buf.slice(0, i); buf = buf.slice(i + 1); onLine(line); }
     };
     proc.stdout.on('data', onData);
     proc.stderr.on('data', onData);
   }
-  function run(kind, args, label) {
+  function run(kind, args, label, total) {
     if (child) return { error: 'a session is already running' };
-    push('__running', { kind, label });
+    push('__running', { kind, label, total });
+    let done = 0;
     const proc = spawn('node', args, { cwd: DIR, stdio: ['ignore', 'pipe', 'pipe'] });
     child = proc;
-    stream(proc);
+    stream(proc, line => {
+      push('__log', { line });
+      if (kind === 'play' && total && /^\s*(ok :|FAIL:|skip:)/.test(line)) { done++; push('__progress', { done, total }); }
+    });
     proc.on('exit', code => {
       child = null;
       push('__done', { kind, code });
@@ -60,7 +66,8 @@ function createRunner(push) {
   const api = {
     play: arg => run('play',
       ['replay.js', arg.name, ...(arg.generate ? ['--generate'] : []), ...(arg.headless ? ['--headless'] : [])],
-      `replay ${arg.name}${arg.generate ? ' --generate' : ''}`),
+      `replay ${arg.name}${arg.generate ? ' --generate' : ''}`,
+      stepCount(readRecording(arg.name).text)),
     record: () => run('record', ['record.js', '--no-prompt'], 'recording a new session'),
     stop: () => { if (child) child.kill('SIGTERM'); return { ok: true }; },
     kill: () => { try { child && child.kill('SIGTERM'); } catch {} },

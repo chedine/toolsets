@@ -240,6 +240,9 @@
 <script>
 const $ = s => document.querySelector(s);
 let recs = [], sel = -1, selName = null, running = false, editing = false, tab = 'case';
+// which recording the current output belongs to, so it isn't shown for another
+let logOwner = null;
+const RECORD_LOG = ' record';
 
 const api = {
   list:   () => fetch('/api/list').then(r => r.json()),
@@ -372,6 +375,8 @@ async function selectRow(i) {
   $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
   const { text } = await api.open(r.name);
   $('#editor').value = text;
+  // output belongs to whichever recording produced it — drop it on a switch
+  if (logOwner !== r.name) { $('#log').textContent = ''; logOwner = null; }
   renderSteps(text); setView('steps');
   document.querySelector('.row.sel')?.scrollIntoView({ block: 'nearest' });
 }
@@ -403,11 +408,12 @@ $('#saveBtn').onclick = async () => {
 // ---- run ----
 async function play(generate) {
   if (running || sel < 0 || editing) return;
+  logOwner = recs[sel].name; // this output belongs to the recording we're playing
   $('#log').textContent = ''; setView('log');
   const res = await api.play({ name: recs[sel].name, generate });
   if (res && res.error) { appendLog({ line: res.error }); setView('steps'); }
 }
-async function record() { if (!running) await api.record(); }
+async function record() { if (!running) { logOwner = RECORD_LOG; await api.record(); } }
 
 function appendLog({ line }) {
   const isFail = /^\s*FAIL:/.test(line);
@@ -439,6 +445,8 @@ function restoreDetail(keepView) {
     $('#detail-title').textContent = 'select a recording'; $('#detail-title').classList.add('dim');
     $('#stepcount').textContent = '';
     $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
+    // nothing selected and not showing a just-finished run: drop stale output
+    if (!keepView) { $('#log').textContent = ''; logOwner = null; }
     $('#steps').innerHTML = ''; setView(keepView ? 'log' : 'steps');
   }
 }

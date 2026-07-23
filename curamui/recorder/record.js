@@ -266,12 +266,16 @@ async function main() {
 
   await new Promise(resolve => { browser.on('disconnected', resolve); page.on('close', resolve); });
 
-  if (state.steps.length) {
+  // --no-prompt (used when spawned from the shell UI, which has no TTY stdin):
+  // save via the overlay instead; any unsaved steps at close are discarded.
+  if (state.steps.length && !process.argv.includes('--no-prompt')) {
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
     const name = await new Promise(res => rl.question(`Browser closed with ${state.steps.length} unsaved steps. Recording name (empty = discard): `, res));
     rl.close();
     if (name.trim()) save(name.trim());
     else console.log('Discarded.');
+  } else if (state.steps.length) {
+    console.log(`Browser closed with ${state.steps.length} unsaved steps — discarded (save via the overlay next time).`);
   }
   await browser.close().catch(() => {});
 }

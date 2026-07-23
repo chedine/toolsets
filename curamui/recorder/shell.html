@@ -178,6 +178,10 @@
           <select id="set-font"></select>
         </div>
         <div class="field">
+          <label>… or any Google font (type the family name)</label>
+          <input id="set-font-custom" type="text" spellcheck="false" placeholder="e.g. Roboto Mono, Cascadia Code, VT323">
+        </div>
+        <div class="field">
           <label>UI font size (px)</label>
           <input id="set-fontsize" type="range" min="11" max="20" step="1">
         </div>
@@ -231,8 +235,14 @@ function ensureWebFont(web) {
   l.href = 'https://fonts.googleapis.com/css2?family=' + web.replace(/\s+/g, '+') + ':wght@400;600&display=swap';
   document.head.appendChild(l);
 }
+// a name not in FONTS is treated as a custom Google font family
+function fontDef(name) {
+  if (!name) return FONTS['System Mono'];
+  if (FONTS[name]) return FONTS[name];
+  return { web: name, stack: `"${name}",ui-monospace,monospace` };
+}
 function applyFont(name) {
-  const f = FONTS[name] || FONTS['System Mono'];
+  const f = fontDef(name);
   if (f.web) ensureWebFont(f.web);
   document.documentElement.style.setProperty('--ui-font', f.stack);
 }
@@ -422,12 +432,15 @@ async function loadSettings() {
   $('#set-timeout').value = (cfg.until && cfg.until.timeout) ?? '';
   $('#set-interval').value = (cfg.until && cfg.until.interval) ?? '';
   populateFontSelect();
-  $('#set-font').value = appearance.font;
+  if (FONTS[appearance.font]) { $('#set-font').value = appearance.font; $('#set-font-custom').value = ''; }
+  else { $('#set-font').value = 'System Mono'; $('#set-font-custom').value = appearance.font; }
   $('#set-fontsize').value = appearance.size;
   $('#fontsize-val').textContent = appearance.size + 'px';
 }
 // live preview while playing with fonts
-$('#set-font').onchange = () => applyFont($('#set-font').value);
+$('#set-font').onchange = () => { $('#set-font-custom').value = ''; applyFont($('#set-font').value); };
+$('#set-font-custom').onchange = () => { const v = $('#set-font-custom').value.trim(); if (v) applyFont(v); };
+$('#set-font-custom').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); const v = e.target.value.trim(); if (v) applyFont(v); } });
 $('#set-fontsize').oninput = () => applySize($('#set-fontsize').value);
 $('#settings-form').onsubmit = async e => {
   e.preventDefault();
@@ -436,7 +449,8 @@ $('#settings-form').onsubmit = async e => {
   patch.until = {};
   if (to > 0) patch.until.timeout = to;
   if (iv > 0) patch.until.interval = iv;
-  appearance = { font: $('#set-font').value, size: +$('#set-fontsize').value };
+  const custom = $('#set-font-custom').value.trim();
+  appearance = { font: custom || $('#set-font').value, size: +$('#set-fontsize').value };
   patch.ui = appearance;
   await api.setConfig(patch);
   $('#set-note').textContent = 'saved'; setTimeout(() => ($('#set-note').textContent = ''), 1500);

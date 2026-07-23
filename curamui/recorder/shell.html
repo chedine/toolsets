@@ -22,22 +22,23 @@
     display:flex; align-items:center; gap:22px;
     padding:12px var(--pad); border-bottom:1px solid var(--hair);
   }
-  .brand { font-size:12px; letter-spacing:1.5px; }
-  .brand b { font-weight:600; }
-  nav#tabs { display:flex; gap:20px; flex:1; }
+  nav#tabs { display:flex; gap:26px; flex:1; }
   .tab {
-    font:inherit; font-size:12px; letter-spacing:.4px; background:none; border:0;
-    color:var(--muted); padding:2px 0; cursor:pointer; border-bottom:1px solid transparent;
+    font:inherit; font-size:15px; letter-spacing:.3px; background:none; border:0;
+    color:var(--muted); padding:2px 0 5px; cursor:pointer; border-bottom:2px solid transparent;
   }
   .tab:hover { color:var(--ink); }
   .tab.active { color:var(--ink); border-bottom-color:var(--ink); }
   .actions { display:flex; align-items:center; gap:16px; }
-  button.link {
+  button.ico {
     font:inherit; font-size:12px; letter-spacing:.3px; color:var(--ink);
-    background:none; border:0; padding:0; cursor:pointer; border-bottom:1px solid transparent;
+    background:none; border:0; padding:2px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:7px;
   }
-  button.link:hover:not(:disabled) { border-bottom-color:var(--ink); }
-  button.link:disabled { color:var(--faint); cursor:default; }
+  button.ico svg { width:15px; height:15px; display:block; }
+  button.ico:hover:not(:disabled) { color:#000; }
+  button.ico:disabled { color:var(--faint); cursor:default; }
+  button.ico.rec span { font-size:12px; }
   .toggle { color:var(--muted); cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:12px; }
   .toggle input { accent-color:var(--ink); margin:0; }
 
@@ -108,13 +109,16 @@
 </head>
 <body>
   <header>
-    <div class="brand">curam <span class="dim">·</span> <b>recorder</b></div>
     <nav id="tabs">
       <button class="tab active" data-tab="case">Case Portal</button>
       <button class="tab" data-tab="citizen">Citizen Portal</button>
       <button class="tab" data-tab="settings">Settings</button>
     </nav>
-    <div class="actions"><button class="link" id="recBtn">Record</button></div>
+    <div class="actions">
+      <button class="ico rec" id="recBtn" title="Record">
+        <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="4.5" fill="currentColor"/></svg><span>Record</span>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -126,11 +130,11 @@
           <div id="detail-actions">
             <span id="stepcount"></span>
             <label class="toggle" id="genWrap"><input type="checkbox" id="gen"> generate</label>
-            <button class="link" id="playBtn" disabled>play</button>
-            <button class="link" id="stopBtn" disabled hidden>stop</button>
-            <button class="link" id="editBtn" disabled>edit</button>
-            <button class="link" id="saveBtn" hidden>save</button>
-            <button class="link" id="cancelBtn" hidden>cancel</button>
+            <button class="ico" id="playBtn" title="Play" disabled><svg viewBox="0 0 16 16"><path d="M4 3l9 5-9 5z" fill="currentColor"/></svg></button>
+            <button class="ico" id="stopBtn" title="Stop" disabled hidden><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" fill="currentColor"/></svg></button>
+            <button class="ico" id="editBtn" title="Edit" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M11.3 2.6l2.1 2.1L5.6 12.5 3 13l.5-2.6z"/></svg></button>
+            <button class="ico" id="saveBtn" title="Save" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13.5h10"/></svg></button>
+            <button class="ico" id="cancelBtn" title="Cancel" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
           </div>
         </div>
         <div id="progress"><div id="bar"></div></div>
@@ -153,15 +157,20 @@
           <label>Application URL</label>
           <input id="set-url" type="text" spellcheck="false" placeholder="http://localhost:18081/Curam/AppController.do">
         </div>
-        <div class="field row2">
-          <div><label>until — timeout (seconds)</label><input id="set-timeout" type="number" min="1" style="width:140px"></div>
-          <div><label>until — interval (seconds)</label><input id="set-interval" type="number" min="1" style="width:140px"></div>
+        <div class="field">
+          <label>until — timeout (seconds)</label>
+          <input id="set-timeout" type="number" min="1">
+        </div>
+        <div class="field">
+          <label>until — interval (seconds)</label>
+          <input id="set-interval" type="number" min="1">
         </div>
         <div class="set-actions">
-          <button class="link" type="submit">save settings</button>
+          <button class="ico rec" type="submit" title="Save">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13.5h10"/></svg><span>Save</span>
+          </button>
           <span id="set-note"></span>
         </div>
-        <div class="hint">Stored in config.json. Other keys (headers, viewport, generate rules) are preserved.</div>
       </form>
     </section>
   </main>
@@ -170,7 +179,7 @@
 
 <script>
 const $ = s => document.querySelector(s);
-let recs = [], sel = -1, running = false, editing = false, tab = 'case';
+let recs = [], sel = -1, selName = null, running = false, editing = false, tab = 'case';
 
 const api = {
   list:   () => fetch('/api/list').then(r => r.json()),
@@ -242,7 +251,7 @@ function renderSteps(text) {
 
 async function selectRow(i) {
   if (running || editing) return;
-  sel = i; renderList();
+  sel = i; selName = recs[i].name; renderList();
   const r = recs[i];
   $('#detail-title').textContent = r.name;
   $('#detail-title').classList.remove('dim');
@@ -301,12 +310,27 @@ function setProgress(frac, on) {
 }
 
 // ---- SSE ----
+function restoreDetail() {
+  if (sel >= 0 && recs[sel]) {
+    const r = recs[sel];
+    $('#detail-title').textContent = r.name; $('#detail-title').classList.remove('dim');
+    $('#stepcount').textContent = r.steps + ' steps';
+    $('#playBtn').disabled = false; $('#editBtn').disabled = false;
+    api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView('steps'); });
+  } else {
+    selName = null;
+    $('#detail-title').textContent = 'select a recording'; $('#detail-title').classList.add('dim');
+    $('#stepcount').textContent = ''; $('#playBtn').disabled = true; $('#editBtn').disabled = true;
+    $('#steps').innerHTML = ''; setView('steps');
+  }
+}
 function onRunning({ kind, label }) {
   running = true;
   $('#status').textContent = label + ' …'; $('#status').className = 'run';
   $('#playBtn').hidden = true; $('#editBtn').disabled = true; $('#recBtn').disabled = true;
   $('#stopBtn').hidden = false; $('#stopBtn').disabled = false; $('#genWrap').style.visibility = 'hidden';
-  if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#log').textContent = ''; setView('log'); }
+  // a record session isn't about the selected recording — clear its step count
+  if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = ''; $('#log').textContent = ''; setView('log'); }
   setProgress(0, kind === 'play');
 }
 function onDone({ kind, code }) {
@@ -314,13 +338,14 @@ function onDone({ kind, code }) {
   const ok = code === 0 || code === null;
   $('#status').textContent = kind === 'record' ? 'recording ended' : (ok ? 'done' : `exited (${code})`);
   $('#status').className = ok ? '' : 'fail';
-  $('#stopBtn').hidden = true; $('#playBtn').hidden = false; $('#playBtn').disabled = sel < 0;
-  $('#editBtn').disabled = sel < 0; $('#recBtn').disabled = false; $('#genWrap').style.visibility = 'visible';
+  $('#stopBtn').hidden = true; $('#playBtn').hidden = false;
+  $('#recBtn').disabled = false; $('#genWrap').style.visibility = 'visible';
   setProgress(1, false);
-  if (sel >= 0) api.open(recs[sel].name).then(({ text }) => { renderSteps(text); if (kind !== 'play' || true) setView('steps'); });
+  renderList();
+  restoreDetail();
 }
 const handlers = {
-  list: data => { recs = data; if (!running) renderList(); },
+  list: data => { recs = data; if (selName) sel = recs.findIndex(r => r.name === selName); if (!running) renderList(); },
   log: appendLog,
   running: onRunning,
   done: onDone,

@@ -58,8 +58,10 @@ function createRunner(push) {
     });
     proc.on('exit', code => {
       child = null;
+      // list first (a new recording may have been saved) so the page has the
+      // refreshed set before it restores the detail on 'done'
+      push('__list', listRecordings());
       push('__done', { kind, code });
-      push('__list', listRecordings()); // a new recording may have been saved
     });
     return { ok: true };
   }

@@ -38,7 +38,18 @@ try { fs.mkdirSync(DATA_DIR, { recursive: true }); } catch {}
   }
   if (webview && typeof webview.loadUrl === 'function' && !webview.url()) webview.loadUrl(srv.url);
 
-  const quit = () => { srv.close(); process.exit(0); };
+  // close / window-close-requested / application-close-requested can all fire
+  // for one quit — run cleanup once. (On Windows a benign WebView2 teardown log
+  // "Failed to unregister class Chrome_WidgetWin_0. Error = 1412" may still
+  // print as the process exits; it's harmless and comes from WebView2 itself.)
+  let quitting = false;
+  const quit = () => {
+    if (quitting) return;
+    quitting = true;
+    srv.close();
+    try { webview && webview.dispose && webview.dispose(); } catch {}
+    setTimeout(() => process.exit(0), 30);
+  };
   win.on('close', quit);
   app.on('window-close-requested', quit);
   app.on('application-close-requested', quit);

@@ -4,10 +4,17 @@
 // and shell-core.js unchanged — only the window + IPC glue differ from shell.js.
 const { Application } = require('@webviewjs/webview');
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 const { createRunner, makeDispatch } = require('./shell-core');
 
 const HTML = path.join(__dirname, 'shell.html');
+
+// WebView2 (Windows) needs a writable user-data folder; by default it tries to
+// create one next to the running exe (node.exe), which fails with "Access is
+// denied" under Program Files. Point it at a per-user writable location.
+const DATA_DIR = path.join(process.env.LOCALAPPDATA || os.tmpdir(), 'CuramRecorder', 'webview');
+try { fs.mkdirSync(DATA_DIR, { recursive: true }); } catch {}
 
 let webview = null;
 const push = (fn, arg) => {
@@ -31,7 +38,17 @@ app.whenReady().then(() => {
     resizable: true,
     decorations: true,
   });
-  webview = win.createWebview();
+  // a WebContext with an explicit dataDirectory keeps WebView2's profile in a
+  // writable location (see DATA_DIR above)
+  const webContext = app.createWebContext({ dataDirectory: DATA_DIR });
+  try {
+    webview = win.createWebview({ webContext });
+  } catch (e) {
+    console.error('Failed to create the native webview:', e.message);
+    console.error('Data dir:', DATA_DIR);
+    console.error('Fallback: run the zero-dependency window with  npm run ui');
+    process.exit(1);
+  }
 
   webview.expose('shell', {
     list:   async () => dispatch('list'),

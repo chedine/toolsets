@@ -530,8 +530,12 @@ class CuramDriver {
       const state = await f.evaluate(() => {
         const n = s => (s || '').replace(/\s+/g, ' ').trim();
         const h = document.querySelector('#ieg-root h1, .page-title-bar .title, h1, h2');
-        const err = document.querySelector('[class*="error"]');
-        return { title: h ? n(h.textContent) : '', hasErr: !!(err && err.offsetParent) };
+        // Validation summary that keeps us on the same page. IEG renders it as
+        // <div id="ieg-error-messages" class="messages-container"> — the class
+        // has no "error" substring, only the id does — so match the id and any
+        // error-classed banner, and require actual visible text.
+        const err = document.querySelector('#ieg-error-messages, [class*="error" i], [role="alert"]');
+        return { title: h ? n(h.textContent) : '', hasErr: !!(err && err.offsetParent && n(err.textContent)) };
       }).catch(() => null);
       if (!state) break;
       if (state.title && state.title !== before) break; // advanced

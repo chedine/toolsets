@@ -455,7 +455,11 @@ class CuramDriver {
     const pre = iegBefore === null ? await this._navSignature() : null;
     const deadline = Date.now() + 15000;
     for (;;) {
-      const modalBtn = this.page.locator('.cds--modal-container button.cds--btn', { hasText: label }).last();
+      // Carbon modal buttons live in the TOP document, outside the iframe. Match
+      // ANY button in the modal container by text — the recorder captures
+      // `.cds--modal-container button` textContent, so a wizard-completion
+      // "Close Modal" button (not a .cds--btn) must be found here too.
+      const modalBtn = this.page.locator('.cds--modal-container button', { hasText: label }).last();
       if (await modalBtn.isVisible().catch(() => false)) {
         await modalBtn.click();
         await this._waitForNav(pre);

@@ -456,10 +456,16 @@ class CuramDriver {
     const deadline = Date.now() + 15000;
     for (;;) {
       // Carbon modal buttons live in the TOP document, outside the iframe. Match
-      // ANY button in the modal container by text — the recorder captures
-      // `.cds--modal-container button` textContent, so a wizard-completion
-      // "Close Modal" button (not a .cds--btn) must be found here too.
-      const modalBtn = this.page.locator('.cds--modal-container button', { hasText: label }).last();
+      // footer buttons by text, plus the icon-only close (X) by accessible name:
+      // `<button class="cds--modal-close" aria-label="Close Modal">` has an empty
+      // textContent (the label lives in the SVG <title>), so text matching can't
+      // reach it — aria-label / title do. The recorder captures either form.
+      const modalBtn = this.page.locator([
+        `.cds--modal-container button.cds--btn:has-text("${label}")`,
+        `.cds--modal-container button:has-text("${label}")`,
+        `.cds--modal-container button[aria-label="${label}"]`,
+        `.cds--modal-container button[title="${label}"]`,
+      ].join(', ')).last();
       if (await modalBtn.isVisible().catch(() => false)) {
         await modalBtn.click();
         await this._waitForNav(pre);

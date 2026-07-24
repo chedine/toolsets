@@ -75,6 +75,35 @@ function startServer({ port = 0 } = {}) {
         broadcast('list', listRecordings());
         return json(res, 200, { ok: true, removed });
       }
+      if (u.pathname === '/api/rename') {
+        const { name, to } = await readBody(req);
+        const from = String(name || '').replace(/[^\w.-]+/g, '-');
+        const dst = String(to || '').replace(/[^\w.-]+/g, '-');
+        if (!from || !dst) return json(res, 400, { error: 'bad name' });
+        if (dst === from) return json(res, 200, { ok: true, name: dst });
+        if (fs.existsSync(path.join(DATA, dst + '.dsl'))) return json(res, 409, { error: `"${dst}" already exists` });
+        if (!fs.existsSync(path.join(DATA, from + '.dsl'))) return json(res, 404, { error: 'not found' });
+        for (const ext of ['.dsl', '.json']) {
+          const src = path.join(DATA, from + ext);
+          if (fs.existsSync(src)) fs.renameSync(src, path.join(DATA, dst + ext));
+        }
+        broadcast('list', listRecordings());
+        return json(res, 200, { ok: true, name: dst });
+      }
+      if (u.pathname === '/api/duplicate') {
+        const { name } = await readBody(req);
+        const from = String(name || '').replace(/[^\w.-]+/g, '-');
+        if (!from || !fs.existsSync(path.join(DATA, from + '.dsl'))) return json(res, 404, { error: 'not found' });
+        // first free "<name>-copy", "<name>-copy-2", ...
+        let dst, i = 1;
+        do { dst = from + '-copy' + (i > 1 ? '-' + i : ''); i++; } while (fs.existsSync(path.join(DATA, dst + '.dsl')));
+        for (const ext of ['.dsl', '.json']) {
+          const src = path.join(DATA, from + ext);
+          if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DATA, dst + ext));
+        }
+        broadcast('list', listRecordings());
+        return json(res, 200, { ok: true, name: dst });
+      }
       if (u.pathname === '/api/config') {
         if (req.method === 'POST') {
           const patch = await readBody(req);

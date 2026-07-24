@@ -85,6 +85,16 @@
     font-size:calc(var(--ui-size) - 1px);
   }
   #confirm[hidden] { display:none; }
+  #rename {
+    display:flex; align-items:center; gap:12px; padding:8px var(--pad);
+    border-bottom:1px solid var(--hair); background:var(--panel);
+    font-size:calc(var(--ui-size) - 1px);
+  }
+  #rename input {
+    flex:1; min-width:0; font:inherit; color:var(--ink); background:var(--bg);
+    border:0; border-bottom:1px solid var(--faint); padding:3px 4px; outline:0;
+  }
+  #rename input:focus { border-bottom-color:var(--ink); }
   button.link {
     font:inherit; font-size:calc(var(--ui-size) - 1px); color:var(--ink);
     background:none; border:0; padding:0; cursor:pointer; border-bottom:1px solid transparent;
@@ -198,7 +208,9 @@
             <button class="ico" id="editBtn" title="Edit" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M11.3 2.6l2.1 2.1L5.6 12.5 3 13l.5-2.6z"/></svg></button>
             <button class="ico" id="saveBtn" title="Save" hidden disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13.5h10"/></svg></button>
             <button class="ico" id="cancelBtn" title="Cancel" hidden disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
-            <button class="ico" id="delBtn" title="Delete" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h10M6.5 4.5V3h3v1.5M4.5 4.5l.6 8.2h5.8l.6-8.2M6.8 7v3.4M9.2 7v3.4"/></svg></button>
+            <button class="ico" id="dupBtn" title="Duplicate (c)" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1"/><path d="M10.5 5.5V3.5a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/></svg></button>
+            <button class="ico" id="renBtn" title="Rename (F2)" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.5H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-4"/><path d="M11 2.5l2.5 2.5L8 10.5l-3 .5.5-3z"/></svg></button>
+            <button class="ico" id="delBtn" title="Delete (d)" disabled><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h10M6.5 4.5V3h3v1.5M4.5 4.5l.6 8.2h5.8l.6-8.2M6.8 7v3.4M9.2 7v3.4"/></svg></button>
           </div>
         </div>
         <div id="progress"><div id="bar"></div></div>
@@ -206,6 +218,12 @@
           <span id="confirm-text"></span>
           <button class="link danger" id="confirmYes">delete</button>
           <button class="link" id="confirmNo">cancel</button>
+        </div>
+        <div id="rename" hidden>
+          <span class="dim">rename to</span>
+          <input id="rename-input" spellcheck="false" autocomplete="off">
+          <button class="link" id="renameYes">rename</button>
+          <button class="link" id="renameNo">cancel</button>
         </div>
         <div id="status"></div>
         <div id="body">
@@ -258,7 +276,7 @@
     </section>
   </main>
 
-  <footer id="hint"><kbd>↑↓</kbd> select &nbsp;·&nbsp; <kbd>⏎</kbd> play &nbsp;·&nbsp; <kbd>r</kbd> record &nbsp;·&nbsp; <kbd>d</kbd> delete &nbsp;·&nbsp; <kbd>esc</kbd> stop</footer>
+  <footer id="hint"><kbd>↑↓</kbd> select &nbsp;·&nbsp; <kbd>⏎</kbd> play &nbsp;·&nbsp; <kbd>r</kbd> record &nbsp;·&nbsp; <kbd>c</kbd> copy &nbsp;·&nbsp; <kbd>F2</kbd> rename &nbsp;·&nbsp; <kbd>d</kbd> delete &nbsp;·&nbsp; <kbd>esc</kbd> stop</footer>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -274,6 +292,8 @@ const api = {
   stop:   () => fetch('/api/stop', { method: 'POST' }),
   save:   (name, text) => fetch('/api/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, text }) }).then(r => r.json()),
   del:    name => fetch('/api/delete', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) }).then(r => r.json()),
+  rename: (name, to) => fetch('/api/rename', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, to }) }).then(r => r.json()),
+  duplicate: name => fetch('/api/duplicate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) }).then(r => r.json()),
   history: () => fetch('/api/history').then(r => r.json()),
   config: () => fetch('/api/config').then(r => r.json()),
   setConfig: patch => fetch('/api/config', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch) }).then(r => r.json()),
@@ -431,6 +451,7 @@ function renderSteps(text) {
 
 async function selectRow(i) {
   if (running || editing) return;
+  hideConfirm(); hideRename();
   sel = i; selName = recs[i].name; renderList();
   const r = recs[i];
   $('#detail-title').textContent = r.name;
@@ -438,7 +459,7 @@ async function selectRow(i) {
   $('#stepcount').textContent = r.steps + ' steps';
   $('#status').textContent = r.params.length ? 'params: ' + r.params.join(', ') : '';
   $('#status').className = '';
-  $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
+  $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false; $('#dupBtn').disabled = false; $('#renBtn').disabled = false;
   const { text } = await api.open(r.name);
   $('#editor').value = text;
   renderSteps(text); setView('steps');
@@ -453,7 +474,7 @@ function move(d) {
 // ---- edit ----
 function setEditing(on) {
   editing = on;
-  $('#editBtn').hidden = on; $('#playBtn').hidden = on; $('#delBtn').hidden = on;
+  $('#editBtn').hidden = on; $('#playBtn').hidden = on; $('#delBtn').hidden = on; $('#dupBtn').hidden = on; $('#renBtn').hidden = on;
   // save/cancel only exist (and only act) while editing
   $('#saveBtn').hidden = !on; $('#saveBtn').disabled = !on;
   $('#cancelBtn').hidden = !on; $('#cancelBtn').disabled = !on;
@@ -497,20 +518,21 @@ function restoreDetail() {
     const r = recs[sel];
     $('#detail-title').textContent = r.name; $('#detail-title').classList.remove('dim');
     $('#stepcount').textContent = r.steps + ' steps';
-    $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false;
+    $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false; $('#dupBtn').disabled = false; $('#renBtn').disabled = false;
     api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView('steps'); });
   } else {
     selName = null;
     $('#detail-title').textContent = 'select a recording'; $('#detail-title').classList.add('dim');
     $('#stepcount').textContent = '';
-    $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
+    $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true; $('#dupBtn').disabled = true; $('#renBtn').disabled = true;
     $('#steps').innerHTML = ''; setView('steps');
   }
 }
 function onRunning({ kind, label }) {
   running = true;
+  hideConfirm(); hideRename();
   $('#status').textContent = label + ' …'; $('#status').className = 'run';
-  $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true;
+  $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true; $('#dupBtn').disabled = true; $('#renBtn').disabled = true;
   $('#recBtn').disabled = true; $('#stopBtn').disabled = false;
   // a record session isn't about the selected recording — clear its step count
   if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = ''; }
@@ -604,11 +626,56 @@ $('#confirmYes').onclick = async () => {
   $('#status').textContent = `deleted ${name} (${(res.removed || []).join(', ')})`; $('#status').className = '';
 };
 
+// ---- rename (inline; no native dialog) ----
+function hideRename() { $('#rename').hidden = true; }
+function askRename() {
+  if (sel < 0 || running || editing) return;
+  hideConfirm();
+  $('#rename-input').value = recs[sel].name;
+  $('#rename').hidden = false;
+  const inp = $('#rename-input'); inp.focus(); inp.select();
+}
+async function doRename() {
+  const from = selName, to = $('#rename-input').value.trim();
+  hideRename();
+  if (!from || !to || to === from) return;
+  const res = await api.rename(from, to);
+  if (res && res.error) { $('#status').textContent = 'rename failed: ' + res.error; $('#status').className = 'fail'; return; }
+  selName = res.name;
+  recs = await api.list();
+  sel = recs.findIndex(r => r.name === selName);
+  renderList(); restoreDetail();
+  $('#status').textContent = `renamed to ${res.name}`; $('#status').className = '';
+}
+$('#renBtn').onclick = askRename;
+$('#renameNo').onclick = hideRename;
+$('#renameYes').onclick = doRename;
+$('#rename-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); doRename(); }
+  else if (e.key === 'Escape') { e.preventDefault(); hideRename(); }
+});
+
+// ---- duplicate (copy with an auto -copy suffix, then select it) ----
+async function duplicate() {
+  if (sel < 0 || running || editing) return;
+  const res = await api.duplicate(selName);
+  if (res && res.error) { $('#status').textContent = 'duplicate failed: ' + res.error; $('#status').className = 'fail'; return; }
+  selName = res.name;
+  recs = await api.list();
+  sel = recs.findIndex(r => r.name === selName);
+  renderList();
+  if (sel >= 0) selectRow(sel);
+  $('#status').textContent = `duplicated to ${res.name}`; $('#status').className = '';
+}
+$('#dupBtn').onclick = duplicate;
+
 $('#playBtn').onclick = () => play();
 $('#recBtn').onclick = record;
 $('#stopBtn').onclick = () => api.stop();
 document.addEventListener('keydown', e => {
   if (tab !== 'case' || editing) return;
+  // the rename field owns the keyboard while open (its own handler does Enter/Esc)
+  if (!$('#rename').hidden) return;
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
   // a pending delete confirmation captures the keyboard
   if (!$('#confirm').hidden) {
@@ -620,6 +687,8 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
   else if (e.key === 'Enter') { e.preventDefault(); play(); }
   else if (e.key === 'r') { record(); }
+  else if (e.key === 'c') { e.preventDefault(); duplicate(); }
+  else if (e.key === 'F2') { e.preventDefault(); askRename(); }
   else if (e.key === 'd' || e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); askDelete(); }
   else if (e.key === 'Escape') { if (running) api.stop(); }
 });

@@ -128,6 +128,12 @@
   .sline:first-child, .sline.blank { border-top:0; }
   .sline.blank { padding:0 var(--pad); }
   .sline:hover { background:var(--panel); }
+  /* live replay: each step lights up as it completes */
+  .sline.step-ok   { background:#e7f6e8; }
+  .sline.step-skip { background:#f4eede; }
+  .sline.step-fail { background:#fbe5e0; }
+  .sline.step-ok .gutter, .sline.step-skip .gutter, .sline.step-fail .gutter { color:var(--ink); }
+  .sline.step-current { box-shadow:inset 3px 0 0 var(--muted); }
   .gutter { width:34px; flex:none; text-align:right; padding-right:12px; color:var(--faint); user-select:none; }
   .code { white-space:pre-wrap; word-break:break-word; }
   .sline.cmt .code { color:var(--muted); }
@@ -443,10 +449,30 @@ function renderSteps(text) {
     if (isStep) n++;
     const row = document.createElement('div');
     row.className = 'sline' + (cmt ? ' cmt' : '') + (prm ? ' prm' : '') + (blank ? ' blank' : '');
+    if (isStep) row.dataset.step = n;
     const g = document.createElement('span'); g.className = 'gutter'; g.textContent = isStep ? n : '';
     const c = document.createElement('span'); c.className = 'code'; c.textContent = line || ' ';
     row.append(g, c); host.appendChild(row);
   }
+}
+
+// ---- live step highlighting during replay ----
+function clearStepMarks() {
+  document.querySelectorAll('#steps .sline').forEach(e => e.classList.remove('step-ok', 'step-skip', 'step-fail', 'step-current'));
+}
+function markCurrent(step) {
+  document.querySelectorAll('#steps .sline.step-current').forEach(e => e.classList.remove('step-current'));
+  const el = document.querySelector(`#steps .sline[data-step="${step}"]`);
+  if (el) { el.classList.add('step-current'); el.scrollIntoView({ block: 'nearest' }); }
+}
+function markStep({ done, outcome }) {
+  const el = document.querySelector(`#steps .sline[data-step="${done}"]`);
+  if (el) {
+    el.classList.remove('step-current');
+    el.classList.add(outcome === 'fail' ? 'step-fail' : outcome === 'skip' ? 'step-skip' : 'step-ok');
+    el.scrollIntoView({ block: 'nearest' });
+  }
+  if (outcome !== 'fail') markCurrent(done + 1); // point at the next step
 }
 
 async function selectRow(i) {
@@ -492,9 +518,9 @@ $('#saveBtn').onclick = async () => {
 // ---- run ----
 async function play() {
   if (running || sel < 0 || editing) return;
-  $('#log').textContent = ''; setView('log');
+  // the running event puts the steps view up and clears marks; keep steps here
   const res = await api.play({ name: recs[sel].name });
-  if (res && res.error) { appendLog({ line: res.error }); setView('steps'); }
+  if (res && res.error) { $('#status').textContent = res.error; $('#status').className = 'fail'; }
 }
 async function record() { if (!running) await api.record(); }
 
@@ -513,12 +539,15 @@ function setProgress(frac, on) {
 }
 
 // ---- SSE ----
-function restoreDetail() {
+// keepSteps: leave the highlighted step rows in place (after a replay) instead
+// of re-rendering the DSL, so the green/red marks stay visible
+function restoreDetail(keepSteps) {
   if (sel >= 0 && recs[sel]) {
     const r = recs[sel];
     $('#detail-title').textContent = r.name; $('#detail-title').classList.remove('dim');
     $('#stepcount').textContent = r.steps + ' steps';
     $('#playBtn').disabled = false; $('#editBtn').disabled = false; $('#delBtn').disabled = false; $('#dupBtn').disabled = false; $('#renBtn').disabled = false;
+    if (keepSteps) { document.querySelectorAll('#steps .sline.step-current').forEach(e => e.classList.remove('step-current')); return; }
     api.open(r.name).then(({ text }) => { $('#editor').value = text; renderSteps(text); setView('steps'); });
   } else {
     selName = null;
@@ -534,10 +563,15 @@ function onRunning({ kind, label }) {
   $('#status').textContent = label + ' …'; $('#status').className = 'run';
   $('#playBtn').disabled = true; $('#editBtn').disabled = true; $('#delBtn').disabled = true; $('#dupBtn').disabled = true; $('#renBtn').disabled = true;
   $('#recBtn').disabled = true; $('#stopBtn').disabled = false;
-  // a record session isn't about the selected recording — clear its step count
-  if (kind === 'record') { $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = ''; }
-  // show the live output for the duration of the run, whoever started it
-  if (!editing) { $('#log').textContent = ''; setView('log'); }
+  if (kind === 'record') {
+    // a record session isn't about the selected recording — clear its step count
+    $('#detail-title').textContent = 'new recording'; $('#detail-title').classList.remove('dim'); $('#stepcount').textContent = '';
+    if (!editing) { $('#log').textContent = ''; setView('log'); }
+  } else if (!editing) {
+    // replay: keep the steps on screen and light them up in place
+    $('#log').textContent = ''; // full output still goes to History
+    setView('steps'); clearStepMarks(); markCurrent(1);
+  }
   setProgress(0, kind === 'play');
 }
 function onDone({ kind, code }) {
@@ -549,7 +583,8 @@ function onDone({ kind, code }) {
   $('#recBtn').disabled = false;
   setProgress(1, false);
   renderList();
-  restoreDetail(); // back to the steps; the run's output is kept in History
+  // for a replay, keep the highlighted steps visible; record re-renders normally
+  restoreDetail(kind === 'play');
   if (!ok) $('#status').textContent += ' — see History';
 }
 const handlers = {
@@ -557,7 +592,7 @@ const handlers = {
   log: appendLog,
   running: onRunning,
   done: onDone,
-  progress: ({ done, total }) => setProgress(done / total, true),
+  progress: ({ done, total, outcome }) => { setProgress(done / total, true); if (!editing) markStep({ done, outcome }); },
   history: data => { history = data; if (tab === 'history') renderHistory(); },
 };
 function connectEvents() {

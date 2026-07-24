@@ -76,7 +76,16 @@ function createRunner(push) {
     stream(proc, line => {
       push('__log', { line });
       if (entry.lines.length < MAX_LINES) entry.lines.push(line);
-      if (kind === 'play' && total && /^\s*(ok :|FAIL:|skip:)/.test(line)) { done++; push('__progress', { done, total }); }
+      // replay prints exactly one result line per step, in order, so `done` is
+      // the 1-based step index; include "?? skipping" so it can't drift.
+      if (kind === 'play' && total) {
+        const m = /^\s*(ok :|FAIL:|skip:|\?\? skipping)/.exec(line);
+        if (m) {
+          done++;
+          const outcome = m[1][0] === 'F' ? 'fail' : m[1][0] === 'o' ? 'ok' : 'skip';
+          push('__progress', { done, total, outcome });
+        }
+      }
     });
     proc.on('exit', code => {
       child = null;

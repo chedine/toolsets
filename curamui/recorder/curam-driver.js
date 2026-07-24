@@ -461,32 +461,47 @@ class CuramDriver {
         await this._waitForNav(pre);
         return this;
       }
-      for (const f of await this._candidateFrames()) {
-        // .action-set = normal Curam pages; a.buttonLink = IEG wizards. Also
-        // match by accessible name (title / aria-label / inner icon alt|title)
-        // so an icon-only button — e.g. the "Name Search" magnifier, whose text
-        // is visually hidden or absent — is still found.
-        const b = f.locator([
-          `.action-set a.first-action-control:has-text("${label}")`,
-          `.action-set a:has-text("${label}")`,
-          `a.buttonLink:has-text("${label}")`,
-          // Carbon / plain HTML buttons (e.g. a Carbon wizard's Next not inside
-          // a .cds--modal-container) — matched by their own text
-          `button.cds--btn:has-text("${label}")`, `button:has-text("${label}")`,
-          `a[title="${label}"]`, `button[title="${label}"]`, `input[type=submit][value="${label}"]`,
-          `a[aria-label="${label}"]`, `button[aria-label="${label}"]`,
-          `a:has(img[alt="${label}"])`, `button:has(img[alt="${label}"])`,
-          `a:has([title="${label}"])`, `button:has([title="${label}"])`,
-        ].join(', ')).first();
-        if (await b.isVisible().catch(() => false)) {
-          await b.click();
-          // IEG Next/Back: wait until the page heading changes (content
-          // swaps in place) or a validation banner appears, since the nav
-          // signature can't see an in-place content swap.
-          if (iegBefore !== null && /^(next|back|continue)$/i.test(label)) await this._waitForIegAdvance(iegBefore);
-          else await this._waitForNav(pre);
-          return this;
+      // Candidate selectors in PRIORITY order. We click the first VISIBLE match,
+      // not simply the first in DOM order: a person-search popup renders the
+      // real Search as an <a.first-action-control> but ALSO an accordion
+      // heading "Search Results" and a hidden pre-widget <input type=submit> —
+      // a DOM-order .first() would grab the accordion and never search. So try
+      // reliable selectors first and skip anything not visible.
+      // .action-set = normal Curam pages; a.buttonLink = IEG wizards; accessible
+      // name (title/aria-label/inner icon alt) covers icon-only buttons like the
+      // Name Search magnifier; accordion headings are excluded from the loose
+      // button/text match so they can never shadow a real button.
+      const selectors = [
+        `.action-set a.first-action-control:has-text("${label}")`,
+        `.action-set a:has-text("${label}")`,
+        `a.buttonLink:has-text("${label}")`,
+        `button.cds--btn:has-text("${label}")`,
+        `a[title="${label}"]`, `button[title="${label}"]`,
+        `input[type=submit][value="${label}"]`, `input[type=submit][title="${label}"]`,
+        `a[aria-label="${label}"]`, `button[aria-label="${label}"]`,
+        `a:has(img[alt="${label}"])`, `button:has(img[alt="${label}"])`,
+        `a:has([title="${label}"])`, `button:has([title="${label}"])`,
+        `button:not(.cds--accordion__heading):has-text("${label}")`,
+      ];
+      let target = null;
+      outer: for (const f of await this._candidateFrames()) {
+        for (const sel of selectors) {
+          const loc = f.locator(sel);
+          const n = await loc.count().catch(() => 0);
+          for (let i = 0; i < n; i++) {
+            const b = loc.nth(i);
+            if (await b.isVisible().catch(() => false)) { target = b; break outer; }
+          }
         }
+      }
+      if (target) {
+        await target.click();
+        // IEG Next/Back: wait until the page heading changes (content swaps in
+        // place) or a validation banner appears, since the nav signature can't
+        // see an in-place content swap.
+        if (iegBefore !== null && /^(next|back|continue)$/i.test(label)) await this._waitForIegAdvance(iegBefore);
+        else await this._waitForNav(pre);
+        return this;
       }
       if (Date.now() > deadline) throw new Error(`no button "${label}"`);
       await this.page.waitForTimeout(500);

@@ -4,9 +4,9 @@
   "description": "Curam UI action recorder/replayer (Playwright)",
   "main": "index.js",
   "scripts": {
-    "ui": "node shell-native.js",
-    "ui:chromium": "node shell.js",
-    "ui:serve": "node shell-server.js",
+    "ui": "node gui/shell-native.js",
+    "ui:chromium": "node gui/shell.js",
+    "ui:serve": "node gui/shell-server.js",
     "record": "node record.js",
     "replay": "node replay.js",
     "test": "node test-e2e.js"

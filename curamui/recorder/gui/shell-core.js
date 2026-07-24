@@ -6,7 +6,9 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const DIR = __dirname;
+// this file lives in recorder/gui/; the recorder root (data/, replay.js,
+// record.js, .runs.json, config.json) is one level up
+const DIR = path.join(__dirname, '..');
 const DATA = path.join(DIR, 'data');
 
 function listRecordings() {

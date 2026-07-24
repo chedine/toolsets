@@ -9,7 +9,7 @@ const path = require('path');
 const { listRecordings, readRecording, createRunner, DATA } = require('./shell-core');
 
 const HTML = path.join(__dirname, 'shell.html');
-const CONFIG = path.join(__dirname, 'config.json');
+const CONFIG = path.join(__dirname, '..', 'config.json'); // config.json is in the recorder root
 
 const isObj = v => v && typeof v === 'object' && !Array.isArray(v);
 const deepMerge = (base, patch) => {

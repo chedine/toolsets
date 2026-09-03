@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080d">
+  <title>Pi Web</title>
+  <link rel="stylesheet" href="/styles.css?v=20260902-9">
+  <link id="message-font-stylesheet" rel="stylesheet">
+</head>
+<body>
+  <div id="login" class="login-shell hidden">
+    <form id="login-form" class="dialog-card login-card">
+      <div class="wordmark"><i></i>HARNESS</div>
+      <h1>CONNECT TO PI</h1>
+      <p>Enter the access token configured on the host.</p>
+      <label>ACCESS TOKEN<input id="token-input" type="password" autocomplete="current-password"></label>
+      <button type="submit" class="primary">CONNECT</button>
+      <div id="login-error" class="error-text"></div>
+    </form>
+  </div>
+
+  <div id="app" class="app-shell" data-theme="dark">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand-row">
+        <div class="wordmark"><i></i>HARNESS</div>
+        <button id="sidebar-collapse" class="panel-collapse" title="Collapse sessions" aria-label="Collapse sessions">←</button>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div class="sidebar-section-heading"><span>SESSIONS</span><span id="connection" class="connection offline"><i></i>OFFLINE</span></div>
+        <nav id="session-list" class="session-list" aria-label="Sessions"></nav>
+
+        <section class="ledger-summary">
+          <div class="cost-row"><strong id="cost-value">$0.000</strong><span>USD</span></div>
+          <div class="context-row"><span>CONTEXT</span><span id="context-label">0% · 0 / —</span></div>
+          <div class="context-track"><i id="context-bar"></i></div>
+          <div class="stats-grid">
+            <div><span>TOKENS IN</span><strong id="tokens-in">0</strong></div>
+            <div><span>TOKENS OUT</span><strong id="tokens-out">0</strong></div>
+            <div><span>TOOL CALLS</span><strong id="tool-count">0</strong></div>
+            <div><span>TURNS</span><strong id="turn-count">0</strong></div>
+            <div><span>ASSISTANT</span><strong id="user-count">0</strong></div>
+            <div><span>MESSAGES</span><strong id="message-count">0</strong></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="sidebar-footer">
+        <button id="command-palette-trigger" class="command-palette-trigger" title="Open command palette">
+          <span><i>❯</i> COMMAND PALETTE</span><kbd>⌘K</kbd>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="scanlines"></div>
+      <header class="topbar">
+        <button id="sidebar-toggle" class="toolbar-button panel-reveal" title="Show sessions">☰</button>
+        <div class="session-heading">
+          <strong id="session-title">SELECT A SESSION</strong>
+          <span id="session-path">IDLE</span>
+        </div>
+        <div class="toolbar">
+          <button id="tool-toggle" class="toolbar-button" title="Show or hide tool calls">⌗</button>
+          <button id="details-toggle" class="toolbar-button" title="Models and settings">⚙</button>
+          <button id="theme-toggle" class="toolbar-button theme-toggle" title="Cycle theme">◐ DARK</button>
+        </div>
+      </header>
+
+      <section id="empty-state" class="empty-state">
+        <div class="empty-mark">◆</div>
+        <h1>PI ON YOUR NETWORK</h1>
+        <p>Open a session or create one. Runs continue after this page disconnects.</p>
+        <button id="empty-new-session" class="primary">NEW SESSION</button>
+      </section>
+
+      <section id="conversation" class="conversation hidden" aria-live="polite"></section>
+
+      <section id="composer" class="composer hidden">
+        <div id="queue-bar" class="queue-bar hidden"></div>
+        <div id="image-tray" class="image-tray hidden"></div>
+        <div class="composer-input">
+          <span>❯</span>
+          <input id="image-input" class="hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple>
+          <textarea id="prompt" rows="2" placeholder="instruct the agent…" spellcheck="true"></textarea>
+          <button id="image-picker" class="image-picker" title="Attach images" aria-label="Attach images">⊞</button>
+          <button id="send" class="send-button">SEND</button>
+        </div>
+        <div class="composer-actions">
+          <span>ENTER SEND</span><span>SHIFT+ENTER NEWLINE</span><span>ESC INTERRUPT</span>
+          <button id="send-follow-up" disabled>FOLLOW UP</button>
+          <button id="abort" class="hidden">INTERRUPT</button>
+        </div>
+      </section>
+    </main>
+
+    <aside id="details-panel" class="details-panel">
+      <div class="details-header">
+        <span>CONTROL DECK</span>
+        <button id="details-collapse" class="panel-collapse" title="Close controls">×</button>
+      </div>
+      <div class="details-section-title">MODEL</div>
+      <div id="model-list" class="model-list"></div>
+
+      <div class="details-section-title">SETTINGS</div>
+      <label class="setting-row"><span>THINKING LEVEL</span><select id="thinking-select" disabled></select></label>
+      <button id="show-tools" class="setting-row toggle-row"><span>SHOW TOOL CALLS</span><i></i></button>
+      <button id="show-thinking" class="setting-row toggle-row"><span>SHOW THINKING</span><i></i></button>
+      <button id="auto-compaction" class="setting-row toggle-row"><span>AUTO COMPACTION</span><i></i></button>
+
+      <div class="details-section-title">TEMPORARY FONT TESTER</div>
+      <datalist id="font-options"></datalist>
+      <label class="setting-row"><span>USER FONT</span><input id="user-font" list="font-options" autocomplete="off" spellcheck="false"></label>
+      <label class="setting-row"><span>USER SIZE</span><input id="user-font-size" type="number" min="10" max="24" step="0.5"></label>
+      <label class="setting-row"><span>AGENT FONT</span><input id="agent-font" list="font-options" autocomplete="off" spellcheck="false"></label>
+      <label class="setting-row"><span>AGENT SIZE</span><input id="agent-font-size" type="number" min="10" max="24" step="0.5"></label>
+    </aside>
+  </div>
+
+  <dialog id="command-palette-dialog" class="command-palette-dialog" aria-label="Command palette">
+    <div class="command-palette-shell">
+      <div class="command-palette-search">
+        <span>❯</span>
+        <input id="command-palette-input" aria-label="Search commands" placeholder="Type a command…" autocomplete="off" spellcheck="false">
+        <kbd>ESC</kbd>
+      </div>
+      <div class="command-palette-heading"><span>AVAILABLE COMMANDS</span><span id="command-palette-count"></span></div>
+      <div id="command-palette-results" class="command-palette-results" role="listbox" aria-label="Commands"></div>
+      <div class="command-palette-help"><span>↑↓ NAVIGATE</span><span>ENTER SELECT</span><span>ESC CLOSE</span></div>
+    </div>
+  </dialog>
+
+  <dialog id="session-search-dialog" class="session-search-dialog">
+    <div class="dialog-card">
+      <div class="dialog-heading"><h2>RESUME PI SESSION</h2><button id="session-search-close" class="panel-collapse" aria-label="Close">×</button></div>
+      <label>SEARCH<input id="session-search-input" placeholder="Name, directory, session ID, model, or message text" autocomplete="off"></label>
+      <div id="session-search-status" class="session-search-status">Searches native Pi sessions on this host.</div>
+      <div id="session-search-results" class="session-search-results"></div>
+    </div>
+  </dialog>
+
+  <dialog id="new-dialog">
+    <form id="new-form" method="dialog" class="dialog-card">
+      <div class="dialog-heading"><h2>NEW SESSION</h2><button value="cancel" class="panel-collapse">×</button></div>
+      <label>WORKING DIRECTORY<span class="path-picker-field"><input id="cwd-input" required placeholder="/Users/you/project" autocomplete="off"><button id="browse-cwd" type="button">BROWSE</button></span></label>
+      <label>NAME<input id="name-input" placeholder="Optional" autocomplete="off"></label>
+      <label class="check-row"><input id="approve-input" type="checkbox">TRUST PROJECT-LOCAL PI RESOURCES</label>
+      <p class="warning">Trusting a project allows its extensions to execute code on the host.</p>
+      <div id="new-error" class="error-text"></div>
+      <div class="dialog-actions"><button value="cancel">CANCEL</button><button id="create-session" value="default" class="primary">CREATE</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="directory-dialog" class="directory-dialog">
+    <form id="directory-form" method="dialog" class="dialog-card">
+      <div class="dialog-heading"><h2>SELECT WORKING DIRECTORY</h2><button value="cancel" class="panel-collapse" aria-label="Close">×</button></div>
+      <label>PATH<span class="path-picker-field"><input id="directory-path" autocomplete="off" spellcheck="false"><button type="submit">GO</button></span></label>
+      <div class="directory-toolbar"><button id="directory-up" type="button">↑ PARENT</button><span id="directory-count"></span></div>
+      <div id="directory-list" class="directory-list" role="listbox" aria-label="Host directories"></div>
+      <div id="directory-error" class="error-text"></div>
+      <div class="dialog-actions"><button value="cancel">CANCEL</button><button id="select-directory" value="default" class="primary">SELECT THIS DIRECTORY</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="delete-session-dialog">
+    <form id="delete-session-form" method="dialog" class="dialog-card">
+      <div class="dialog-heading"><h2>DELETE SESSION</h2><button value="cancel" class="panel-collapse" aria-label="Close">×</button></div>
+      <p>Permanently delete <strong id="delete-session-name"></strong> and its complete Pi session history?</p>
+      <p class="warning">Any Pi Web-managed run will be stopped. This cannot be undone.</p>
+      <div id="delete-session-error" class="error-text"></div>
+      <div class="dialog-actions"><button value="cancel">CANCEL</button><button id="confirm-delete-session" value="default" class="danger">DELETE</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="extension-dialog">
+    <form id="extension-form" method="dialog" class="dialog-card">
+      <h2 id="extension-title">PI NEEDS INPUT</h2>
+      <p id="extension-message"></p>
+      <div id="extension-field"></div>
+      <div class="dialog-actions"><button id="extension-cancel" value="cancel">CANCEL</button><button id="extension-submit" value="default" class="primary">CONTINUE</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast-region" class="toast-region" aria-live="assertive"></div>
+  <script type="module" src="/app.js?v=20260902-8"></script>
+</body>
+</html>

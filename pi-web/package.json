@@ -1,0 +1,21 @@
+{
+  "name": "pi-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal LAN web interface for Pi",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check": "node --check src/*.js && node --check public/app.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "dompurify": "3.4.14",
+    "marked": "18.0.11",
+    "ws": "8.21.3"
+  }
+}

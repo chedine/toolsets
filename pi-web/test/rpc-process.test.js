@@ -41,7 +41,6 @@ process.stdin.on("data", (chunk) => {
 
 test("Pi RPC process starts, snapshots, requests, and streams events", async (context) => {
   const directory = await mkdtemp(join(tmpdir(), "pi-web-rpc-"));
-  context.after(() => rm(directory, { recursive: true, force: true }));
   const executable = join(directory, "fake-pi");
   await writeFile(executable, fakePiSource);
   await chmod(executable, 0o700);
@@ -53,7 +52,10 @@ test("Pi RPC process starts, snapshots, requests, and streams events", async (co
     name: "test",
     approveProject: false,
   });
-  context.after(() => rpc.stop());
+  context.after(async () => {
+    await rpc.stop();
+    await rm(directory, { recursive: true, force: true });
+  });
 
   const initialState = await rpc.start();
   assert.equal(initialState.sessionId, "fake-session");

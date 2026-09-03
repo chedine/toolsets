@@ -7,13 +7,14 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "check": "node --check src/*.js && node --check public/app.js",
+    "check": "node --check src/config.js && node --check src/directory-browser.js && node --check src/jsonl.js && node --check src/rpc-process.js && node --check src/server.js && node --check src/session-discovery.js && node --check src/session-files.js && node --check src/store.js && node --check src/supervisor.js && node --check public/app.js",
     "test": "node --test"
   },
   "engines": {
     "node": ">=22.19.0"
   },
   "dependencies": {
+    "cross-spawn": "7.0.6",
     "dompurify": "3.4.14",
     "marked": "18.0.11",
     "ws": "8.21.3"

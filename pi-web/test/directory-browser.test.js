@@ -11,7 +11,11 @@ test("directory browser returns sorted directories and directory symlinks", asyn
   await mkdir(join(root, "project10"));
   await mkdir(join(root, "project2"));
   await writeFile(join(root, "notes.txt"), "not a directory");
-  await symlink(join(root, "project2"), join(root, "linked-project"));
+  await symlink(
+    join(root, "project2"),
+    join(root, "linked-project"),
+    process.platform === "win32" ? "junction" : "dir",
+  );
 
   const result = await listDirectories(root);
 

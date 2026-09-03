@@ -38,7 +38,15 @@ test("session deletion refuses symlinks that escape the session directory", asyn
   const linkedFile = join(sessionDir, "linked.jsonl");
   await mkdir(sessionDir);
   await writeFile(outsideFile, "{}\n");
-  await symlink(outsideFile, linkedFile);
+  try {
+    await symlink(outsideFile, linkedFile, "file");
+  } catch (error) {
+    if (process.platform === "win32" && error.code === "EPERM") {
+      context.skip("Windows file symlinks require Developer Mode or elevated privileges");
+      return;
+    }
+    throw error;
+  }
 
   await assert.rejects(() => deleteSessionFile(sessionDir, linkedFile), /outside the configured Pi session directory/);
   await access(outsideFile);

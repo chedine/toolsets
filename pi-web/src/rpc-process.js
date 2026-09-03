@@ -1,4 +1,4 @@
-import { spawn } from "node:child_process";
+import spawn from "cross-spawn";
 import { attachJsonlReader, serializeJsonLine } from "./jsonl.js";
 
 const MAX_STDERR_LENGTH = 64 * 1024;
@@ -139,15 +139,30 @@ export class PiRpcProcess {
     if (!child || child.exitCode !== null) return Promise.resolve();
     this.#stopping = true;
     this.#stopPromise = new Promise((resolve) => {
-      const timer = setTimeout(() => {
-        child.kill("SIGKILL");
-        resolve();
-      }, 2_000);
-      child.once("exit", () => {
+      let settled = false;
+      const finish = () => {
+        if (settled) return;
+        settled = true;
         clearTimeout(timer);
         resolve();
-      });
-      child.kill("SIGTERM");
+      };
+      const timer = setTimeout(() => {
+        child.kill("SIGKILL");
+        finish();
+      }, 2_000);
+      child.once("exit", finish);
+
+      if (process.platform === "win32") {
+        // npm installs Pi as a .cmd shim. cross-spawn starts it through cmd.exe,
+        // so killing only the direct child would leave the Node/Pi process alive.
+        const killer = spawn("taskkill.exe", ["/pid", String(child.pid), "/T", "/F"], {
+          stdio: "ignore",
+          windowsHide: true,
+        });
+        killer.once("error", () => child.kill("SIGKILL"));
+      } else {
+        child.kill("SIGTERM");
+      }
     });
     return this.#stopPromise;
   }

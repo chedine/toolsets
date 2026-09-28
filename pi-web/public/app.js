@@ -74,6 +74,7 @@ const state = {
   commandPaletteSelection: 0,
   showTools: false,
   showThinking: true,
+  followTranscript: true,
   renderScheduled: false,
   manuallyDisconnected: false,
 };
@@ -218,6 +219,7 @@ function handleServerMessage(message) {
     case "attached":
       cancelSessionTitleEdit();
       state.selectedId = message.sessionId;
+      state.followTranscript = true;
       applySnapshot(message.snapshot);
       localStorage.setItem("pi-web-last-session", message.sessionId);
       renderSessions();
@@ -397,7 +399,7 @@ function trashIcon() {
 
 function renderSessions() {
   elements["session-list"].replaceChildren();
-  for (const session of state.sessions) {
+  for (const session of state.sessions.slice(0, 7)) {
     const item = document.createElement("div");
     item.className = `session-item ${session.id === state.selectedId ? "active" : ""}`;
     const open = document.createElement("button");
@@ -742,22 +744,31 @@ function conversationRows(messages, partialAssistant, showTools, showThinking) {
 
 function renderConversation(snapshot) {
   const conversation = elements.conversation;
-  const nearBottom = conversation.scrollHeight - conversation.scrollTop - conversation.clientHeight < 120;
-  const fragment = document.createDocumentFragment();
-  for (const { message, streaming } of conversationRows(
-    snapshot.messages,
-    state.partialAssistant,
-    state.showTools,
-    state.showThinking,
-  )) {
-    if (messageIsVisible(message)) fragment.append(renderMessage(message, streaming));
-  }
+  const previousScrollTop = conversation.scrollTop;
+  const existingRows = new Map([...conversation.children]
+    .filter((child) => child.dataset.conversationKey)
+    .map((child) => [child.dataset.conversationKey, child]));
+  const existingLiveTools = new Map([...conversation.querySelectorAll(":scope > [data-live-tool-id]")]
+    .map((child) => [child.dataset.liveToolId, child]));
+  const nextChildren = [];
+  const rows = conversationRows(snapshot.messages, state.partialAssistant, state.showTools, state.showThinking);
+  rows.forEach(({ message, streaming }, index) => {
+    if (!messageIsVisible(message)) return;
+    const key = `${state.showTools ? 1 : 0}:${state.showThinking ? 1 : 0}:${index}:${message.role ?? "custom"}:${message.timestamp ?? ""}`;
+    const existing = existingRows.get(key);
+    const child = !streaming && existing ? existing : renderMessage(message, streaming);
+    child.dataset.conversationKey = key;
+    nextChildren.push(child);
+  });
   if (state.showTools) {
-    for (const [id, tool] of state.liveTools) fragment.append(renderLiveTool(id, tool));
+    for (const [id, tool] of state.liveTools) {
+      const existing = existingLiveTools.get(String(id));
+      nextChildren.push(existing ? updateLiveTool(existing, id, tool) : renderLiveTool(id, tool));
+    }
   }
   const nextThinking = !state.showTools && snapshot.state.isStreaming
-    && fragment.lastElementChild?.classList.contains("thinking-only")
-    ? fragment.lastElementChild
+    && nextChildren.at(-1)?.classList.contains("thinking-only")
+    ? nextChildren.at(-1)
     : undefined;
   if (nextThinking) {
     nextThinking.classList.add("thinking-active");
@@ -772,13 +783,17 @@ function renderConversation(snapshot) {
       const nextPreview = nextThinking.querySelector(".thinking-preview");
       currentPreview.textContent = nextPreview.textContent;
       currentPreview.title = nextPreview.title;
-      nextThinking.replaceWith(currentThinking);
+      nextChildren[nextChildren.length - 1] = currentThinking;
     } else if (currentThinking) {
       nextThinking.classList.add("thinking-replaced");
     }
   }
-  conversation.replaceChildren(fragment);
-  if (nearBottom || snapshot.messages.length < 3) conversation.scrollTop = conversation.scrollHeight;
+  nextChildren.forEach((child, index) => {
+    const current = conversation.children[index];
+    if (current !== child) conversation.insertBefore(child, current ?? null);
+  });
+  while (conversation.children.length > nextChildren.length) conversation.lastElementChild.remove();
+  conversation.scrollTop = state.followTranscript ? conversation.scrollHeight : previousScrollTop;
 }
 
 function messageIsVisible(message) {
@@ -887,9 +902,21 @@ function renderLiveTool(id, tool) {
   body.className = "message-body";
   const label = document.createElement("div");
   label.className = "message-label";
-  label.textContent = tool.status === "running" ? "Running tool" : "Tool complete";
-  body.append(label, toolCard(tool.name || id, tool.result ?? tool.args, tool.status, tool.status === "error"));
+  body.append(label, toolCard("", "", ""));
   article.append(avatar, body);
+  return updateLiveTool(article, id, tool);
+}
+
+function updateLiveTool(article, id, tool) {
+  article.dataset.liveToolId = String(id);
+  const label = article.querySelector(".message-label");
+  label.textContent = tool.status === "running" ? "Running tool" : "Tool complete";
+  const details = article.querySelector(".tool-card");
+  const error = tool.status === "error";
+  details.classList.toggle("error", error);
+  details.querySelector("summary").textContent = `${tool.name || id} · ${tool.status}`;
+  const value = tool.result ?? tool.args;
+  details.querySelector("pre").textContent = typeof value === "string" ? value : JSON.stringify(value ?? {}, null, 2);
   return article;
 }
 
@@ -1053,6 +1080,7 @@ async function sendPrompt(mode) {
   }
 
   const type = mode === "follow_up" ? "follow_up" : state.snapshot.state.isStreaming ? "steer" : "prompt";
+  state.followTranscript = true;
   const pendingImages = state.pendingImages;
   const images = pendingImages.map(({ data, mimeType }) => ({ type: "image", data, mimeType }));
   elements.prompt.value = "";
@@ -1543,6 +1571,12 @@ elements.composer.addEventListener("drop", (event) => {
   if (!event.dataTransfer?.files.length) return;
   event.preventDefault();
   void addImageFiles(event.dataTransfer.files);
+});
+elements.conversation.addEventListener("scroll", () => {
+  const distanceFromBottom = elements.conversation.scrollHeight
+    - elements.conversation.scrollTop
+    - elements.conversation.clientHeight;
+  state.followTranscript = distanceFromBottom < 80;
 });
 elements.prompt.addEventListener("input", resizePrompt);
 elements.prompt.addEventListener("keydown", (event) => {

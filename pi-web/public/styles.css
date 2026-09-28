@@ -426,9 +426,9 @@ dialog::backdrop { background: var(--overlay); }
 @keyframes thinking-signal { 0%, 100% { opacity: .55; text-shadow: none; } 50% { opacity: 1; text-shadow: 0 0 8px color-mix(in srgb, var(--vi) 45%, transparent); } }
 @keyframes thinking-sweep { to { transform: translateX(110%); } }
 @keyframes thinking-replace {
-  0% { opacity: .25; filter: blur(1px); transform: translateX(-6px) skewX(-1deg); }
-  45% { opacity: .8; transform: translateX(2px) skewX(.5deg); }
-  100% { opacity: 1; filter: none; transform: none; }
+  0% { opacity: .25; transform: translateX(-4px); }
+  45% { opacity: .8; transform: translateX(1px); }
+  100% { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

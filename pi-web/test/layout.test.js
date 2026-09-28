@@ -31,12 +31,17 @@ test("sidebar branding has no workspace path and collapse preserves the main col
 });
 
 test("sidebar status and ledger stay inside the panel", async () => {
-  const [css, html] = await Promise.all([readFile(cssPath, "utf8"), readFile(htmlPath, "utf8")]);
+  const [css, app, html] = await Promise.all([
+    readFile(cssPath, "utf8"),
+    readFile(appPath, "utf8"),
+    readFile(htmlPath, "utf8"),
+  ]);
   assert.match(css, /\.sidebar-scroll\s*\{[^}]*overflow-x:\s*hidden/s);
   assert.match(css, /\.connection\s*\{[^}]*flex:\s*none[^}]*white-space:\s*nowrap/s);
   assert.match(css, /\.ledger-summary\s*\{[^}]*width:\s*calc\(100% - 32px\)[^}]*max-width:\s*calc\(100% - 32px\)/s);
   assert.match(css, /\.context-row span:last-child\s*\{[^}]*flex:\s*none[^}]*white-space:\s*nowrap/s);
   assert.match(css, /\.stats-grid\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1fr\) minmax\(0, 1fr\)/s);
+  assert.match(app, /state\.sessions\.slice\(0, 7\)/);
   assert.match(html, /href="\/styles\.css\?v=[^"]+"/);
 });
 
@@ -66,7 +71,18 @@ test("transcript uses the harness flow layout and compact thinking previews", as
   assert.match(app, /let pendingThinking;/);
   assert.match(app, /if \(latestThinking && !hasText\) \{[\s\S]*pendingThinking =/);
   assert.match(app, /message: \{ \.\.\.message, content: \[\{ \.\.\.latestThinking \}\] \}/);
-  assert.match(app, /if \(messageIsVisible\(message\)\) fragment\.append\(renderMessage\(message, streaming\)\)/);
+  assert.match(app, /if \(!messageIsVisible\(message\)\) return;/);
+  assert.match(app, /nextChildren\.push\(child\)/);
+});
+
+test("streaming preserves manual transcript scrolling and active tool elements", async () => {
+  const app = await readFile(appPath, "utf8");
+  assert.match(app, /state\.followTranscript = distanceFromBottom < 80/);
+  assert.match(app, /conversation\.scrollTop = state\.followTranscript \? conversation\.scrollHeight : previousScrollTop/);
+  assert.doesNotMatch(app, /snapshot\.messages\.length < 3/);
+  assert.match(app, /existing \? updateLiveTool\(existing, id, tool\) : renderLiveTool\(id, tool\)/);
+  assert.match(app, /article\.dataset\.liveToolId = String\(id\)/);
+  assert.match(app, /details\.querySelector\("pre"\)\.textContent/);
 });
 
 test("active thinking uses persistent motion and animates thought replacement", async () => {
@@ -74,9 +90,10 @@ test("active thinking uses persistent motion and animates thought replacement", 
   assert.match(css, /\.message\.thinking-active \.message-body::after/);
   assert.match(css, /animation:\s*thinking-sweep/);
   assert.match(css, /\.message\.thinking-replaced\s*\{[^}]*animation:\s*thinking-replace/s);
+  assert.doesNotMatch(css, /@keyframes thinking-replace\s*\{[\s\S]*?filter:\s*blur/);
   assert.match(css, /@media \(prefers-reduced-motion:\s*reduce\)/);
   assert.match(app, /dataset\.thinkingGeneration = String\(state\.thinkingGeneration\)/);
-  assert.match(app, /nextThinking\.replaceWith\(currentThinking\)/);
+  assert.match(app, /nextChildren\[nextChildren\.length - 1\] = currentThinking/);
   assert.match(app, /nextThinking\.classList\.add\("thinking-replaced"\)/);
 });
 

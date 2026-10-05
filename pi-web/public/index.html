@@ -47,6 +47,7 @@
       </div>
 
       <div class="sidebar-footer">
+        <button id="agent-new-preset" class="command-palette-trigger hidden" title="Launch another preset agent">+ NEW PRESET AGENT</button>
         <button id="command-palette-trigger" class="command-palette-trigger" title="Open command palette">
           <span><i>❯</i> COMMAND PALETTE</span><kbd>⌘K</kbd>
         </button>
@@ -64,6 +65,7 @@
         <div class="toolbar">
           <button id="tool-toggle" class="toolbar-button" title="Show or hide tool calls">⌗</button>
           <button id="details-toggle" class="toolbar-button" title="Models and settings">⚙</button>
+          <a id="surface-nav" class="toolbar-button surface-nav" href="/agents" title="Open preset agents" aria-label="Open preset agents">⇄</a>
           <button id="theme-toggle" class="toolbar-button theme-toggle" title="Cycle theme">◐ DARK</button>
         </div>
       </header>
@@ -73,6 +75,15 @@
         <h1>PI ON YOUR NETWORK</h1>
         <p>Open a session or create one. Runs continue after this page disconnects.</p>
         <button id="empty-new-session" class="primary">NEW SESSION</button>
+      </section>
+
+      <section id="preset-launcher" class="preset-launcher hidden">
+        <div class="empty-mark">◆</div>
+        <div class="preset-eyebrow">PRESET AGENT WORKSPACE</div>
+        <h1>WHAT ARE WE WORKING ON?</h1>
+        <p>Choose a prepared agent. Its working directory, instructions, and model will be set before your conversation starts.</p>
+        <div id="preset-list" class="preset-list"></div>
+        <div id="preset-status" class="preset-status">Select an agent to launch a session.</div>
       </section>
 
       <section id="conversation" class="conversation hidden" aria-live="polite"></section>

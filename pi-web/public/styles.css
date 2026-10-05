@@ -225,7 +225,21 @@ kbd { padding: 2px 5px; border: 1px solid var(--edge); color: var(--fg-dim); bac
 .theme-toggle { min-width: 82px; font-size: 10px; }
 .panel-reveal { display: none; border: 1px solid var(--edge); }
 
-.empty-state { position: relative; z-index: 2; align-self: center; justify-self: center; max-width: 500px; padding: 28px; text-align: center; }
+.empty-state, .preset-launcher { position: relative; z-index: 2; align-self: center; justify-self: center; max-width: 760px; width: min(100%, 760px); padding: 28px; text-align: center; }
+.empty-state { max-width: 500px; width: auto; }
+.preset-launcher { overflow: auto; max-height: 100%; }
+.preset-eyebrow { color: var(--cy); font: 10px 'JetBrains Mono', monospace; letter-spacing: .16em; }
+.preset-launcher h1 { margin: 14px 0 7px; color: var(--fg-strong); font: 700 22px 'Space Grotesk', sans-serif; letter-spacing: .1em; }
+.preset-launcher > p { margin: 0 auto 22px; max-width: 600px; color: var(--fg-dim); line-height: 1.7; }
+.preset-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; text-align: left; }
+.preset-card { min-height: 145px; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; padding: 15px; border: 1px solid var(--edge); color: var(--fg-strong); background: color-mix(in srgb, var(--panel) 82%, transparent); text-align: left; cursor: pointer; }
+.preset-card:hover, .preset-card.active { border-color: var(--cy); background: color-mix(in srgb, var(--cy) 8%, var(--panel)); }
+.preset-card strong { font-size: 16px; }
+.preset-card small { color: var(--fg-dim); line-height: 1.45; }
+.preset-card span { margin-top: auto; color: var(--fg-mid); font: 9px 'JetBrains Mono', monospace; overflow-wrap: anywhere; }
+.preset-empty { grid-column: 1 / -1; padding: 18px; border: 1px dashed var(--edge); color: var(--fg-dim); font: 10px 'JetBrains Mono', monospace; }
+.preset-status { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--edge); color: var(--fg-dim); font: 10px 'JetBrains Mono', monospace; text-align: center; }
+.surface-nav { text-decoration: none; }
 .empty-mark { color: var(--cy); font-size: 24px; text-shadow: 0 0 12px var(--cy); }
 .empty-state h1 { margin: 15px 0 7px; color: var(--fg-strong); font: 700 20px 'Space Grotesk', sans-serif; letter-spacing: .1em; }
 .empty-state p { margin: 0 0 20px; color: var(--fg-dim); line-height: 1.7; }
@@ -293,6 +307,8 @@ kbd { padding: 2px 5px; border: 1px solid var(--edge); color: var(--fg-dim); bac
 .thinking-preview::before { content: '▚ INTERNAL REASONING\A'; color: var(--vi); font-size: 9.5px; letter-spacing: .18em; white-space: pre; }
 .message.thinking-active .message-body { position: relative; overflow: hidden; }
 .message.thinking-active .message-body::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, transparent 20%, color-mix(in srgb, var(--vi) 9%, transparent) 48%, color-mix(in srgb, var(--cy) 12%, transparent) 52%, transparent 80%); transform: translateX(-110%); animation: thinking-sweep 2.4s linear infinite; }
+/* Internal reasoning is a settled transcript preview, not assistant output; never paint a caret/sweep over it. */
+.message.thinking-active.thinking-only .message-body::after { display: none; }
 .message.thinking-active .thinking-preview::before { animation: thinking-signal 1.4s ease-in-out infinite; }
 .message.thinking-replaced { animation: thinking-replace .28s cubic-bezier(.2, .9, .2, 1); }
 .tool-card { margin-top: 10px; border: 1px solid var(--line); background: var(--tool); }

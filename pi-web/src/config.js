@@ -22,13 +22,15 @@ export function loadConfig() {
     throw new Error("PI_WEB_TOKEN is required when PI_WEB_HOST is not loopback");
   }
 
+  const dataDir = resolve(process.env.PI_WEB_DATA_DIR ?? `${homedir()}/.pi-web`);
   return {
     host,
     port: integerFromEnv("PI_WEB_PORT", 31415),
     token,
     piBin: process.env.PI_WEB_PI_BIN ?? "pi",
-    dataDir: resolve(process.env.PI_WEB_DATA_DIR ?? `${homedir()}/.pi-web`),
+    dataDir,
     sessionDir: resolve(process.env.PI_WEB_SESSION_DIR ?? `${homedir()}/.pi/agent/sessions`),
+    presetsFile: resolve(process.env.PI_WEB_PRESETS_FILE ?? `${dataDir}/presets.json`),
     rpcTimeoutMs: integerFromEnv("PI_WEB_RPC_TIMEOUT_MS", 10 * 60 * 1000),
   };
 }

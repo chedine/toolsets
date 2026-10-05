@@ -8,10 +8,11 @@ marked.setOptions({ gfm: true, breaks: false, renderer: markdownRenderer });
 const elements = Object.fromEntries(
   [
     "login", "login-form", "token-input", "login-error", "app", "sidebar", "sidebar-toggle", "sidebar-collapse",
-    "empty-new-session", "session-list", "connection", "command-palette-trigger", "command-palette-dialog",
+    "empty-new-session", "session-list", "connection", "surface-nav", "agent-new-preset", "command-palette-trigger", "command-palette-dialog",
     "command-palette-input", "command-palette-count", "command-palette-results", "session-title", "session-path",
     "thinking-select", "empty-state", "conversation", "composer", "queue-bar", "image-tray", "image-picker", "image-input", "prompt",
     "send", "send-follow-up", "abort", "tool-toggle", "theme-toggle", "details-panel", "details-toggle", "details-collapse", "cost-value", "context-label", "context-bar",
+    "preset-launcher", "preset-list", "preset-status",
     "tokens-in", "tokens-out", "tool-count", "turn-count", "user-count", "message-count", "model-list",
     "show-tools", "show-thinking", "auto-compaction", "font-options", "user-font", "user-font-size",
     "agent-font", "agent-font-size", "message-font-stylesheet",
@@ -77,7 +78,12 @@ const state = {
   followTranscript: true,
   renderScheduled: false,
   manuallyDisconnected: false,
+  presets: [],
+  selectedPreset: undefined,
+  launchingPreset: false,
 };
+
+const PRESET_MODE = location.pathname === "/agents";
 
 const COMMAND_PALETTE_KEY = "k";
 const COMMANDS = [
@@ -124,7 +130,8 @@ function connect() {
   connectionLabel("CONNECTING", false);
   const scheme = location.protocol === "https:" ? "wss" : "ws";
   const token = encodeURIComponent(currentToken());
-  const socket = new WebSocket(`${scheme}://${location.host}/ws?token=${token}`);
+  const surface = PRESET_MODE ? "agents" : "main";
+  const socket = new WebSocket(`${scheme}://${location.host}/ws?token=${token}&surface=${surface}`);
   state.socket = socket;
 
   socket.addEventListener("open", () => {
@@ -206,8 +213,14 @@ function handleServerMessage(message) {
   switch (message.type) {
     case "hello": {
       state.sessions = message.sessions;
+      state.presets = message.presets ?? [];
+      renderPresetLauncher();
       renderSessions();
-      const preferred = state.selectedId ?? localStorage.getItem("pi-web-last-session");
+      renderCurrentSession();
+      const requested = new URLSearchParams(location.search).get("session");
+      const preferred = requested && state.sessions.some(({ id }) => id === requested)
+        ? requested
+        : state.selectedId ?? localStorage.getItem("pi-web-last-session");
       if (preferred && state.sessions.some(({ id }) => id === preferred)) void openSession(preferred);
       break;
     }
@@ -397,6 +410,67 @@ function trashIcon() {
   return icon;
 }
 
+function showPresetLauncher() {
+  if (!PRESET_MODE) return;
+  cancelSessionTitleEdit();
+  state.selectedId = undefined;
+  state.snapshot = undefined;
+  state.partialAssistant = undefined;
+  state.liveTools.clear();
+  renderCurrentSession();
+}
+
+function renderPresetLauncher() {
+  if (!elements["preset-list"]) return;
+  const list = elements["preset-list"];
+  list.replaceChildren();
+  if (!PRESET_MODE) return;
+  if (state.presets.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "preset-empty";
+    empty.textContent = "NO PRESETS CONFIGURED";
+    list.append(empty);
+    elements["preset-status"].textContent = "Add presets to the configured preset file and restart pi-web.";
+    return;
+  }
+  elements["preset-status"].textContent = state.launchingPreset
+    ? `STARTING ${state.selectedPreset?.name?.toUpperCase() ?? "AGENT"}…`
+    : "Select an agent to launch a session.";
+  for (const preset of state.presets) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `preset-card ${state.selectedPreset?.id === preset.id ? "active" : ""}`;
+    button.disabled = state.launchingPreset;
+    const name = document.createElement("strong");
+    name.textContent = preset.name;
+    const description = document.createElement("small");
+    description.textContent = preset.description || "Ready-to-use Pi agent";
+    const meta = document.createElement("span");
+    meta.textContent = `${preset.model} · ${preset.cwd}`;
+    button.append(name, description, meta);
+    button.addEventListener("click", () => void selectPreset(preset));
+    list.append(button);
+  }
+}
+
+async function selectPreset(preset) {
+  if (state.launchingPreset) return;
+  state.selectedPreset = preset;
+  state.launchingPreset = true;
+  renderPresetLauncher();
+  try {
+    await sendRequest({
+      type: "create_preset_session",
+      presetId: preset.id,
+    }, 60_000);
+    state.launchingPreset = false;
+  } catch (error) {
+    state.launchingPreset = false;
+    elements["preset-status"].textContent = error.message;
+    renderPresetLauncher();
+  }
+}
+
 function renderSessions() {
   elements["session-list"].replaceChildren();
   for (const session of state.sessions.slice(0, 7)) {
@@ -512,7 +586,15 @@ function renderCurrentSession() {
   const snapshot = state.snapshot;
   const selected = state.sessions.find((session) => session.id === state.selectedId);
   const hasSession = Boolean(snapshot && selected);
-  elements["empty-state"].classList.toggle("hidden", hasSession);
+  const showPresetLauncher = PRESET_MODE && !hasSession;
+  elements["surface-nav"].href = PRESET_MODE ? "/" : "/agents";
+  const surfaceLabel = PRESET_MODE ? "Open main workspace" : "Open preset agents";
+  elements["surface-nav"].title = surfaceLabel;
+  elements["surface-nav"].setAttribute("aria-label", surfaceLabel);
+  elements["agent-new-preset"].classList.toggle("hidden", !PRESET_MODE);
+  elements["command-palette-trigger"].classList.toggle("hidden", PRESET_MODE);
+  elements["empty-state"].classList.toggle("hidden", hasSession || showPresetLauncher);
+  elements["preset-launcher"].classList.toggle("hidden", !showPresetLauncher);
   elements.conversation.classList.toggle("hidden", !hasSession);
   elements.composer.classList.toggle("hidden", !hasSession);
   const sessionTitle = elements["session-title"];
@@ -770,11 +852,14 @@ function renderConversation(snapshot) {
     && nextChildren.at(-1)?.classList.contains("thinking-only")
     ? nextChildren.at(-1)
     : undefined;
+  const currentThinking = conversation.querySelector(":scope > .thinking-active");
+  // Only the currently streaming thought may carry the active animation/caret.
+  // Reused DOM rows otherwise retain thinking-active as the transcript grows.
+  for (const child of conversation.children) child.classList.remove("thinking-active");
   if (nextThinking) {
     nextThinking.classList.add("thinking-active");
     nextThinking.dataset.sessionId = state.selectedId;
     nextThinking.dataset.thinkingGeneration = String(state.thinkingGeneration);
-    const currentThinking = conversation.querySelector(":scope > .thinking-active");
     if (
       currentThinking?.dataset.sessionId === nextThinking.dataset.sessionId
       && currentThinking.dataset.thinkingGeneration === nextThinking.dataset.thinkingGeneration
@@ -783,6 +868,7 @@ function renderConversation(snapshot) {
       const nextPreview = nextThinking.querySelector(".thinking-preview");
       currentPreview.textContent = nextPreview.textContent;
       currentPreview.title = nextPreview.title;
+      currentThinking.classList.add("thinking-active");
       nextChildren[nextChildren.length - 1] = currentThinking;
     } else if (currentThinking) {
       nextThinking.classList.add("thinking-replaced");
@@ -1110,6 +1196,7 @@ function resizePrompt() {
 function matchingPaletteCommands() {
   const terms = elements["command-palette-input"].value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   return COMMANDS.filter((command) => {
+    if (PRESET_MODE) return false;
     const text = `${command.title} ${command.description} ${command.category} ${command.keywords}`.toLocaleLowerCase();
     return terms.every((term) => text.includes(term));
   });
@@ -1473,6 +1560,7 @@ document.addEventListener("keydown", (event) => {
   else showCommandPalette();
 });
 elements["empty-new-session"].addEventListener("click", showNewDialog);
+elements["agent-new-preset"].addEventListener("click", showPresetLauncher);
 elements["session-search-close"].addEventListener("click", () => elements["session-search-dialog"].close());
 elements["session-search-input"].addEventListener("input", () => {
   clearTimeout(state.sessionSearchTimer);

@@ -48,9 +48,31 @@ For regular use, put the daemon behind Caddy with a locally trusted TLS certific
 | `PI_WEB_PI_BIN` | `pi` | Pi executable |
 | `PI_WEB_DATA_DIR` | `~/.pi-web` | pi-web registry directory |
 | `PI_WEB_SESSION_DIR` | `~/.pi/agent/sessions` | Native Pi session directory searched by the resume dialog |
+| `PI_WEB_PRESETS_FILE` | `~/.pi-web/presets.json` | Read-only agent preset definitions used by `/agents` |
 | `PI_WEB_RPC_TIMEOUT_MS` | `600000` | RPC request timeout |
 
 Pi's own credentials, settings, extensions, skills, and sessions remain under `~/.pi/agent` unless Pi is configured otherwise.
+
+### Agent presets
+
+Open `http://127.0.0.1:31415/agents` to launch a session from a configured agent preset. Presets are read from `~/.pi-web/presets.json` (or `PI_WEB_PRESETS_FILE`) when the daemon starts. Copy `presets.example.json` to that location and adjust it for the host:
+
+```json
+{
+  "version": 1,
+  "presets": [
+    {
+      "id": "grammar",
+      "name": "Grammar correction",
+      "cwd": "C:/tmp",
+      "instructions": "Correct grammar while preserving the author's voice.",
+      "model": "github-copilot/gpt-5.6-luna"
+    }
+  ]
+}
+```
+
+Each preset supplies a working directory (`cwd`, or `baseLocation`), model (either `provider/id` or `{ "provider": "…", "id": "…" }`), and optional `instructions` (the model's appended system prompt). `prompt` and `specialInstructions` are accepted as aliases for `instructions`. Selecting a preset immediately starts a session and keeps the conversation in the `/agents` UI. Preset-backed sessions are intentionally hidden from the regular `/` session explorer. Preset files are operator-managed and are not editable from the browser.
 
 ## Session behavior
 
@@ -74,6 +96,7 @@ Implemented:
 - Manual compaction
 - Extension select, confirm, input, editor, notification, status, widget, title, and editor-text requests
 - Native Pi session search and resume
+- Configured agent presets with a dedicated `/agents` launcher
 - Pasted, dropped, and selected image attachments
 - Sanitized Markdown rendering for agent messages
 - Responsive desktop/mobile UI

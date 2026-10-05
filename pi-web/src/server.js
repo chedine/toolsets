@@ -10,6 +10,7 @@ import { SessionDiscovery } from "./session-discovery.js";
 import { deleteSessionFile } from "./session-files.js";
 import { SessionStore } from "./store.js";
 import { SessionSupervisor } from "./supervisor.js";
+import { loadPresets, publicPresets } from "./presets.js";
 
 const config = loadConfig();
 const publicDir = fileURLToPath(new URL("../public/", import.meta.url));
@@ -18,6 +19,7 @@ const domPurifyPath = fileURLToPath(new URL("../node_modules/dompurify/dist/puri
 const store = new SessionStore(config.dataDir);
 await store.load();
 const supervisor = new SessionSupervisor(config, store);
+const presets = await loadPresets(config.presetsFile);
 const discovery = new SessionDiscovery(config.sessionDir);
 const sockets = new Set();
 
@@ -52,8 +54,17 @@ function send(socket, message) {
   if (socket.readyState === WebSocket.OPEN) socket.send(JSON.stringify(message));
 }
 
+function sessionsForSurface(surface) {
+  return supervisor.list().filter((session) => surface === "agents" ? Boolean(session.presetId) : !session.presetId);
+}
+
+function scopedMessage(socket, message) {
+  if (!["hello", "sessions", "sessions_changed"].includes(message.type)) return message;
+  return { ...message, sessions: sessionsForSurface(socket.surface) };
+}
+
 function broadcast(message) {
-  for (const socket of sockets) send(socket, message);
+  for (const socket of sockets) send(socket, scopedMessage(socket, message));
 }
 
 const server = createServer(async (request, response) => {
@@ -67,6 +78,7 @@ const server = createServer(async (request, response) => {
     const assets = new Map([
       ["/", "index.html"],
       ["/index.html", "index.html"],
+      ["/agents", "index.html"],
       ["/app.js", "app.js"],
       ["/styles.css", "styles.css"],
       ["/fonts/archivo.woff2", "fonts/archivo.woff2"],
@@ -105,12 +117,19 @@ server.on("upgrade", (request, socket, head) => {
     socket.destroy();
     return;
   }
-  websocketServer.handleUpgrade(request, socket, head, (websocket) => websocketServer.emit("connection", websocket));
+  websocketServer.handleUpgrade(request, socket, head, (websocket) => {
+    websocket.surface = url.searchParams.get("surface") === "agents" ? "agents" : "main";
+    websocketServer.emit("connection", websocket);
+  });
 });
 
 websocketServer.on("connection", (socket) => {
   sockets.add(socket);
-  send(socket, { type: "hello", sessions: supervisor.list() });
+  send(socket, {
+    type: "hello",
+    sessions: sessionsForSurface(socket.surface),
+    presets: publicPresets(presets),
+  });
 
   socket.on("message", async (data, isBinary) => {
     let message;
@@ -120,10 +139,14 @@ websocketServer.on("connection", (socket) => {
       if (!message || typeof message.type !== "string") throw new Error("Invalid message");
       switch (message.type) {
         case "list_sessions":
-          send(socket, { type: "sessions", sessions: supervisor.list(), requestId: message.requestId });
+          send(socket, { type: "sessions", sessions: sessionsForSurface(socket.surface), requestId: message.requestId });
+          break;
+        case "list_presets":
+          send(socket, { type: "presets", presets: publicPresets(presets), requestId: message.requestId });
           break;
         case "search_sessions": {
-          const sessions = await discovery.search(message.query, supervisor.list());
+          const matches = await discovery.search(message.query, sessionsForSurface(socket.surface));
+          const sessions = socket.surface === "agents" ? matches.filter((session) => session.managed) : matches;
           send(socket, { type: "session_search_results", sessions, requestId: message.requestId });
           break;
         }
@@ -133,6 +156,7 @@ websocketServer.on("connection", (socket) => {
           break;
         }
         case "import_session": {
+          if (socket.surface === "agents") throw new Error("Native session resume is only available from the main workspace");
           const metadata = await discovery.inspect(message.sessionFile);
           const result = await supervisor.importSession(metadata);
           send(socket, { type: "attached", ...result, sessionId: result.record.id, requestId: message.requestId });
@@ -143,6 +167,23 @@ websocketServer.on("connection", (socket) => {
             cwd: message.cwd,
             name: message.name,
             approveProject: message.approveProject,
+          });
+          send(socket, { type: "attached", ...result, sessionId: result.record.id, requestId: message.requestId });
+          break;
+        }
+        case "create_preset_session": {
+          if (typeof message.presetId !== "string") throw new Error("Preset is required");
+          const preset = presets.find((candidate) => candidate.id === message.presetId);
+          if (!preset) throw new Error(`Unknown preset: ${message.presetId}`);
+          const initialPrompt = typeof message.initialPrompt === "string" ? message.initialPrompt.trim().slice(0, 100_000) : "";
+          const result = await supervisor.create({
+            cwd: preset.cwd,
+            name: preset.name,
+            model: preset.model,
+            instructions: preset.instructions,
+            approveProject: preset.approveProject,
+            presetId: preset.id,
+            initialPrompt,
           });
           send(socket, { type: "attached", ...result, sessionId: result.record.id, requestId: message.requestId });
           break;

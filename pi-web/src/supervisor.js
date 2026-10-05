@@ -68,7 +68,10 @@ export class SessionSupervisor {
     await access(cwd);
     const name = typeof options.name === "string" ? options.name.trim().slice(0, 200) : "";
     const approveProject = options.approveProject === true;
-    const runtime = this.#newRuntime({ cwd, name, approveProject });
+    const model = typeof options.model === "string" ? options.model.trim() : "";
+    const instructions = typeof options.instructions === "string" ? options.instructions.trim() : "";
+    const initialPrompt = typeof options.initialPrompt === "string" ? options.initialPrompt.trim() : "";
+    const runtime = this.#newRuntime({ cwd, name, model, instructions, approveProject });
     let state;
     try {
       state = await runtime.start();
@@ -83,12 +86,16 @@ export class SessionSupervisor {
       sessionFile: state.sessionFile,
       name: state.sessionName || name || undefined,
       approveProject,
+      ...(model ? { model } : {}),
+      ...(instructions ? { instructions } : {}),
+      ...(typeof options.presetId === "string" ? { presetId: options.presetId } : {}),
       createdAt: now,
       updatedAt: now,
     };
     await this.#store.put(record);
     this.#bind(record.id, runtime);
     this.#emit({ type: "sessions_changed", sessions: this.list() });
+    if (initialPrompt) await runtime.request({ type: "prompt", message: initialPrompt });
     return { record, snapshot: await runtime.snapshot(), pendingUi: this.#getPendingUi(record.id) };
   }
 
@@ -245,6 +252,8 @@ export class SessionSupervisor {
       rpcTimeoutMs: this.#config.rpcTimeoutMs,
       cwd: record.cwd,
       name: record.name,
+      model: record.model,
+      instructions: record.instructions,
       sessionFile: record.sessionFile,
       approveProject: record.approveProject,
     });

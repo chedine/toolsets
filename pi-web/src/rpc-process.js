@@ -32,6 +32,10 @@ export class PiRpcProcess {
     const args = ["--mode", "rpc"];
     if (this.#options.sessionFile) args.push("--session", this.#options.sessionFile);
     if (this.#options.name && !this.#options.sessionFile) args.push("--name", this.#options.name);
+    if (this.#options.model && !this.#options.sessionFile) args.push("--model", this.#options.model);
+    if (this.#options.instructions) {
+      args.push("--append-system-prompt", this.#options.instructions);
+    }
     args.push(this.#options.approveProject ? "--approve" : "--no-approve");
 
     const child = spawn(this.#options.piBin, args, {

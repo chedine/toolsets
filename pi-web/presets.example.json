@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "presets": [
+    {
+      "id": "grammar",
+      "name": "Grammar correction",
+      "description": "Polish writing without changing its meaning.",
+      "cwd": "C:/tmp",
+      "instructions": "You are a grammar correction agent. Correct grammar, spelling, and clarity while preserving the author's voice. Return the revised text and a short list of meaningful changes.",
+      "model": "github-copilot/gpt-5.6-luna"
+    },
+    {
+      "id": "database",
+      "name": "Database client",
+      "description": "Work with the local database using the project tools.",
+      "cwd": "C:/work/database",
+      "prompt": "You are my local database client. Inspect the repository's database instructions before acting. Explain queries before running destructive operations and never drop or truncate data without explicit confirmation.",
+      "model": { "provider": "github-copilot", "id": "gpt-5.6-luna" },
+      "approveProject": true
+    }
+  ]
+}

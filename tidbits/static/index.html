@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>tidbits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,650&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="spectrum" class="spectrum"></div>
+<main class="page">
+  <div class="logo"><div class="logo-dots"><span></span><span></span><span></span><span></span></div><span>tidbits</span></div>
+
+  <section id="inputWrap" class="input-wrap">
+    <div class="input-box">
+      <div id="mirror" class="mirror" aria-hidden="true"></div>
+      <div id="placeholder" class="placeholder">What did you just learn?</div>
+      <textarea id="ta" spellcheck="false" rows="1" autocapitalize="sentences"></textarea>
+    </div>
+    <div id="pending" class="pending"></div>
+    <div id="sug" class="sug"></div>
+    <button id="saveBtn" class="save-btn" type="button">save</button>
+  </section>
+
+  <div id="results"></div>
+</main>
+
+<footer class="bar">
+  <div id="mode" class="bar-mode"></div>
+  <div id="hints" class="bar-hints"></div>
+  <div class="bar-right"><span id="status"></span><span id="counts"></span><button id="theme" type="button"></button></div>
+</footer>
+
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

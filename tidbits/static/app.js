@@ -9,11 +9,14 @@
     set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} }
   };
   const PAGE = 60;
+  // A meaning hit must stand out from the vault (z = std devs above mean similarity) and clear a cosine floor;
+  // tuned for bge-base, where nonsense queries still reach ~0.58 cosine but z ≤ 2.1.
+  const SEM_Z = 2.2, SEM_FLOOR = 0.55, SEM_MAX = 6;
 
   let S = {
     notes: [], vault: '', value: store.get('tidbits.draft', ''), selStart: 0, selEnd: 0, sugIndex: 0, sugClosed: false,
     editingId: null, editBase: null, pendingTags: [], status: '', lastSaved: null, loaded: false,
-    cursor: -1, limit: PAGE, ask: null, askInfo: null,
+    cursor: -1, limit: PAGE, ask: null, askInfo: null, semInfo: null, sem: null,
     theme: store.get('tidbits.theme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
   };
   let statusT, askCtl = null;
@@ -31,7 +34,31 @@
     try { const j = await api('GET', '/api/notes'); set({ notes: j.notes, vault: j.vault, loaded: true }); }
     catch (e) { flash(e.status === 401 ? 'Sign in: open /?t=<token>' : 'Server unreachable'); }
   }
-  api('GET', '/api/config').then(c => set({ askInfo: c.ask })).catch(() => {});
+  api('GET', '/api/config').then(c => set({ askInfo: c.ask, semInfo: c.semantic })).catch(() => {});
+
+  // Meaning-based hits come from the server's embedding index, fetched (debounced) for the free-text part of a search.
+  let semTimer = null, semWant = '';
+  const semText = v => { const q = TB.parseQuery(v); return q.terms.concat(q.phrases).join(' '); };
+  function wantSemantic() {
+    if (mode() !== 'search' || !(S.semInfo && S.semInfo.available)) return;
+    const text = semText(S.value);
+    if (text === semWant) return;
+    semWant = text; clearTimeout(semTimer);
+    if (!text) return;
+    semTimer = setTimeout(async () => {
+      try {
+        const j = await api('GET', '/api/semantic?k=30&q=' + encodeURIComponent(text));
+        if (semWant === text) set({ sem: { q: text, results: j.results, ready: j.ready } });
+      } catch (e) { if (semWant === text) set({ sem: { q: text, results: [], ready: true } }); }
+    }, 180);
+  }
+  // Notes related by meaning that the word search didn't find, still honouring [[entity]]/#tag/phrase/-word filters.
+  function meaningHits(r) {
+    const text = semText(S.value);
+    if (!text || !S.sem || S.sem.q !== text || !S.sem.results.length) return [];
+    const pass = TB.filtered(S.notes, S.value), have = new Set(r.res.map(n => n.id)), byId = new Map(S.notes.map(n => [n.id, n]));
+    return S.sem.results.filter(x => x.score >= SEM_FLOOR && x.z >= SEM_Z && pass.has(x.id) && !have.has(x.id)).map(x => byId.get(x.id)).filter(Boolean).slice(0, SEM_MAX);
+  }
 
   // ---- editor controller -----------------------------------------------------
   const mode = (v = S.value) => v[0] === '/' ? 'search' : v[0] === '?' ? 'ask' : 'write';
@@ -188,7 +215,7 @@
           const line = buf.slice(0, i); buf = buf.slice(i + 1);
           if (!line.trim()) continue;
           const ev = JSON.parse(line);
-          if (ev.type === 'meta') upd({ refs: ev.refs, used: Object.keys(ev.refs).length, model: ev.model, thinking: ev.thinking });
+          if (ev.type === 'meta') upd({ refs: ev.refs, used: Object.keys(ev.refs).length, total: ev.total, withheld: ev.withheld, model: ev.model, thinking: ev.thinking });
           else if (ev.type === 'delta') upd(a => ({ text: a.text + ev.text }));
           else if (ev.type === 'error') upd({ error: ev.message });
         }
@@ -275,8 +302,9 @@
   function visibleRows() {
     if (mode() !== 'search') return [];
     const q = S.value.slice(1).trim();
-    const list = q ? current().res : [...S.notes].sort((a, b) => b.created - a.created);
-    return list.slice(0, q ? S.limit : Math.min(S.limit, 30));
+    if (!q) return [...S.notes].sort((a, b) => b.created - a.created).slice(0, Math.min(S.limit, 30));
+    const r = current();
+    return r.res.slice(0, S.limit).concat(meaningHits(r));
   }
 
   // ---- render --------------------------------------------------------------------
@@ -292,13 +320,13 @@
   const chipEnt = (b, e, fn) => `<button class="chip ent" data-a="${b.on(fn)}">${esc(e.name)}<small>${e.count}</small></button>`;
   const chipTag = (b, key, count) => `<button class="chip tag" data-a="${b.on(() => addTag(key))}">#${esc(key)}<small>${count}</small></button>`;
 
-  let lastKey = '', lastNotes = null, lastAsk = null;
+  let lastKey = '', lastNotes = null, lastAsk = null, lastSem = null;
   function renderResults(m) {
     const { notes, value, status, lastSaved } = S;
     const just = m === 'write' && !value && status && lastSaved ? notes.find(n => n.id === lastSaved) : null;
     const key = [m, m === 'write' ? '' : value, just ? just.id + status : '', S.cursor, S.limit, JSON.stringify(S.askInfo)].join('\u0001');
-    if (key === lastKey && notes === lastNotes && S.ask === lastAsk) return !!just;
-    lastKey = key; lastNotes = notes; lastAsk = S.ask;
+    if (key === lastKey && notes === lastNotes && S.ask === lastAsk && S.sem === lastSem) return !!just;
+    lastKey = key; lastNotes = notes; lastAsk = S.ask; lastSem = S.sem;
     const b = B.results; b.reset();
     let html = '';
 
@@ -343,8 +371,11 @@
     }
     const note = r.partial ? 'No note has every word. Closest matches:' : r.fuzzy ? 'Including close spellings.' : '';
     if (note) { html += `<div class="search-note" style="margin-top:${top + 8}px">${note}</div>`; top = 10; }
-    if (r.res.length) html += table(rows, r.terms, r.res.length + (r.res.length === 1 ? ' note' : ' notes'), top, b, r.res.length);
-    else html += `<div class="empty">Nothing matches. Yet.</div>`;
+    const shown = Math.min(r.res.length, S.limit), meaning = rows.slice(shown);
+    if (r.res.length) html += table(rows.slice(0, shown), r.terms, r.res.length + (r.res.length === 1 ? ' note' : ' notes'), top, b, r.res.length);
+    if (meaning.length) html += table(meaning, [], 'Related by meaning', r.res.length ? 36 : top, b, meaning.length, null, shown);
+    if (!r.res.length && !meaning.length) html += `<div class="empty">${S.sem && S.sem.q === semText(value) || !(S.semInfo && S.semInfo.available) ? 'Nothing matches. Yet.' : 'Looking…'}</div>`;
+    if (S.sem && S.sem.q === semText(value) && !S.sem.ready) html += `<div class="search-note" style="margin-top:14px">Still indexing notes for meaning; results may be incomplete.</div>`;
     if (S.askInfo && S.askInfo.available) {
       html += `<button class="ask-cta" data-a="${b.on(() => { setValue('?' + q); runAsk(); })}"><b>⇧⏎</b> ask AI: ${esc(TB.plain(q))}</button>`;
     }
@@ -367,8 +398,9 @@
     }).join(''));
     const body = linesHtml(text, [], b).replace(/(n\d+)/g, (_, r) =>
       `<sup class="cite" data-a="${b.on(() => { const el = document.getElementById('src-' + r); el && el.scrollIntoView({ behavior: 'smooth', block: 'center' }); })}">${cited.indexOf(r) + 1}</sup>`);
-    const label = a.error ? 'could not answer' : a.loading ? (a.text ? 'answering' : `reading ${a.used || ''} notes`) + '…'
-      : 'answer' + (cited.length ? ' · from ' + cited.length + ' note' + (cited.length > 1 ? 's' : '') : '');
+    const read = a.total != null ? `read ${a.used} of ${a.total} notes` + (a.withheld ? ` · ${a.withheld} private withheld` : '') : '';
+    const label = a.error ? 'could not answer' : a.loading ? (a.text ? 'answering' : read || 'reading notes') + '…'
+      : ['answer', cited.length ? 'from ' + cited.length + ' note' + (cited.length > 1 ? 's' : '') : '', read].filter(Boolean).join(' · ');
     let html = `<div class="answer${a.loading ? ' loading' : ''}"><div class="answer-label">${esc(label)}<span>${esc(model)} · ${esc(think)}</span></div>
       <div class="answer-body">${a.error ? esc(a.error) : body || '<span class="pulse">…</span>'}</div></div>`;
     const byId = new Map(S.notes.map(n => [n.id, n]));
@@ -377,10 +409,10 @@
     return html;
   }
 
-  function table(list, terms, label, top, b, total, marks) {
+  function table(list, terms, label, top, b, total, marks, offset = 0) {
     const more = total > list.length ? `<button class="more" data-a="${b.on(() => set({ limit: S.limit + PAGE }))}">show ${Math.min(PAGE, total - list.length)} more of ${total - list.length}</button>` : '';
     return `<div class="table" style="margin-top:${top}px"><div class="trow thead"><span></span><span>${esc(label)}</span><span>Tags</span><span>Date</span><span></span></div>${
-      list.map((n, i) => `<div class="trow${i === S.cursor && !marks ? ' sel' : ''}"${marks ? ` id="${marks[i].id}"` : ''}><div class="tstrip">${strip(n.text)}</div>
+      list.map((n, i) => `<div class="trow${i + offset === S.cursor && !marks ? ' sel' : ''}"${marks ? ` id="${marks[i].id}"` : ''}><div class="tstrip">${strip(n.text)}</div>
         <div class="ttext">${marks ? `<sup class="cite static">${marks[i].num}</sup>` : ''}${linesHtml(n.text, terms, b)}</div>
         <div class="ttags">${TB.tags(n.text).map(x => `<button data-a="${b.on(() => addTag(x))}">#${esc(x)}</button>`).join('')}</div>
         <div class="tdate" title="${esc(n.path)}">${TB.fmt(n.created)}</div>
@@ -429,10 +461,11 @@
     modeEl.textContent = m === 'write' ? (editingId ? 'Edit' : 'Capture') : m === 'search' ? 'Search' : 'Ask';
     modeEl.classList.toggle('alt', m !== 'write' || !!editingId);
     $('status').textContent = S.status;
-    const res = m === 'search' && value.slice(1).trim() ? current().res.length + ' of ' : '';
+    const res = m === 'search' && value.slice(1).trim() ? current().res.length + meaningHits(current()).length + ' of ' : '';
     $('counts').textContent = res + notes.length + ' notes · ' + idx.length + ' entities · ' + TB.tagIndex(notes).length + ' tags';
     $('counts').title = S.vault;
     $('theme').textContent = S.theme === 'dark' ? 'light' : 'dark';
+    wantSemantic();
   }
 
   render();

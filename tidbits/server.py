@@ -16,6 +16,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, unquote, urlparse
 
 from ask import Asker
+from semantic import Semantic
 from vault import Conflict, Vault
 
 STATIC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
@@ -25,6 +26,7 @@ COOKIE = "tidbits_token"
 class Handler(BaseHTTPRequestHandler):
     vault: Vault = None
     asker: Asker = None
+    semantic: Semantic = None
     token: str = ""
 
     def log_message(self, fmt, *args):
@@ -80,19 +82,30 @@ class Handler(BaseHTTPRequestHandler):
             if parts[:2] == ["api", "notes"]:
                 note_id = parts[2] if len(parts) > 2 else None
                 if method == "GET" and not note_id:
-                    return self.send_json({"vault": self.vault.root, "notes": self.vault.notes()})
+                    notes = self.vault.notes()
+                    self.semantic.refresh()  # picks up edits made outside the app
+                    return self.send_json({"vault": self.vault.root, "notes": notes})
                 if method == "POST" and not note_id:
-                    return self.send_json(self.vault.create(self.body().get("text", "")), 201)
+                    note = self.vault.create(self.body().get("text", ""))
+                    self.semantic.refresh()
+                    return self.send_json(note, 201)
                 if method == "PUT" and note_id:
                     b = self.body()
-                    return self.send_json(self.vault.update(note_id, b.get("text", ""), b.get("base")))
+                    note = self.vault.update(note_id, b.get("text", ""), b.get("base"))
+                    self.semantic.refresh()
+                    return self.send_json(note)
                 if method == "DELETE" and note_id:
                     self.vault.delete(note_id)
+                    self.semantic.refresh()
                     return self.send_json({"ok": True})
             if parts == ["api", "graph"] and method == "GET":
                 return self.send_json(self.vault.graph())
             if parts == ["api", "config"] and method == "GET":
-                return self.send_json({"vault": self.vault.root, "ask": self.asker.info()})
+                return self.send_json({"vault": self.vault.root, "ask": self.asker.info(), "semantic": self.semantic.info()})
+            if parts == ["api", "semantic"] and method == "GET":
+                qs = parse_qs(url.query)
+                hits = self.semantic.search(qs.get("q", [""])[0], int(qs.get("k", ["50"])[0]))
+                return self.send_json({**self.semantic.info(), "results": [{"id": i, "score": round(sc, 4), "z": round(z, 2)} for i, sc, z in hits]})
             if parts == ["api", "ask"] and method == "POST":
                 return self.ask(self.body())
             if method == "GET" and not url.path.startswith("/api/"):
@@ -127,7 +140,8 @@ class Handler(BaseHTTPRequestHandler):
                 return False
 
         try:
-            self.asker.stream(q, self.vault.notes(), b.get("ids") or [], emit, alive)
+            notes = self.vault.notes()
+            self.asker.stream(q, notes, b.get("ids") or [], self.semantic.search(q, 60), emit, alive)
         except (BrokenPipeError, ConnectionResetError):
             pass  # the browser cancelled; Asker already killed pi
         self.close_connection = True
@@ -176,16 +190,27 @@ def main():
     ap.add_argument("--ask-model", default=os.environ.get("TIDBITS_ASK_MODEL", "openai-codex/gpt-6-luna"))
     ap.add_argument("--ask-thinking", default=os.environ.get("TIDBITS_ASK_THINKING", "medium"))
     ap.add_argument("--pi-bin", default=os.environ.get("TIDBITS_PI_BIN", "pi"))
+    ap.add_argument("--ask-budget", type=int, default=int(os.environ.get("TIDBITS_ASK_BUDGET", "24000")),
+                    help="max characters of notes sent per question (~4 chars per token)")
+    ap.add_argument("--private-tags", default=os.environ.get("TIDBITS_PRIVATE_TAGS", "secret"),
+                    help="comma-separated tags whose notes are never sent to the AI")
+    ap.add_argument("--embed-model", default=os.environ.get("TIDBITS_EMBED_MODEL", "BAAI/bge-base-en-v1.5"))
     args = ap.parse_args()
 
     Handler.vault = Vault(args.vault)
     Handler.token = os.environ.get("TIDBITS_TOKEN", "")
-    Handler.asker = Asker(args.ask_model, args.ask_thinking, args.pi_bin)
+    private = [t.strip().lstrip("#") for t in args.private_tags.split(",") if t.strip()]
+    Handler.asker = Asker(args.ask_model, args.ask_thinking, args.pi_bin, budget=args.ask_budget, private=private)
+    Handler.semantic = Semantic(Handler.vault, args.embed_model)
     n = len(Handler.vault.scan())
     srv = ThreadingHTTPServer((args.host, args.port), Handler)
     print(f"tidbits · vault {Handler.vault.root} · {n} notes")
     a = Handler.asker.info()
-    print(f"  ask    {a['model']} ({a['thinking']})" + ("" if a["available"] else " · pi not found, ask disabled"))
+    print(f"  ask    {a['model']} ({a['thinking']}) · up to {args.ask_budget} chars of notes per question"
+          f" · never sends {', '.join('#' + t for t in private)}"
+          + ("" if a["available"] else " · pi not found, ask disabled"))
+    print(f"  embed  {args.embed_model}" if Handler.semantic.available
+          else "  embed  off (pip install -r requirements.txt for search by meaning)")
     print(f"  local  http://127.0.0.1:{args.port}")
     if args.host == "0.0.0.0":
         suffix = "/?t=<token>" if Handler.token else ""

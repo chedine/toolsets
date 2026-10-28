@@ -119,9 +119,22 @@ window.TB = (() => {
     return { s, hit };
   }
 
+  // Ids of notes passing the query's hard filters (entities, tags, phrases, excludes).
+  function filtered(notes, v) {
+    const ix = index(notes), q = parseQuery(v), out = new Set();
+    for (const d of ix.docs.values()) {
+      if (!q.ents.every(e => d.ents.has(e)) || !q.tags.every(t => d.tags.includes(t))) continue;
+      if (!q.phrases.every(p => d.body.includes(p)) || q.excludes.some(x => d.tf.has(x) || d.ents.has(x))) continue;
+      out.add(d.n.id);
+    }
+    return out;
+  }
+
   // Returns ranked notes plus everything the UI needs to explain the result.
   function search(notes, v) {
     const ix = index(notes), q = parseQuery(v);
+    const content = q.terms.filter(t => !STOP.has(t));
+    if (content.length) q.terms = content;  // "/H2O usage of server farms": don't let "of" match everything
     const exp = q.terms.map(t => expand(ix, t));
     const pool = [];
     for (const d of ix.docs.values()) {
@@ -158,8 +171,8 @@ window.TB = (() => {
       .map(e => ({ ...e, count: counts[e.key] }));
   }
 
-  // Order every note by relevance to a natural-language question (for Ask): free-text BM25,
-  // entities named in the question, then their co-occurring neighbours, then recency.
+  // Notes that match a natural-language question by words (for Ask): free-text BM25, entities
+  // named in the question, then their co-occurring neighbours. The server fuses this with embeddings.
   function rankForQuestion(notes, question) {
     const ix = index(notes), ql = ' ' + question.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ') + ' ';
     const explicit = parseQuery(question).ents;
@@ -173,8 +186,7 @@ window.TB = (() => {
       d.ents.forEach(e => { if (named.has(e)) s += 6; else if (neigh.has(e)) s += 0.5; });
       return { n: d.n, s };
     });
-    scored.sort((a, b) => b.s - a.s || b.n.created - a.n.created);
-    return scored.map(r => r.n);
+    return scored.filter(r => r.s > 0).sort((a, b) => b.s - a.s || b.n.created - a.n.created).map(r => r.n);
   }
 
   // [{t:'text'|'entity', text, key, hl}]; hl marks words matching the query.
@@ -235,6 +247,6 @@ window.TB = (() => {
     return MON[d.getMonth()] + ' ' + d.getDate() + (d.getFullYear() !== now.getFullYear() ? ' ' + d.getFullYear() : '');
   }
 
-  return { RE, TAG, keyOf, keys, names, plain, tags, stripTags, tagIndex, entityIndex, parseQuery, search, entityMatches, related,
+  return { RE, TAG, keyOf, keys, names, plain, tags, stripTags, tagIndex, entityIndex, parseQuery, filtered, search, entityMatches, related,
     rankForQuestion, parts, lines, inputGroups, fmt };
 })();

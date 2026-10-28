@@ -2,7 +2,9 @@
 
 Pi owns the model credentials (~/.pi/agent/auth.json, refreshed by Pi itself), so tidbits never
 touches tokens: each question is one `pi -p --mode json` run with every tool, extension and
-context file disabled, and the selected notes passed as an appended system prompt file.
+context file disabled, and the selected notes passed as an appended system prompt file. Notes tagged #secret (see
+--private-tags) are dropped before selection and never sent. Only notes relevant to the question
+are sent once the vault outgrows the character budget (see Asker.select).
 """
 import json
 import os
@@ -12,6 +14,12 @@ import tempfile
 import threading
 import time
 from datetime import datetime
+
+from vault import tags
+
+SEMANTIC_Z = 1.8        # keep embedding hits standing this many std devs above the vault mean...
+SEMANTIC_FLOOR = 0.5    # ...with at least this cosine (bge-base; looser than search, for recall)
+NEWEST_FALLBACK = 8     # nothing matched at all: let the model see the latest notes
 
 SYSTEM = """You answer questions using ONLY the user's personal notes, given below as <note> elements.
 Entities in the notes are wrapped in [[double brackets]]; tags start with #.
@@ -26,21 +34,42 @@ Rules:
 
 
 class Asker:
-    def __init__(self, model, thinking, pi_bin="pi", budget=300_000, timeout=180):
+    def __init__(self, model, thinking, pi_bin="pi", budget=24_000, timeout=180, private=("secret",)):
         self.model, self.thinking, self.budget, self.timeout = model, thinking, budget, timeout
+        self.private = {t.lower() for t in private}
         self.pi = shutil.which(os.path.expanduser(pi_bin)) or ""
 
     def info(self):
         return {"model": self.model, "thinking": self.thinking, "available": bool(self.pi)}
 
-    def context(self, notes, ranked_ids):
-        """Notes in relevance order (client ranking first, then newest), trimmed to the char budget."""
+    def shareable(self, notes):
+        """Notes that may leave the machine: anything tagged with a private tag (#secret) never does."""
+        return [n for n in notes if not self.private.intersection(tags(n["text"]))]
+
+    def select(self, notes, lexical_ids, semantic_hits):
+        """Pick the notes to send, best first.
+
+        Small vault (fits the budget): everything, in relevance order, so nothing is missed.
+        Larger: only notes that match the question, fusing word ranking (client) and meaning
+        ranking (embeddings) by reciprocal rank, so cost stays flat as the vault grows.
+        """
         by_id = {n["id"]: n for n in notes}
-        order = [by_id[i] for i in ranked_ids if i in by_id]
-        seen = {n["id"] for n in order}
-        order += [n for n in notes if n["id"] not in seen]
+        fused = {}
+        for rank, i in enumerate(lexical_ids):
+            fused[i] = fused.get(i, 0) + 1 / (60 + rank)
+        for rank, (i, score, z) in enumerate(semantic_hits):
+            if score >= SEMANTIC_FLOOR and z >= SEMANTIC_Z:
+                fused[i] = fused.get(i, 0) + 1 / (60 + rank)
+        relevant = [by_id[i] for i in sorted(fused, key=lambda i: -fused[i]) if i in by_id]
+        newest = sorted(notes, key=lambda n: -n["created"])
+        if sum(len(n["text"]) + 60 for n in notes) <= self.budget:
+            seen = {n["id"] for n in relevant}
+            return relevant + [n for n in newest if n["id"] not in seen]
+        return relevant or newest[:NEWEST_FALLBACK]
+
+    def context(self, chosen):
         refs, chunks, used = {}, [], 0
-        for n in order:
+        for n in chosen:
             ref = f"n{len(refs) + 1}"
             day = datetime.fromtimestamp(n["created"] / 1000).strftime("%Y-%m-%d")
             chunk = f'<note ref="{ref}" date="{day}">\n{n["text"]}\n</note>\n'
@@ -51,18 +80,20 @@ class Asker:
             used += len(chunk)
         return refs, "".join(chunks)
 
-    def stream(self, question, notes, ranked_ids, emit, alive=lambda: True):
+    def stream(self, question, notes, lexical_ids, semantic_hits, emit, alive=lambda: True):
         """Run one question; emit(dict) is called for meta/delta/done/error events.
         alive() is polled so a cancelled request stops pi even while the model is still thinking."""
         if not self.pi:
             return emit({"type": "error", "message": "pi executable not found (set TIDBITS_PI_BIN)"})
-        refs, ctx = self.context(notes, ranked_ids)
-        emit({"type": "meta", "model": self.model, "thinking": self.thinking, "refs": refs, "total": len(notes)})
+        shareable = self.shareable(notes)
+        refs, ctx = self.context(self.select(shareable, lexical_ids, semantic_hits))
+        emit({"type": "meta", "model": self.model, "thinking": self.thinking, "refs": refs,
+              "total": len(shareable), "withheld": len(notes) - len(shareable)})
         with tempfile.TemporaryDirectory(prefix="tidbits-ask-") as tmp:
             ctx_file = os.path.join(tmp, "notes.md")
             with open(ctx_file, "w", encoding="utf-8") as f:
-                f.write(f"Today is {datetime.now():%Y-%m-%d}. The user has {len(notes)} notes; "
-                        f"the {len(refs)} most relevant follow.\n\n{ctx}")
+                f.write(f"Today is {datetime.now():%Y-%m-%d}. The user has {len(shareable)} notes; "
+                        f"the {len(refs)} most relevant to this question follow.\n\n{ctx}")
             cmd = [self.pi, "-p", "--mode", "json", "--no-session", "--no-tools", "--no-extensions", "--no-skills",
                    "--no-context-files", "--no-prompt-templates", "--no-themes",
                    "--model", self.model, "--thinking", self.thinking,

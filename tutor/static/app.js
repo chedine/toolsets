@@ -122,6 +122,7 @@ async function onRoute() {
   const r = parseRoute();
   S.route = r;
   S.menu = false;
+  setSide(false);
   try {
     if (!profile() && r.view !== "profiles") { renderAll(); return; }
     if (r.cid) {
@@ -147,6 +148,9 @@ async function onRoute() {
   if (r.view === "chapter" && r.q) requestAnimationFrame(() => $(`#q-${r.q}`)?.scrollIntoView({ behavior: "smooth", block: "start" }));
   else $("#main").scrollTop = 0;
 }
+
+// Below 980px the sidebar is an off-canvas drawer opened from the header's menu button.
+function setSide(open) { $("#app").classList.toggle("side-open", open); }
 
 async function loadCourses() { S.courses = await api("GET", `/api/courses?profile=${encodeURIComponent(S.pid)}`); }
 
@@ -238,7 +242,7 @@ function renderTop() {
     right += `<span class="mono small muted">${n} of ${S.ch.questions.length} checked</span>`;
     if (!S.tutor.open) right += `<button class="btn" style="color:var(--accent);font-weight:500" data-act="open-tutor">Open tutor</button>`;
   }
-  $("#top").innerHTML = `<div class="crumbs">${crumbs.join('<span class="sep">/</span>')}</div><span class="grow"></span>${right}`;
+  $("#top").innerHTML = `<button class="icon-btn menu-btn" data-act="side" title="Menu" aria-label="Menu">☰</button><div class="crumbs">${crumbs.join('<span class="sep">/</span>')}</div><span class="grow"></span>${right}`;
 }
 
 function renderMain() {
@@ -1030,6 +1034,8 @@ async function sendTutor(text) {
 const ACTS = {
   nav: (el) => go(el.dataset.to),
   menu: () => { S.menu = !S.menu; renderSide(); },
+  side: () => setSide(!$("#app").classList.contains("side-open")),
+  "side-close": () => setSide(false),
   switch: async (el) => {
     S.pid = el.dataset.id; store.set("margin-profile", S.pid);
     S.course = null; S.ch = null; S.review = null; S.tutor.open = false;
@@ -1081,7 +1087,7 @@ const ACTS = {
   regen: () => { const r = S.route; delete S.chGen[`${r.cid}/${r.chid}`]; generateChapter(r.cid, r.chid); },
   "toggle-lesson": () => { S.lessonOpen = !(S.lessonOpen ?? true); renderMain(); },
   "ask-lesson": () => openTutor("lesson"),
-  jump: (el) => { setActive(el.dataset.q); $(`#q-${el.dataset.q}`)?.scrollIntoView({ behavior: "smooth", block: "start" }); },
+  jump: (el) => { setSide(false); setActive(el.dataset.q); $(`#q-${el.dataset.q}`)?.scrollIntoView({ behavior: "smooth", block: "start" }); },
   pick: (el) => { draft(el.dataset.q).choice = +el.dataset.i; renderCard(el.dataset.q); autosave(el.dataset.q, S.ch.id, S.course.id); },
   check: (el) => check(el.dataset.q),
   run: (el) => runTests(el.dataset.q),

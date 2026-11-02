@@ -635,8 +635,11 @@ function body(q, d, a) {
 
 function feedback(res) {
   let extra = "";
-  if (res.rubric?.length) extra = `<div class="checks">${res.rubric.map((r) => `<div><span class="${r.met ? "y" : "x"}">${r.met ? "✓" : "✗"}</span><span>${md(r.point, true)}</span><span></span></div>`).join("")}</div>`;
-  if (res.steps?.length) extra = `<div class="checks">${res.steps.map((s) => `<div><span class="${s.ok ? "y" : "x"}">${s.ok ? "✓" : "✗"}</span><span class="mono" style="font-size:13px">${md(s.text, true)}</span><span class="muted" style="font-size:12.5px">${md(s.note || "", true)}</span></div>`).join("")}</div>`;
+  if (res.rubric?.length) extra = `<div class="checks">${res.rubric.map((r) => `<div><span class="${r.met ? "y" : "x"}">${r.met ? "✓" : "✗"}</span><span>${md(r.point, true)}</span></div>`).join("")}</div>`;
+  // Steps echo the learner's LaTeX lines; the grader's note goes on its own line underneath.
+  if (res.steps?.length) extra = `<div class="checks">${res.steps.map((s) => `<div><span class="${s.ok ? "y" : "x"}">${s.ok ? "✓" : "✗"}</span>
+    <span class="step-tex">${s.text.includes("$") ? md(s.text, true) : tex(s.text)}</span>
+    ${s.note ? `<span class="note">${md(s.note, true)}</span>` : ""}</div>`).join("")}</div>`;
   return `<div class="feedback ${res.status}"><div>${md(res.feedback || "", true)}</div>${extra}</div>`;
 }
 

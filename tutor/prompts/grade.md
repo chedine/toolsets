@@ -19,6 +19,7 @@ Return exactly:
 {"status": "correct" | "partial" | "incorrect",
  "feedback": "...",
  "rubric": [{"point": "...", "met": true}],     // free-form questions only: one entry per rubric point
- "steps": [{"text": "...", "ok": true, "note": "..."}]  // math with working only: one entry per learner line
+ "steps": [{"text": "...", "ok": true, "note": "..."}]  // math with working only: one entry per learner line;
+                                                        // "text" is that line's LaTeX copied as-is (no $ signs)
 }
 Omit "rubric" and "steps" when they don't apply.

@@ -1,0 +1,38 @@
+{
+  "host": "127.0.0.1",
+  "port": 8585,
+  "claude_bin": "claude",
+  "pi_bin": "pi",
+  "claude_models": ["haiku", "sonnet", "opus"],
+  "hide_pi_providers": ["anthropic"],
+
+  "tasks": {
+    "outline": {"model": "claude:sonnet", "effort": "low", "timeout": 240},
+    "chapter": {"model": "claude:sonnet", "effort": "low", "timeout": 420},
+    "grade":   {"model": "claude:haiku",  "effort": "low", "timeout": 120},
+    "tutor":   {"model": "claude:haiku",  "effort": "low", "timeout": 180}
+  },
+
+  "course": {
+    "chapters": 6,
+    "questions_per_chapter": 5,
+    "depths": ["Gentle intro", "Foundations", "In depth"],
+    "default_depth": "Foundations",
+    "types": ["mcq"],
+    "lesson_chars": 6000,
+    "history_turns": 12
+  },
+
+  "fun": {
+    "confetti": true,
+    "xp": {"correct": 10, "partial": 5, "attempt": 2, "chapter": 25}
+  },
+
+  "suggestions": [
+    "Calculus basics for AI/ML",
+    "Fractions and decimals for grade 5",
+    "The solar system",
+    "Python for data analysis",
+    "How the human heart works"
+  ]
+}

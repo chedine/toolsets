@@ -17,9 +17,11 @@ It's built for a household: **profiles** (each with their own notebooks, XP, lev
 ## Run
 
 ```bash
-python3 server.py                 # http://127.0.0.1:8585, notebooks in ~/Tutor
-python3 server.py --data ~/Tutor --host 0.0.0.0 --port 8585
+python3 server.py                     # notebooks in ~/Tutor
+python3 server.py --host 127.0.0.1    # this machine only
 ```
+
+It listens on every interface, so other devices on the same network (a kid's laptop or tablet) can use it too. The start-up output prints the LAN URL. There is no login: anyone on the network can open it.
 
 Standard library only (Python 3.9+). The page loads KaTeX, marked, DOMPurify, MathLive, canvas-confetti and Pyodide from CDNs.
 
@@ -51,7 +53,7 @@ Everything is configurable, and your edits live in the data folder, so they surv
 | Flag / env | Default |
 | --- | --- |
 | `--data` / `TUTOR_DATA` | `~/Tutor` |
-| `--host` / `TUTOR_HOST` | `host` in config (`127.0.0.1`) |
+| `--host` / `TUTOR_HOST` | `host` in config (`0.0.0.0`, i.e. reachable from the LAN) |
 | `--port` / `TUTOR_PORT` | `port` in config (`8585`) |
 
 ## Notebooks on disk

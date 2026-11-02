@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Margin tutor: AI-built courses with lessons, practice questions and a tutor at your elbow.
 
-    python3 server.py                     # http://127.0.0.1:8585, notebooks in ~/Tutor
-    python3 server.py --data ~/Tutor --port 8585 --host 0.0.0.0
+    python3 server.py                     # port 8585 on every interface (LAN too), notebooks in ~/Tutor
+    python3 server.py --host 127.0.0.1    # this machine only
 """
 import argparse
 import json
@@ -259,6 +259,15 @@ def chat(h, cid, chid, qid, query):
     h.stream(lambda emit: h.engine.chat(cid, chid, qid, message, d.get("current"), emit, h.alive))
 
 
+def lan_ip():
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+            s.connect(("10.255.255.255", 1))
+            return s.getsockname()[0]
+    except OSError:
+        return "127.0.0.1"
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data", default=os.environ.get("TUTOR_DATA", "~/Tutor"), help="notebook folder (default ~/Tutor)")
@@ -273,7 +282,10 @@ def main():
     host, port = args.host or cfg["host"], args.port or cfg["port"]
     srv = ThreadingHTTPServer((host, port), Handler)
     srv.daemon_threads = True
-    print(f"Margin tutor on http://{'127.0.0.1' if host in ('0.0.0.0', '') else host}:{port}  (notebooks: {data})")
+    print(f"Margin tutor  (notebooks: {data})")
+    print(f"  local  http://{'127.0.0.1' if host in ('0.0.0.0', '') else host}:{port}")
+    if host in ("0.0.0.0", ""):
+        print(f"  lan    http://{lan_ip()}:{port}", flush=True)
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
